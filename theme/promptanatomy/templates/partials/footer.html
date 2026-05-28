@@ -10,7 +10,7 @@
       <ul class="site-footer__links">
         {% for link in column.links %}
         <li>
-          <a href="{% if link.external %}{{ link.href }}{% else %}{{ SITEURL }}{{ link.href }}{% endif %}"
+          <a href="{{ link.href }}"
              {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
         </li>
         {% endfor %}
@@ -25,7 +25,7 @@
       <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
       {% for link in SITE_CONFIG.footer.legal %}
       <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
-      <a href="{% if link.external %}{{ link.href }}{% else %}{{ SITEURL }}{{ link.href }}{% endif %}"
+      <a href="{{ link.href }}"
          {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
       {% endfor %}
     </nav>

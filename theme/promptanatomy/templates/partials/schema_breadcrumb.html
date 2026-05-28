@@ -7,28 +7,28 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "{{ SITEURL }}/"
+      "item": "{{ CANONICAL_SITEURL }}/"
     }
     {% if article %}
     ,{
       "@type": "ListItem",
       "position": 2,
       "name": {{ article.title|tojson }},
-      "item": "{{ SITEURL }}/{{ article.url }}"
+      "item": "{{ CANONICAL_SITEURL }}/{{ article.url }}"
     }
     {% elif page %}
     ,{
       "@type": "ListItem",
       "position": 2,
       "name": {{ page.title|tojson }},
-      "item": "{{ SITEURL }}/{{ page.url }}"
+      "item": "{{ CANONICAL_SITEURL }}/{{ page.url }}"
     }
     {% elif category %}
     ,{
       "@type": "ListItem",
       "position": 2,
       "name": {{ (category.name if category.name is defined else category)|tojson }},
-      "item": "{{ SITEURL }}/{{ category.url }}"
+      "item": "{{ CANONICAL_SITEURL }}/{{ category.url }}"
     }
     {% endif %}
   ]

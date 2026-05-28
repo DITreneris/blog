@@ -6,8 +6,14 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pelicanconf import *  # noqa: F401,E402
 
-# Canonical / feeds always use the public domain.
-CANONICAL_SITEURL = "https://promptanatomy.blog"
+# Public domain (www) — matches Vercel production + apex → www redirect.
+CANONICAL_SITEURL = SITE_CONFIG.get("brand", {}).get(
+    "site_url", "https://www.promptanatomy.blog"
+)
+
+# Apex redirects to www on Vercel; asset URLs must not point at unresolved apex.
+_WWW_HOST = "www.promptanatomy.blog"
+_APEX_HOST = "promptanatomy.blog"
 
 
 def _https_url(host: str) -> str:
@@ -17,15 +23,22 @@ def _https_url(host: str) -> str:
     return f"https://{host}"
 
 
+def _normalize_host(host: str) -> str:
+    bare = host.removeprefix("https://").removeprefix("http://").rstrip("/").lower()
+    if bare == _APEX_HOST:
+        return _WWW_HOST
+    return bare
+
+
 def _resolve_siteurl() -> str:
-    """Use the deployment host on Vercel so CSS/assets work on *.vercel.app previews."""
+    """Deployment host for absolute URLs (og tags). Static assets use root-relative paths."""
     if not os.environ.get("VERCEL"):
         return CANONICAL_SITEURL
 
     if os.environ.get("VERCEL_ENV") == "production":
         prod_host = os.environ.get("VERCEL_PROJECT_PRODUCTION_URL")
         if prod_host:
-            return _https_url(prod_host)
+            return _https_url(_normalize_host(prod_host))
         return CANONICAL_SITEURL
 
     preview_host = os.environ.get("VERCEL_URL")
@@ -39,5 +52,4 @@ SITEURL = _resolve_siteurl()
 RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
 
-# Production feeds use absolute URLs on the public domain
 FEED_DOMAIN = CANONICAL_SITEURL

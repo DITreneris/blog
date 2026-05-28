@@ -6,7 +6,7 @@
 {% block open_graph %}
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ page.title|striptags }}" />
-<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ page.url }}" />
 {% endblock %}
 
 {% block structured_data %}

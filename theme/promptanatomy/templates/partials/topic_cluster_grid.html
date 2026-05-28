@@ -1,14 +1,28 @@
-{% from 'macros/ui.html' import section_heading %}
-<section class="section" aria-labelledby="topics-heading">
-  <div class="container">
-    {{ section_heading('Explore by topic', 'Browse implementation notes organized by practice area.', 'topics-heading') }}
-    <div class="grid grid--topics">
-      {% for cat in CATEGORIES %}
-      <a class="topic-card" href="{{ SITEURL }}/topics/{{ cat.slug }}/">
-        <h3 class="topic-card__title">{{ cat.title }}</h3>
-        <p class="topic-card__desc">{{ cat.description }}</p>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{% from 'macros/ui.html' import section_heading %}
+
+<section class="section" aria-labelledby="topics-heading">
+
+  <div class="container">
+
+    {{ section_heading('Explore by topic', 'Browse implementation notes organized by practice area.', 'topics-heading') }}
+
+    <div class="grid grid--topics">
+
+      {% for cat in CATEGORIES %}
+
+      <a class="topic-card" href="/topics/{{ cat.slug }}/">
+
+        <h3 class="topic-card__title">{{ cat.title }}</h3>
+
+        <p class="topic-card__desc">{{ cat.description }}</p>
+
+      </a>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+

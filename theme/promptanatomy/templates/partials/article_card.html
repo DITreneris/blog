@@ -1,14 +1,14 @@
 {% from 'macros/ui.html' import category_badge, meta_line, hero_image_url %}
 <article class="card{% if article.hero_image %} card--has-visual{% endif %}">
   {% if article.hero_image %}
-  <a class="card__thumb-link" href="{{ SITEURL }}/{{ article.url }}" tabindex="-1" aria-hidden="true">
+  <a class="card__thumb-link" href="/{{ article.url }}" tabindex="-1" aria-hidden="true">
     <img class="card__thumb" src="{{ hero_image_url(article) }}" alt="" width="400" height="225" loading="lazy" decoding="async" />
   </a>
   {% endif %}
   {% if article.category %}
-  {{ category_badge(article.category, SITEURL ~ '/' ~ article.category.url) }}
+  {{ category_badge(article.category, '/' ~ article.category.url) }}
   {% endif %}
-  <h3 class="card__title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+  <h3 class="card__title"><a href="/{{ article.url }}">{{ article.title }}</a></h3>
   <p class="card__desc">{{ article.summary }}</p>
   {{ meta_line(article) }}
 </article>

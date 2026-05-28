@@ -44,19 +44,19 @@ This repo targets **Vercel + promptanatomy.blog**. GitHub Pages is not configure
 
 ## Production URL
 
-`publishconf.py` sets `CANONICAL_SITEURL = "https://promptanatomy.blog"` for canonical links and feeds. **`SITEURL`** is resolved at build time:
+`publishconf.py` sets `CANONICAL_SITEURL = "https://www.promptanatomy.blog"` for canonical links and feeds (matches Vercel **www** production). Theme CSS/images use **root-relative** paths (`/static/…`, `/images/…`) so they work on `www`, apex redirect, and preview. **`SITEURL`** is resolved at build time for og tags:
 
 | Build context | `SITEURL` (assets, nav, images) |
 |---------------|----------------------------------|
-| Local `publishconf` | `https://promptanatomy.blog` |
+| Local `publishconf` | `https://www.promptanatomy.blog` |
 | Vercel preview (`*.vercel.app`) | `https://<VERCEL_URL>` |
 | Vercel production | `VERCEL_PROJECT_PRODUCTION_URL` or canonical fallback |
 
-Without this, preview deploys load CSS from `promptanatomy.blog` and render unstyled HTML.
+Without root-relative assets, a **www** visit can still request CSS from apex `promptanatomy.blog` (broken while apex DNS is pending).
 
-### Unstyled site on `*.vercel.app`
+### Unstyled site on `www` or `*.vercel.app`
 
-If the page is plain blue links and no layout, open DevTools → Network and check CSS URLs. They must match the host you are viewing (e.g. `blog-….vercel.app/static/css/…`), not only `promptanatomy.blog`. Redeploy after `publishconf.py` includes Vercel `SITEURL` resolution.
+Open DevTools → Network. CSS must be **`/static/css/…`** on the same host (200), not `https://promptanatomy.blog/static/…` when apex DNS is not live. Redeploy after root-relative asset paths land on `main`.
 
 ## Custom domain
 

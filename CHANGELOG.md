@@ -11,7 +11,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - **Vercel deploy:** [`vercel.json`](vercel.json) uses `framework: null`, project `.venv` for PEP 668-safe installs, and `.venv/bin/python` for Pelican build. [`.python-version`](.python-version) pins 3.11. [docs/DEPLOY.md](docs/DEPLOY.md) troubleshooting.
-- **Preview styling:** [`publishconf.py`](publishconf.py) sets `SITEURL` from `VERCEL_URL` on preview deploys so CSS and images load on `*.vercel.app`; canonical/feeds stay on `CANONICAL_SITEURL`.
+- **Preview styling:** [`publishconf.py`](publishconf.py) sets `SITEURL` from `VERCEL_URL` on preview deploys; canonical/feeds use `https://www.promptanatomy.blog`.
+- **Production www:** Theme uses root-relative `/static/` and `/images/` paths; apex `promptanatomy.blog` normalized to **www** for metadata so live site matches local Design System build.
 
 ## [0.2.0] - 2026-05-28
 

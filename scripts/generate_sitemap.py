@@ -9,7 +9,7 @@ from xml.etree.ElementTree import Element, ElementTree, SubElement
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output"
-SITEURL = "https://promptanatomy.blog"
+SITEURL = "https://www.promptanatomy.blog"
 
 
 def add_url(urlset: Element, loc: str) -> None:

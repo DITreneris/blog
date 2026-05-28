@@ -10,7 +10,7 @@
 
       {% for item in HUB_SECTIONS.start_here.cards %}
 
-      {{ card(item.title, item.description, SITEURL ~ item.href, card_id=loop.index) }}
+      {{ card(item.title, item.description, item.href, card_id=loop.index) }}
 
       {% endfor %}
 

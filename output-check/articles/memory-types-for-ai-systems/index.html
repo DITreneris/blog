@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Types for AI Systems — Prompt Anatomy</title>
+  <meta name="description" content="Session, episodic, and organizational memory for AI workflows—and when each belongs in your context architecture." />
+  <link rel="canonical" href="https://promptanatomy.blog/articles/memory-types-for-ai-systems/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Prompt Anatomy" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Memory Types for AI Systems" />
+<meta property="og:description" content="Session, episodic, and organizational memory for AI workflows—and when each belongs in your context architecture." />
+<meta property="og:url" content="https://www.promptanatomy.blog/articles/memory-types-for-ai-systems/" />
+<meta property="article:published_time" content="2026-05-28T00:00:00-04:00" /><meta property="og:image" content="https://www.promptanatomy.blog/images/articles/memory-types-for-ai-systems/hero.png" />  <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Memory Types for AI Systems" />
+<meta name="twitter:description" content="Session, episodic, and organizational memory for AI workflows—and when each belongs in your context architecture." />
+<meta name="twitter:image" content="https://www.promptanatomy.blog/images/articles/memory-types-for-ai-systems/hero.png" />  <link rel="alternate" type="application/atom+xml" title="Prompt Anatomy Atom Feed" href="https://promptanatomy.blog/feeds/all.atom.xml" />
+  <link rel="icon" href="https://www.promptanatomy.blog/static/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.promptanatomy.blog/static/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.promptanatomy.blog/static/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="https://www.promptanatomy.blog/static/apple-touch-icon.png" />
+  <link rel="manifest" href="https://www.promptanatomy.blog/static/site.webmanifest" />
+  <meta name="theme-color" content="#0B1320" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.promptanatomy.blog/static/css/tokens.css" />
+  <link rel="stylesheet" href="https://www.promptanatomy.blog/static/css/base.css" />
+  <link rel="stylesheet" href="https://www.promptanatomy.blog/static/css/layout.css" />
+  <link rel="stylesheet" href="https://www.promptanatomy.blog/static/css/components.css" />
+  <link rel="stylesheet" href="https://www.promptanatomy.blog/static/css/article.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Memory Types for AI Systems",
+  "description": "\u003cp\u003eSession, episodic, and organizational memory for AI workflows\u2014and when each belongs in your context architecture.\u003c/p\u003e",
+  "datePublished": "2026-05-28T00:00:00-04:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Prompt Anatomy"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Prompt Anatomy"
+  },
+  "articleSection": "Framework",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.promptanatomy.blog/articles/memory-types-for-ai-systems/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.promptanatomy.blog/"
+    }
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Memory Types for AI Systems",
+      "item": "https://www.promptanatomy.blog/articles/memory-types-for-ai-systems/"
+    }
+  ]
+}
+</script></head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+
+<header class="site-header" role="banner">
+
+
+
+  <div class="container site-header__inner">
+
+
+
+<a class="logo" href="https://www.promptanatomy.blog/">
+  <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <rect width="32" height="32" rx="8" fill="#0b1320"/>
+    <path fill="#fbd304" transform="translate(4 3)" d="M13.5 1.5 4.5 14.25h6L8.25 22.5 19.5 9.75h-6L13.5 1.5z"/>
+  </svg>
+  <span class="logo__wordmark">
+    <span class="logo__prompt">Prompt</span>
+    <span class="logo__anatomy">Anatomy</span>
+  </span>
+</a>
+
+
+    <details class="nav-mobile">
+
+
+
+      <summary class="nav-mobile__trigger">Menu</summary>
+
+
+
+      <nav class="nav-mobile__panel" aria-label="Primary">
+
+
+
+
+
+
+        <a href="https://www.promptanatomy.blog/#latest"
+
+
+
+
+
+
+           >Articles</a>
+
+
+
+
+
+
+        <a href="https://www.promptanatomy.blog/topics/framework/"
+
+
+
+
+
+
+           >Frameworks</a>
+
+
+
+
+
+
+        <a href="https://www.promptanatomy.blog/topics/ai-agents/"
+
+
+
+
+
+
+           >AI Agents</a>
+
+
+
+
+
+
+        <a href="https://www.promptanatomy.app/anatomy/"
+
+
+
+rel="noopener noreferrer"
+
+
+           >Training</a>
+
+
+
+
+
+
+        <a href="https://www.promptanatomy.app/#pricing"
+
+
+
+rel="noopener noreferrer"
+
+
+           >Pricing</a>
+
+
+
+
+
+
+      </nav>
+
+
+
+    </details>
+
+
+
+    <nav class="nav" aria-label="Primary">
+
+
+
+
+
+
+      <a href="https://www.promptanatomy.blog/#latest"
+
+
+
+
+
+
+         >Articles</a>
+
+
+
+
+
+
+      <a href="https://www.promptanatomy.blog/topics/framework/"
+
+
+
+
+
+
+         >Frameworks</a>
+
+
+
+
+
+
+      <a href="https://www.promptanatomy.blog/topics/ai-agents/"
+
+
+
+
+
+
+         >AI Agents</a>
+
+
+
+
+
+
+      <a href="https://www.promptanatomy.app/anatomy/"
+
+
+
+rel="noopener noreferrer"
+
+
+         >Training</a>
+
+
+
+
+
+
+      <a href="https://www.promptanatomy.app/#pricing"
+
+
+
+rel="noopener noreferrer"
+
+
+         >Pricing</a>
+
+
+
+
+
+
+    </nav>
+
+
+
+    
+
+  <a class="btn btn--primary" href="https://www.promptanatomy.app/#pricing" rel="noopener noreferrer">Plans</a>
+
+
+
+
+
+
+  </div>
+
+
+
+</header>
+
+
+  <main id="main-content">
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress__bar" data-reading-progress></div>
+</div><header class="article-header">
+  <div class="container">
+    
+
+
+  <a class="badge" href="https://www.promptanatomy.blog/topics/framework/">Framework</a>
+
+
+
+    <h1 class="article-header__title">Memory Types for AI Systems</h1>
+    
+  <p class="meta-line">
+
+2 min read
+ · Framework
+
+ · 2026
+
+
+  </p>
+
+
+    <img class="article-header__diagram" src="
+/images/articles/memory-types-for-ai-systems/hero.png
+" alt="Memory Types for AI Systems" width="1600" height="900" loading="eager" decoding="async" />
+  </div>
+</header><aside class="takeaway-box container" aria-label="Key takeaway">
+  <p class="takeaway-box__label">Key takeaway</p>
+  <p>Choose memory types by retention risk and workflow need—not by maximizing what the model remembers.</p>
+</aside>
+
+<section class="section">
+  <div class="container article-layout article-layout--with-toc">
+    <article class="prose" data-article-prose>
+      <p>Memory in AI systems is not one feature. It is <strong>several mechanisms</strong> with different lifetimes, owners, and risk profiles. Context architecture decides which type applies where.</p>
+<h2 id="memory-types">Memory types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it stores</th>
+<th>Typical lifetime</th>
+<th>Risk if misused</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session</strong></td>
+<td>Current task thread</td>
+<td>Until session ends</td>
+<td>Low if scoped to one case</td>
+</tr>
+<tr>
+<td><strong>Episodic</strong></td>
+<td>Past interactions for continuity</td>
+<td>Days to months</td>
+<td>Stale facts, wrong customer bleed</td>
+</tr>
+<tr>
+<td><strong>Organizational</strong></td>
+<td>Approved docs, policies, playbooks</td>
+<td>Versioned, long-lived</td>
+<td>Low when retrieval is governed</td>
+</tr>
+<tr>
+<td><strong>Working (in-prompt)</strong></td>
+<td>Assembled context for one run</td>
+<td>Single invocation</td>
+<td>Token cost, leakage if over-filled</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rules">Design rules</h2>
+<ol>
+<li><strong>Default to stateless runs</strong> for regulated outputs; add memory only with a written reason.</li>
+<li><strong>Episodic memory</strong> needs tenant and case IDs—never a shared pool across customers.</li>
+<li><strong>Organizational memory</strong> should flow through retrieval with tags (<code>approved</code>, <code>deprecated</code>), not ad hoc uploads per user.</li>
+<li><strong>Forget on purpose</strong>—define retention for session and episodic stores (e.g. delete when ticket closes).</li>
+</ol>
+<h2 id="example-support-workflow">Example: support workflow</h2>
+<ul>
+<li><strong>Session:</strong> last N messages in the ticket.</li>
+<li><strong>Organizational:</strong> KB articles tagged <code>customer-safe</code>, versioned quarterly.</li>
+<li><strong>Episodic:</strong> optional summary of prior cases for the same account—human-visible, not silent auto-inject.</li>
+<li><strong>Denied:</strong> full chat history from unrelated products.</li>
+</ul>
+<h2 id="related-reading">Related reading</h2>
+<ul>
+<li><a href="/articles/what-is-context-architecture/">What Is Context Architecture?</a></li>
+<li><a href="/articles/context-window-myths/">Context Window Myths</a></li>
+<li><a href="/articles/data-boundaries-for-ai-agents/">Data Boundaries for AI Agents</a></li>
+</ul>
+    </article>
+<details class="toc-collapsible article-layout__toc" data-toc open>
+
+  <summary class="toc-collapsible__summary">On this page</summary>
+
+  <nav class="toc" aria-label="Table of contents">
+
+    <p class="toc__title">On this page</p>
+
+    <ul data-toc-list></ul>
+
+  </nav>
+
+</details>
+  </div>
+</section>
+
+
+<aside class="author-bio container" aria-label="About the author">
+
+
+  <div class="author-bio__avatar" role="img" aria-label="Author avatar placeholder"></div>
+
+
+  <div>
+
+    <p><strong>Prompt Anatomy</strong> — AI Implementation</p>
+
+    <p>Field notes, frameworks, and implementation systems for teams building controlled AI workflows.</p>
+
+  </div>
+
+</aside>
+
+  </main>
+<footer class="site-footer site-footer--dark" role="contentinfo">
+  <div class="container site-footer__grid">
+    <div>
+<a class="logo" href="https://www.promptanatomy.blog/">
+  <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <rect width="32" height="32" rx="8" fill="#0b1320"/>
+    <path fill="#fbd304" transform="translate(4 3)" d="M13.5 1.5 4.5 14.25h6L8.25 22.5 19.5 9.75h-6L13.5 1.5z"/>
+  </svg>
+  <span class="logo__wordmark">
+    <span class="logo__prompt">Prompt</span>
+    <span class="logo__anatomy">Anatomy</span>
+  </span>
+</a>      <p class="site-footer__brand">Prompt Anatomy – an interactive training system for working with AI.</p>
+    </div>
+    <div>
+      <h2 class="site-footer__column-title">Explore</h2>
+      <ul class="site-footer__links">
+        <li>
+          <a href="https://www.promptanatomy.app/#what-is-prompt-anatomy"
+rel="noopener noreferrer">What is Prompt Anatomy</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.app/#methodology"
+rel="noopener noreferrer">Methodology</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.app/#ekosistema"
+rel="noopener noreferrer">Ecosystem</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.app/#pricing"
+rel="noopener noreferrer">Pricing</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__column-title">Product</h2>
+      <ul class="site-footer__links">
+        <li>
+          <a href="https://www.promptanatomy.app/anatomy/"
+rel="noopener noreferrer">Training</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.app/#faq"
+rel="noopener noreferrer">FAQ</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.app/#pricing"
+rel="noopener noreferrer">Choose a plan</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.blog/#latest"
+>Articles</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.blog/about/"
+>About</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__column-title">Network</h2>
+      <ul class="site-footer__links">
+        <li>
+          <a href="https://t.me/prompt_anatomy"
+rel="noopener noreferrer">Public group (Telegram)</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/staniulis"
+rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://x.com/TStaniulis_NFT"
+rel="noopener noreferrer">X (Twitter)</a>
+        </li>
+        <li>
+          <a href="https://promptanatomy.cloud/"
+rel="noopener noreferrer">PromptAnatomy Cloud</a>
+        </li>
+        <li>
+          <a href="https://promptanatomy.pro/"
+rel="noopener noreferrer">PromptAnatomy Pro</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.info/en/"
+rel="noopener noreferrer">Library (AI automation)</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.space/en/"
+rel="noopener noreferrer">Content system (marketing)</a>
+        </li>
+        <li>
+          <a href="https://ditreneris.github.io/personalas/"
+rel="noopener noreferrer">Recruitment system (HR)</a>
+        </li>
+        <li>
+          <a href="https://www.promptanatomy.ceo/"
+rel="noopener noreferrer">Operations center (CEO/COO)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <nav class="site-footer__legal" aria-label="Legal">
+      <span>&copy; 2026 Prompt Anatomy</span>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:info@promptanatomy.app">info@promptanatomy.app</a>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="https://www.promptanatomy.blog/privacy/"
+>Privacy Policy</a>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="https://www.promptanatomy.blog/terms/"
+>Terms of Service</a>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="https://www.promptanatomy.blog/privacy/#cookies"
+>Cookies & tracking</a>
+    </nav>
+    <p class="site-footer__meta">creator: tomas staniulis</p>
+    <p class="site-footer__meta">Mailing address: Prompt Anatomy, 1311 Park St, Unit #654, Alameda, CA 94501, US</p>
+  </div>
+</footer><script src="https://www.promptanatomy.blog/static/js/reading-progress.js" defer></script>
+<script src="https://www.promptanatomy.blog/static/js/toc-active.js" defer></script>
+</body>
+</html>

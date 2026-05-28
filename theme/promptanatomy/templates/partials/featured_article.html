@@ -14,13 +14,13 @@
 
         {% if article.category %}
 
-        {{ category_badge(article.category, SITEURL ~ '/' ~ article.category.url) }}
+        {{ category_badge(article.category, '/' ~ article.category.url) }}
 
         {% endif %}
 
         <h3 class="card__title">
 
-          <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+          <a href="/{{ article.url }}">{{ article.title }}</a>
 
         </h3>
 
@@ -28,7 +28,7 @@
 
         {{ meta_line(article) }}
 
-        {{ btn(SITEURL ~ '/' ~ article.url, 'Read article') }}
+        {{ btn('/' ~ article.url, 'Read article') }}
 
       </div>
 

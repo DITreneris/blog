@@ -6,11 +6,11 @@
 
   <div class="hero__visual-wrap container" aria-hidden="true">
 
-    <img class="hero__visual" src="{{ SITEURL }}/{{ HUB_SECTIONS.hero.image }}" alt="{{ HUB_SECTIONS.hero.image_alt|default('') }}" width="1600" height="900" loading="eager" decoding="async" />
+    <img class="hero__visual" src="/{{ HUB_SECTIONS.hero.image }}" alt="{{ HUB_SECTIONS.hero.image_alt|default('') }}" width="1600" height="900" loading="eager" decoding="async" />
 
     {% if HUB_SECTIONS.hero.image_secondary %}
 
-    <img class="hero__visual hero__visual--secondary" src="{{ SITEURL }}/{{ HUB_SECTIONS.hero.image_secondary }}" alt="{{ HUB_SECTIONS.hero.image_secondary_alt|default('') }}" width="1600" height="900" loading="lazy" decoding="async" />
+    <img class="hero__visual hero__visual--secondary" src="/{{ HUB_SECTIONS.hero.image_secondary }}" alt="{{ HUB_SECTIONS.hero.image_secondary_alt|default('') }}" width="1600" height="900" loading="lazy" decoding="async" />
 
     {% endif %}
 
@@ -40,7 +40,7 @@
 
       ) }}
 
-      {{ btn(SITEURL ~ '/#latest', 'Browse articles', 'ghost') }}
+      {{ btn('/#latest', 'Browse articles', 'ghost') }}
 
     </div>
 

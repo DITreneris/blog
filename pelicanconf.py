@@ -25,7 +25,7 @@ SITESUBTITLE = SITE_CONFIG["brand"]["tagline"]
 SITEURL = ""
 RELATIVE_URLS = True
 CANONICAL_SITEURL = SITE_CONFIG.get("brand", {}).get(
-    "site_url", "https://promptanatomy.blog"
+    "site_url", "https://www.promptanatomy.blog"
 )
 
 DEFAULT_LANG = "en"

@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ SITENAME }}" />
   <meta property="og:description" content="{{ SITE_CONFIG.brand.description }}" />
-  <meta property="og:url" content="{{ SITEURL }}/" />
+  <meta property="og:url" content="{{ CANONICAL_SITEURL }}/" />
   {% endblock %}
   <meta name="twitter:card" content="summary_large_image" />
   {% block twitter %}
@@ -20,20 +20,20 @@
   <meta name="twitter:description" content="{{ SITE_CONFIG.brand.description }}" />
   {% endblock %}
   <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" />
-  <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon-16x16.png" />
-  <link rel="apple-touch-icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/apple-touch-icon.png" />
-  <link rel="manifest" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/site.webmanifest" />
+  <link rel="icon" href="/{{ THEME_STATIC_DIR }}/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/{{ THEME_STATIC_DIR }}/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/{{ THEME_STATIC_DIR }}/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/{{ THEME_STATIC_DIR }}/apple-touch-icon.png" />
+  <link rel="manifest" href="/{{ THEME_STATIC_DIR }}/site.webmanifest" />
   <meta name="theme-color" content="#0B1320" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tokens.css" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/base.css" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/layout.css" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components.css" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/article.css" />
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/tokens.css" />
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/base.css" />
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/layout.css" />
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/components.css" />
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/article.css" />
   {% block extra_head %}{% endblock %}
   {% block structured_data %}{% endblock %}
 </head>
