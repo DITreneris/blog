@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- **Hub image sync on Linux/Vercel** — [`scripts/sync_illustrations.py`](scripts/sync_illustrations.py) `sync_hub()` no longer converts `/` to `\\` in destination paths (broke `content/images/hub/hero.png` on Vercel); missing hub masters now fail the sync step with a clear error.
 - **Vercel `buildCommand` length** — moved install/build steps into [`scripts/vercel_install.sh`](scripts/vercel_install.sh) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh); [`vercel.json`](vercel.json) now uses short `bash` commands (256-character schema limit).
 
 ### Added

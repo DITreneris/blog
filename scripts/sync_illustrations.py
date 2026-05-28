@@ -50,10 +50,7 @@ def sync_article_row(row: dict, dry_run: bool) -> list[str]:
     if "hero" not in usage or not slug:
         return errors
     source_rel = row["source"]
-    src = MASTERS / source_rel.replace("/", "\\").replace("\\", "/")
-    if not src.is_file():
-        # try forward slashes on Windows
-        src = MASTERS / Path(source_rel)
+    src = MASTERS / Path(source_rel.replace("\\", "/"))
     if not src.is_file():
         errors.append(f"Missing source: {source_rel}")
         return errors
@@ -81,10 +78,11 @@ def sync_hub(manifest: dict, dry_run: bool) -> list[str]:
         if not row:
             errors.append(f"No illustration with hub_asset={key}")
             continue
-        src = MASTERS / row["source"]
+        src = MASTERS / Path(str(row["source"]).replace("\\", "/"))
         if not src.is_file():
-            src = MASTERS / Path(row["source"])
-        dest = ROOT / "content" / dest_rel.replace("/", "\\")
+            errors.append(f"Missing hub source for {key}: {row['source']}")
+            continue
+        dest = ROOT / "content" / Path(str(dest_rel).replace("\\", "/"))
         if dry_run:
             print(f"  [dry-run] hub {key}: {row['source']} -> {dest.relative_to(ROOT)}")
             continue
