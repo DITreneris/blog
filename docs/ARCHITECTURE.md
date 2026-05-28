@@ -5,7 +5,7 @@
 Static site generator: **Pelican 4.x** (Python). Output: HTML/CSS/JS in `output/`. Hosted on **Vercel** (CDN only, no Python at runtime).
 
 ```
-content/*.md  →  validate_content.py  →  pelican  →  output/  →  Vercel CDN
+content/*.md  →  validate_theme_tokens.py  →  validate_content.py  →  pelican  →  output/  →  Vercel CDN
 ```
 
 ## Repository layers
@@ -25,7 +25,7 @@ content/*.md  →  validate_content.py  →  pelican  →  output/  →  Vercel 
 |----------|-------------|
 | Home | `/` |
 | Article | `/articles/{slug}/` |
-| Page | `/about/` (via PAGE_SAVE_AS) |
+| Page | `/about/`, `/design-system/`, etc. (via PAGE_SAVE_AS) |
 | Category | `/topics/{slug}/` |
 | Atom feed | `/feeds/all.atom.xml` |
 | Sitemap | `/sitemap.xml` |
@@ -56,9 +56,18 @@ No dates in article URLs.
 
 Client-side: `toc-active.js` scans `article` `h2`/`h3` after load and builds sidebar; degrades gracefully if JS disabled (prose still readable).
 
+## Design system (v1.0)
+
+- Spec: [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) — tokens, buttons, macros, image policy
+- CSS: `theme/promptanatomy/static/css/tokens.css` (canonical colors) → `base`, `layout`, `components`, `article`
+- UI macros: `theme/promptanatomy/templates/macros/ui.html`
+- Living examples: `/design-system/` (`design_system.html` + `partials/style_guide.html`)
+- Lint: `scripts/validate_theme_tokens.py` (no hex outside `tokens.css`)
+- Pre-release: [VISUAL_QA.md](VISUAL_QA.md)
+
 ## Extension points
 
 - Add categories in `data/categories.yaml`
 - Add hub copy in `data/hub_sections.yaml`
-- New partial → update `docs/COMPONENT_MAP.md`
+- New partial → update `docs/COMPONENT_MAP.md` and `docs/DESIGN_SYSTEM.md` if tokens or patterns change
 - Optional later: Pagefind, Giscus, OG image generation

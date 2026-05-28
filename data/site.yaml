@@ -38,6 +38,7 @@ nav:
 
 cta:
   label: "Choose a plan"
+  header_label: "Plans"
   href: "https://www.promptanatomy.app/#pricing"
   external: true
 

@@ -1,26 +1,52 @@
-{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url %}
+{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url, btn, section_heading %}
+
 {% if article %}
+
 <section class="section" aria-labelledby="featured-heading">
+
   <div class="container">
-    <h2 id="featured-heading" class="sr-only">Featured article</h2>
+
+    {{ section_heading('Featured', heading_id='featured-heading') }}
+
     <article class="card card--featured">
+
       <div class="stack">
+
         {% if article.category %}
+
         {{ category_badge(article.category, SITEURL ~ '/' ~ article.category.url) }}
+
         {% endif %}
+
         <h3 class="card__title">
+
           <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+
         </h3>
+
         <p class="card__desc">{{ article.summary }}</p>
+
         {{ meta_line(article) }}
-        <a class="btn btn--primary" href="{{ SITEURL }}/{{ article.url }}">Read article</a>
+
+        {{ btn(SITEURL ~ '/' ~ article.url, 'Read article') }}
+
       </div>
+
       {% if article.hero_image %}
+
       <img class="card__visual card__visual--image" src="{{ hero_image_url(article) }}" alt="" width="800" height="500" loading="lazy" decoding="async" />
+
       {% else %}
+
       <div class="card__visual" role="img" aria-label="Article visual placeholder"></div>
+
       {% endif %}
+
     </article>
+
   </div>
+
 </section>
+
 {% endif %}
+

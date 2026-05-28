@@ -1,81 +1,234 @@
-# Prompt Anatomy — Design System
-
-Canonical visual spec aligned with the [mother repo](https://github.com/DITreneris/promptanatomy) brand. Logo/favicon source of truth: mother `docs/design/logo-favicon.md` and `frontend/public/favicon.svg`.
-
-## Brand feel
-
-Expert, structured, calm, technical but readable, premium, implementation-focused. Homepage must communicate purpose in ~2 seconds.
-
-Visual references: Linear, Stripe, enterprise SaaS docs—not colorful magazine or generic blog templates.
-
-## Hybrid palette (blog spoke)
-
-The blog keeps a **light reading interface** while matching the mother brand on chrome and dark bands:
-
-| Role | Token | Hex | Usage |
-|------|-------|-----|--------|
-| Reading surface | `--color-surface` | `#F7F7F4` | Page background |
-| Body text | `--color-text-primary` | `#111827` | Headings, body on light |
-| Prose links | `--color-link` | `#2563EB` | Inline links in articles only |
-| Brand dark | `--color-brand-dark` | `#0B1320` | Hero, ecosystem, newsletter, footer |
-| Brand gold | `--color-brand-accent` | `#CFA73A` | Logo mark, dark-band links, accents |
-| Primary CTA | `--color-cta-gradient` | gold gradient | `.btn--primary` only |
-
-**Rule:** Gold = logo, CTAs, and dark sections. Blue = long-form prose links only.
-
-## Colors (full token set)
-
-See `theme/promptanatomy/static/css/tokens.css`.
-
-| Token | Hex | Usage |
-|-------|-----|--------|
-| surface | `#F7F7F4` | Page background |
-| surface-dark | `#0B1320` | Hero, ecosystem, newsletter, footer |
-| surface-dark-card | `#111827` | Cards on dark sections |
-| link | `#2563EB` | Article/prose links |
-| brand-accent | `#CFA73A` | Brand chrome on dark bands |
-| ecosystem-1…4 | various | Ecosystem spoke card icons |
-
-Use accent colors sparingly.
-
-## Typography
-
-- Stack: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif
-- Hero headline: 56–72px desktop, 40–48px tablet, 32–38px mobile
-- Section heading: 36–44px desktop, 28–34px mobile
-- Article title: 48–64px desktop, 34–42px mobile
-- Body: 18–20px, generous line-height (~1.65)
-- Metadata: 14–15px
-
-## Spacing
-
-- Section padding: 96px top/bottom desktop, 56px mobile
-- Card padding: 24–32px
-- Container max-width: 1180–1240px
-- Article column max-width: 720px
-- Border radius: 20–28px (cards), 8–12px (badges, buttons)
-
-## Motion
-
-Allowed: card hover lift, soft border highlight, opacity transitions, smooth anchor scroll, reading progress bar, sticky TOC active state.
-
-Forbidden: parallax, heavy animation, 3D effects, distracting hovers.
-
-Respect `prefers-reduced-motion`.
-
-## Layout patterns
-
-- Mostly light reading interface
-- Dark premium hero, ecosystem, newsletter, and footer (`.section--dark`, `.site-footer--dark`)
-- Clean cards, precise spacing, minimal decoration
-- Diagrams/system visuals over stock photography
-
-## Assets
-
-- Favicon/logo: copied from mother repo into `theme/promptanatomy/static/`
-- Wordmark: bolt icon + “Prompt” / “Anatomy” split (`partials/logo.html`)
-
-## Avoid
-
-Childish gradients, generic blog templates, colorful magazine style, oversized illustrations, cluttered grids, weak contrast, tiny low-contrast text. No glow on favicon-sized icons.
-
+# Prompt Anatomy — Design System
+
+**Version:** 1.0 — see [Definition of Done](#definition-of-done-10).
+
+**Maintainer (documentation):** [q-and-a-agent](../.cursor/agents/q-and-a-agent.md) — keeps this file, `COMPONENT_MAP.md`, `VISUAL_QA.md`, and `CHANGELOG.md` aligned with theme changes. **Implementation:** default coding agent under `theme/promptanatomy/`.
+
+**Living examples:** build the site and open `/design-system/` (see [content/pages/design-system.md](../content/pages/design-system.md)).
+
+Canonical visual spec aligned with the [mother repo](https://github.com/DITreneris/promptanatomy) brand. Logo/favicon source of truth: mother `docs/design/logo-favicon.md` and `frontend/public/favicon.svg`.
+
+## Brand feel
+
+Expert, structured, calm, technical but readable, premium, implementation-focused. Homepage must communicate purpose in ~2 seconds.
+
+Visual references: Linear, Stripe, enterprise SaaS docs—not colorful magazine or generic blog templates.
+
+## Hybrid palette (blog spoke)
+
+The blog keeps a **light reading interface** while matching the mother brand on chrome and dark bands:
+
+| Role | Token | Hex | Usage |
+|------|-------|-----|--------|
+| Reading surface | `--color-surface` | `#F7F7F4` | Page background |
+| Elevated surface | `--color-surface-elevated` | `#FFFFFF` | Cards, topic cards, template band |
+| Body text | `--color-text-primary` | `#111827` | Headings, body on light |
+| Prose links | `--color-link` | `#2563EB` | Inline links in articles only |
+| Brand dark | `--color-brand-dark` | `#0B1320` | Hero, ecosystem, newsletter, footer |
+| Brand gold | `--color-brand-accent` | `#CFA73A` | Logo wordmark, dark-band links, accents |
+| Primary CTA | `--color-cta-gradient` | gold gradient | `.btn--primary` only |
+
+**Rule:** Gold = logo, CTAs, and dark sections. Blue = long-form prose links only.
+
+## Token catalog
+
+Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptanatomy/static/css/tokens.css).  
+**Convention:** Define hex/rgba only in `tokens.css`. Other theme CSS files use `var(--token)` only.
+
+### Brand and surfaces
+
+| Token | Allowed in |
+|-------|------------|
+| `--color-brand-dark` | Dark bands, primary button text, theme-color meta |
+| `--color-brand-accent` | Logo anatomy, dark links, progress bar, focus accents |
+| `--color-brand-accent-hover` | Dark-band link hover |
+| `--color-cta-gradient` | `.btn--primary` background only |
+| `--color-cta-border` | `.btn--primary` border |
+| `--color-cta-shadow` | `.btn--primary` box-shadow |
+| `--color-surface` | `body` background |
+| `--color-surface-elevated` | `.card`, `.topic-card`, `.template-band`, `.author-bio` |
+| `--color-surface-dark` | `.section--dark` (alias of brand dark) |
+| `--color-surface-dark-card` | Cards on dark sections, `.btn--secondary` |
+| `--color-surface-glass` | `.ecosystem-card` |
+| `--color-header-scrim` | Sticky `.site-header` |
+
+### Text and borders
+
+| Token | Allowed in |
+|-------|------------|
+| `--color-text-primary` | Body, headings on light |
+| `--color-text-secondary` | Card desc, prose body, nav links |
+| `--color-text-muted` | Meta lines, TOC labels |
+| `--color-text-on-dark` | Text on dark bands |
+| `--color-text-on-dark-muted` | Subheads on dark, footer |
+| `--color-border` | Light UI borders |
+| `--color-border-strong` | `.card:hover` border |
+| `--color-border-dark` | Dark section borders |
+| `--color-border-glass` | Ecosystem cards |
+| `--color-link` / `--color-link-hover` | Prose links, badges on light, takeaway box |
+| `--color-on-accent` | Text on colored icon badges |
+
+### Semantic and accents
+
+| Token | Allowed in |
+|-------|------------|
+| `--color-badge-link-bg` | `.badge` on light sections |
+| `--color-badge-accent-bg` | `.badge` on dark sections |
+| `--color-takeaway-bg` | `.takeaway-box` |
+| `--color-code-inline-bg` | Inline `code` in prose |
+| `--color-code-text` | `pre` text on dark block |
+| `--color-placeholder-gradient` | Article diagram placeholder |
+| `--color-card-visual-gradient` | Featured card visual placeholder |
+| `--color-ecosystem-glow` | `.ecosystem__glow` |
+| `--color-ecosystem-hover-border` | `.ecosystem-card:hover` |
+| `--color-ecosystem-1` … `4` | Ecosystem icon backgrounds |
+| `--color-accent` / `--color-accent-hover` | Legacy aliases → brand gold |
+| `--color-success` / `--color-warning` | Reserved (not used in theme CSS yet) |
+
+### Typography tokens
+
+| Token | Value / role |
+|-------|----------------|
+| `--font-sans` | Inter stack |
+| `--font-mono` | Code blocks |
+| `--text-hero` | Hero `h1` (clamp) |
+| `--text-section` | Section `h2` |
+| `--text-article-title` | Article `h1` |
+| `--text-body` | `1.125rem` (18px) body |
+| `--text-small` | Buttons, card desc |
+| `--text-meta` | Metadata, labels |
+| `--text-prose-h2` | Article `.prose h2` |
+| `--text-prose-h3` | Article `.prose h3` |
+| `--leading-body` | 1.65 |
+| `--leading-tight` | Headings |
+
+### Spacing, layout, effects
+
+| Token | Role |
+|-------|------|
+| `--space-xs` … `--space-2xl` | Component gaps and padding |
+| `--section-padding` | `.section` vertical padding (clamp) |
+| `--container-max` | `75rem` (~1200px) |
+| `--article-max` | `45rem` (720px) prose column |
+| `--radius-sm` … `--radius-xl` | Cards, buttons, badges |
+| `--shadow-sm` / `--shadow-md` / `--shadow-card-hover` / `--shadow-ecosystem-card` | Elevation |
+| `--z-header` / `--z-progress` | Sticky chrome |
+
+## Typography
+
+- Stack: `--font-sans` (Inter via Google Fonts in `base.html`)
+- Hero headline: `--text-hero` (clamp ~32px–72px)
+- Section heading: `--text-section`
+- Article title: `--text-article-title`
+- **Body:** `--text-body` = **18px** (`1.125rem`), line-height `--leading-body` (~1.65)
+- Metadata: `--text-meta` (14px)
+
+## Buttons
+
+Base class: `.btn`. Variants:
+
+| Class | Use | Context |
+|-------|-----|---------|
+| `.btn--primary` | Main CTA | Gold gradient; dark text; header, hero, featured, templates, ecosystem |
+| `.btn--ghost` | Secondary action | Light border on light; light border on `.section--dark` |
+| `.btn--secondary` | Muted action on dark | Navy card background; newsletter (when enabled) |
+
+**Rules:**
+
+- Only `.btn--primary` uses `--color-cta-gradient`.
+- On `.section--dark`, inline links (not buttons) use `--color-brand-accent`, not `--color-link`.
+- Prefer `btn()` macro from `macros/ui.html` for consistent markup.
+- Header may use shorter `cta.header_label` (e.g. “Plans”) while hero keeps `cta.label`.
+
+## Cards
+
+- Default `.card` — title link optional via `card()` macro.
+- `.card--linked` — full-card hit target via `.card__stretched-link` when `href` is passed to `card()` (Start here cards).
+- Newsletter form uses `.newsletter--placeholder` when signup is disabled (visible “Coming soon” badge).
+
+## Layout primitives
+
+CSS-only (see [`layout.css`](../theme/promptanatomy/static/css/layout.css)):
+
+| Class | Role |
+|-------|------|
+| `.container` | Centered max-width column |
+| `.section` | Vertical section padding |
+| `.section--dark` | Dark band background + link colors |
+| `.grid`, `.grid--2`, `.grid--3`, `.grid--topics` | Responsive grids |
+| `.stack` | Vertical flex gap |
+| `.cluster` | Horizontal wrap (hero CTAs) |
+| `.article-layout`, `.article-layout--with-toc` | Article + sidebar TOC |
+
+### Breakpoints
+
+| Width | Behavior |
+|-------|----------|
+| `< 36rem` | Newsletter form stacked |
+| `< 48rem` | Desktop nav hidden; mobile `<details>` menu |
+| `≥ 48rem` | Desktop `.nav` flex; mobile menu hidden |
+| `≥ 64rem` | Article TOC sticky sidebar |
+| `< 64rem` | TOC in collapsible `<details>` above prose (flex `order`) |
+
+## Spacing
+
+- Section padding: `--section-padding` (clamp ~56px–96px)
+- Card padding: `--space-lg` to `--space-xl` for featured
+- Container: `--container-max` (75rem)
+- Article column: `--article-max` (45rem / 720px)
+- Border radius: `--radius-xl` cards, `--radius-md` buttons
+
+## Motion
+
+Allowed: card hover lift, soft border highlight, opacity transitions, smooth anchor scroll, reading progress bar, sticky TOC active state.
+
+Forbidden: parallax, heavy animation, 3D effects, distracting hovers.
+
+Respect `prefers-reduced-motion` (`base.css`).
+
+## Layout patterns
+
+- Mostly light reading interface
+- Dark premium hero, ecosystem, newsletter, and footer (`.section--dark`, `.site-footer--dark`)
+- Clean cards, precise spacing, minimal decoration
+- Diagrams/system visuals over stock photography
+
+## Assets
+
+- Favicon/logo: `theme/promptanatomy/static/` (synced from mother repo)
+- Wordmark: [`partials/logo.html`](../theme/promptanatomy/templates/partials/logo.html) — bolt SVG + split text
+- **Logo bolt color:** inline SVG uses `#fbd304` (mother asset). CSS chrome uses `--color-brand-accent` (`#cfa73a`). Do not unify without mother repo sync.
+
+## Images
+
+| Context | `alt` rule |
+|---------|------------|
+| Article hero (`article_header.html`) | Article title — required when image present |
+| Article card thumbnail | Empty `alt` OK — title is adjacent in link text |
+| Featured card image | Empty `alt` OK — title and summary adjacent |
+| Hub hero / ecosystem map | Optional `image_alt` in `data/hub_sections.yaml` / `data/ecosystem.yaml`; empty = decorative (wrapper may use `aria-hidden`) |
+| Logo SVG | `aria-hidden="true"` in header/footer |
+
+## Composition
+
+| Layer | When to use |
+|-------|-------------|
+| **UI macros** (`macros/ui.html`) | Repeated atoms: section titles, buttons, start-here cards, badges, meta lines |
+| **Partials** (`partials/*.html`) | Page sections with data wiring (hero, ecosystem, article card, footer) |
+| **Layout CSS** | Structure only — no content |
+
+See [`docs/COMPONENT_MAP.md`](COMPONENT_MAP.md) for brief → template mapping.
+
+## Avoid
+
+Childish gradients, generic blog templates, colorful magazine style, oversized illustrations, cluttered grids, weak contrast, tiny low-contrast text. No glow on favicon-sized icons.
+
+## Definition of Done (1.0)
+
+- [x] All tokens documented in this file and defined in `tokens.css`
+- [x] No hardcoded hex in theme CSS except `tokens.css` (enforced by `validate_theme_tokens.py`)
+- [x] UI macros documented; hub sections use `section_heading` with `heading_id`
+- [x] Mobile primary nav works below 48rem
+- [x] `docs/VISUAL_QA.md` checklist available (run before each major release)
+- [x] `/design-system/` style guide page live
+- [x] `make validate && make build` passes

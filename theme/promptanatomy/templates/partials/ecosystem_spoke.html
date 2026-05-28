@@ -1,23 +1,46 @@
+{% from 'macros/ui.html' import section_heading, btn %}
+
 <section class="section section--dark ecosystem" id="ecosystem" aria-labelledby="ecosystem-heading">
+
   <div class="ecosystem__texture" aria-hidden="true"></div>
+
   <div class="ecosystem__glow" aria-hidden="true"></div>
+
   <div class="container ecosystem__inner">
+
     <div class="ecosystem__header">
+
       {% if ECOSYSTEM.image %}
-      <img class="ecosystem__map" src="{{ SITEURL }}/{{ ECOSYSTEM.image }}" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+
+      <img class="ecosystem__map" src="{{ SITEURL }}/{{ ECOSYSTEM.image }}" alt="{{ ECOSYSTEM.image_alt|default('') }}" width="1600" height="900" loading="lazy" decoding="async" />
+
       {% endif %}
-      <h2 id="ecosystem-heading" class="section-title">{{ ECOSYSTEM.title }}</h2>
-      <p class="section-lead">{{ ECOSYSTEM.paragraph }}</p>
-      <a class="btn btn--primary" href="{{ ECOSYSTEM.cta_href }}" rel="noopener noreferrer">{{ ECOSYSTEM.cta_label }}</a>
+
+      {{ section_heading(ECOSYSTEM.title, ECOSYSTEM.paragraph, 'ecosystem-heading') }}
+
+      {{ btn(ECOSYSTEM.cta_href, ECOSYSTEM.cta_label, 'primary', true) }}
+
     </div>
+
     <div class="ecosystem__grid">
+
       {% for item in ECOSYSTEM.cards %}
+
       <a class="ecosystem-card" href="{{ item.url }}" rel="noopener noreferrer" target="_blank">
+
         <div class="ecosystem-card__icon ecosystem-card__icon--{{ item.theme }}" aria-hidden="true">&#9670;</div>
-        <h3 class="ecosystem-card__title">{{ item.title }}</h3>
+
+        <h3 class="ecosystem-card__title">{{ item.title }}<span class="sr-only"> (opens in new tab)</span></h3>
+
         <p class="ecosystem-card__outcome">{{ item.outcome }}</p>
+
       </a>
+
       {% endfor %}
+
     </div>
+
   </div>
+
 </section>
+

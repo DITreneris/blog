@@ -8,6 +8,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-28
+
+### Added
+
+- **Design System 1.0:** Semantic tokens in [tokens.css](theme/promptanatomy/static/css/tokens.css); theme CSS via `var()` only. UI macros (`section_heading`, `btn`, `card`). CSS-only mobile nav. Living style guide at `/design-system/`. [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) v1.0, [docs/VISUAL_QA.md](docs/VISUAL_QA.md), [scripts/validate_theme_tokens.py](scripts/validate_theme_tokens.py) in `make validate` and [vercel.json](vercel.json).
+
+### Changed
+
+- **UX micro-iterations:** Newsletter placeholder (Coming soon). Header CTA `header_label: Plans` on mobile. Category descriptions from [data/categories.yaml](data/categories.yaml). Featured heading; ecosystem `target="_blank"` + screen reader hint. Prose `--text-prose-h2` / `--text-prose-h3`. Nav `aria-current`; Latest lead in [data/hub_sections.yaml](data/hub_sections.yaml). Collapsible mobile TOC; `card--linked` Start here cards. Optional `author.avatar`. `meta_line` without fake default reading time.
+- **Agent docs:** [AGENTS.md](AGENTS.md), q-and-a-agent, Cursor rules aligned with DS 1.0. [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/COMPONENT_MAP.md](docs/COMPONENT_MAP.md), [docs/DEPLOY.md](docs/DEPLOY.md).
+
+## [0.1.0] - 2026-05-28
+
 ### Fixed
 
 - **CI (2026-05-28):** `validate_content.py` hero paths on Linux; workflow uses `python -m pelican` and Node 24 action flag; article frontmatter re-dumped with safe YAML for Pelican.
@@ -42,4 +55,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Deploy requires `data/01_illustrations/` in the repo (or heroes pre-synced under `content/images/`). Vercel build calls `sync_illustrations.py` automatically.
 - `.blog` is an official content spoke; hub conversion URLs are absolute (not relative to `SITEURL`).
 - Optional follow-up: register `promptanatomy.blog` in mother repo `geo-manifest.js` / `ECOSYSTEM_SPOKES`; deepen article copy beyond scaffolded templates.
-- Regression: `python scripts/validate_content.py` and `pelican content -s publishconf.py` — 35 articles, 3 pages.
+- Regression: `python scripts/validate_theme_tokens.py`, `python scripts/validate_content.py`, and `python -m pelican content -s publishconf.py` — 35 articles, 4 pages (includes `/design-system/`).

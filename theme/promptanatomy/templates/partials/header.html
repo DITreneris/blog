@@ -1,14 +1,58 @@
-<header class="site-header" role="banner">
-  <div class="container site-header__inner">
-    {% include 'partials/logo.html' %}
-    <nav class="nav" aria-label="Primary">
-      {% for item in SITE_CONFIG.nav %}
-      <a href="{% if item.external %}{{ item.href }}{% else %}{{ SITEURL }}{{ item.href }}{% endif %}"
-         {% if item.external %}rel="noopener noreferrer"{% endif %}>{{ item.label }}</a>
-      {% endfor %}
-    </nav>
-    <a class="btn btn--primary"
-       href="{% if SITE_CONFIG.cta.external %}{{ SITE_CONFIG.cta.href }}{% else %}{{ SITEURL }}{{ SITE_CONFIG.cta.href }}{% endif %}"
-       {% if SITE_CONFIG.cta.external %}rel="noopener noreferrer"{% endif %}>{{ SITE_CONFIG.cta.label }}</a>
-  </div>
-</header>
+{% from 'macros/ui.html' import btn, nav_aria_current %}
+
+<header class="site-header" role="banner">
+
+  <div class="container site-header__inner">
+
+    {% include 'partials/logo.html' %}
+
+    <details class="nav-mobile">
+
+      <summary class="nav-mobile__trigger">Menu</summary>
+
+      <nav class="nav-mobile__panel" aria-label="Primary">
+
+        {% for item in SITE_CONFIG.nav %}
+
+        <a href="{% if item.external %}{{ item.href }}{% else %}{{ SITEURL }}{{ item.href }}{% endif %}"
+
+           {% if item.external %}rel="noopener noreferrer"{% endif %}
+
+           {{ nav_aria_current(item.href, item.external) }}>{{ item.label }}</a>
+
+        {% endfor %}
+
+      </nav>
+
+    </details>
+
+    <nav class="nav" aria-label="Primary">
+
+      {% for item in SITE_CONFIG.nav %}
+
+      <a href="{% if item.external %}{{ item.href }}{% else %}{{ SITEURL }}{{ item.href }}{% endif %}"
+
+         {% if item.external %}rel="noopener noreferrer"{% endif %}
+
+         {{ nav_aria_current(item.href, item.external) }}>{{ item.label }}</a>
+
+      {% endfor %}
+
+    </nav>
+
+    {{ btn(
+
+      SITE_CONFIG.cta.href if SITE_CONFIG.cta.external else SITEURL ~ SITE_CONFIG.cta.href,
+
+      SITE_CONFIG.cta.header_label|default(SITE_CONFIG.cta.label),
+
+      'primary',
+
+      SITE_CONFIG.cta.external
+
+    ) }}
+
+  </div>
+
+</header>
+

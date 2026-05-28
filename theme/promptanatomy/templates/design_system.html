@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} — {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.summary|default('Design system reference for Prompt Anatomy.')|striptags }}{% endblock %}
+{% block canonical %}{{ SITEURL }}/{{ page.url }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">{{ page.title }}</h1>
+    {% if page.summary %}
+    <p class="section-lead">{{ page.summary }}</p>
+    {% endif %}
+  </div>
+</header>
+{% include 'partials/style_guide.html' %}
+{% if page.content %}
+<section class="section">
+  <div class="container prose">
+    {{ page.content }}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

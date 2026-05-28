@@ -1,10 +1,10 @@
-{% set t = HUB_SECTIONS.templates %}
-<section class="section" id="{{ t.id }}" aria-labelledby="templates-heading">
-  <div class="container">
-    <div class="template-band">
-      <h2 id="templates-heading" class="section-title">{{ t.title }}</h2>
-      <p class="section-lead">{{ t.description }}</p>
-      <a class="btn btn--primary" href="{{ SITEURL }}{{ t.cta_href }}">{{ t.cta_label }}</a>
-    </div>
-  </div>
-</section>
+{% from 'macros/ui.html' import section_heading, btn %}
+{% set t = HUB_SECTIONS.templates %}
+<section class="section" id="{{ t.id }}" aria-labelledby="templates-heading">
+  <div class="container">
+    <div class="template-band">
+      {{ section_heading(t.title, t.description, 'templates-heading') }}
+      {{ btn(SITEURL ~ t.cta_href, t.cta_label) }}
+    </div>
+  </div>
+</section>

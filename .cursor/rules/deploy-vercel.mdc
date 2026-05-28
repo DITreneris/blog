@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Deploy (Vercel)
 
-- Build: `pelican content -s publishconf.py`
+- Build: see `vercel.json` (sync, `validate_theme_tokens.py`, `validate_content.py`, Pelican, sitemap)
 - Output directory: `output`
 - Production SITEURL: `https://promptanatomy.blog` in `publishconf.py` only
 - Dev: `pelicanconf.py` uses relative URLs / localhost

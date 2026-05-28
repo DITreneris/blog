@@ -55,13 +55,24 @@
   gap: var(--space-xl);
 }
 
+@media (max-width: 63.99rem) {
+  .article-layout--with-toc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-layout--with-toc .toc-collapsible {
+    order: -1;
+  }
+}
+
 @media (min-width: 64rem) {
   .article-layout--with-toc {
     grid-template-columns: minmax(0, var(--article-max)) 14rem;
     align-items: start;
   }
 
-  .article-layout__toc {
+  .article-layout--with-toc .article-layout__toc {
     position: sticky;
     top: 6rem;
   }

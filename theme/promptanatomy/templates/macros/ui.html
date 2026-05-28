@@ -1,29 +1,123 @@
 {% macro category_badge(category, url=None) %}
+
   {% set label = category.name if category.name is defined else category %}
+
   {% if url %}
+
   <a class="badge" href="{{ url }}">{{ label }}</a>
+
   {% else %}
+
   <span class="badge">{{ label }}</span>
+
   {% endif %}
+
 {% endmacro %}
+
+
+
+{% macro nav_aria_current(href, external=false) %}
+  {%- if not external -%}
+    {%- if href == '/#latest' and output_file == 'index.html' -%}
+      aria-current="page"
+    {%- elif category is defined and category and href == '/topics/' ~ category.slug ~ '/' -%}
+      aria-current="page"
+    {%- elif page is defined and page and href == '/' ~ page.slug ~ '/' -%}
+      aria-current="page"
+    {%- endif -%}
+  {%- endif -%}
+{% endmacro %}
+
+
 
 {% macro meta_line(article) %}
+
   <p class="meta-line">
-    {% if article.reading_time %}{{ article.reading_time }}{% else %}5 min read{% endif %}
-    {% if article.category %} · {{ article.category.name }}{% endif %}
+
+    {% if article.reading_time %}{{ article.reading_time }}{% endif %}
+
+    {% if article.category %}{% if article.reading_time %} · {% endif %}{{ article.category.name }}{% endif %}
+
     {% if article.modified %}
-    · Updated {{ article.modified|strftime('%Y') }}
+
+    {% if article.reading_time or article.category %} · {% endif %}Updated {{ article.modified|strftime('%Y') }}
+
     {% elif article.date %}
-    · {{ article.date|strftime('%Y') }}
+
+    {% if article.reading_time or article.category %} · {% endif %}{{ article.date|strftime('%Y') }}
+
     {% endif %}
+
   </p>
+
 {% endmacro %}
 
-{% macro section_heading(title, lead=None) %}
-  <h2 class="section-title">{{ title }}</h2>
+
+
+{% macro section_heading(title, lead=None, heading_id=None) %}
+
+  <h2 class="section-title"{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ title }}</h2>
+
   {% if lead %}<p class="section-lead">{{ lead }}</p>{% endif %}
+
 {% endmacro %}
+
+
 
 {% macro hero_image_url(article) %}
+
   {% if article.hero_image %}{{ SITEURL }}/{{ article.hero_image }}{% endif %}
+
 {% endmacro %}
+
+
+
+{% macro btn(href, label, variant='primary', external=false, element='a', disabled=false, type='button') %}
+
+  {% if element == 'button' %}
+
+  <button type="{{ type }}" class="btn btn--{{ variant }}"{% if disabled %} disabled{% endif %}>{{ label }}</button>
+
+  {% else %}
+
+  <a class="btn btn--{{ variant }}" href="{{ href }}"{% if external %} rel="noopener noreferrer"{% endif %}{% if disabled %} aria-disabled="true"{% endif %}>{{ label }}</a>
+
+  {% endif %}
+
+{% endmacro %}
+
+
+
+{% macro card(title, description, href=None, extra_classes='', card_id=None) %}
+
+  {% set cid = card_id if card_id else (title|replace(' ', '-')|lower) %}
+
+  <article class="card{% if href %} card--linked{% endif %}{{ ' ' ~ extra_classes if extra_classes else '' }}">
+
+    {% if href %}
+
+    <a class="card__stretched-link" href="{{ href }}" aria-labelledby="card-title-{{ cid }}"><span class="sr-only">{{ title }}</span></a>
+
+    {% endif %}
+
+    <h3 class="card__title"{% if href %} id="card-title-{{ cid }}"{% endif %}>
+
+      {% if href %}
+
+      <span>{{ title }}</span>
+
+      {% else %}
+
+      {{ title }}
+
+      {% endif %}
+
+    </h3>
+
+    <p class="card__desc">{{ description }}</p>
+
+  </article>
+
+{% endmacro %}
+
+

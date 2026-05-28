@@ -18,6 +18,21 @@
   --color-border-dark: rgba(255, 255, 255, 0.12);
   --color-border-glass: rgba(255, 255, 255, 0.08);
   --color-surface-glass: rgba(255, 255, 255, 0.04);
+  --color-surface-elevated: #ffffff;
+  --color-border-strong: #d1d5db;
+  --color-header-scrim: rgba(247, 247, 244, 0.92);
+  --color-badge-link-bg: rgba(37, 99, 235, 0.1);
+  --color-badge-accent-bg: rgba(207, 167, 58, 0.15);
+  --color-takeaway-bg: rgba(37, 99, 235, 0.06);
+  --color-code-inline-bg: #eef2ff;
+  --color-code-text: #e5e7eb;
+  --color-placeholder-gradient: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%);
+  --color-card-visual-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --color-ecosystem-glow: radial-gradient(circle at 50% 10%, rgba(255, 190, 0, 0.18), transparent 60%);
+  --color-ecosystem-hover-border: rgba(255, 200, 0, 0.5);
+  --color-cta-border: rgba(255, 255, 255, 0.2);
+  --color-cta-shadow: rgba(255, 179, 0, 0.3);
+  --color-on-accent: #ffffff;
 
   /* Reading links (prose) */
   --color-link: #2563eb;
@@ -45,6 +60,8 @@
   --text-body: 1.125rem;
   --text-small: 0.9375rem;
   --text-meta: 0.875rem;
+  --text-prose-h2: 1.75rem;
+  --text-prose-h3: 1.25rem;
   --leading-body: 1.65;
   --leading-tight: 1.15;
 

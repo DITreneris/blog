@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% from 'macros/ui.html' import section_heading %}
 {% block title %}{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}{% endblock %}
 {% block canonical %}{{ SITEURL }}/{% endblock %}
 
@@ -20,7 +21,7 @@
 
 <section class="section" id="latest" aria-labelledby="latest-heading">
   <div class="container">
-    <h2 id="latest-heading" class="section-title">Latest articles</h2>
+    {{ section_heading(HUB_SECTIONS.latest.title, HUB_SECTIONS.latest.lead, heading_id='latest-heading') }}
     <div class="grid grid--2">
       {% for article in articles|sort(attribute='date', reverse=True) %}
         {% if not article.featured %}

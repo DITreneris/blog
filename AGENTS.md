@@ -7,8 +7,8 @@ Build and maintain a lean Python (Pelican) static knowledge hub for **https://pr
 ## Non-negotiables
 
 - Content lives in `content/` as Markdown; never hardcode articles in templates.
-- Run `make validate && make build` before claiming done.
-- Match design tokens in `docs/DESIGN_SYSTEM.md` and `theme/promptanatomy/static/css/tokens.css`.
+- Run `make validate && make build` before claiming done (`make validate` includes `validate_theme_tokens.py` — no hex outside `tokens.css`).
+- Match design tokens in `docs/DESIGN_SYSTEM.md` (version **1.0**) and `theme/promptanatomy/static/css/tokens.css`.
 - US English only (`lang="en-US"`).
 - Production URL: `https://promptanatomy.blog` (see `publishconf.py` SITEURL).
 - Minimize scope: ship MWB before optional features (search, comments, newsletter API).
@@ -44,9 +44,11 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 ### Change theme
 
 - Edit only under `theme/promptanatomy/`
-- Use CSS variables from `tokens.css`; no inline brand hex in templates
+- Define colors in `tokens.css` only; use `var(--token)` in other CSS files (`validate_theme_tokens.py` enforces this)
+- Prefer UI macros in `theme/promptanatomy/templates/macros/ui.html` (`btn`, `card`, `section_heading`) for repeated patterns
 - Preserve semantic HTML: `header`, `nav`, `main`, `article`, `footer`
-- Update `docs/COMPONENT_MAP.md` if adding/removing partials
+- Follow `docs/DESIGN_SYSTEM.md` (v1.0) and run `docs/VISUAL_QA.md` before major theme releases
+- Update `docs/COMPONENT_MAP.md` if adding/removing partials; ask **q-and-a-agent** to sync `DESIGN_SYSTEM.md` / `CHANGELOG.md`
 
 ### Deploy
 
@@ -62,17 +64,19 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 ## References
 
 - `docs/ARCHITECTURE.md` — build pipeline, URLs
-- `docs/DESIGN_SYSTEM.md` — tokens, typography, motion
+- `docs/DESIGN_SYSTEM.md` — design system v1.0 (tokens, buttons, macros, DoD)
+- `docs/VISUAL_QA.md` — visual and accessibility checklist before release
 - `docs/COMPONENT_MAP.md` — brief → Jinja partial mapping
 - `docs/DEPLOY.md` — GitHub → Vercel → domain
 - `CHANGELOG.md` — release notes ([q-and-a-agent](.cursor/agents/q-and-a-agent.md) maintains)
+- Live style guide (after build): `/design-system/`
 
 ## Agent roles
 
 | Task | Agent | When |
 |------|-------|------|
-| Questions, docs, **CHANGELOG** | `q-and-a-agent` | Explain how things work; update `CHANGELOG.md` after meaningful changes |
-| Theme / Pelican implementation | default agent | Templates, CSS, `data/*.yaml`, content |
+| Questions, **CHANGELOG**, design-system **docs** | `q-and-a-agent` | How things work; update `CHANGELOG.md`, `DESIGN_SYSTEM.md`, `COMPONENT_MAP.md`, `VISUAL_QA.md` after meaningful theme/doc changes |
+| Theme / Pelican **implementation** | default agent | Templates, CSS, `data/*.yaml`, content; leave changelog/design-doc bullets for Q&A if not updating docs inline |
 
 Agent definition: `.cursor/agents/q-and-a-agent.md`
 

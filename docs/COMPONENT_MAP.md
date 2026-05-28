@@ -1,11 +1,14 @@
 # Component Map — Brief → Jinja
 
+Maps product brief names to theme files. When adding or renaming partials, update this file and [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) (maintainer: [q-and-a-agent](../.cursor/agents/q-and-a-agent.md)).
+
 | Brief component | Template path | Data source |
 |-----------------|---------------|-------------|
 | Header | `partials/header.html` | `SITE_CONFIG` (from `data/site.yaml`) |
 | Logo | `partials/logo.html` | `SITE_CONFIG.brand` |
 | Footer | `partials/footer.html` | `SITE_CONFIG.footer`, `SITE_CONFIG.organization` |
-| Container / Section / Grid / Card | `macros/layout.html` | CSS classes |
+| Layout primitives | CSS classes in `static/css/layout.css` (`.container`, `.section`, `.grid`, `.stack`, `.cluster`) | — |
+| UI macros | `macros/ui.html` | `section_heading`, `category_badge`, `meta_line`, `hero_image_url`, `btn`, `card`, `nav_aria_current` |
 | BlogHero | `partials/blog_hero.html` | `HUB_SECTIONS` |
 | FeaturedArticle | `partials/featured_article.html` | Pelican article with `featured: true` |
 | StartHereCards | `partials/start_here_cards.html` | `HUB_SECTIONS.start_here` |
@@ -18,11 +21,11 @@
 | Article hero image | `content/images/articles/{slug}/hero.png` | `data/illustrations.yaml` + `scripts/sync_illustrations.py` |
 | Hub hero / ecosystem art | `blog_hero.html`, `ecosystem_spoke.html` | `HUB_SECTIONS.hero.image`, `ECOSYSTEM.image` |
 | KeyTakeawayBox | `partials/key_takeaway.html` | `article.key_takeaway` |
-| TableOfContents | `partials/toc.html` + `toc-active.js` | Article headings (JS scan) |
+| TableOfContents | `partials/toc.html` + `toc-active.js` | Article headings (JS scan); `<details class="toc-collapsible">` on mobile |
 | ReadingProgress | `partials/reading_progress.html` + `reading-progress.js` | Article pages only |
 | RelatedArticles | `partials/related_articles.html` | Same category, exclude current |
 | FAQBlock | `partials/faq.html` | `article.faq` metadata |
-| AuthorBio | `partials/author_bio.html` | `SITE_CONFIG.author` |
+| AuthorBio | `partials/author_bio.html` | `SITE_CONFIG.author` (optional `author.avatar` image path) |
 | Schema Article | `partials/schema_article.html` | `article` |
 | Schema Breadcrumb | `partials/schema_breadcrumb.html` | Page context |
 
@@ -34,3 +37,4 @@
 | Article | `article.html` | Progress → Header → Takeaway → Prose (+ TOC) → Related → Author → FAQ |
 | Static page | `page.html` | Header → Page title → Prose |
 | Category | `category.html` | Header → Title → ArticleCard grid |
+| Design system (style guide) | `design_system.html` + `partials/style_guide.html` | Static page `content/pages/design-system.md` |

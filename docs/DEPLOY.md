@@ -10,7 +10,7 @@
 
 1. Import GitHub repo in Vercel.
 2. Framework preset: **Other**
-3. Build command: `pip install -r requirements.txt && pelican content -s publishconf.py`
+3. Build command: see `vercel.json` (sync images, `validate_theme_tokens.py`, `validate_content.py`, Pelican, sitemap)
 4. Output directory: `output`
 5. Install command: `pip install -r requirements.txt`
 6. Python version: 3.11+ (set in Project Settings if needed)
@@ -48,9 +48,18 @@ make build
 make serve
 ```
 
+Without `make`:
+
+```bash
+python scripts/validate_theme_tokens.py
+python scripts/validate_content.py
+python -m pelican content -s publishconf.py
+python scripts/generate_sitemap.py
+```
+
 ## CI (optional)
 
-GitHub Action can run `make validate && make build` on PR; Vercel handles production builds on merge to `main`.
+GitHub Action can run `make validate && make build` on PR (includes theme token lint); Vercel handles production builds on merge to `main`.
 
 ## Secrets
 

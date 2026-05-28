@@ -19,7 +19,7 @@
     a.href = "#" + heading.id;
     a.textContent = heading.textContent;
     if (heading.tagName === "H3") {
-      a.style.paddingLeft = "0.75rem";
+      a.classList.add("toc__link--h3");
     }
     li.appendChild(a);
     list.appendChild(li);

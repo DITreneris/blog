@@ -5,7 +5,10 @@ PYTHON ?= python
 sync-images:
 	$(PYTHON) scripts/sync_illustrations.py
 
-validate:
+validate-theme:
+	$(PYTHON) scripts/validate_theme_tokens.py
+
+validate: validate-theme
 	$(PYTHON) scripts/validate_content.py
 
 build: validate

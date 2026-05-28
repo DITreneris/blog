@@ -21,10 +21,12 @@ Open http://localhost:8000
 
 | Command | Description |
 |---------|-------------|
-| `make validate` | Check article/page frontmatter |
+| `make validate` | Theme token lint + article/page frontmatter |
 | `make build` | Production build (`publishconf.py`) |
 | `make build-dev` | Local build (`pelicanconf.py`) |
 | `make serve` | Build and serve `output/` on port 8000 |
+
+Without `make` (Windows): `python scripts/validate_theme_tokens.py`, `python scripts/validate_content.py`, `python -m pelican content -s publishconf.py`
 
 ## Deploy
 
@@ -35,10 +37,13 @@ Production URL is set in `publishconf.py`: `https://promptanatomy.blog`
 ## Docs
 
 - [Architecture](docs/ARCHITECTURE.md)
-- [Design system](docs/DESIGN_SYSTEM.md)
+- [Design system](docs/DESIGN_SYSTEM.md) (v1.0)
+- [Visual QA checklist](docs/VISUAL_QA.md)
 - [Component map](docs/COMPONENT_MAP.md)
 - [Agent instructions](AGENTS.md)
 - [Changelog](CHANGELOG.md)
+
+After `make serve`, open `/design-system/` for a live component reference.
 
 ## Stack
 
