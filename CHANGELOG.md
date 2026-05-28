@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - **Vercel deploy:** [`vercel.json`](vercel.json) uses `framework: null`, project `.venv` for PEP 668-safe installs, and `.venv/bin/python` for Pelican build. [`.python-version`](.python-version) pins 3.11. [docs/DEPLOY.md](docs/DEPLOY.md) troubleshooting.
+- **Preview styling:** [`publishconf.py`](publishconf.py) sets `SITEURL` from `VERCEL_URL` on preview deploys so CSS and images load on `*.vercel.app`; canonical/feeds stay on `CANONICAL_SITEURL`.
 
 ## [0.2.0] - 2026-05-28
 

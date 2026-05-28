@@ -24,6 +24,9 @@ SITENAME = SITE_CONFIG["brand"]["name"]
 SITESUBTITLE = SITE_CONFIG["brand"]["tagline"]
 SITEURL = ""
 RELATIVE_URLS = True
+CANONICAL_SITEURL = SITE_CONFIG.get("brand", {}).get(
+    "site_url", "https://promptanatomy.blog"
+)
 
 DEFAULT_LANG = "en"
 TIMEZONE = "America/New_York"

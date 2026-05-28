@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{ page.title }} — {{ SITENAME }}{% endblock %}
 {% block description %}{{ page.summary|default(SITE_CONFIG.brand.description)|striptags }}{% endblock %}
-{% block canonical %}{{ SITEURL }}/{{ page.url }}{% endblock %}
+{% block canonical %}{{ CANONICAL_SITEURL }}/{{ page.url }}{% endblock %}
 
 {% block open_graph %}
 <meta property="og:type" content="website" />

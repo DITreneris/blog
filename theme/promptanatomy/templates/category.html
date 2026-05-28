@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
-{% block canonical %}{{ SITEURL }}/{{ category.url }}{% endblock %}
+{% block canonical %}{{ CANONICAL_SITEURL }}/{{ category.url }}{% endblock %}
 
 {% block structured_data %}
 {% include 'partials/schema_breadcrumb.html' %}

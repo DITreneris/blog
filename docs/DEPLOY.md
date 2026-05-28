@@ -12,7 +12,7 @@
 2. Framework preset: **Other**
 3. Build command: see `vercel.json` (sync images, `validate_theme_tokens.py`, `validate_content.py`, Pelican, sitemap)
 4. Output directory: `output`
-5. Install command: `pip install -r requirements.txt`
+5. Install command: see `vercel.json` (project `.venv` — PEP 668 safe)
 6. Python version: 3.11+ (set in Project Settings if needed)
 
 `vercel.json` sets `"framework": null` so Vercel treats the project as a **static build** (Pelican → `output/`), not a Python serverless app. `.python-version` pins 3.11.
@@ -44,14 +44,19 @@ This repo targets **Vercel + promptanatomy.blog**. GitHub Pages is not configure
 
 ## Production URL
 
-`publishconf.py` sets:
+`publishconf.py` sets `CANONICAL_SITEURL = "https://promptanatomy.blog"` for canonical links and feeds. **`SITEURL`** is resolved at build time:
 
-```python
-SITEURL = "https://promptanatomy.blog"
-RELATIVE_URLS = False
-```
+| Build context | `SITEURL` (assets, nav, images) |
+|---------------|----------------------------------|
+| Local `publishconf` | `https://promptanatomy.blog` |
+| Vercel preview (`*.vercel.app`) | `https://<VERCEL_URL>` |
+| Vercel production | `VERCEL_PROJECT_PRODUCTION_URL` or canonical fallback |
 
-Verify canonical links and feeds use this base after deploy.
+Without this, preview deploys load CSS from `promptanatomy.blog` and render unstyled HTML.
+
+### Unstyled site on `*.vercel.app`
+
+If the page is plain blue links and no layout, open DevTools → Network and check CSS URLs. They must match the host you are viewing (e.g. `blog-….vercel.app/static/css/…`), not only `promptanatomy.blog`. Redeploy after `publishconf.py` includes Vercel `SITEURL` resolution.
 
 ## Custom domain
 
@@ -62,7 +67,7 @@ Verify canonical links and feeds use this base after deploy.
 ## Branch deploys
 
 - `main` → production
-- Other branches → preview URLs (optional); preview may need `SITEURL` override—production build uses `publishconf.py` only
+- Other branches → preview URLs; `SITEURL` follows `VERCEL_URL` automatically
 
 ## Local verification before push
 

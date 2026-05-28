@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}{{ SITENAME }}{% if SITESUBTITLE %} — {{ SITESUBTITLE }}{% endif %}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ SITE_CONFIG.brand.description }}{% endblock %}" />
-  <link rel="canonical" href="{% block canonical %}{{ SITEURL }}/{% endblock %}" />
+  <link rel="canonical" href="{% block canonical %}{{ CANONICAL_SITEURL }}/{% endblock %}" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="{{ SITENAME }}" />
   {% block open_graph %}

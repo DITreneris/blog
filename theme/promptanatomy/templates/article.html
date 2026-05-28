@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
 {% block description %}{{ article.summary|striptags|truncate(160) }}{% endblock %}
-{% block canonical %}{{ SITEURL }}/{{ article.url }}{% endblock %}
+{% block canonical %}{{ CANONICAL_SITEURL }}/{{ article.url }}{% endblock %}
 
 {% block open_graph %}
 <meta property="og:type" content="article" />

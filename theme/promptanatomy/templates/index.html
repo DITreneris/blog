@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% from 'macros/ui.html' import section_heading %}
 {% block title %}{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}{% endblock %}
-{% block canonical %}{{ SITEURL }}/{% endblock %}
+{% block canonical %}{{ CANONICAL_SITEURL }}/{% endblock %}
 
 {% block content %}
 {% set ns = namespace(featured=none) %}
