@@ -10,9 +10,9 @@
 
 1. Import GitHub repo in Vercel.
 2. Framework preset: **Other**
-3. Build command: see `vercel.json` (sync images, `validate_theme_tokens.py`, `validate_content.py`, Pelican, sitemap)
+3. Build command: `bash scripts/vercel_build.sh` (see `vercel.json`; steps stay under Vercel’s 256-character limit)
 4. Output directory: `output`
-5. Install command: see `vercel.json` (project `.venv` — PEP 668 safe)
+5. Install command: `bash scripts/vercel_install.sh` (npm + project `.venv` — PEP 668 safe)
 6. Python version: 3.11+ (set in Project Settings if needed)
 
 `vercel.json` sets `"framework": null` so Vercel treats the project as a **static build** (Pelican → `output/`), not a Python serverless app. `.python-version` pins 3.11.
@@ -36,7 +36,7 @@ Do not add `api/` or `app.py` unless you intend serverless functions.
 
 Vercel’s system Python is managed by **uv**; plain `pip install` is blocked.
 
-**Fix:** [`vercel.json`](vercel.json) creates a project `.venv` in `installCommand` and runs the build with `.venv/bin/python`. Do not use bare `pip install -r requirements.txt` on the system interpreter.
+**Fix:** [`scripts/vercel_install.sh`](scripts/vercel_install.sh) creates a project `.venv`; [`scripts/vercel_build.sh`](scripts/vercel_build.sh) runs Pelican and validation. Do not use bare `pip install -r requirements.txt` on the system interpreter.
 
 ### GitHub Pages (`*.github.io/blog`) shows 404
 

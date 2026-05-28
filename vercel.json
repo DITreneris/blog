@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "npm ci && python -m venv .venv && .venv/bin/python -m pip install --upgrade pip && .venv/bin/pip install -r requirements.txt",
-  "buildCommand": "npm run build:analytics && .venv/bin/python scripts/sync_illustrations.py && .venv/bin/python scripts/generate_brand_assets.py && .venv/bin/python scripts/validate_theme_tokens.py && .venv/bin/python scripts/validate_content.py && .venv/bin/python -m pelican content -s publishconf.py && .venv/bin/python scripts/generate_sitemap.py",
+  "installCommand": "bash scripts/vercel_install.sh",
+  "buildCommand": "bash scripts/vercel_build.sh",
   "outputDirectory": "output"
 }

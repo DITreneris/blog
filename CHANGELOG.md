@@ -8,6 +8,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **Vercel `buildCommand` length** — moved install/build steps into [`scripts/vercel_install.sh`](scripts/vercel_install.sh) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh); [`vercel.json`](vercel.json) now uses short `bash` commands (256-character schema limit).
+
 ### Added
 
 - **Frontend audit implementation (build + SEO + polish).**
