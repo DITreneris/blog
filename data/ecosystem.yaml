@@ -1,0 +1,22 @@
+title: "Hub: choose your direction"
+paragraph: "The main entry point to the ecosystem — libraries and systems matched to your goal."
+image: images/hub/ecosystem.png
+cta_label: "Plans and access"
+cta_href: "https://www.promptanatomy.app/#pricing"
+cards:
+  - title: "Library (AI automation)"
+    outcome: "Ready-made prompts and workflow templates."
+    url: "https://www.promptanatomy.info/en/"
+    theme: 4
+  - title: "Content system (marketing)"
+    outcome: "Marketing content prompts and templates."
+    url: "https://www.promptanatomy.space/en/"
+    theme: 2
+  - title: "Recruitment system (HR)"
+    outcome: "Search, recruitment and assessment prompts."
+    url: "https://ditreneris.github.io/personalas/"
+    theme: 1
+  - title: "Operations center (CEO/COO)"
+    outcome: "Prompts and templates for leadership."
+    url: "https://www.promptanatomy.ceo/"
+    theme: 3

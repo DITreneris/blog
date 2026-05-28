@@ -1,0 +1,13 @@
+---
+description: Vercel deployment settings
+globs: vercel.json,publishconf.py,docs/DEPLOY.md
+alwaysApply: false
+---
+
+# Deploy (Vercel)
+
+- Build: `pelican content -s publishconf.py`
+- Output directory: `output`
+- Production SITEURL: `https://promptanatomy.blog` in `publishconf.py` only
+- Dev: `pelicanconf.py` uses relative URLs / localhost
+- Do not add Node build steps unless explicitly requested

@@ -1,0 +1,8 @@
+{% set author = SITE_CONFIG.author %}
+<aside class="author-bio container" aria-label="About the author">
+  <div class="author-bio__avatar" role="img" aria-label="Author avatar placeholder"></div>
+  <div>
+    <p><strong>{{ author.name }}</strong> — {{ author.title }}</p>
+    <p>{{ author.bio }}</p>
+  </div>
+</aside>

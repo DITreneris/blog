@@ -1,0 +1,132 @@
+brand:
+  name: "Prompt Anatomy"
+  name_prompt: "Prompt"
+  name_anatomy: "Anatomy"
+  tagline: "Structured AI implementation for teams"
+  site_url: "https://promptanatomy.blog"
+  description: "Prompt Anatomy helps teams turn random AI usage into structured workflows, policies, and implementation systems."
+
+hub:
+  site_url: "https://www.promptanatomy.app"
+  pricing_url: "https://www.promptanatomy.app/#pricing"
+  training_url: "https://www.promptanatomy.app/anatomy/"
+  faq_url: "https://www.promptanatomy.app/#faq"
+  what_is_url: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
+  methodology_url: "https://www.promptanatomy.app/#methodology"
+  ecosystem_url: "https://www.promptanatomy.app/#ekosistema"
+
+organization:
+  email: "info@promptanatomy.app"
+  mailing_address: "Prompt Anatomy, 1311 Park St, Unit #654, Alameda, CA 94501, US"
+
+nav:
+  - label: "Articles"
+    href: "/#latest"
+    external: false
+  - label: "Frameworks"
+    href: "/topics/framework/"
+    external: false
+  - label: "AI Agents"
+    href: "/topics/ai-agents/"
+    external: false
+  - label: "Training"
+    href: "https://www.promptanatomy.app/anatomy/"
+    external: true
+  - label: "Pricing"
+    href: "https://www.promptanatomy.app/#pricing"
+    external: true
+
+cta:
+  label: "Choose a plan"
+  href: "https://www.promptanatomy.app/#pricing"
+  external: true
+
+footer:
+  tagline: "Prompt Anatomy – an interactive training system for working with AI."
+  columns:
+    - title: "Explore"
+      links:
+        - label: "What is Prompt Anatomy"
+          href: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
+          external: true
+        - label: "Methodology"
+          href: "https://www.promptanatomy.app/#methodology"
+          external: true
+        - label: "Ecosystem"
+          href: "https://www.promptanatomy.app/#ekosistema"
+          external: true
+        - label: "Pricing"
+          href: "https://www.promptanatomy.app/#pricing"
+          external: true
+    - title: "Product"
+      links:
+        - label: "Training"
+          href: "https://www.promptanatomy.app/anatomy/"
+          external: true
+        - label: "FAQ"
+          href: "https://www.promptanatomy.app/#faq"
+          external: true
+        - label: "Choose a plan"
+          href: "https://www.promptanatomy.app/#pricing"
+          external: true
+        - label: "Articles"
+          href: "/#latest"
+          external: false
+        - label: "About"
+          href: "/about/"
+          external: false
+    - title: "Network"
+      links:
+        - label: "Public group (Telegram)"
+          href: "https://t.me/prompt_anatomy"
+          external: true
+        - label: "LinkedIn"
+          href: "https://www.linkedin.com/in/staniulis"
+          external: true
+        - label: "X (Twitter)"
+          href: "https://x.com/TStaniulis_NFT"
+          external: true
+        - label: "PromptAnatomy Cloud"
+          href: "https://promptanatomy.cloud/"
+          external: true
+        - label: "PromptAnatomy Pro"
+          href: "https://promptanatomy.pro/"
+          external: true
+        - label: "Library (AI automation)"
+          href: "https://www.promptanatomy.info/en/"
+          external: true
+        - label: "Content system (marketing)"
+          href: "https://www.promptanatomy.space/en/"
+          external: true
+        - label: "Recruitment system (HR)"
+          href: "https://ditreneris.github.io/personalas/"
+          external: true
+        - label: "Operations center (CEO/COO)"
+          href: "https://www.promptanatomy.ceo/"
+          external: true
+  legal:
+    - label: "Privacy Policy"
+      href: "/privacy/"
+      external: false
+    - label: "Terms of Service"
+      href: "/terms/"
+      external: false
+    - label: "Cookies & tracking"
+      href: "/privacy/#cookies"
+      external: false
+  creator: "creator: tomas staniulis"
+
+author:
+  name: "Prompt Anatomy"
+  title: "AI Implementation"
+  bio: "Field notes, frameworks, and implementation systems for teams building controlled AI workflows."
+
+social:
+  - label: "LinkedIn"
+    href: "https://www.linkedin.com/in/staniulis"
+  - label: "X (Twitter)"
+    href: "https://x.com/TStaniulis_NFT"
+  - label: "Telegram"
+    href: "https://t.me/prompt_anatomy"
+
+locale: en-US

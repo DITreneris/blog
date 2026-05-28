@@ -1,0 +1,15 @@
+---
+description: Design tokens and CSS conventions
+globs: theme/**/*,docs/DESIGN_SYSTEM.md
+alwaysApply: false
+---
+
+# Design System
+
+- Use CSS variables from `theme/promptanatomy/static/css/tokens.css` only.
+- Do not hardcode hex colors in Jinja templates.
+- Light reading surfaces (`--color-surface`); dark bands use `.section--dark`.
+- Body 18–20px; article column max 720px; container 1180–1240px.
+- Accents sparingly (`--color-accent`).
+- Allowed motion: card hover, reading progress, TOC active state.
+- Forbidden: parallax, heavy animation, neon gradients, magazine clutter.

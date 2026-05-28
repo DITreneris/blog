@@ -1,0 +1,35 @@
+<footer class="site-footer site-footer--dark" role="contentinfo">
+  <div class="container site-footer__grid">
+    <div>
+      {% include 'partials/logo.html' %}
+      <p class="site-footer__brand">{{ SITE_CONFIG.footer.tagline }}</p>
+    </div>
+    {% for column in SITE_CONFIG.footer.columns %}
+    <div>
+      <h2 class="site-footer__column-title">{{ column.title }}</h2>
+      <ul class="site-footer__links">
+        {% for link in column.links %}
+        <li>
+          <a href="{% if link.external %}{{ link.href }}{% else %}{{ SITEURL }}{{ link.href }}{% endif %}"
+             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="container site-footer__bottom">
+    <nav class="site-footer__legal" aria-label="Legal">
+      <span>&copy; {{ CURRENT_YEAR }} Prompt Anatomy</span>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
+      {% for link in SITE_CONFIG.footer.legal %}
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="{% if link.external %}{{ link.href }}{% else %}{{ SITEURL }}{{ link.href }}{% endif %}"
+         {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+      {% endfor %}
+    </nav>
+    <p class="site-footer__meta">{{ SITE_CONFIG.footer.creator }}</p>
+    <p class="site-footer__meta">Mailing address: {{ SITE_CONFIG.organization.mailing_address }}</p>
+  </div>
+</footer>

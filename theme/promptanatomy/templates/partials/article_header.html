@@ -1,0 +1,13 @@
+{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url %}
+<header class="article-header">
+  <div class="container">
+    {{ category_badge(article.category, SITEURL ~ '/' ~ article.category.url if article.category else none) }}
+    <h1 class="article-header__title">{{ article.title }}</h1>
+    {{ meta_line(article) }}
+    {% if article.hero_image %}
+    <img class="article-header__diagram" src="{{ hero_image_url(article) }}" alt="{{ article.title|striptags|replace('\"', '')|replace('"', '') }}" width="1600" height="900" loading="eager" decoding="async" />
+    {% else %}
+    <div class="article-header__diagram article-header__diagram--placeholder" role="img" aria-label="Diagram placeholder"></div>
+    {% endif %}
+  </div>
+</header>

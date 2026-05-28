@@ -1,0 +1,14 @@
+---
+description: Pelican content and template boundaries
+globs: pelicanconf.py,publishconf.py,content/**/*,theme/**/*
+alwaysApply: false
+---
+
+# Pelican Architecture
+
+- Articles: `content/articles/*.md` → `/articles/{slug}/`
+- Pages: `content/pages/*.md` → `/pages/{slug}/` or configured SAVE_AS
+- Site/nav copy: `data/site.yaml`, `data/categories.yaml`, `data/hub_sections.yaml`
+- Partials under `theme/promptanatomy/templates/partials/` match names in `docs/COMPONENT_MAP.md`
+- Pass explicit context to includes; avoid business logic in templates
+- Draft posts: `status: draft` — exclude via Pelican `DEFAULT_METADATA` / readers

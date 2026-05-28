@@ -1,0 +1,14 @@
+<header class="site-header" role="banner">
+  <div class="container site-header__inner">
+    {% include 'partials/logo.html' %}
+    <nav class="nav" aria-label="Primary">
+      {% for item in SITE_CONFIG.nav %}
+      <a href="{% if item.external %}{{ item.href }}{% else %}{{ SITEURL }}{{ item.href }}{% endif %}"
+         {% if item.external %}rel="noopener noreferrer"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <a class="btn btn--primary"
+       href="{% if SITE_CONFIG.cta.external %}{{ SITE_CONFIG.cta.href }}{% else %}{{ SITEURL }}{{ SITE_CONFIG.cta.href }}{% endif %}"
+       {% if SITE_CONFIG.cta.external %}rel="noopener noreferrer"{% endif %}>{{ SITE_CONFIG.cta.label }}</a>
+  </div>
+</header>

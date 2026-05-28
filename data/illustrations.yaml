@@ -1,0 +1,329 @@
+# One row per PNG in data/01_illustrations/. Source of truth for sync + new_post.
+illustrations:
+  # --- Existing articles (batch A) ---
+  - id: gov-model-is-not-the-system
+    source: Governance/Model_is_not_the_system.png
+    slug: the-model-is-not-the-system
+    title: "The Model Is Not the System"
+    category: Framework
+    usage: [hero, og]
+    status: mapped
+    replaces_stub: true
+    featured: true
+
+  - id: agents-orchestrators
+    source: Agents/prompta_anatomy_orchestrators.png
+    slug: how-to-design-an-ai-agent-workflow
+    title: "How to Design an AI Agent Workflow"
+    category: AI Agents
+    usage: [hero, og]
+    status: mapped
+    replaces_stub: true
+
+  - id: memes-vibe-55
+    source: Memes/55_Prompt_Anatomy.png
+    slug: 10-signs-your-company-is-vibe-prompting
+    title: "10 Signs Your Company Is Vibe Prompting"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  - id: basic-output-127
+    source: Basic/127_Prompt_Anatomy.png
+    slug: prompt-engineering-vs-ai-workflow-engineering
+    title: "Prompt Engineering vs AI Workflow Engineering"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  - id: gov-memory-types
+    source: Governance/memory_types.png
+    slug: what-is-context-architecture
+    title: "What Is Context Architecture?"
+    category: Framework
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  - id: gov-memory-types-article
+    source: Governance/memory_types.png
+    slug: memory-types-for-ai-systems
+    title: "Memory Types for AI Systems"
+    category: Framework
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  - id: memes-hype-49
+    source: Memes/49_Prompt_Anatomy.png
+    slug: your-company-does-not-need-more-ai-tools
+    title: "Your Company Does Not Need More AI Tools"
+    category: Opinion
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  # --- Basic (new posts) ---
+  - id: basic-116
+    source: Basic/116_Prompt_Anatomy.png
+    slug: prompt-anatomy-foundations
+    title: "Prompt Anatomy Foundations"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: basic-119
+    source: Basic/119_Prompt_Anatomy.png
+    slug: prompt-anatomy-workflow-basics
+    title: "Workflow Basics for Predictable AI Outputs"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: basic-121
+    source: Basic/121_Prompt_Anatomy.png
+    slug: context-layers-in-prompt-design
+    title: "Context Layers in Prompt Design"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+
+  - id: basic-128
+    source: Basic/128_Prompt_Anatomy.png
+    slug: evaluation-hooks-for-ai-workflows
+    title: "Evaluation Hooks for AI Workflows"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: basic-129
+    source: Basic/129_Prompt_Anatomy.png
+    slug: handoff-rules-between-humans-and-ai
+    title: "Handoff Rules Between Humans and AI"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: basic-133
+    source: Basic/133_Prompt_Anatomy.png
+    slug: team-rituals-for-ai-implementation
+    title: "Team Rituals for AI Implementation"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: basic-162
+    source: Basic/162_Prompt_Anatomy.png
+    slug: ai-implementation-maturity-ladder
+    title: "The AI Implementation Maturity Ladder"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: basic-ai-types
+    source: Basic/AI_Types_of_prompt.png
+    slug: types-of-prompts-for-business-workflows
+    title: "Types of Prompts for Business Workflows"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+
+  - id: basic-gemini-blueprint
+    source: Basic/Gemini_Generated_Image_o4hp23o4hp23o4hp.png
+    slug: structured-prompt-system-blueprint
+    title: "Structured Prompt System Blueprint"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: basic-fludd
+    source: Basic/Prompt_Anatomy_Fludd.png
+    slug: prompt-anatomy-framework-overview
+    title: "Prompt Anatomy Framework Overview"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  # --- Agents (new posts) ---
+  - id: agents-scrapper
+    source: Agents/AI_bot_scrapper.png
+    slug: ai-bot-for-research-scraping
+    title: "AI Bot for Research Scraping"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: agents-tender
+    source: Agents/AI_tender_pipeline.png
+    slug: ai-tender-response-pipeline
+    title: "AI Tender Response Pipeline"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: agents-gemini-handoff
+    source: Agents/Gemini_Generated_Image_kmw9r6kmw9r6kmw9.png
+    slug: multi-agent-handoff-pattern
+    title: "Multi-Agent Handoff Pattern"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: agents-outlook
+    source: Agents/outlook_reach.png
+    slug: ai-outreach-with-outlook-guardrails
+    title: "AI Outreach with Outlook Guardrails"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: agents-telegram
+    source: Agents/Telegram_bot.png
+    slug: telegram-bot-for-ops-alerts
+    title: "Telegram Bot for Ops Alerts"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: agents-twitter
+    source: Agents/Twitter_bot.png
+    slug: twitter-engagement-bot-with-limits
+    title: "Twitter Engagement Bot with Limits"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  # --- Governance (new posts) ---
+  - id: gov-113
+    source: Governance/113_Prompt_Anatomy.png
+    slug: ai-governance-roles-and-ownership
+    title: "AI Governance Roles and Ownership"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  - id: gov-114
+    source: Governance/114_Prompt_Anatomy.png
+    slug: ai-risk-review-cadence
+    title: "AI Risk Review Cadence"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  - id: gov-123
+    source: Governance/123_Prompt_Anatomy.png
+    slug: audit-trails-for-ai-workflows
+    title: "Audit Trails for AI Workflows"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  - id: gov-137
+    source: Governance/137_Prompt_Anatomy.png
+    slug: data-boundaries-for-ai-agents
+    title: "Data Boundaries for AI Agents"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  - id: gov-prompt-to-agent
+    source: Governance/From_prompt_to_agent.png
+    slug: from-prompt-to-agent
+    title: "From Prompt to Agent"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  # --- Memes (new posts) ---
+  - id: memes-103
+    source: Memes/103_Prompt_Anatomy.png
+    slug: when-ai-hallucinates-confidence
+    title: "When AI Hallucinates Confidence"
+    category: Opinion
+    usage: [hero]
+    status: mapped
+
+  - id: memes-107
+    source: Memes/107_Prompt_Anatomy.png
+    slug: prompt-engineering-memes-vs-reality
+    title: "Prompt Engineering Memes vs Reality"
+    category: Opinion
+    usage: [hero]
+    status: mapped
+
+  - id: memes-exposes
+    source: Memes/AI_Exposes.png
+    slug: what-your-ai-stack-reveals
+    title: "What Your AI Stack Reveals"
+    category: Opinion
+    usage: [hero]
+    status: mapped
+
+  - id: memes-context-window
+    source: Memes/context_window (2).png
+    slug: context-window-myths
+    title: "Context Window Myths"
+    category: Opinion
+    usage: [hero]
+    status: mapped
+
+  # --- Selfpromo (new posts + hub) ---
+  - id: promo-89
+    source: Selfpromo/89_Prompt_Anatomy.png
+    slug: why-structured-ai-beats-more-tools
+    title: "Why Structured AI Beats More Tools"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: promo-ecosystem
+    source: Selfpromo/ecosystem.png
+    slug: prompt-anatomy-ecosystem-map
+    title: "The Prompt Anatomy Ecosystem Map"
+    category: Implementation Notes
+    usage: [hero, hub]
+    hub_asset: ecosystem
+    status: mapped
+
+  - id: promo-hero-1
+    source: Selfpromo/hero-1.png
+    slug: implementation-notes-hero-structure
+    title: "Implementation Notes: Hero Structure"
+    category: Implementation Notes
+    usage: [hero, hub]
+    hub_asset: hero_primary
+    status: mapped
+
+  - id: promo-hero-2
+    source: Selfpromo/hero-2.png
+    slug: from-prompts-to-business-outcomes
+    title: "From Prompts to Business Outcomes"
+    category: Implementation Notes
+    usage: [hero, hub]
+    hub_asset: hero_secondary
+    status: mapped
+
+  - id: case-vibe-structured
+    source: Basic/133_Prompt_Anatomy.png
+    slug: case-study-vibe-prompting-to-structured-workflow
+    title: "Case Study: From Vibe Prompting to a Structured Support Workflow"
+    category: Case Studies
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+  - id: template-workflow-canvas
+    source: Basic/119_Prompt_Anatomy.png
+    slug: ai-workflow-canvas-template
+    title: "AI Workflow Canvas (Template)"
+    category: Templates
+    usage: [hero]
+    status: mapped
+    replaces_stub: true
+
+hub_images:
+  ecosystem: images/hub/ecosystem.png
+  hero_primary: images/hub/hero-1.png
+  hero_secondary: images/hub/hero-2.png

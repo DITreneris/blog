@@ -1,0 +1,14 @@
+{% from 'macros/ui.html' import section_heading %}
+<section class="section" aria-labelledby="start-here-heading">
+  <div class="container">
+    {{ section_heading(HUB_SECTIONS.start_here.title) }}
+    <div class="grid grid--3">
+      {% for card in HUB_SECTIONS.start_here.cards %}
+      <article class="card">
+        <h3 class="card__title"><a href="{{ SITEURL }}{{ card.href }}">{{ card.title }}</a></h3>
+        <p class="card__desc">{{ card.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

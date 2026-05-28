@@ -1,0 +1,13 @@
+{% set n = HUB_SECTIONS.newsletter %}
+<section class="section section--dark" aria-labelledby="newsletter-heading">
+  <div class="container newsletter">
+    <h2 id="newsletter-heading" class="section-title">{{ n.title }}</h2>
+    <p class="hero__subhead">{{ n.description }}</p>
+    <form class="newsletter__form" action="#" method="post" aria-describedby="newsletter-note">
+      <label class="sr-only" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" disabled />
+      <button type="submit" class="btn btn--secondary" disabled>{{ n.button_label }}</button>
+    </form>
+    <p id="newsletter-note" class="newsletter__note">{{ n.disclaimer }}</p>
+  </div>
+</section>

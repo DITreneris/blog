@@ -1,0 +1,35 @@
+hero:
+  headline: "Turn random AI usage into structured implementation"
+  subhead: "Field notes, frameworks, templates, and case studies for teams that want predictable AI workflows—not random prompting."
+  methodology: "Prompts → Workflows → Agents → Business Outcomes"
+  image: images/hub/hero-1.png
+  image_secondary: images/hub/hero-2.png
+
+start_here:
+  title: "Start here"
+  cards:
+    - title: "Start with the Framework"
+      description: "The basic framework for turning random prompting into predictable outputs."
+      href: "/articles/the-model-is-not-the-system/"
+      icon: "framework"
+    - title: "Diagnostic: Vibe Prompting"
+      description: "Ten signs your company is using AI without structure."
+      href: "/articles/10-signs-your-company-is-vibe-prompting/"
+      icon: "diagnostic"
+    - title: "Design an Agent Workflow"
+      description: "A practical map from business task to agent-ready process."
+      href: "/articles/how-to-design-an-ai-agent-workflow/"
+      icon: "agents"
+
+templates:
+  id: "templates"
+  title: "Implementation templates"
+  description: "Use ready-made canvases, checklists, and operating documents to structure AI work inside teams."
+  cta_label: "Browse templates"
+  cta_href: "/topics/templates/"
+
+newsletter:
+  title: "Implementation notes in your inbox"
+  description: "No AI hype. Just frameworks, templates, and implementation notes for building controlled AI systems."
+  disclaimer: "Newsletter signup is not connected yet. This form is a layout placeholder."
+  button_label: "Subscribe"

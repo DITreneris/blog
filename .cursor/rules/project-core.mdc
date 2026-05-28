@@ -1,0 +1,13 @@
+---
+description: Core standards for Prompt Anatomy Pelican blog
+alwaysApply: true
+---
+
+# Prompt Anatomy — Project Core
+
+- US English only for templates, docs, and UI copy.
+- Stack: Pelican 4.x + custom theme at `theme/promptanatomy/`. No React SPA.
+- Content in `content/`; presentation in `theme/`. Config in `data/*.yaml`, `pelicanconf.py`.
+- Brand: premium AI implementation knowledge hub (calm, structured, expert)—not lifestyle or hype blog.
+- Before finishing: `make validate && make build`.
+- Read `AGENTS.md` and `docs/DESIGN_SYSTEM.md` for design constraints.

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
+{% block canonical %}{{ SITEURL }}/{{ category.url }}{% endblock %}
+
+{% block structured_data %}
+{% include 'partials/schema_breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<header class="page-header">
+  <div class="container stack">
+    <h1 class="page-header__title">{{ category }}</h1>
+    <p class="section-lead">Articles in this topic area.</p>
+  </div>
+</header>
+<section class="section">
+  <div class="container grid grid--2">
+    {% for article in articles|sort(attribute='date', reverse=True) %}
+    {% include 'partials/article_card.html' %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+# Architecture — Prompt Anatomy Blog
+
+## Overview
+
+Static site generator: **Pelican 4.x** (Python). Output: HTML/CSS/JS in `output/`. Hosted on **Vercel** (CDN only, no Python at runtime).
+
+```
+content/*.md  →  validate_content.py  →  pelican  →  output/  →  Vercel CDN
+```
+
+## Repository layers
+
+| Layer | Path | Role |
+|-------|------|------|
+| Agent / ops | `AGENTS.md`, `.cursor/rules/`, `docs/` | Conventions |
+| Content | `content/articles/`, `content/pages/` | Markdown + frontmatter |
+| Data | `data/*.yaml` | Nav, hub copy, categories, ecosystem spokes, illustration manifest |
+| Illustration masters | `data/01_illustrations/` | Source PNGs (synced, not edited in place) |
+| Theme | `theme/promptanatomy/` | Jinja templates + static assets |
+| Build | `Makefile`, `scripts/` | validate, build, serve |
+
+## URL strategy
+
+| Resource | URL pattern |
+|----------|-------------|
+| Home | `/` |
+| Article | `/articles/{slug}/` |
+| Page | `/about/` (via PAGE_SAVE_AS) |
+| Category | `/topics/{slug}/` |
+| Atom feed | `/feeds/all.atom.xml` |
+| Sitemap | `/sitemap.xml` |
+
+No dates in article URLs.
+
+## Ecosystem role
+
+`promptanatomy.blog` is the **content spoke** in the Prompt Anatomy ecosystem. Hub URLs (pricing, training, FAQ) live in `data/site.yaml` under `hub:` and point to `https://www.promptanatomy.app`. Outbound CTAs use absolute URLs so production `SITEURL` stays on `.blog`.
+
+## Environments
+
+| Env | Config | SITEURL |
+|-----|--------|---------|
+| Local dev | `pelicanconf.py` | `''` + RELATIVE_URLS |
+| Production | `publishconf.py` | `https://promptanatomy.blog` |
+
+## Pelican settings of note
+
+- Theme: `theme/promptanatomy`
+- Post-build: `scripts/generate_sitemap.py` writes `output/sitemap.xml`
+- Custom Jinja globals: `SITE_CONFIG`, `HUB_SECTIONS`, `CATEGORIES`, `ECOSYSTEM`, `ILLUSTRATIONS`, `HUB_IMAGES`
+- Article metadata from frontmatter passed to templates (`hero_image` → header, cards, Open Graph)
+- Images: `content/images/articles/{slug}/hero.png` via `make sync-images` / `scripts/sync_illustrations.py` (Pillow resize, max width 1600px)
+- Manifest: `data/illustrations.yaml` maps each master PNG to slug, category, and hub usage
+
+## TOC strategy
+
+Client-side: `toc-active.js` scans `article` `h2`/`h3` after load and builds sidebar; degrades gracefully if JS disabled (prose still readable).
+
+## Extension points
+
+- Add categories in `data/categories.yaml`
+- Add hub copy in `data/hub_sections.yaml`
+- New partial → update `docs/COMPONENT_MAP.md`
+- Optional later: Pagefind, Giscus, OG image generation

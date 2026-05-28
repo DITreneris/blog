@@ -1,0 +1,75 @@
+:root {
+  /* Brand (mother repo) */
+  --color-brand-dark: #0b1320;
+  --color-brand-accent: #cfa73a;
+  --color-brand-accent-hover: #e8b93c;
+  --color-cta-gradient: linear-gradient(135deg, #ffcc33 0%, #ffb300 100%);
+
+  /* Colors */
+  --color-surface: #f7f7f4;
+  --color-surface-dark: #0b1320;
+  --color-surface-dark-card: #111827;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-on-dark: #f9fafb;
+  --color-text-on-dark-muted: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-surface-glass: rgba(255, 255, 255, 0.04);
+
+  /* Reading links (prose) */
+  --color-link: #2563eb;
+  --color-link-hover: #1d4ed8;
+
+  /* Legacy accent aliases — CTAs and dark-band chrome use brand gold */
+  --color-accent: var(--color-brand-accent);
+  --color-accent-hover: var(--color-brand-accent-hover);
+  --color-accent-secondary: var(--color-brand-accent);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Ecosystem card accents */
+  --color-ecosystem-1: #2e9e7e;
+  --color-ecosystem-2: #7c5cff;
+  --color-ecosystem-3: #3f6fff;
+  --color-ecosystem-4: #f38a3f;
+
+  /* Typography */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
+  --text-hero: clamp(2rem, 4vw + 1rem, 4.5rem);
+  --text-section: clamp(1.75rem, 2vw + 1rem, 2.75rem);
+  --text-article-title: clamp(2.125rem, 3vw + 1rem, 4rem);
+  --text-body: 1.125rem;
+  --text-small: 0.9375rem;
+  --text-meta: 0.875rem;
+  --leading-body: 1.65;
+  --leading-tight: 1.15;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --section-padding: clamp(3.5rem, 6vw, 6rem);
+  --container-max: 75rem;
+  --article-max: 45rem;
+
+  /* Radii & shadows */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 1.75rem;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-card-hover: 0 16px 40px rgba(17, 24, 39, 0.12);
+  --shadow-ecosystem-card: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+  /* Z-index */
+  --z-header: 100;
+  --z-progress: 110;
+}

@@ -1,0 +1,29 @@
+{% macro category_badge(category, url=None) %}
+  {% set label = category.name if category.name is defined else category %}
+  {% if url %}
+  <a class="badge" href="{{ url }}">{{ label }}</a>
+  {% else %}
+  <span class="badge">{{ label }}</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro meta_line(article) %}
+  <p class="meta-line">
+    {% if article.reading_time %}{{ article.reading_time }}{% else %}5 min read{% endif %}
+    {% if article.category %} · {{ article.category.name }}{% endif %}
+    {% if article.modified %}
+    · Updated {{ article.modified|strftime('%Y') }}
+    {% elif article.date %}
+    · {{ article.date|strftime('%Y') }}
+    {% endif %}
+  </p>
+{% endmacro %}
+
+{% macro section_heading(title, lead=None) %}
+  <h2 class="section-title">{{ title }}</h2>
+  {% if lead %}<p class="section-lead">{{ lead }}</p>{% endif %}
+{% endmacro %}
+
+{% macro hero_image_url(article) %}
+  {% if article.hero_image %}{{ SITEURL }}/{{ article.hero_image }}{% endif %}
+{% endmacro %}

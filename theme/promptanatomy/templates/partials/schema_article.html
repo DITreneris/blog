@@ -1,0 +1,27 @@
+{% if article %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title|tojson }},
+  "description": {{ (article.summary or '')|tojson }},
+  "datePublished": "{{ article.date.isoformat() }}",
+  {% if article.modified %}
+  "dateModified": "{{ article.modified.isoformat() }}",
+  {% endif %}
+  "author": {
+    "@type": "Organization",
+    "name": {{ SITE_CONFIG.brand.name|tojson }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ SITE_CONFIG.brand.name|tojson }}
+  },
+  "articleSection": {{ article.category.name|tojson }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ SITEURL }}/{{ article.url }}"
+  }
+}
+</script>
+{% endif %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}{% endblock %}
+{% block canonical %}{{ SITEURL }}/{% endblock %}
+
+{% block content %}
+{% set ns = namespace(featured=none) %}
+{% for a in articles %}
+  {% if a.featured and not ns.featured %}
+    {% set ns.featured = a %}
+  {% endif %}
+{% endfor %}
+
+{% include 'partials/blog_hero.html' %}
+{% set article = ns.featured %}
+{% include 'partials/featured_article.html' %}
+{% include 'partials/start_here_cards.html' %}
+{% include 'partials/topic_cluster_grid.html' %}
+{% include 'partials/ecosystem_spoke.html' %}
+{% include 'partials/template_download.html' %}
+
+<section class="section" id="latest" aria-labelledby="latest-heading">
+  <div class="container">
+    <h2 id="latest-heading" class="section-title">Latest articles</h2>
+    <div class="grid grid--2">
+      {% for article in articles|sort(attribute='date', reverse=True) %}
+        {% if not article.featured %}
+        {% include 'partials/article_card.html' %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include 'partials/newsletter_cta.html' %}
+{% endblock %}

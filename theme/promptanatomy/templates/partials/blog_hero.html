@@ -1,0 +1,21 @@
+<section class="section section--dark hero" aria-labelledby="hero-heading">
+  {% if HUB_SECTIONS.hero.image %}
+  <div class="hero__visual-wrap container" aria-hidden="true">
+    <img class="hero__visual" src="{{ SITEURL }}/{{ HUB_SECTIONS.hero.image }}" alt="" width="1600" height="900" loading="eager" decoding="async" />
+    {% if HUB_SECTIONS.hero.image_secondary %}
+    <img class="hero__visual hero__visual--secondary" src="{{ SITEURL }}/{{ HUB_SECTIONS.hero.image_secondary }}" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+    {% endif %}
+  </div>
+  {% endif %}
+  <div class="container stack">
+    <p class="hero__methodology">{{ HUB_SECTIONS.hero.methodology }}</p>
+    <h1 id="hero-heading" class="hero__headline">{{ HUB_SECTIONS.hero.headline }}</h1>
+    <p class="hero__subhead">{{ HUB_SECTIONS.hero.subhead }}</p>
+    <div class="cluster">
+      <a class="btn btn--primary"
+         href="{{ SITE_CONFIG.cta.href }}"
+         {% if SITE_CONFIG.cta.external %}rel="noopener noreferrer"{% endif %}>{{ SITE_CONFIG.cta.label }}</a>
+      <a class="btn btn--ghost" href="{{ SITEURL }}/#latest">Browse articles</a>
+    </div>
+  </div>
+</section>

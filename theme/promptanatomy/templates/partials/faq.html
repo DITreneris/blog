@@ -1,0 +1,11 @@
+{% if article.faq %}
+<section class="faq container" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="section-title">FAQ</h2>
+  {% for item in article.faq %}
+  <details>
+    <summary>{{ item.question }}</summary>
+    <p>{{ item.answer }}</p>
+  </details>
+  {% endfor %}
+</section>
+{% endif %}

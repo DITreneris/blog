@@ -1,0 +1,13 @@
+{% from 'macros/ui.html' import section_heading %}
+{% if related_articles %}
+<section class="related-articles container" aria-labelledby="related-heading">
+  {{ section_heading('Related articles') }}
+  <div class="grid grid--2">
+    {% for rel in related_articles %}
+    {% with article = rel %}
+    {% include 'partials/article_card.html' %}
+    {% endwith %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
