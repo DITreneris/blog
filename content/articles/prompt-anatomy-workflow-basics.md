@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/prompt-anatomy-workflow-basics/hero.png
-key_takeaway: A workflow names the trigger, steps, owners, context sources, review
-  gate, and one outcome metric.
+key_takeaway: A workflow names the trigger, steps, owners, context sources, review gate, and one outcome metric.
 reading_time: 1 min read
 slug: prompt-anatomy-workflow-basics
 status: published
-summary: Minimum workflow elements—trigger, steps, context, human gate, and metric—before
-  you scale AI use.
+summary: Minimum workflow elements—trigger, steps, context, human gate, and metric—before you scale AI use.
 title: Workflow Basics for Predictable AI Outputs
 ---
 

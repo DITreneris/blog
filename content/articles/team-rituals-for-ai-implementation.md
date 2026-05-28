@@ -4,13 +4,11 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
-key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts,
-  context, and ownership.
+key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts, context, and ownership.
 reading_time: 1 min read
 slug: team-rituals-for-ai-implementation
 status: published
-summary: Lightweight cadences that keep AI workflows current—office hours, eval review,
-  and change announcements.
+summary: Lightweight cadences that keep AI workflows current—office hours, eval review, and change announcements.
 title: Team Rituals for AI Implementation
 ---
 

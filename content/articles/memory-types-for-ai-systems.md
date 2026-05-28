@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/memory-types-for-ai-systems/hero.png
-key_takeaway: Choose memory types by retention risk and workflow need—not by maximizing
-  what the model remembers.
+key_takeaway: Choose memory types by retention risk and workflow need—not by maximizing what the model remembers.
 reading_time: 2 min read
 slug: memory-types-for-ai-systems
 status: published
-summary: Session, episodic, and organizational memory for AI workflows—and when each
-  belongs in your context architecture.
+summary: Session, episodic, and organizational memory for AI workflows—and when each belongs in your context architecture.
 title: Memory Types for AI Systems
 ---
 

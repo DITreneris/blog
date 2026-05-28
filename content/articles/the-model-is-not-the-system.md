@@ -6,13 +6,11 @@ date: 2026-05-01
 date_modified: 2026-05-28
 featured: true
 hero_image: images/articles/the-model-is-not-the-system/hero.png
-key_takeaway: A language model is one component. Durable value comes from workflow,
-  context, evaluation, and governance around it.
+key_takeaway: A language model is one component. Durable value comes from workflow, context, evaluation, and governance around it.
 reading_time: 2 min read
 slug: the-model-is-not-the-system
 status: published
-summary: Why teams fail at AI when they treat the chat window as the whole workflow—and
-  what to build instead.
+summary: Why teams fail at AI when they treat the chat window as the whole workflow—and what to build instead.
 title: The Model Is Not the System
 ---
 

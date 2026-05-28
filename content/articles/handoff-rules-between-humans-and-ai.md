@@ -4,13 +4,11 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/handoff-rules-between-humans-and-ai/hero.png
-key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process
-  design.
+key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process design.
 reading_time: 1 min read
 slug: handoff-rules-between-humans-and-ai
 status: published
-summary: Define when AI drafts, when humans decide, and when work returns to the queue—with
-  SLAs and evidence.
+summary: Define when AI drafts, when humans decide, and when work returns to the queue—with SLAs and evidence.
 title: Handoff Rules Between Humans and AI
 ---
 

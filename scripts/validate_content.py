@@ -88,7 +88,7 @@ def validate_file(path: Path, slugs: set[str]) -> list[str]:
 
     hero = meta.get("hero_image")
     if hero:
-        hero_path = CONTENT / hero.replace("/", "\\")
+        hero_path = (CONTENT / hero).resolve()
         if not hero_path.is_file():
             errors.append(f"{path.name}: hero_image not found at content/{hero}")
 

@@ -4,13 +4,11 @@ body_locked: true
 category: AI Governance
 date: 2026-05-28
 hero_image: images/articles/ai-governance-roles-and-ownership/hero.png
-key_takeaway: Governance works when every workflow has a named owner for outcomes,
-  context, changes, and incidents.
+key_takeaway: Governance works when every workflow has a named owner for outcomes, context, changes, and incidents.
 reading_time: 2 min read
 slug: ai-governance-roles-and-ownership
 status: published
-summary: A practical RACI for AI workflows—executive sponsor, process owner, IT, legal,
-  and operations.
+summary: A practical RACI for AI workflows—executive sponsor, process owner, IT, legal, and operations.
 title: AI Governance Roles and Ownership
 ---
 

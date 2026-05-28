@@ -4,13 +4,11 @@ body_locked: true
 category: AI Agents
 date: 2026-05-12
 hero_image: images/articles/how-to-design-an-ai-agent-workflow/hero.png
-key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not
-  only a persona and API access.
+key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not only a persona and API access.
 reading_time: 2 min read
 slug: how-to-design-an-ai-agent-workflow
 status: published
-summary: Map a business task to an agent-ready process—with boundaries, handoffs,
-  evaluation gates, and an RFP triage example.
+summary: Map a business task to an agent-ready process—with boundaries, handoffs, evaluation gates, and an RFP triage example.
 title: How to Design an AI Agent Workflow
 ---
 

@@ -4,13 +4,11 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png
-key_takeaway: Every live workflow should tie to one business metric, one owner, and
-  one eval gate—not activity metrics alone.
+key_takeaway: Every live workflow should tie to one business metric, one owner, and one eval gate—not activity metrics alone.
 reading_time: 1 min read
 slug: from-prompts-to-business-outcomes
 status: published
-summary: Map business metrics to workflows so AI work is measured by outcomes—not
-  by tokens or demo applause.
+summary: Map business metrics to workflows so AI work is measured by outcomes—not by tokens or demo applause.
 title: From Prompts to Business Outcomes
 ---
 

@@ -4,13 +4,11 @@ body_locked: true
 category: Opinion
 date: 2026-05-22
 hero_image: images/articles/your-company-does-not-need-more-ai-tools/hero.png
-key_takeaway: Freeze tool sprawl until one workflow is documented, owned, measured,
-  and governed end to end.
+key_takeaway: Freeze tool sprawl until one workflow is documented, owned, measured, and governed end to end.
 reading_time: 2 min read
 slug: your-company-does-not-need-more-ai-tools
 status: published
-summary: Operating rules and workflow design beat another subscription when AI touches
-  real customer and compliance work.
+summary: Operating rules and workflow design beat another subscription when AI touches real customer and compliance work.
 title: Your Company Does Not Need More AI Tools
 ---
 

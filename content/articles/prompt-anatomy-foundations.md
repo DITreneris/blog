@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/prompt-anatomy-foundations/hero.png
-key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context,
-  model step, evaluation, governance.'
+key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context, model step, evaluation, governance.'
 reading_time: 2 min read
 slug: prompt-anatomy-foundations
 status: published
-summary: The Prompt Anatomy implementation stack—prompts, workflows, context, agents,
-  evaluation, and governance.
+summary: The Prompt Anatomy implementation stack—prompts, workflows, context, agents, evaluation, and governance.
 title: Prompt Anatomy Foundations
 ---
 

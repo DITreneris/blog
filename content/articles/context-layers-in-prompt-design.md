@@ -4,13 +4,11 @@ body_locked: true
 category: Prompt Systems
 date: 2026-05-28
 hero_image: images/articles/context-layers-in-prompt-design/hero.png
-key_takeaway: 'Order layers deliberately: policy first, task second, operational data
-  last—so rules are not buried.'
+key_takeaway: 'Order layers deliberately: policy first, task second, operational data last—so rules are not buried.'
 reading_time: 1 min read
 slug: context-layers-in-prompt-design
 status: published
-summary: How task, policy, and operational layers combine in a single run without
-  contradiction or bloat.
+summary: How task, policy, and operational layers combine in a single run without contradiction or bloat.
 title: Context Layers in Prompt Design
 ---
 

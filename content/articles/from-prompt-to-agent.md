@@ -4,13 +4,11 @@ body_locked: true
 category: AI Governance
 date: 2026-05-28
 hero_image: images/articles/from-prompt-to-agent/hero.png
-key_takeaway: Promote to an agent only when the task needs tools, state, or repeated
-  runs—not because agents are fashionable.
+key_takeaway: Promote to an agent only when the task needs tools, state, or repeated runs—not because agents are fashionable.
 reading_time: 1 min read
 slug: from-prompt-to-agent
 status: published
-summary: When a repeatable prompt should become an agent—with boundaries, tools, logging,
-  and evaluation.
+summary: When a repeatable prompt should become an agent—with boundaries, tools, logging, and evaluation.
 title: From Prompt to Agent
 ---
 

@@ -6,8 +6,7 @@ date: 2026-05-28
 reading_time: 1 min read
 slug: prompt-engineering-memes-vs-reality
 status: draft
-summary: Draft article—meme-driven prompt advice vs workflow implementation; rewrite
-  pending.
+summary: Draft article—meme-driven prompt advice vs workflow implementation; rewrite pending.
 title: Prompt Engineering Memes vs Reality
 ---
 

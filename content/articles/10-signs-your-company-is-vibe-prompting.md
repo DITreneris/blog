@@ -4,13 +4,11 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-10
 hero_image: images/articles/10-signs-your-company-is-vibe-prompting/hero.png
-key_takeaway: If outcomes depend on who asked and which tool they opened, document
-  one workflow and measure it for thirty days.
+key_takeaway: If outcomes depend on who asked and which tool they opened, document one workflow and measure it for thirty days.
 reading_time: 2 min read
 slug: 10-signs-your-company-is-vibe-prompting
 status: published
-summary: A practical diagnostic for teams using AI without structure—plus a 30-day
-  remediation outline.
+summary: A practical diagnostic for teams using AI without structure—plus a 30-day remediation outline.
 title: 10 Signs Your Company Is Vibe Prompting
 ---
 

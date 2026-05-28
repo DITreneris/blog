@@ -4,13 +4,11 @@ body_locked: true
 category: AI Governance
 date: 2026-05-28
 hero_image: images/articles/ai-risk-review-cadence/hero.png
-key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses,
-  and workflow changes on the agenda.
+key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses, and workflow changes on the agenda.
 reading_time: 1 min read
 slug: ai-risk-review-cadence
 status: published
-summary: A standing risk forum for AI workflows—agenda, frequency, attendees, and
-  outputs that change process.
+summary: A standing risk forum for AI workflows—agenda, frequency, attendees, and outputs that change process.
 title: AI Risk Review Cadence
 ---
 

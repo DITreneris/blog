@@ -4,13 +4,11 @@ body_locked: true
 category: AI Governance
 date: 2026-05-28
 hero_image: images/articles/data-boundaries-for-ai-agents/hero.png
-key_takeaway: Agents need an explicit allow list for data and actions; everything
-  else is out of scope by default.
+key_takeaway: Agents need an explicit allow list for data and actions; everything else is out of scope by default.
 reading_time: 1 min read
 slug: data-boundaries-for-ai-agents
 status: published
-summary: Allow and deny matrices for agent tools—plus policy triggers that force human
-  review.
+summary: Allow and deny matrices for agent tools—plus policy triggers that force human review.
 title: Data Boundaries for AI Agents
 ---
 

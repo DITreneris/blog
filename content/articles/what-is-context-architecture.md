@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-18
 hero_image: images/articles/what-is-context-architecture/hero.png
-key_takeaway: Context architecture controls task, operational, policy, and memory
-  layers—not stuffing the prompt window.
+key_takeaway: Context architecture controls task, operational, policy, and memory layers—not stuffing the prompt window.
 reading_time: 2 min read
 slug: what-is-context-architecture
 status: published
-summary: How teams decide what models see, when, and why—with a context spec template
-  and data classification.
+summary: How teams decide what models see, when, and why—with a context spec template and data classification.
 title: What Is Context Architecture?
 ---
 

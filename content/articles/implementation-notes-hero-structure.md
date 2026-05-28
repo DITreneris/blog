@@ -4,8 +4,7 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/implementation-notes-hero-structure/hero.png
-key_takeaway: 'Structured implementation turns implementation notes: hero structure
-  into repeatable outcomes.'
+key_takeaway: 'Structured implementation turns implementation notes: hero structure into repeatable outcomes.'
 reading_time: 2 min read
 slug: implementation-notes-hero-structure
 status: draft

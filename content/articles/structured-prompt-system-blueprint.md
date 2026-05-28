@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/structured-prompt-system-blueprint/hero.png
-key_takeaway: A prompt system is versioned templates plus release discipline—not a
-  shared doc anyone can edit.
+key_takeaway: A prompt system is versioned templates plus release discipline—not a shared doc anyone can edit.
 reading_time: 1 min read
 slug: structured-prompt-system-blueprint
 status: published
-summary: Build a prompt system with versioning, owners, templates by workflow step,
-  and eval-linked releases.
+summary: Build a prompt system with versioning, owners, templates by workflow step, and eval-linked releases.
 title: Structured Prompt System Blueprint
 ---
 

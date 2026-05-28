@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/evaluation-hooks-for-ai-workflows/hero.png
-key_takeaway: Treat eval sets like unit tests for workflows—run them before every
-  prompt, context, or model change.
+key_takeaway: Treat eval sets like unit tests for workflows—run them before every prompt, context, or model change.
 reading_time: 1 min read
 slug: evaluation-hooks-for-ai-workflows
 status: published
-summary: Sample eval cases and pass/fail gates before you scale AI workflows to more
-  teams or customers.
+summary: Sample eval cases and pass/fail gates before you scale AI workflows to more teams or customers.
 title: Evaluation Hooks for AI Workflows
 ---
 

@@ -4,13 +4,11 @@ body_locked: true
 category: AI Agents
 date: 2026-05-28
 hero_image: images/articles/multi-agent-handoff-pattern/hero.png
-key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained
-  prompts without ownership.
+key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained prompts without ownership.
 reading_time: 1 min read
 slug: multi-agent-handoff-pattern
 status: published
-summary: How to split work across specialized agents with explicit contracts, state,
-  and human escalation between steps.
+summary: How to split work across specialized agents with explicit contracts, state, and human escalation between steps.
 title: Multi-Agent Handoff Pattern
 ---
 

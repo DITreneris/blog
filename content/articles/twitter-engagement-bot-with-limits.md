@@ -6,8 +6,7 @@ date: 2026-05-28
 reading_time: 1 min read
 slug: twitter-engagement-bot-with-limits
 status: draft
-summary: Draft article—social automation requires brand, rate, and policy guardrails;
-  rewrite pending.
+summary: Draft article—social automation requires brand, rate, and policy guardrails; rewrite pending.
 title: Twitter Engagement Bot with Limits
 ---
 

@@ -4,13 +4,11 @@ body_locked: true
 category: AI Governance
 date: 2026-05-28
 hero_image: images/articles/audit-trails-for-ai-workflows/hero.png
-key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational
-  workflow—only a demo.
+key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational workflow—only a demo.
 reading_time: 1 min read
 slug: audit-trails-for-ai-workflows
 status: published
-summary: What to log for AI-assisted workflows—inputs, context versions, outputs,
-  overrides, and retention.
+summary: What to log for AI-assisted workflows—inputs, context versions, outputs, overrides, and retention.
 title: Audit Trails for AI Workflows
 ---
 

@@ -4,13 +4,11 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/ai-implementation-maturity-ladder/hero.png
-key_takeaway: Know your level, pick one maturity jump, and measure it—do not skip
-  governance while scaling tools.
+key_takeaway: Know your level, pick one maturity jump, and measure it—do not skip governance while scaling tools.
 reading_time: 2 min read
 slug: ai-implementation-maturity-ladder
 status: published
-summary: Five levels from ad hoc chat to governed operations—with self-check questions
-  and 90-day moves per stage.
+summary: Five levels from ad hoc chat to governed operations—with self-check questions and 90-day moves per stage.
 title: The AI Implementation Maturity Ladder
 ---
 

@@ -8,6 +8,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **CI (2026-05-28):** `validate_content.py` hero paths on Linux; workflow uses `python -m pelican` and Node 24 action flag; article frontmatter re-dumped with safe YAML for Pelican.
+
 ### Added
 
 - **Content remediation (2026-05-28):** Rewrote pillar and governance articles; merged tools opinion into [your-company-does-not-need-more-ai-tools](content/articles/your-company-does-not-need-more-ai-tools.md); new [memory-types-for-ai-systems](content/articles/memory-types-for-ai-systems.md), [case study](content/articles/case-study-vibe-prompting-to-structured-workflow.md), and [workflow canvas template](content/articles/ai-workflow-canvas-template.md). [docs/CONTENT_STANDARDS.md](docs/CONTENT_STANDARDS.md); stricter [scripts/validate_content.py](scripts/validate_content.py) (boilerplate, links, reading time). Enrich script respects `body_locked` and non-boilerplate bodies. Production [about](content/pages/about.md) copy. Hybrid drafts for low-intent and merged slugs.

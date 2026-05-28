@@ -4,13 +4,11 @@ body_locked: true
 category: Prompt Systems
 date: 2026-05-05
 hero_image: images/articles/prompt-engineering-vs-ai-workflow-engineering/hero.png
-key_takeaway: When quality varies by user but not by task, invest in workflow design
-  before longer system prompts.
+key_takeaway: When quality varies by user but not by task, invest in workflow design before longer system prompts.
 reading_time: 1 min read
 slug: prompt-engineering-vs-ai-workflow-engineering
 status: published
-summary: Prompts optimize one step; workflow engineering optimizes the path from intent
-  to verified outcome.
+summary: Prompts optimize one step; workflow engineering optimizes the path from intent to verified outcome.
 title: Prompt Engineering vs AI Workflow Engineering
 ---
 

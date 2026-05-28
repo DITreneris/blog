@@ -6,8 +6,7 @@ date: 2026-05-28
 reading_time: 1 min read
 slug: ai-bot-for-research-scraping
 status: draft
-summary: Draft article—research agents need data boundaries and compliance review;
-  rewrite pending.
+summary: Draft article—research agents need data boundaries and compliance review; rewrite pending.
 title: AI Bot for Research Scraping
 ---
 

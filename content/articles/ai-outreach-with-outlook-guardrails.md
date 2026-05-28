@@ -4,13 +4,11 @@ body_locked: true
 category: AI Agents
 date: 2026-05-28
 hero_image: images/articles/ai-outreach-with-outlook-guardrails/hero.png
-key_takeaway: Outreach AI belongs in draft-and-review mode with caps, opt-out respect,
-  and brand-approved snippets.
+key_takeaway: Outreach AI belongs in draft-and-review mode with caps, opt-out respect, and brand-approved snippets.
 reading_time: 1 min read
 slug: ai-outreach-with-outlook-guardrails
 status: published
-summary: Draft outreach in Outlook with rate limits, template control, and human send—without
-  autonomous bulk email.
+summary: Draft outreach in Outlook with rate limits, template control, and human send—without autonomous bulk email.
 title: AI Outreach with Outlook Guardrails
 ---
 

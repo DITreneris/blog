@@ -4,13 +4,11 @@ body_locked: true
 category: Templates
 date: 2026-05-28
 hero_image: images/articles/ai-workflow-canvas-template/hero.png
-key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here
-  become incidents later.
+key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here become incidents later.
 reading_time: 1 min read
 slug: ai-workflow-canvas-template
 status: published
-summary: A one-page canvas to define outcome, steps, context, gates, eval, and ownership
-  before you build.
+summary: A one-page canvas to define outcome, steps, context, gates, eval, and ownership before you build.
 title: AI Workflow Canvas (Template)
 ---
 

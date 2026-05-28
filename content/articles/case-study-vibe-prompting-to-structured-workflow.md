@@ -4,13 +4,11 @@ body_locked: true
 category: Case Studies
 date: 2026-05-28
 hero_image: images/articles/case-study-vibe-prompting-to-structured-workflow/hero.png
-key_takeaway: A single owned workflow with eval gates beat a year of scattered copilot
-  experiments.
+key_takeaway: A single owned workflow with eval gates beat a year of scattered copilot experiments.
 reading_time: 1 min read
 slug: case-study-vibe-prompting-to-structured-workflow
 status: published
-summary: How one team moved from ad hoc chat to a measured support-assist workflow
-  in twelve weeks.
+summary: How one team moved from ad hoc chat to a measured support-assist workflow in twelve weeks.
 title: 'Case Study: From Vibe Prompting to a Structured Support Workflow'
 ---
 
