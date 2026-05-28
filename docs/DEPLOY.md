@@ -32,6 +32,12 @@ Vercel tried to deploy Python **Functions** (expects `app.py` / `api/`) instead 
 
 Do not add `api/` or `app.py` unless you intend serverless functions.
 
+### `externally-managed-environment` (PEP 668)
+
+Vercel’s system Python is managed by **uv**; plain `pip install` is blocked.
+
+**Fix:** [`vercel.json`](vercel.json) creates a project `.venv` in `installCommand` and runs the build with `.venv/bin/python`. Do not use bare `pip install -r requirements.txt` on the system interpreter.
+
 ### GitHub Pages (`*.github.io/blog`) shows 404
 
 This repo targets **Vercel + promptanatomy.blog**. GitHub Pages is not configured unless you add a separate workflow that publishes `output/`.
