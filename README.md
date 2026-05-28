@@ -2,6 +2,8 @@
 
 Premium knowledge hub for [promptanatomy.blog](https://promptanatomy.blog), built with **Pelican** (Python) and a custom Jinja theme.
 
+**Repository:** [github.com/DITreneris/blog](https://github.com/DITreneris/blog)
+
 ## Quick start
 
 ```bash
