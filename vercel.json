@@ -1,5 +1,7 @@
 {
-  "buildCommand": "pip install -r requirements.txt && python scripts/sync_illustrations.py && python scripts/validate_theme_tokens.py && python scripts/validate_content.py && pelican content -s publishconf.py && python scripts/generate_sitemap.py",
-  "outputDirectory": "output",
-  "installCommand": "pip install -r requirements.txt"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": "python scripts/sync_illustrations.py && python scripts/validate_theme_tokens.py && python scripts/validate_content.py && python -m pelican content -s publishconf.py && python scripts/generate_sitemap.py",
+  "outputDirectory": "output"
 }

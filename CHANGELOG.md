@@ -8,6 +8,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **Vercel deploy:** [`vercel.json`](vercel.json) sets `framework: null` for static Pelican build; `installCommand` / `buildCommand` split; `python -m pelican`. [`.python-version`](.python-version) pins 3.11. [docs/DEPLOY.md](docs/DEPLOY.md) troubleshooting for “No python entrypoint found”.
+
 ## [0.2.0] - 2026-05-28
 
 ### Added

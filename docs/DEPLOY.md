@@ -15,7 +15,26 @@
 5. Install command: `pip install -r requirements.txt`
 6. Python version: 3.11+ (set in Project Settings if needed)
 
-`vercel.json` in repo root mirrors these settings.
+`vercel.json` sets `"framework": null` so Vercel treats the project as a **static build** (Pelican → `output/`), not a Python serverless app. `.python-version` pins 3.11.
+
+## Troubleshooting
+
+### `No python entrypoint found`
+
+Vercel tried to deploy Python **Functions** (expects `app.py` / `api/`) instead of running Pelican and serving `output/`.
+
+**Fix:**
+
+1. **Settings → Build and Deployment** → Framework Preset: **Other** (not Python).
+2. **Output Directory:** `output`.
+3. Confirm root [`vercel.json`](vercel.json) includes `"framework": null`.
+4. Redeploy `main`.
+
+Do not add `api/` or `app.py` unless you intend serverless functions.
+
+### GitHub Pages (`*.github.io/blog`) shows 404
+
+This repo targets **Vercel + promptanatomy.blog**. GitHub Pages is not configured unless you add a separate workflow that publishes `output/`.
 
 ## Production URL
 
