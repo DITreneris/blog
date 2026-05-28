@@ -1,4 +1,5 @@
 output/
+output-check/
 __pycache__/
 *.py[cod]
 .venv/
