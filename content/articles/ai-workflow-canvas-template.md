@@ -42,7 +42,7 @@ Copy this canvas into your wiki or ticket. Complete it with process owner + IT b
 
 ## Practice
 
-Walk the canvas with [Workflow Basics](/articles/prompt-anatomy-workflow-basics/) and implement in [training](https://www.promptanatomy.app/anatomy/) when you need hands-on exercises.
+Walk the canvas with [Workflow Basics](/articles/prompt-anatomy-workflow-basics/) and implement in [training](https://www.promptanatomy.app/) when you need hands-on exercises.
 
 ## Tips
 

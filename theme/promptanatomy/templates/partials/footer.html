@@ -1,35 +1,68 @@
-<footer class="site-footer site-footer--dark" role="contentinfo">
-  <div class="container site-footer__grid">
-    <div>
-      {% include 'partials/logo.html' %}
-      <p class="site-footer__brand">{{ SITE_CONFIG.footer.tagline }}</p>
-    </div>
-    {% for column in SITE_CONFIG.footer.columns %}
-    <div>
-      <h2 class="site-footer__column-title">{{ column.title }}</h2>
-      <ul class="site-footer__links">
-        {% for link in column.links %}
-        <li>
-          <a href="{{ link.href }}"
-             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-  <div class="container site-footer__bottom">
-    <nav class="site-footer__legal" aria-label="Legal">
-      <span>&copy; {{ CURRENT_YEAR }} Prompt Anatomy</span>
-      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
-      <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
-      {% for link in SITE_CONFIG.footer.legal %}
-      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
-      <a href="{{ link.href }}"
-         {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-      {% endfor %}
-    </nav>
-    <p class="site-footer__meta">{{ SITE_CONFIG.footer.creator }}</p>
-    <p class="site-footer__meta">Mailing address: {{ SITE_CONFIG.organization.mailing_address }}</p>
-  </div>
-</footer>
+<footer class="site-footer site-footer--dark" role="contentinfo">
+  <h2 class="sr-only">Site footer</h2>
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand-col">
+      {% include 'partials/logo.html' %}
+      <p class="site-footer__brand">{{ SITE_CONFIG.footer.tagline }}</p>
+    </div>
+    {% for column in SITE_CONFIG.footer.columns %}
+    <nav class="site-footer__nav" aria-label="{{ column.title }}">
+      <h3 class="site-footer__column-title">{{ column.title }}</h3>
+      <ul class="site-footer__links">
+        {% if column.title == 'Explore' %}
+        <li>
+          <a href="{{ SITE_CONFIG.hub.what_is_url }}" rel="noopener noreferrer">What is Prompt Anatomy</a>
+        </li>
+        <li>
+          <a href="{{ SITE_CONFIG.hub.methodology_url }}" rel="noopener noreferrer">Methodology</a>
+        </li>
+        <li>
+          <a href="{{ SITE_CONFIG.hub.pricing_url }}" rel="noopener noreferrer">Pricing</a>
+        </li>
+        {% elif column.use_social %}
+        {% for social in SITE_CONFIG.social.links %}
+        <li>
+          <a href="{{ social.href }}" rel="noopener noreferrer">{{ social.label }}</a>
+        </li>
+        {% endfor %}
+        {% for link in column.links %}
+        <li>
+          <a href="{{ link.href }}"
+             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+        </li>
+        {% endfor %}
+        {% else %}
+        {% for link in column.links %}
+        <li>
+          <a href="{{ link.href }}"
+             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+        </li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    </nav>
+    {% endfor %}
+  </div>
+  <div class="container site-footer__bottom">
+    <nav class="site-footer__legal" aria-label="Legal">
+      <span>&copy; {{ CURRENT_YEAR }} {{ SITE_CONFIG.organization.name }}</span>
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
+      {% for link in SITE_CONFIG.footer.legal %}
+      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+      <a href="{{ link.href }}"
+         {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+      {% endfor %}
+    </nav>
+    {% if SITE_CONFIG.footer.founder_label %}
+    <p class="site-footer__meta">
+      <a class="site-footer__founder-link" href="{{ SITE_CONFIG.footer.founder_href }}">{{ SITE_CONFIG.footer.founder_label }}</a>
+    </p>
+    {% endif %}
+    <address class="site-footer__address">
+      {{ SITE_CONFIG.organization.name }}<br />
+      {{ SITE_CONFIG.organization.address.street }}<br />
+      {{ SITE_CONFIG.organization.address.city_state_zip }}{% if SITE_CONFIG.organization.address.country %}, {{ SITE_CONFIG.organization.address.country }}{% endif %}
+    </address>
+  </div>
+</footer>

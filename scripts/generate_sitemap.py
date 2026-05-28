@@ -4,17 +4,25 @@
 from __future__ import annotations
 
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree.ElementTree import Element, ElementTree, SubElement
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output"
-SITEURL = "https://www.promptanatomy.blog"
+SITE_CONFIG = yaml.safe_load((ROOT / "data" / "site.yaml").read_text(encoding="utf-8"))
+SITEURL = SITE_CONFIG.get("brand", {}).get("site_url", "https://www.promptanatomy.blog")
+
+EXCLUDE = {"design-system", "drafts", "author"}
 
 
-def add_url(urlset: Element, loc: str) -> None:
+def add_url(urlset: Element, loc: str, lastmod: str | None = None) -> None:
     url = SubElement(urlset, "url")
     SubElement(url, "loc").text = loc
+    if lastmod:
+        SubElement(url, "lastmod").text = lastmod
 
 
 def main() -> int:
@@ -28,14 +36,23 @@ def main() -> int:
 
     index = OUTPUT / "index.html"
     if index.exists():
-        add_url(urlset, f"{SITEURL}/")
+        lastmod = datetime.fromtimestamp(
+            index.stat().st_mtime, tz=timezone.utc
+        ).date().isoformat()
+        add_url(urlset, f"{SITEURL}/", lastmod)
 
     for path in sorted(OUTPUT.rglob("index.html")):
         rel = path.relative_to(OUTPUT).as_posix()
         if rel == "index.html":
             continue
+        slug_root = rel.split("/", 1)[0]
+        if slug_root in EXCLUDE:
+            continue
+        lastmod = datetime.fromtimestamp(
+            path.stat().st_mtime, tz=timezone.utc
+        ).date().isoformat()
         loc = f"{SITEURL}/{rel.removesuffix('/index.html')}/"
-        add_url(urlset, loc)
+        add_url(urlset, loc, lastmod)
 
     tree = ElementTree(urlset)
     tree.write(OUTPUT / "sitemap.xml", encoding="utf-8", xml_declaration=True)

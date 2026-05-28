@@ -1,29 +1,46 @@
-{% extends 'base.html' %}
-{% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
-{% block canonical %}{{ CANONICAL_SITEURL }}/{{ category.url }}{% endblock %}
-
-{% block structured_data %}
-{% include 'partials/schema_breadcrumb.html' %}
-{% endblock %}
-
-{% block content %}
-<header class="page-header">
-  <div class="container stack">
-    <h1 class="page-header__title">{{ category }}</h1>
-    {% set ns = namespace(lead='Articles in this topic area.') %}
-    {% for cat in CATEGORIES %}
-      {% if cat.title == category.name %}
-        {% set ns.lead = cat.description %}
-      {% endif %}
-    {% endfor %}
-    <p class="section-lead">{{ ns.lead }}</p>
-  </div>
-</header>
-<section class="section">
-  <div class="container grid grid--2">
-    {% for article in articles|sort(attribute='date', reverse=True) %}
-    {% include 'partials/article_card.html' %}
-    {% endfor %}
-  </div>
-</section>
-{% endblock %}
+{% extends 'base.html' %}
+{% set ns = namespace(lead=SITE_CONFIG.brand.description) %}
+{% for cat in CATEGORIES %}
+  {% if cat.title == category.name %}
+    {% set ns.lead = cat.description %}
+  {% endif %}
+{% endfor %}
+
+{% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
+{% block description %}{{ ns.lead|striptags|truncate(160) }}{% endblock %}
+{% block canonical %}{{ CANONICAL_SITEURL }}/{{ category.url }}{% endblock %}
+
+{% block open_graph %}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ category }} — {{ SITENAME }}" />
+<meta property="og:description" content="{{ ns.lead|striptags|truncate(160) }}" />
+<meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ category.url }}" />
+{% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+{% endblock %}
+
+{% block twitter %}
+<meta name="twitter:title" content="{{ category }} — {{ SITENAME }}" />
+<meta name="twitter:description" content="{{ ns.lead|striptags|truncate(160) }}" />
+{% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+{% endblock %}
+
+{% block structured_data %}
+{{ super() }}
+{% include 'partials/schema_breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<header class="page-header">
+  <div class="container stack">
+    <h1 class="page-header__title">{{ category }}</h1>
+    <p class="section-lead">{{ ns.lead }}</p>
+  </div>
+</header>
+<section class="section">
+  <div class="container grid grid--2">
+    {% for article in articles|sort(attribute='date', reverse=True) %}
+    {% include 'partials/article_card.html' %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

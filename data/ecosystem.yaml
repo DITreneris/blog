@@ -1,6 +1,7 @@
 title: "Hub: choose your direction"
 paragraph: "The main entry point to the ecosystem — libraries and systems matched to your goal."
 image: images/hub/ecosystem.png
+image_alt: "Diagram of the Prompt Anatomy ecosystem—training hub and specialized spokes for automation, marketing, HR, and operations."
 cta_label: "Plans and access"
 cta_href: "https://www.promptanatomy.app/#pricing"
 cards:

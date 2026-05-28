@@ -69,6 +69,15 @@ Open DevTools → Network. CSS must be **`/static/css/…`** on the same host (2
 - `main` → production
 - Other branches → preview URLs; `SITEURL` follows `VERCEL_URL` automatically
 
+## Illustration masters and images
+
+- **Masters:** `data/01_illustrations/` (see [`data/01_illustrations/README.md`](../data/01_illustrations/README.md) and [`data/illustrations.yaml`](../data/illustrations.yaml)).
+- **Sync:** `make sync-images` copies optimized heroes to `content/images/` (gitignored; regenerated on every `make build` / Vercel).
+- **Author avatar:** `scripts/generate_brand_assets.py` writes `content/images/author/tomas-staniulis.jpg` until you replace it with a real photo.
+- **Verify:** `scripts/verify_build_assets.py` runs after Pelican and fails if hub/article heroes, OG fallback, or favicons are missing from `output/`.
+
+Deploy requires `data/01_illustrations/` in the repository (use Git LFS if the tree is large).
+
 ## Local verification before push
 
 ```bash

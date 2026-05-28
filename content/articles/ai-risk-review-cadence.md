@@ -40,7 +40,4 @@ Executive sponsor (optional monthly), process owners for live workflows, IT repr
 - Decision log linked to [audit trails](/articles/audit-trails-for-ai-workflows/).
 - Changes to context packs or boundaries—not slide decks only.
 
-## Related reading
-
-- [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/)
 - [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/)

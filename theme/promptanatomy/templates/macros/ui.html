@@ -38,13 +38,13 @@
 
     {% if article.category %}{% if article.reading_time %} · {% endif %}{{ article.category.name }}{% endif %}
 
-    {% if article.modified %}
+    {% if article.modified and (not article.date or article.modified > article.date) %}
 
-    {% if article.reading_time or article.category %} · {% endif %}Updated {{ article.modified|strftime('%Y') }}
+    {% if article.reading_time or article.category %} · {% endif %}Updated {{ article.modified|strftime('%b %Y') }}
 
     {% elif article.date %}
 
-    {% if article.reading_time or article.category %} · {% endif %}{{ article.date|strftime('%Y') }}
+    {% if article.reading_time or article.category %} · {% endif %}{{ article.date|strftime('%b %Y') }}
 
     {% endif %}
 
@@ -88,7 +88,7 @@
 
 
 
-{% macro card(title, description, href=None, extra_classes='', card_id=None) %}
+{% macro card(title, description, href=None, extra_classes='', card_id=None, icon=None) %}
 
   {% set cid = card_id if card_id else (title|replace(' ', '-')|lower) %}
 
@@ -97,6 +97,12 @@
     {% if href %}
 
     <a class="card__stretched-link" href="{{ href }}" aria-labelledby="card-title-{{ cid }}"><span class="sr-only">{{ title }}</span></a>
+
+    {% endif %}
+
+    {% if icon %}
+
+    <span class="card__icon-badge" aria-hidden="true">{{ icon[0]|upper }}</span>
 
     {% endif %}
 

@@ -19,8 +19,11 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Mobile menu (`<details>`): keyboard open/close, links reachable at 375px width
 - [ ] Desktop nav visible at ≥48rem (768px); mobile menu hidden
 - [ ] `:focus-visible` on links, buttons, `.card`, `.topic-card`, `.ecosystem-card`
-- [ ] Newsletter form has visible label (`sr-only`) and `aria-describedby` on note
+- [ ] Newsletter band shows “Coming soon” + disclaimer (no disabled form)
 - [ ] Article hero `alt` matches title when image present
+- [ ] Footer: tab through Explore / Product / Connect `<nav>` columns; link rows ≥44px tall on mobile
+- [ ] Footer: `info@promptanatomy.app` mailto and multi-line address (Prompt Anatomy, 1311 Park St, Alameda)
+- [ ] Footer: `/#ecosystem` jumps to ecosystem section on home
 
 ## Contrast (spot-check)
 
@@ -34,6 +37,19 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Gold primary CTAs; blue links only in article prose
 - [ ] Card hover lift unchanged
 - [ ] Reading progress bar on articles
+
+## Article surface (UX Hardening v1.1)
+
+- [ ] Breadcrumb visible above article header (`Home › Category › Title`)
+- [ ] Article hero shows full asset — no clipped title or `promptanatomy.app` watermark
+- [ ] Key takeaway block aligns its left edge with the prose column (not the wider container)
+- [ ] Tables in prose have a styled header background and 1px row borders (not browser default)
+- [ ] TOC sidebar on desktop has a 1px left rule + padding (frame, not floating nav)
+- [ ] End-of-article CTA renders as dark band with gold primary button before related articles
+- [ ] Author bio shows no gray-disc placeholder when avatar is not configured
+- [ ] Featured card on homepage: title is plain text, gold "Read the framework" button is the only clickable conversion
+- [ ] Meta line dates show as `Month YYYY` (e.g. "May 2026"), with `Updated Month YYYY` when modified > published
+- [ ] No article body contains an inline `## Related reading` H2 (auto-rendered as cards below)
 
 ## Build
 

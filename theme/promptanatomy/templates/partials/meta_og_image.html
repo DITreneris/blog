@@ -1,0 +1,18 @@
+{% set _og_path = og_image_path|default(THEME_STATIC_DIR ~ '/img/og-default.png') %}
+{% set _og_url = CANONICAL_SITEURL ~ '/' ~ _og_path %}
+{% set _og_w = og_image_width|default(1200) %}
+{% set _og_h = og_image_height|default(630) %}
+{% set _og_alt = og_image_alt|default(SITE_CONFIG.brand.name ~ ' — ' ~ SITE_CONFIG.brand.tagline) %}
+{% set _scope = meta_scope|default('both') %}
+{% if _scope in ['og', 'both'] %}
+<meta property="og:image" content="{{ _og_url }}" />
+<meta property="og:image:secure_url" content="{{ _og_url }}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="{{ _og_w }}" />
+<meta property="og:image:height" content="{{ _og_h }}" />
+<meta property="og:image:alt" content="{{ _og_alt }}" />
+{% endif %}
+{% if _scope in ['twitter', 'both'] %}
+<meta name="twitter:image" content="{{ _og_url }}" />
+<meta name="twitter:image:alt" content="{{ _og_alt }}" />
+{% endif %}

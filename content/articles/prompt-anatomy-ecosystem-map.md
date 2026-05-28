@@ -27,9 +27,6 @@ Prompt Anatomy spans **education, field notes, and implementation tools**. Each 
 
 1. Diagnose with [10 Signs](/articles/10-signs-your-company-is-vibe-prompting/).
 2. Learn the stack in [Foundations](/articles/prompt-anatomy-foundations/).
-3. Practice workflows in [training](https://www.promptanatomy.app/anatomy/).
+3. Practice workflows in [training](https://www.promptanatomy.app/).
 
-## Related reading
-
-- [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/)
 - [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/)

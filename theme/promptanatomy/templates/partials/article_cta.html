@@ -1,0 +1,21 @@
+{% from 'macros/ui.html' import section_heading, btn %}
+
+{% set cta = HUB_SECTIONS.article_cta %}
+
+{% if cta and SITE_CONFIG.hub and SITE_CONFIG.hub.training_url %}
+
+<section class="section section--dark article-cta" aria-labelledby="article-cta-heading">
+
+  <div class="container article-cta__inner">
+
+    {{ section_heading(cta.title, heading_id='article-cta-heading') }}
+
+    <p class="article-cta__lead">{{ cta.description }}</p>
+
+    {{ btn(SITE_CONFIG.hub.training_url, cta.button_label, 'primary', external=true) }}
+
+  </div>
+
+</section>
+
+{% endif %}

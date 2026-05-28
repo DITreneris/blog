@@ -45,8 +45,4 @@ title: 10 Signs Your Company Is Vibe Prompting
 | 3 | Run 20 real cases; classify failures (policy, fact, format) |
 | 4 | Report pass rate and scope decision to leadership |
 
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/)
-- [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)
 - [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/)

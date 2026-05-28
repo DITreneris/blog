@@ -9,14 +9,19 @@ brand:
 hub:
   site_url: "https://www.promptanatomy.app"
   pricing_url: "https://www.promptanatomy.app/#pricing"
-  training_url: "https://www.promptanatomy.app/anatomy/"
+  training_url: "https://www.promptanatomy.app/"
   faq_url: "https://www.promptanatomy.app/#faq"
   what_is_url: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
   methodology_url: "https://www.promptanatomy.app/#methodology"
   ecosystem_url: "https://www.promptanatomy.app/#ekosistema"
 
 organization:
+  name: "Prompt Anatomy"
   email: "info@promptanatomy.app"
+  address:
+    street: "1311 Park St, Unit #654"
+    city_state_zip: "Alameda, CA 94501"
+    country: "US"
   mailing_address: "Prompt Anatomy, 1311 Park St, Unit #654, Alameda, CA 94501, US"
 
 nav:
@@ -30,7 +35,7 @@ nav:
     href: "/topics/ai-agents/"
     external: false
   - label: "Training"
-    href: "https://www.promptanatomy.app/anatomy/"
+    href: "https://www.promptanatomy.app/"
     external: true
   - label: "Pricing"
     href: "https://www.promptanatomy.app/#pricing"
@@ -43,32 +48,18 @@ cta:
   external: true
 
 footer:
-  tagline: "Prompt Anatomy – an interactive training system for working with AI."
+  tagline: "Structured AI implementation for teams—frameworks, field notes, and templates from Prompt Anatomy."
+  founder_label: "Founded by Tomas Staniulis"
+  founder_href: "/about/"
   columns:
     - title: "Explore"
-      links:
-        - label: "What is Prompt Anatomy"
-          href: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
-          external: true
-        - label: "Methodology"
-          href: "https://www.promptanatomy.app/#methodology"
-          external: true
-        - label: "Ecosystem"
-          href: "https://www.promptanatomy.app/#ekosistema"
-          external: true
-        - label: "Pricing"
-          href: "https://www.promptanatomy.app/#pricing"
-          external: true
     - title: "Product"
       links:
         - label: "Training"
-          href: "https://www.promptanatomy.app/anatomy/"
+          href: "https://www.promptanatomy.app/"
           external: true
         - label: "FAQ"
           href: "https://www.promptanatomy.app/#faq"
-          external: true
-        - label: "Choose a plan"
-          href: "https://www.promptanatomy.app/#pricing"
           external: true
         - label: "Articles"
           href: "/#latest"
@@ -76,34 +67,17 @@ footer:
         - label: "About"
           href: "/about/"
           external: false
-    - title: "Network"
+        - label: "Framework"
+          href: "/topics/framework/"
+          external: false
+    - title: "Connect"
+      use_social: true
       links:
-        - label: "Public group (Telegram)"
-          href: "https://t.me/prompt_anatomy"
-          external: true
-        - label: "LinkedIn"
-          href: "https://www.linkedin.com/in/staniulis"
-          external: true
-        - label: "X (Twitter)"
-          href: "https://x.com/TStaniulis_NFT"
-          external: true
-        - label: "PromptAnatomy Cloud"
-          href: "https://promptanatomy.cloud/"
-          external: true
-        - label: "PromptAnatomy Pro"
-          href: "https://promptanatomy.pro/"
-          external: true
+        - label: "Ecosystem map"
+          href: "/#ecosystem"
+          external: false
         - label: "Library (AI automation)"
           href: "https://www.promptanatomy.info/en/"
-          external: true
-        - label: "Content system (marketing)"
-          href: "https://www.promptanatomy.space/en/"
-          external: true
-        - label: "Recruitment system (HR)"
-          href: "https://ditreneris.github.io/personalas/"
-          external: true
-        - label: "Operations center (CEO/COO)"
-          href: "https://www.promptanatomy.ceo/"
           external: true
   legal:
     - label: "Privacy Policy"
@@ -115,19 +89,23 @@ footer:
     - label: "Cookies & tracking"
       href: "/privacy/#cookies"
       external: false
-  creator: "creator: tomas staniulis"
 
 author:
-  name: "Prompt Anatomy"
-  title: "AI Implementation"
-  bio: "Field notes, frameworks, and implementation systems for teams building controlled AI workflows."
+  name: "Tomas Staniulis"
+  title: "Founder, Prompt Anatomy"
+  bio: "Builds prompting rules, repeatable workflows, and operational playbooks for teams putting LLMs into daily practice."
+  avatar: "images/author/tomas-staniulis.jpg"
+  linkedin: "https://www.linkedin.com/in/staniulis"
+  url: "https://www.promptanatomy.app/"
 
 social:
-  - label: "LinkedIn"
-    href: "https://www.linkedin.com/in/staniulis"
-  - label: "X (Twitter)"
-    href: "https://x.com/TStaniulis_NFT"
-  - label: "Telegram"
-    href: "https://t.me/prompt_anatomy"
+  twitter_handle: "@TStaniulis_NFT"
+  links:
+    - label: "LinkedIn"
+      href: "https://www.linkedin.com/in/staniulis"
+    - label: "X (Twitter)"
+      href: "https://x.com/TStaniulis_NFT"
+    - label: "Telegram"
+      href: "https://t.me/prompt_anatomy"
 
 locale: en-US

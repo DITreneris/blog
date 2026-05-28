@@ -29,7 +29,4 @@ Tools do not maintain themselves. **Rituals** keep workflows honest after launch
 - Bring one real failure per session.
 - Decisions logged with owner and date.
 
-## Related reading
-
-- [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/)
 - [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)

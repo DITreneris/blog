@@ -30,7 +30,4 @@ A strong prompt in chat is not automatically an agent. Promotion makes sense whe
 3. Add logging and human send gate.
 4. Run pilot with override metrics before removing human from loop.
 
-## Related reading
-
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)
 - [The Model Is Not the System](/articles/the-model-is-not-the-system/)

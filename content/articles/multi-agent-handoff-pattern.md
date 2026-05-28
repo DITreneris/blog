@@ -40,7 +40,4 @@ Multiple agents can work when each step has a **narrow contract**. Without that,
 - Tasks where one retrieval + one model call suffices.
 - Early pilots—start single-path, split only after metrics justify complexity.
 
-## Related reading
-
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)
 - [Handoff Rules Between Humans and AI](/articles/handoff-rules-between-humans-and-ai/)

@@ -67,8 +67,4 @@ See [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workfl
 | Language judgment, bounded tools, audit need | Agent workflow |
 | High stakes, novel cases | Human with AI assist |
 
-## Related reading
-
-- [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/)
-- [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/)
 - [The Model Is Not the System](/articles/the-model-is-not-the-system/)

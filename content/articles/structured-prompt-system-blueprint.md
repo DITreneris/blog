@@ -30,7 +30,4 @@ A **prompt system** is how an organization stores, changes, and tests prompts ac
 2. Pick one workflow; migrate three prompt roles ([types](/articles/types-of-prompts-for-business-workflows/)).
 3. Wire eval gate; train owners on request process.
 
-## Related reading
-
-- [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/)
 - [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/)

@@ -6,6 +6,8 @@
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ page.url }}{% endblock %}
 
+{% block robots %}<meta name="robots" content="noindex,follow" />{% endblock %}
+
 
 
 {% block content %}

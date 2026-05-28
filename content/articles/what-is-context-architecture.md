@@ -47,7 +47,4 @@ Kitchen-sink retrieval, stale policy packs, and cross-tenant data bleed cause mo
 
 Read [Memory Types for AI Systems](/articles/memory-types-for-ai-systems/) and [Context Window Myths](/articles/context-window-myths/).
 
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/)
 - [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/)

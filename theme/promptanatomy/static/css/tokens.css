@@ -59,6 +59,8 @@
   --text-article-title: clamp(2.125rem, 3vw + 1rem, 4rem);
   --text-body: 1.125rem;
   --text-small: 0.9375rem;
+  --text-card-title: 1.25rem;
+  --text-badge: 0.75rem;
   --text-meta: 0.875rem;
   --text-prose-h2: 1.75rem;
   --text-prose-h3: 1.25rem;

@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+"""Fail the build if required static and image assets are missing from output/."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "output"
+
+REQUIRED = [
+    OUTPUT / "static" / "img" / "og-default.png",
+    OUTPUT / "static" / "favicon-32x32.png",
+    OUTPUT / "images" / "hub" / "hero.png",
+    OUTPUT / "images" / "hub" / "ecosystem.png",
+    OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.png",
+    OUTPUT / "images" / "author" / "tomas-staniulis.jpg",
+]
+
+
+def main() -> int:
+    if not OUTPUT.is_dir():
+        print("output/ not found. Run pelican first.", file=sys.stderr)
+        return 1
+
+    missing = [p for p in REQUIRED if not p.is_file()]
+    if missing:
+        print("Missing required build assets:", file=sys.stderr)
+        for path in missing:
+            print(f"  {path.relative_to(ROOT)}", file=sys.stderr)
+        return 1
+
+    print(f"Build asset check OK ({len(REQUIRED)} paths).")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://promptanatomy.blog/sitemap.xml
+Sitemap: https://www.promptanatomy.blog/sitemap.xml

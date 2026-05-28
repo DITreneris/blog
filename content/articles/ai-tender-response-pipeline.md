@@ -28,7 +28,4 @@ Tender and RFP work is document-heavy, time-bound, and unforgiving of invented c
 - Eval set includes known trap clauses (indemnity, SLA penalties).
 - Version every boilerplate block.
 
-## Related reading
-
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)
 - [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/)

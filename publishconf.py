@@ -53,3 +53,14 @@ RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
 
 FEED_DOMAIN = CANONICAL_SITEURL
+
+ENABLE_VERCEL_ANALYTICS = True
+JINJA_GLOBALS["ENABLE_VERCEL_ANALYTICS"] = True
+
+# Production: no draft HTML or Pelican utility index pages (wrong canonical / thin dupes).
+DRAFT_SAVE_AS = ""
+ARCHIVES_SAVE_AS = ""
+AUTHORS_SAVE_AS = ""
+AUTHOR_SAVE_AS = ""
+CATEGORIES_SAVE_AS = ""
+TAGS_SAVE_AS = ""

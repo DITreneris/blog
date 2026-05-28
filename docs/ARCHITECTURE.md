@@ -34,7 +34,7 @@ No dates in article URLs.
 
 ## Ecosystem role
 
-`promptanatomy.blog` is the **content spoke** in the Prompt Anatomy ecosystem. Hub URLs (pricing, training, FAQ) live in `data/site.yaml` under `hub:` and point to `https://www.promptanatomy.app`. Outbound CTAs use absolute URLs so production `SITEURL` stays on `.blog`.
+`promptanatomy.blog` is the **content spoke** in the Prompt Anatomy ecosystem. Hub URLs (pricing, training, FAQ) live in `data/site.yaml` under `hub:` and point to `https://www.promptanatomy.app`. Outbound CTAs use absolute URLs so production `SITEURL` stays on `.blog`. Homepage hero CTAs are editorial in `data/hub_sections.yaml` (`hero.cta_primary` / `cta_secondary`); the global `site.yaml` `cta` block is for the header **Plans** button only.
 
 ## Environments
 

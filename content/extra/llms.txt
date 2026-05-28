@@ -1,0 +1,21 @@
+# Prompt Anatomy
+
+> Prompt Anatomy is a structured AI implementation knowledge hub for teams turning ad-hoc AI usage into controlled prompts, workflows, agents, evaluation hooks, and governance. Authored by Tomas Staniulis (Founder, Prompt Anatomy).
+
+## Pillar articles
+- [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): the 6-layer implementation stack.
+- [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/)
+- [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/)
+- [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/)
+
+## Topics
+- /topics/framework/
+- /topics/ai-agents/
+- /topics/ai-governance/
+- /topics/implementation-notes/
+- /topics/case-studies/
+- /topics/templates/
+
+## About
+- /about/
+- Contact: info@promptanatomy.app

@@ -95,7 +95,9 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 | `--text-section` | Section `h2` |
 | `--text-article-title` | Article `h1` |
 | `--text-body` | `1.125rem` (18px) body |
-| `--text-small` | Buttons, card desc |
+| `--text-small` | Buttons, card desc, topic card titles |
+| `--text-card-title` | `.card__title` |
+| `--text-badge` | `.badge`, `.card__icon-badge` |
 | `--text-meta` | Metadata, labels |
 | `--text-prose-h2` | Article `.prose h2` |
 | `--text-prose-h3` | Article `.prose h3` |
@@ -144,7 +146,42 @@ Base class: `.btn`. Variants:
 
 - Default `.card` — title link optional via `card()` macro.
 - `.card--linked` — full-card hit target via `.card__stretched-link` when `href` is passed to `card()` (Start here cards).
-- Newsletter form uses `.newsletter--placeholder` when signup is disabled (visible “Coming soon” badge).
+- `.card--featured` — homepage flagship; **single click target**: gold `btn--primary` only (title is not a link, full card is not stretched-linked). Reinforces "gold = CTA".
+- Newsletter form uses `.newsletter--placeholder` when signup is disabled (visible "Coming soon" badge).
+
+## Article components
+
+### Breadcrumb
+
+`partials/breadcrumb.html` — `Home › {Category} › {Title}` rendered above `article_header`. Uses `--text-meta` + `--color-text-muted`; current page uses `--color-text-secondary`. Complements the existing `partials/schema_breadcrumb.html` structured data.
+
+### Tables in prose
+
+`.prose table` — methodology tables (e.g. "Worked example" layer/choice tables) get a styled header on `--color-surface-elevated`, 1px `--color-border` row borders, and small body type (`--text-small`). Mobile (`<36rem`): the table becomes `display: block; overflow-x: auto;` for graceful horizontal scroll.
+
+### Key takeaway
+
+`partials/key_takeaway.html` — `.takeaway-box` is constrained to `--article-max` (~720px) and centered, so its left edge aligns with the prose column below. Uses `--color-link` left border + `--color-takeaway-bg`.
+
+### Article CTA
+
+`partials/article_cta.html` — end-of-article conversion block. Dark band (`.section--dark`), centered `section_heading`, lead copy on `--color-text-on-dark-muted`, single `btn--primary` to `SITE_CONFIG.hub.training_url`. Copy from `HUB_SECTIONS.article_cta` in `data/hub_sections.yaml` so editors can override per deploy. The bare-sentence "training link at end of article" pattern is forbidden (see `docs/CONTENT_STANDARDS.md`).
+
+### Article hero image
+
+`.article-header__diagram` uses `aspect-ratio: 16/10` + `object-fit: contain` + `max-height: 28rem` over `--color-surface-elevated`. This preserves in-asset typography (titles, watermarks) instead of cover-cropping them. Featured-card hero uses the same 16/10 ratio for visual consistency.
+
+### Author bio
+
+`partials/author_bio.html` — avatar block is gated on `SITE_CONFIG.author.avatar` existing. When unset (brand-author bios), no placeholder disc renders. When `SITE_CONFIG.author.linkedin` is set, the author name is wrapped in `.author-bio__name-link` (color: inherit; underline on hover) pointing to the LinkedIn profile with `rel="noopener noreferrer me" target="_blank"`. Schema.org Article author is rendered as `Person` (using `SITE_CONFIG.author.name`) with publisher as `Organization` (using `SITE_CONFIG.brand.name`).
+
+### TOC sidebar
+
+Desktop (`≥64rem`): TOC is sticky (`top: 6rem`) and framed with a 1px left rule + `--space-md` left padding, so it reads as a designed sidebar rather than a floating nav.
+
+### `meta_line` date format
+
+`meta_line(article)` macro in `macros/ui.html` formats dates as `%b %Y` (e.g. "May 2026"). When `article.modified > article.date`, surfaces as `Updated May 2026`. Never use `%Y` alone — strips recency signal.
 
 ## Layout primitives
 
@@ -206,7 +243,7 @@ Respect `prefers-reduced-motion` (`base.css`).
 | Article hero (`article_header.html`) | Article title — required when image present |
 | Article card thumbnail | Empty `alt` OK — title is adjacent in link text |
 | Featured card image | Empty `alt` OK — title and summary adjacent |
-| Hub hero / ecosystem map | Optional `image_alt` in `data/hub_sections.yaml` / `data/ecosystem.yaml`; empty = decorative (wrapper may use `aria-hidden`) |
+| Hub hero / ecosystem map | Homepage hero: split grid (copy left, diagram right); hub diagram uses `object-fit: contain`. Optional `image_alt` in `data/hub_sections.yaml` / `data/ecosystem.yaml`; empty = decorative |
 | Logo SVG | `aria-hidden="true"` in header/footer |
 
 ## Composition

@@ -30,7 +30,4 @@ CRM segment → model drafts personalized opening from approved facts → rep ed
 
 Measure reply quality and overrides, not emails generated.
 
-## Related reading
-
-- [When AI Hallucinates Confidence](/articles/when-ai-hallucinates-confidence/)
 - [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/)

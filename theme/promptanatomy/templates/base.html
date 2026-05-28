@@ -1,49 +1,118 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
+
 <head>
+
   <meta charset="utf-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>{% block title %}{{ SITENAME }}{% if SITESUBTITLE %} — {{ SITESUBTITLE }}{% endif %}{% endblock %}</title>
+
   <meta name="description" content="{% block description %}{{ SITE_CONFIG.brand.description }}{% endblock %}" />
+
   <link rel="canonical" href="{% block canonical %}{{ CANONICAL_SITEURL }}/{% endblock %}" />
+
+  {% block robots %}<meta name="robots" content="index,follow,max-image-preview:large" />{% endblock %}
+
   <meta property="og:locale" content="en_US" />
+
   <meta property="og:site_name" content="{{ SITENAME }}" />
+
   {% block open_graph %}
+
   <meta property="og:type" content="website" />
+
   <meta property="og:title" content="{{ SITENAME }}" />
+
   <meta property="og:description" content="{{ SITE_CONFIG.brand.description }}" />
+
   <meta property="og:url" content="{{ CANONICAL_SITEURL }}/" />
+
+  {% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+
   {% endblock %}
+
   <meta name="twitter:card" content="summary_large_image" />
+
+  {% if SITE_CONFIG.social.twitter_handle %}
+
+  <meta name="twitter:site" content="{{ SITE_CONFIG.social.twitter_handle }}" />
+
+  <meta name="twitter:creator" content="{{ SITE_CONFIG.social.twitter_handle }}" />
+
+  {% endif %}
+
   {% block twitter %}
+
   <meta name="twitter:title" content="{{ SITENAME }}" />
+
   <meta name="twitter:description" content="{{ SITE_CONFIG.brand.description }}" />
+
+  {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+
   {% endblock %}
+
   <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" />
+
   <link rel="icon" href="/{{ THEME_STATIC_DIR }}/favicon.svg" type="image/svg+xml" />
+
   <link rel="icon" type="image/png" sizes="32x32" href="/{{ THEME_STATIC_DIR }}/favicon-32x32.png" />
+
   <link rel="icon" type="image/png" sizes="16x16" href="/{{ THEME_STATIC_DIR }}/favicon-16x16.png" />
+
   <link rel="apple-touch-icon" href="/{{ THEME_STATIC_DIR }}/apple-touch-icon.png" />
+
   <link rel="manifest" href="/{{ THEME_STATIC_DIR }}/site.webmanifest" />
+
   <meta name="theme-color" content="#0B1320" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/tokens.css" />
+
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/base.css" />
+
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/layout.css" />
+
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/components.css" />
+
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/article.css" />
+
   {% block extra_head %}{% endblock %}
-  {% block structured_data %}{% endblock %}
+
+  {% block structured_data %}
+
+  {% include 'partials/schema_site.html' %}
+
+  {% endblock %}
+
 </head>
+
 <body>
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
   {% include 'partials/header.html' %}
+
   <main id="main-content">
+
     {% block content %}{% endblock %}
+
   </main>
+
   {% include 'partials/footer.html' %}
+
   {% block extra_js %}{% endblock %}
+
+  {% include 'partials/vercel_analytics.html' %}
+
 </body>
+
 </html>
+

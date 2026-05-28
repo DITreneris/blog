@@ -1,6 +1,6 @@
 {% from 'macros/ui.html' import section_heading, card %}
 
-<section class="section" aria-labelledby="start-here-heading">
+<section class="section" id="start-here" aria-labelledby="start-here-heading">
 
   <div class="container">
 
@@ -10,7 +10,7 @@
 
       {% for item in HUB_SECTIONS.start_here.cards %}
 
-      {{ card(item.title, item.description, item.href, card_id=loop.index) }}
+      {{ card(item.title, item.description, item.href, card_id=loop.index, icon=item.icon) }}
 
       {% endfor %}
 

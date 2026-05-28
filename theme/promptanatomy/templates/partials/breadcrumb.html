@@ -1,0 +1,25 @@
+{% if article %}
+
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+
+  <ol class="breadcrumb__list">
+
+    <li class="breadcrumb__item"><a href="/">Home</a></li>
+
+    {% if article.category %}
+
+    <li class="breadcrumb__separator" aria-hidden="true">›</li>
+
+    <li class="breadcrumb__item"><a href="/{{ article.category.url }}">{{ article.category.name }}</a></li>
+
+    {% endif %}
+
+    <li class="breadcrumb__separator" aria-hidden="true">›</li>
+
+    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">{{ article.title }}</li>
+
+  </ol>
+
+</nav>
+
+{% endif %}

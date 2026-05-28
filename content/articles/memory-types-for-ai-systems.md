@@ -37,8 +37,4 @@ Memory in AI systems is not one feature. It is **several mechanisms** with diffe
 - **Episodic:** optional summary of prior cases for the same account—human-visible, not silent auto-inject.
 - **Denied:** full chat history from unrelated products.
 
-## Related reading
-
-- [What Is Context Architecture?](/articles/what-is-context-architecture/)
-- [Context Window Myths](/articles/context-window-myths/)
 - [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/)

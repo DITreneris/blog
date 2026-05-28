@@ -50,7 +50,4 @@ Start with eval cases before writing prompts. Involve support leads in context t
 
 If your team mirrors this story—strong activity, weak reproducibility—run the diagnostic, pick one queue, and fill the [workflow canvas](/articles/ai-workflow-canvas-template/) before the next vendor demo.
 
-## Related reading
-
-- [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)
 - [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/)

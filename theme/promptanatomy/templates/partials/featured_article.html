@@ -1,12 +1,14 @@
 {% from 'macros/ui.html' import category_badge, meta_line, hero_image_url, btn, section_heading %}
 
+{% set f = HUB_SECTIONS.featured if HUB_SECTIONS.featured is defined else none %}
+
 {% if article %}
 
 <section class="section" aria-labelledby="featured-heading">
 
   <div class="container">
 
-    {{ section_heading('Featured', heading_id='featured-heading') }}
+    {{ section_heading(f.title if f and f.title else 'Featured', lead=(f.lead if f and f.lead else none), heading_id='featured-heading') }}
 
     <article class="card card--featured">
 
@@ -18,17 +20,13 @@
 
         {% endif %}
 
-        <h3 class="card__title">
-
-          <a href="/{{ article.url }}">{{ article.title }}</a>
-
-        </h3>
+        <h3 class="card__title">{{ article.title }}</h3>
 
         <p class="card__desc">{{ article.summary }}</p>
 
         {{ meta_line(article) }}
 
-        {{ btn('/' ~ article.url, 'Read article') }}
+        {{ btn('/' ~ article.url, (f.cta_label if f and f.cta_label else 'Read article')) }}
 
       </div>
 

@@ -8,6 +8,75 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- **Frontend audit implementation (build + SEO + polish).**
+  - [`Makefile`](Makefile) — `sync-images` before Pelican on `build` / `build-dev`; [`scripts/verify_build_assets.py`](scripts/verify_build_assets.py) post-build smoke check.
+  - [`data/01_illustrations/README.md`](data/01_illustrations/README.md) — masters layout; [`docs/DEPLOY.md`](docs/DEPLOY.md) illustration pipeline section; `content/images/` gitignored (generated).
+  - [`publishconf.py`](publishconf.py) — production disables draft HTML and Pelican utility index pages (`DRAFT`, `ARCHIVES`, `AUTHORS`, `AUTHOR`, `CATEGORIES`, `TAGS`).
+  - [`scripts/generate_brand_assets.py`](scripts/generate_brand_assets.py) — generates branded author placeholder JPG at `content/images/author/tomas-staniulis.jpg`.
+  - [`partials/schema_faq.html`](theme/promptanatomy/templates/partials/schema_faq.html) — FAQPage JSON-LD when `article.faq` is set; pillar FAQs on [`the-model-is-not-the-system.md`](content/articles/the-model-is-not-the-system.md).
+  - Start-here [`card()`](theme/promptanatomy/templates/macros/ui.html) icon badges from `hub_sections.yaml` `icon` keys.
+- **SEO P0 + P1 (metadata, schema, crawlers).** Social previews and structured data hardening across the static site:
+  - [`scripts/generate_brand_assets.py`](scripts/generate_brand_assets.py) — Pillow build step generates `static/img/og-default.png` (1200×630) plus favicon/PWA PNGs (16, 32, 180, 192, 512) from brand colors. Wired into `make brand-assets`, [`Makefile`](Makefile) `build` / `build-dev`, and [`vercel.json`](vercel.json).
+  - [`partials/meta_og_image.html`](theme/promptanatomy/templates/partials/meta_og_image.html) — shared `og:image` / `twitter:image` tags with `meta_scope` (`og` | `twitter`) to avoid duplicate head tags.
+  - [`partials/schema_site.html`](theme/promptanatomy/templates/partials/schema_site.html) — global Organization + WebSite JSON-LD (`@graph`, stable `#organization` / `#website` `@id`s, `sameAs`, logo).
+  - [`content/extra/llms.txt`](content/extra/llms.txt) — curated site map for AI crawlers (pillar articles, topics, about, contact); deployed via `EXTRA_PATH_METADATA` in [`pelicanconf.py`](pelicanconf.py).
+  - [`data/site.yaml`](data/site.yaml) `social.twitter_handle` (`@TStaniulis_NFT`) for `twitter:site` / `twitter:creator` in [`base.html`](theme/promptanatomy/templates/base.html).
+  - Default `{% block robots %}` in `base.html` (`index,follow,max-image-preview:large`); `noindex,follow` override on [`design_system.html`](theme/promptanatomy/templates/design_system.html).
+- **Vercel Web Analytics.** [`@vercel/analytics`](package.json) bundled via esbuild into [`theme/promptanatomy/static/js/vercel-analytics.js`](theme/promptanatomy/static/js/vercel-analytics.js) (`npm run build:analytics`); loaded from [`partials/vercel_analytics.html`](theme/promptanatomy/templates/partials/vercel_analytics.html) when `ENABLE_VERCEL_ANALYTICS` is true ([`publishconf.py`](publishconf.py) only). [`Makefile`](Makefile) `analytics` target; [`vercel.json`](vercel.json) runs `npm ci` + bundle step before Pelican.
+- **Google Search Console verification.** [`content/extra/google7305663b2567346e.html`](content/extra/google7305663b2567346e.html) deployed at `/google7305663b2567346e.html` via `EXTRA_PATH_METADATA` in [`pelicanconf.py`](pelicanconf.py).
+- **Article UX Hardening (systemic).** Two new shared partials wired into every article page:
+  - [`partials/breadcrumb.html`](theme/promptanatomy/templates/partials/breadcrumb.html) — visible `Home › Category › Title` above the article header (complements existing `schema_breadcrumb.html`).
+  - [`partials/article_cta.html`](theme/promptanatomy/templates/partials/article_cta.html) — end-of-article dark band with gold primary button to `SITE_CONFIG.hub.training_url`; copy editable via new `HUB_SECTIONS.article_cta` block in [`data/hub_sections.yaml`](data/hub_sections.yaml).
+- **Real author bio.** [`data/site.yaml`](data/site.yaml) `author` block now identifies **Tomas Staniulis** (Founder, Prompt Anatomy) with `avatar`, `linkedin`, and `url` fields. Avatar asset at `content/images/author/tomas-staniulis.jpg` (400×400 JPG). `partials/author_bio.html` wraps the author name in a LinkedIn link when `author.linkedin` is set; `.author-bio__name-link` uses an underline-on-hover treatment (no color change). [`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html) now declares the article author as `@type: Person` (Tomas) while keeping the publisher as `Organization` (Prompt Anatomy) — better E-E-A-T signal for Google.
+- **Featured card copy from data.** New `HUB_SECTIONS.featured` block (`title`, `lead`, `cta_label`) in [`data/hub_sections.yaml`](data/hub_sections.yaml) so editors can override per deploy without template edits.
+- **Prose table component** in [`article.css`](theme/promptanatomy/static/css/article.css) — methodology tables now have styled headers, row borders, and mobile overflow scroll.
+- **One-off sweep script** [`scripts/strip_inline_related_reading.py`](scripts/strip_inline_related_reading.py) — removes the auto-template `## Related reading` H2 + bullet block from `content/articles/*.md` (idempotent; preserves any body content after the block).
+
+### Changed
+
+- **Footer cleanup (P0–P3).** Trimmed link columns to Explore (3, hub URLs) / Product (5) / Connect (social + ecosystem map + library); removed duplicate pricing and niche ecosystem spokes. [`footer.html`](theme/promptanatomy/templates/partials/footer.html) — per-column `<nav>`, sr-only `h2`, `h3` titles, `<address>` block, founder line. [`data/site.yaml`](data/site.yaml) structured `organization.address`; Organization `PostalAddress` in [`schema_site.html`](theme/promptanatomy/templates/partials/schema_site.html). Touch targets and founder/address styles in [`components.css`](theme/promptanatomy/static/css/components.css).
+- **Homepage social titles** — [`index.html`](theme/promptanatomy/templates/index.html) `og:title` / `twitter:title` match page title (brand + tagline).
+- **Article social image meta** — OG/Twitter dimensions 1200×630 (display crop unchanged in CSS).
+- **Newsletter band** — removed disabled email form; “Coming soon” + disclaimer only ([`newsletter_cta.html`](theme/promptanatomy/templates/partials/newsletter_cta.html)).
+- **Visual / DS micro-fixes** — ecosystem map `image_alt`; topic-card hover uses brand gold; card thumbs `object-fit: contain`; featured card no hover lift; hero headline `max-width` 24ch; tokens `--text-card-title`, `--text-badge`; footer tagline aligned with brand voice.
+- **Sitemap** — excludes `drafts/` slug root ([`generate_sitemap.py`](scripts/generate_sitemap.py)).
+- **Fallback OG / Twitter image** on all pages via `base.html`; articles with `hero_image` override with 1200×630 meta dimensions + title alt; articles without hero fall back to `og-default.png`.
+- **Article JSON-LD** ([`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html)) — adds required `image` field; publisher references Organization `@id`.
+- **Breadcrumb JSON-LD** ([`schema_breadcrumb.html`](theme/promptanatomy/templates/partials/schema_breadcrumb.html)) — articles now emit Home → Category → Title (matches visible [`breadcrumb.html`](theme/promptanatomy/templates/partials/breadcrumb.html)).
+- **Page metadata** ([`page.html`](theme/promptanatomy/templates/page.html)) — `og:description`, page-specific Twitter title/description, truncated meta description (160 chars).
+- **Topic metadata** ([`category.html`](theme/promptanatomy/templates/category.html)) — per-topic description and OG/Twitter from [`data/categories.yaml`](data/categories.yaml).
+- **Sitemap** ([`scripts/generate_sitemap.py`](scripts/generate_sitemap.py)) — `<lastmod>` from file mtime; excludes `/design-system/`; `SITEURL` read from `site.yaml`.
+- **robots.txt** ([`content/extra/robots.txt`](content/extra/robots.txt)) — sitemap URL aligned to canonical host `https://www.promptanatomy.blog/sitemap.xml`.
+- **Vercel build pipeline** ([`vercel.json`](vercel.json)) — adds Node/npm install alongside Python venv for analytics bundle; production builds only inject analytics script.
+- **Article hero crop:** `.article-header__diagram` switched from `aspect-ratio: 21/9 + object-fit: cover + max-height 280px` to `16/10 + contain + 28rem` over `--color-surface-elevated`, so hero assets (titles, watermarks) are no longer clipped ([`article.css`](theme/promptanatomy/static/css/article.css)).
+- **Featured card click model:** removed the title `<a>` link in [`featured_article.html`](theme/promptanatomy/templates/partials/featured_article.html); the gold `btn--primary` is the single click target. Reinforces "gold = CTA" rule.
+- **`meta_line` date format** ([`macros/ui.html`](theme/promptanatomy/templates/macros/ui.html)) — `%Y` → `%b %Y` (e.g. "May 2026"); `Updated …` now surfaces only when `article.modified > article.date`. Restores month-level recency signal across every card and article header.
+- **Key takeaway alignment:** `.takeaway-box` constrained to `--article-max` and centered so its left edge matches the prose column below ([`article.css`](theme/promptanatomy/static/css/article.css)).
+- **TOC sidebar framing:** desktop `.toc-collapsible` gets a 1px `--color-border` left rule + `--space-md` padding ([`article.css`](theme/promptanatomy/static/css/article.css)).
+- **Author bio placeholder:** [`partials/author_bio.html`](theme/promptanatomy/templates/partials/author_bio.html) no longer renders the gray-disc fallback `<div>` when `SITE_CONFIG.author.avatar` is unset.
+- **Article template order** ([`article.html`](theme/promptanatomy/templates/article.html)): Progress → **Breadcrumb** → Header → Takeaway → Prose (+ TOC) → **ArticleCTA** → Related → Author → FAQ.
+- **Frontmatter:** canonical optional key is `modified` (Pelican-native, parsed as date) — `date_modified` is silently treated as a string and will not surface `Updated …` or `schema.org/dateModified`. [`AGENTS.md`](AGENTS.md) updated; [`the-model-is-not-the-system.md`](content/articles/the-model-is-not-the-system.md) migrated to `modified`.
+- Training links point to [promptanatomy.app](https://www.promptanatomy.app/) (hub root), not `/anatomy/`.
+- Homepage **Hub** (ecosystem spoke) moved below Latest articles, above newsletter/footer band.
+- Homepage hero CTAs: **Start here** (`/#start-here`) + **Training** (`.app`); removed **Choose a plan** from hero ([`data/hub_sections.yaml`](data/hub_sections.yaml), [`blog_hero.html`](theme/promptanatomy/templates/partials/blog_hero.html)).
+- Homepage hub hero: single [`data/01_illustrations/hero.png`](data/01_illustrations/hero.png) → `content/images/hub/hero.png` (replaces dual `hero-1` / `hero-2` Selfpromo cards).
+- Homepage hero **split layout**: copy/CTAs left, [`h1.png`](data/01_illustrations/h1.png) architecture diagram right (`hero__grid`, `object-fit: contain`).
+
+### Removed
+
+- **Inline `## Related reading` H2 + bullet blocks** from 27 articles (`content/articles/`). The auto-rendered [`partials/related_articles.html`](theme/promptanatomy/templates/partials/related_articles.html) cards replace this surface; duplicates are now forbidden by [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
+- **Bare-sentence training CTAs** at the end of `the-model-is-not-the-system.md`, `your-company-does-not-need-more-ai-tools.md`, and `implementation-notes-hero-structure.md`. Conversion intent is now centralized in `partials/article_cta.html`.
+
+### Docs
+
+- [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) — new "Forbidden patterns" section.
+- [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) — new "Article components" section (Breadcrumb, Tables in prose, Key takeaway, ArticleCTA, hero crop policy, author bio gating, TOC framing, `meta_line` date rule). `.card--featured` single-click-target rule documented under Cards.
+- [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md) — registered `Breadcrumb` and `ArticleCTA` partials; updated Article page-template row.
+- [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) — new "Article surface (UX Hardening v1.1)" checklist block.
+- [`docs/SEO_improvement.md`](docs/SEO_improvement.md) — SEO/GEO audit and P0–P1 implementation plan (Phases 1–2 shipped in this release).
+
 ### Fixed
 
 - **Vercel deploy:** [`vercel.json`](vercel.json) uses `framework: null`, project `.venv` for PEP 668-safe installs, and `.venv/bin/python` for Pelican build. [`.python-version`](.python-version) pins 3.11. [docs/DEPLOY.md](docs/DEPLOY.md) troubleshooting.

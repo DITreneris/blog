@@ -292,8 +292,7 @@ illustrations:
     slug: implementation-notes-hero-structure
     title: "Implementation Notes: Hero Structure"
     category: Implementation Notes
-    usage: [hero, hub]
-    hub_asset: hero_primary
+    usage: [hero]
     status: mapped
 
   - id: promo-hero-2
@@ -301,8 +300,14 @@ illustrations:
     slug: from-prompts-to-business-outcomes
     title: "From Prompts to Business Outcomes"
     category: Implementation Notes
-    usage: [hero, hub]
-    hub_asset: hero_secondary
+    usage: [hero]
+    status: mapped
+
+  - id: hub-hero
+    source: h1.png
+    title: "Homepage hero — architecture diagram"
+    usage: [hub]
+    hub_asset: hero
     status: mapped
 
   - id: case-vibe-structured
@@ -325,5 +330,4 @@ illustrations:
 
 hub_images:
   ecosystem: images/hub/ecosystem.png
-  hero_primary: images/hub/hero-1.png
-  hero_secondary: images/hub/hero-2.png
+  hero: images/hub/hero.png

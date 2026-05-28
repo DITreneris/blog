@@ -35,7 +35,4 @@ Generate → attach sources used → checker flags unsupported sentences → hum
 
 For customer-facing work, **never** skip the send gate because the draft “sounds right.”
 
-## Related reading
-
-- [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/)
 - [What Is Context Architecture?](/articles/what-is-context-architecture/)

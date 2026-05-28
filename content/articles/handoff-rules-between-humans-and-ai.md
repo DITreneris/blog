@@ -27,7 +27,4 @@ Blurry handoffs create silent risk: the model assumed someone would check; the h
 
 Log handoff reason in the same store as [audit trails](/articles/audit-trails-for-ai-workflows/).
 
-## Related reading
-
-- [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/)
 - [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)

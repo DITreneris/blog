@@ -17,7 +17,7 @@ Articles cover context design, evaluation, handoffs, and governance—not generi
 **Tomas Staniulis** writes implementation notes from work helping teams adopt AI under real operational and compliance constraints.
 
 - [LinkedIn](https://www.linkedin.com/in/staniulis)
-- [Training](https://www.promptanatomy.app/anatomy/)
+- [Training](https://www.promptanatomy.app/)
 - [Methodology](https://www.promptanatomy.app/#methodology)
 
 ## Start here
@@ -30,6 +30,10 @@ Articles cover context design, evaluation, handoffs, and governance—not generi
 
 **Email:** info@promptanatomy.app
 
-**Mailing address:** Prompt Anatomy, 1311 Park St, Unit #654, Alameda, CA 94501
+**Mailing address:**
+
+Prompt Anatomy  
+1311 Park St, Unit #654  
+Alameda, CA 94501, US
 
 [Training and pricing](https://www.promptanatomy.app/#pricing) when you are ready to standardize across teams.

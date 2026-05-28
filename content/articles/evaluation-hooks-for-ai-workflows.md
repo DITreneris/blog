@@ -37,7 +37,4 @@ Evaluation hooks are **checkpoints** where workflow output is scored against kno
 | Wrong product mentioned | Does not ship without human |
 | Standard how-to | Correct steps from KB article ID |
 
-## Related reading
-
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)
 - [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)

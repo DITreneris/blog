@@ -37,7 +37,4 @@ Audit trails turn AI from a black box into an **accountable process**. Regulator
 - Monthly sample of high-risk cases for process owners.
 - After every prompt or context pack change, spot-check 10 cases from [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/).
 
-## Related reading
-
-- [AI Risk Review Cadence](/articles/ai-risk-review-cadence/)
 - [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/)

@@ -27,7 +27,4 @@ Prompt design is how layers **meet in one invocation**. Architecture is how thos
 - Contradictory layers from different owners → designate a single context owner.
 - Stale examples → regression in eval.
 
-## Related reading
-
-- [What Is Context Architecture?](/articles/what-is-context-architecture/)
 - [Memory Types for AI Systems](/articles/memory-types-for-ai-systems/)

@@ -36,8 +36,4 @@ Agents that can “read everything” eventually read the wrong thing. **Data bo
 - Log every tool call with actor, workflow version, and resource ID.
 - Review boundaries when you add a model or connector—not only at launch.
 
-## Related reading
-
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/)
-- [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/)
 - [What Is Context Architecture?](/articles/what-is-context-architecture/)

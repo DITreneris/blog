@@ -1,5 +1,6 @@
 output/
 output-check/
+content/images/
 __pycache__/
 *.py[cod]
 .venv/
@@ -8,4 +9,4 @@ venv/
 .DS_Store
 *.swp
 .idea/
-.vscode/
+node_modules/

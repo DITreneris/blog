@@ -1,0 +1,14 @@
+{
+  "name": "promptanatomy-blog",
+  "private": true,
+  "description": "Build tooling for promptanatomy.blog (Pelican static site)",
+  "scripts": {
+    "build:analytics": "esbuild scripts/analytics-entry.mjs --bundle --minify --format=iife --outfile=theme/promptanatomy/static/js/vercel-analytics.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

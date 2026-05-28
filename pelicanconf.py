@@ -82,12 +82,16 @@ PYGMENTS_STYLE = "monokai"
 STATIC_PATHS = ["images", "extra"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
+    "extra/llms.txt": {"path": "llms.txt"},
+    "extra/google7305663b2567346e.html": {"path": "google7305663b2567346e.html"},
 }
 
 JINJA_ENVIRONMENT = {
     "trim_blocks": True,
     "lstrip_blocks": True,
 }
+
+ENABLE_VERCEL_ANALYTICS = False
 
 JINJA_GLOBALS = {
     "SITE_CONFIG": SITE_CONFIG,
@@ -97,6 +101,7 @@ JINJA_GLOBALS = {
     "ILLUSTRATIONS": ILLUSTRATIONS,
     "HUB_IMAGES": ILLUSTRATIONS.get("hub_images", {}),
     "CURRENT_YEAR": datetime.date.today().year,
+    "ENABLE_VERCEL_ANALYTICS": ENABLE_VERCEL_ANALYTICS,
 }
 
 DISPLAY_PAGES_ON_MENU = False

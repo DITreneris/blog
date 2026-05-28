@@ -54,7 +54,4 @@ Metrics drive prompt, context, and model changes; regression tests block bad dep
 
 **Self-check:** Business outcomes tie to workflow KPIs; model swaps are routine with eval gates.
 
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/)
 - [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/)

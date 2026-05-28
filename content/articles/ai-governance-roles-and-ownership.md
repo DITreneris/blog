@@ -39,8 +39,4 @@ AI governance is not a policy PDF in a drawer. It is **clear ownership** for how
 - IT writes all prompts without process owners → misaligned outcomes.
 - Legal only engaged after a breach → governance as cleanup.
 
-## Related reading
-
-- [AI Risk Review Cadence](/articles/ai-risk-review-cadence/)
-- [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/)
 - [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/)

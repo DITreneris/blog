@@ -1,0 +1,37 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ CANONICAL_SITEURL }}/#organization",
+      "name": {{ SITE_CONFIG.brand.name|tojson }},
+      "url": "{{ CANONICAL_SITEURL }}/",
+      "logo": "{{ CANONICAL_SITEURL }}/{{ THEME_STATIC_DIR }}/img/og-default.png",
+      "email": {{ SITE_CONFIG.organization.email|tojson }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ SITE_CONFIG.organization.address.street|tojson }},
+        "addressLocality": "Alameda",
+        "addressRegion": "CA",
+        "postalCode": "94501",
+        "addressCountry": {{ SITE_CONFIG.organization.address.country|tojson }}
+      },
+      "sameAs": [
+        {{ SITE_CONFIG.author.linkedin|tojson }},
+        "https://x.com/TStaniulis_NFT",
+        "https://t.me/prompt_anatomy",
+        {{ SITE_CONFIG.hub.site_url|tojson }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ CANONICAL_SITEURL }}/#website",
+      "url": "{{ CANONICAL_SITEURL }}/",
+      "name": {{ SITE_CONFIG.brand.name|tojson }},
+      "inLanguage": "en-US",
+      "publisher": { "@id": "{{ CANONICAL_SITEURL }}/#organization" }
+    }
+  ]
+}
+</script>

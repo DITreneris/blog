@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 date: 2026-05-01
-date_modified: 2026-05-28
+modified: 2026-05-28
 featured: true
 hero_image: images/articles/the-model-is-not-the-system/hero.png
 key_takeaway: A language model is one component. Durable value comes from workflow, context, evaluation, and governance around it.
@@ -12,6 +12,13 @@ slug: the-model-is-not-the-system
 status: published
 summary: Why teams fail at AI when they treat the chat window as the whole workflow—and what to build instead.
 title: The Model Is Not the System
+faq:
+  - question: Is the language model the whole AI system?
+    answer: No. The model generates text; durable value comes from workflow, context architecture, evaluation, and governance wrapped around it.
+  - question: Why do chat-only AI pilots fail in operations?
+    answer: Teams skip shared context, review gates, and ownership—so outputs are inconsistent, non-reproducible, and hard to audit under real compliance pressure.
+  - question: What should we build in the first 30 days?
+    answer: Name one workflow with a metric, pair ops with IT for context and evaluation, pause new tool purchases until that workflow is documented, and run a pilot with pass/fail criteria.
 ---
 
 Companies rarely fail at AI because the model is weak. They fail because the **system around the model**—workflow, context, evaluation, and governance—is undefined.
@@ -53,11 +60,3 @@ The model was adequate. The **system**—shared context, review gates, and owner
 2. Pair an ops owner with IT for context and evaluation.
 3. Pause new tool purchases until that workflow is documented end to end.
 4. Run a pilot with pass/fail criteria, not slide decks only.
-
-## Related reading
-
-- [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)
-- [What Is Context Architecture?](/articles/what-is-context-architecture/)
-- [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/)
-
-[Structured training](https://www.promptanatomy.app/anatomy/) when you move from pilot to program.

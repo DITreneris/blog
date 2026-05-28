@@ -3,6 +3,20 @@
 {% block title %}{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}{% endblock %}
 {% block canonical %}{{ CANONICAL_SITEURL }}/{% endblock %}
 
+{% block open_graph %}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}" />
+<meta property="og:description" content="{{ SITE_CONFIG.brand.description }}" />
+<meta property="og:url" content="{{ CANONICAL_SITEURL }}/" />
+{% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+{% endblock %}
+
+{% block twitter %}
+<meta name="twitter:title" content="{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}" />
+<meta name="twitter:description" content="{{ SITE_CONFIG.brand.description }}" />
+{% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
+{% endblock %}
+
 {% block content %}
 {% set ns = namespace(featured=none) %}
 {% for a in articles %}
@@ -16,7 +30,6 @@
 {% include 'partials/featured_article.html' %}
 {% include 'partials/start_here_cards.html' %}
 {% include 'partials/topic_cluster_grid.html' %}
-{% include 'partials/ecosystem_spoke.html' %}
 {% include 'partials/template_download.html' %}
 
 <section class="section" id="latest" aria-labelledby="latest-heading">
@@ -32,5 +45,6 @@
   </div>
 </section>
 
+{% include 'partials/ecosystem_spoke.html' %}
 {% include 'partials/newsletter_cta.html' %}
 {% endblock %}

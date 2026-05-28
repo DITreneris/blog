@@ -33,7 +33,4 @@ Prompt quality is a means. **Business outcomes** are the end. Teams stall when t
 
 A team reduced RFP first-draft time by 35% after fixing context (approved snippets only) and adding a compliance checkpoint—not after switching models.
 
-## Related reading
-
-- [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)
 - [The Model Is Not the System](/articles/the-model-is-not-the-system/)

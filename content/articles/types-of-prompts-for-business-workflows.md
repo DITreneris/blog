@@ -30,7 +30,4 @@ Business workflows need **different prompt roles**, not one growing system messa
 - Do not merge policy into task prompts ad hoc—policy should be a maintained pack.
 - Run checker prompts on high-risk outputs before send.
 
-## Related reading
-
-- [Prompt Engineering vs AI Workflow Engineering](/articles/prompt-engineering-vs-ai-workflow-engineering/)
 - [Context Layers in Prompt Design](/articles/context-layers-in-prompt-design/)

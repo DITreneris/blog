@@ -29,16 +29,8 @@ Most groups buy another tool or rewrite prompts when results drift. That treats 
 3. **Place the model** only where probabilistic generation adds leverage.
 4. **Add evaluation hooks** before you expand scope or headcount on AI work.
 
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/) — why workflows beat tool sprawl.
-- [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/) — agent-ready process design.
-- [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) — a quick diagnostic.
-
 ## Implementation checklist
 
 - Document inputs, outputs, and owners for this workflow.
 - Run a two-week pilot with explicit success metrics.
 - Review failures in a standing cadence—not only when executives ask.
-
-Explore training and templates on [Prompt Anatomy](https://www.promptanatomy.app/#pricing) when you are ready to standardize across teams.

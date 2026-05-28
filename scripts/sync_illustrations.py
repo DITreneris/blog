@@ -45,8 +45,11 @@ def _optimize_image(src: Path, dest: Path) -> None:
 
 def sync_article_row(row: dict, dry_run: bool) -> list[str]:
     errors: list[str] = []
+    usage = row.get("usage") or []
+    slug = row.get("slug")
+    if "hero" not in usage or not slug:
+        return errors
     source_rel = row["source"]
-    slug = row["slug"]
     src = MASTERS / source_rel.replace("/", "\\").replace("\\", "/")
     if not src.is_file():
         # try forward slashes on Windows

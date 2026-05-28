@@ -30,7 +30,4 @@ Predictable AI outputs come from **repeatable workflows**, not luck with phrasin
 - [ ] Eval cases exist (≥10 for high risk)
 - [ ] Logs retained per [audit trail](/articles/audit-trails-for-ai-workflows/) guide
 
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/)
 - [AI Workflow Canvas (template)](/articles/ai-workflow-canvas-template/)

@@ -50,11 +50,3 @@ Three or more “no” answers usually mean structure—not licenses—is the bo
 ## Practical takeaway
 
 Freeze new tool purchases until one workflow is documented, owned, and measured end to end. Then expand scope deliberately.
-
-## Related reading
-
-- [The Model Is Not the System](/articles/the-model-is-not-the-system/)
-- [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/)
-- [The AI Implementation Maturity Ladder](/articles/ai-implementation-maturity-ladder/)
-
-[Training](https://www.promptanatomy.app/anatomy/) when you standardize across teams.

@@ -32,9 +32,20 @@ Guidelines for articles on **promptanatomy.blog**. See also [AGENTS.md](../AGENT
 
 | Reader stage | CTA |
 |--------------|-----|
+| Homepage hero | **Start here** (`/#start-here`) + **Training** → [promptanatomy.app](https://www.promptanatomy.app/); pricing only in header **Plans** and ecosystem **Plans and access** |
 | Diagnosing chaos | Hub “Start here” articles |
 | Designing workflow | Related framework / agent articles |
-| Standardizing | [Training](https://www.promptanatomy.app/anatomy/) or [pricing](https://www.promptanatomy.app/#pricing) |
+| Standardizing | [Training](https://www.promptanatomy.app/) or [pricing](https://www.promptanatomy.app/#pricing) |
+
+## Forbidden patterns
+
+These patterns duplicate or conflict with template-rendered components — do not add them to article bodies.
+
+- **No inline `## Related reading` H2 + bullet list.** The `partials/related_articles.html` template renders same-category related articles as styled cards automatically below the prose. An inline list duplicates that surface and clutters the body.
+- **No bare-sentence training CTA at end of article** (e.g. `[Training](https://www.promptanatomy.app/) when you standardize…`). The `partials/article_cta.html` template renders a consistent dark-band CTA block (gold button to `SITE_CONFIG.hub.training_url`) below every article. Body CTAs read as broken design.
+- **In-paragraph topic links are still required** — the "2 to 4 topic-specific internal links" rule means *links woven into body paragraphs*, not a standalone Related H2.
+
+If body-level conversion intent is needed (e.g. for a Templates article pointing to a specific app surface), use a one-sentence link inside the relevant body section, not a trailing dangler.
 
 ## Hybrid draft policy
 
