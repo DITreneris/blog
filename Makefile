@@ -1,4 +1,4 @@
-.PHONY: validate build serve clean sync-images brand-assets analytics
+.PHONY: validate build serve clean sync-images brand-assets analytics satori-images
 
 PYTHON ?= python
 NPM ?= npm
@@ -9,21 +9,27 @@ brand-assets:
 analytics:
 	$(NPM) run build:analytics
 
+satori-images:
+	$(NPM) run build:satori
+
 sync-images:
 	$(PYTHON) scripts/sync_illustrations.py
 
 validate-theme:
 	$(PYTHON) scripts/validate_theme_tokens.py
 
+validate-satori:
+	$(PYTHON) scripts/validate_satori_manifest.py
+
 validate: validate-theme
 	$(PYTHON) scripts/validate_content.py
 
-build: validate sync-images brand-assets analytics
+build: validate satori-images validate-satori sync-images brand-assets analytics
 	pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
 
-build-dev: validate sync-images brand-assets
+build-dev: validate satori-images validate-satori sync-images brand-assets
 	pelican content
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py

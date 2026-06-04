@@ -4,33 +4,12 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/implementation-notes-hero-structure/hero.png
-key_takeaway: 'Structured implementation turns implementation notes: hero structure into repeatable outcomes.'
-reading_time: 2 min read
+key_takeaway: Use the ecosystem map to navigate blog, training, and related Prompt Anatomy properties.
+reading_time: 1 min read
 slug: implementation-notes-hero-structure
 status: draft
-summary: 'Field notes on implementation notes: hero structure.'
+summary: This page moved to the Prompt Anatomy ecosystem map.
 title: 'Implementation Notes: Hero Structure'
 ---
 
-Implementation notes capture what actually works when AI meets real teams and processes.
-
-## What this covers
-
-**Implementation Notes: Hero Structure** breaks down how to design, ship, and govern AI work so outcomes stay predictable. The hero diagram summarizes the core idea; the sections below translate it into actions your team can adopt this quarter.
-
-## Why teams get stuck
-
-Most groups buy another tool or rewrite prompts when results drift. That treats symptoms. Durable progress requires workflow design: what context is allowed, who approves outputs, and how you measure quality before scale.
-
-## A practical path forward
-
-1. **Define the business outcome** in one sentence—not model behavior.
-2. **Map the workflow** including human checkpoints and failure modes.
-3. **Place the model** only where probabilistic generation adds leverage.
-4. **Add evaluation hooks** before you expand scope or headcount on AI work.
-
-## Implementation checklist
-
-- Document inputs, outputs, and owners for this workflow.
-- Run a two-week pilot with explicit success metrics.
-- Review failures in a standing cadence—not only when executives ask.
+This article is archived. Hero structure and navigation guidance now live in **[The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/)**.

@@ -5,9 +5,19 @@ categories:
   - title: "AI Agents"
     slug: "ai-agents"
     description: "Agent design, orchestration, and business-ready automation."
+    reading_path:
+      - slug: how-to-design-an-ai-agent-workflow
+      - slug: data-boundaries-for-ai-agents
+      - slug: ai-outreach-with-outlook-guardrails
+      - slug: multi-agent-handoff-pattern
   - title: "AI Governance"
     slug: "ai-governance"
     description: "Policy, risk, and operating rules for AI inside organizations."
+    reading_path:
+      - slug: ai-governance-roles-and-ownership
+      - slug: data-boundaries-for-ai-agents
+      - slug: audit-trails-for-ai-workflows
+      - slug: ai-risk-review-cadence
   - title: "Implementation Notes"
     slug: "implementation-notes"
     description: "Practical diagnostics and field notes from real deployments."
@@ -23,3 +33,8 @@ categories:
   - title: "Framework"
     slug: "framework"
     description: "Original frameworks for predictable AI outcomes."
+    reading_path:
+      - slug: the-model-is-not-the-system
+      - slug: prompt-anatomy-foundations
+      - slug: what-is-context-architecture
+      - slug: ai-implementation-maturity-ladder

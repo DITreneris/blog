@@ -17,7 +17,8 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | TemplateDownloadSection | `partials/template_download.html` | `HUB_SECTIONS.templates` |
 | ArticleCard | `partials/article_card.html` | Article object |
 | NewsletterCTA | `partials/newsletter_cta.html` | `HUB_SECTIONS.newsletter` |
-| ArticleHeader | `partials/article_header.html` | `article`, `article.hero_image` |
+| ArticleHeader | `partials/article_header.html` | `article`, `article.hero_image`, optional `article.hero_caption` |
+| ArticleLead | `partials/article_lead.html` | `article.summary` |
 | Article hero image | `content/images/articles/{slug}/hero.png` | `data/illustrations.yaml` + `scripts/sync_illustrations.py` |
 | Hub hero / ecosystem art | `blog_hero.html`, `ecosystem_spoke.html` | Split hero: copy + CTAs left, diagram right (`hero__grid`); `images/hub/hero.png` from `data/01_illustrations/h1.png`; `ECOSYSTEM.image` |
 | KeyTakeawayBox | `partials/key_takeaway.html` | `article.key_takeaway` |
@@ -36,7 +37,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | Page | Template | Sections |
 |------|----------|----------|
 | Hub home | `index.html` | Header → Hero → Featured → Start Here → Topics → Templates → Latest → Ecosystem → Newsletter → Footer |
-| Article | `article.html` | Progress → Breadcrumb → Header → Takeaway → Prose (+ TOC) → ArticleCTA → Related → Author → FAQ |
+| Article | `article.html` | Progress → Breadcrumb → Header → Lead → Takeaway → Prose (+ TOC) → [FAQ if featured] → ArticleCTA → Related → Author → [FAQ if not featured] |
 | Static page | `page.html` | Header → Page title → Prose |
 | Category | `category.html` | Header → Title → ArticleCard grid |
 | Design system (style guide) | `design_system.html` + `partials/style_guide.html` | Static page `content/pages/design-system.md` |

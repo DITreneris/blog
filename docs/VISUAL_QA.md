@@ -51,10 +51,26 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Meta line dates show as `Month YYYY` (e.g. "May 2026"), with `Updated Month YYYY` when modified > published
 - [ ] No article body contains an inline `## Related reading` H2 (auto-rendered as cards below)
 
+## Article reading experience (v1.1)
+
+- [ ] Flagship article: summary renders as `.article-lead` below hero, not duplicated as raw FAQ bullets in prose
+- [ ] Hero `figcaption` visible when `hero_caption` is set
+- [ ] First prose paragraph uses lead styling; body sections read as essay, not slide bullets only
+- [ ] Featured article: FAQ accordion appears above dark ArticleCTA band
+- [ ] Featured homepage card: poster hero `object-fit: contain`, max-height, light border frame
+
 ## Build
 
 - [ ] `make validate && make build` passes
 - [ ] `validate_theme_tokens.py` reports no stray hex in theme CSS
+- [ ] `npm run build:satori` succeeds; `validate_satori_manifest.py` OK
+
+## Satori-generated heroes (Phase 1)
+
+- [ ] Title readable at 1600×900 and when center-cropped to 1200×630 (social safe zone)
+- [ ] Category badge uses gold on dark (`--color-brand-accent` on `--color-brand-dark`)
+- [ ] Hero file size &lt; 250 KB; `og-default.png` &lt; 150 KB
+- [ ] Side-by-side with `/design-system/` brand bands — palette matches tokens
 
 ## Sign-off
 

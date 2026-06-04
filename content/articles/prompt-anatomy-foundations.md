@@ -2,17 +2,19 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
+content_tier: nav
 date: 2026-05-28
 hero_image: images/articles/prompt-anatomy-foundations/hero.png
+hero_caption: "Implementation stack — outcome, workflow, context, model step, evaluation, governance."
 key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context, model step, evaluation, governance.'
 reading_time: 2 min read
 slug: prompt-anatomy-foundations
 status: published
-summary: The Prompt Anatomy implementation stack—prompts, workflows, context, agents, evaluation, and governance.
+summary: Entry point for the Prompt Anatomy stack—where to start by role and reading path.
 title: Prompt Anatomy Foundations
 ---
 
-Prompt Anatomy is a **methodology for predictable AI operations**, not a collection of clever prompts. Foundations describe how the pieces fit before you scale tools or agents.
+Prompt Anatomy is a **methodology for predictable AI operations**, not a collection of clever prompts. This page routes you into the blog by job-to-be-done.
 
 ## The stack
 
@@ -25,13 +27,7 @@ Business outcome
           → Governance (who may change what)
 ```
 
-## Core principles
-
-1. **Structure before sprawl** — one documented workflow beats five chat tools ([Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/)).
-2. **The model is not the system** — see [framework article](/articles/the-model-is-not-the-system/).
-3. **Context is designed** — not dumped; see [context architecture](/articles/what-is-context-architecture/).
-4. **Agents are workflows with boundaries** — see [agent workflow design](/articles/how-to-design-an-ai-agent-workflow/).
-5. **Maturity is staged** — use the [implementation ladder](/articles/ai-implementation-maturity-ladder/).
+Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/).
 
 ## Where to go next
 
@@ -39,10 +35,10 @@ Business outcome
 |-------------|------------|
 | Diagnosing chaos | [10 Signs of vibe prompting](/articles/10-signs-your-company-is-vibe-prompting/) |
 | Designing agents | [Agent workflow guide](/articles/how-to-design-an-ai-agent-workflow/) |
+| Designing context | [Context architecture](/articles/what-is-context-architecture/) |
 | Setting ownership | [Governance roles](/articles/ai-governance-roles-and-ownership/) |
+| Planning a pilot | [AI Workflow Canvas](/articles/ai-workflow-canvas-template/) |
 
-The ecosystem of training and tools lives at [promptanatomy.app](https://www.promptanatomy.app/)—this blog is the field-notes layer.
+Training and hands-on templates: [promptanatomy.app](https://www.promptanatomy.app/). Ecosystem map: [Prompt Anatomy properties](/articles/prompt-anatomy-ecosystem-map/).
 
-## Framework overview
-
-A separate overview article is retired; this page is the single entry point for the framework map.
+Framework overview article retired—this page is the single framework index.

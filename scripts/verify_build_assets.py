@@ -9,14 +9,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output"
 
+sys_path = ROOT / "scripts"
+if str(sys_path) not in sys.path:
+    sys.path.insert(0, str(sys_path))
+from generate_brand_assets import find_author_photo_source  # noqa: E402
+
 REQUIRED = [
     OUTPUT / "static" / "img" / "og-default.png",
     OUTPUT / "static" / "favicon-32x32.png",
     OUTPUT / "images" / "hub" / "hero.png",
     OUTPUT / "images" / "hub" / "ecosystem.png",
     OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.png",
-    OUTPUT / "images" / "author" / "tomas-staniulis.jpg",
 ]
+
+if find_author_photo_source() is not None:
+    REQUIRED.append(OUTPUT / "images" / "author" / "tomas-staniulis.jpg")
 
 
 def main() -> int:

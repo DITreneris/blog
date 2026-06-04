@@ -5,7 +5,12 @@
     <h1 class="article-header__title">{{ article.title }}</h1>
     {{ meta_line(article) }}
     {% if article.hero_image %}
-    <img class="article-header__diagram" src="{{ hero_image_url(article) }}" alt="{{ article.title|striptags|replace('\"', '')|replace('"', '') }}" width="1600" height="900" loading="eager" decoding="async" />
+    <figure class="article-header__figure">
+      <img class="article-header__diagram" src="{{ hero_image_url(article) }}" alt="{{ article.title|striptags|replace('\"', '')|replace('"', '') }}" width="1600" height="900" loading="eager" decoding="async" />
+      {% if article.hero_caption %}
+      <figcaption class="article-header__caption">{{ article.hero_caption }}</figcaption>
+      {% endif %}
+    </figure>
     {% else %}
     <div class="article-header__diagram article-header__diagram--placeholder" role="img" aria-label="Diagram placeholder"></div>
     {% endif %}

@@ -1,42 +1,84 @@
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ CANONICAL_SITEURL }}/"
-    }
-    {% if article %}
-    ,{
-      "@type": "ListItem",
-      "position": 2,
-      "name": {{ article.category.name|tojson }},
-      "item": "{{ CANONICAL_SITEURL }}/{{ article.category.url }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ article.title|tojson }},
-      "item": "{{ CANONICAL_SITEURL }}/{{ article.url }}"
-    }
-    {% elif page %}
-    ,{
-      "@type": "ListItem",
-      "position": 2,
-      "name": {{ page.title|tojson }},
-      "item": "{{ CANONICAL_SITEURL }}/{{ page.url }}"
-    }
-    {% elif category %}
-    ,{
-      "@type": "ListItem",
-      "position": 2,
-      "name": {{ (category.name if category.name is defined else category)|tojson }},
-      "item": "{{ CANONICAL_SITEURL }}/{{ category.url }}"
-    }
-    {% endif %}
-  ]
-}
-</script>
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "BreadcrumbList",
+
+  "itemListElement": [
+
+    {
+
+      "@type": "ListItem",
+
+      "position": 1,
+
+      "name": "Home",
+
+      "item": "{{ CANONICAL_SITEURL }}/"
+
+    }
+
+    {% if article %}
+
+    ,{
+
+      "@type": "ListItem",
+
+      "position": 2,
+
+      "name": {{ article.category.name|tojson }},
+
+      "item": "{{ CANONICAL_SITEURL }}/{{ article.category.url }}"
+
+    },
+
+    {
+
+      "@type": "ListItem",
+
+      "position": 3,
+
+      "name": {{ article.title|tojson }},
+
+      "item": "{{ CANONICAL_SITEURL }}/{{ article.url }}"
+
+    }
+
+    {% elif page %}
+
+    ,{
+
+      "@type": "ListItem",
+
+      "position": 2,
+
+      "name": {{ page.title|tojson }},
+
+      "item": "{{ CANONICAL_SITEURL }}/{{ page.url }}"
+
+    }
+
+    {% elif category %}
+
+    ,{
+
+      "@type": "ListItem",
+
+      "position": 2,
+
+      "name": {{ (category.name if category.name is defined else category)|tojson }},
+
+      "item": "{{ CANONICAL_SITEURL }}/{{ category.url }}"
+
+    }
+
+    {% endif %}
+
+  ]
+
+}
+
+</script>
+

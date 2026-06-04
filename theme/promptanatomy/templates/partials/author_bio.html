@@ -2,7 +2,7 @@
 
 <aside class="author-bio container{% if not author.avatar %} author-bio--no-avatar{% endif %}" aria-label="About the author">
 
-  {% if author.avatar %}
+  {% if author.avatar and AUTHOR_HAS_PHOTO %}
 
   <img class="author-bio__avatar author-bio__avatar--image" src="/{{ author.avatar }}" alt="{{ author.name }}" width="56" height="56" loading="lazy" decoding="async" />
 

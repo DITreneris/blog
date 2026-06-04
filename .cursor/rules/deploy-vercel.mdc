@@ -6,8 +6,8 @@ alwaysApply: false
 
 # Deploy (Vercel)
 
-- Build: see `vercel.json` (sync, `validate_theme_tokens.py`, `validate_content.py`, Pelican, sitemap)
+- Build: see `vercel.json` (`npm run build:satori`, sync, `validate_theme_tokens.py`, `validate_content.py`, `validate_satori_manifest.py`, Pelican, sitemap)
 - Output directory: `output`
 - Production SITEURL: `https://promptanatomy.blog` in `publishconf.py` only
 - Dev: `pelicanconf.py` uses relative URLs / localhost
-- Do not add Node build steps unless explicitly requested
+- Node build steps: `build:analytics` (esbuild) and `build:satori` (hero/OG PNG generation) are intentional — see `scripts/vercel_build.sh`

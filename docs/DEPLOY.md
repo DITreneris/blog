@@ -72,9 +72,12 @@ Open DevTools → Network. CSS must be **`/static/css/…`** on the same host (2
 ## Illustration masters and images
 
 - **Masters:** `data/01_illustrations/` (see [`data/01_illustrations/README.md`](../data/01_illustrations/README.md) and [`data/illustrations.yaml`](../data/illustrations.yaml)).
+- **Satori pipeline:** `npm run build:satori` (after `npm install` / `postinstall` fonts fetch) renders article heroes (1600×900) and `og-default.png` (1200×630) from templates in `data/og/templates/`. Masters land in `data/01_illustrations/Satori/`; committed to the repo for offline builds.
+- **Fonts:** Inter WOFF from `@fontsource/inter` (OFL) copied to `data/og/fonts/` via `npm run fonts:fetch`. Do not use variable TTF — Satori requires static weights.
 - **Sync:** `make sync-images` copies optimized heroes to `content/images/` (gitignored; regenerated on every `make build` / Vercel).
-- **Author avatar:** `scripts/generate_brand_assets.py` writes `content/images/author/tomas-staniulis.jpg` until you replace it with a real photo.
-- **Verify:** `scripts/verify_build_assets.py` runs after Pelican and fails if hub/article heroes, OG fallback, or favicons are missing from `output/`.
+- **Brand assets:** `scripts/generate_brand_assets.py` — favicons + author photo only (`og-default.png` is Satori).
+- **Author avatar:** commit `data/01_illustrations/author.jpg` or `data/author/tomas-staniulis.jpg` (see [`data/author/README.md`](../data/author/README.md)). `scripts/generate_brand_assets.py` syncs to `content/images/author/` on build.
+- **Verify:** `scripts/validate_satori_manifest.py` after Satori; `scripts/verify_build_assets.py` after Pelican fails if hub/article heroes, OG fallback, or favicons are missing from `output/`.
 
 Deploy requires `data/01_illustrations/` in the repository (use Git LFS if the tree is large).
 
@@ -92,8 +95,14 @@ Without `make`:
 ```bash
 python scripts/validate_theme_tokens.py
 python scripts/validate_content.py
+npm run build:satori
+python scripts/validate_satori_manifest.py
+python scripts/sync_illustrations.py
+python scripts/generate_brand_assets.py
+npm run build:analytics
 python -m pelican content -s publishconf.py
 python scripts/generate_sitemap.py
+python scripts/verify_build_assets.py
 ```
 
 ## CI (optional)

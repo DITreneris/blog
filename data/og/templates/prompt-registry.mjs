@@ -1,0 +1,86 @@
+import { h } from '../jsx.mjs';
+import { brand } from '../brand.mjs';
+import { articleHeroFrame, panelBox, labelText } from './base.mjs';
+
+const ROWS = [
+  ['prompt_id', 'support-reply-v3/task'],
+  ['version', '1.4.2'],
+  ['owner', 'support-ops'],
+  ['eval_set', 'support-reply-eval-25'],
+  ['min_pass', '92%'],
+];
+
+export function buildPromptRegistry(props) {
+  const diagram = panelBox(
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+      },
+      labelText('Prompt registry'),
+      ...ROWS.map(([key, val]) =>
+        h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              width: '100%',
+              padding: '10px 0',
+              borderBottom: `1px solid ${brand.colors.borderDark}`,
+            },
+          },
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                color: brand.colors.textOnDarkMuted,
+                fontSize: '16px',
+                fontFamily: 'Inter',
+              },
+            },
+            key
+          ),
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                color: brand.colors.textOnDark,
+                fontSize: '16px',
+                fontWeight: 600,
+              },
+            },
+            val
+          )
+        )
+      ),
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            marginTop: '16px',
+            color: brand.colors.brandAccent,
+            fontSize: '14px',
+          },
+        },
+        'Versioned templates + eval-linked releases'
+      )
+    ),
+    { width: '680px', padding: '28px 32px' }
+  );
+
+  return articleHeroFrame({
+    category: props.category || 'Framework',
+    title: props.title,
+    subtitle: props.subtitle || 'Registry, owners, environments, changelog',
+    diagram,
+  });
+}

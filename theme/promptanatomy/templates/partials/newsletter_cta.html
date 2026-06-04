@@ -1,19 +1,38 @@
-{% from 'macros/ui.html' import section_heading %}
-
-{% set n = HUB_SECTIONS.newsletter %}
-
-<section class="section section--dark" aria-labelledby="newsletter-heading">
-
-  <div class="container newsletter newsletter--placeholder">
-
-    {{ section_heading(n.title, heading_id='newsletter-heading') }}
-
-    <p class="hero__subhead">{{ n.description }}</p>
-
-    <p class="newsletter__status">Coming soon</p>
-
-    <p id="newsletter-note" class="newsletter__note">{{ n.disclaimer }}</p>
-
-  </div>
-
-</section>
+{% from 'macros/ui.html' import section_heading %}
+
+
+
+{% set n = HUB_SECTIONS.newsletter %}
+
+
+
+<section class="section section--dark" aria-labelledby="newsletter-heading">
+
+
+
+  <div class="container newsletter newsletter--placeholder">
+
+
+
+    {{ section_heading(n.title, heading_id='newsletter-heading') }}
+
+
+
+    <p class="hero__subhead">{{ n.description }}</p>
+
+
+
+    <p class="newsletter__status">Coming soon</p>
+
+
+
+    <p id="newsletter-note" class="newsletter__note">{{ n.disclaimer }}</p>
+
+
+
+  </div>
+
+
+
+</section>
+

@@ -2,11 +2,12 @@
 
 > Prompt Anatomy is a structured AI implementation knowledge hub for teams turning ad-hoc AI usage into controlled prompts, workflows, agents, evaluation hooks, and governance. Authored by Tomas Staniulis (Founder, Prompt Anatomy).
 
-## Pillar articles
-- [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): the 6-layer implementation stack.
-- [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/)
-- [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/)
-- [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/)
+## Pillar articles (start here)
+- [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — workflow, context, evaluation, governance.
+- [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): diagnostic + 30-day remediation.
+- [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/): bounded agent design with tier-2 routing example.
+- [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): implementation stack index.
+- [What Is Context Architecture?](https://www.promptanatomy.blog/articles/what-is-context-architecture/): context spec, layers, and prompt assembly order.
 
 ## Topics
 - /topics/framework/

@@ -64,6 +64,8 @@
 
 {% include 'partials/article_header.html' %}
 
+{% include 'partials/article_lead.html' %}
+
 {% include 'partials/key_takeaway.html' %}
 
 
@@ -86,6 +88,12 @@
 
 
 
+{% if article.featured %}
+
+{% include 'partials/faq.html' %}
+
+{% endif %}
+
 {% include 'partials/article_cta.html' %}
 
 {% set related_articles = article.related_articles %}
@@ -94,7 +102,11 @@
 
 {% include 'partials/author_bio.html' %}
 
+{% if not article.featured %}
+
 {% include 'partials/faq.html' %}
+
+{% endif %}
 
 {% endblock %}
 

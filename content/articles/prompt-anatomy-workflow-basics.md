@@ -4,30 +4,12 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/prompt-anatomy-workflow-basics/hero.png
-key_takeaway: A workflow names the trigger, steps, owners, context sources, review gate, and one outcome metric.
+key_takeaway: Minimum workflow elements now live in the AI Workflow Canvas template.
 reading_time: 1 min read
 slug: prompt-anatomy-workflow-basics
-status: published
-summary: Minimum workflow elements—trigger, steps, context, human gate, and metric—before you scale AI use.
+status: draft
+summary: Workflow basics consolidated into the AI Workflow Canvas template.
 title: Workflow Basics for Predictable AI Outputs
 ---
 
-Predictable AI outputs come from **repeatable workflows**, not luck with phrasing.
-
-## Minimum workflow sketch
-
-1. **Trigger** — what starts the run (ticket opened, form submitted).
-2. **Steps** — including where the model runs vs where humans act.
-3. **Context sources** — allow list only.
-4. **Review gate** — who can send to customers or systems of record.
-5. **Metric** — one primary business measure.
-
-## One-page checklist
-
-- [ ] Outcome written in one sentence
-- [ ] Owner named
-- [ ] Context spec linked
-- [ ] Eval cases exist (≥10 for high risk)
-- [ ] Logs retained per [audit trail](/articles/audit-trails-for-ai-workflows/) guide
-
-- [AI Workflow Canvas (template)](/articles/ai-workflow-canvas-template/)
+This article is archived. Minimum workflow elements (trigger, steps, context, gate, metric) now live in **[AI Workflow Canvas (Template)](/articles/ai-workflow-canvas-template/)** with a blank canvas and a filled support-reply example.

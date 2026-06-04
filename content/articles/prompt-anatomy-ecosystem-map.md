@@ -18,10 +18,14 @@ Prompt Anatomy spans **education, field notes, and implementation tools**. Each 
 
 | Property | Role |
 |----------|------|
-| **promptanatomy.blog** (this site) | Frameworks, governance notes, templates, case studies |
-| **[promptanatomy.app](https://www.promptanatomy.app/)** | Interactive training, methodology, pricing |
-| **promptanatomy.cloud / .pro** | Extended tooling (see site footer for current links) |
-| **Specialized spokes** | HR, marketing, ops centers linked from footer when relevant to your function |
+| **[promptanatomy.app](https://www.promptanatomy.app/)** | AI operating system—training, methodology, pricing |
+| **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons |
+| **promptanatomy.blog** (this site) | Learn — frameworks, field notes, templates, case studies |
+| **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library |
+| **[promptanatomy.space](https://www.promptanatomy.space/en/)** | Create — marketing content system |
+| **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR workflow system |
+| **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |
+| **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — scaling and decisions |
 
 ## How to navigate
 

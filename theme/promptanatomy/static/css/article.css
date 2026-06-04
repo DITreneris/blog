@@ -9,8 +9,28 @@
   margin: var(--space-sm) 0 var(--space-md);
 }
 
+.article-header__figure {
+  margin: var(--space-xl) 0 0;
+}
+
+.article-header__caption {
+  margin: var(--space-sm) 0 0;
+  font-size: var(--text-meta);
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+  max-width: var(--article-max);
+}
+
+.article-lead {
+  max-width: var(--article-max);
+  margin: 0 auto var(--space-lg);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+}
+
 .article-header__diagram {
-  margin-top: var(--space-xl);
+  margin-top: 0;
   width: 100%;
   aspect-ratio: 16 / 10;
   max-height: 28rem;
@@ -66,6 +86,11 @@
 .prose p,
 .prose li {
   color: var(--color-text-secondary);
+}
+
+.prose > p:first-of-type {
+  font-size: 1.1875rem;
+  color: var(--color-text-primary);
 }
 
 .prose a {

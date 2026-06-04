@@ -26,9 +26,9 @@ Build and maintain a lean Python (Pelican) static knowledge hub for **https://pr
 
 Required: `title`, `slug`, `summary`, `category`, `date`, `status` (`draft` | `published`)
 
-Optional: `modified` (Pelican's canonical key — `date_modified` is not parsed as a date), `reading_time`, `featured`, `key_takeaway`, `tags`, `hero_image` (path under `content/`, e.g. `images/articles/{slug}/hero.png`)
+Optional: `modified` (Pelican's canonical key — `date_modified` is not parsed as a date), `reading_time`, `featured`, `key_takeaway`, `tags`, `hero_image` (path under `content/`, e.g. `images/articles/{slug}/hero.png`), `hero_caption` (figcaption under hero), `content_tier` (`pillar` | `playbook` | `template` | `opinion` | `nav`), `faq` (YAML list of `question` / `answer` — requires `FrontmatterMarkdownReader`, never duplicated in body)
 
-Illustration masters live in `data/01_illustrations/`; manifest in `data/illustrations.yaml`. Sync heroes with `make sync-images`.
+Illustration masters live in `data/01_illustrations/`; manifest in `data/illustrations.yaml`. Sync heroes with `make sync-images`. **Satori rows** (`generator: satori`, `template`, `source: Satori/{slug}.png`) render via `npm run build:satori` before sync — see `data/og/templates/`. Author headshot source: `data/author/tomas-staniulis.jpg` (synced on `make brand-assets`).
 
 Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | Case Studies | Templates | Opinion | Framework
 

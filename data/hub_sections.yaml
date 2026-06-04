@@ -17,15 +17,15 @@ start_here:
   title: "Start here"
   cards:
     - title: "Start with the Framework"
-      description: "The basic framework for turning random prompting into predictable outputs."
+      description: "Why the model is one component—workflow, context, evaluation, and governance around it."
       href: "/articles/the-model-is-not-the-system/"
       icon: "framework"
     - title: "Diagnostic: Vibe Prompting"
-      description: "Ten signs your company is using AI without structure."
+      description: "Score ten signs of unstructured AI use and follow a 30-day fix plan."
       href: "/articles/10-signs-your-company-is-vibe-prompting/"
       icon: "diagnostic"
     - title: "Design an Agent Workflow"
-      description: "A practical map from business task to agent-ready process."
+      description: "Map a business task to bounded tools, handoffs, and eval gates—with a worked example."
       href: "/articles/how-to-design-an-ai-agent-workflow/"
       icon: "agents"
 
@@ -38,7 +38,7 @@ templates:
 
 featured:
   title: "Featured"
-  lead: "Anchor essay for teams making AI a real implementation discipline."
+  lead: "Anchor framework for the system around the model—workflow, context, evaluation, and governance."
   cta_label: "Read the framework"
 
 latest:

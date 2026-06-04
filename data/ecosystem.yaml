@@ -1,23 +1,35 @@
 title: "Hub: choose your direction"
-paragraph: "The main entry point to the ecosystem — libraries and systems matched to your goal."
+paragraph: "One AI operating system for learning, daily work, automation, marketing, HR, operations, and decisions."
 image: images/hub/ecosystem.png
-image_alt: "Diagram of the Prompt Anatomy ecosystem—training hub and specialized spokes for automation, marketing, HR, and operations."
+image_alt: "Hub-and-spoke diagram of the Prompt Anatomy ecosystem—promptanatomy.app at the center with spokes for learning, workflows, marketing, HR, operations, and decisions."
 cta_label: "Plans and access"
 cta_href: "https://www.promptanatomy.app/#pricing"
 cards:
-  - title: "Library (AI automation)"
-    outcome: "Ready-made prompts and workflow templates."
+  - title: "First AI Lesson"
+    outcome: "Enter — guided first steps on the cloud learning hub."
+    url: "https://www.promptanatomy.cloud/"
+    theme: 3
+  - title: "Knowledge Hub"
+    outcome: "Learn — frameworks, field notes, and templates on this blog."
+    url: "https://www.promptanatomy.blog/#start-here"
+    theme: 2
+  - title: "Daily Workflow Library"
+    outcome: "Use — ready-made prompts and workflow templates."
     url: "https://www.promptanatomy.info/en/"
     theme: 4
-  - title: "Content system (marketing)"
-    outcome: "Marketing content prompts and templates."
+  - title: "Marketing Content System"
+    outcome: "Create — marketing content prompts and publishing workflows."
     url: "https://www.promptanatomy.space/en/"
     theme: 2
-  - title: "Recruitment system (HR)"
-    outcome: "Search, recruitment and assessment prompts."
-    url: "https://ditreneris.github.io/personalas/"
+  - title: "HR Workflow System"
+    outcome: "Hire — search, recruitment, and assessment prompts."
+    url: "https://www.promptanatomy.help/"
     theme: 1
-  - title: "Operations center (CEO/COO)"
-    outcome: "Prompts and templates for leadership."
+  - title: "Operations Center"
+    outcome: "Manage — prompts and templates for leadership and ops."
     url: "https://www.promptanatomy.ceo/"
     theme: 3
+  - title: "Scaling & Decisions"
+    outcome: "Decide — scaling frameworks and decision support."
+    url: "https://www.promptanatomy.pro/"
+    theme: 4

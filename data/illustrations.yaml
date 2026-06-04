@@ -39,7 +39,9 @@ illustrations:
     replaces_stub: true
 
   - id: gov-memory-types
-    source: Governance/memory_types.png
+    generator: satori
+    template: context-architecture
+    source: Satori/what-is-context-architecture.png
     slug: what-is-context-architecture
     title: "What Is Context Architecture?"
     category: Framework
@@ -80,7 +82,7 @@ illustrations:
     title: "Workflow Basics for Predictable AI Outputs"
     category: Framework
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: basic-121
     source: Basic/121_Prompt_Anatomy.png
@@ -131,7 +133,9 @@ illustrations:
     status: mapped
 
   - id: basic-gemini-blueprint
-    source: Basic/Gemini_Generated_Image_o4hp23o4hp23o4hp.png
+    generator: satori
+    template: prompt-registry
+    source: Satori/structured-prompt-system-blueprint.png
     slug: structured-prompt-system-blueprint
     title: "Structured Prompt System Blueprint"
     category: Framework
@@ -164,7 +168,9 @@ illustrations:
     status: mapped
 
   - id: agents-gemini-handoff
-    source: Agents/Gemini_Generated_Image_kmw9r6kmw9r6kmw9.png
+    generator: satori
+    template: multi-agent-handoff
+    source: Satori/multi-agent-handoff-pattern.png
     slug: multi-agent-handoff-pattern
     title: "Multi-Agent Handoff Pattern"
     category: AI Agents
@@ -279,7 +285,7 @@ illustrations:
     status: mapped
 
   - id: promo-ecosystem
-    source: Selfpromo/ecosystem.png
+    source: Ecosystem2.png
     slug: prompt-anatomy-ecosystem-map
     title: "The Prompt Anatomy Ecosystem Map"
     category: Implementation Notes
@@ -296,7 +302,9 @@ illustrations:
     status: mapped
 
   - id: promo-hero-2
-    source: Selfpromo/hero-2.png
+    generator: satori
+    template: business-outcomes
+    source: Satori/from-prompts-to-business-outcomes.png
     slug: from-prompts-to-business-outcomes
     title: "From Prompts to Business Outcomes"
     category: Implementation Notes
@@ -311,7 +319,9 @@ illustrations:
     status: mapped
 
   - id: case-vibe-structured
-    source: Basic/133_Prompt_Anatomy.png
+    generator: satori
+    template: case-study-support
+    source: Satori/case-study-vibe-prompting-to-structured-workflow.png
     slug: case-study-vibe-prompting-to-structured-workflow
     title: "Case Study: From Vibe Prompting to a Structured Support Workflow"
     category: Case Studies

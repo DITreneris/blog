@@ -6,6 +6,14 @@ import yaml
 
 BASE_DIR = Path(__file__).resolve().parent
 
+import sys
+
+sys.path.insert(0, str(BASE_DIR / "scripts"))
+from pelican_frontmatter_reader import FrontmatterMarkdownReader  # noqa: E402
+from generate_brand_assets import find_author_photo_source  # noqa: E402
+
+AUTHOR_HAS_PHOTO = find_author_photo_source() is not None
+
 
 def _load_yaml(name: str) -> dict:
     path = BASE_DIR / "data" / name
@@ -66,6 +74,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 MARKUP = ("md",)
+READERS = {"md": FrontmatterMarkdownReader}
 MARKDOWN = {
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
@@ -102,6 +111,7 @@ JINJA_GLOBALS = {
     "HUB_IMAGES": ILLUSTRATIONS.get("hub_images", {}),
     "CURRENT_YEAR": datetime.date.today().year,
     "ENABLE_VERCEL_ANALYTICS": ENABLE_VERCEL_ANALYTICS,
+    "AUTHOR_HAS_PHOTO": AUTHOR_HAS_PHOTO,
 }
 
 DISPLAY_PAGES_ON_MENU = False

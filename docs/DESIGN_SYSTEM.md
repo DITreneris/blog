@@ -1,6 +1,6 @@
 # Prompt Anatomy — Design System
 
-**Version:** 1.0 — see [Definition of Done](#definition-of-done-10).
+**Version:** 1.1 — see [Definition of Done](#definition-of-done-10).
 
 **Maintainer (documentation):** [q-and-a-agent](../.cursor/agents/q-and-a-agent.md) — keeps this file, `COMPONENT_MAP.md`, `VISUAL_QA.md`, and `CHANGELOG.md` aligned with theme changes. **Implementation:** default coding agent under `theme/promptanatomy/`.
 
@@ -151,6 +151,22 @@ Base class: `.btn`. Variants:
 
 ## Article components
 
+### Article lead (v1.1)
+
+`partials/article_lead.html` — renders `article.summary` as an editorial dek (`.article-lead`) below the header and above the key takeaway. Constrained to `--article-max`, centered. Keeps the summary out of duplicate H1 context while giving a Stripe-docs-style intro line above the fold.
+
+### Hero caption (v1.1)
+
+Optional frontmatter `hero_caption` renders as `<figcaption class="article-header__caption">` under the hero diagram in `partials/article_header.html`. Use to connect poster-style assets to the prose framework.
+
+### Prose lead paragraph (v1.1)
+
+`.prose > p:first-of-type` uses slightly larger type and `--color-text-primary` so the opening body paragraph reads as the essay lead (distinct from `.article-lead` summary).
+
+### Featured / pillar FAQ placement (v1.1)
+
+When `featured: true`, `partials/faq.html` renders **above** `partials/article_cta.html` (end-of-article conversion). Non-featured articles keep FAQ after the author bio. FAQPage JSON-LD unchanged.
+
 ### Breadcrumb
 
 `partials/breadcrumb.html` — `Home › {Category} › {Title}` rendered above `article_header`. Uses `--text-meta` + `--color-text-muted`; current page uses `--color-text-secondary`. Complements the existing `partials/schema_breadcrumb.html` structured data.
@@ -173,7 +189,7 @@ Base class: `.btn`. Variants:
 
 ### Author bio
 
-`partials/author_bio.html` — avatar block is gated on `SITE_CONFIG.author.avatar` existing. When unset (brand-author bios), no placeholder disc renders. When `SITE_CONFIG.author.linkedin` is set, the author name is wrapped in `.author-bio__name-link` (color: inherit; underline on hover) pointing to the LinkedIn profile with `rel="noopener noreferrer me" target="_blank"`. Schema.org Article author is rendered as `Person` (using `SITE_CONFIG.author.name`) with publisher as `Organization` (using `SITE_CONFIG.brand.name`).
+`partials/author_bio.html` — avatar `<img>` only when `SITE_CONFIG.author.avatar` is set **and** a headshot exists under `data/author/` (`AUTHOR_HAS_PHOTO` at build time). No brand-logo placeholder in the bio when the photo is missing. When `SITE_CONFIG.author.linkedin` is set, the author name is wrapped in `.author-bio__name-link` (color: inherit; underline on hover) pointing to the LinkedIn profile with `rel="noopener noreferrer me" target="_blank"`. Schema.org Article author is rendered as `Person` (using `SITE_CONFIG.author.name`) with publisher as `Organization` (using `SITE_CONFIG.brand.name`).
 
 ### TOC sidebar
 

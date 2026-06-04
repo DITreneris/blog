@@ -8,10 +8,83 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-06-04 — Satori PNG regeneration (Phase 1)
+
+### Added
+
+- **Satori PNG pipeline:** [`data/og/`](data/og/) — brand tokens ([`brand.mjs`](data/og/brand.mjs)), six JSX templates ([`base.mjs`](data/og/templates/base.mjs) + five article layouts + [`og-default.mjs`](data/og/templates/og-default.mjs)), [`scripts/lib/render.mjs`](scripts/lib/render.mjs) (satori + `@resvg/resvg-js`), and [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs) CLI (`--slug`, `--id`, `--dry-run`).
+- **Article hero templates (1600×900):** `context-architecture`, `case-study-support`, `prompt-registry`, `multi-agent-handoff`, `business-outcomes` — replace v0.2.0 borrowed Basic/Governance masters for `what-is-context-architecture`, `case-study-vibe-prompting-to-structured-workflow`, `structured-prompt-system-blueprint`, `multi-agent-handoff-pattern`, `from-prompts-to-business-outcomes`.
+- **Default OG image (1200×630):** [`og-default.mjs`](data/og/templates/og-default.mjs) → [`theme/promptanatomy/static/img/og-default.png`](theme/promptanatomy/static/img/og-default.png); masters committed under [`data/01_illustrations/Satori/`](data/01_illustrations/Satori/).
+- **Font bootstrap:** [`scripts/fetch_og_fonts.mjs`](scripts/fetch_og_fonts.mjs) copies static Inter WOFF from `@fontsource/inter` (OFL) to `data/og/fonts/`; runs on `npm install` via `postinstall`.
+- **Satori manifest validation:** [`scripts/validate_satori_manifest.py`](scripts/validate_satori_manifest.py) — checks `generator` / `template` / master PNG presence; wired into [`Makefile`](Makefile) (`validate-satori`, `satori-images`) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh).
+- **npm devDependencies:** `satori`, `@resvg/resvg-js`, `js-yaml`, `@fontsource/inter`; scripts `build:satori`, `fonts:fetch`.
+
+### Changed
+
+- [`data/illustrations.yaml`](data/illustrations.yaml) — five slugs declare `generator: satori`, `template`, and `source: Satori/{slug}.png` (supersedes interim borrowed PNGs from v0.2.0).
+- [`scripts/generate_brand_assets.py`](scripts/generate_brand_assets.py) — `og-default.png` generation removed (Satori); favicons and author photo sync unchanged.
+- **Build order:** `validate → satori-images → validate-satori → sync-images → brand-assets → analytics → pelican` ([`Makefile`](Makefile), [`scripts/vercel_build.sh`](scripts/vercel_build.sh)).
+
 ### Fixed
 
-- **Hub image sync on Linux/Vercel** — [`scripts/sync_illustrations.py`](scripts/sync_illustrations.py) `sync_hub()` no longer converts `/` to `\\` in destination paths (broke `content/images/hub/hero.png` on Vercel); missing hub masters now fail the sync step with a clear error.
-- **Vercel `buildCommand` length** — moved install/build steps into [`scripts/vercel_install.sh`](scripts/vercel_install.sh) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh); [`vercel.json`](vercel.json) now uses short `bash` commands (256-character schema limit).
+- **Satori font parse error** — variable Inter TTF from Google Fonts crashed opentype.js (`Cannot read properties of undefined (reading '256')`); pipeline now uses static **WOFF** weights (400/700) from `@fontsource/inter`.
+
+### Docs
+
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/DEPLOY.md`](docs/DEPLOY.md), [`data/01_illustrations/README.md`](data/01_illustrations/README.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) (Satori checklist), [`AGENTS.md`](AGENTS.md) (`generator: satori` contract), [`.cursor/rules/deploy-vercel.mdc`](.cursor/rules/deploy-vercel.mdc) (intentional Node Satori step).
+
+## [0.2.0] - 2026-06-04 — Content upgrade
+
+### Added
+
+- **Release 2 pillar enforcement** in [`scripts/validate_content.py`](scripts/validate_content.py): 1,200-word minimum, `hero_caption`, and ≥2 FAQ items required for start-here slugs (`the-model-is-not-the-system`, `10-signs-your-company-is-vibe-prompting`, `how-to-design-an-ai-agent-workflow`).
+- **`content_tier` frontmatter** documented in [`AGENTS.md`](AGENTS.md) and [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) (`pillar` | `playbook` | `template` | `opinion` | `nav`).
+- **Category reading paths** in [`data/categories.yaml`](data/categories.yaml) for Framework, AI Agents, and AI Governance.
+- **Northline B2B composite** threaded through governance playbooks (RACI, risk minutes, audit JSON sample, allow/deny matrix).
+- **Filled canvas example** (`support-reply-v3`) and minimum workflow elements in [`ai-workflow-canvas-template.md`](content/articles/ai-workflow-canvas-template.md).
+- **Sample eval YAML** in [`evaluation-hooks-for-ai-workflows.md`](content/articles/evaluation-hooks-for-ai-workflows.md) and **registry entry** in [`structured-prompt-system-blueprint.md`](content/articles/structured-prompt-system-blueprint.md).
+
+### Changed
+
+- **Pillar rewrites (1,200+ words):** [`10-signs-your-company-is-vibe-prompting.md`](content/articles/10-signs-your-company-is-vibe-prompting.md), [`how-to-design-an-ai-agent-workflow.md`](content/articles/how-to-design-an-ai-agent-workflow.md) (tier-2 routing example; prompt-to-agent merge), [`what-is-context-architecture.md`](content/articles/what-is-context-architecture.md) (spec walkthrough, prompt assembly order, context-layers merge).
+- **Playbook rewrites:** Outlook outreach ([`ai-outreach-with-outlook-guardrails.md`](content/articles/ai-outreach-with-outlook-guardrails.md)), tender legal deep-dive ([`ai-tender-response-pipeline.md`](content/articles/ai-tender-response-pipeline.md)), governance quartet, case study expansion, tools opinion (internal links + anecdote), outcomes mapping (support metrics).
+- **Merges → draft redirects:** `prompt-anatomy-workflow-basics` → canvas; `context-layers-in-prompt-design` → context architecture; `from-prompt-to-agent` → agent workflow guide.
+- **Interim unique hero sources** in [`data/illustrations.yaml`](data/illustrations.yaml) for context architecture, case study, structured blueprint, multi-agent handoff, and business outcomes (borrowed Basic/Governance PNGs; replaced by Satori templates in v0.5.0).
+- **Start-here card copy** in [`data/hub_sections.yaml`](data/hub_sections.yaml); **llms.txt** pillar list updated.
+- [`prompt-anatomy-foundations.md`](content/articles/prompt-anatomy-foundations.md) trimmed to nav index.
+
+### Fixed
+
+- [`implementation-notes-hero-structure.md`](content/articles/implementation-notes-hero-structure.md) — removed enrich boilerplate; redirect to ecosystem map.
+
+### Changed (prior unreleased)
+
+- **Author avatar:** real headshots sync from [`data/author/`](data/author/) or [`data/01_illustrations/author.jpg`](data/01_illustrations/author.jpg). Brand logo placeholder no longer overwrites each build or displays in [`author_bio.html`](theme/promptanatomy/templates/partials/author_bio.html) when no photo is committed. Person `image` in Article JSON-LD when a photo exists.
+
+## [0.4.0] - 2026-06-04
+
+### Added
+
+- **Blog Premium Upgrade (Release 1) — Design System v1.1 article reading experience:** [`partials/article_lead.html`](theme/promptanatomy/templates/partials/article_lead.html) (summary dek via `striptags`), optional `hero_caption` on [`partials/article_header.html`](theme/promptanatomy/templates/partials/article_header.html), `.prose > p:first-of-type` lead styling, featured-card visual frame (`contain`, max-height, border) in [`components.css`](theme/promptanatomy/static/css/components.css).
+- **YAML frontmatter reader:** [`scripts/pelican_frontmatter_reader.py`](scripts/pelican_frontmatter_reader.py) + `READERS` in [`pelicanconf.py`](pelicanconf.py) — full YAML frontmatter (nested `faq` lists, dates) via `python-frontmatter`.
+- **Content quality gates:** pillar minimum (1,200 words on `the-model-is-not-the-system`), Release 2 warnings for other start-here slugs, FAQ body-leak error, framework length warnings, slide-deck section heuristic in [`scripts/validate_content.py`](scripts/validate_content.py).
+
+### Changed
+
+- **Flagship rewrite:** [`the-model-is-not-the-system.md`](content/articles/the-model-is-not-the-system.md) — ~1,400 words, prose-first framework essay, four internal links, `8 min read`, `hero_caption`, updated `summary` / `modified` (2026-06-04).
+- **Featured FAQ placement:** [`article.html`](theme/promptanatomy/templates/article.html) — `featured: true` articles render FAQ above [`partials/article_cta.html`](theme/promptanatomy/templates/partials/article_cta.html); non-featured keep FAQ after author bio.
+- **Homepage featured lead:** [`data/hub_sections.yaml`](data/hub_sections.yaml) aligned with expanded framework promise.
+
+### Fixed
+
+- **FAQ metadata leaking into article HTML** — Pelican’s default `markdown.extensions.meta` reader treated nested `faq` YAML as body content (`question:` / `answer:` bullets in `.prose`). Replaced with `FrontmatterMarkdownReader`.
+
+### Docs
+
+- [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) v1.1 (article lead, hero caption, prose lead, pillar FAQ placement).
+- [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) (content tiers), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) (v1.1 checklist), [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (frontmatter reader in pipeline), [`AGENTS.md`](AGENTS.md) (`hero_caption`, `faq` contract).
+
+## [0.3.0] - 2026-05-28
 
 ### Added
 
@@ -84,6 +157,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- **Hub image sync on Linux/Vercel** — [`scripts/sync_illustrations.py`](scripts/sync_illustrations.py) `sync_hub()` no longer converts `/` to `\\` in destination paths (broke `content/images/hub/hero.png` on Vercel); missing hub masters now fail the sync step with a clear error.
+- **Vercel `buildCommand` length** — moved install/build steps into [`scripts/vercel_install.sh`](scripts/vercel_install.sh) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh); [`vercel.json`](vercel.json) now uses short `bash` commands (256-character schema limit).
 - **Vercel deploy:** [`vercel.json`](vercel.json) uses `framework: null`, project `.venv` for PEP 668-safe installs, and `.venv/bin/python` for Pelican build. [`.python-version`](.python-version) pins 3.11. [docs/DEPLOY.md](docs/DEPLOY.md) troubleshooting.
 - **Preview styling:** [`publishconf.py`](publishconf.py) sets `SITEURL` from `VERCEL_URL` on preview deploys; canonical/feeds use `https://www.promptanatomy.blog`.
 - **Production www:** Theme uses root-relative `/static/` and `/images/` paths; apex `promptanatomy.blog` normalized to **www** for metadata so live site matches local Design System build.

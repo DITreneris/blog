@@ -1,12 +1,24 @@
-{% from 'macros/ui.html' import section_heading %}
-{% if article.faq %}
-<section class="faq container" aria-labelledby="faq-heading">
-  {{ section_heading('FAQ', heading_id='faq-heading') }}
-  {% for item in article.faq %}
-  <details>
-    <summary>{{ item.question }}</summary>
-    <p>{{ item.answer }}</p>
-  </details>
-  {% endfor %}
-</section>
-{% endif %}
+{% from 'macros/ui.html' import section_heading %}
+
+{% if article.faq %}
+
+<section class="faq container" aria-labelledby="faq-heading">
+
+  {{ section_heading('FAQ', heading_id='faq-heading') }}
+
+  {% for item in article.faq %}
+
+  <details>
+
+    <summary>{{ item.question }}</summary>
+
+    <p>{{ item.answer }}</p>
+
+  </details>
+
+  {% endfor %}
+
+</section>
+
+{% endif %}
+

@@ -26,6 +26,20 @@ LINK_PATTERN = re.compile(r"\]\(/articles/([a-z0-9-]+)/")
 WORDS_PER_MINUTE = 200
 MIN_CASE_STUDY_WORDS = 250
 MIN_TEMPLATE_WORDS = 150
+MIN_FRAMEWORK_WORDS = 900
+MIN_PILLAR_WORDS = 1200
+# Release 2: enforce pillar minimum on all start-here slugs.
+PILLAR_SLUGS = frozenset(
+    {
+        "the-model-is-not-the-system",
+        "10-signs-your-company-is-vibe-prompting",
+        "how-to-design-an-ai-agent-workflow",
+    }
+)
+PILLAR_SLUGS_RELEASE_2: frozenset[str] = frozenset()
+FAQ_BODY_LEAK = re.compile(r"^\s*[-*]?\s*question:\s", re.I | re.M)
+DECK_SECTION_MIN_WORDS = 80
+DECK_SECTION_THRESHOLD = 0.5
 
 
 class Category(str, Enum):
@@ -55,8 +69,29 @@ def _reading_time_minutes(label: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _deck_section_warnings(body: str) -> list[str]:
+    """Warn when most H2 sections are thin (slide-deck rhythm)."""
+    sections = re.split(r"\n##\s+", body.strip())
+    if len(sections) < 2:
+        return []
+    thin = 0
+    counted = 0
+    for section in sections[1:]:
+        chunk = section.split("\n##", 1)[0]
+        wc = _word_count(chunk)
+        counted += 1
+        if wc < DECK_SECTION_MIN_WORDS:
+            thin += 1
+    if counted and thin / counted > DECK_SECTION_THRESHOLD:
+        return [
+            f"{thin}/{counted} H2 sections under {DECK_SECTION_MIN_WORDS} words (slide-deck rhythm)"
+        ]
+    return []
+
+
 def validate_file(path: Path, slugs: set[str]) -> list[str]:
     errors: list[str] = []
+    warnings: list[str] = []
     post = frontmatter.load(path)
     meta = post.metadata
     is_page = "pages" in path.parts
@@ -130,6 +165,43 @@ def validate_file(path: Path, slugs: set[str]) -> list[str]:
             errors.append(
                 f"{path.name}: template too short ({wc} words, min {MIN_TEMPLATE_WORDS})"
             )
+
+        slug = str(meta.get("slug") or path.stem)
+        if meta.get("faq") and FAQ_BODY_LEAK.search(body):
+            errors.append(
+                f"{path.name}: FAQ metadata leaked into body (use YAML frontmatter + FrontmatterMarkdownReader)"
+            )
+
+        if slug in PILLAR_SLUGS and wc < MIN_PILLAR_WORDS:
+            errors.append(
+                f"{path.name}: pillar article too short ({wc} words, min {MIN_PILLAR_WORDS})"
+            )
+        elif slug in PILLAR_SLUGS_RELEASE_2 and wc < MIN_PILLAR_WORDS:
+            warnings.append(
+                f"{path.name}: start-here pillar below target ({wc} words, min {MIN_PILLAR_WORDS} in Release 2)"
+            )
+
+        if slug in PILLAR_SLUGS:
+            if not meta.get("hero_caption"):
+                errors.append(f"{path.name}: pillar article missing hero_caption")
+            faq = meta.get("faq") or []
+            if len(faq) < 2:
+                errors.append(
+                    f"{path.name}: pillar article needs at least 2 FAQ items in frontmatter"
+                )
+        elif meta.get("status") == "published" and not meta.get("hero_caption"):
+            warnings.append(f"{path.name}: published article missing hero_caption")
+
+        if category == Category.FRAMEWORK.value and wc < MIN_FRAMEWORK_WORDS:
+            warnings.append(
+                f"{path.name}: framework article short ({wc} words, target {MIN_FRAMEWORK_WORDS}+)"
+            )
+
+        for msg in _deck_section_warnings(body):
+            warnings.append(f"{path.name}: {msg}")
+
+    for warn in warnings:
+        print(f"  warning: {warn}", file=sys.stderr)
 
     return errors
 

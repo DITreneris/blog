@@ -1,93 +1,199 @@
-{% from 'macros/ui.html' import section_heading, btn, card, category_badge, meta_line %}
-
-<section class="section" aria-labelledby="sg-colors-heading">
-  <div class="container stack">
-    {{ section_heading('Colors', 'Semantic tokens from tokens.css.', 'sg-colors-heading') }}
-    <div class="grid grid--2">
-      <div class="card">
-        <p class="meta-line">--color-surface</p>
-        <div style="height:3rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-sm);"></div>
-      </div>
-      <div class="card">
-        <p class="meta-line">--color-surface-elevated</p>
-        <div style="height:3rem;background:var(--color-surface-elevated);border:1px solid var(--color-border);border-radius:var(--radius-sm);"></div>
-      </div>
-      <div class="card">
-        <p class="meta-line">--color-brand-dark</p>
-        <div style="height:3rem;background:var(--color-brand-dark);border-radius:var(--radius-sm);"></div>
-      </div>
-      <div class="card">
-        <p class="meta-line">--color-brand-accent</p>
-        <div style="height:3rem;background:var(--color-brand-accent);border-radius:var(--radius-sm);"></div>
-      </div>
-      <div class="card">
-        <p class="meta-line">--color-link (prose)</p>
-        <div style="height:3rem;background:var(--color-link);border-radius:var(--radius-sm);"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="sg-type-heading">
-  <div class="container stack">
-    {{ section_heading('Typography', None, 'sg-type-heading') }}
-    <p class="hero__headline" style="color:var(--color-text-primary);max-width:none;">Hero headline sample</p>
-    <h2 class="section-title">Section title sample</h2>
-    <p style="font-size:var(--text-body);color:var(--color-text-secondary);">Body text at --text-body (18px).</p>
-    <p class="meta-line">Metadata line — 5 min read · Framework · 2026</p>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="sg-buttons-heading">
-  <div class="container stack">
-    {{ section_heading('Buttons', None, 'sg-buttons-heading') }}
-    <div class="cluster">
-      {{ btn('#', 'Primary CTA') }}
-      {{ btn('#', 'Ghost', 'ghost') }}
-    </div>
-  </div>
-</section>
-
-<section class="section section--dark" aria-labelledby="sg-buttons-dark-heading">
-  <div class="container stack">
-    {{ section_heading('Buttons on dark', None, 'sg-buttons-dark-heading') }}
-    <div class="cluster">
-      {{ btn('#', 'Primary CTA') }}
-      {{ btn('#', 'Ghost', 'ghost') }}
-      {{ btn('#', 'Secondary', 'secondary') }}
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="sg-card-heading">
-  <div class="container">
-    {{ section_heading('Card', None, 'sg-card-heading') }}
-    <div class="grid grid--3">
-      {{ card('Card title', 'Short description for a hub or start-here card.', '#') }}
-      {{ card('Another card', 'Uses the card() macro and .card styles.', '#') }}
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="sg-badge-heading">
-  <div class="container stack">
-    {{ section_heading('Badge & meta', None, 'sg-badge-heading') }}
-    {{ category_badge('Framework') }}
-    <p class="meta-line">5 min read · Framework · 2026</p>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="sg-prose-heading">
-  <div class="container prose">
-    {{ section_heading('Prose sample', None, 'sg-prose-heading') }}
-    <p>Body copy with a <a href="#">prose link</a> using --color-link.</p>
-    <p>Inline <code>code sample</code> and a block:</p>
-    <pre><code>def example():
-    return "structured"</code></pre>
-    <aside class="takeaway-box" aria-label="Key takeaway">
-      <p class="takeaway-box__label">Key takeaway</p>
-      <p>Takeaway box uses brand tokens for border and background.</p>
-    </aside>
-  </div>
-</section>
-
+{% from 'macros/ui.html' import section_heading, btn, card, category_badge, meta_line %}
+
+
+
+<section class="section" aria-labelledby="sg-colors-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Colors', 'Semantic tokens from tokens.css.', 'sg-colors-heading') }}
+
+    <div class="grid grid--2">
+
+      <div class="card">
+
+        <p class="meta-line">--color-surface</p>
+
+        <div style="height:3rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-surface-elevated</p>
+
+        <div style="height:3rem;background:var(--color-surface-elevated);border:1px solid var(--color-border);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-brand-dark</p>
+
+        <div style="height:3rem;background:var(--color-brand-dark);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-brand-accent</p>
+
+        <div style="height:3rem;background:var(--color-brand-accent);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-link (prose)</p>
+
+        <div style="height:3rem;background:var(--color-link);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-type-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Typography', None, 'sg-type-heading') }}
+
+    <p class="hero__headline" style="color:var(--color-text-primary);max-width:none;">Hero headline sample</p>
+
+    <h2 class="section-title">Section title sample</h2>
+
+    <p style="font-size:var(--text-body);color:var(--color-text-secondary);">Body text at --text-body (18px).</p>
+
+    <p class="meta-line">Metadata line — 5 min read · Framework · 2026</p>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-buttons-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Buttons', None, 'sg-buttons-heading') }}
+
+    <div class="cluster">
+
+      {{ btn('#', 'Primary CTA') }}
+
+      {{ btn('#', 'Ghost', 'ghost') }}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section section--dark" aria-labelledby="sg-buttons-dark-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Buttons on dark', None, 'sg-buttons-dark-heading') }}
+
+    <div class="cluster">
+
+      {{ btn('#', 'Primary CTA') }}
+
+      {{ btn('#', 'Ghost', 'ghost') }}
+
+      {{ btn('#', 'Secondary', 'secondary') }}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Card', None, 'sg-card-heading') }}
+
+    <div class="grid grid--3">
+
+      {{ card('Card title', 'Short description for a hub or start-here card.', '#') }}
+
+      {{ card('Another card', 'Uses the card() macro and .card styles.', '#') }}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-badge-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Badge & meta', None, 'sg-badge-heading') }}
+
+    {{ category_badge('Framework') }}
+
+    <p class="meta-line">5 min read · Framework · 2026</p>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-article-lead-heading">
+
+  <div class="container">
+
+    {{ section_heading('Article lead', None, 'sg-article-lead-heading') }}
+
+    <p class="article-lead" style="max-width:var(--article-max);">Editorial dek rendered from article summary—below hero, above key takeaway.</p>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-prose-heading">
+
+  <div class="container prose">
+
+    {{ section_heading('Prose sample', None, 'sg-prose-heading') }}
+
+    <p>Body copy with a <a href="#">prose link</a> using --color-link.</p>
+
+    <p>Inline <code>code sample</code> and a block:</p>
+
+    <pre><code>def example():
+
+    return "structured"</code></pre>
+
+    <aside class="takeaway-box" aria-label="Key takeaway">
+
+      <p class="takeaway-box__label">Key takeaway</p>
+
+      <p>Takeaway box uses brand tokens for border and background.</p>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
