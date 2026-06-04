@@ -550,6 +550,21 @@ flowchart TD
 
 ---
 
+## Deferred backlog index (tracked — do not start without request)
+
+| Phase | Items | Priority |
+|-------|-------|----------|
+| **C.3** | Hero upgrades: `memory-types-for-ai-systems`, `prompt-anatomy-foundations` | P2 |
+| **G.2.5** | Category accent tokens; shared JSON for Satori `categoryStyles` | P2 |
+| **G.3.2** | `topic_card(cat)` macro | P3 |
+| **G.4** | Full `@media` audit spreadsheet | P2 |
+| **G.5** | axe-core CLI on 4 URLs | P3 |
+| **G.6** | Self-host Inter, WebP heroes, About OG, Satori tint alignment | P3 |
+| **F.4** | Real Privacy/Terms, remaining SEO_improvement P3 | P3 |
+| **E** | Pagefind search, newsletter, Giscus, mother-repo manifest | P3 |
+
+---
+
 ## Quick reference
 
 | Doc | Purpose |
