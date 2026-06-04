@@ -6,6 +6,14 @@
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ article.url }}{% endblock %}
 
+{% from 'macros/ui.html' import hero_image_url %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/article.min.css" />
+{% if article.hero_image %}
+<link rel="preload" as="image" href="{{ hero_image_url(article)|replace('.png', '.webp') }}" type="image/webp" fetchpriority="high">
+{% endif %}
+{% endblock %}
 
 
 {% block open_graph %}

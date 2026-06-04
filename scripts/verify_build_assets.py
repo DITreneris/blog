@@ -23,9 +23,12 @@ START_HERE_OG_SLUGS = (
 REQUIRED = [
     OUTPUT / "static" / "img" / "og-default.png",
     OUTPUT / "static" / "favicon-32x32.png",
+    OUTPUT / "static" / "css" / "site.min.css",
+    OUTPUT / "static" / "css" / "article.min.css",
     OUTPUT / "images" / "hub" / "ecosystem.png",
     OUTPUT / "images" / "hub" / "og.png",
     OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.png",
+    OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.webp",
 ]
 
 for slug in START_HERE_OG_SLUGS:

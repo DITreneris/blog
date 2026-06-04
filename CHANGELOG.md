@@ -10,15 +10,42 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- **Inline prose figures:** `usage: [inline]` rows in [`data/illustrations.yaml`](data/illustrations.yaml) sync merged-stub diagrams to `content/images/articles/{slug}/figures/` via [`scripts/sync_illustrations.py`](scripts/sync_illustrations.py); `.prose-figure` styles in [`theme/promptanatomy/static/css/article.css`](theme/promptanatomy/static/css/article.css); body image path check in [`scripts/validate_content.py`](scripts/validate_content.py). Seven canonical articles embed hand-authored art from merged draft stubs (context layers, workflow canvas, framework map, research boundaries, ops alerts, engagement limits, structured vs tools).
-- **[`docs/definition_of_done_system.md`](docs/definition_of_done_system.md)** — workflow-scoped completion hub (matrix, validator catalog, evidence format, rationalizations); links to Design System DoD 2.0 without duplicating it.
+- **Pre-release hardening:** branded [`content/extra/404.html`](content/extra/404.html) (`noindex,follow`) copied to `output/404.html` for Vercel; FAQ frontmatter on [`audit-trails-for-ai-workflows.md`](content/articles/audit-trails-for-ai-workflows.md), [`handoff-rules-between-humans-and-ai.md`](content/articles/handoff-rules-between-humans-and-ai.md), [`multi-agent-handoff-pattern.md`](content/articles/multi-agent-handoff-pattern.md).
+- **Load-speed optimization (Phases 0–3):** self-hosted Inter (`fonts.css` + `@fontsource/inter` woff2), minified CSS bundles (`scripts/build_css.py` → `site.min.css`, `article.min.css`), Vercel immutable cache headers for `/static/` and `/images/`, WebP responsive heroes via `responsive_hero_img` macro + [`sync_illustrations.py`](scripts/sync_illustrations.py), Pygments syntax colors ([`pygments.css`](theme/promptanatomy/static/css/pygments.css)), homepage latest load-more ([`latest-load-more.js`](theme/promptanatomy/static/js/latest-load-more.js)), [`scripts/audit_image_weights.py`](scripts/audit_image_weights.py), Lighthouse CI ([`.github/workflows/performance.yml`](.github/workflows/performance.yml)), [`docs/PERFORMANCE_BASELINE.md`](docs/PERFORMANCE_BASELINE.md).
+
+### Removed
+
+- **Google Fonts:** Inter no longer loaded from `fonts.googleapis.com`; preconnect links removed from [`base.html`](theme/promptanatomy/templates/base.html).
+- **Newsletter placeholder:** homepage “Coming soon” signup replaced with Atom + LinkedIn CTAs ([`newsletter_cta.html`](theme/promptanatomy/templates/partials/newsletter_cta.html), [`hub_sections.yaml`](data/hub_sections.yaml)).
 
 ### Changed
 
-- **Ecosystem homepage cards:** removed Field Notes (redundant on `.blog`) and seven placeholder `.lol` game cards; single **Corporate Ladder** play spoke remains — [`data/ecosystem.yaml`](data/ecosystem.yaml), [`prompt-anatomy-ecosystem-map.md`](content/articles/prompt-anatomy-ecosystem-map.md).
-- **Hub hero diagram (premium pipeline):** replaced radial mind-map with horizontal workflow architecture — Input → Context → Reasoning → Output pipeline, dominant Prompt Anatomy engine (title + “Workflow Engine” subtitle), Quality and Workflow foundation row; native SVG connectors and glass card unchanged. **Data:** [`data/hub_sections.yaml`](data/hub_sections.yaml) (`diagram.pipeline`, `diagram.center`, `diagram.foundation`). **Tokens:** `--color-hero-diagram-line`, `--color-hero-diagram-engine-ring`, `--color-hero-diagram-caption`; softer `--color-hero-diagram-glow`. **Micro-polish:** middot pipeline microcopy, dimmer/smaller flow arrows, thin data-bus line above engine (removed vertical connector), narrower aligned foundation cards, quieter caption. **Docs:** [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md).
+- **CI parity:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs `vercel_install.sh` + `make build` (matches Vercel pipeline).
+- **Sitemap:** [`generate_sitemap.py`](scripts/generate_sitemap.py) and [`validate_seo_output.py`](scripts/validate_seo_output.py) include `/privacy/` and `/terms/` (real legal copy; no longer excluded).
+- **Author schema:** [`schema_person_about.html`](theme/promptanatomy/templates/partials/schema_person_about.html) `sameAs` from `SITE_CONFIG.social.links` (removes stale `TStaniulis_NFT`); [`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html) Person `url` → `/about/` with YAML-driven `sameAs`.
+- **Article cards:** meaningful hero `alt` from title in [`macros/ui.html`](theme/promptanatomy/templates/macros/ui.html) `article_card()`.
+- **Theme validator:** [`validate_theme_tokens.py`](scripts/validate_theme_tokens.py) skips generated `site.min.css` / `article.min.css` (bundles include `tokens.css` / Pygments hex).
+- **CSS delivery:** five render-blocking stylesheets replaced by `site.min.css` on all pages; `article.min.css` conditional on article, category, and design-system templates.
+- **Article LCP:** hero images use `<picture>` WebP + `fetchpriority="high"` + preload; OG/social meta remain PNG.
+- **Homepage `#latest`:** initial 12 cards + “Show more articles” (remaining cards in DOM, hidden until expanded).
+- **[`scripts/fetch_og_fonts.mjs`](scripts/fetch_og_fonts.mjs):** copies woff2 to `theme/promptanatomy/static/fonts/` for site and WOFF to `data/og/fonts/` for Satori.
+- **Hub hero diagram (premium pipeline, no micro-polish):** horizontal pipeline (Input → Context → Reasoning → Output) → Prompt Anatomy workflow engine → foundation row (Quality, Workflow). **Skipped micro-polish:** no dimmed arrows, no horizontal data-bus (vertical stem connector instead), wider foundation cards, comma-separated pipeline microcopy, standard caption contrast. **Files:** [`hero_architecture_diagram.html`](theme/promptanatomy/templates/partials/hero_architecture_diagram.html), [`data/hub_sections.yaml`](data/hub_sections.yaml), [`components.css`](theme/promptanatomy/static/css/components.css), [`tokens.css`](theme/promptanatomy/static/css/tokens.css). **Docs:** [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md).
 - **[`AGENTS.md`](AGENTS.md)**, **[`README.md`](README.md)**, **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)**, **[`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md)** — cross-links and per-workflow **Done when** lines pointing at the DoD hub.
 - **Article publish dates:** replaced bulk `2026-05-28` / `modified: 2026-06-04` frontmatter with a curriculum-ordered timeline from **2024-01-06** (~21–24 day cadence, jittered) across all 46 posts in `content/articles/`; published catalog spans **2024-01-06 → 2026-04-17**; drafts continue after that. Removed fake same-day `modified` except on four pillar posts (plausible refresh ~10–13 weeks after publish). Re-run via [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py) (`PUBLICATION_ORDER`, `INTERVAL_DAYS`).
+
+## [0.7.4] - 2026-06-04 — Footer SaaS IA and conversion
+
+### Added
+
+- **Footer brand CTAs:** `footer.ctas` in [`data/site.yaml`](data/site.yaml) — “View plans” (hub pricing), “Explore frameworks” (`/topics/framework/`); quiet `.site-footer__cta` + `link--on-dark` (no `.btn--primary` in footer).
+
+### Changed
+
+- **Footer IA:** columns **Product / Resources / Company** (removed Explore/Connect); **Frameworks** + **AI Agents** under Product; Articles only under Resources; Company = About → social → Atom (`trailing_links`).
+- **Footer copy:** product tagline — “Practical AI operating system for teams: frameworks, templates, playbooks, and implementation notes.”
+- **Footer density (v2):** `padding-block: --space-lg`; nav/legal/founder link rows `min-height: 2.25rem`; column titles `--text-small` / `0.06em` tracking; grid `1.25fr repeat(3, minmax(0, 1fr))`.
+- **Footer address:** single-line `organization.mailing_address` in [`partials/footer.html`](theme/promptanatomy/templates/partials/footer.html).
+- **Docs:** [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md), [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md) — v0.7.4 footer checks and data keys (`ctas`, `trailing_links`).
 
 ## [0.7.3] - 2026-06-04 — Footer premium pass and legal pages
 

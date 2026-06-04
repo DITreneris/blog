@@ -12,13 +12,13 @@ hero:
     pipeline:
       - id: input
         label: Input
-        desc: "Briefs · data · goals"
+        desc: "Briefs, data, goals"
       - id: context
         label: Context
-        desc: "Rules · examples · constraints"
+        desc: "Rules, examples, constraints"
       - id: reasoning
         label: Reasoning
-        desc: "Steps · checks · alternatives"
+        desc: "Steps, checks, alternatives"
       - id: output
         label: Output
         desc: "Reusable assets"
@@ -70,12 +70,17 @@ featured:
 latest:
   title: "Latest articles"
   lead: "New implementation notes, frameworks, and field guides—sorted by publish date."
+  initial_count: 12
+  show_more_label: "Show more articles"
 
 newsletter:
-  title: "Implementation notes in your inbox"
-  description: "No AI hype. Just frameworks, templates, and implementation notes for building controlled AI systems."
-  disclaimer: "Newsletter signup is not connected yet. This form is a layout placeholder."
-  button_label: "Subscribe"
+  title: "Stay updated"
+  description: "Follow new frameworks and implementation notes via Atom or LinkedIn—no signup form on the blog yet."
+  disclaimer: "Atom feed for readers and aggregators; LinkedIn for occasional release notes."
+  feed_label: "Subscribe via Atom"
+  feed_href: "/feeds/all.atom.xml"
+  linkedin_label: "Follow on LinkedIn"
+  linkedin_href: "https://www.linkedin.com/in/staniulis"
 
 article_cta:
   title: "Move from pilot to program"

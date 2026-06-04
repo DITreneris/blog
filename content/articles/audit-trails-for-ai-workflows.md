@@ -12,6 +12,11 @@ slug: audit-trails-for-ai-workflows
 status: published
 summary: What to log for AI-assisted workflows—with sample JSON for Northline B2B ticket 4821.
 title: Audit Trails for AI Workflows
+faq:
+  - question: What is the minimum an AI workflow audit log must capture?
+    answer: At minimum, log workflow ID and version, actor identity, input snapshot or hash, context sources, model and parameters, raw output, human override flags, UTC timestamp, and policy or context pack version.
+  - question: Do we need to store full prompts in every log row?
+    answer: Not always. Store hashes and version IDs when full text is sensitive or bulky; ensure you can reconstruct a case with approved sources and policy versions for investigations.
 ---
 
 Audit trails turn AI from a black box into an **accountable process**. Regulators, customers, and your own teams ask the same questions after a near-miss: what was sent, on what basis, which policy version applied, and who approved it? If answers require reconstructing someone's chat history, you have a demo—not a workflow ready for scale.
@@ -37,14 +42,6 @@ Compare your current logs to this set before buying another observability tool. 
 Northline added `policy_pack_version` after a near-miss discussed in [risk forum](/articles/ai-risk-review-cadence/)—plan for schema evolution in your registry, not as a one-off firefight.
 
 Optional but valuable: `checker_result`, `eval_gate` (smoke/pilot/prod), `boundary_denied` events, `template_hash` from [structured prompt system](/articles/structured-prompt-system-blueprint/).
-
-<figure class="prose-figure">
-  <img src="/images/articles/audit-trails-for-ai-workflows/figures/ops-alert-agent.png"
-       alt="Ops alert bot diagram showing required audit log fields for automated notifications"
-       width="1600" height="900" loading="lazy" decoding="async" />
-  <figcaption>Ops and alert bots must emit the same minimum log fields—not chat notifications alone.</figcaption>
-</figure>
-
 ## Sample log row (ticket #4821)
 
 The JSON below is representative of a governed assist run—use it in replay drills with process owners and Legal.

@@ -6,7 +6,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 |-----------------|---------------|-------------|
 | Header | `partials/header.html` | `SITE_CONFIG` (from `data/site.yaml`) |
 | Logo | `partials/logo.html` | `SITE_CONFIG.brand` |
-| Footer | `partials/footer.html` | `SITE_CONFIG.footer` (all column `links` in YAML; Connect: `social.links` + column links incl. Atom feed), `SITE_CONFIG.organization`; bottom `.site-footer__bar` / `.site-footer__company` |
+| Footer | `partials/footer.html` | `SITE_CONFIG.footer` (`tagline`, `ctas`, columns Product/Resources/Company; Company: `links` → `social.links` → `trailing_links`), `organization.mailing_address`; `.site-footer__bar` / `.site-footer__company` |
 | Layout primitives | CSS classes in `static/css/layout.css` (`.container`, `.section`, `.grid`, `.stack`, `.cluster`) | — |
 | UI macros | `macros/ui.html` | `section_heading`, `category_badge`, `meta_line`, `hero_image_url`, `btn`, `card`, `article_card`, `nav_aria_current` |
 | BlogHero | `partials/blog_hero.html` | `HUB_SECTIONS.hero` (copy, images, `cta_primary` / `cta_secondary`); header Plans CTA stays `SITE_CONFIG.cta` |

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% from 'macros/ui.html' import section_heading, article_card %}
+{% from 'macros/ui.html' import section_heading, article_card, btn %}
 {% block title %}{{ SITENAME }} — {{ SITE_CONFIG.brand.tagline }}{% endblock %}
 {% block canonical %}{{ CANONICAL_SITEURL }}/{% endblock %}
 
@@ -34,19 +34,39 @@
 {% include 'partials/topic_cluster_grid.html' %}
 {% include 'partials/template_download.html' %}
 
+{% set latest_cfg = HUB_SECTIONS.latest %}
+{% set initial_count = latest_cfg.initial_count|default(12)|int %}
+{% set latest_sorted = articles|sort(attribute='date', reverse=True)|rejectattr('featured')|list %}
+{% set latest_initial = latest_sorted[:initial_count] %}
+{% set latest_more = latest_sorted[initial_count:] %}
+
 <section class="section" id="latest" aria-labelledby="latest-heading">
   <div class="container">
-    {{ section_heading(HUB_SECTIONS.latest.title, HUB_SECTIONS.latest.lead, heading_id='latest-heading') }}
-    <div class="grid grid--2">
-      {% for article in articles|sort(attribute='date', reverse=True) %}
-        {% if not article.featured %}
+    {{ section_heading(latest_cfg.title, latest_cfg.lead, heading_id='latest-heading') }}
+    <div class="grid grid--2" id="latest-grid">
+      {% for article in latest_initial %}
         {{ article_card(article) }}
-        {% endif %}
       {% endfor %}
     </div>
+    {% if latest_more %}
+    <div class="grid grid--2" id="latest-more" hidden>
+      {% for article in latest_more %}
+        {{ article_card(article) }}
+      {% endfor %}
+    </div>
+    <p class="latest-more-actions">
+      <button type="button" class="btn btn--secondary" id="latest-load-more" aria-controls="latest-more" aria-expanded="false">
+        {{ latest_cfg.show_more_label|default('Show more articles') }}
+      </button>
+    </p>
+    {% endif %}
   </div>
 </section>
 
 {% include 'partials/ecosystem_spoke.html' %}
 {% include 'partials/newsletter_cta.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="/{{ THEME_STATIC_DIR }}/js/latest-load-more.js" defer></script>
 {% endblock %}

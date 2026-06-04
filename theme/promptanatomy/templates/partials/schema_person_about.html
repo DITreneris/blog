@@ -12,11 +12,12 @@
     "name": {{ SITE_CONFIG.author.name|tojson }},
     "jobTitle": {{ SITE_CONFIG.author.title|tojson }},
     "url": "{{ CANONICAL_SITEURL }}/about/",
-    "description": {{ SITE_CONFIG.author.bio|tojson }}{% if SITE_CONFIG.author.linkedin %},
+    "description": {{ SITE_CONFIG.author.bio|tojson }},
     "sameAs": [
-      {{ SITE_CONFIG.author.linkedin|tojson }},
-      "https://x.com/TStaniulis_NFT"
-    ]{% endif %}{% if AUTHOR_HAS_PHOTO and SITE_CONFIG.author.avatar %},
+{%- for link in SITE_CONFIG.social.links %}
+      {{ link.href|tojson }}{% if not loop.last %},{% endif %}
+{%- endfor %}
+    ]{% if AUTHOR_HAS_PHOTO and SITE_CONFIG.author.avatar %},
     "image": "{{ CANONICAL_SITEURL }}/{{ SITE_CONFIG.author.avatar }}"{% endif %},
     "worksFor": { "@id": "{{ CANONICAL_SITEURL }}/#organization" }
   }

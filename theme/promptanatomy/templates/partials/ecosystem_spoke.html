@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import section_heading, btn %}
+{% from 'macros/ui.html' import section_heading, btn, responsive_hero_img %}
 
 <section class="section section--dark ecosystem" id="ecosystem" aria-labelledby="ecosystem-heading">
 
@@ -12,7 +12,7 @@
 
       {% if ECOSYSTEM.image %}
 
-      <img class="ecosystem__map" src="/{{ ECOSYSTEM.image }}" alt="{{ ECOSYSTEM.image_alt|default('') }}" width="1600" height="900" loading="lazy" decoding="async" />
+      {{ responsive_hero_img('/' ~ ECOSYSTEM.image, ECOSYSTEM.image_alt|default(''), 'ecosystem__map', 1600, 900, false) }}
 
       {% endif %}
 

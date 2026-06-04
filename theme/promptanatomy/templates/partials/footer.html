@@ -10,6 +10,24 @@
 
       <p class="site-footer__brand">{{ SITE_CONFIG.footer.tagline }}</p>
 
+      {% if SITE_CONFIG.footer.ctas %}
+
+      <div class="site-footer__ctas">
+
+        {% for cta in SITE_CONFIG.footer.ctas %}
+
+        {% if not loop.first %}<span class="site-footer__cta-sep" aria-hidden="true">&middot;</span>{% endif %}
+
+        <a class="site-footer__cta link--on-dark" href="{{ cta.href }}"
+
+           {% if cta.external %}rel="noopener noreferrer"{% endif %}>{{ cta.label }}</a>
+
+        {% endfor %}
+
+      </div>
+
+      {% endif %}
+
     </div>
 
     {% for column in SITE_CONFIG.footer.columns %}
@@ -19,6 +37,18 @@
       <h3 class="site-footer__column-title">{{ column.title }}</h3>
 
       <ul class="site-footer__links">
+
+        {% for link in column.links or [] %}
+
+        <li>
+
+          <a href="{{ link.href }}"
+
+             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+
+        </li>
+
+        {% endfor %}
 
         {% if column.use_social %}
 
@@ -34,7 +64,7 @@
 
         {% endif %}
 
-        {% for link in column.links or [] %}
+        {% for link in column.trailing_links or [] %}
 
         <li>
 
@@ -92,11 +122,7 @@
 
         <address class="site-footer__address">
 
-          {{ SITE_CONFIG.organization.name }}<br />
-
-          {{ SITE_CONFIG.organization.address.street }}<br />
-
-          {{ SITE_CONFIG.organization.address.city_state_zip }}{% if SITE_CONFIG.organization.address.country %}, {{ SITE_CONFIG.organization.address.country }}{% endif %}
+          {{ SITE_CONFIG.organization.mailing_address }}
 
         </address>
 

@@ -6,6 +6,12 @@
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ page.url }}{% endblock %}
 
+{% block extra_head %}
+{% if page.slug == 'design-system' %}
+<link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/article.min.css" />
+{% endif %}
+{% endblock %}
+
 {% block robots %}<meta name="robots" content="noindex,follow" />{% endblock %}
 
 

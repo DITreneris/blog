@@ -1,7 +1,7 @@
 # SEO / AI / GEO / Crawler Improvement Plan
 
 **Version:** 1.0 (Draft)  
-**Last reviewed:** 2026-05-28  
+**Last reviewed:** 2026-06-04  
 **Scope:** `https://www.promptanatomy.blog` — Pelican 4.x static site on Vercel  
 **Code owner:** default agent (theme, scripts, config)  
 **Doc owner:** [q-and-a-agent](../.cursor/agents/q-and-a-agent.md) (CHANGELOG sync, doc upkeep)
@@ -17,8 +17,8 @@ Related: [AGENTS.md](../AGENTS.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [DEP
 
 | Item | Value |
 |------|-------|
-| **Overall status** | **Mostly OK** — core metadata/schema shipped; remaining gaps are FAQ coverage, production draft guards, and build-pipeline docs |
-| **Biggest blocker** | Ensure every deploy runs `sync-images` + `brand-assets` + `verify_build_assets.py` (see [`Makefile`](../Makefile)); keep `data/01_illustrations/` in the repo |
+| **Overall status** | **OK** — core metadata/schema shipped; pre-release hardening closed schema drift, sitemap legal URLs, 404, CI parity |
+| **Biggest blocker** | Post-deploy: resubmit sitemap in GSC; run PSI on production after push |
 | **Stack note** | Pelican + Jinja templates + Vercel — not Astro/Tailwind. All fixes target `theme/promptanatomy/templates/` and `scripts/` |
 
 ### Top 5 highest-impact improvements
@@ -39,25 +39,25 @@ Related: [AGENTS.md](../AGENTS.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [DEP
 | Meta description | OK | Articles truncate `summary` to 160; category pages use per-topic description from `categories.yaml` | — | — | — |
 | Canonical URLs | OK | All templates emit `CANONICAL_SITEURL` + path | Prevents www/apex duplicates | — | — |
 | hreflang | N/A | Site is `en-US` only | — | Skip until i18n | — |
-| `robots.txt` | PARTIAL | `Allow: /` + sitemap; no explicit AI-bot policy | Ambiguity for GPTBot, ClaudeBot, PerplexityBot | Add explicit allow stanzas (optional) | P2 |
-| `sitemap.xml` | OK | `<lastmod>` emitted; `/design-system/` excluded | — | — | — |
+| `robots.txt` | OK | `Allow: /` + explicit AI-bot allows + sitemap | — | — | — |
+| `sitemap.xml` | OK | `<lastmod>` emitted; `/privacy/` + `/terms/` included; `/design-system/` excluded | — | — | — |
 | Status codes / redirects | OK | Apex→www via `publishconf.py` + Vercel | Single canonical host | — | — |
 | Internal links | OK | Articles cross-link; topic clusters present | Topic authority | — | — |
 | Duplicate metadata | OK | Topic pages use category-specific `og:description` and dedicated OG image | — | — | — |
 | `noindex` mistakes | PARTIAL | `/design-system/` has `noindex`; production disables draft HTML via `publishconf.py` | Utility indexes disabled in production | Verify no `/drafts/` in prod `output/` | P1 |
 | `og:image` (default) | OK | [`meta_og_image.html`](../theme/promptanatomy/templates/partials/meta_og_image.html) + `og-default.png`; home uses `images/hub/og.png`; articles use dedicated `og.png` when in `OG_ARTICLE_SLUGS` | — | — | — |
 | `og:image:width/height/alt` | OK | 1200×630 on all social surfaces; article/topic/home alt text set | — | — | — |
-| Twitter card | OK | `summary_large_image` + fallback image + `@TStaniulis_NFT` | — | — | — |
+| Twitter card | OK | `summary_large_image` + fallback image + `@promptanatom` from [`data/site.yaml`](../data/site.yaml) | — | — | — |
 | Article JSON-LD | OK | `image`, Person author, Organization publisher | — | — | — |
 | WebSite JSON-LD | OK | [`schema_site.html`](../theme/promptanatomy/templates/partials/schema_site.html) | — | — | — |
 | Organization JSON-LD | OK | Same `@graph` as WebSite | — | — | — |
 | BreadcrumbList JSON-LD | OK | Home → Category → Title for articles | — | — | — |
-| FAQPage JSON-LD | PARTIAL | [`schema_faq.html`](../theme/promptanatomy/templates/partials/schema_faq.html); pillar article has `faq` frontmatter | Expand to more pillar posts | Add `faq` YAML on 2–3 more articles | P2 |
+| FAQPage JSON-LD | OK | [`schema_faq.html`](../theme/promptanatomy/templates/partials/schema_faq.html); pillars + eight playbooks including audit trails, handoffs, multi-agent | — | — | — |
 | `llms.txt` | OK | [`content/extra/llms.txt`](../content/extra/llms.txt) | — | — | — |
 | Favicon / PWA icons | PARTIAL | `base.html` references PNGs; verify on disk | 404s visible in DevTools and crawlers | Add missing PNGs from SVG | P1 |
 | HTML lang | OK | `lang="en-US"` | Locale signal | — | — |
 | Atom feed | OK | Linked in head | Discoverability | — | — |
-| Author E-E-A-T | PARTIAL | Person in JSON-LD; About page thin | Trust + AI citation | Expand About; add Person schema | P2 |
+| Author E-E-A-T | OK | Person on About + articles; Article author `url` → `/about/`; `sameAs` from YAML | — | — | — |
 
 ---
 

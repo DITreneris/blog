@@ -149,7 +149,7 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 
 ## Typography
 
-- Stack: `--font-sans` (Inter via Google Fonts in `base.html`)
+- Stack: `--font-sans` (Inter self-hosted woff2 in `theme/promptanatomy/static/fonts/` via `fonts.css`; copied on `npm install` from `@fontsource/inter`)
 - Hero headline: `--text-hero` (clamp ~32px–72px)
 - Section heading: `--text-section`
 - Article title: `--text-article-title`
@@ -229,20 +229,7 @@ When `featured: true`, `partials/faq.html` renders **above** `partials/article_c
 
 `.article-header__diagram` uses `aspect-ratio: 16/10` + `object-fit: contain` + `max-height: 28rem` over `--color-surface-elevated`. This preserves in-asset typography (titles, watermarks) instead of cover-cropping them. Featured-card hero uses the same 16/10 ratio for visual consistency.
 
-### Prose figures (inline)
-
-Use for diagrams that explain a specific section—not as a second hero. Sync masters with `usage: [inline]` + `embed_in` + `dest` in [`data/illustrations.yaml`](../data/illustrations.yaml) → `content/images/articles/{slug}/figures/*.png`.
-
-Embed in markdown as semantic HTML (captions required):
-
-```html
-<figure class="prose-figure">
-  <img src="/images/articles/{slug}/figures/{name}.png" alt="…" width="1600" height="900" loading="lazy" decoding="async" />
-  <figcaption>Operational meaning — not a repeat of the H1.</figcaption>
-</figure>
-```
-
-Styles: `.prose-figure` in [`article.css`](../theme/promptanatomy/static/css/article.css) — `max-height: 24rem`, `object-fit: contain`, caption tokens match `.article-header__caption`. Prefer diagrams in playbooks; memes only in Opinion articles where body matches the asset.
+**Display delivery (v2.1 perf):** templates use `responsive_hero_img()` in `macros/ui.html` — `<picture>` with WebP `srcset` at 400/800/1600w and PNG fallback. Sync pipeline writes `hero.webp` and `hero-{400,800,1600}.webp` alongside `hero.png` (`scripts/sync_illustrations.py`). **Open Graph / Twitter / JSON-LD always reference PNG** (`og.png` or `hero.png`); never WebP in social meta.
 
 ### Author bio
 
@@ -321,7 +308,7 @@ See [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) for l
 | Article hero (`article_header.html`) | Article title — required when image present |
 | Article card thumbnail | Empty `alt` OK — title is adjacent in link text |
 | Featured card image | Empty `alt` OK — title and summary adjacent |
-| Hub hero diagram | `hero_architecture_diagram.html`: horizontal pipeline (Input → Context → Reasoning → Output) → central engine (Prompt Anatomy + subtitle) → foundation row (Quality, Workflow); native SVG connectors + glass card (`--color-hero-diagram-*`, `--shadow-hero-diagram`); hero band `--color-hero-bg`. Copy from `data/hub_sections.yaml` (`visual: diagram`, `diagram.pipeline` / `diagram.center` / `diagram.foundation`). No in-page raster hub hero. |
+| Hub hero diagram | `hero_architecture_diagram.html`: horizontal pipeline (Input → Context → Reasoning → Output) → central engine (Prompt Anatomy + subtitle) → foundation row (Quality, Workflow); vertical stem + branch SVG connectors + glass card (`--color-hero-diagram-*`, `--shadow-hero-diagram`); hero band `--color-hero-bg`. Copy from `data/hub_sections.yaml` (`visual: diagram`, `diagram.pipeline` / `diagram.center` / `diagram.foundation`). No in-page raster hub hero. |
 | Hub ecosystem map | `ecosystem_spoke.html`; `image_alt` in `data/ecosystem.yaml` |
 | Logo SVG | `aria-hidden="true"` in header/footer |
 
@@ -329,13 +316,15 @@ See [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) for l
 
 Source: [`partials/footer.html`](../theme/promptanatomy/templates/partials/footer.html), [`components.css`](../theme/promptanatomy/static/css/components.css) (`.site-footer*`), [`data/site.yaml`](../data/site.yaml).
 
+**Columns (v0.7.4):** Product · Resources · Company. Company renders `links` → `social.links` (if `use_social`) → `trailing_links` (Atom feed).
+
 | Tier | Token / rule |
 |------|----------------|
-| Column titles | `--color-text-on-dark`, uppercase, `letter-spacing: 0.05em` |
-| Nav links | `--color-text-on-dark-muted`; hover/focus `--color-brand-accent` |
-| Brand tagline | `--color-text-on-dark`, `--text-small` |
-| Legal / address | `--text-meta`, muted; legal links use `--touch-target-min` |
-| Spacing | Outer `padding-block: --space-xl`; grid `max-width: 68rem`; bottom `.site-footer__bar` groups legal + company |
+| Column titles | `--color-text-on-dark`, `--text-small`, uppercase, `letter-spacing: 0.06em` |
+| Nav links | `--color-text-on-dark-muted`; hover/focus `--color-brand-accent`; `min-height: 2.25rem` (footer exception vs global `--touch-target-min`) |
+| Brand tagline + CTAs | Tagline `--text-small`; CTAs `.site-footer__cta` + `link--on-dark` (not `.btn--primary`) |
+| Legal / address | `--text-meta`, muted; compact `mailing_address` one line |
+| Spacing | Outer `padding-block: --space-lg`; grid `max-width: 68rem`, `1.25fr repeat(3, minmax(0, 1fr))`; `.site-footer__bar` groups legal + company |
 
 Social and `twitter_handle` live in `site.yaml`; Organization `sameAs` in [`schema_site.html`](../theme/promptanatomy/templates/partials/schema_site.html) is built from `social.links` and `hub.site_url`.
 

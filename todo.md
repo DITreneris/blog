@@ -275,8 +275,8 @@ Not in MWB. Track ideas only; do not start without explicit request.
 ### F.4 P3 — Deferred (when asked)
 
 - [ ] Real Privacy Policy + Terms (remove noindex, re-add to sitemap)
-- [ ] Self-host Inter fonts (CWV)
-- [ ] WebP `<picture>` for heroes
+- [x] Self-host Inter fonts (CWV)
+- [x] WebP `<picture>` for heroes
 - [ ] Dedicated About OG image (Satori)
 - [ ] Remaining [`docs/SEO_improvement.md`](docs/SEO_improvement.md) P3 items
 
@@ -448,7 +448,7 @@ For every `<section … aria-labelledby="…">`, confirm `section_heading(…, h
 
 - [ ] Selective hero upgrades ([`todo.md`](todo.md) Phase C.3): `memory-types-for-ai-systems`, `prompt-anatomy-foundations`
 - [ ] Self-host Inter ([`todo.md`](todo.md) Phase F.4) — reduces Google Fonts dependency
-- [ ] WebP `<picture>` for article heroes — weight only; keep PNG fallback
+- [x] WebP `<picture>` for article heroes — weight only; keep PNG fallback
 - [ ] Dedicated About OG (Satori) — trust/social
 - [ ] Align Satori `categoryStyles` tints with ecosystem card colors (`--color-ecosystem-1..4`) — cosmetic consistency only
 

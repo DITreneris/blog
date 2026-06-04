@@ -33,14 +33,6 @@ Before the full table, confirm five elements exist. Predictable AI outputs come 
 **Metric** — one primary business measure the sponsor cares about—not token count or "adoption."
 
 If any element is blank, pause tool selection until named. Add [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) count and pass threshold before pilot traffic.
-
-<figure class="prose-figure">
-  <img src="/images/articles/ai-workflow-canvas-template/figures/workflow-elements.png"
-       alt="Diagram of five minimum workflow elements: trigger, steps, context, gate, and metric"
-       width="1600" height="900" loading="lazy" decoding="async" />
-  <figcaption>Five minimum elements as a visual checklist before filling the canvas table.</figcaption>
-</figure>
-
 ## AI workflow canvas (blank)
 
 | Section | Your answer |

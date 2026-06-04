@@ -23,13 +23,14 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] `:focus-visible` on links, buttons, `.card`, `.topic-card`, `.ecosystem-card`
 - [ ] Newsletter band shows “Coming soon” + disclaimer (no disabled form)
 - [ ] Article hero `alt` matches title when image present
-- [ ] Footer: tab through Explore / Product / Connect `<nav>` columns; link rows ≥44px tall on mobile
-- [ ] Footer: legal row links and founder link ≥44px tap height; keyboard focus ring visible on dark band
-- [ ] Footer: density — no excessive vertical gap above divider; grid columns feel grouped (not isolated at 1280px)
-- [ ] Footer: column titles brighter than link text; brand tagline readable on dark
-- [ ] Footer: `info@promptanatomy.app` mailto and multi-line address (Prompt Anatomy, 1311 Park St, Alameda)
-- [ ] Footer: `/#ecosystem` jumps to ecosystem section on home; `/privacy/#cookies` from footer opens cookies section
-- [ ] Footer: X link points to `https://x.com/promptanatom`; Atom feed `/feeds/all.atom.xml` returns 200 after build
+- [ ] Footer: tab through **Product / Resources / Company** `<nav>` columns; link rows ≥36px tall (footer uses 2.25rem min-height, not global 44px)
+- [ ] Footer: brand CTAs “View plans” + “Explore frameworks” visible; gold hover; no `.btn--primary` competing with header Plans
+- [ ] Footer: **Frameworks** and **AI Agents** under Product; **Articles** only under Resources (not duplicated)
+- [ ] Footer: legal row and founder link keyboard-focusable; compact **one-line** `mailing_address`
+- [ ] Footer: density — shorter than v0.7.3; columns grouped at 1280px (68rem cap)
+- [ ] Footer: column titles (`--text-small`) stronger than link text; product tagline on dark
+- [ ] Footer: `/#ecosystem` under Resources; `/privacy/#cookies` opens cookies section
+- [ ] Footer: X `https://x.com/promptanatom`; Atom feed last in Company column; `/feeds/all.atom.xml` returns 200 after build
 
 ## Contrast (spot-check)
 
@@ -56,7 +57,6 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Featured card on homepage: `h2` title at featured scale; compact gold badge (not full-width blue bar); content-width gold CTA; section intro is `hub_sections.featured.lead` as `h2` (no "Featured" label)
 - [ ] Meta line dates show as `Month YYYY` (e.g. "May 2026"), with `Updated Month YYYY` when modified > published
 - [ ] No article body contains an inline `## Related reading` H2 (auto-rendered as cards below)
-- [ ] Inline prose figures use `.prose-figure` with caption; images contained within prose column (no raw oversized `<img>`)
 
 ## Article reading experience (v1.1)
 
@@ -89,7 +89,7 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 ## Homepage & ecosystem (Phase D)
 
 - [ ] Home `/`: split hero — copy left, pipeline architecture diagram right; no poster/URL/debug labels in diagram
-- [ ] Hub diagram: horizontal pipeline (Input → Context → Reasoning → Output), central engine with title + subtitle, foundation row (Quality, Workflow); gold glow on engine only
+- [ ] Hub diagram: horizontal pipeline (Input → Context → Reasoning → Output), central engine with title + subtitle, foundation row (Quality, Workflow); visible flow arrows and vertical stem (not dimmed micro-polish bus)
 - [ ] `hero.image_alt` describes pipeline flow into Prompt Anatomy engine (not radial spokes)
 - [ ] Primary CTA links to `/topics/framework/`; secondary to `/#latest`
 - [ ] `prefers-reduced-transparency`: diagram card and header use solid backgrounds (no blur)

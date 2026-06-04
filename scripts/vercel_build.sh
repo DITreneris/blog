@@ -6,6 +6,7 @@ bash scripts/ensure_satori_assets.sh
 "$PY" scripts/validate_satori_manifest.py
 "$PY" scripts/sync_illustrations.py
 "$PY" scripts/generate_brand_assets.py
+"$PY" scripts/build_css.py
 "$PY" scripts/validate_theme_tokens.py
 "$PY" scripts/validate_brand_sync.py
 "$PY" scripts/validate_content.py
@@ -14,3 +15,4 @@ bash scripts/ensure_satori_assets.sh
 "$PY" scripts/verify_build_assets.py
 "$PY" scripts/validate_seo_output.py
 "$PY" scripts/validate_a11y_landmarks.py
+"$PY" scripts/audit_image_weights.py --warn-only

@@ -19,7 +19,7 @@ JSON_LD_RE = re.compile(
     r'<script\s+type="application/ld\+json">\s*(\{.*?\})\s*</script>',
     re.S,
 )
-SITEMAP_EXCLUDE = {"design-system", "drafts", "author", "privacy", "terms"}
+SITEMAP_EXCLUDE = {"design-system", "drafts", "author"}
 
 
 def _check_og_urls(html: str, path: Path) -> list[str]:

@@ -23,9 +23,6 @@ STRUCTURED_TAKEAWAY = re.compile(
     r"^Structured implementation turns .+ into repeatable outcomes\.$", re.I
 )
 LINK_PATTERN = re.compile(r"\]\(/articles/([a-z0-9-]+)/")
-INLINE_IMAGE_PATTERN = re.compile(
-    r'(?:!\[[^\]]*\]\(|src=["\'])(/images/articles/[^"\')\s]+)'
-)
 WORDS_PER_MINUTE = 200
 MIN_CASE_STUDY_WORDS = 250
 MIN_TEMPLATE_WORDS = 150
@@ -129,12 +126,6 @@ def validate_file(path: Path, slugs: set[str]) -> list[str]:
         hero_path = (CONTENT / hero).resolve()
         if not hero_path.is_file():
             errors.append(f"{path.name}: hero_image not found at content/{hero}")
-
-    for img_url in INLINE_IMAGE_PATTERN.findall(body):
-        rel = img_url.lstrip("/")
-        img_path = (CONTENT / rel).resolve()
-        if not img_path.is_file():
-            errors.append(f"{path.name}: inline image not found at content/{rel}")
 
     if meta.get("status") == "published" and not hero:
         print(

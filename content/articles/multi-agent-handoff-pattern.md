@@ -11,6 +11,11 @@ slug: multi-agent-handoff-pattern
 status: published
 summary: How to split work across specialized agents with explicit contracts, state, and human escalation between steps.
 title: Multi-Agent Handoff Pattern
+faq:
+  - question: When should a team split work across multiple agents?
+    answer: After a single-path workflow proves value with eval and audit. Multi-agent adds coordination cost—use specialization with explicit handoff schemas, not chained prompts without ownership.
+  - question: What belongs in a handoff payload between agents?
+    answer: Goal, constraints, artifact references, open questions, and confidence—structured and small. Do not forward full chat history as the contract between specialists.
 ---
 
 Multiple agents can work when each step has a **narrow contract**. Without that, you get expensive ping-pong—research agent asks draft agent to clarify, draft agent invents facts, checker fires late—and untraceable errors in production. The pattern is not "more agents because vendors sell orchestration." It is **specialization with explicit handoffs**, shared state, and human gates on anything that commits the business.

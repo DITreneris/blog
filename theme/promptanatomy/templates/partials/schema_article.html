@@ -28,9 +28,15 @@
 
     "@type": "Person",
 
-    "name": {{ SITE_CONFIG.author.name|tojson }}{% if SITE_CONFIG.author.linkedin or SITE_CONFIG.author.url %},
+    "name": {{ SITE_CONFIG.author.name|tojson }},
 
-    "url": {{ (SITE_CONFIG.author.linkedin or SITE_CONFIG.author.url)|tojson }}{% endif %}{% if AUTHOR_HAS_PHOTO and SITE_CONFIG.author.avatar %},
+    "url": "{{ CANONICAL_SITEURL }}/about/",
+
+    "sameAs": [
+{%- for link in SITE_CONFIG.social.links %}
+      {{ link.href|tojson }}{% if not loop.last %},{% endif %}
+{%- endfor %}
+    ]{% if AUTHOR_HAS_PHOTO and SITE_CONFIG.author.avatar %},
 
     "image": "{{ CANONICAL_SITEURL }}/{{ SITE_CONFIG.author.avatar }}"{% endif %}
 

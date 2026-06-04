@@ -78,6 +78,22 @@
 
 
 
+{% macro responsive_hero_img(src_png, alt, css_class, width, height, eager=false, sizes='(max-width: 640px) 100vw, min(720px, 100vw)') %}
+<picture>
+  <source type="image/webp"
+    srcset="{{ src_png|replace('.png', '-400.webp') }} 400w,
+            {{ src_png|replace('.png', '-800.webp') }} 800w,
+            {{ src_png|replace('.png', '.webp') }} 1600w"
+    sizes="{{ sizes }}">
+  <img class="{{ css_class }}" src="{{ src_png }}" alt="{{ alt }}"
+       width="{{ width }}" height="{{ height }}"
+       loading="{{ 'eager' if eager else 'lazy' }}"
+       decoding="async"{% if eager %} fetchpriority="high"{% endif %}>
+</picture>
+{% endmacro %}
+
+
+
 {% macro article_og_image_path(article) -%}
   {%- if article.slug in OG_ARTICLE_SLUGS -%}
     images/articles/{{ article.slug }}/og.png
@@ -108,7 +124,7 @@
 <article class="card{% if article.hero_image %} card--has-visual{% endif %}">
   {% if article.hero_image %}
   <a class="card__thumb-link" href="/{{ article.url }}" tabindex="-1" aria-hidden="true">
-    <img class="card__thumb" src="{{ hero_image_url(article) }}" alt="" width="400" height="225" loading="lazy" decoding="async" />
+    {{ responsive_hero_img(hero_image_url(article), article.title|striptags|truncate(80, True, '…'), 'card__thumb', 400, 225, false, '400px') }}
   </a>
   {% endif %}
   {% if article.category %}

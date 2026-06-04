@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url, btn, section_heading %}
+{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url, btn, section_heading, responsive_hero_img %}
 
 {% set f = HUB_SECTIONS.featured if HUB_SECTIONS.featured is defined else none %}
 
@@ -33,7 +33,7 @@
       {% if article.hero_image %}
 
       <figure class="card__visual-frame">
-        <img class="card__visual card__visual--image" src="{{ hero_image_url(article) }}" alt="" width="800" height="500" loading="lazy" decoding="async" />
+        {{ responsive_hero_img(hero_image_url(article), '', 'card__visual card__visual--image', 800, 500, true, '(max-width: 640px) 100vw, 50vw') }}
       </figure>
 
       {% else %}

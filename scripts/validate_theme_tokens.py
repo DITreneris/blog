@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSS_DIR = ROOT / "theme" / "promptanatomy" / "static" / "css"
 HEX_PATTERN = re.compile(r"#[0-9a-fA-F]{3,8}\b")
-ALLOWED = {"tokens.css"}
+ALLOWED = {"tokens.css", "pygments.css", "site.min.css", "article.min.css"}
 
 
 def main() -> int:

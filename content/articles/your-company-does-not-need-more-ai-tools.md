@@ -29,14 +29,6 @@ Workflows, [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/), and
 Structure does not mean slow—it means **one improvement surface** instead of ten disconnected chats. Northline's twelve-week pilot moved metrics with one workflow while other departments waited—not because they lacked tools, but because structure was not ready.
 
 ## Why structured implementation beats more tools
-
-<figure class="prose-figure">
-  <img src="/images/articles/your-company-does-not-need-more-ai-tools/figures/structured-vs-tools.png"
-       alt="Diagram contrasting structured AI implementation with proliferating tool subscriptions"
-       width="1600" height="900" loading="lazy" decoding="async" />
-  <figcaption>Structure compounds; tools multiply variants without shared ownership.</figcaption>
-</figure>
-
 | Symptom of tool-first | What structure changes |
 |-----------------------|-------------------------|
 | Same task, different answers by department | One workflow, shared context spec |

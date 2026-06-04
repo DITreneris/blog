@@ -34,14 +34,6 @@ Map matrix rows to data classes in your context spec (public, internal, confiden
 ### Research and scraping agents
 
 Research bots that crawl the web or internal wikis still need workflow-scoped allow/deny rows—not a prompt that says "only use reputable sources." Governed retrieval means named indexes, connector enforcement, and denied paste-the-internet behavior tied to your [context architecture](/articles/what-is-context-architecture/) spec.
-
-<figure class="prose-figure">
-  <img src="/images/articles/data-boundaries-for-ai-agents/figures/research-agent-boundaries.png"
-       alt="Research agent diagram with allow and deny data boundaries enforced at the connector layer"
-       width="1600" height="900" loading="lazy" decoding="async" />
-  <figcaption>Research bots still need allow/deny matrices and connector enforcement—not prompt-only guardrails.</figcaption>
-</figure>
-
 ## Northline allow / deny matrix (support-reply-v3)
 
 The table is the contract between process owner, IT, and Legal—not a suggestion for the model.

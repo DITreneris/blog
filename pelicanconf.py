@@ -101,6 +101,7 @@ STATIC_PATHS = ["images", "extra"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/llms.txt": {"path": "llms.txt"},
+    "extra/404.html": {"path": "404.html"},
     "extra/google7305663b2567346e.html": {"path": "google7305663b2567346e.html"},
 }
 

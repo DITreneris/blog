@@ -33,6 +33,10 @@
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ category.url }}{% endblock %}
 
+{% block extra_head %}
+<link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/article.min.css" />
+{% endblock %}
+
 
 
 {% block open_graph %}

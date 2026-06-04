@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url %}
+{% from 'macros/ui.html' import category_badge, meta_line, hero_image_url, responsive_hero_img %}
 <header class="article-header">
   <div class="container">
     {{ category_badge(article.category, '/' ~ article.category.url if article.category else none) }}
@@ -6,7 +6,7 @@
     {{ meta_line(article) }}
     {% if article.hero_image %}
     <figure class="article-header__figure">
-      <img class="article-header__diagram" src="{{ hero_image_url(article) }}" alt="{{ article.title|striptags|replace('\"', '')|replace('"', '') }}" width="1600" height="900" loading="eager" decoding="async" />
+      {{ responsive_hero_img(hero_image_url(article), article.title|striptags|replace('\"', '')|replace('"', ''), 'article-header__diagram', 1600, 900, true) }}
       {% if article.hero_caption %}
       <figcaption class="article-header__caption">{{ article.hero_caption }}</figcaption>
       {% endif %}

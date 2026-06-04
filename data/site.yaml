@@ -48,47 +48,55 @@ cta:
   external: true
 
 footer:
-  tagline: "Structured AI implementation for teams—frameworks, field notes, and templates from Prompt Anatomy."
+  tagline: "Practical AI operating system for teams: frameworks, templates, playbooks, and implementation notes."
   founder_label: "Founded by Tomas Staniulis"
   founder_href: "/about/"
+  ctas:
+    - label: "View plans"
+      href: "https://www.promptanatomy.app/#pricing"
+      external: true
+    - label: "Explore frameworks"
+      href: "/topics/framework/"
+      external: false
   columns:
-    - title: "Explore"
+    - title: "Product"
       links:
-        - label: "What is Prompt Anatomy"
-          href: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
-          external: true
-        - label: "Methodology"
-          href: "https://www.promptanatomy.app/#methodology"
+        - label: "Frameworks"
+          href: "/topics/framework/"
+          external: false
+        - label: "AI Agents"
+          href: "/topics/ai-agents/"
+          external: false
+        - label: "Training"
+          href: "https://www.promptanatomy.app/"
           external: true
         - label: "Pricing"
           href: "https://www.promptanatomy.app/#pricing"
           external: true
-    - title: "Product"
+        - label: "Library (AI automation)"
+          href: "https://www.promptanatomy.info/en/"
+          external: true
+    - title: "Resources"
       links:
-        - label: "Training"
-          href: "https://www.promptanatomy.app/"
+        - label: "Articles"
+          href: "/#latest"
+          external: false
+        - label: "Methodology"
+          href: "https://www.promptanatomy.app/#methodology"
           external: true
         - label: "FAQ"
           href: "https://www.promptanatomy.app/#faq"
           external: true
-        - label: "Articles"
-          href: "/#latest"
-          external: false
-        - label: "About"
-          href: "/about/"
-          external: false
-        - label: "Framework"
-          href: "/topics/framework/"
-          external: false
-    - title: "Connect"
-      use_social: true
-      links:
         - label: "Ecosystem map"
           href: "/#ecosystem"
           external: false
-        - label: "Library (AI automation)"
-          href: "https://www.promptanatomy.info/en/"
-          external: true
+    - title: "Company"
+      use_social: true
+      links:
+        - label: "About"
+          href: "/about/"
+          external: false
+      trailing_links:
         - label: "Atom feed"
           href: "/feeds/all.atom.xml"
           external: false

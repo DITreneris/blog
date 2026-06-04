@@ -1,38 +1,15 @@
-{% from 'macros/ui.html' import section_heading %}
-
-
+{% from 'macros/ui.html' import section_heading, btn %}
 
 {% set n = HUB_SECTIONS.newsletter %}
 
-
-
 <section class="section section--dark" aria-labelledby="newsletter-heading">
-
-
-
-  <div class="container newsletter newsletter--placeholder">
-
-
-
+  <div class="container newsletter">
     {{ section_heading(n.title, heading_id='newsletter-heading') }}
-
-
-
     <p class="hero__subhead">{{ n.description }}</p>
-
-
-
-    <p class="newsletter__status">Coming soon</p>
-
-
-
+    <p class="newsletter__actions">
+      {{ btn(n.feed_href, n.feed_label, 'secondary', false) }}
+      {{ btn(n.linkedin_href, n.linkedin_label, 'secondary', true) }}
+    </p>
     <p id="newsletter-note" class="newsletter__note">{{ n.disclaimer }}</p>
-
-
-
   </div>
-
-
-
 </section>
-

@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import btn %}
+{% from 'macros/ui.html' import btn, responsive_hero_img %}
 
 <section class="section section--dark hero" aria-labelledby="hero-heading">
   <div class="container hero__grid">
@@ -27,7 +27,7 @@
     </div>
     {% elif HUB_SECTIONS.hero.image %}
     <div class="hero__visual-wrap">
-      <img class="hero__visual" src="/{{ HUB_SECTIONS.hero.image }}" alt="{{ HUB_SECTIONS.hero.image_alt|default('') }}" width="1200" height="1200" loading="eager" decoding="async" />
+      {{ responsive_hero_img('/' ~ HUB_SECTIONS.hero.image, HUB_SECTIONS.hero.image_alt|default(''), 'hero__visual', 1200, 1200, true) }}
     </div>
     {% endif %}
   </div>
