@@ -13,6 +13,11 @@ slug: data-boundaries-for-ai-agents
 status: published
 summary: Allow and deny matrices for agent tools—Northline B2B filled example for CRM, KB, email, and wiki.
 title: Data Boundaries for AI Agents
+faq:
+  - question: Should agents use a default-allow or default-deny data policy?
+    answer: Default deny. Add allow rows per workflow with owner sign-off and Legal consult for customer-facing reads or writes.
+  - question: Can prompt text alone enforce data boundaries?
+    answer: No. Enforcement belongs in the integration layer—connectors must fail closed when a workflow requests a denied resource.
 ---
 
 Agents that can "read everything" eventually read the wrong thing. **Data boundaries** define what an agent may retrieve, write, or infer—and what always requires a human. Prompt text alone is not enforcement; the integration layer must fail closed when a workflow requests a denied resource. Teams that learn this after a near-miss usually fix prompts first; auditors ask about connector configuration.

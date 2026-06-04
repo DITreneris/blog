@@ -1,16 +1,29 @@
 {% extends 'base.html' %}
+{% from 'macros/ui.html' import article_card %}
 
-{% set ns = namespace(lead=SITE_CONFIG.brand.description) %}
+{% set ns = namespace(lead=SITE_CONFIG.brand.description, slug='', reading_path=[]) %}
 
 {% for cat in CATEGORIES %}
 
   {% if cat.title == category.name %}
 
     {% set ns.lead = cat.description %}
+    {% set ns.slug = cat.slug %}
+    {% if cat.reading_path %}
+    {% set ns.reading_path = cat.reading_path %}
+    {% endif %}
 
   {% endif %}
 
 {% endfor %}
+
+{% set rp = namespace(articles=[]) %}
+{% for entry in ns.reading_path %}
+  {% for a in articles if a.slug == entry.slug %}
+    {% set _ = rp.articles.append(a) %}
+  {% endfor %}
+{% endfor %}
+{% set reading_path_articles = rp.articles %}
 
 
 
@@ -32,6 +45,8 @@
 
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ category.url }}" />
 
+{% if ns.slug and ns.slug in TOPIC_OG_IMAGES %}{% set og_image_path = TOPIC_OG_IMAGES[ns.slug] %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = category ~ ' — ' ~ SITENAME %}{% endif %}
+
 {% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 
 {% endblock %}
@@ -44,6 +59,8 @@
 
 <meta name="twitter:description" content="{{ ns.lead|striptags|truncate(160) }}" />
 
+{% if ns.slug and ns.slug in TOPIC_OG_IMAGES %}{% set og_image_path = TOPIC_OG_IMAGES[ns.slug] %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = category ~ ' — ' ~ SITENAME %}{% endif %}
+
 {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 
 {% endblock %}
@@ -55,6 +72,8 @@
 {{ super() }}
 
 {% include 'partials/schema_breadcrumb.html' %}
+
+{% with lead=ns.lead %}{% include 'partials/schema_collection.html' %}{% endwith %}
 
 {% endblock %}
 
@@ -74,13 +93,15 @@
 
 </header>
 
+{% include 'partials/reading_path.html' %}
+
 <section class="section">
 
   <div class="container grid grid--2">
 
     {% for article in articles|sort(attribute='date', reverse=True) %}
 
-    {% include 'partials/article_card.html' %}
+    {{ article_card(article) }}
 
     {% endfor %}
 

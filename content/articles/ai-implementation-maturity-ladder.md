@@ -12,6 +12,11 @@ slug: ai-implementation-maturity-ladder
 status: published
 summary: Five levels from ad hoc chat to governed operations—with self-check questions and 90-day moves per stage.
 title: The AI Implementation Maturity Ladder
+faq:
+  - question: How do you assess AI maturity honestly?
+    answer: Look for artifacts—named workflow ID, eval pass rate, replayable logs, and approved data boundaries—not adoption anecdotes or tool spend.
+  - question: Can a team skip maturity levels?
+    answer: Skipping levels creates expensive tools on top of vibe prompting. Pick one level jump per quarter and measure it at ninety days.
 ---
 
 Teams improve AI outcomes faster when they know **where they are** and what the next level requires—not when they buy another copilot. Skipping levels is tempting: leadership wants "Level 5 analytics" while the organization is still at ad hoc chat with no shared eval. The result is expensive tools on top of vibe prompting, then a board question you cannot answer with metrics.

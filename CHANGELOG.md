@@ -8,6 +8,65 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-06-04 — Design System hardening (G.1–G.7)
+
+### Added
+
+- **Brand sync validator:** [`scripts/validate_brand_sync.py`](scripts/validate_brand_sync.py) — compares key colors in `tokens.css` and `data/og/brand.mjs`; wired into `make validate` and Vercel build.
+- **A11y landmark validator:** [`scripts/validate_a11y_landmarks.py`](scripts/validate_a11y_landmarks.py) — post-build check that every `aria-labelledby` target has a matching `id`.
+- **Design system doc split:** [`docs/design-system/`](docs/design-system/) — `TOKENS.md`, `COMPONENTS.md`, `LAYOUT.md`, `MOTION.md`, `BRAND_EXCEPTIONS.md`.
+- **Breakpoint / motion / measure tokens** in [`tokens.css`](theme/promptanatomy/static/css/tokens.css): `--bp-*`, `--duration-*`, `--measure-*`, `--touch-target-min`.
+- **`article_card(article)` macro** in [`macros/ui.html`](theme/promptanatomy/templates/macros/ui.html) — used by index, category, and related-articles grids.
+- **Style guide parity:** topic-card, ecosystem-card, article card, breadcrumb, article CTA, reading path, FAQ, prose table, reading progress on `/design-system/`.
+
+### Changed
+
+- **Related articles a11y:** `heading_id='related-heading'` on [`related_articles.html`](theme/promptanatomy/templates/partials/related_articles.html).
+- **CSS token usage:** layout/components/article CSS use motion, measure, and touch-target tokens; `@media` comments reference `--bp-*`.
+- **Dark-band links:** `.section--dark .prose a` and `.link--on-dark` utilities in [`layout.css`](theme/promptanatomy/static/css/layout.css).
+- **[`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md)** — v2.0 index, card interaction models, semver governance, DoD 2.0.
+- **Agent docs:** [`AGENTS.md`](AGENTS.md), [`.cursor/rules/design-system.mdc`](.cursor/rules/design-system.mdc) cite DS v2.0 and brand sync workflow.
+
+### Fixed
+
+- Production smoke: sitemap and Atom feed return 200 (pillar `og.png` requires deploy of v0.8+ image assets).
+
+## [0.9.0] - 2026-06-04 — SEO / GEO hardening
+
+### Added
+
+- **SEO output validator:** [`scripts/validate_seo_output.py`](scripts/validate_seo_output.py) — post-build checks for single-line OG/Twitter image URLs, Article JSON-LD without HTML in `description`, and sitemap exclusions; wired into [`Makefile`](Makefile) and [`scripts/vercel_build.sh`](scripts/vercel_build.sh).
+- **Topic reading paths:** [`partials/reading_path.html`](theme/promptanatomy/templates/partials/reading_path.html) on category hubs; curated order from [`data/categories.yaml`](data/categories.yaml) for all eight topics.
+- **Schema:** [`schema_collection.html`](theme/promptanatomy/templates/partials/schema_collection.html) (`CollectionPage` on topics); [`schema_person_about.html`](theme/promptanatomy/templates/partials/schema_person_about.html) (`ProfilePage` + `Person` on `/about/`).
+- **FAQ frontmatter** on five playbooks: governance roles, data boundaries, evaluation hooks, foundations, maturity ladder.
+- **Page `seo_robots` frontmatter** — `noindex,follow` on placeholder `/privacy/` and `/terms/` until real legal copy ships.
+
+### Changed
+
+- **Article OG/Twitter URLs:** Jinja trim on [`article_og_image_path`](theme/promptanatomy/templates/macros/ui.html) and [`meta_og_image.html`](theme/promptanatomy/templates/partials/meta_og_image.html) — fixes embedded newlines in social preview image URLs.
+- **Hero card URLs:** trim on [`hero_image_url`](theme/promptanatomy/templates/macros/ui.html) macro.
+- **Article JSON-LD:** `description` uses `striptags`; adds `inLanguage: en-US`.
+- **Article OG:** `article:modified_time` when `modified` frontmatter is set.
+- **[`llms.txt`](content/extra/llms.txt):** full topic URLs, ecosystem map, Atom feed, blog vs `.app` boundary, citation guidance.
+- **[`robots.txt`](content/extra/robots.txt):** explicit allow stanzas for GPTBot, Claude-Web, PerplexityBot, Google-Extended.
+- **[`about.md`](content/pages/about.md):** expanded copy — blog vs training product, audience, ecosystem map link.
+- **Sitemap:** excludes `privacy` and `terms` while placeholders are noindex ([`generate_sitemap.py`](scripts/generate_sitemap.py)).
+
+## [0.8.0] - 2026-06-04 — C+D SEO social layer
+
+### Added
+
+- **Batch OG for published catalog:** [`scripts/batch_add_og_usage.py`](scripts/batch_add_og_usage.py) adds `og` to manifest `usage` for all published articles; Satori `article-og` generates `Satori/{slug}-og.png` for 27 articles.
+- **Homepage OG:** `homepage-og.mjs` + `hub-og` manifest row → `images/hub/og.png`; [`index.html`](theme/promptanatomy/templates/index.html) serves dedicated 1200×630 social image.
+- **Category/topic OG:** `category-og.mjs` + `category_og` manifest section (8 topics) → `images/topics/{slug}/og.png`; [`category.html`](theme/promptanatomy/templates/category.html) override via `TOPIC_OG_IMAGES`.
+
+### Changed
+
+- **Draft hygiene (B.4):** Merge redirect stubs; `status: merged` in [`data/illustrations.yaml`](data/illustrations.yaml); draft disposition matrix in [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
+- **Satori Phase 2 (C.1):** `category-default`, `article-og`, `homepage-hero-frame` templates; `new_post.py` Satori manifest wiring; hub hero via Satori frame + `h1.png` embed.
+- **Per-article OG (C.2):** Article OG/Twitter meta + JSON-LD prefer dedicated `og.png` via `OG_ARTICLE_SLUGS`; sync pipeline copies OG alongside heroes.
+- [`scripts/verify_build_assets.py`](scripts/verify_build_assets.py) — requires start-here `og.png`, hub `og.png`, and framework topic `og.png`.
+
 ## [0.6.0] - 2026-06-04 — Content Release 3 (prose depth)
 
 ### Added

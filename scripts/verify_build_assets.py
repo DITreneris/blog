@@ -14,13 +14,25 @@ if str(sys_path) not in sys.path:
     sys.path.insert(0, str(sys_path))
 from generate_brand_assets import find_author_photo_source  # noqa: E402
 
+START_HERE_OG_SLUGS = (
+    "the-model-is-not-the-system",
+    "10-signs-your-company-is-vibe-prompting",
+    "how-to-design-an-ai-agent-workflow",
+)
+
 REQUIRED = [
     OUTPUT / "static" / "img" / "og-default.png",
     OUTPUT / "static" / "favicon-32x32.png",
     OUTPUT / "images" / "hub" / "hero.png",
     OUTPUT / "images" / "hub" / "ecosystem.png",
+    OUTPUT / "images" / "hub" / "og.png",
     OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.png",
 ]
+
+for slug in START_HERE_OG_SLUGS:
+    REQUIRED.append(OUTPUT / "images" / "articles" / slug / "og.png")
+
+REQUIRED.append(OUTPUT / "images" / "topics" / "framework" / "og.png")
 
 if find_author_photo_source() is not None:
     REQUIRED.append(OUTPUT / "images" / "author" / "tomas-staniulis.jpg")

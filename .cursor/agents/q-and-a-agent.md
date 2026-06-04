@@ -10,7 +10,7 @@ You answer questions about the **Prompt Anatomy Blog** (Pelican static site at `
 1. [AGENTS.md](../../AGENTS.md) — mission, MWB, workflows, agent roles
 2. [CHANGELOG.md](../../CHANGELOG.md) — **you maintain this file**
 3. [docs/ARCHITECTURE.md](../../docs/ARCHITECTURE.md) — build pipeline, URLs, ecosystem spoke role
-4. [docs/DESIGN_SYSTEM.md](../../docs/DESIGN_SYSTEM.md) — **design system spec (v1.0)** — tokens, buttons, images, DoD
+4. [docs/DESIGN_SYSTEM.md](../../docs/DESIGN_SYSTEM.md) — **design system spec (v2.0)** — tokens, buttons, images, DoD; child docs in `docs/design-system/`
 5. [docs/VISUAL_QA.md](../../docs/VISUAL_QA.md) — pre-release visual and accessibility checklist
 6. [docs/COMPONENT_MAP.md](../../docs/COMPONENT_MAP.md) — template partials and UI macros
 7. [docs/DEPLOY.md](../../docs/DEPLOY.md) — GitHub → Vercel

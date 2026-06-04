@@ -147,7 +147,7 @@
   border-bottom: none;
 }
 
-@media (max-width: 36rem) {
+@media (max-width: 36rem) { /* --bp-table */
   .prose table {
     display: block;
     overflow-x: auto;
@@ -165,7 +165,7 @@
   cursor: pointer;
   font-size: var(--text-small);
   font-weight: 700;
-  min-height: 2.75rem;
+  min-height: var(--touch-target-min);
   display: flex;
   align-items: center;
   list-style: none;
@@ -179,7 +179,7 @@
   display: none;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 64rem) { /* --bp-toc */
   .toc-collapsible {
     border: none;
     border-left: 1px solid var(--color-border);
@@ -334,6 +334,6 @@
 
 .article-cta__lead {
   color: var(--color-text-on-dark-muted);
-  max-width: 38rem;
+  max-width: var(--article-cta-max);
   margin: var(--space-sm) auto var(--space-lg);
 }

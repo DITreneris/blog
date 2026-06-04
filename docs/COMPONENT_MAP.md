@@ -8,14 +8,14 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | Logo | `partials/logo.html` | `SITE_CONFIG.brand` |
 | Footer | `partials/footer.html` | `SITE_CONFIG.footer` (Explore from `hub.*_url`, Connect from `social.links` + column links), `SITE_CONFIG.organization` (structured address) |
 | Layout primitives | CSS classes in `static/css/layout.css` (`.container`, `.section`, `.grid`, `.stack`, `.cluster`) | — |
-| UI macros | `macros/ui.html` | `section_heading`, `category_badge`, `meta_line`, `hero_image_url`, `btn`, `card`, `nav_aria_current` |
+| UI macros | `macros/ui.html` | `section_heading`, `category_badge`, `meta_line`, `hero_image_url`, `btn`, `card`, `article_card`, `nav_aria_current` |
 | BlogHero | `partials/blog_hero.html` | `HUB_SECTIONS.hero` (copy, images, `cta_primary` / `cta_secondary`); header Plans CTA stays `SITE_CONFIG.cta` |
 | FeaturedArticle | `partials/featured_article.html` | Pelican article with `featured: true` |
 | StartHereCards | `partials/start_here_cards.html` | `HUB_SECTIONS.start_here` |
 | TopicClusterGrid | `partials/topic_cluster_grid.html` | `CATEGORIES` |
 | EcosystemSpoke | `partials/ecosystem_spoke.html` | `ECOSYSTEM` (`data/ecosystem.yaml`) |
 | TemplateDownloadSection | `partials/template_download.html` | `HUB_SECTIONS.templates` |
-| ArticleCard | `partials/article_card.html` | Article object |
+| ArticleCard | `article_card()` macro in `macros/ui.html`; wrapper `partials/article_card.html` | Article object |
 | NewsletterCTA | `partials/newsletter_cta.html` | `HUB_SECTIONS.newsletter` |
 | ArticleHeader | `partials/article_header.html` | `article`, `article.hero_image`, optional `article.hero_caption` |
 | ArticleLead | `partials/article_lead.html` | `article.summary` |
@@ -31,6 +31,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | AuthorBio | `partials/author_bio.html` | `SITE_CONFIG.author` (avatar block hidden when `author.avatar` unset) |
 | Schema Article | `partials/schema_article.html` | `article` |
 | Schema Breadcrumb | `partials/schema_breadcrumb.html` | Page context |
+| ReadingPath | `partials/reading_path.html` | `reading_path_articles` from category `reading_path` |
 
 ## Page templates
 

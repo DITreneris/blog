@@ -2,6 +2,10 @@ categories:
   - title: "Prompt Systems"
     slug: "prompt-systems"
     description: "Structured prompting, templates, and repeatable prompt workflows."
+    reading_path:
+      - slug: types-of-prompts-for-business-workflows
+      - slug: structured-prompt-system-blueprint
+      - slug: prompt-engineering-vs-ai-workflow-engineering
   - title: "AI Agents"
     slug: "ai-agents"
     description: "Agent design, orchestration, and business-ready automation."
@@ -21,15 +25,28 @@ categories:
   - title: "Implementation Notes"
     slug: "implementation-notes"
     description: "Practical diagnostics and field notes from real deployments."
+    reading_path:
+      - slug: 10-signs-your-company-is-vibe-prompting
+      - slug: team-rituals-for-ai-implementation
+      - slug: handoff-rules-between-humans-and-ai
+      - slug: from-prompts-to-business-outcomes
   - title: "Case Studies"
     slug: "case-studies"
     description: "How teams moved from experiments to controlled AI systems."
+    reading_path:
+      - slug: case-study-vibe-prompting-to-structured-workflow
   - title: "Templates"
     slug: "templates"
     description: "Canvases, checklists, and operating documents."
+    reading_path:
+      - slug: ai-workflow-canvas-template
   - title: "Opinion"
     slug: "opinion"
     description: "Perspective on tools, hype, and what actually works."
+    reading_path:
+      - slug: your-company-does-not-need-more-ai-tools
+      - slug: when-ai-hallucinates-confidence
+      - slug: context-window-myths
   - title: "Framework"
     slug: "framework"
     description: "Original frameworks for predictable AI outcomes."

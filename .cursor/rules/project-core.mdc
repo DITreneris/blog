@@ -10,5 +10,5 @@ alwaysApply: true
 - Content in `content/`; presentation in `theme/`. Config in `data/*.yaml`, `pelicanconf.py`.
 - Brand: premium AI implementation knowledge hub (calm, structured, expert)—not lifestyle or hype blog.
 - Before finishing: `make validate && make build` (includes `validate_theme_tokens.py` — hex only in `tokens.css`).
-- Design system v1.0: `docs/DESIGN_SYSTEM.md`, `docs/VISUAL_QA.md`, live reference `/design-system/` after build.
+- Design system v2.0: `docs/DESIGN_SYSTEM.md`, `docs/design-system/`, `docs/VISUAL_QA.md`, live reference `/design-system/` after build.
 - Read `AGENTS.md` for workflows; **q-and-a-agent** maintains `CHANGELOG.md` and design-system documentation.

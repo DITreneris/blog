@@ -8,6 +8,16 @@
 
 
 
+{% block robots %}
+{% if page.seo_robots %}
+<meta name="robots" content="{{ page.seo_robots }},follow" />
+{% else %}
+{{ super() }}
+{% endif %}
+{% endblock %}
+
+
+
 {% block open_graph %}
 
 <meta property="og:type" content="website" />
@@ -41,6 +51,8 @@
 {{ super() }}
 
 {% include 'partials/schema_breadcrumb.html' %}
+
+{% include 'partials/schema_person_about.html' %}
 
 {% endblock %}
 

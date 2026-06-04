@@ -12,6 +12,11 @@ slug: prompt-anatomy-foundations
 status: published
 summary: Entry point for the Prompt Anatomy stack—where to start by role and reading path.
 title: Prompt Anatomy Foundations
+faq:
+  - question: Where should a team start in the Prompt Anatomy stack?
+    answer: Start with one business outcome and workflow, then context architecture, then model steps—with evaluation and governance before scaling tools.
+  - question: Is Prompt Anatomy only about writing prompts?
+    answer: No. It is a methodology for predictable AI operations—workflow, context, evaluation, and governance around the model step.
 ---
 
 Prompt Anatomy is a **methodology for predictable AI operations**, not a collection of clever prompts. This page routes you into the blog by job-to-be-done.

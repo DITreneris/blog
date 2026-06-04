@@ -91,4 +91,24 @@
   /* Z-index */
   --z-header: 100;
   --z-progress: 110;
+
+  /* Breakpoints (mirror @media literals — var() not valid in @media) */
+  --bp-table: 36rem;
+  --bp-nav-max: 47.99rem;
+  --bp-nav: 48rem;
+  --bp-toc-max: 63.99rem;
+  --bp-toc: 64rem;
+
+  /* Motion */
+  --duration-fast: 0.1s;
+  --duration-normal: 0.2s;
+  --ease-standard: ease;
+
+  /* Layout measures */
+  --measure-hero-headline: 24ch;
+  --measure-hero-subhead: 42rem;
+  --measure-ecosystem-intro: 40rem;
+  --measure-newsletter-form: 36rem;
+  --article-cta-max: 38rem;
+  --touch-target-min: 2.75rem;
 }

@@ -12,11 +12,21 @@
   color: var(--color-text-on-dark);
 }
 
-.section--dark a:not(.btn):not(.logo):not(.ecosystem-card):not(.topic-card):not(.card) {
+.section--dark .prose a:not(.btn),
+.section--dark .link--on-dark {
   color: var(--color-brand-accent);
 }
 
-.section--dark a:not(.btn):not(.logo):not(.ecosystem-card):not(.topic-card):not(.card):hover {
+.section--dark .prose a:not(.btn):hover,
+.section--dark .link--on-dark:hover {
+  color: var(--color-brand-accent-hover);
+}
+
+.section--dark a:not(.btn):not(.logo):not(.ecosystem-card):not(.topic-card):not(.card):not(.breadcrumb__item a) {
+  color: var(--color-brand-accent);
+}
+
+.section--dark a:not(.btn):not(.logo):not(.ecosystem-card):not(.topic-card):not(.card):not(.breadcrumb__item a):hover {
   color: var(--color-brand-accent-hover);
 }
 
@@ -55,7 +65,7 @@
   gap: var(--space-xl);
 }
 
-@media (max-width: 63.99rem) {
+@media (max-width: 63.99rem) { /* --bp-toc-max */
   .article-layout--with-toc {
     display: flex;
     flex-direction: column;
@@ -66,7 +76,7 @@
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 64rem) { /* --bp-toc */
   .article-layout--with-toc {
     grid-template-columns: minmax(0, var(--article-max)) 14rem;
     align-items: start;

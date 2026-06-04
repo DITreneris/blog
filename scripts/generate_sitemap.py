@@ -15,7 +15,7 @@ OUTPUT = ROOT / "output"
 SITE_CONFIG = yaml.safe_load((ROOT / "data" / "site.yaml").read_text(encoding="utf-8"))
 SITEURL = SITE_CONFIG.get("brand", {}).get("site_url", "https://www.promptanatomy.blog")
 
-EXCLUDE = {"design-system", "drafts", "author"}
+EXCLUDE = {"design-system", "drafts", "author", "privacy", "terms"}
 
 
 def add_url(urlset: Element, loc: str, lastmod: str | None = None) -> None:

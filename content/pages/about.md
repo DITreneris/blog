@@ -4,7 +4,11 @@ slug: about
 summary: "About Prompt Anatomy — structured AI implementation for teams building controlled workflows."
 ---
 
-Prompt Anatomy publishes frameworks, field notes, templates, and case studies for teams moving from ad hoc AI usage to controlled workflows.
+Prompt Anatomy is a **structured AI implementation knowledge hub** for teams moving from ad hoc chat usage to controlled workflows, agents, evaluation, and governance.
+
+## Blog vs training product
+
+This site (**promptanatomy.blog**) publishes free frameworks, field notes, templates, and case studies. Paid team training, methodology workshops, and pricing live on the separate product site: [promptanatomy.app](https://www.promptanatomy.app/). For how the properties fit together, see [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## What we focus on
 
@@ -12,9 +16,13 @@ Prompt Anatomy publishes frameworks, field notes, templates, and case studies fo
 
 Articles cover context design, evaluation, handoffs, and governance—not generic prompt tricks or tool roundups.
 
+## Who this is for
+
+Operations leaders, enablement teams, and practitioners who need **repeatable AI systems** under real compliance and delivery pressure—not another copilot rollout without owners or eval gates.
+
 ## Author
 
-**Tomas Staniulis** writes implementation notes from work helping teams adopt AI under real operational and compliance constraints.
+**Tomas Staniulis** (Founder, Prompt Anatomy) writes implementation notes from work helping teams adopt AI under operational and compliance constraints.
 
 - [LinkedIn](https://www.linkedin.com/in/staniulis)
 - [Training](https://www.promptanatomy.app/)

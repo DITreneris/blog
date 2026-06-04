@@ -1,0 +1,18 @@
+{% from 'macros/ui.html' import section_heading %}
+{% if reading_path_articles %}
+<section class="section reading-path" aria-labelledby="reading-path-heading">
+  <div class="container">
+    {{ section_heading('Recommended reading order', heading_id='reading-path-heading') }}
+    <ol class="reading-path__list">
+      {% for item in reading_path_articles %}
+      <li class="reading-path__item">
+        <a class="reading-path__link" href="/{{ item.url }}">{{ item.title }}</a>
+        {% if item.summary %}
+        <p class="reading-path__desc">{{ item.summary|striptags|truncate(120) }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}

@@ -13,6 +13,11 @@ slug: evaluation-hooks-for-ai-workflows
 status: published
 summary: Sample eval cases and pass/fail gates—with YAML example for support-reply-v3.
 title: Evaluation Hooks for AI Workflows
+faq:
+  - question: When should eval cases run?
+    answer: Before every prompt, context, model, or connector change promotes to production—not only during the initial pilot.
+  - question: What belongs in a workflow eval set?
+    answer: Ten to thirty cases covering high-risk fields, policy denials, and edge cases Legal cares about—plus new cases from incidents within a week.
 ---
 
 Teams scale AI on anecdotes until a bad output reaches a customer. A fluent draft in a demo is not evidence; neither is "the team loves it." **Evaluation hooks** are pass/fail gates—like unit tests for workflows—run before prompt, context, model, or connector changes promote to production. They sit in the implementation stack **below** celebration of a new model and **above** hope that reviewers catch everything manually.

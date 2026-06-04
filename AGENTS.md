@@ -7,8 +7,8 @@ Build and maintain a lean Python (Pelican) static knowledge hub for **https://pr
 ## Non-negotiables
 
 - Content lives in `content/` as Markdown; never hardcode articles in templates.
-- Run `make validate && make build` before claiming done (`make validate` includes `validate_theme_tokens.py` — no hex outside `tokens.css`).
-- Match design tokens in `docs/DESIGN_SYSTEM.md` (version **1.0**) and `theme/promptanatomy/static/css/tokens.css`.
+- Run `make validate && make build` before claiming done (`make validate` includes `validate_theme_tokens.py`, `validate_brand_sync.py` — no hex outside `tokens.css`).
+- Match design tokens in `docs/DESIGN_SYSTEM.md` (version **2.0**) and `theme/promptanatomy/static/css/tokens.css`.
 - US English only (`lang="en-US"`).
 - Production URL: `https://promptanatomy.blog` (see `publishconf.py` SITEURL).
 - Minimize scope: ship MWB before optional features (search, comments, newsletter API).
@@ -28,7 +28,7 @@ Required: `title`, `slug`, `summary`, `category`, `date`, `status` (`draft` | `p
 
 Optional: `modified` (Pelican's canonical key — `date_modified` is not parsed as a date), `reading_time`, `featured`, `key_takeaway`, `tags`, `hero_image` (path under `content/`, e.g. `images/articles/{slug}/hero.png`), `hero_caption` (figcaption under hero), `content_tier` (`pillar` | `playbook` | `template` | `opinion` | `nav`), `faq` (YAML list of `question` / `answer` — requires `FrontmatterMarkdownReader`, never duplicated in body)
 
-Illustration masters live in `data/01_illustrations/`; manifest in `data/illustrations.yaml`. Sync heroes with `make sync-images`. **Satori rows** (`generator: satori`, `template`, `source: Satori/{slug}.png`) render via `npm run build:satori` before sync — see `data/og/templates/`. Author headshot source: `data/author/tomas-staniulis.jpg` (synced on `make brand-assets`).
+Illustration masters live in `data/01_illustrations/`; manifest in `data/illustrations.yaml`. Sync heroes with `make sync-images`. **Satori rows** (`generator: satori`, `template`, `source: Satori/{slug}.png`) render via `npm run build:satori` before sync — see `data/og/templates/`. New CLI posts (`python scripts/new_post.py --title "..." --category "Framework"`) append a `category-default` Satori row automatically (use `--no-satori` to skip). Rows with `usage: [hero, og]` also generate `Satori/{slug}-og.png` for social cards. **Brand colors:** edit `tokens.css` + `data/og/brand.mjs` together; run `python scripts/validate_brand_sync.py` then regen Satori if colors changed. Author headshot source: `data/author/tomas-staniulis.jpg` (synced on `make brand-assets`).
 
 Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | Case Studies | Templates | Opinion | Framework
 
@@ -47,7 +47,7 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 - Define colors in `tokens.css` only; use `var(--token)` in other CSS files (`validate_theme_tokens.py` enforces this)
 - Prefer UI macros in `theme/promptanatomy/templates/macros/ui.html` (`btn`, `card`, `section_heading`) for repeated patterns
 - Preserve semantic HTML: `header`, `nav`, `main`, `article`, `footer`
-- Follow `docs/DESIGN_SYSTEM.md` (v1.0) and run `docs/VISUAL_QA.md` before major theme releases
+- Follow `docs/DESIGN_SYSTEM.md` (v2.0) and run `docs/VISUAL_QA.md` before major theme releases
 - Update `docs/COMPONENT_MAP.md` if adding/removing partials; ask **q-and-a-agent** to sync `DESIGN_SYSTEM.md` / `CHANGELOG.md`
 
 ### Deploy
@@ -64,7 +64,7 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 ## References
 
 - `docs/ARCHITECTURE.md` — build pipeline, URLs
-- `docs/DESIGN_SYSTEM.md` — design system v1.0 (tokens, buttons, macros, DoD)
+- `docs/DESIGN_SYSTEM.md` — design system v2.0 (tokens, buttons, macros, DoD); child docs in `docs/design-system/`
 - `docs/VISUAL_QA.md` — visual and accessibility checklist before release
 - `docs/COMPONENT_MAP.md` — brief → Jinja partial mapping
 - `docs/DEPLOY.md` — GitHub → Vercel → domain

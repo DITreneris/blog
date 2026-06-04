@@ -19,8 +19,13 @@
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ article.url }}" />
 
 {% if article.date %}<meta property="article:published_time" content="{{ article.date.isoformat() }}" />{% endif %}
+{% if article.modified %}<meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />{% endif %}
 
-{% if article.hero_image %}{% set og_image_path = article.hero_image %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
+{% from 'macros/ui.html' import article_og_image_path %}
+
+{% set _og_path = article_og_image_path(article) %}
+
+{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
 
 {% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 
@@ -34,7 +39,11 @@
 
 <meta name="twitter:description" content="{{ article.summary|striptags }}" />
 
-{% if article.hero_image %}{% set og_image_path = article.hero_image %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
+{% from 'macros/ui.html' import article_og_image_path %}
+
+{% set _og_path = article_og_image_path(article) %}
+
+{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
 
 {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 

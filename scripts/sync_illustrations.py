@@ -13,10 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 MASTERS = ROOT / "data" / "01_illustrations"
 ARTICLE_IMAGES = ROOT / "content" / "images" / "articles"
-HUB_IMAGES = ROOT / "content" / "images" / "hub"
 
 MAX_WIDTH = 1600
-JPEG_QUALITY = 85
 # PNG optimize target: resize large sources; Pillow save with optimize=True
 
 
@@ -47,28 +45,45 @@ def sync_article_row(row: dict, dry_run: bool) -> list[str]:
     errors: list[str] = []
     usage = row.get("usage") or []
     slug = row.get("slug")
-    if "hero" not in usage or not slug:
-        return errors
-    source_rel = row["source"]
-    src = MASTERS / Path(source_rel.replace("\\", "/"))
-    if not src.is_file():
-        errors.append(f"Missing source: {source_rel}")
+    if not slug:
         return errors
 
-    dest = ARTICLE_IMAGES / slug / "hero.png"
-    if dry_run:
-        print(f"  [dry-run] {source_rel} -> {dest.relative_to(ROOT)}")
-        return errors
+    source_rel = row.get("source")
+    if "hero" in usage:
+        if not source_rel:
+            errors.append(f"{slug}: hero usage requires source")
+            return errors
+        src = MASTERS / Path(source_rel.replace("\\", "/"))
+        if not src.is_file():
+            errors.append(f"Missing source: {source_rel}")
+            return errors
 
-    _optimize_image(src, dest)
-    print(f"  OK: {dest.relative_to(ROOT)}")
+        dest = ARTICLE_IMAGES / slug / "hero.png"
+        if dry_run:
+            print(f"  [dry-run] {source_rel} -> {dest.relative_to(ROOT)}")
+        else:
+            _optimize_image(src, dest)
+            print(f"  OK: {dest.relative_to(ROOT)}")
+
+    if "og" in usage:
+        og_rel = row.get("og_source") or f"Satori/{slug}-og.png"
+        og_src = MASTERS / Path(og_rel.replace("\\", "/"))
+        if not og_src.is_file():
+            errors.append(f"Missing OG source for {slug}: {og_rel}")
+        else:
+            og_dest = ARTICLE_IMAGES / slug / "og.png"
+            if dry_run:
+                print(f"  [dry-run] {og_rel} -> {og_dest.relative_to(ROOT)}")
+            else:
+                _optimize_image(og_src, og_dest)
+                print(f"  OK og: {og_dest.relative_to(ROOT)}")
+
     return errors
 
 
 def sync_hub(manifest: dict, dry_run: bool) -> list[str]:
     errors: list[str] = []
     hub_map = manifest.get("hub_images") or {}
-    illustrations = {r["id"]: r for r in manifest.get("illustrations", [])}
 
     for key, dest_rel in hub_map.items():
         row = next(
@@ -89,6 +104,31 @@ def sync_hub(manifest: dict, dry_run: bool) -> list[str]:
         dest.parent.mkdir(parents=True, exist_ok=True)
         _optimize_image(src, dest)
         print(f"  OK hub: {dest.relative_to(ROOT)}")
+
+    return errors
+
+
+def sync_topic_og(manifest: dict, dry_run: bool) -> list[str]:
+    errors: list[str] = []
+    topic_map = manifest.get("topic_og_images") or {}
+    rows = {r.get("category_slug"): r for r in manifest.get("category_og") or []}
+
+    for slug, dest_rel in topic_map.items():
+        row = rows.get(slug)
+        if not row:
+            errors.append(f"No category_og row for topic slug: {slug}")
+            continue
+        src = MASTERS / Path(str(row["source"]).replace("\\", "/"))
+        if not src.is_file():
+            errors.append(f"Missing category OG source for {slug}: {row['source']}")
+            continue
+        dest = ROOT / "content" / Path(str(dest_rel).replace("\\", "/"))
+        if dry_run:
+            print(f"  [dry-run] topic {slug}: {row['source']} -> {dest.relative_to(ROOT)}")
+            continue
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        _optimize_image(src, dest)
+        print(f"  OK topic og: {dest.relative_to(ROOT)}")
 
     return errors
 
@@ -115,12 +155,15 @@ def main() -> int:
     print("Syncing hub images...")
     all_errors.extend(sync_hub(manifest, args.dry_run))
 
+    print("Syncing topic OG images...")
+    all_errors.extend(sync_topic_og(manifest, args.dry_run))
+
     if all_errors:
         for e in all_errors:
             print(f"  ERROR: {e}", file=sys.stderr)
         return 1
 
-    print(f"Done: {len(rows)} article hero(s).")
+    print(f"Done: {len(rows)} article row(s).")
     return 0
 
 

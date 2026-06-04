@@ -27,6 +27,15 @@ CATEGORIES_DATA = _load_yaml("categories.yaml")
 ECOSYSTEM = _load_yaml("ecosystem.yaml")
 ILLUSTRATIONS = _load_yaml("illustrations.yaml")
 
+OG_ARTICLE_SLUGS = frozenset(
+    row["slug"]
+    for row in ILLUSTRATIONS.get("illustrations", [])
+    if row.get("slug") and "og" in (row.get("usage") or [])
+)
+
+TOPIC_OG_IMAGES = ILLUSTRATIONS.get("topic_og_images", {})
+HUB_OG_IMAGE = (ILLUSTRATIONS.get("hub_images") or {}).get("og")
+
 AUTHOR = SITE_CONFIG.get("author", {}).get("name", "Prompt Anatomy")
 SITENAME = SITE_CONFIG["brand"]["name"]
 SITESUBTITLE = SITE_CONFIG["brand"]["tagline"]
@@ -108,6 +117,9 @@ JINJA_GLOBALS = {
     "CATEGORIES": CATEGORIES_DATA.get("categories", []),
     "ECOSYSTEM": ECOSYSTEM,
     "ILLUSTRATIONS": ILLUSTRATIONS,
+    "OG_ARTICLE_SLUGS": OG_ARTICLE_SLUGS,
+    "TOPIC_OG_IMAGES": TOPIC_OG_IMAGES,
+    "HUB_OG_IMAGE": HUB_OG_IMAGE,
     "HUB_IMAGES": ILLUSTRATIONS.get("hub_images", {}),
     "CURRENT_YEAR": datetime.date.today().year,
     "ENABLE_VERCEL_ANALYTICS": ENABLE_VERCEL_ANALYTICS,

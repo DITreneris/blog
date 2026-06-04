@@ -1,4 +1,4 @@
-{% set _og_path = og_image_path|default(THEME_STATIC_DIR ~ '/img/og-default.png') %}
+{% set _og_path = (og_image_path|default(THEME_STATIC_DIR ~ '/img/og-default.png'))|trim %}
 {% set _og_url = CANONICAL_SITEURL ~ '/' ~ _og_path %}
 {% set _og_w = og_image_width|default(1200) %}
 {% set _og_h = og_image_height|default(630) %}

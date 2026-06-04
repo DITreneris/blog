@@ -64,11 +64,19 @@
 
 
 
-{% macro hero_image_url(article) %}
+{% macro hero_image_url(article) -%}
+  {%- if article.hero_image -%}/{{ article.hero_image }}{%- endif -%}
+{%- endmacro %}
 
-  {% if article.hero_image %}/{{ article.hero_image }}{% endif %}
 
-{% endmacro %}
+
+{% macro article_og_image_path(article) -%}
+  {%- if article.slug in OG_ARTICLE_SLUGS -%}
+    images/articles/{{ article.slug }}/og.png
+  {%- elif article.hero_image -%}
+    {{ article.hero_image }}
+  {%- endif -%}
+{%- endmacro %}
 
 
 
@@ -84,6 +92,24 @@
 
   {% endif %}
 
+{% endmacro %}
+
+
+
+{% macro article_card(article) %}
+<article class="card{% if article.hero_image %} card--has-visual{% endif %}">
+  {% if article.hero_image %}
+  <a class="card__thumb-link" href="/{{ article.url }}" tabindex="-1" aria-hidden="true">
+    <img class="card__thumb" src="{{ hero_image_url(article) }}" alt="" width="400" height="225" loading="lazy" decoding="async" />
+  </a>
+  {% endif %}
+  {% if article.category %}
+  {{ category_badge(article.category, '/' ~ article.category.url) }}
+  {% endif %}
+  <h3 class="card__title"><a href="/{{ article.url }}">{{ article.title }}</a></h3>
+  <p class="card__desc">{{ article.summary }}</p>
+  {{ meta_line(article) }}
+</article>
 {% endmacro %}
 
 

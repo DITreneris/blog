@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import section_heading, btn, card, category_badge, meta_line %}
+{% from 'macros/ui.html' import section_heading, btn, card, category_badge, meta_line, article_card %}
 
 
 
@@ -47,6 +47,22 @@
         <p class="meta-line">--color-link (prose)</p>
 
         <div style="height:3rem;background:var(--color-link);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-success (style guide)</p>
+
+        <div style="height:3rem;background:var(--color-success);border-radius:var(--radius-sm);"></div>
+
+      </div>
+
+      <div class="card">
+
+        <p class="meta-line">--color-warning (style guide)</p>
+
+        <div style="height:3rem;background:var(--color-warning);border-radius:var(--radius-sm);"></div>
 
       </div>
 
@@ -191,6 +207,195 @@
       <p>Takeaway box uses brand tokens for border and background.</p>
 
     </aside>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-article-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Article card', 'Listing card with thumb + title link.', 'sg-article-card-heading') }}
+
+    {% set sg_cat = namespace(name='Framework', url='topics/framework/') %}
+    {% set sg_article = namespace(title='Sample framework article', summary='Short summary for the listing grid.', url='articles/sample/', hero_image='images/articles/the-model-is-not-the-system/hero.png', category=sg_cat, reading_time='5 min read', date=none, modified=none) %}
+    <div class="grid grid--2">
+      {{ article_card(sg_article) }}
+      {% set sg_article2 = namespace(title='Article without hero', summary='Same macro without thumbnail.', url='articles/sample-2/', hero_image=none, category=sg_cat, reading_time='3 min read', date=none, modified=none) %}
+      {{ article_card(sg_article2) }}
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-topic-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Topic card', None, 'sg-topic-card-heading') }}
+
+    <div class="grid grid--topics">
+
+      <a class="topic-card" href="#">
+        <h3 class="topic-card__title">Framework</h3>
+        <p class="topic-card__desc">Implementation methodology and maturity models.</p>
+      </a>
+
+      <a class="topic-card" href="#">
+        <h3 class="topic-card__title">AI Agents</h3>
+        <p class="topic-card__desc">Workflow design, handoffs, and guardrails.</p>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section section--dark" aria-labelledby="sg-ecosystem-card-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Ecosystem card', 'On dark band — full-card external link.', 'sg-ecosystem-card-heading') }}
+
+    <div class="ecosystem__grid">
+
+      <a class="ecosystem-card" href="#" rel="noopener noreferrer" target="_blank">
+        <div class="ecosystem-card__icon ecosystem-card__icon--2" aria-hidden="true">&#9670;</div>
+        <h3 class="ecosystem-card__title">Knowledge Hub<span class="sr-only"> (opens in new tab)</span></h3>
+        <p class="ecosystem-card__outcome">Learn — frameworks and field notes on this blog.</p>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-breadcrumb-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Breadcrumb', None, 'sg-breadcrumb-heading') }}
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="/">Home</a></li>
+        <li class="breadcrumb__separator" aria-hidden="true">›</li>
+        <li class="breadcrumb__item"><a href="/topics/framework/">Framework</a></li>
+        <li class="breadcrumb__separator" aria-hidden="true">›</li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Sample article title</li>
+      </ol>
+    </nav>
+
+  </div>
+
+</section>
+
+
+
+<section class="section section--dark article-cta" aria-labelledby="sg-article-cta-heading">
+
+  <div class="container article-cta__inner">
+
+    {{ section_heading('Article CTA band', None, 'sg-article-cta-heading') }}
+
+    <p class="article-cta__lead">End-of-article conversion — single gold primary button.</p>
+
+    {{ btn('#', 'View training plans', 'primary', true) }}
+
+  </div>
+
+</section>
+
+
+
+<section class="section reading-path" aria-labelledby="sg-reading-path-heading">
+
+  <div class="container">
+
+    {{ section_heading('Reading path', None, 'sg-reading-path-heading') }}
+
+    <ol class="reading-path__list">
+      <li class="reading-path__item">
+        <a class="reading-path__link" href="#">The model is not the system</a>
+        <p class="reading-path__desc">Start here — separate model capability from workflow design.</p>
+      </li>
+      <li class="reading-path__item">
+        <a class="reading-path__link" href="#">How to design an AI agent workflow</a>
+        <p class="reading-path__desc">Playbook for structured handoffs and evaluation.</p>
+      </li>
+    </ol>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-faq-heading">
+
+  <div class="container faq">
+
+    {{ section_heading('FAQ', None, 'sg-faq-heading') }}
+
+    <details>
+      <summary>What is structured AI implementation?</summary>
+      <p>Designing workflows, context, and evaluation — not collecting more tools.</p>
+    </details>
+
+    <details>
+      <summary>Who is this blog for?</summary>
+      <p>Teams shipping AI into operations, not hobby prompt collectors.</p>
+    </details>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-table-heading">
+
+  <div class="container prose">
+
+    {{ section_heading('Prose table', None, 'sg-table-heading') }}
+
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Choice</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Context</td><td>Curated docs + retrieval boundaries</td></tr>
+        <tr><td>Evaluation</td><td>Hooks before production handoff</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-progress-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Reading progress', 'Decorative — fixed bar on article pages only.', 'sg-progress-heading') }}
+
+    <div class="reading-progress" style="position:relative;height:3px;background:var(--color-border);">
+      <div class="reading-progress__bar" style="width:40%;"></div>
+    </div>
 
   </div>
 

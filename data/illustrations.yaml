@@ -25,7 +25,7 @@ illustrations:
     slug: 10-signs-your-company-is-vibe-prompting
     title: "10 Signs Your Company Is Vibe Prompting"
     category: Implementation Notes
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -34,7 +34,7 @@ illustrations:
     slug: prompt-engineering-vs-ai-workflow-engineering
     title: "Prompt Engineering vs AI Workflow Engineering"
     category: Prompt Systems
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -45,7 +45,7 @@ illustrations:
     slug: what-is-context-architecture
     title: "What Is Context Architecture?"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -54,7 +54,7 @@ illustrations:
     slug: memory-types-for-ai-systems
     title: "Memory Types for AI Systems"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -63,7 +63,7 @@ illustrations:
     slug: your-company-does-not-need-more-ai-tools
     title: "Your Company Does Not Need More AI Tools"
     category: Opinion
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -73,7 +73,7 @@ illustrations:
     slug: prompt-anatomy-foundations
     title: "Prompt Anatomy Foundations"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-119
@@ -90,14 +90,14 @@ illustrations:
     title: "Context Layers in Prompt Design"
     category: Prompt Systems
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: basic-128
     source: Basic/128_Prompt_Anatomy.png
     slug: evaluation-hooks-for-ai-workflows
     title: "Evaluation Hooks for AI Workflows"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-129
@@ -105,7 +105,7 @@ illustrations:
     slug: handoff-rules-between-humans-and-ai
     title: "Handoff Rules Between Humans and AI"
     category: Implementation Notes
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-133
@@ -113,7 +113,7 @@ illustrations:
     slug: team-rituals-for-ai-implementation
     title: "Team Rituals for AI Implementation"
     category: Implementation Notes
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-162
@@ -121,7 +121,7 @@ illustrations:
     slug: ai-implementation-maturity-ladder
     title: "The AI Implementation Maturity Ladder"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-ai-types
@@ -129,7 +129,7 @@ illustrations:
     slug: types-of-prompts-for-business-workflows
     title: "Types of Prompts for Business Workflows"
     category: Prompt Systems
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-gemini-blueprint
@@ -139,7 +139,7 @@ illustrations:
     slug: structured-prompt-system-blueprint
     title: "Structured Prompt System Blueprint"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: basic-fludd
@@ -148,7 +148,7 @@ illustrations:
     title: "Prompt Anatomy Framework Overview"
     category: Framework
     usage: [hero]
-    status: mapped
+    status: merged
 
   # --- Agents (new posts) ---
   - id: agents-scrapper
@@ -157,14 +157,14 @@ illustrations:
     title: "AI Bot for Research Scraping"
     category: AI Agents
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: agents-tender
     source: Agents/AI_tender_pipeline.png
     slug: ai-tender-response-pipeline
     title: "AI Tender Response Pipeline"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: agents-gemini-handoff
@@ -174,7 +174,7 @@ illustrations:
     slug: multi-agent-handoff-pattern
     title: "Multi-Agent Handoff Pattern"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: agents-outlook
@@ -182,7 +182,7 @@ illustrations:
     slug: ai-outreach-with-outlook-guardrails
     title: "AI Outreach with Outlook Guardrails"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: agents-telegram
@@ -191,7 +191,7 @@ illustrations:
     title: "Telegram Bot for Ops Alerts"
     category: AI Agents
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: agents-twitter
     source: Agents/Twitter_bot.png
@@ -199,7 +199,7 @@ illustrations:
     title: "Twitter Engagement Bot with Limits"
     category: AI Agents
     usage: [hero]
-    status: mapped
+    status: merged
 
   # --- Governance (new posts) ---
   - id: gov-113
@@ -207,7 +207,7 @@ illustrations:
     slug: ai-governance-roles-and-ownership
     title: "AI Governance Roles and Ownership"
     category: AI Governance
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: gov-114
@@ -215,7 +215,7 @@ illustrations:
     slug: ai-risk-review-cadence
     title: "AI Risk Review Cadence"
     category: AI Governance
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: gov-123
@@ -223,7 +223,7 @@ illustrations:
     slug: audit-trails-for-ai-workflows
     title: "Audit Trails for AI Workflows"
     category: AI Governance
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: gov-137
@@ -231,7 +231,7 @@ illustrations:
     slug: data-boundaries-for-ai-agents
     title: "Data Boundaries for AI Agents"
     category: AI Governance
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: gov-prompt-to-agent
@@ -240,7 +240,7 @@ illustrations:
     title: "From Prompt to Agent"
     category: AI Governance
     usage: [hero]
-    status: mapped
+    status: merged
 
   # --- Memes (new posts) ---
   - id: memes-103
@@ -248,7 +248,7 @@ illustrations:
     slug: when-ai-hallucinates-confidence
     title: "When AI Hallucinates Confidence"
     category: Opinion
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: memes-107
@@ -265,14 +265,14 @@ illustrations:
     title: "What Your AI Stack Reveals"
     category: Opinion
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: memes-context-window
     source: Memes/context_window (2).png
     slug: context-window-myths
     title: "Context Window Myths"
     category: Opinion
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   # --- Selfpromo (new posts + hub) ---
@@ -282,14 +282,14 @@ illustrations:
     title: "Why Structured AI Beats More Tools"
     category: Implementation Notes
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: promo-ecosystem
     source: Ecosystem2.png
     slug: prompt-anatomy-ecosystem-map
     title: "The Prompt Anatomy Ecosystem Map"
     category: Implementation Notes
-    usage: [hero, hub]
+    usage: [hero, hub, og]
     hub_asset: ecosystem
     status: mapped
 
@@ -299,7 +299,7 @@ illustrations:
     title: "Implementation Notes: Hero Structure"
     category: Implementation Notes
     usage: [hero]
-    status: mapped
+    status: merged
 
   - id: promo-hero-2
     generator: satori
@@ -308,14 +308,26 @@ illustrations:
     slug: from-prompts-to-business-outcomes
     title: "From Prompts to Business Outcomes"
     category: Implementation Notes
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: hub-hero
-    source: h1.png
+    generator: satori
+    template: homepage-hero-frame
+    embed_source: h1.png
+    source: Satori/hub-hero.png
     title: "Homepage hero — architecture diagram"
     usage: [hub]
     hub_asset: hero
+    status: mapped
+
+  - id: hub-og
+    generator: satori
+    template: homepage-og
+    source: Satori/hub-og.png
+    title: "Turn random AI usage into structured implementation"
+    usage: [hub_og]
+    hub_asset: og
     status: mapped
 
   - id: case-vibe-structured
@@ -325,7 +337,7 @@ illustrations:
     slug: case-study-vibe-prompting-to-structured-workflow
     title: "Case Study: From Vibe Prompting to a Structured Support Workflow"
     category: Case Studies
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
 
@@ -334,10 +346,87 @@ illustrations:
     slug: ai-workflow-canvas-template
     title: "AI Workflow Canvas (Template)"
     category: Templates
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
     replaces_stub: true
+
+category_og:
+  - id: cat-og-prompt-systems
+    generator: satori
+    template: category-og
+    source: Satori/category-prompt-systems-og.png
+    category_slug: prompt-systems
+    title: "Prompt Systems"
+    category: Prompt Systems
+    subtitle: "Structured prompting, templates, and repeatable prompt workflows."
+  - id: cat-og-ai-agents
+    generator: satori
+    template: category-og
+    source: Satori/category-ai-agents-og.png
+    category_slug: ai-agents
+    title: "AI Agents"
+    category: AI Agents
+    subtitle: "Agent design, orchestration, and business-ready automation."
+  - id: cat-og-ai-governance
+    generator: satori
+    template: category-og
+    source: Satori/category-ai-governance-og.png
+    category_slug: ai-governance
+    title: "AI Governance"
+    category: AI Governance
+    subtitle: "Policy, risk, and operating rules for AI inside organizations."
+  - id: cat-og-implementation-notes
+    generator: satori
+    template: category-og
+    source: Satori/category-implementation-notes-og.png
+    category_slug: implementation-notes
+    title: "Implementation Notes"
+    category: Implementation Notes
+    subtitle: "Practical diagnostics and field notes from real deployments."
+  - id: cat-og-case-studies
+    generator: satori
+    template: category-og
+    source: Satori/category-case-studies-og.png
+    category_slug: case-studies
+    title: "Case Studies"
+    category: Case Studies
+    subtitle: "How teams moved from experiments to controlled AI systems."
+  - id: cat-og-templates
+    generator: satori
+    template: category-og
+    source: Satori/category-templates-og.png
+    category_slug: templates
+    title: "Templates"
+    category: Templates
+    subtitle: "Canvases, checklists, and operating documents."
+  - id: cat-og-opinion
+    generator: satori
+    template: category-og
+    source: Satori/category-opinion-og.png
+    category_slug: opinion
+    title: "Opinion"
+    category: Opinion
+    subtitle: "Perspective on tools, hype, and what actually works."
+  - id: cat-og-framework
+    generator: satori
+    template: category-og
+    source: Satori/category-framework-og.png
+    category_slug: framework
+    title: "Framework"
+    category: Framework
+    subtitle: "Original frameworks for predictable AI outcomes."
 
 hub_images:
   ecosystem: images/hub/ecosystem.png
   hero: images/hub/hero.png
+  og: images/hub/og.png
+
+topic_og_images:
+  prompt-systems: images/topics/prompt-systems/og.png
+  ai-agents: images/topics/ai-agents/og.png
+  ai-governance: images/topics/ai-governance/og.png
+  implementation-notes: images/topics/implementation-notes/og.png
+  case-studies: images/topics/case-studies/og.png
+  templates: images/topics/templates/og.png
+  opinion: images/topics/opinion/og.png
+  framework: images/topics/framework/og.png

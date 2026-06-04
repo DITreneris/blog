@@ -61,7 +61,7 @@ No dates in article URLs.
 
 Client-side: `toc-active.js` scans `article` `h2`/`h3` after load and builds sidebar; degrades gracefully if JS disabled (prose still readable).
 
-## Design system (v1.0)
+## Design system (v2.0)
 
 - Spec: [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) — tokens, buttons, macros, image policy
 - CSS: `theme/promptanatomy/static/css/tokens.css` (canonical colors) → `base`, `layout`, `components`, `article`

@@ -14,6 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 ARTICLES = ROOT / "content" / "articles"
+SATORI_TEMPLATE = "category-default"
 
 BODY_TEMPLATE = """\
 {intro}
@@ -54,6 +55,30 @@ def _find_row(manifest: dict, illustration_id: str) -> dict | None:
 
 def _hero_path(slug: str) -> str:
     return f"images/articles/{slug}/hero.png"
+
+
+def _append_satori_manifest_row(slug: str, title: str, category: str) -> None:
+    """Append a category-default Satori row before hub_images (preserves YAML comments)."""
+    text = ILLUSTRATIONS_YAML.read_text(encoding="utf-8")
+    if f"\n    slug: {slug}\n" in text or f"slug: {slug}\n" in text:
+        return
+    block = (
+        f"\n  - id: satori-{slug}\n"
+        f"    generator: satori\n"
+        f"    template: {SATORI_TEMPLATE}\n"
+        f"    source: Satori/{slug}.png\n"
+        f"    slug: {slug}\n"
+        f'    title: "{title}"\n'
+        f"    category: {category}\n"
+        f"    usage: [hero]\n"
+        f"    status: mapped\n"
+    )
+    marker = "\nhub_images:"
+    if marker not in text:
+        print("hub_images marker not found in illustrations.yaml", file=sys.stderr)
+        sys.exit(1)
+    ILLUSTRATIONS_YAML.write_text(text.replace(marker, block + marker, 1), encoding="utf-8")
+    print(f"Manifest: appended satori-{slug} row")
 
 
 def _write_post(
@@ -110,6 +135,7 @@ def main() -> int:
     parser.add_argument("--summary", help="One-line summary")
     parser.add_argument("--status", default="published", choices=("draft", "published"))
     parser.add_argument("--featured", action="store_true")
+    parser.add_argument("--no-satori", action="store_true", help="Skip Satori manifest row")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -149,6 +175,8 @@ def main() -> int:
         status=args.status,
         force=args.force,
     )
+    if not args.no_satori:
+        _append_satori_manifest_row(slug, args.title, args.category)
     return 0
 
 

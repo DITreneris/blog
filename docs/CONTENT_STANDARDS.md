@@ -53,6 +53,19 @@ If body-level conversion intent is needed (e.g. for a Templates article pointing
 - Set `status: draft` for low-intent or merged stubs; keep slug in repo.
 - Canonical merges: one live article, drafts point to it with a short note.
 
+## Draft disposition matrix (B.4)
+
+Use this when a slug is thin, duplicated, or superseded. Set `body_locked: true` after editing so enrich does not overwrite.
+
+| Disposition | When | Frontmatter | Body |
+|-------------|------|-------------|------|
+| **Merge redirect** | Topic fully covered by a published canonical article | `status: draft`; `summary` names canonical; optional `hero_image` | One sentence: "This article is archived…" + link to canonical |
+| **Keep draft redirect** | Optional future publish or brand-specific opinion (e.g. memes-backed) | `status: draft`; pointer to best existing article | Short note + link; no publish until tier met |
+| **Publish** | Unique playbook value; meets tier word mins and validator gates | `status: published`; full frontmatter | Prose-first per article brief above |
+| **Kill (manifest)** | Same as merge redirect | Set `status: merged` in [`data/illustrations.yaml`](../data/illustrations.yaml) for the row | — |
+
+**Examples (v0.6.1):** bot stubs → merge redirect to agent/governance playbooks; `what-your-ai-stack-reveals` → tools pillar; `prompt-anatomy-framework-overview` → foundations nav; `prompt-engineering-memes-vs-reality` → keep draft redirect (memes hero retained per Phase C.3).
+
 ## Categories
 
 | Category | Expectation |

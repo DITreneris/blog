@@ -1,4 +1,4 @@
-.PHONY: validate build serve clean sync-images brand-assets analytics satori-images
+.PHONY: validate validate-theme validate-brand validate-satori build serve clean sync-images brand-assets analytics satori-images
 
 PYTHON ?= python
 NPM ?= npm
@@ -21,18 +21,25 @@ validate-theme:
 validate-satori:
 	$(PYTHON) scripts/validate_satori_manifest.py
 
-validate: validate-theme
+validate-brand:
+	$(PYTHON) scripts/validate_brand_sync.py
+
+validate: validate-theme validate-brand
 	$(PYTHON) scripts/validate_content.py
 
 build: validate satori-images validate-satori sync-images brand-assets analytics
 	pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
+	$(PYTHON) scripts/validate_seo_output.py
+	$(PYTHON) scripts/validate_a11y_landmarks.py
 
 build-dev: validate satori-images validate-satori sync-images brand-assets
 	pelican content
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
+	$(PYTHON) scripts/validate_seo_output.py
+	$(PYTHON) scripts/validate_a11y_landmarks.py
 
 serve: build-dev
 	cd output && $(PYTHON) -m http.server 8000

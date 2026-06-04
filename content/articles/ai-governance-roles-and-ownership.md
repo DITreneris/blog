@@ -13,6 +13,11 @@ slug: ai-governance-roles-and-ownership
 status: published
 summary: RACI for AI workflows using Northline B2B support-assist example—sponsor, process owner, IT, legal, and ops.
 title: AI Governance Roles and Ownership
+faq:
+  - question: Who owns prompt templates in production?
+    answer: The line-of-business process owner is accountable for outcomes; they maintain prompt templates with IT implementing integrations and Legal consulting on policy context.
+  - question: What is the minimum RACI for a governed AI workflow?
+    answer: Name an executive sponsor, process owner, IT implementer, Legal consult, and ops lead—with explicit accountable vs responsible rows for go-live, context, changes, and incidents.
 ---
 
 AI governance is not a policy PDF in a drawer. It is **clear ownership** for how workflows change, what data they touch, and who answers when something goes wrong. Without RACI-style clarity, "everyone owns AI" becomes "no one owns incidents"—and the first serious near-miss becomes a circular email thread instead of a process update with a due date.

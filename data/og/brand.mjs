@@ -22,3 +22,19 @@ export const sizes = {
   ogWidth: 1200,
   ogHeight: 630,
 };
+
+/** Pelican category → badge accent for category-default heroes. */
+export const categoryStyles = {
+  Framework: { accent: '#cfa73a', badgeBg: 'rgba(207, 167, 58, 0.15)' },
+  'Prompt Systems': { accent: '#60a5fa', badgeBg: 'rgba(96, 165, 250, 0.15)' },
+  'AI Agents': { accent: '#34d399', badgeBg: 'rgba(52, 211, 153, 0.15)' },
+  'AI Governance': { accent: '#a78bfa', badgeBg: 'rgba(167, 139, 250, 0.15)' },
+  'Implementation Notes': { accent: '#fbbf24', badgeBg: 'rgba(251, 191, 36, 0.15)' },
+  'Case Studies': { accent: '#f472b6', badgeBg: 'rgba(244, 114, 182, 0.15)' },
+  Templates: { accent: '#2dd4bf', badgeBg: 'rgba(45, 212, 191, 0.15)' },
+  Opinion: { accent: '#fb923c', badgeBg: 'rgba(251, 146, 60, 0.15)' },
+};
+
+export function getCategoryStyle(category) {
+  return categoryStyles[category] || categoryStyles.Framework;
+}

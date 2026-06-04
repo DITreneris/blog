@@ -1,0 +1,25 @@
+{% if page and page.slug == 'about' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": {{ (page.title ~ ' — ' ~ SITENAME)|tojson }},
+  "url": "{{ CANONICAL_SITEURL }}/about/",
+  "inLanguage": "en-US",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "{{ CANONICAL_SITEURL }}/about/#author",
+    "name": {{ SITE_CONFIG.author.name|tojson }},
+    "jobTitle": {{ SITE_CONFIG.author.title|tojson }},
+    "url": "{{ CANONICAL_SITEURL }}/about/",
+    "description": {{ SITE_CONFIG.author.bio|tojson }}{% if SITE_CONFIG.author.linkedin %},
+    "sameAs": [
+      {{ SITE_CONFIG.author.linkedin|tojson }},
+      "https://x.com/TStaniulis_NFT"
+    ]{% endif %}{% if AUTHOR_HAS_PHOTO and SITE_CONFIG.author.avatar %},
+    "image": "{{ CANONICAL_SITEURL }}/{{ SITE_CONFIG.author.avatar }}"{% endif %},
+    "worksFor": { "@id": "{{ CANONICAL_SITEURL }}/#organization" }
+  }
+}
+</script>
+{% endif %}

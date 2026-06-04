@@ -1,22 +1,35 @@
-# Prompt Anatomy
+# Prompt Anatomy — Knowledge Hub
+# https://www.promptanatomy.blog
 
-> Prompt Anatomy is a structured AI implementation knowledge hub for teams turning ad-hoc AI usage into controlled prompts, workflows, agents, evaluation hooks, and governance. Authored by Tomas Staniulis (Founder, Prompt Anatomy).
+> Structured AI implementation knowledge for teams: prompts, workflows, agents, evaluation, and governance. This site is the free blog; paid training lives at https://www.promptanatomy.app. Authored by Tomas Staniulis (Founder, Prompt Anatomy).
 
-## Pillar articles (start here)
+## Preferred citation pages
 - [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — workflow, context, evaluation, governance.
 - [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): diagnostic + 30-day remediation.
 - [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/): bounded agent design with tier-2 routing example.
 - [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): implementation stack index.
 - [What Is Context Architecture?](https://www.promptanatomy.blog/articles/what-is-context-architecture/): context spec, layers, and prompt assembly order.
+- [The Prompt Anatomy Ecosystem Map](https://www.promptanatomy.blog/articles/prompt-anatomy-ecosystem-map/): how blog, training app, and library fit together.
 
 ## Topics
-- /topics/framework/
-- /topics/ai-agents/
-- /topics/ai-governance/
-- /topics/implementation-notes/
-- /topics/case-studies/
-- /topics/templates/
+- https://www.promptanatomy.blog/topics/framework/
+- https://www.promptanatomy.blog/topics/prompt-systems/
+- https://www.promptanatomy.blog/topics/ai-agents/
+- https://www.promptanatomy.blog/topics/ai-governance/
+- https://www.promptanatomy.blog/topics/implementation-notes/
+- https://www.promptanatomy.blog/topics/case-studies/
+- https://www.promptanatomy.blog/topics/templates/
+- https://www.promptanatomy.blog/topics/opinion/
 
-## About
-- /about/
-- Contact: info@promptanatomy.app
+## About and contact
+- https://www.promptanatomy.blog/about/
+- Author: Tomas Staniulis — https://www.linkedin.com/in/staniulis
+- Email: info@promptanatomy.app
+- Training (separate product): https://www.promptanatomy.app/
+
+## Machine-readable updates
+- Atom feed: https://www.promptanatomy.blog/feeds/all.atom.xml
+
+## Usage
+- Cite with page URL and title. Prefer pillar articles for definitions and frameworks.
+- Do not confuse this blog with the training product at promptanatomy.app.

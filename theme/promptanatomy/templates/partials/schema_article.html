@@ -10,9 +10,11 @@
 
   "headline": {{ article.title|tojson }},
 
-  "description": {{ (article.summary or '')|tojson }},
+  "description": {{ (article.summary or '')|striptags|tojson }},
 
-  "image": ["{{ CANONICAL_SITEURL }}/{{ article.hero_image or (THEME_STATIC_DIR ~ '/img/og-default.png') }}"],
+  "inLanguage": "en-US",
+
+  "image": ["{{ CANONICAL_SITEURL }}/{% if article.slug in OG_ARTICLE_SLUGS %}images/articles/{{ article.slug }}/og.png{% else %}{{ article.hero_image or (THEME_STATIC_DIR ~ '/img/og-default.png') }}{% endif %}"],
 
   "datePublished": "{{ article.date.isoformat() }}",
 

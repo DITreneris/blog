@@ -1,10 +1,33 @@
 # Prompt Anatomy — Design System
 
-**Version:** 1.1 — see [Definition of Done](#definition-of-done-10).
+**Version:** 2.0 — see [Definition of Done](#definition-of-done-20).
 
-**Maintainer (documentation):** [q-and-a-agent](../.cursor/agents/q-and-a-agent.md) — keeps this file, `COMPONENT_MAP.md`, `VISUAL_QA.md`, and `CHANGELOG.md` aligned with theme changes. **Implementation:** default coding agent under `theme/promptanatomy/`.
+**Maintainer (documentation):** [q-and-a-agent](../.cursor/agents/q-and-a-agent.md) — keeps this file, child docs, `COMPONENT_MAP.md`, `VISUAL_QA.md`, and `CHANGELOG.md` aligned with theme changes. **Implementation:** default coding agent under `theme/promptanatomy/`.
 
 **Living examples:** build the site and open `/design-system/` (see [content/pages/design-system.md](../content/pages/design-system.md)).
+
+## Documentation index
+
+| Doc | Contents |
+|-----|----------|
+| [design-system/TOKENS.md](design-system/TOKENS.md) | Token catalog, breakpoints, motion, measures |
+| [design-system/COMPONENTS.md](design-system/COMPONENTS.md) | Macros, card interaction models, partials |
+| [design-system/LAYOUT.md](design-system/LAYOUT.md) | Grids, breakpoints, article layout |
+| [design-system/MOTION.md](design-system/MOTION.md) | Allowed / forbidden motion |
+| [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) | Logo SVG, favicon, CSS/Satori dual maintenance |
+| [COMPONENT_MAP.md](COMPONENT_MAP.md) | Brief → template lookup |
+
+## Versioning (semver)
+
+| Bump | When |
+|------|------|
+| **Patch** | CSS fix, no API change |
+| **Minor** | New token or component; backward compatible |
+| **Major** | Breaking class or HTML renames |
+
+Theme PR checklist: `make validate && make build`; update `COMPONENT_MAP.md` if partials change; run `VISUAL_QA.md` before major theme releases.
+
+**Color change workflow:** `tokens.css` → `brand.mjs` → `validate_brand_sync.py` → `npm run build:satori` → `make sync-images`.
 
 Canonical visual spec aligned with the [mother repo](https://github.com/DITreneris/promptanatomy) brand. Logo/favicon source of truth: mother `docs/design/logo-favicon.md` and `frontend/public/favicon.svg`.
 
@@ -147,7 +170,18 @@ Base class: `.btn`. Variants:
 - Default `.card` — title link optional via `card()` macro.
 - `.card--linked` — full-card hit target via `.card__stretched-link` when `href` is passed to `card()` (Start here cards).
 - `.card--featured` — homepage flagship; **single click target**: gold `btn--primary` only (title is not a link, full card is not stretched-linked). Reinforces "gold = CTA".
+- **Listing cards** — `article_card(article)` macro: decorative thumb link + title link (see [COMPONENTS.md](design-system/COMPONENTS.md)).
 - Newsletter form uses `.newsletter--placeholder` when signup is disabled (visible "Coming soon" badge).
+
+### Card interaction models
+
+| Variant | Template | Click model |
+|---------|----------|-------------|
+| `card--linked` | `start_here_cards` / `card()` | Stretched link |
+| `card` + thumb | `article_card()` | Thumb decorative + title link |
+| `card--featured` | `featured_article.html` | Gold `btn--primary` only |
+| `topic-card` | `topic_cluster_grid.html` | Full-card link |
+| `ecosystem-card` | `ecosystem_spoke.html` | Full-card external link |
 
 ## Article components
 
@@ -215,13 +249,15 @@ CSS-only (see [`layout.css`](../theme/promptanatomy/static/css/layout.css)):
 
 ### Breakpoints
 
+CSS vars in `tokens.css` mirror `@media` literals — see [TOKENS.md](design-system/TOKENS.md).
+
 | Width | Behavior |
 |-------|----------|
-| `< 36rem` | Newsletter form stacked |
-| `< 48rem` | Desktop nav hidden; mobile `<details>` menu |
-| `≥ 48rem` | Desktop `.nav` flex; mobile menu hidden |
-| `≥ 64rem` | Article TOC sticky sidebar |
-| `< 64rem` | TOC in collapsible `<details>` above prose (flex `order`) |
+| `< 36rem` (`--bp-table`) | Prose table horizontal scroll |
+| `< 48rem` (`--bp-nav-max`) | Desktop nav hidden; mobile `<details>` menu |
+| `≥ 48rem` (`--bp-nav`) | Desktop `.nav` flex; hero split grid |
+| `≥ 64rem` (`--bp-toc`) | Article TOC sticky sidebar |
+| `< 64rem` (`--bp-toc-max`) | TOC in collapsible `<details>` above prose |
 
 ## Spacing
 
@@ -246,11 +282,14 @@ Respect `prefers-reduced-motion` (`base.css`).
 - Clean cards, precise spacing, minimal decoration
 - Diagrams/system visuals over stock photography
 
+## Brand exceptions
+
+See [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) for logo bolt `#fbd304` vs `--color-brand-accent`, theme-color meta, and CSS/Satori sync.
+
 ## Assets
 
 - Favicon/logo: `theme/promptanatomy/static/` (synced from mother repo)
 - Wordmark: [`partials/logo.html`](../theme/promptanatomy/templates/partials/logo.html) — bolt SVG + split text
-- **Logo bolt color:** inline SVG uses `#fbd304` (mother asset). CSS chrome uses `--color-brand-accent` (`#cfa73a`). Do not unify without mother repo sync.
 
 ## Images
 
@@ -266,7 +305,7 @@ Respect `prefers-reduced-motion` (`base.css`).
 
 | Layer | When to use |
 |-------|-------------|
-| **UI macros** (`macros/ui.html`) | Repeated atoms: section titles, buttons, start-here cards, badges, meta lines |
+| **UI macros** (`macros/ui.html`) | Repeated atoms: section titles, buttons, start-here cards, badges, meta lines, `article_card` |
 | **Partials** (`partials/*.html`) | Page sections with data wiring (hero, ecosystem, article card, footer) |
 | **Layout CSS** | Structure only — no content |
 
@@ -276,7 +315,19 @@ See [`docs/COMPONENT_MAP.md`](COMPONENT_MAP.md) for brief → template mapping.
 
 Childish gradients, generic blog templates, colorful magazine style, oversized illustrations, cluttered grids, weak contrast, tiny low-contrast text. No glow on favicon-sized icons.
 
-## Definition of Done (1.0)
+## Definition of Done (2.0)
+
+- [x] All tokens documented; child docs under `docs/design-system/`
+- [x] No hardcoded hex in theme CSS except `tokens.css` (`validate_theme_tokens.py`)
+- [x] `validate_brand_sync.py` in CI validate target
+- [x] `validate_a11y_landmarks.py` on built HTML
+- [x] UI macros documented; `section_heading` + `heading_id` on all `aria-labelledby` sections
+- [x] `article_card()` macro used for listing cards
+- [x] Breakpoint / motion / measure tokens in `tokens.css`
+- [x] `/design-system/` covers major COMPONENT_MAP partials
+- [x] `make validate && make build` passes
+
+## Definition of Done (1.0) — historical
 
 - [x] All tokens documented in this file and defined in `tokens.css`
 - [x] No hardcoded hex in theme CSS except `tokens.css` (enforced by `validate_theme_tokens.py`)

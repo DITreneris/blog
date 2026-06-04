@@ -1,0 +1,13 @@
+{% if category %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ ((category.name if category.name is defined else category) ~ ' — ' ~ SITENAME)|tojson }},
+  "description": {{ (lead|default('')|striptags)|tojson }},
+  "url": "{{ CANONICAL_SITEURL }}/{{ category.url }}",
+  "inLanguage": "en-US",
+  "isPartOf": { "@id": "{{ CANONICAL_SITEURL }}/#website" }
+}
+</script>
+{% endif %}

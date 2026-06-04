@@ -36,17 +36,17 @@ Related: [AGENTS.md](../AGENTS.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [DEP
 | Area | Status | Finding | Why it matters | Recommended fix | Priority |
 |------|--------|---------|----------------|-----------------|----------|
 | `<title>` per page | OK | Home, article, page, category have unique titles | Click-through, Google relevance | — | — |
-| Meta description | PARTIAL | Articles truncate `summary` to 160; pages/categories fall back to brand description | Duplicate descriptions across topics dilute relevance | Per-topic description in `category.html`; truncate `page.summary` | P1 |
+| Meta description | OK | Articles truncate `summary` to 160; category pages use per-topic description from `categories.yaml` | — | — | — |
 | Canonical URLs | OK | All templates emit `CANONICAL_SITEURL` + path | Prevents www/apex duplicates | — | — |
 | hreflang | N/A | Site is `en-US` only | — | Skip until i18n | — |
 | `robots.txt` | PARTIAL | `Allow: /` + sitemap; no explicit AI-bot policy | Ambiguity for GPTBot, ClaudeBot, PerplexityBot | Add explicit allow stanzas (optional) | P2 |
-| `sitemap.xml` | PARTIAL | All `index.html` URLs included; no `<lastmod>`; `/design-system/` listed | Freshness signal; crawl budget on dev page | Add `<lastmod>`; exclude `/design-system/` | P1 |
+| `sitemap.xml` | OK | `<lastmod>` emitted; `/design-system/` excluded | — | — | — |
 | Status codes / redirects | OK | Apex→www via `publishconf.py` + Vercel | Single canonical host | — | — |
 | Internal links | OK | Articles cross-link; topic clusters present | Topic authority | — | — |
-| Duplicate metadata | FAIL | Topic pages share brand-level `og:description` | Kills topic-level click-through and AI clustering | Override OG/description in `category.html` | P1 |
+| Duplicate metadata | OK | Topic pages use category-specific `og:description` and dedicated OG image | — | — | — |
 | `noindex` mistakes | PARTIAL | `/design-system/` has `noindex`; production disables draft HTML via `publishconf.py` | Utility indexes disabled in production | Verify no `/drafts/` in prod `output/` | P1 |
-| `og:image` (default) | OK | [`meta_og_image.html`](../theme/promptanatomy/templates/partials/meta_og_image.html) + `og-default.png` from `generate_brand_assets.py` | — | — | — |
-| `og:image:width/height/alt` | OK | Set in `meta_og_image.html`; articles use 1200×630 for social | — | — | — |
+| `og:image` (default) | OK | [`meta_og_image.html`](../theme/promptanatomy/templates/partials/meta_og_image.html) + `og-default.png`; home uses `images/hub/og.png`; articles use dedicated `og.png` when in `OG_ARTICLE_SLUGS` | — | — | — |
+| `og:image:width/height/alt` | OK | 1200×630 on all social surfaces; article/topic/home alt text set | — | — | — |
 | Twitter card | OK | `summary_large_image` + fallback image + `@TStaniulis_NFT` | — | — | — |
 | Article JSON-LD | OK | `image`, Person author, Organization publisher | — | — | — |
 | WebSite JSON-LD | OK | [`schema_site.html`](../theme/promptanatomy/templates/partials/schema_site.html) | — | — | — |
@@ -127,11 +127,10 @@ Metadata lives in Jinja blocks in [`theme/promptanatomy/templates/base.html`](..
 
 | Page type | `og:image` | `twitter:image` | width/height | alt |
 |-----------|------------|-------------------|--------------|-----|
-| Home | No | No | No | No |
-| Article (with hero) | Yes | Yes | No | No |
-| Article (no hero) | No | No | No | No |
-| Page (About, etc.) | No | No | No | No |
-| Category / topic | No | No | No | No |
+| Home | Yes (`images/hub/og.png`) | Yes | 1200×630 | Yes (hero alt) |
+| Article (published) | Yes (`og.png` via `OG_ARTICLE_SLUGS`) | Yes | 1200×630 | Yes (title) |
+| Category / topic | Yes (`images/topics/{slug}/og.png`) | Yes | 1200×630 | Yes |
+| Page (About, etc.) | Fallback `og-default.png` | Fallback | 1200×630 | Yes |
 
 ### Required tags (every important page)
 
@@ -607,6 +606,6 @@ Update this table as phases ship. q-and-a-agent syncs to CHANGELOG.
 
 | Phase | Status | Shipped | Notes |
 |-------|--------|---------|-------|
-| Phase 1 — P0 | Not started | — | OG fallback, Org/WebSite schema, design-system noindex |
-| Phase 2 — P1 | Not started | — | Article schema image, breadcrumb fix, llms.txt, sitemap lastmod |
-| Phase 3 — P2 | Not started | — | FAQPage, glossary, author page, BlogPosting type |
+| Phase 1 — P0 | Done | v0.4+ | OG fallback, Org/WebSite schema, design-system noindex |
+| Phase 2 — P1 | Done | v0.8.0 | Article/category/home OG PNGs, breadcrumb, llms.txt, sitemap lastmod |
+| Phase 3 — P2 | Partial | — | FAQPage expansion, glossary, author page |
