@@ -358,9 +358,11 @@ illustrations:
     status: mapped
     replaces_stub: true
 
-  # --- Opinion: re-homed training-slide / meme art (v0.7.0) ---
+  # --- Opinion primers (v0.7.0): Satori heroes; hand-authored masters optional later ---
   - id: poster-five-levels-ai-control
-    source: Governance/113_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/five-levels-of-ai-control.png
     slug: five-levels-of-ai-control
     title: "Five Levels of AI Control"
     category: Opinion
@@ -368,7 +370,9 @@ illustrations:
     status: mapped
 
   - id: poster-scales-ai-beyond-basics
-    source: Governance/114_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/what-scales-ai-beyond-basics.png
     slug: what-scales-ai-beyond-basics
     title: "What Scales AI Beyond the Basics"
     category: Opinion
@@ -376,7 +380,9 @@ illustrations:
     status: mapped
 
   - id: poster-three-types-rag
-    source: Governance/123_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/three-types-of-rag.png
     slug: three-types-of-rag
     title: "Three Types of RAG"
     category: Opinion
@@ -384,7 +390,9 @@ illustrations:
     status: mapped
 
   - id: poster-why-ai-hallucinates
-    source: Governance/137_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/why-ai-hallucinates.png
     slug: why-ai-hallucinates
     title: "Why AI Hallucinates"
     category: Opinion
@@ -392,7 +400,9 @@ illustrations:
     status: mapped
 
   - id: poster-chaos-vs-control
-    source: Basic/128_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/chaos-vs-control-prompting.png
     slug: chaos-vs-control-prompting
     title: "Chaos vs Control Prompting"
     category: Opinion
@@ -400,7 +410,9 @@ illustrations:
     status: mapped
 
   - id: poster-context-window-limits
-    source: Basic/129_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/tokens-and-context-window-limits.png
     slug: tokens-and-context-window-limits
     title: "Tokens and Context Window Limits"
     category: Opinion
@@ -408,7 +420,9 @@ illustrations:
     status: mapped
 
   - id: poster-tokens-as-fuel
-    source: Basic/133_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/tokens-as-fuel-for-ai-output.png
     slug: tokens-as-fuel-for-ai-output
     title: "Tokens as Fuel for AI Output"
     category: Opinion
@@ -416,7 +430,9 @@ illustrations:
     status: mapped
 
   - id: poster-three-memory-types
-    source: Basic/116_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/three-types-of-ai-memory-short.png
     slug: three-types-of-ai-memory-short
     title: "Three Types of AI Memory"
     category: Opinion
