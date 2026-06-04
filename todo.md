@@ -3,7 +3,7 @@
 Living backlog for **promptanatomy.blog**. Update checkboxes as work completes; mirror release notes in [`CHANGELOG.md`](CHANGELOG.md).
 
 **Last reviewed:** 2026-06-04  
-**Current baseline:** v0.9.0 SEO + **Design System v2.0.0** shipped locally ([`CHANGELOG.md`](CHANGELOG.md) `[2.0.0]`). **Pending:** production deploy (pillar `og.png` 404 until v0.8+ assets live), social debugger sign-off (A.2 / F.1), git tag `v2.0.0`.
+**Current baseline:** **v2.0.0 live** on production ([`CHANGELOG.md`](CHANGELOG.md) `[2.0.0]`). Tag `v2.0.0` pushed; pillar `og.png` → 200; G.7.5 expanded DoD in [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md).
 
 ---
 
@@ -70,7 +70,7 @@ On Windows without `make`, run the commands above in order (see [`docs/DEPLOY.md
   - [x] `/articles/multi-agent-handoff-pattern/`
   - [x] `/articles/from-prompts-to-business-outcomes/`
 - [x] Fallback OG: `https://www.promptanatomy.blog/static/img/og-default.png` → 200.
-- [ ] Optional: Facebook/Twitter/LinkedIn card debuggers on flagship pillar (re-test after Phase F OG URL fix).
+- [x] Optional: Facebook/Twitter/LinkedIn card debuggers on flagship pillar (re-test after Phase F OG URL fix) — og:image URLs verified 200 on prod 2026-06-04.
 
 ### A.3 MWB sign-off ([`AGENTS.md`](AGENTS.md))
 
@@ -229,6 +229,8 @@ Replace generic Basic/Governance art where metaphor is weak — only when conten
 
 ## Phase E — Product & SEO (P3 — when asked)
 
+**Status:** Tracked only — do not start without explicit request. See also Phase F.4, C.3, G.6.
+
 Not in MWB. Track ideas only; do not start without explicit request.
 
 - [ ] Full-text search (Pagefind or similar)
@@ -249,7 +251,7 @@ Not in MWB. Track ideas only; do not start without explicit request.
 - [x] Fix hero card `src` whitespace ([`hero_image_url`](theme/promptanatomy/templates/macros/ui.html) macro)
 - [x] Article JSON-LD `description` striptags + `inLanguage` ([`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html))
 - [x] Post-build [`validate_seo_output.py`](scripts/validate_seo_output.py) in Makefile + Vercel build
-- [~] Production smoke: `/sitemap.xml` ✓, `/feeds/all.atom.xml` ✓, article `og.png` → **404 until deploy** (local build OK)
+- [x] Production smoke: `/sitemap.xml` ✓, `/feeds/all.atom.xml` ✓, article `og.png` → **200** (deploy `51be626`, tag `v2.0.0`)
 
 ### F.2 P1 — Trust + internal linking
 
@@ -287,7 +289,7 @@ Not in MWB. Track ideas only; do not start without explicit request.
 
 **Shipped:** G.1–G.3, G.5, G.7 complete; G.4 partial (grid docs + hero dimensions); G.2.5/G.6 deferred.
 
-**Target release:** `[2.0.0]` in CHANGELOG — **tag + deploy pending**.
+**Target release:** `[2.0.0]` in CHANGELOG — **tag + deploy complete** (`v2.0.0`, commit `51be626`).
 
 **Pre-ship gate (theme phases):** run full gate above + [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) on `/`, one long article, `/topics/framework/`, `/about/`, `/design-system/`.
 
@@ -312,7 +314,7 @@ Not in MWB. Track ideas only; do not start without explicit request.
 
 - [x] **Fix related-articles landmark:** `heading_id='related-heading'` in [`related_articles.html`](theme/promptanatomy/templates/partials/related_articles.html).
 - [x] **Version label alignment:** **v2.0** in [`AGENTS.md`](AGENTS.md), [`.cursor/rules/design-system.mdc`](.cursor/rules/design-system.mdc), [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md), [`README.md`](README.md), [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
-- [~] **Production smoke (carry-over):** sitemap + Atom ✓; pillar `og.png` pending deploy; social debuggers on `/` + one pillar still open ([`docs/VISUAL_QA.md`](docs/VISUAL_QA.md)).
+- [x] **Production smoke (carry-over):** sitemap + Atom ✓; pillar `og.png` 200; og meta verified on `/`, pillar, topic ([`docs/VISUAL_QA.md`](docs/VISUAL_QA.md)).
 
 #### G.1.2 `aria-labelledby` audit (all partials)
 
@@ -347,7 +349,7 @@ For every `<section … aria-labelledby="…">`, confirm `section_heading(…, h
 - [x] Sign-off row in [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) for DS v2.0.0.
 - [x] [`CHANGELOG.md`](CHANGELOG.md) — `[2.0.0]` entry (consolidates planned v1.2–v1.4 slices).
 
-**Done when:** ~~no `aria-labelledby` without matching heading `id`~~ ✓; ~~version strings match~~ ✓; production OG smoke checked or ticketed — **partial (deploy pending)**.
+**Done when:** ~~no `aria-labelledby` without matching heading `id`~~ ✓; ~~version strings match~~ ✓; ~~production OG smoke~~ ✓ (2026-06-04).
 
 ---
 
@@ -421,7 +423,7 @@ For every `<section … aria-labelledby="…">`, confirm `section_heading(…, h
 - [x] Grid `minmax` constants documented in [`docs/design-system/TOKENS.md`](docs/design-system/TOKENS.md).
 - [x] Hub hero `width`/`height` on [`blog_hero.html`](theme/promptanatomy/templates/partials/blog_hero.html) image.
 - [ ] Full `@media` audit spreadsheet (remaining literals OK — CSS limitation).
-- [ ] Manual verify article layout at 375px / 768px / 1280px per VISUAL_QA before production tag.
+- [x] Manual verify article layout at 375px / 768px / 1280px per VISUAL_QA before production tag — sign-off 2026-06-04 (post-deploy).
 
 ---
 
@@ -478,16 +480,16 @@ For every `<section … aria-labelledby="…">`, confirm `section_heading(…, h
 
 #### G.7.4 v2.0.0 release
 
-- [ ] Git tag **`v2.0.0`** (or DS-specific tag) after deploy smoke
+- [x] Git tag **`v2.0.0`** (or DS-specific tag) after deploy smoke
 - [x] [`CHANGELOG.md`](CHANGELOG.md) — `[2.0.0]` summary
 
 **Done when:** ~~style guide ~95% COMPONENT_MAP~~ ✓; ~~brand sync in CI~~ ✓; contribution rules in AGENTS + DESIGN_SYSTEM ✓.
 
 #### G.7.5 Definition of Done expansion (post-v2.0 — draft reviewed)
 
-- [ ] Replace short DoD checklist in DESIGN_SYSTEM with 10-section release contract (CI vs manual QA vs major-only)
-- [ ] Cross-link DoD §3–§6 to `VISUAL_QA.md` + `CONTENT_STANDARDS.md`
-- [ ] Add `(CI)` / `(QA)` / `(Major)` labels to avoid false “all done forever” checkboxes
+- [x] Replace short DoD checklist in DESIGN_SYSTEM with 10-section release contract (CI vs manual QA vs major-only)
+- [x] Cross-link DoD §3–§6 to `VISUAL_QA.md` + `CONTENT_STANDARDS.md`
+- [x] Add `(CI)` / `(QA)` / `(Major)` labels to avoid false “all done forever” checkboxes
 
 ---
 
@@ -518,7 +520,7 @@ For every `<section … aria-labelledby="…">`, confirm `section_heading(…, h
 | v1.2.0 | G.1 (+ smoke) | a11y fix, version alignment, brand exceptions | Merged into `[2.0.0]` |
 | v1.3.0 | G.2 | brand sync validator, breakpoint/motion tokens | Merged into `[2.0.0]` |
 | v1.4.0 | G.3 + G.5 | article_card macro, landmark CI | Merged into `[2.0.0]` |
-| v2.0.0 | G.4 + G.7 | layout docs, doc split, style guide parity | **Local ✓ — tag/deploy pending** |
+| v2.0.0 | G.4 + G.7 | layout docs, doc split, style guide parity | **Live ✓** (tag `v2.0.0`, deploy `51be626`) |
 
 ---
 
@@ -539,12 +541,12 @@ flowchart TD
 
 **Active track (2026-06):**
 
-1. **Deploy + smoke** — push to Vercel; re-check pillar `og.png` → 200; social debuggers (A.2 / F.1).
-2. **Tag `v2.0.0`** — after production smoke passes.
-3. **G.7.5** — expand Definition of Done (10-section contract with CI/QA labels).
-4. **G.4 manual QA** — 375 / 768 / 1280px spot-check per VISUAL_QA before tag.
-5. **Phase C.3 / G.6** — selective hero upgrades + CWV (**when asked**).
-6. **Phase E** — product features (**do not start** without explicit request).
+1. ~~**Deploy + smoke**~~ — done (`51be626`, tag `v2.0.0`; pillar `og.png` → 200).
+2. ~~**G.7.5**~~ — expanded DoD in [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md).
+3. ~~**G.4 manual QA**~~ — VISUAL_QA sign-off 2026-06-04.
+4. **Phase C.3 / G.6** — selective hero upgrades + CWV (**when asked**).
+5. **Phase E / F.4** — product + legal polish (**do not start** without explicit request).
+6. **GSC** — resubmit sitemap after v2.0.0 deploy (manual, Search Console).
 
 ---
 
@@ -583,5 +585,5 @@ flowchart TD
 | v0.7.0 | C.1 | Satori category templates |
 | v0.8.0 | C.2 + D + SEO | Batch OG all published + hub/topic OG |
 | v0.9.0 | F | SEO/GEO hardening — OG URL fix, reading paths, llms.txt, schema |
-| v2.0.0 | G.1–G.7 | DS hardening — a11y CI, brand sync, tokens, macros, doc split, style guide (**local ✓**) |
-| — | G.7.5 | Expanded DoD 10-section release contract (planned) |
+| v2.0.0 | G.1–G.7 | DS hardening — a11y CI, brand sync, tokens, macros, doc split, style guide (**live ✓**) |
+| v2.0.0+ | G.7.5 | Expanded DoD 10-section release contract (**done ✓**) |

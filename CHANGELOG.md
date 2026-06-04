@@ -8,6 +8,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- **Definition of Done (2.0) release contract:** 10-section checklist with `(CI)`, `(QA)`, and `(Major)` labels in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md); cross-links to [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) and [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
+
+### Changed
+
+- [`todo.md`](todo.md) baseline updated — v2.0.0 live on production; G.7.5 complete.
+- [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) sign-off — production OG smoke + breakpoint QA row for v2.0.0.
 ## [2.0.0] - 2026-06-04 — Design System hardening (G.1–G.7)
 
 ### Added

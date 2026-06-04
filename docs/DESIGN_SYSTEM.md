@@ -317,15 +317,76 @@ Childish gradients, generic blog templates, colorful magazine style, oversized i
 
 ## Definition of Done (2.0)
 
-- [x] All tokens documented; child docs under `docs/design-system/`
-- [x] No hardcoded hex in theme CSS except `tokens.css` (`validate_theme_tokens.py`)
-- [x] `validate_brand_sync.py` in CI validate target
-- [x] `validate_a11y_landmarks.py` on built HTML
-- [x] UI macros documented; `section_heading` + `heading_id` on all `aria-labelledby` sections
-- [x] `article_card()` macro used for listing cards
-- [x] Breakpoint / motion / measure tokens in `tokens.css`
-- [x] `/design-system/` covers major COMPONENT_MAP partials
-- [x] `make validate && make build` passes
+Release contract for theme, Satori, and deploy changes. Labels: **(CI)** = automated in `make validate` / `make build` / Vercel; **(QA)** = manual checklist; **(Major)** = required before production tag or GSC resubmit.
+
+### 1. Tokens and brand (CI)
+
+- [ ] No hardcoded hex in theme CSS except [`tokens.css`](../theme/promptanatomy/static/css/tokens.css) — `python scripts/validate_theme_tokens.py`
+- [ ] CSS brand colors match [`data/og/brand.mjs`](../data/og/brand.mjs) — `python scripts/validate_brand_sync.py`
+- [ ] Breakpoint, motion, and measure tokens documented in [`docs/design-system/TOKENS.md`](design-system/TOKENS.md)
+
+### 2. Content contract (CI)
+
+- [ ] All published articles pass frontmatter and body rules — `python scripts/validate_content.py` (warnings OK; zero errors)
+
+See publish checklist in [`docs/CONTENT_STANDARDS.md`](CONTENT_STANDARDS.md).
+
+### 3. Satori and images (CI)
+
+- [ ] Satori PNGs regenerate cleanly — `npm run build:satori`
+- [ ] Manifest rows match templates and sources — `python scripts/validate_satori_manifest.py`
+- [ ] Heroes and OG sync to `content/images/` — `python scripts/sync_illustrations.py`
+- [ ] Required paths exist in `output/` after Pelican — `python scripts/verify_build_assets.py`
+
+Playground workflow: [`docs/VISUAL_QA.md`](VISUAL_QA.md) § Satori-generated heroes.
+
+### 4. SEO output (CI)
+
+- [ ] Single-line OG/Twitter image URLs, Article JSON-LD without HTML in `description`, sitemap exclusions — `python scripts/validate_seo_output.py` (post-build)
+
+### 5. Accessibility landmarks (CI)
+
+- [ ] Every `aria-labelledby` target has a matching heading `id` — `python scripts/validate_a11y_landmarks.py` (post-build)
+
+Keyboard and contrast spot-checks: [`docs/VISUAL_QA.md`](VISUAL_QA.md) § Accessibility.
+
+### 6. Visual QA (QA)
+
+Run [`docs/VISUAL_QA.md`](VISUAL_QA.md) on local `make serve` before a **Major** release:
+
+- [ ] Home `/`, one long article with TOC, `/topics/{slug}/`, `/about/`, `/design-system/`
+- [ ] Spot-check at 375px, 768px, and 1280px (nav, footer tap targets, article measure, TOC sidebar)
+- [ ] Hybrid palette, gold CTAs, blue prose links unchanged unless intentional
+
+### 7. Content standards (QA)
+
+Before publishing or bulk content edits:
+
+- [ ] Voice, structure, and link rules in [`docs/CONTENT_STANDARDS.md`](CONTENT_STANDARDS.md) — publish checklist + `body_locked` after manual edits
+
+### 8. Production smoke (Major)
+
+After deploy to `https://www.promptanatomy.blog`:
+
+- [ ] `/sitemap.xml` and `/feeds/all.atom.xml` return 200
+- [ ] Pillar article `og:image` URL returns 200 (dedicated 1200×630 `og.png`, not hero crop)
+- [ ] Home and topic OG assets return 200
+- [ ] Social debuggers on `/` and one pillar show correct image (Facebook, X/Twitter, LinkedIn)
+
+### 9. Documentation (Major)
+
+- [ ] [`CHANGELOG.md`](../CHANGELOG.md) entry for the release
+- [ ] [`docs/COMPONENT_MAP.md`](COMPONENT_MAP.md) updated if partials or macros changed
+- [ ] [`todo.md`](../todo.md) checkboxes and baseline line updated
+
+### 10. Deploy (Major)
+
+- [ ] `make validate && make build` passes locally (or equivalent Windows command sequence in [`docs/DEPLOY.md`](DEPLOY.md))
+- [ ] Vercel build green on `main`
+- [ ] Git tag when semver warrants (e.g. `v2.0.0` for DS major)
+- [ ] Google Search Console sitemap resubmitted after URL or sitemap logic changes
+
+**Quick gate (every theme PR):** sections 1, 4, and 5 via CI; section 6 only for UX-visible changes.
 
 ## Definition of Done (1.0) — historical
 

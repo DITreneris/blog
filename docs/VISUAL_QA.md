@@ -91,4 +91,5 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 | Role | Date | Notes |
 |------|------|-------|
 | DS v2.0.0 | 2026-06-04 | G.1–G.7: related-heading a11y, brand sync CI, tokens, article_card macro, doc split, style guide parity |
-| Production smoke | 2026-06-04 | sitemap + Atom 200; pillar og.png pending deploy of v0.8+ assets |
+| Production smoke | 2026-06-04 | sitemap + Atom 200; pillar/home/topic `og.png` 200; og meta clean (no URL whitespace) |
+| Breakpoint QA v2.0.0 | 2026-06-04 | Release gate: `validate_a11y_landmarks.py` (41 files), `validate_seo_output.py`, `verify_build_assets.py`; manual 375/768/1280 spot-check on `/`, pillar article, `/topics/framework/`, `/about/`, `/design-system/` |
