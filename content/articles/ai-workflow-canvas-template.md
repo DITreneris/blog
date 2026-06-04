@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-09-04
 hero_image: images/articles/ai-workflow-canvas-template/hero.png
 hero_caption: "Copy-paste template — fill the canvas before selecting tools or writing prompts."
 key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here become incidents later.

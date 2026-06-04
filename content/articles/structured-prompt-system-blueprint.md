@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-04-05
 hero_image: images/articles/structured-prompt-system-blueprint/hero.png
 hero_caption: "Prompt registry — versioned templates, owners, environments, and eval-linked releases."
 key_takeaway: A prompt system is versioned templates plus release discipline—not a shared doc anyone can edit.

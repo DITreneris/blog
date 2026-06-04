@@ -3,8 +3,8 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: pillar
-date: 2026-05-10
-modified: 2026-06-04
+date: 2024-07-26
+modified: 2024-10-11
 hero_image: images/articles/10-signs-your-company-is-vibe-prompting/hero.png
 hero_caption: "Diagnostic visual — ten signs that outcomes depend on who asked and which tool they opened, not on documented workflow."
 key_takeaway: If outcomes depend on who asked and which tool they opened, document one workflow and measure it for thirty days.
@@ -27,6 +27,8 @@ faq:
 That gap shows up quietly at first. A senior AE gets excellent proposal drafts; a new hire gets confident nonsense. Support fixes AI replies every night while leadership sees high "copilot adoption." Compliance learns about AI from a customer complaint, not from a design review. The cost is rework, audit exposure, and teams who stop trusting anything except their private chat threads.
 
 If that pattern sounds familiar, you are not under-skilled at prompting. You are missing workflow, context, evaluation, and ownership—the layers described in [The Model Is Not the System](/articles/the-model-is-not-the-system/). The ten signs below help you diagnose how far unstructured use has spread and what to fix first.
+
+The hero image makes the same point visually: a fast car stuck in traffic—**you added AI, not speed**. New capability inside an unchanged process still bottlenecks on handoffs, approvals, and missing context. The checklist below names where that traffic jam shows up in your operating model.
 
 ## Signs to watch for
 

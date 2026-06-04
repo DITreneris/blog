@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-03-31
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png
 hero_caption: "Outcome mapping — tie each workflow to one business metric, owner, and eval gate."
 key_takeaway: Every live workflow should tie to one business metric, one owner, and one eval gate—not activity metrics alone.

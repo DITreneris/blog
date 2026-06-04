@@ -6,7 +6,7 @@ Live reference: `/design-system/` after build. Lookup table: [`COMPONENT_MAP.md`
 
 | Macro | Use |
 |-------|-----|
-| `section_heading(title, lead, heading_id)` | Section titles; **always** pass `heading_id` when parent has `aria-labelledby` |
+| `section_heading(title, lead, heading_id)` | Section titles; **always** pass `heading_id` when parent has `aria-labelledby`. If `title` is empty and `lead` is set, `lead` renders as the sole `h2` (homepage featured intro). |
 | `btn(href, label, variant, external)` | Primary / ghost / secondary CTAs |
 | `card(title, description, href, …)` | Start-here linked cards |
 | `article_card(article)` | Article listing cards (thumb + title link) |
@@ -18,7 +18,7 @@ Live reference: `/design-system/` after build. Lookup table: [`COMPONENT_MAP.md`
 |---------|----------|-------------|----------|
 | `card--linked` | `start_here_cards` / `card()` | Stretched link + `aria-labelledby` | Yes |
 | `card` + thumb | `article_card()` | Thumb decorative (`tabindex="-1"`) + title link | Yes |
-| `card--featured` | `featured_article.html` | **Gold `btn--primary` only** | Yes |
+| `card--featured` | `featured_article.html` | **Gold `btn--primary` only**; `h2` + `--text-featured-title`; gold badge; `.card__visual-frame` | Yes |
 | `topic-card` | `topic_cluster_grid.html` | Full-card link | Yes |
 | `ecosystem-card` | `ecosystem_spoke.html` | Full-card external link | Yes |
 

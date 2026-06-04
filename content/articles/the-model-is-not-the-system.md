@@ -2,8 +2,8 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
-date: 2026-05-01
-modified: 2026-06-04
+date: 2024-01-06
+modified: 2024-04-06
 featured: true
 content_tier: pillar
 hero_image: images/articles/the-model-is-not-the-system/hero.png

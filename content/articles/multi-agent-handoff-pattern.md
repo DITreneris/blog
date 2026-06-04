@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-12-08
 hero_image: images/articles/multi-agent-handoff-pattern/hero.png
 hero_caption: "Orchestrator routes each step to a specialist agent with a minimal handoff payload and human gates on external actions."
 key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained prompts without ownership.

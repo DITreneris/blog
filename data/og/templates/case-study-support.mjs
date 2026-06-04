@@ -1,6 +1,9 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
-import { articleHeroFrame, panelBox, labelText } from './base.mjs';
+import { typography, px } from '../typography.mjs';
+import { articleHeroFrame, panelBox } from './base.mjs';
+
+const d = typography.hero.diagram;
 
 export function buildCaseStudySupport(props) {
   const column = (title, items, accent) =>
@@ -20,7 +23,7 @@ export function buildCaseStudySupport(props) {
             style: {
               display: 'flex',
               color: accent,
-              fontSize: '20px',
+              fontSize: px(d.title),
               fontWeight: 700,
               marginBottom: '16px',
             },
@@ -34,7 +37,7 @@ export function buildCaseStudySupport(props) {
               style: {
                 display: 'flex',
                 color: brand.colors.textOnDarkMuted,
-                fontSize: '16px',
+                fontSize: px(d.caption),
                 marginBottom: '10px',
               },
             },
@@ -88,7 +91,7 @@ export function buildCaseStudySupport(props) {
           border: `1px solid ${brand.colors.brandAccent}`,
           borderRadius: '8px',
           color: brand.colors.brandAccent,
-          fontSize: '18px',
+          fontSize: px(d.title),
           fontWeight: 700,
         },
       },

@@ -37,6 +37,7 @@ Production URL is set in `publishconf.py`: `https://promptanatomy.blog`
 ## Docs
 
 - [Architecture](docs/ARCHITECTURE.md)
+- [Definition of Done (system)](docs/definition_of_done_system.md)
 - [Design system](docs/DESIGN_SYSTEM.md) (v2.0)
 - [Visual QA checklist](docs/VISUAL_QA.md)
 - [Component map](docs/COMPONENT_MAP.md)

@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-03-13
 hero_image: images/articles/types-of-prompts-for-business-workflows/hero.png
 hero_caption: "Task, system, retrieval, and checker prompts—matched to workflow step, not one growing system message."
 key_takeaway: Match prompt type to workflow step—one mega-prompt rarely covers intake, generation, and verification.
@@ -17,6 +16,10 @@ title: Types of Prompts for Business Workflows
 Business workflows need **different prompt roles**, not one growing system message that accumulates policy, task instructions, retrieval hints, and checker rules until nobody can version it safely. Splitting types lets Legal own policy packs, ops own task templates, and IT own retrieval connectors—each with eval cases and registry IDs—see [structured prompt system](/articles/structured-prompt-system-blueprint/).
 
 Mega-prompts fail audits: you cannot tell which sentence changed when a near-miss occurs, and you cannot re-run checker logic without re-running generation. Type separation is how prompt engineering scales inside [workflow engineering](/articles/prompt-engineering-vs-ai-workflow-engineering/).
+
+## Two taxonomies (hero vs operations)
+
+The hero orb labels **System, Master, Process, Agentic**—the Prompt Anatomy control stack (behavior, direction, steps, action). This article’s table uses **System/policy, Task, Retrieval, Checker**—roles for **workflow steps** and registry IDs. They align but are not identical: Master ≈ task framing plus constraints; Process ≈ step sequence; Agentic ≈ tool execution with gates; System/policy ≈ non-negotiable rules. Map both when you version prompts—do not merge them into one Slack doc.
 
 ## Prompt types and roles
 

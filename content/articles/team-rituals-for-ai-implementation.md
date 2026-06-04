@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-03-08
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
 hero_caption: "Lightweight recurring forums—office hours, eval review, and change announcements—that keep workflows honest after launch."
 key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts, context, and ownership.
@@ -16,7 +15,7 @@ title: Team Rituals for AI Implementation
 
 Tools do not maintain themselves. Prompts drift, policy packs expire, connectors gain scopes, and new hires invent side-channel chats that bypass retrieval tags. **Rituals** beat one-off trainings because they keep workflows honest after launch—short, recurring forums with decisions and owners, not slide tours that end when the pilot badge is earned.
 
-Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/), [risk cadence](/articles/ai-risk-review-cadence/), and the [maturity ladder](/articles/ai-implementation-maturity-ladder/)—Level 3 is not "we launched" but "we still review eval biweekly."
+Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/), [risk cadence](/articles/ai-risk-review-cadence/), and the [maturity ladder](/articles/ai-implementation-maturity-ladder/)—Level 3 is not "we launched" but "we still review eval biweekly." The [tokens-as-fuel](/articles/tokens-as-fuel-for-ai-output/) visual is a useful reminder in office hours: starved context degrades output even when attendance is high.
 
 ## Suggested rituals (cadence and purpose)
 

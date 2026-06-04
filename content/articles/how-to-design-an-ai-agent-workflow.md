@@ -3,8 +3,8 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: pillar
-date: 2026-05-12
-modified: 2026-06-04
+date: 2024-10-24
+modified: 2025-01-23
 hero_image: images/articles/how-to-design-an-ai-agent-workflow/hero.png
 hero_caption: "Orchestrator diagram — bounded tasks, allowed tools, human escalation, and evaluation gates before scale."
 key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not only a persona and API access.
@@ -24,7 +24,7 @@ faq:
 
 Agent hype collapses when workflows are vague. A language model with tools is not an agent workflow—it is a risk multiplier. Durable agent design starts with a **bounded business task**, explicit data boundaries, human escalation, and evaluation before scale.
 
-This guide maps a business task to an **agent-ready process**. It assumes you already treat the model as one component inside workflow and governance, not as the whole system—see [The Model Is Not the System](/articles/the-model-is-not-the-system/) if that foundation is still debated in your org.
+This guide maps a business task to an **agent-ready process**. It assumes you already treat the model as one component inside workflow and governance, not as the whole system—see [The Model Is Not the System](/articles/the-model-is-not-the-system/) if that foundation is still debated in your org. If your team is debating whether to add tools, memory, and orchestration before basics are stable, read the visual primer [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) first—it names the ladder from context engineering through agents without skipping control layers.
 
 ## Step 1 — Define the task
 

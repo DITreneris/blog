@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-06-29
 hero_image: images/articles/audit-trails-for-ai-workflows/hero.png
 hero_caption: "Minimum log fields — inputs, context versions, outputs, overrides, and retention for accountable AI workflows."
 key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational workflow—only a demo.
@@ -17,7 +16,7 @@ title: Audit Trails for AI Workflows
 
 Audit trails turn AI from a black box into an **accountable process**. Regulators, customers, and your own teams ask the same questions after a near-miss: what was sent, on what basis, which policy version applied, and who approved it? If answers require reconstructing someone's chat history, you have a demo—not a workflow ready for scale.
 
-**Northline B2B** logs every `support-reply-v3` run. This article lists minimum fields, explains why each matters, provides a sample JSON row for ticket **#4821**, and connects retention and review cadence to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk review](/articles/ai-risk-review-cadence/). Prompt text in a wiki is not proof; logs with hashes and versions are.
+**Northline B2B** logs every `support-reply-v3` run. This article lists minimum fields, explains why each matters, provides a sample JSON row for ticket **#4821**, and connects retention and review cadence to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk review](/articles/ai-risk-review-cadence/). Prompt text in a wiki is not proof; logs with hashes and versions are. When retrieval tiers change, align logging with the pattern in [Three Types of RAG](/articles/three-types-of-rag/).
 
 ## Minimum log fields (design once, enforce in IT)
 

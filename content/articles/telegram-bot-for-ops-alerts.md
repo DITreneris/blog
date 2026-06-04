@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
-date: 2026-05-28
+date: 2026-09-22
 hero_image: images/articles/telegram-bot-for-ops-alerts/hero.png
 key_takeaway: Ops alerting bots need workflow design and audit trails—see the agent and governance guides.
 reading_time: 1 min read

@@ -20,7 +20,8 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | ArticleHeader | `partials/article_header.html` | `article`, `article.hero_image`, optional `article.hero_caption` |
 | ArticleLead | `partials/article_lead.html` | `article.summary` |
 | Article hero image | `content/images/articles/{slug}/hero.png` | `data/illustrations.yaml` + `scripts/sync_illustrations.py` |
-| Hub hero / ecosystem art | `blog_hero.html`, `ecosystem_spoke.html` | Split hero: copy + CTAs left, diagram right (`hero__grid`); `images/hub/hero.png` from `data/01_illustrations/h1.png`; `ECOSYSTEM.image` |
+| Hub hero diagram | `partials/hero_architecture_diagram.html` via `blog_hero.html` | `HUB_SECTIONS.hero` (`visual: diagram`, `diagram.nodes`); native SVG, not raster |
+| Hub ecosystem art | `ecosystem_spoke.html` | `ECOSYSTEM.image` → `images/hub/ecosystem.png` |
 | KeyTakeawayBox | `partials/key_takeaway.html` | `article.key_takeaway` |
 | Breadcrumb | `partials/breadcrumb.html` | `article`, `article.category` (renders Home › Category › Title) |
 | TableOfContents | `partials/toc.html` + `toc-active.js` | Article headings (JS scan); `<details class="toc-collapsible">` on mobile |

@@ -1,6 +1,9 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
+import { typography, px } from '../typography.mjs';
 import { articleHeroFrame, panelBox } from './base.mjs';
+
+const d = typography.hero.diagram;
 
 const STEPS = [
   { label: 'Outcome', example: 'Faster tier-2 replies' },
@@ -38,7 +41,7 @@ export function buildBusinessOutcomes(props) {
               style: {
                 display: 'flex',
                 color: brand.colors.brandAccent,
-                fontSize: '16px',
+                fontSize: px(d.caption),
                 fontWeight: 700,
                 marginBottom: '8px',
               },
@@ -51,7 +54,7 @@ export function buildBusinessOutcomes(props) {
               style: {
                 display: 'flex',
                 color: brand.colors.textOnDark,
-                fontSize: '15px',
+                fontSize: px(d.caption),
                 textAlign: 'center',
               },
             },
@@ -68,7 +71,7 @@ export function buildBusinessOutcomes(props) {
             style: {
               display: 'flex',
               color: brand.colors.brandAccent,
-              fontSize: '32px',
+              fontSize: px(d.metric),
               margin: '0 12px',
             },
           },

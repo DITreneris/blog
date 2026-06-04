@@ -14,7 +14,7 @@ Markdown articles use [`scripts/pelican_frontmatter_reader.py`](../scripts/pelic
 
 | Layer | Path | Role |
 |-------|------|------|
-| Agent / ops | `AGENTS.md`, `.cursor/rules/`, `docs/` | Conventions |
+| Agent / ops | `AGENTS.md`, `.cursor/rules/`, `docs/` (incl. [`definition_of_done_system.md`](definition_of_done_system.md)) | Conventions and completion gates |
 | Content | `content/articles/`, `content/pages/` | Markdown + frontmatter |
 | Data | `data/*.yaml` | Nav, hub copy, categories, ecosystem spokes, illustration manifest |
 | Illustration masters | `data/01_illustrations/` | Source PNGs (synced, not edited in place); Satori-generated masters in `Satori/` |

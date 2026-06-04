@@ -2,7 +2,7 @@ import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
 import { boltIcon } from './base.mjs';
 
-/** Homepage hero: brand band with embedded diagram raster (h1.png). */
+/** Deprecated for live hub hero — use native SVG partial. OG/embed shell with h1.png raster. */
 export function buildHomepageHeroFrame(props) {
   const embedSrc = props.embedSrc;
   return h(

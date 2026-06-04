@@ -37,3 +37,7 @@ Until full codegen (deferred):
 ## Satori-only colors
 
 `brand.mjs` includes `brandDarkMid` and `brandAccentBright` without CSS token equivalents — intentional for OG gradient bands.
+
+## Hub hero diagram
+
+Live homepage hero uses native SVG in `partials/hero_architecture_diagram.html` (not Satori). The center bolt reuses the mother-repo lightning path with `currentColor` → `--color-brand-accent`. Social sharing uses Satori `homepage-og` → `images/hub/og.png` only. `homepage-hero-frame.mjs` is deprecated for the in-page hub hero.

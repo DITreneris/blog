@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Opinion
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-09-27
 hero_image: images/articles/when-ai-hallucinates-confidence/hero.png
 hero_caption: "Fluent wrong answers relax reviewers—workflows need citations, checkers, or human sign-off before send."
 key_takeaway: Treat fluent tone as unrelated to factual accuracy—design workflows that require sources or human sign-off.
@@ -15,6 +14,8 @@ title: When AI Hallucinates Confidence
 ---
 
 Models can be wrong while sounding certain. That combination is worse than obvious errors because **reviewers relax**—tone reads professional, structure looks complete, and busy operators assume someone else validated facts. In customer support, sales, and tender work, fluent wrong answers create commitments your policy library never approved.
+
+The hero meme states the same failure mode differently: **better AI model, same workflow**—a polished engine duct-taped to a broken process still ships broken outcomes. Model upgrades do not replace grounding, checkers, or sign-off. See [Why AI Hallucinates](/articles/why-ai-hallucinates/) for the grounded-vs-guessing split.
 
 Treat fluent tone as **unrelated** to factual accuracy. Design workflows that require sources, checker steps, or human sign-off before send—not "read carefully" training alone.
 

@@ -1,6 +1,9 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
+import { typography, px } from '../typography.mjs';
 import { articleHeroFrame, panelBox } from './base.mjs';
+
+const d = typography.hero.diagram;
 
 function node(label, sub) {
   return panelBox(
@@ -20,7 +23,7 @@ function node(label, sub) {
           style: {
             display: 'flex',
             color: brand.colors.textOnDark,
-            fontSize: '18px',
+            fontSize: px(d.title),
             fontWeight: 700,
             textAlign: 'center',
           },
@@ -35,7 +38,7 @@ function node(label, sub) {
                 display: 'flex',
                 marginTop: '8px',
                 color: brand.colors.textOnDarkMuted,
-                fontSize: '14px',
+                fontSize: px(d.caption),
                 textAlign: 'center',
               },
             },
@@ -55,7 +58,7 @@ function arrow() {
         display: 'flex',
         alignItems: 'center',
         color: brand.colors.brandAccent,
-        fontSize: '28px',
+        fontSize: px(d.arrow),
         fontWeight: 700,
         margin: '0 8px',
       },
@@ -102,7 +105,7 @@ export function buildMultiAgentHandoff(props) {
           border: `1px solid ${brand.colors.borderDark}`,
           borderRadius: '8px',
           color: brand.colors.textOnDarkMuted,
-          fontSize: '14px',
+          fontSize: px(d.caption),
           fontFamily: 'Inter',
         },
       },

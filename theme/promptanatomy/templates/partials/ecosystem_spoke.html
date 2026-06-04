@@ -28,7 +28,7 @@
 
       <a class="ecosystem-card" href="{{ item.url }}" rel="noopener noreferrer" target="_blank">
 
-        <div class="ecosystem-card__icon ecosystem-card__icon--{{ item.theme }}" aria-hidden="true">&#9670;</div>
+        <div class="ecosystem-card__icon ecosystem-card__icon--{{ item.theme }}" aria-hidden="true">{{ item.icon|default('◆') }}</div>
 
         <h3 class="ecosystem-card__title">{{ item.title }}<span class="sr-only"> (opens in new tab)</span></h3>
 

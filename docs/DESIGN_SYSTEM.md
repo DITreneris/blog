@@ -72,7 +72,12 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 | `--color-surface-elevated` | `.card`, `.topic-card`, `.template-band`, `.author-bio` |
 | `--color-surface-dark` | `.section--dark` (alias of brand dark) |
 | `--color-surface-dark-card` | Cards on dark sections, `.btn--secondary` |
-| `--color-surface-glass` | `.ecosystem-card` |
+| `--color-surface-glass` | `.ecosystem-card`, `.hero-diagram__card` (with `@supports` blur) |
+| `--color-hero-bg` | `.hero.section--dark` background |
+| `--color-hero-diagram-glow` | `.hero-diagram__glow` |
+| `--color-hero-diagram-surface` | Diagram card fallback (reduced transparency) |
+| `--color-hero-diagram-border` | Diagram card border |
+| `--shadow-hero-diagram` | Diagram card depth |
 | `--color-header-scrim` | Sticky `.site-header` |
 
 ### Text and borders
@@ -117,9 +122,10 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 | `--text-hero` | Hero `h1` (clamp) |
 | `--text-section` | Section `h2` |
 | `--text-article-title` | Article `h1` |
+| `--text-featured-title` | `.card--featured .card__title` (`h2`) |
 | `--text-body` | `1.125rem` (18px) body |
 | `--text-small` | Buttons, card desc, topic card titles |
-| `--text-card-title` | `.card__title` |
+| `--text-card-title` | `.card__title` (listing cards) |
 | `--text-badge` | `.badge`, `.card__icon-badge` |
 | `--text-meta` | Metadata, labels |
 | `--text-prose-h2` | Article `.prose h2` |
@@ -136,7 +142,7 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 | `--container-max` | `75rem` (~1200px) |
 | `--article-max` | `45rem` (720px) prose column |
 | `--radius-sm` … `--radius-xl` | Cards, buttons, badges |
-| `--shadow-sm` / `--shadow-md` / `--shadow-card-hover` / `--shadow-ecosystem-card` | Elevation |
+| `--shadow-sm` / `--shadow-md` / `--shadow-card-hover` / `--shadow-featured-visual` / `--shadow-ecosystem-card` | Elevation |
 | `--z-header` / `--z-progress` | Sticky chrome |
 
 ## Typography
@@ -169,7 +175,7 @@ Base class: `.btn`. Variants:
 
 - Default `.card` — title link optional via `card()` macro.
 - `.card--linked` — full-card hit target via `.card__stretched-link` when `href` is passed to `card()` (Start here cards).
-- `.card--featured` — homepage flagship; **single click target**: gold `btn--primary` only (title is not a link, full card is not stretched-linked). Reinforces "gold = CTA".
+- `.card--featured` — homepage flagship for the article with `featured: true`; **single click target**: gold `btn--primary` only (`h2.card__title` at `--text-featured-title`, gold category badge, `.card__visual-frame` for hero poster). Section intro uses `hub_sections.featured.lead` as the section `h2` when `title` is empty (no “Featured” magazine label). `.stack` uses `align-items: flex-start` so badge and CTA stay content-width.
 - **Listing cards** — `article_card(article)` macro: decorative thumb link + title link (see [COMPONENTS.md](design-system/COMPONENTS.md)).
 - Newsletter form uses `.newsletter--placeholder` when signup is disabled (visible "Coming soon" badge).
 
@@ -298,7 +304,8 @@ See [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) for l
 | Article hero (`article_header.html`) | Article title — required when image present |
 | Article card thumbnail | Empty `alt` OK — title is adjacent in link text |
 | Featured card image | Empty `alt` OK — title and summary adjacent |
-| Hub hero / ecosystem map | Homepage hero: split grid (copy left, diagram right); hub diagram uses `object-fit: contain`. Optional `image_alt` in `data/hub_sections.yaml` / `data/ecosystem.yaml`; empty = decorative |
+| Hub hero diagram | `hero_architecture_diagram.html`: native SVG + glass card (`--color-hero-diagram-*`, `--shadow-hero-diagram`); hero band `--color-hero-bg`. Copy/CTAs from `data/hub_sections.yaml` (`visual: diagram`). No in-page raster hub hero. |
+| Hub ecosystem map | `ecosystem_spoke.html`; `image_alt` in `data/ecosystem.yaml` |
 | Logo SVG | `aria-hidden="true"` in header/footer |
 
 ## Composition

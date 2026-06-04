@@ -8,7 +8,7 @@
 
   <div class="container">
 
-    {{ section_heading(f.title if f and f.title else 'Featured', lead=(f.lead if f and f.lead else none), heading_id='featured-heading') }}
+    {{ section_heading(f.title if f and f.title else '', f.lead if f else none, 'featured-heading') }}
 
     <article class="card card--featured">
 
@@ -20,7 +20,7 @@
 
         {% endif %}
 
-        <h3 class="card__title">{{ article.title }}</h3>
+        <h2 class="card__title">{{ article.title }}</h2>
 
         <p class="card__desc">{{ article.summary }}</p>
 
@@ -32,7 +32,9 @@
 
       {% if article.hero_image %}
 
-      <img class="card__visual card__visual--image" src="{{ hero_image_url(article) }}" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      <figure class="card__visual-frame">
+        <img class="card__visual card__visual--image" src="{{ hero_image_url(article) }}" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      </figure>
 
       {% else %}
 
@@ -47,4 +49,3 @@
 </section>
 
 {% endif %}
-

@@ -4,7 +4,7 @@ brand:
   name_anatomy: "Anatomy"
   tagline: "Structured AI implementation for teams"
   site_url: "https://www.promptanatomy.blog"
-  description: "Prompt Anatomy helps teams turn random AI usage into structured workflows, policies, and implementation systems."
+  description: "Practical frameworks, templates, and field notes for teams building AI workflows they can actually repeat."
 
 hub:
   site_url: "https://www.promptanatomy.app"

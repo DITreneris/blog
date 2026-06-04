@@ -11,6 +11,7 @@ categories:
     description: "Agent design, orchestration, and business-ready automation."
     reading_path:
       - slug: how-to-design-an-ai-agent-workflow
+      - slug: from-prompt-to-agent
       - slug: data-boundaries-for-ai-agents
       - slug: ai-outreach-with-outlook-guardrails
       - slug: multi-agent-handoff-pattern
@@ -47,6 +48,15 @@ categories:
       - slug: your-company-does-not-need-more-ai-tools
       - slug: when-ai-hallucinates-confidence
       - slug: context-window-myths
+      - slug: five-levels-of-ai-control
+      - slug: what-scales-ai-beyond-basics
+      - slug: chaos-vs-control-prompting
+      - slug: three-types-of-rag
+      - slug: why-ai-hallucinates
+      - slug: tokens-and-context-window-limits
+      - slug: prompt-engineering-memes-vs-reality
+      - slug: what-your-ai-stack-reveals
+      - slug: three-types-of-ai-memory-short
   - title: "Framework"
     slug: "framework"
     description: "Original frameworks for predictable AI outcomes."

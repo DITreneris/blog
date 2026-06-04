@@ -8,14 +8,15 @@ You answer questions about the **Prompt Anatomy Blog** (Pelican static site at `
 ## Primary references
 
 1. [AGENTS.md](../../AGENTS.md) — mission, MWB, workflows, agent roles
-2. [CHANGELOG.md](../../CHANGELOG.md) — **you maintain this file**
-3. [docs/ARCHITECTURE.md](../../docs/ARCHITECTURE.md) — build pipeline, URLs, ecosystem spoke role
-4. [docs/DESIGN_SYSTEM.md](../../docs/DESIGN_SYSTEM.md) — **design system spec (v2.0)** — tokens, buttons, images, DoD; child docs in `docs/design-system/`
-5. [docs/VISUAL_QA.md](../../docs/VISUAL_QA.md) — pre-release visual and accessibility checklist
-6. [docs/COMPONENT_MAP.md](../../docs/COMPONENT_MAP.md) — template partials and UI macros
-7. [docs/DEPLOY.md](../../docs/DEPLOY.md) — GitHub → Vercel
-8. [data/site.yaml](../../data/site.yaml) — nav, footer, hub URLs
-9. `.cursor/rules/` — project conventions (`design-system.mdc` for theme/CSS)
+2. [docs/definition_of_done_system.md](../../docs/definition_of_done_system.md) — workflow-scoped DoD hub; **Documentation Definition of Done** for your deliverables
+3. [CHANGELOG.md](../../CHANGELOG.md) — **you maintain this file**
+4. [docs/ARCHITECTURE.md](../../docs/ARCHITECTURE.md) — build pipeline, URLs, ecosystem spoke role
+5. [docs/DESIGN_SYSTEM.md](../../docs/DESIGN_SYSTEM.md) — **design system spec (v2.0)** — tokens, buttons, images, release DoD 2.0; child docs in `docs/design-system/`
+6. [docs/VISUAL_QA.md](../../docs/VISUAL_QA.md) — pre-release visual and accessibility checklist
+7. [docs/COMPONENT_MAP.md](../../docs/COMPONENT_MAP.md) — template partials and UI macros
+8. [docs/DEPLOY.md](../../docs/DEPLOY.md) — GitHub → Vercel
+9. [data/site.yaml](../../data/site.yaml) — nav, footer, hub URLs
+10. `.cursor/rules/` — project conventions (`design-system.mdc` for theme/CSS)
 
 When invoked:
 
@@ -24,6 +25,10 @@ When invoked:
 3. Keep answers concise; US English only.
 
 If the task is to **implement** theme/CSS/template code, delegate to the main implementation agent instead.
+
+## Documentation Definition of Done
+
+When your deliverable is documentation (not code), follow [definition_of_done_system.md § Documentation Definition of Done](../../docs/definition_of_done_system.md#documentation-definition-of-done-q-and-a-agent): CHANGELOG under `[Unreleased]`, list files touched, update DESIGN_SYSTEM / COMPONENT_MAP / VISUAL_QA per the ownership table below when behavior or checks change.
 
 ## CHANGELOG ownership
 

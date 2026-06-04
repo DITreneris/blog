@@ -69,7 +69,9 @@ illustrations:
 
   # --- Basic (new posts) ---
   - id: basic-116
-    source: Basic/116_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/prompt-anatomy-foundations.png
     slug: prompt-anatomy-foundations
     title: "Prompt Anatomy Foundations"
     category: Framework
@@ -93,7 +95,9 @@ illustrations:
     status: merged
 
   - id: basic-128
-    source: Basic/128_Prompt_Anatomy.png
+    generator: satori
+    template: governance-eval-gates
+    source: Satori/evaluation-hooks-for-ai-workflows.png
     slug: evaluation-hooks-for-ai-workflows
     title: "Evaluation Hooks for AI Workflows"
     category: Framework
@@ -101,7 +105,9 @@ illustrations:
     status: mapped
 
   - id: basic-129
-    source: Basic/129_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/handoff-rules-between-humans-and-ai.png
     slug: handoff-rules-between-humans-and-ai
     title: "Handoff Rules Between Humans and AI"
     category: Implementation Notes
@@ -109,7 +115,9 @@ illustrations:
     status: mapped
 
   - id: basic-133
-    source: Basic/133_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/team-rituals-for-ai-implementation.png
     slug: team-rituals-for-ai-implementation
     title: "Team Rituals for AI Implementation"
     category: Implementation Notes
@@ -203,7 +211,9 @@ illustrations:
 
   # --- Governance (new posts) ---
   - id: gov-113
-    source: Governance/113_Prompt_Anatomy.png
+    generator: satori
+    template: governance-raci
+    source: Satori/ai-governance-roles-and-ownership.png
     slug: ai-governance-roles-and-ownership
     title: "AI Governance Roles and Ownership"
     category: AI Governance
@@ -211,7 +221,9 @@ illustrations:
     status: mapped
 
   - id: gov-114
-    source: Governance/114_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/ai-risk-review-cadence.png
     slug: ai-risk-review-cadence
     title: "AI Risk Review Cadence"
     category: AI Governance
@@ -219,7 +231,9 @@ illustrations:
     status: mapped
 
   - id: gov-123
-    source: Governance/123_Prompt_Anatomy.png
+    generator: satori
+    template: governance-audit-log
+    source: Satori/audit-trails-for-ai-workflows.png
     slug: audit-trails-for-ai-workflows
     title: "Audit Trails for AI Workflows"
     category: AI Governance
@@ -227,7 +241,9 @@ illustrations:
     status: mapped
 
   - id: gov-137
-    source: Governance/137_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/data-boundaries-for-ai-agents.png
     slug: data-boundaries-for-ai-agents
     title: "Data Boundaries for AI Agents"
     category: AI Governance
@@ -238,9 +254,9 @@ illustrations:
     source: Governance/From_prompt_to_agent.png
     slug: from-prompt-to-agent
     title: "From Prompt to Agent"
-    category: AI Governance
-    usage: [hero]
-    status: merged
+    category: AI Agents
+    usage: [hero, og]
+    status: mapped
 
   # --- Memes (new posts) ---
   - id: memes-103
@@ -256,7 +272,7 @@ illustrations:
     slug: prompt-engineering-memes-vs-reality
     title: "Prompt Engineering Memes vs Reality"
     category: Opinion
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: memes-exposes
@@ -264,8 +280,8 @@ illustrations:
     slug: what-your-ai-stack-reveals
     title: "What Your AI Stack Reveals"
     category: Opinion
-    usage: [hero]
-    status: merged
+    usage: [hero, og]
+    status: mapped
 
   - id: memes-context-window
     source: Memes/context_window (2).png
@@ -311,21 +327,11 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
-  - id: hub-hero
-    generator: satori
-    template: homepage-hero-frame
-    embed_source: h1.png
-    source: Satori/hub-hero.png
-    title: "Homepage hero — architecture diagram"
-    usage: [hub]
-    hub_asset: hero
-    status: mapped
-
   - id: hub-og
     generator: satori
     template: homepage-og
     source: Satori/hub-og.png
-    title: "Turn random AI usage into structured implementation"
+    title: "Build AI workflows your team can actually repeat"
     usage: [hub_og]
     hub_asset: og
     status: mapped
@@ -342,13 +348,80 @@ illustrations:
     replaces_stub: true
 
   - id: template-workflow-canvas
-    source: Basic/119_Prompt_Anatomy.png
+    generator: satori
+    template: category-default
+    source: Satori/ai-workflow-canvas-template.png
     slug: ai-workflow-canvas-template
     title: "AI Workflow Canvas (Template)"
     category: Templates
     usage: [hero, og]
     status: mapped
     replaces_stub: true
+
+  # --- Opinion: re-homed training-slide / meme art (v0.7.0) ---
+  - id: poster-five-levels-ai-control
+    source: Governance/113_Prompt_Anatomy.png
+    slug: five-levels-of-ai-control
+    title: "Five Levels of AI Control"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-scales-ai-beyond-basics
+    source: Governance/114_Prompt_Anatomy.png
+    slug: what-scales-ai-beyond-basics
+    title: "What Scales AI Beyond the Basics"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-three-types-rag
+    source: Governance/123_Prompt_Anatomy.png
+    slug: three-types-of-rag
+    title: "Three Types of RAG"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-why-ai-hallucinates
+    source: Governance/137_Prompt_Anatomy.png
+    slug: why-ai-hallucinates
+    title: "Why AI Hallucinates"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-chaos-vs-control
+    source: Basic/128_Prompt_Anatomy.png
+    slug: chaos-vs-control-prompting
+    title: "Chaos vs Control Prompting"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-context-window-limits
+    source: Basic/129_Prompt_Anatomy.png
+    slug: tokens-and-context-window-limits
+    title: "Tokens and Context Window Limits"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-tokens-as-fuel
+    source: Basic/133_Prompt_Anatomy.png
+    slug: tokens-as-fuel-for-ai-output
+    title: "Tokens as Fuel for AI Output"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
+  - id: poster-three-memory-types
+    source: Basic/116_Prompt_Anatomy.png
+    slug: three-types-of-ai-memory-short
+    title: "Three Types of AI Memory"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
 
 category_og:
   - id: cat-og-prompt-systems
@@ -418,7 +491,6 @@ category_og:
 
 hub_images:
   ecosystem: images/hub/ecosystem.png
-  hero: images/hub/hero.png
   og: images/hub/og.png
 
 topic_og_images:

@@ -45,6 +45,9 @@ On Windows without `make`, run the commands above in order (see [`docs/DEPLOY.md
 - [x] **v0.5.0 — Satori Phase 1:** five article heroes (1600×900), `og-default.png` (1200×630), `data/og/` pipeline, build wiring, docs.
 - [x] **v2.0.0 — Design System hardening (G.1–G.7):** related-heading a11y, `validate_brand_sync.py`, `validate_a11y_landmarks.py`, breakpoint/motion/measure tokens, `article_card()` macro, doc split under `docs/design-system/`, style guide parity, DS governance in [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md).
 - [x] **Start-here pillars:** `the-model-is-not-the-system`, `10-signs-your-company-is-vibe-prompting`, `how-to-design-an-ai-agent-workflow` — 1,200+ words, `hero_caption`, FAQ where required.
+- [x] **v0.7.0 — Meme + Satori content realignment:** playbook Satori heroes, 8 Opinion primers, cross-links, `CONTENT_STANDARDS` illustration-first rules.
+- [x] **v0.7.1 — Satori typography:** [`data/og/typography.mjs`](data/og/typography.mjs), hero/OG regen, `--only` / `--check` on generator.
+- [x] **v0.7.2 — Audit closure:** Opinion `reading_path` (12 slugs), weak primer inbound links, expanded `five-levels-of-ai-control`, `chaos-vs-control-prompting`, `three-types-of-rag`; VISUAL_QA sign-off row.
 
 ---
 

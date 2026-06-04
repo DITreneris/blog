@@ -1,5 +1,8 @@
 import { h } from '../jsx.mjs';
 import { brand, getCategoryStyle } from '../brand.mjs';
+import { typography, titleStyle, px } from '../typography.mjs';
+
+const { hero: hType, og: oType } = typography;
 
 /** Lightning bolt path from theme/promptanatomy/static/favicon.svg (scaled). */
 export function boltIcon(scale = 1) {
@@ -21,8 +24,9 @@ export function boltIcon(scale = 1) {
   );
 }
 
-export function categoryBadge(label, category) {
+export function categoryBadge(label, category, surface = 'hero') {
   const style = getCategoryStyle(category || label);
+  const badgeSize = surface === 'og' ? oType.badge : hType.badge;
   return h(
     'div',
     {
@@ -34,7 +38,7 @@ export function categoryBadge(label, category) {
         border: `1px solid ${style.accent}`,
         borderRadius: '6px',
         color: style.accent,
-        fontSize: '18px',
+        fontSize: px(badgeSize),
         fontWeight: 700,
         letterSpacing: '0.04em',
         textTransform: 'uppercase',
@@ -85,7 +89,7 @@ export function heroBackground(width, height) {
               display: 'flex',
               marginLeft: '16px',
               color: brand.colors.textOnDarkMuted,
-              fontSize: '20px',
+              fontSize: px(hType.brand),
               fontWeight: 400,
             },
           },
@@ -101,6 +105,7 @@ export function heroBackground(width, height) {
  * Title placed in vertical center third for OG crop safety.
  */
 export function articleHeroFrame({ category, title, subtitle, diagram }) {
+  const titleSx = titleStyle(title, hType.title);
   return h(
     'div',
     {
@@ -130,12 +135,12 @@ export function articleHeroFrame({ category, title, subtitle, diagram }) {
           style: {
             display: 'flex',
             flexDirection: 'column',
-            width: '520px',
+            width: `${hType.textColumnWidth}px`,
             justifyContent: 'center',
             paddingRight: '40px',
           },
         },
-        categoryBadge(category, category),
+        categoryBadge(category, category, 'hero'),
         h(
           'div',
           {
@@ -143,10 +148,7 @@ export function articleHeroFrame({ category, title, subtitle, diagram }) {
               display: 'flex',
               marginTop: '28px',
               color: brand.colors.textOnDark,
-              fontSize: '44px',
-              fontWeight: 700,
-              lineHeight: 1.15,
-              letterSpacing: '-0.02em',
+              ...titleSx,
             },
           },
           title
@@ -159,7 +161,7 @@ export function articleHeroFrame({ category, title, subtitle, diagram }) {
                   display: 'flex',
                   marginTop: '20px',
                   color: brand.colors.textOnDarkMuted,
-                  fontSize: '22px',
+                  fontSize: px(hType.subtitle),
                   fontWeight: 400,
                   lineHeight: 1.4,
                 },
@@ -220,7 +222,7 @@ export function labelText(text, muted = false) {
       style: {
         display: 'flex',
         color: muted ? brand.colors.textOnDarkMuted : brand.colors.textOnDark,
-        fontSize: '16px',
+        fontSize: px(hType.label),
         fontWeight: muted ? 400 : 600,
         marginBottom: '8px',
       },
@@ -233,6 +235,7 @@ export function labelText(text, muted = false) {
 export function categoryDefaultDiagram(category) {
   const style = getCategoryStyle(category);
   const cells = ['Input', 'Context', 'Model', 'Output', 'Eval', 'Gate'];
+  const d = hType.diagram;
   return h(
     'div',
     {
@@ -262,7 +265,7 @@ export function categoryDefaultDiagram(category) {
               style: {
                 display: 'flex',
                 color: style.accent,
-                fontSize: '14px',
+                fontSize: px(d.label),
                 fontWeight: 700,
                 marginBottom: '6px',
               },
@@ -270,7 +273,7 @@ export function categoryDefaultDiagram(category) {
             label
           )
         ),
-        { padding: '16px 12px' }
+        { padding: '18px 14px' }
       )
     )
   );
@@ -278,6 +281,7 @@ export function categoryDefaultDiagram(category) {
 
 /** Compact 1200×630 OG layout — title card without side diagram. */
 export function articleOgFrame({ category, title, subtitle }) {
+  const titleSx = titleStyle(title, oType.title);
   return h(
     'div',
     {
@@ -308,7 +312,7 @@ export function articleOgFrame({ category, title, subtitle }) {
             display: 'flex',
             marginLeft: '16px',
             color: brand.colors.textOnDarkMuted,
-            fontSize: '18px',
+            fontSize: px(oType.brand),
           },
         },
         brand.name
@@ -325,7 +329,7 @@ export function articleOgFrame({ category, title, subtitle }) {
           maxWidth: '900px',
         },
       },
-      categoryBadge(category, category),
+      categoryBadge(category, category, 'og'),
       h(
         'div',
         {
@@ -333,10 +337,7 @@ export function articleOgFrame({ category, title, subtitle }) {
             display: 'flex',
             marginTop: '24px',
             color: brand.colors.textOnDark,
-            fontSize: '52px',
-            fontWeight: 700,
-            lineHeight: 1.12,
-            letterSpacing: '-0.02em',
+            ...titleSx,
           },
         },
         title
@@ -349,7 +350,7 @@ export function articleOgFrame({ category, title, subtitle }) {
                 display: 'flex',
                 marginTop: '16px',
                 color: brand.colors.textOnDarkMuted,
-                fontSize: '22px',
+                fontSize: px(oType.subtitle),
                 lineHeight: 1.35,
               },
             },

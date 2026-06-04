@@ -23,7 +23,6 @@ START_HERE_OG_SLUGS = (
 REQUIRED = [
     OUTPUT / "static" / "img" / "og-default.png",
     OUTPUT / "static" / "favicon-32x32.png",
-    OUTPUT / "images" / "hub" / "hero.png",
     OUTPUT / "images" / "hub" / "ecosystem.png",
     OUTPUT / "images" / "hub" / "og.png",
     OUTPUT / "images" / "articles" / "the-model-is-not-the-system" / "hero.png",

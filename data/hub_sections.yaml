@@ -1,17 +1,40 @@
 hero:
-  headline: "Turn random AI usage into structured implementation"
-  subhead: "Field notes, frameworks, templates, and case studies for teams that want predictable AI workflows—not random prompting."
+  headline: "Build AI workflows your team can actually repeat"
+  subhead: "Practical frameworks, templates, and field notes for moving from random prompting to structured AI implementation."
   methodology: "Prompts → Workflows → Agents → Business Outcomes"
-  image: images/hub/hero.png
-  image_alt: "Diagram of AI quality layers—input, reasoning, output, meta, quality, and advanced—around a central workflow hub."
+  visual: diagram
+  diagram:
+    label: "AI Workflow Architecture"
+    caption: "From scattered prompts to repeatable systems"
+    center: "Prompt Anatomy"
+    nodes:
+      - id: input
+        label: Input
+        position: top-left
+      - id: context
+        label: Context
+        position: top
+      - id: reasoning
+        label: Reasoning
+        position: top-right
+      - id: quality
+        label: Quality
+        position: bottom-right
+      - id: output
+        label: Output
+        position: bottom
+      - id: workflow
+        label: Workflow
+        position: bottom-left
+  image_alt: "AI workflow architecture diagram: six modules around Prompt Anatomy—Input, Context, Reasoning, Quality, Output, Workflow."
   cta_primary:
-    label: "Start here"
-    href: "/#start-here"
+    label: "Start with frameworks"
+    href: "/topics/framework/"
     external: false
   cta_secondary:
-    label: "Training"
-    href: "https://www.promptanatomy.app/"
-    external: true
+    label: "Explore articles"
+    href: "/#latest"
+    external: false
 
 start_here:
   title: "Start here"
@@ -37,7 +60,7 @@ templates:
   cta_href: "/topics/templates/"
 
 featured:
-  title: "Featured"
+  title: ""
   lead: "Anchor framework for the system around the model—workflow, context, evaluation, and governance."
   cta_label: "Read the framework"
 

@@ -64,7 +64,20 @@ Use this when a slug is thin, duplicated, or superseded. Set `body_locked: true`
 | **Publish** | Unique playbook value; meets tier word mins and validator gates | `status: published`; full frontmatter | Prose-first per article brief above |
 | **Kill (manifest)** | Same as merge redirect | Set `status: merged` in [`data/illustrations.yaml`](../data/illustrations.yaml) for the row | — |
 
-**Examples (v0.6.1):** bot stubs → merge redirect to agent/governance playbooks; `what-your-ai-stack-reveals` → tools pillar; `prompt-anatomy-framework-overview` → foundations nav; `prompt-engineering-memes-vs-reality` → keep draft redirect (memes hero retained per Phase C.3).
+**Examples (v0.6.1):** bot stubs → merge redirect to agent/governance playbooks; `prompt-anatomy-framework-overview` → foundations nav.
+
+## Illustration-first vs caption-first (v0.7.0)
+
+Two tracks—do not put training-slide or meme PNGs on playbooks when the headline does not match the article H1.
+
+| Track | Hero source | Article shape |
+|-------|-------------|---------------|
+| **Illustration-first** | Hand PNG in `Memes/`, `Basic/`, `Governance/` (re-homed) | **Opinion** or short diagnostic; `content_tier: opinion`; body written from what the image actually says (~600+ words); `hero_caption` describes the figure, not a future playbook |
+| **Caption-first** | **Satori** (`governance-raci`, `governance-audit-log`, `governance-eval-gates`, or `category-default`) | Playbooks and templates; keep existing body; `hero_caption` states the operational diagram |
+
+**Manifest rule:** one slug per hero intent in [`data/illustrations.yaml`](../data/illustrations.yaml). When moving art off a playbook, add a new Opinion row with the original `source` path, switch the playbook row to `generator: satori`, then `npm run build:satori` and `make sync-images`.
+
+**Do not** rewrite a RACI or audit playbook to teach unrelated poster content (e.g. “five levels of AI control”)—publish a short Opinion primer and link from the playbook intro instead.
 
 ## Categories
 

@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
-date: 2026-05-28
+date: 2026-08-29
 hero_image: images/articles/ai-bot-for-research-scraping/hero.png
 key_takeaway: Research agents need data boundaries and context architecture—see the governance playbooks.
 reading_time: 1 min read

@@ -10,12 +10,73 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- **[`docs/definition_of_done_system.md`](docs/definition_of_done_system.md)** — workflow-scoped completion hub (matrix, validator catalog, evidence format, rationalizations); links to Design System DoD 2.0 without duplicating it.
+
+### Changed
+
+- **[`AGENTS.md`](AGENTS.md)**, **[`README.md`](README.md)**, **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)**, **[`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md)** — cross-links and per-workflow **Done when** lines pointing at the DoD hub.
+- **Article publish dates:** replaced bulk `2026-05-28` / `modified: 2026-06-04` frontmatter with a curriculum-ordered timeline from **2024-01-06** (~21–24 day cadence, jittered) across all 46 posts in `content/articles/`; published catalog spans **2024-01-06 → 2026-04-17**; drafts continue after that. Removed fake same-day `modified` except on four pillar posts (plausible refresh ~10–13 weeks after publish). Re-run via [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py) (`PUBLICATION_ORDER`, `INTERVAL_DAYS`).
+
+## [0.7.2] - 2026-06-04 — Content–illustration audit closure
+
+### Changed
+
+- **Opinion reading path:** 12 curated slugs in [`data/categories.yaml`](data/categories.yaml) — added `what-scales-ai-beyond-basics`, `three-types-of-rag`, `tokens-and-context-window-limits`, `three-types-of-ai-memory-short`.
+- **Playbook → primer links:** inbound links from [`how-to-design-an-ai-agent-workflow`](content/articles/how-to-design-an-ai-agent-workflow.md), [`memory-types-for-ai-systems`](content/articles/memory-types-for-ai-systems.md), [`prompt-anatomy-foundations`](content/articles/prompt-anatomy-foundations.md).
+- **Editorial depth:** expanded [`five-levels-of-ai-control`](content/articles/five-levels-of-ai-control.md), [`chaos-vs-control-prompting`](content/articles/chaos-vs-control-prompting.md), [`three-types-of-rag`](content/articles/three-types-of-rag.md) for Standard-tier rhythm (post–v0.7.0 illustration-first primers).
+
+## [0.7.1] - 2026-06-04 — Satori typography scale
+
+### Added
+
+- **Central typography scale:** [`data/og/typography.mjs`](data/og/typography.mjs) — hero/OG font sizes, `titleStyle()` for long titles (up to 3 lines), subtitle caps (hero 100 / OG 72 chars).
+
+### Changed
+
+- **Satori templates:** [`base.mjs`](data/og/templates/base.mjs) and bespoke governance/agent templates use shared scale (hero title 52px, OG title 58px, diagram labels ≥16px).
+- **Generator:** [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs) — per-surface subtitle truncation, `--only hero|og`, `--check`, dry-run metadata; Windows note in [`data/01_illustrations/README.md`](data/01_illustrations/README.md).
+- **Regenerated assets:** all Satori heroes (~14) and article/topic OG cards (`--only hero` + `--only og`); synced via `sync_illustrations.py`.
+
+## [0.7.0] - 2026-06-04 — Meme + Satori content realignment
+
+### Added
+
+- **Satori governance templates:** [`governance-raci.mjs`](data/og/templates/governance-raci.mjs), [`governance-audit-log.mjs`](data/og/templates/governance-audit-log.mjs), [`governance-eval-gates.mjs`](data/og/templates/governance-eval-gates.mjs) — registered in [`data/og/templates/index.mjs`](data/og/templates/index.mjs).
+- **Eight Opinion primers** (illustration-first, re-homed PNGs): `five-levels-of-ai-control`, `what-scales-ai-beyond-basics`, `three-types-of-rag`, `why-ai-hallucinates`, `chaos-vs-control-prompting`, `tokens-and-context-window-limits`, `tokens-as-fuel-for-ai-output`, `three-types-of-ai-memory-short`.
+- **Published meme-backed articles:** [`prompt-engineering-memes-vs-reality`](content/articles/prompt-engineering-memes-vs-reality.md), [`what-your-ai-stack-reveals`](content/articles/what-your-ai-stack-reveals.md), [`from-prompt-to-agent`](content/articles/from-prompt-to-agent.md).
+
+### Changed
+
+- **Playbook heroes → Satori** (9 slugs): governance roles (RACI), audit trails, eval hooks, risk cadence, data boundaries, handoffs, team rituals, workflow canvas template, foundations nav — wrong training-slide PNGs moved to Opinion slugs in [`data/illustrations.yaml`](data/illustrations.yaml).
+- **Partial caption/intro bridges:** vibe-prompting, tools opinion, prompt vs workflow, types of prompts (two taxonomies), maturity ladder, hallucinates-confidence.
+- **Playbook cross-links** to new Opinion primers; Opinion and AI Agents [`reading_path`](data/categories.yaml) updated.
+- **Docs:** [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) — illustration-first vs caption-first rules.
+
+## [Unreleased]
+
+### Added
+
+- **Native hub hero diagram:** [`partials/hero_architecture_diagram.html`](theme/promptanatomy/templates/partials/hero_architecture_diagram.html) — six-node SVG card (Input, Context, Reasoning, Quality, Output, Workflow) driven by `hero.diagram` in [`data/hub_sections.yaml`](data/hub_sections.yaml); wired from [`blog_hero.html`](theme/promptanatomy/templates/partials/blog_hero.html) when `hero.visual: diagram`.
+- **Hero depth tokens:** `--color-hero-bg`, `--color-hero-diagram-glow`, `--color-hero-diagram-surface`, `--color-hero-diagram-border`, `--shadow-hero-diagram`, `--radius-hero-diagram` in [`tokens.css`](theme/promptanatomy/static/css/tokens.css); styles in [`components.css`](theme/promptanatomy/static/css/components.css) including `@media (prefers-reduced-transparency: reduce)` for header and diagram card.
+- **Style guide:** hero architecture diagram sample on `/design-system/`.
+- **Ecosystem play spokes:** eight `promptanatomy.lol` cards in [`data/ecosystem.yaml`](data/ecosystem.yaml) (Corporate Ladder live; seven placeholder paths for upcoming games), each with a distinct `icon` glyph.
+- **Field Notes spoke:** new ecosystem card → `promptanatomy.blog/#start-here` after Knowledge Hub moved to `.app`.
 - **Definition of Done (2.0) release contract:** 10-section checklist with `(CI)`, `(QA)`, and `(Major)` labels in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md); cross-links to [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) and [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
 
 ### Changed
 
+- **Homepage featured card (premium pass):** `.stack` / `.card--has-visual` `align-items: flex-start`; compact badges and CTAs; `--text-featured-title`, gold badge on `.card--featured`, `.card__visual-frame`, tighter padding; `hub_sections.featured.title` cleared (lead-only section `h2`); softer `--color-cta-gradient` / `--color-cta-shadow`; style guide featured sample; docs in `DESIGN_SYSTEM.md`, `VISUAL_QA.md`, `COMPONENTS.md`.
+- **Homepage hero copy and CTAs:** headline *Build AI workflows your team can actually repeat*; primary CTA → `/topics/framework/`; secondary → `/#latest` ([`data/hub_sections.yaml`](data/hub_sections.yaml)).
+- **Homepage hero visual:** retired in-page Satori `hub-hero` composite ([`homepage-hero-frame`](data/og/templates/homepage-hero-frame.mjs) + `h1.png`); social sharing unchanged via Satori [`homepage-og`](data/og/templates/homepage-og.mjs) → `images/hub/og.png` (regenerated with new headline).
+- **Illustration manifest:** removed `hub-hero` row and `hub_images.hero` from [`data/illustrations.yaml`](data/illustrations.yaml); [`verify_build_assets.py`](scripts/verify_build_assets.py) no longer requires `output/images/hub/hero.png`.
+- **Brand description:** [`data/site.yaml`](data/site.yaml) aligned with new hero message.
+- **Docs:** [`COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`design-system/LAYOUT.md`](docs/design-system/LAYOUT.md), [`VISUAL_QA.md`](docs/VISUAL_QA.md), [`BRAND_EXCEPTIONS.md`](docs/design-system/BRAND_EXCEPTIONS.md) — native diagram vs Satori OG split; `h1.png` noted as archive-only in [`data/01_illustrations/README.md`](data/01_illustrations/README.md).
+- **Knowledge Hub URL:** ecosystem card now points to [`promptanatomy.app`](https://www.promptanatomy.app/) (was blog `#start-here`); outcome copy updated.
+- **Ecosystem card icons:** optional `icon` field in [`data/ecosystem.yaml`](data/ecosystem.yaml); [`ecosystem_spoke.html`](theme/promptanatomy/templates/partials/ecosystem_spoke.html) renders per-card glyphs (default `◆`).
+- **[`prompt-anatomy-ecosystem-map.md`](content/articles/prompt-anatomy-ecosystem-map.md):** `.lol` play row; Knowledge Hub vs blog roles aligned with homepage cards.
 - [`todo.md`](todo.md) baseline updated — v2.0.0 live on production; G.7.5 complete.
 - [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) sign-off — production OG smoke + breakpoint QA row for v2.0.0.
+
 ## [2.0.0] - 2026-06-04 — Design System hardening (G.1–G.7)
 
 ### Added

@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-06-11
 hero_image: images/articles/evaluation-hooks-for-ai-workflows/hero.png
 hero_caption: "Eval gates — smoke, pilot, and scale checkpoints before workflow changes reach production."
 key_takeaway: Treat eval sets like unit tests for workflows—run them before every prompt, context, or model change.
@@ -22,7 +21,7 @@ faq:
 
 Teams scale AI on anecdotes until a bad output reaches a customer. A fluent draft in a demo is not evidence; neither is "the team loves it." **Evaluation hooks** are pass/fail gates—like unit tests for workflows—run before prompt, context, model, or connector changes promote to production. They sit in the implementation stack **below** celebration of a new model and **above** hope that reviewers catch everything manually.
 
-If your organization buys faster models while eval is optional, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines where eval fits, how to structure smoke / pilot / scale gates, how Northline B2B runs cases for `support-reply-v3`, and how to turn near-misses into new cases within a week.
+If your organization buys faster models while eval is optional, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines where eval fits, how to structure smoke / pilot / scale gates, how Northline B2B runs cases for `support-reply-v3`, and how to turn near-misses into new cases within a week. If prompts are still chaotic, fix input structure first — [Chaos vs Control Prompting](/articles/chaos-vs-control-prompting/).
 
 ## Where eval sits in the stack
 

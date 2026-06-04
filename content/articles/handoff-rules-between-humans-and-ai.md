@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-02-15
 hero_image: images/articles/handoff-rules-between-humans-and-ai/hero.png
 hero_caption: "Explicit triggers and owners for when AI drafts, when humans decide, and when work returns to the queue."
 key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process design.
@@ -16,7 +15,7 @@ title: Handoff Rules Between Humans and AI
 
 Blurry handoffs create silent risk: the model assumed someone would check; the human assumed the model was sure; the queue shows "waiting on AI" while customers wait. Handoff rules are the same discipline you use between shifts in operations—**triggers, owners, SLAs, and evidence**—not hope that reviewers "usually catch issues."
 
-Define rules per workflow ID on the [workflow canvas](/articles/ai-workflow-canvas-template/), log reasons in [audit trails](/articles/audit-trails-for-ai-workflows/), and review overrides in [risk forum](/articles/ai-risk-review-cadence/). Agent orchestration from [multi-agent handoff pattern](/articles/multi-agent-handoff-pattern/) still ends in human gates for customer commitments in v1.
+Define rules per workflow ID on the [workflow canvas](/articles/ai-workflow-canvas-template/), log reasons in [audit trails](/articles/audit-trails-for-ai-workflows/), and review overrides in [risk forum](/articles/ai-risk-review-cadence/). Agent orchestration from [multi-agent handoff pattern](/articles/multi-agent-handoff-pattern/) still ends in human gates for customer commitments in v1. Context overflow often breaks handoffs silently — see [Tokens and Context Window Limits](/articles/tokens-and-context-window-limits/).
 
 ## Why explicit triggers beat generic "human in the loop"
 

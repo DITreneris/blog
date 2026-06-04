@@ -2,10 +2,9 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
-date: 2026-05-05
-modified: 2026-06-04
+date: 2024-02-21
 hero_image: images/articles/prompt-engineering-vs-ai-workflow-engineering/hero.png
-hero_caption: "One interaction optimized versus the full path from business intent to a verified outcome."
+hero_caption: "Chat (one-shot answer) versus Deep Research (plan, search, analyze, report) — same model, different system path."
 key_takeaway: When quality varies by user but not by task, invest in workflow design before longer system prompts.
 reading_time: 5 min read
 slug: prompt-engineering-vs-ai-workflow-engineering

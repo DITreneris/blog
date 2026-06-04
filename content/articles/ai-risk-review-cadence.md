@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-07-21
 hero_image: images/articles/ai-risk-review-cadence/hero.png
 hero_caption: "Standing risk forum — incidents, eval regressions, and workflow changes on a fixed agenda."
 key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses, and workflow changes on the agenda.
@@ -17,7 +16,7 @@ title: AI Risk Review Cadence
 
 AI risk does not wait for annual audits. Models, prompts, and connectors change monthly; customer contracts still require explainability and retention. A **light, recurring forum** keeps workflows aligned with policy as the stack evolves. Skipping cadence turns governance into cleanup after incidents—and cleanup without minutes is storytelling, not operations.
 
-**Northline B2B** runs a monthly forum for live workflows including `support-reply-v3`. This article defines cadence, standing agenda, who attends, what outputs must exist, and includes sample minutes you can paste into a wiki. Pair with [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [data boundaries](/articles/data-boundaries-for-ai-agents/) so meetings change process, not only slide decks.
+**Northline B2B** runs a monthly forum for live workflows including `support-reply-v3`. This article defines cadence, standing agenda, who attends, what outputs must exist, and includes sample minutes you can paste into a wiki. Pair with [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [data boundaries](/articles/data-boundaries-for-ai-agents/) so meetings change process, not only slide decks. For skills that actually scale beyond chat basics, see [What Scales AI Beyond the Basics](/articles/what-scales-ai-beyond-basics/).
 
 ## Choosing cadence and duration
 

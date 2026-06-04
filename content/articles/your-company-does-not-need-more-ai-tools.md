@@ -3,10 +3,9 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-05-22
-modified: 2026-06-04
+date: 2024-09-09
 hero_image: images/articles/your-company-does-not-need-more-ai-tools/hero.png
-hero_caption: "Tool sprawl diagnostic — structure compounds; more subscriptions multiply variance."
+hero_caption: "Mirror visual — you do not use AI; ungoverned tools and feeds use your team's attention without a owned workflow."
 key_takeaway: Freeze tool sprawl until one workflow is documented, owned, measured, and governed end to end.
 reading_time: 5 min read
 slug: your-company-does-not-need-more-ai-tools

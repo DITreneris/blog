@@ -9,7 +9,7 @@ CSS: [`layout.css`](../../theme/promptanatomy/static/css/layout.css), [`componen
 | `.container` | Centered max `--container-max` (75rem) |
 | `.section` / `.section--dark` | Vertical padding; dark bands |
 | `.grid`, `.grid--2`, `.grid--3`, `.grid--topics` | Responsive grids |
-| `.stack`, `.cluster` | Flex gaps |
+| `.stack`, `.cluster` | Flex gaps; `.stack` uses `align-items: flex-start` (badges/buttons stay content-width) |
 | `.article-layout`, `.article-layout--with-toc` | Article + TOC |
 
 ## Breakpoints
@@ -24,4 +24,4 @@ See [TOKENS.md](TOKENS.md). Verify at **375px**, **768px**, **1280px** per [`VIS
 
 ## Hub hero
 
-Split grid at ≥ `--bp-nav`: copy left, diagram right. Hub image uses explicit `width`/`height` on `<img>` to limit CLS.
+Split grid at ≥ `--bp-nav` (1.05fr / 0.95fr): copy left, native architecture diagram right (`partials/hero_architecture_diagram.html`). Hero band uses `--color-hero-bg` layered gradients. Diagram card max ~34rem; stacks below copy on mobile. Fallback: `hero.image` `<img>` when `visual` is not `diagram`. Social OG: `images/hub/og.png` (Satori), not the in-page diagram.

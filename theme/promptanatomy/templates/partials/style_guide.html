@@ -136,6 +136,22 @@
 
 
 
+<section class="section section--dark hero" aria-labelledby="sg-hero-diagram-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Hero architecture diagram', 'Native SVG hub visual — same partial as homepage.', 'sg-hero-diagram-heading') }}
+
+    <div style="max-width:34rem;margin-inline:auto;width:100%;">
+      {% include 'partials/hero_architecture_diagram.html' %}
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <section class="section" aria-labelledby="sg-card-heading">
 
   <div class="container">
@@ -234,6 +250,43 @@
 
 
 
+<section class="section" aria-labelledby="sg-featured-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Featured card', 'Homepage flagship for the article with featured: true — compact badge and CTA, editorial title scale.', 'sg-featured-card-heading') }}
+
+    {% set sg_cat = namespace(name='Framework', url='topics/framework/') %}
+    {% set sg_featured = namespace(title='The Model Is Not the System', summary='Teams fail when chat is the product. This framework maps the system around the model—workflow, context, evaluation, and governance.', url='articles/the-model-is-not-the-system/', hero_image='images/articles/the-model-is-not-the-system/hero.png', category=sg_cat, reading_time='8 min read', date=none, modified=none) %}
+
+    <article class="card card--featured">
+
+      <div class="stack">
+
+        {{ category_badge(sg_featured.category, '/' ~ sg_featured.category.url) }}
+
+        <h2 class="card__title">{{ sg_featured.title }}</h2>
+
+        <p class="card__desc">{{ sg_featured.summary }}</p>
+
+        {{ meta_line(sg_featured) }}
+
+        {{ btn('/' ~ sg_featured.url, 'Read the framework') }}
+
+      </div>
+
+      <figure class="card__visual-frame">
+        <img class="card__visual card__visual--image" src="/{{ sg_featured.hero_image }}" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      </figure>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
 <section class="section" aria-labelledby="sg-topic-card-heading">
 
   <div class="container">
@@ -269,9 +322,15 @@
     <div class="ecosystem__grid">
 
       <a class="ecosystem-card" href="#" rel="noopener noreferrer" target="_blank">
-        <div class="ecosystem-card__icon ecosystem-card__icon--2" aria-hidden="true">&#9670;</div>
+        <div class="ecosystem-card__icon ecosystem-card__icon--2" aria-hidden="true">◆</div>
         <h3 class="ecosystem-card__title">Knowledge Hub<span class="sr-only"> (opens in new tab)</span></h3>
-        <p class="ecosystem-card__outcome">Learn — frameworks and field notes on this blog.</p>
+        <p class="ecosystem-card__outcome">Learn — training, methodology, and the AI operating system.</p>
+      </a>
+
+      <a class="ecosystem-card" href="#" rel="noopener noreferrer" target="_blank">
+        <div class="ecosystem-card__icon ecosystem-card__icon--1" aria-hidden="true">▲</div>
+        <h3 class="ecosystem-card__title">Corporate Ladder<span class="sr-only"> (opens in new tab)</span></h3>
+        <p class="ecosystem-card__outcome">Play — satirical office climb in Telegram.</p>
       </a>
 
     </div>

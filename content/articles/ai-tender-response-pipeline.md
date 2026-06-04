@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-12-31
 hero_image: images/articles/ai-tender-response-pipeline/hero.png
 hero_caption: "Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory legal assembly gate."
 key_takeaway: Tender AI works when only approved content enters drafts and legal sign-off stays mandatory.

@@ -56,9 +56,17 @@
 
 {% macro section_heading(title, lead=None, heading_id=None) %}
 
+  {% if title %}
+
   <h2 class="section-title"{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ title }}</h2>
 
   {% if lead %}<p class="section-lead">{{ lead }}</p>{% endif %}
+
+  {% elif lead %}
+
+  <h2 class="section-title"{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ lead }}</h2>
+
+  {% endif %}
 
 {% endmacro %}
 

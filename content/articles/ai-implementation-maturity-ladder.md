@@ -2,8 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
-date: 2026-05-28
-modified: 2026-06-04
+date: 2024-07-04
 hero_image: images/articles/ai-implementation-maturity-ladder/hero.png
 hero_caption: "Five stages from ad hoc chat to governed operations—know your level before buying more tools."
 key_takeaway: Know your level, pick one maturity jump, and measure it—do not skip governance while scaling tools.
@@ -22,6 +21,8 @@ faq:
 Teams improve AI outcomes faster when they know **where they are** and what the next level requires—not when they buy another copilot. Skipping levels is tempting: leadership wants "Level 5 analytics" while the organization is still at ad hoc chat with no shared eval. The result is expensive tools on top of vibe prompting, then a board question you cannot answer with metrics.
 
 This ladder names five levels, gives honest self-checks, and proposes one **90-day jump** at a time. Use it with [10 signs your company is vibe prompting](/articles/10-signs-your-company-is-vibe-prompting/) for diagnosis and [governance roles](/articles/ai-governance-roles-and-ownership/) when you reach governed scale. If you are debating another model purchase while at Level 1, read [your company does not need more AI tools](/articles/your-company-does-not-need-more-ai-tools/) before the invoice is approved.
+
+The hero diagram shows a related idea at **prompt-input** maturity (primitive vs structured prompts producing inconsistent vs predictable outputs). That is not the same as **organizational** maturity in the table below—but teams at Level 1 often confuse better wording with a better system. Use the ladder for org artifacts (owners, eval, logs); use [Chaos vs Control Prompting](/articles/chaos-vs-control-prompting/) when the gap is input design.
 
 ## How to assess honestly
 

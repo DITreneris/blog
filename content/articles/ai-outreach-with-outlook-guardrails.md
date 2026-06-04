@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-05-28
-modified: 2026-06-04
+date: 2025-01-22
 hero_image: images/articles/ai-outreach-with-outlook-guardrails/hero.png
 hero_caption: "Outlook draft-and-review flow — shared mailbox, human send, rate caps, and approved snippets only."
 key_takeaway: Outreach AI belongs in draft-and-review mode with caps, opt-out respect, and brand-approved snippets.

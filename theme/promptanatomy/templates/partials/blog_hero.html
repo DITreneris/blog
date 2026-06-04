@@ -21,7 +21,11 @@
         ) }}
       </div>
     </div>
-    {% if HUB_SECTIONS.hero.image %}
+    {% if HUB_SECTIONS.hero.visual == 'diagram' %}
+    <div class="hero__visual-wrap">
+      {% include 'partials/hero_architecture_diagram.html' %}
+    </div>
+    {% elif HUB_SECTIONS.hero.image %}
     <div class="hero__visual-wrap">
       <img class="hero__visual" src="/{{ HUB_SECTIONS.hero.image }}" alt="{{ HUB_SECTIONS.hero.image_alt|default('') }}" width="1200" height="1200" loading="eager" decoding="async" />
     </div>

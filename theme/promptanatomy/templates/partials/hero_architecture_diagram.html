@@ -1,0 +1,37 @@
+{% set diagram = HUB_SECTIONS.hero.diagram %}
+{% set alt = HUB_SECTIONS.hero.image_alt|default('') %}
+
+<figure class="hero-diagram" aria-labelledby="hero-diagram-title">
+  <div class="hero-diagram__card">
+    <p id="hero-diagram-title" class="hero-diagram__label">{{ diagram.label }}</p>
+    <div class="hero-diagram__canvas" role="img" aria-label="{{ alt }}">
+      <svg class="hero-diagram__connectors" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+        <g class="hero-diagram__lines" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35">
+          <line x1="200" y1="200" x2="200" y2="52" />
+          <line x1="200" y1="200" x2="318" y2="108" />
+          <line x1="200" y1="200" x2="318" y2="292" />
+          <line x1="200" y1="200" x2="200" y2="348" />
+          <line x1="200" y1="200" x2="82" y2="292" />
+          <line x1="200" y1="200" x2="82" y2="108" />
+        </g>
+      </svg>
+      <div class="hero-diagram__glow" aria-hidden="true"></div>
+      <div class="hero-diagram__node hero-diagram__node--center">
+        <span class="hero-diagram__bolt" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" focusable="false">
+            <path fill="currentColor" d="M13.5 1.5 4.5 14.25h6L8.25 22.5 19.5 9.75h-6L13.5 1.5z"/>
+          </svg>
+        </span>
+        <span class="hero-diagram__node-label">{{ diagram.center }}</span>
+      </div>
+      {% for node in diagram.nodes %}
+      <div class="hero-diagram__node hero-diagram__node--{{ node.position }}">
+        <span class="hero-diagram__node-label">{{ node.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% if diagram.caption %}
+    <figcaption class="hero-diagram__caption">{{ diagram.caption }}</figcaption>
+    {% endif %}
+  </div>
+</figure>

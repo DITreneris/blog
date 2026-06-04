@@ -1,7 +1,7 @@
 title: "Hub: choose your direction"
-paragraph: "One AI operating system for learning, daily work, automation, marketing, HR, operations, and decisions."
+paragraph: "One AI operating system for learning, daily work, automation, marketing, HR, operations, decisions, and play."
 image: images/hub/ecosystem.png
-image_alt: "Hub-and-spoke diagram of the Prompt Anatomy ecosystem—promptanatomy.app at the center with spokes for learning, workflows, marketing, HR, operations, and decisions."
+image_alt: "Hub-and-spoke diagram of the Prompt Anatomy ecosystem—promptanatomy.app at the center with spokes for learning, workflows, marketing, HR, operations, decisions, and play on promptanatomy.lol."
 cta_label: "Plans and access"
 cta_href: "https://www.promptanatomy.app/#pricing"
 cards:
@@ -10,7 +10,11 @@ cards:
     url: "https://www.promptanatomy.cloud/"
     theme: 3
   - title: "Knowledge Hub"
-    outcome: "Learn — frameworks, field notes, and templates on this blog."
+    outcome: "Learn — training, methodology, and the AI operating system."
+    url: "https://www.promptanatomy.app/"
+    theme: 2
+  - title: "Field Notes"
+    outcome: "Read — frameworks, field notes, and templates on this blog."
     url: "https://www.promptanatomy.blog/#start-here"
     theme: 2
   - title: "Daily Workflow Library"
@@ -33,3 +37,43 @@ cards:
     outcome: "Decide — scaling frameworks and decision support."
     url: "https://www.promptanatomy.pro/"
     theme: 4
+  - title: "Corporate Ladder"
+    outcome: "Play — satirical office climb in Telegram."
+    url: "https://www.promptanatomy.lol/"
+    theme: 1
+    icon: "▲"
+  - title: "Prompt Pyramid"
+    outcome: "Play — climb levels by completing prompt fragments."
+    url: "https://www.promptanatomy.lol/pyramid"
+    theme: 2
+    icon: "△"
+  - title: "Prompt Duel"
+    outcome: "Play — head-to-head prompt battles."
+    url: "https://www.promptanatomy.lol/duel"
+    theme: 3
+    icon: "⚔"
+  - title: "Prompt Riddle"
+    outcome: "Play — uncover secrets with minimal prompts."
+    url: "https://www.promptanatomy.lol/riddle"
+    theme: 4
+    icon: "?"
+  - title: "Visual Match"
+    outcome: "Play — match images to the winning prompt."
+    url: "https://www.promptanatomy.lol/visual-match"
+    theme: 1
+    icon: "◎"
+  - title: "Speed Round"
+    outcome: "Play — beat the clock on tight prompts."
+    url: "https://www.promptanatomy.lol/speed"
+    theme: 3
+    icon: "⏱"
+  - title: "Party Mode"
+    outcome: "Play — multiplayer prompt party games."
+    url: "https://www.promptanatomy.lol/party"
+    theme: 2
+    icon: "☺"
+  - title: "Daily Challenge"
+    outcome: "Play — one shared prompt challenge per day."
+    url: "https://www.promptanatomy.lol/daily"
+    theme: 4
+    icon: "★"

@@ -1,6 +1,9 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
+import { typography, px } from '../typography.mjs';
 import { articleHeroFrame, panelBox, labelText } from './base.mjs';
+
+const d = typography.hero.diagram;
 
 const ROWS = [
   ['prompt_id', 'support-reply-v3/task'],
@@ -41,7 +44,7 @@ export function buildPromptRegistry(props) {
               style: {
                 display: 'flex',
                 color: brand.colors.textOnDarkMuted,
-                fontSize: '16px',
+                fontSize: px(d.caption),
                 fontFamily: 'Inter',
               },
             },
@@ -53,7 +56,7 @@ export function buildPromptRegistry(props) {
               style: {
                 display: 'flex',
                 color: brand.colors.textOnDark,
-                fontSize: '16px',
+                fontSize: px(d.caption),
                 fontWeight: 600,
               },
             },
@@ -68,7 +71,7 @@ export function buildPromptRegistry(props) {
             display: 'flex',
             marginTop: '16px',
             color: brand.colors.brandAccent,
-            fontSize: '14px',
+            fontSize: px(d.label),
           },
         },
         'Versioned templates + eval-linked releases'
