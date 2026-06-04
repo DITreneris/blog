@@ -3,7 +3,7 @@
 Living backlog for **promptanatomy.blog**. Update checkboxes as work completes; mirror release notes in [`CHANGELOG.md`](CHANGELOG.md).
 
 **Last reviewed:** 2026-06-04  
-**Current baseline:** v0.5.0 shipped to `main` (tag `v0.5.0`); B.2 `hero_caption` sweep done locally (pending push).
+**Current baseline:** v0.5.0 shipped (tag `v0.5.0`); B.2 `hero_caption` sweep on `main`. Next: Phase B.1 framework depth, B.3 prose rhythm.
 
 ---
 
