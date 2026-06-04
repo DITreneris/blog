@@ -27,7 +27,7 @@ Prompt Anatomy spans **education, field notes, and implementation tools**. Each 
 | **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR workflow system |
 | **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |
 | **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — scaling and decisions |
-| **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — prompt games and interactive drills |
+| **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — Corporate Ladder (satirical office climb in Telegram) |
 
 ## How to navigate
 
