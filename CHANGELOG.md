@@ -10,12 +10,34 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- **Inline prose figures:** `usage: [inline]` rows in [`data/illustrations.yaml`](data/illustrations.yaml) sync merged-stub diagrams to `content/images/articles/{slug}/figures/` via [`scripts/sync_illustrations.py`](scripts/sync_illustrations.py); `.prose-figure` styles in [`theme/promptanatomy/static/css/article.css`](theme/promptanatomy/static/css/article.css); body image path check in [`scripts/validate_content.py`](scripts/validate_content.py). Seven canonical articles embed hand-authored art from merged draft stubs (context layers, workflow canvas, framework map, research boundaries, ops alerts, engagement limits, structured vs tools).
 - **[`docs/definition_of_done_system.md`](docs/definition_of_done_system.md)** — workflow-scoped completion hub (matrix, validator catalog, evidence format, rationalizations); links to Design System DoD 2.0 without duplicating it.
 
 ### Changed
 
+- **Hub hero diagram (premium pipeline):** replaced radial mind-map with horizontal workflow architecture — Input → Context → Reasoning → Output pipeline, dominant Prompt Anatomy engine (title + “Workflow Engine” subtitle), Quality and Workflow foundation row; native SVG connectors and glass card unchanged. **Data:** [`data/hub_sections.yaml`](data/hub_sections.yaml) (`diagram.pipeline`, `diagram.center`, `diagram.foundation`). **Tokens:** `--color-hero-diagram-line`, `--color-hero-diagram-engine-ring`, `--color-hero-diagram-caption`; softer `--color-hero-diagram-glow`. **Micro-polish:** middot pipeline microcopy, dimmer/smaller flow arrows, thin data-bus line above engine (removed vertical connector), narrower aligned foundation cards, quieter caption. **Docs:** [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md).
 - **[`AGENTS.md`](AGENTS.md)**, **[`README.md`](README.md)**, **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)**, **[`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md)** — cross-links and per-workflow **Done when** lines pointing at the DoD hub.
 - **Article publish dates:** replaced bulk `2026-05-28` / `modified: 2026-06-04` frontmatter with a curriculum-ordered timeline from **2024-01-06** (~21–24 day cadence, jittered) across all 46 posts in `content/articles/`; published catalog spans **2024-01-06 → 2026-04-17**; drafts continue after that. Removed fake same-day `modified` except on four pillar posts (plausible refresh ~10–13 weeks after publish). Re-run via [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py) (`PUBLICATION_ORDER`, `INTERVAL_DAYS`).
+
+## [0.7.3] - 2026-06-04 — Footer premium pass and legal pages
+
+### Added
+
+- **Footer Connect:** Atom feed link (`/feeds/all.atom.xml`) in [`data/site.yaml`](data/site.yaml).
+- **Legal pages:** [`content/pages/privacy.md`](content/pages/privacy.md) and [`content/pages/terms.md`](content/pages/terms.md) — indexable US English copy; Vercel Web Analytics disclosed under `## Cookies and tracking {#cookies}`.
+
+### Changed
+
+- **Footer layout and CSS:** tighter vertical rhythm (`--space-xl` padding, smaller grid gaps), 68rem grid cap, three-tier typography on dark (column titles / nav links / legal block), `.site-footer__bar` + `.site-footer__company` bottom grouping, legal and founder links meet `--touch-target-min` — [`theme/promptanatomy/static/css/components.css`](theme/promptanatomy/static/css/components.css), [`partials/footer.html`](theme/promptanatomy/templates/partials/footer.html).
+- **Footer data:** Explore column links fully in YAML (removed `column.title == 'Explore'` branch in template).
+- **Brand social:** X/Twitter `https://x.com/promptanatom` and `twitter_handle: "@promptanatom"` (replaces personal NFT handle); `twitter:site` / `twitter:creator` follow YAML.
+- **Schema:** Organization `sameAs` built from `social.links` + `hub.site_url` in [`partials/schema_site.html`](theme/promptanatomy/templates/partials/schema_site.html).
+- **Docs:** Footer subsection in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md); expanded footer checks in [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md); [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md) footer row.
+
+### Fixed
+
+- Footer **Cookies & tracking** link (`/privacy/#cookies`) now resolves to a real section (was placeholder privacy with no anchor).
+- Privacy and Terms no longer ship with `seo_robots: noindex` while linked prominently in the footer.
 
 ## [0.7.2] - 2026-06-04 — Content–illustration audit closure
 
@@ -62,6 +84,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Ecosystem play spokes:** eight `promptanatomy.lol` cards in [`data/ecosystem.yaml`](data/ecosystem.yaml) (Corporate Ladder live; seven placeholder paths for upcoming games), each with a distinct `icon` glyph.
 - **Field Notes spoke:** new ecosystem card → `promptanatomy.blog/#start-here` after Knowledge Hub moved to `.app`.
 - **Definition of Done (2.0) release contract:** 10-section checklist with `(CI)`, `(QA)`, and `(Major)` labels in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md); cross-links to [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) and [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
+- **Conditional Satori on Vercel:** [`scripts/ensure_satori_assets.sh`](scripts/ensure_satori_assets.sh) — runs `generate_satori_images.mjs --check` first; skips full PNG regen when committed masters and `og-default.png` exist; `FORCE_SATORI=1` forces full regen.
 
 ### Changed
 
@@ -76,6 +99,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **[`prompt-anatomy-ecosystem-map.md`](content/articles/prompt-anatomy-ecosystem-map.md):** `.lol` play row; Knowledge Hub vs blog roles aligned with homepage cards.
 - [`todo.md`](todo.md) baseline updated — v2.0.0 live on production; G.7.5 complete.
 - [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) sign-off — production OG smoke + breakpoint QA row for v2.0.0.
+- **Vercel build:** [`scripts/vercel_build.sh`](scripts/vercel_build.sh) uses `ensure_satori_assets.sh` instead of unconditional `npm run build:satori` — saves build minutes on content-only deploys when `data/01_illustrations/` masters are committed.
+- **Satori `--check`:** [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs) includes `theme/promptanatomy/static/img/og-default.png` in the asset check.
+- **Deploy docs:** [`docs/DEPLOY.md`](docs/DEPLOY.md), [`.cursor/rules/deploy-vercel.mdc`](.cursor/rules/deploy-vercel.mdc) — Vercel build-time section (commit masters after template/manifest changes).
 
 ## [2.0.0] - 2026-06-04 — Design System hardening (G.1–G.7)
 

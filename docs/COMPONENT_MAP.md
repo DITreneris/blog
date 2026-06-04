@@ -6,7 +6,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 |-----------------|---------------|-------------|
 | Header | `partials/header.html` | `SITE_CONFIG` (from `data/site.yaml`) |
 | Logo | `partials/logo.html` | `SITE_CONFIG.brand` |
-| Footer | `partials/footer.html` | `SITE_CONFIG.footer` (Explore from `hub.*_url`, Connect from `social.links` + column links), `SITE_CONFIG.organization` (structured address) |
+| Footer | `partials/footer.html` | `SITE_CONFIG.footer` (all column `links` in YAML; Connect: `social.links` + column links incl. Atom feed), `SITE_CONFIG.organization`; bottom `.site-footer__bar` / `.site-footer__company` |
 | Layout primitives | CSS classes in `static/css/layout.css` (`.container`, `.section`, `.grid`, `.stack`, `.cluster`) | — |
 | UI macros | `macros/ui.html` | `section_heading`, `category_badge`, `meta_line`, `hero_image_url`, `btn`, `card`, `article_card`, `nav_aria_current` |
 | BlogHero | `partials/blog_hero.html` | `HUB_SECTIONS.hero` (copy, images, `cta_primary` / `cta_secondary`); header Plans CTA stays `SITE_CONFIG.cta` |
@@ -20,7 +20,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | ArticleHeader | `partials/article_header.html` | `article`, `article.hero_image`, optional `article.hero_caption` |
 | ArticleLead | `partials/article_lead.html` | `article.summary` |
 | Article hero image | `content/images/articles/{slug}/hero.png` | `data/illustrations.yaml` + `scripts/sync_illustrations.py` |
-| Hub hero diagram | `partials/hero_architecture_diagram.html` via `blog_hero.html` | `HUB_SECTIONS.hero` (`visual: diagram`, `diagram.nodes`); native SVG, not raster |
+| Hub hero diagram | `partials/hero_architecture_diagram.html` via `blog_hero.html` | `HUB_SECTIONS.hero` (`visual: diagram`, `diagram.pipeline`, `diagram.center`, `diagram.foundation`); native SVG connectors, not raster |
 | Hub ecosystem art | `ecosystem_spoke.html` | `ECOSYSTEM.image` → `images/hub/ecosystem.png` |
 | KeyTakeawayBox | `partials/key_takeaway.html` | `article.key_takeaway` |
 | Breadcrumb | `partials/breadcrumb.html` | `article`, `article.category` (renders Home › Category › Title) |

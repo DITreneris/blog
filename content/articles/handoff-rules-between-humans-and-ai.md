@@ -38,6 +38,15 @@ Copy into your canvas wiki page; fill with real roles and times, not placeholder
 
 **Low confidence** thresholds must be calibrated on eval—do not set once and forget after model swap. **Policy keyword** lists come from Legal and version with policy pack. **Eval failure on deploy** connects to [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) smoke in CI—human action is rollback, not debate in chat.
 
+External-facing automation—social replies, outreach drafts, engagement bots—needs the same trigger table: human send gates, rate limits, and logged overrides before anything reaches customers or public channels.
+
+<figure class="prose-figure">
+  <img src="/images/articles/handoff-rules-between-humans-and-ai/figures/engagement-bot-limits.png"
+       alt="Engagement bot diagram with human send gates and rate limits for external channels"
+       width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Social and engagement automation still needs human send gates, rate limits, and override logging.</figcaption>
+</figure>
+
 ## Evidence and queue discipline
 
 Handoff rules fail when CRM or ticket queues hide **why** work paused. Log handoff reason in the same store as [audit trails](/articles/audit-trails-for-ai-workflows/): `handoff_trigger`, `assigned_role`, `resolved_at`, and link to `workflow_version` so replay shows which prompt and policy pack applied. Queues should display human-readable states—`legal_review`, `eval_blocked`, `vip_approval`—not generic "pending" that forces operators to open five tools.

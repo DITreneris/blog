@@ -33,7 +33,10 @@
     radial-gradient(circle at 75% 35%, rgba(37, 99, 235, 0.22), transparent 34%),
     radial-gradient(circle at 20% 75%, rgba(245, 158, 11, 0.1), transparent 30%),
     #0b1320;
-  --color-hero-diagram-glow: radial-gradient(circle at 50% 50%, rgba(207, 167, 58, 0.2), transparent 55%);
+  --color-hero-diagram-glow: radial-gradient(circle at 50% 50%, rgba(217, 177, 55, 0.1), transparent 55%);
+  --color-hero-diagram-caption: rgba(156, 163, 175, 0.65);
+  --color-hero-diagram-line: rgba(148, 163, 184, 0.45);
+  --color-hero-diagram-engine-ring: rgba(207, 167, 58, 0.25);
   --color-hero-diagram-surface: rgba(15, 23, 42, 0.72);
   --color-hero-diagram-border: rgba(148, 163, 184, 0.16);
   --shadow-hero-diagram: 0 24px 48px rgba(0, 0, 0, 0.35);

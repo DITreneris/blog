@@ -30,6 +30,13 @@ Structure does not mean slow—it means **one improvement surface** instead of t
 
 ## Why structured implementation beats more tools
 
+<figure class="prose-figure">
+  <img src="/images/articles/your-company-does-not-need-more-ai-tools/figures/structured-vs-tools.png"
+       alt="Diagram contrasting structured AI implementation with proliferating tool subscriptions"
+       width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Structure compounds; tools multiply variants without shared ownership.</figcaption>
+</figure>
+
 | Symptom of tool-first | What structure changes |
 |-----------------------|-------------------------|
 | Same task, different answers by department | One workflow, shared context spec |

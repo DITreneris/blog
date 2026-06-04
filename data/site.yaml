@@ -53,6 +53,16 @@ footer:
   founder_href: "/about/"
   columns:
     - title: "Explore"
+      links:
+        - label: "What is Prompt Anatomy"
+          href: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
+          external: true
+        - label: "Methodology"
+          href: "https://www.promptanatomy.app/#methodology"
+          external: true
+        - label: "Pricing"
+          href: "https://www.promptanatomy.app/#pricing"
+          external: true
     - title: "Product"
       links:
         - label: "Training"
@@ -79,6 +89,9 @@ footer:
         - label: "Library (AI automation)"
           href: "https://www.promptanatomy.info/en/"
           external: true
+        - label: "Atom feed"
+          href: "/feeds/all.atom.xml"
+          external: false
   legal:
     - label: "Privacy Policy"
       href: "/privacy/"
@@ -99,12 +112,12 @@ author:
   url: "https://www.promptanatomy.app/"
 
 social:
-  twitter_handle: "@TStaniulis_NFT"
+  twitter_handle: "@promptanatom"
   links:
     - label: "LinkedIn"
       href: "https://www.linkedin.com/in/staniulis"
     - label: "X (Twitter)"
-      href: "https://x.com/TStaniulis_NFT"
+      href: "https://x.com/promptanatom"
     - label: "Telegram"
       href: "https://t.me/prompt_anatomy"
 

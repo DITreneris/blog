@@ -79,6 +79,8 @@ Two tracks—do not put training-slide or meme PNGs on playbooks when the headli
 
 **Do not** rewrite a RACI or audit playbook to teach unrelated poster content (e.g. “five levels of AI control”)—publish a short Opinion primer and link from the playbook intro instead.
 
+**Merged-stub art:** when a draft redirect kept a hero PNG but the canonical article lives elsewhere, embed the diagram inline in the canonical article (`usage: [inline]` in the manifest) rather than reviving the stub URL. Memes stay on Opinion; diagrams belong in the playbook section they teach.
+
 ## Categories
 
 | Category | Expectation |

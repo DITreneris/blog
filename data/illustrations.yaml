@@ -439,6 +439,56 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  # --- Inline figures (merged-stub art embedded in canonical articles) ---
+  - id: inline-context-layers
+    source: Basic/121_Prompt_Anatomy.png
+    embed_in: what-is-context-architecture
+    dest: figures/context-layers.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-workflow-basics
+    source: Basic/119_Prompt_Anatomy.png
+    embed_in: ai-workflow-canvas-template
+    dest: figures/workflow-elements.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-framework-map
+    source: Basic/Prompt_Anatomy_Fludd.png
+    embed_in: prompt-anatomy-foundations
+    dest: figures/framework-map.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-research-scraper
+    source: Agents/AI_bot_scrapper.png
+    embed_in: data-boundaries-for-ai-agents
+    dest: figures/research-agent-boundaries.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-telegram-alerts
+    source: Agents/Telegram_bot.png
+    embed_in: audit-trails-for-ai-workflows
+    dest: figures/ops-alert-agent.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-twitter-limits
+    source: Agents/Twitter_bot.png
+    embed_in: handoff-rules-between-humans-and-ai
+    dest: figures/engagement-bot-limits.png
+    usage: [inline]
+    status: mapped
+
+  - id: inline-structured-beats-tools
+    source: Selfpromo/89_Prompt_Anatomy.png
+    embed_in: your-company-does-not-need-more-ai-tools
+    dest: figures/structured-vs-tools.png
+    usage: [inline]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

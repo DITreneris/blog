@@ -74,7 +74,9 @@ Source of truth: [`theme/promptanatomy/static/css/tokens.css`](../theme/promptan
 | `--color-surface-dark-card` | Cards on dark sections, `.btn--secondary` |
 | `--color-surface-glass` | `.ecosystem-card`, `.hero-diagram__card` (with `@supports` blur) |
 | `--color-hero-bg` | `.hero.section--dark` background |
-| `--color-hero-diagram-glow` | `.hero-diagram__glow` |
+| `--color-hero-diagram-glow` | `.hero-diagram__glow` (engine only) |
+| `--color-hero-diagram-line` | Pipeline arrows, connector SVGs |
+| `--color-hero-diagram-engine-ring` | `.hero-diagram__engine` focus ring |
 | `--color-hero-diagram-surface` | Diagram card fallback (reduced transparency) |
 | `--color-hero-diagram-border` | Diagram card border |
 | `--shadow-hero-diagram` | Diagram card depth |
@@ -227,6 +229,21 @@ When `featured: true`, `partials/faq.html` renders **above** `partials/article_c
 
 `.article-header__diagram` uses `aspect-ratio: 16/10` + `object-fit: contain` + `max-height: 28rem` over `--color-surface-elevated`. This preserves in-asset typography (titles, watermarks) instead of cover-cropping them. Featured-card hero uses the same 16/10 ratio for visual consistency.
 
+### Prose figures (inline)
+
+Use for diagrams that explain a specific section—not as a second hero. Sync masters with `usage: [inline]` + `embed_in` + `dest` in [`data/illustrations.yaml`](../data/illustrations.yaml) → `content/images/articles/{slug}/figures/*.png`.
+
+Embed in markdown as semantic HTML (captions required):
+
+```html
+<figure class="prose-figure">
+  <img src="/images/articles/{slug}/figures/{name}.png" alt="…" width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Operational meaning — not a repeat of the H1.</figcaption>
+</figure>
+```
+
+Styles: `.prose-figure` in [`article.css`](../theme/promptanatomy/static/css/article.css) — `max-height: 24rem`, `object-fit: contain`, caption tokens match `.article-header__caption`. Prefer diagrams in playbooks; memes only in Opinion articles where body matches the asset.
+
 ### Author bio
 
 `partials/author_bio.html` — avatar `<img>` only when `SITE_CONFIG.author.avatar` is set **and** a headshot exists under `data/author/` (`AUTHOR_HAS_PHOTO` at build time). No brand-logo placeholder in the bio when the photo is missing. When `SITE_CONFIG.author.linkedin` is set, the author name is wrapped in `.author-bio__name-link` (color: inherit; underline on hover) pointing to the LinkedIn profile with `rel="noopener noreferrer me" target="_blank"`. Schema.org Article author is rendered as `Person` (using `SITE_CONFIG.author.name`) with publisher as `Organization` (using `SITE_CONFIG.brand.name`).
@@ -304,9 +321,23 @@ See [design-system/BRAND_EXCEPTIONS.md](design-system/BRAND_EXCEPTIONS.md) for l
 | Article hero (`article_header.html`) | Article title — required when image present |
 | Article card thumbnail | Empty `alt` OK — title is adjacent in link text |
 | Featured card image | Empty `alt` OK — title and summary adjacent |
-| Hub hero diagram | `hero_architecture_diagram.html`: native SVG + glass card (`--color-hero-diagram-*`, `--shadow-hero-diagram`); hero band `--color-hero-bg`. Copy/CTAs from `data/hub_sections.yaml` (`visual: diagram`). No in-page raster hub hero. |
+| Hub hero diagram | `hero_architecture_diagram.html`: horizontal pipeline (Input → Context → Reasoning → Output) → central engine (Prompt Anatomy + subtitle) → foundation row (Quality, Workflow); native SVG connectors + glass card (`--color-hero-diagram-*`, `--shadow-hero-diagram`); hero band `--color-hero-bg`. Copy from `data/hub_sections.yaml` (`visual: diagram`, `diagram.pipeline` / `diagram.center` / `diagram.foundation`). No in-page raster hub hero. |
 | Hub ecosystem map | `ecosystem_spoke.html`; `image_alt` in `data/ecosystem.yaml` |
 | Logo SVG | `aria-hidden="true"` in header/footer |
+
+## Footer (dark band)
+
+Source: [`partials/footer.html`](../theme/promptanatomy/templates/partials/footer.html), [`components.css`](../theme/promptanatomy/static/css/components.css) (`.site-footer*`), [`data/site.yaml`](../data/site.yaml).
+
+| Tier | Token / rule |
+|------|----------------|
+| Column titles | `--color-text-on-dark`, uppercase, `letter-spacing: 0.05em` |
+| Nav links | `--color-text-on-dark-muted`; hover/focus `--color-brand-accent` |
+| Brand tagline | `--color-text-on-dark`, `--text-small` |
+| Legal / address | `--text-meta`, muted; legal links use `--touch-target-min` |
+| Spacing | Outer `padding-block: --space-xl`; grid `max-width: 68rem`; bottom `.site-footer__bar` groups legal + company |
+
+Social and `twitter_handle` live in `site.yaml`; Organization `sameAs` in [`schema_site.html`](../theme/promptanatomy/templates/partials/schema_site.html) is built from `social.links` and `hub.site_url`.
 
 ## Composition
 

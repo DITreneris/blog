@@ -20,27 +20,7 @@
 
       <ul class="site-footer__links">
 
-        {% if column.title == 'Explore' %}
-
-        <li>
-
-          <a href="{{ SITE_CONFIG.hub.what_is_url }}" rel="noopener noreferrer">What is Prompt Anatomy</a>
-
-        </li>
-
-        <li>
-
-          <a href="{{ SITE_CONFIG.hub.methodology_url }}" rel="noopener noreferrer">Methodology</a>
-
-        </li>
-
-        <li>
-
-          <a href="{{ SITE_CONFIG.hub.pricing_url }}" rel="noopener noreferrer">Pricing</a>
-
-        </li>
-
-        {% elif column.use_social %}
+        {% if column.use_social %}
 
         {% for social in SITE_CONFIG.social.links %}
 
@@ -52,33 +32,19 @@
 
         {% endfor %}
 
-        {% for link in column.links %}
-
-        <li>
-
-          <a href="{{ link.href }}"
-
-             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-
-        </li>
-
-        {% endfor %}
-
-        {% else %}
-
-        {% for link in column.links %}
-
-        <li>
-
-          <a href="{{ link.href }}"
-
-             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-
-        </li>
-
-        {% endfor %}
-
         {% endif %}
+
+        {% for link in column.links or [] %}
+
+        <li>
+
+          <a href="{{ link.href }}"
+
+             {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+
+        </li>
+
+        {% endfor %}
 
       </ul>
 
@@ -90,47 +56,54 @@
 
   <div class="container site-footer__bottom">
 
-    <nav class="site-footer__legal" aria-label="Legal">
+    <div class="site-footer__bar">
 
-      <span>&copy; {{ CURRENT_YEAR }} {{ SITE_CONFIG.organization.name }}</span>
+      <nav class="site-footer__legal" aria-label="Legal">
 
-      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+        <span class="site-footer__legal-copy">&copy; {{ CURRENT_YEAR }} {{ SITE_CONFIG.organization.name }}</span>
 
-      <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
 
-      {% for link in SITE_CONFIG.footer.legal %}
+        <a href="mailto:{{ SITE_CONFIG.organization.email }}">{{ SITE_CONFIG.organization.email }}</a>
 
-      <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
+        {% for link in SITE_CONFIG.footer.legal %}
 
-      <a href="{{ link.href }}"
+        <span class="site-footer__legal-sep" aria-hidden="true">&middot;</span>
 
-         {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+        <a href="{{ link.href }}"
 
-      {% endfor %}
+           {% if link.external %}rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
 
-    </nav>
+        {% endfor %}
 
-    {% if SITE_CONFIG.footer.founder_label %}
+      </nav>
 
-    <p class="site-footer__meta">
+      <div class="site-footer__company">
 
-      <a class="site-footer__founder-link" href="{{ SITE_CONFIG.footer.founder_href }}">{{ SITE_CONFIG.footer.founder_label }}</a>
+        {% if SITE_CONFIG.footer.founder_label %}
 
-    </p>
+        <p class="site-footer__meta">
 
-    {% endif %}
+          <a class="site-footer__founder-link" href="{{ SITE_CONFIG.footer.founder_href }}">{{ SITE_CONFIG.footer.founder_label }}</a>
 
-    <address class="site-footer__address">
+        </p>
 
-      {{ SITE_CONFIG.organization.name }}<br />
+        {% endif %}
 
-      {{ SITE_CONFIG.organization.address.street }}<br />
+        <address class="site-footer__address">
 
-      {{ SITE_CONFIG.organization.address.city_state_zip }}{% if SITE_CONFIG.organization.address.country %}, {{ SITE_CONFIG.organization.address.country }}{% endif %}
+          {{ SITE_CONFIG.organization.name }}<br />
 
-    </address>
+          {{ SITE_CONFIG.organization.address.street }}<br />
+
+          {{ SITE_CONFIG.organization.address.city_state_zip }}{% if SITE_CONFIG.organization.address.country %}, {{ SITE_CONFIG.organization.address.country }}{% endif %}
+
+        </address>
+
+      </div>
+
+    </div>
 
   </div>
 
 </footer>
-

@@ -38,6 +38,13 @@ Northline added `policy_pack_version` after a near-miss discussed in [risk forum
 
 Optional but valuable: `checker_result`, `eval_gate` (smoke/pilot/prod), `boundary_denied` events, `template_hash` from [structured prompt system](/articles/structured-prompt-system-blueprint/).
 
+<figure class="prose-figure">
+  <img src="/images/articles/audit-trails-for-ai-workflows/figures/ops-alert-agent.png"
+       alt="Ops alert bot diagram showing required audit log fields for automated notifications"
+       width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Ops and alert bots must emit the same minimum log fields—not chat notifications alone.</figcaption>
+</figure>
+
 ## Sample log row (ticket #4821)
 
 The JSON below is representative of a governed assist run—use it in replay drills with process owners and Legal.

@@ -81,6 +81,20 @@ Open DevTools → Network. CSS must be **`/static/css/…`** on the same host (2
 
 Deploy requires `data/01_illustrations/` in the repository (use Git LFS if the tree is large).
 
+### Vercel build time (no external storage)
+
+[`scripts/ensure_satori_assets.sh`](scripts/ensure_satori_assets.sh) runs before sync on Vercel:
+
+1. `node scripts/generate_satori_images.mjs --check` — masters in `data/01_illustrations/Satori/` plus `theme/.../og-default.png` must exist.
+2. If check passes → **skip** full Satori regen (saves CPU on content-only deploys).
+3. If check fails → `npm run build:satori` (same as local `make build`).
+
+**Commit masters after changing** `data/illustrations.yaml`, Satori templates, or hub copy used in OG cards. Otherwise Vercel may skip regen and ship stale PNGs.
+
+`content/images/` stays gitignored; [`sync_illustrations.py`](scripts/sync_illustrations.py) still runs every deploy (fast Pillow copy). Stable masters → stable `output/images/` bytes → Vercel uploads fewer changed files.
+
+Force full regen: `FORCE_SATORI=1 bash scripts/ensure_satori_assets.sh`.
+
 ## Local verification before push
 
 ```bash

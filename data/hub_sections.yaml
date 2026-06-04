@@ -6,27 +6,30 @@ hero:
   diagram:
     label: "AI Workflow Architecture"
     caption: "From scattered prompts to repeatable systems"
-    center: "Prompt Anatomy"
-    nodes:
+    center:
+      title: "Prompt Anatomy"
+      subtitle: "Workflow Engine"
+    pipeline:
       - id: input
         label: Input
-        position: top-left
+        desc: "Briefs · data · goals"
       - id: context
         label: Context
-        position: top
+        desc: "Rules · examples · constraints"
       - id: reasoning
         label: Reasoning
-        position: top-right
-      - id: quality
-        label: Quality
-        position: bottom-right
+        desc: "Steps · checks · alternatives"
       - id: output
         label: Output
-        position: bottom
+        desc: "Reusable assets"
+    foundation:
+      - id: quality
+        label: Quality
+        desc: "Checks before ship"
       - id: workflow
         label: Workflow
-        position: bottom-left
-  image_alt: "AI workflow architecture diagram: six modules around Prompt Anatomy—Input, Context, Reasoning, Quality, Output, Workflow."
+        desc: "Repeatable system"
+  image_alt: "AI workflow architecture diagram: Input, Context, Reasoning, and Output flow into Prompt Anatomy as the workflow engine, supported by Quality and Workflow layers."
   cta_primary:
     label: "Start with frameworks"
     href: "/topics/framework/"

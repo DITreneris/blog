@@ -40,6 +40,13 @@ Four layers appear in most business workflows. Design each explicitly; do not re
 
 **Memory strategy** — what persists across sessions vs what must be forgotten. Session scratchpad, episodic case history, organizational KB, and denied classes (e.g., raw payment data) need separate rules—[Memory Types for AI Systems](/articles/memory-types-for-ai-systems/) covers runtime choices.
 
+<figure class="prose-figure">
+  <img src="/images/articles/what-is-context-architecture/figures/context-layers.png"
+       alt="Context layer stack diagram showing task, policy, operational, and memory layers"
+       width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Layer ordering before prompt assembly — policy and task frames before operational paste.</figcaption>
+</figure>
+
 **Anti-pattern:** Dumping operational data first because it is easy to retrieve. **Better:** Policy and task frames before operational details so the model optimizes for compliance, not completion.
 
 ## Context spec walkthrough: support-reply-v3

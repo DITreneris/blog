@@ -18,10 +18,10 @@
         "addressCountry": {{ SITE_CONFIG.organization.address.country|tojson }}
       },
       "sameAs": [
-        {{ SITE_CONFIG.author.linkedin|tojson }},
-        "https://x.com/TStaniulis_NFT",
-        "https://t.me/prompt_anatomy",
-        {{ SITE_CONFIG.hub.site_url|tojson }}
+{%- set same_as = (SITE_CONFIG.social.links|map(attribute='href')|list) + [SITE_CONFIG.hub.site_url] -%}
+{%- for url in same_as %}
+        {{ url|tojson }}{% if not loop.last %},{% endif %}
+{%- endfor %}
       ]
     },
     {

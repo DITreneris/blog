@@ -5,30 +5,51 @@
   <div class="hero-diagram__card">
     <p id="hero-diagram-title" class="hero-diagram__label">{{ diagram.label }}</p>
     <div class="hero-diagram__canvas" role="img" aria-label="{{ alt }}">
-      <svg class="hero-diagram__connectors" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-        <g class="hero-diagram__lines" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35">
-          <line x1="200" y1="200" x2="200" y2="52" />
-          <line x1="200" y1="200" x2="318" y2="108" />
-          <line x1="200" y1="200" x2="318" y2="292" />
-          <line x1="200" y1="200" x2="200" y2="348" />
-          <line x1="200" y1="200" x2="82" y2="292" />
-          <line x1="200" y1="200" x2="82" y2="108" />
-        </g>
-      </svg>
-      <div class="hero-diagram__glow" aria-hidden="true"></div>
-      <div class="hero-diagram__node hero-diagram__node--center">
-        <span class="hero-diagram__bolt" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" focusable="false">
-            <path fill="currentColor" d="M13.5 1.5 4.5 14.25h6L8.25 22.5 19.5 9.75h-6L13.5 1.5z"/>
+      <ol class="hero-diagram__pipeline" aria-hidden="true">
+        {% for item in diagram.pipeline %}
+        <li class="hero-diagram__module hero-diagram__module--pipeline">
+          <span class="hero-diagram__module-title">{{ item.label }}</span>
+          <span class="hero-diagram__module-desc">{{ item.desc }}</span>
+        </li>
+        {% if not loop.last %}
+        <li class="hero-diagram__flow-arrow" aria-hidden="true">
+          <svg class="hero-diagram__flow-arrow-icon" viewBox="0 0 16 16" width="13" height="13" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" d="M3 8h8M9 5l3 3-3 3"/>
           </svg>
-        </span>
-        <span class="hero-diagram__node-label">{{ diagram.center }}</span>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ol>
+
+      <div class="hero-diagram__connector hero-diagram__connector--bus" aria-hidden="true"></div>
+
+      <div class="hero-diagram__engine-wrap" aria-hidden="true">
+        <div class="hero-diagram__glow"></div>
+        <div class="hero-diagram__engine">
+          <span class="hero-diagram__bolt">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" focusable="false">
+              <path fill="currentColor" d="M13.5 1.5 4.5 14.25h6L8.25 22.5 19.5 9.75h-6L13.5 1.5z"/>
+            </svg>
+          </span>
+          <span class="hero-diagram__engine-title">{{ diagram.center.title }}</span>
+          <span class="hero-diagram__engine-subtitle">{{ diagram.center.subtitle }}</span>
+        </div>
       </div>
-      {% for node in diagram.nodes %}
-      <div class="hero-diagram__node hero-diagram__node--{{ node.position }}">
-        <span class="hero-diagram__node-label">{{ node.label }}</span>
+
+      <div class="hero-diagram__connector hero-diagram__connector--branch" aria-hidden="true">
+        <svg class="hero-diagram__connector-svg hero-diagram__connector-svg--branch" viewBox="0 0 200 32" preserveAspectRatio="none" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" d="M100 4v10M100 14H54M100 14h46M54 14v6M146 14v6"/>
+        </svg>
       </div>
-      {% endfor %}
+
+      <div class="hero-diagram__foundation" aria-hidden="true">
+        {% for item in diagram.foundation %}
+        <div class="hero-diagram__module hero-diagram__module--foundation">
+          <span class="hero-diagram__module-title">{{ item.label }}</span>
+          <span class="hero-diagram__module-desc">{{ item.desc }}</span>
+        </div>
+        {% endfor %}
+      </div>
     </div>
     {% if diagram.caption %}
     <figcaption class="hero-diagram__caption">{{ diagram.caption }}</figcaption>

@@ -44,6 +44,30 @@ def _optimize_image(src: Path, dest: Path) -> None:
 def sync_article_row(row: dict, dry_run: bool) -> list[str]:
     errors: list[str] = []
     usage = row.get("usage") or []
+    row_id = row.get("id", "?")
+
+    if "inline" in usage:
+        embed_in = row.get("embed_in")
+        source_rel = row.get("source")
+        if not embed_in:
+            errors.append(f"{row_id}: inline usage requires embed_in")
+        elif not source_rel:
+            errors.append(f"{row_id}: inline usage requires source")
+        else:
+            src = MASTERS / Path(source_rel.replace("\\", "/"))
+            if not src.is_file():
+                errors.append(f"Missing source: {source_rel}")
+            else:
+                dest_rel = row.get("dest") or f"figures/{row_id}.png"
+                dest = ARTICLE_IMAGES / embed_in / Path(dest_rel.replace("\\", "/"))
+                if dry_run:
+                    print(
+                        f"  [dry-run] inline {source_rel} -> {dest.relative_to(ROOT)}"
+                    )
+                else:
+                    _optimize_image(src, dest)
+                    print(f"  OK inline: {dest.relative_to(ROOT)}")
+
     slug = row.get("slug")
     if not slug:
         return errors
@@ -148,7 +172,7 @@ def main() -> int:
             return 1
 
     all_errors: list[str] = []
-    print("Syncing article heroes...")
+    print("Syncing article heroes and inline figures...")
     for row in rows:
         all_errors.extend(sync_article_row(row, args.dry_run))
 

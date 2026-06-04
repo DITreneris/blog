@@ -2,7 +2,7 @@
 set -euo pipefail
 PY=".venv/bin/python"
 npm run build:analytics
-npm run build:satori
+bash scripts/ensure_satori_assets.sh
 "$PY" scripts/validate_satori_manifest.py
 "$PY" scripts/sync_illustrations.py
 "$PY" scripts/generate_brand_assets.py

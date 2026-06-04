@@ -34,6 +34,8 @@ node scripts/generate_satori_images.mjs --check
 
 **Per-article OG:** manifest rows with `usage: [hero, og]` generate `Satori/{slug}-og.png` (1200×630) via `article-og` template; sync copies to `content/images/articles/{slug}/og.png`. Article pages prefer dedicated OG over hero crop when slug is in `OG_ARTICLE_SLUGS`.
 
+**Inline figures:** rows with `usage: [inline]`, `embed_in: {canonical-slug}`, and `dest: figures/{name}.png` copy hand-authored masters into the target article folder (Pillow resize, max width 1600px). Embed in article bodies as `<figure class="prose-figure">` — see `docs/DESIGN_SYSTEM.md`.
+
 ## Large repos
 
 If this tree exceeds ~50 MB, track with Git LFS (`data/01_illustrations/**`) and document in [`docs/DEPLOY.md`](../../docs/DEPLOY.md).

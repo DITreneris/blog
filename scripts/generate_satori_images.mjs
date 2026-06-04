@@ -249,6 +249,10 @@ function collectMissingAssets(manifest) {
     }
   }
 
+  if (!existsSync(OG_DEFAULT)) {
+    missing.push({ rowId: 'og-default', path: relPath(OG_DEFAULT), kind: 'og-default' });
+  }
+
   return missing;
 }
 
@@ -258,9 +262,11 @@ function runCheck(manifest) {
     console.log('Satori asset check OK — all expected masters present.');
     return 0;
   }
-  console.error('Missing Satori masters:');
+  console.error('Missing Satori assets:');
   for (const m of missing) {
-    console.error(`  - ${m.rowId} (${m.kind}): data/01_illustrations/${m.path}`);
+    const loc =
+      m.kind === 'og-default' ? m.path : `data/01_illustrations/${m.path}`;
+    console.error(`  - ${m.rowId} (${m.kind}): ${loc}`);
   }
   console.error(`Run: node scripts/generate_satori_images.mjs --only hero && --only og`);
   return 1;

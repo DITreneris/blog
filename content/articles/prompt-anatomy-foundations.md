@@ -32,6 +32,13 @@ Business outcome
           → Governance (who may change what)
 ```
 
+<figure class="prose-figure">
+  <img src="/images/articles/prompt-anatomy-foundations/figures/framework-map.png"
+       alt="Prompt Anatomy framework map showing relationships between stack layers and topic articles"
+       width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Framework overview map — routing aid for this nav index (retired duplicate entry point).</figcaption>
+</figure>
+
 Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/).
 
 ## Where to go next
