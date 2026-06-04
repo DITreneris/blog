@@ -4,6 +4,7 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/ai-implementation-maturity-ladder/hero.png
+hero_caption: "Five stages from ad hoc chat to governed operations—know your level before buying more tools."
 key_takeaway: Know your level, pick one maturity jump, and measure it—do not skip governance while scaling tools.
 reading_time: 2 min read
 slug: ai-implementation-maturity-ladder

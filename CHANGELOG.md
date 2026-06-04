@@ -8,6 +8,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- **Hero captions (Release 3 B.2):** `hero_caption` added to ten published articles that lacked figcaptions (`ai-implementation-maturity-ladder`, `context-window-myths`, `handoff-rules-between-humans-and-ai`, `memory-types-for-ai-systems`, `multi-agent-handoff-pattern`, `prompt-anatomy-ecosystem-map`, `prompt-engineering-vs-ai-workflow-engineering`, `team-rituals-for-ai-implementation`, `types-of-prompts-for-business-workflows`, `when-ai-hallucinates-confidence`).
+
 ## [0.5.0] - 2026-06-04 — Satori PNG regeneration (Phase 1)
 
 ### Added

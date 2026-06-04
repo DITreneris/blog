@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
+hero_caption: "Lightweight recurring forums—office hours, eval review, and change announcements—that keep workflows honest after launch."
 key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts, context, and ownership.
 reading_time: 1 min read
 slug: team-rituals-for-ai-implementation

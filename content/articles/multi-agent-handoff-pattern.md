@@ -4,6 +4,7 @@ body_locked: true
 category: AI Agents
 date: 2026-05-28
 hero_image: images/articles/multi-agent-handoff-pattern/hero.png
+hero_caption: "Orchestrator routes each step to a specialist agent with a minimal handoff payload and human gates on external actions."
 key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained prompts without ownership.
 reading_time: 1 min read
 slug: multi-agent-handoff-pattern

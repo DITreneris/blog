@@ -4,6 +4,7 @@ body_locked: true
 category: Prompt Systems
 date: 2026-05-28
 hero_image: images/articles/types-of-prompts-for-business-workflows/hero.png
+hero_caption: "Task, system, retrieval, and checker prompts—matched to workflow step, not one growing system message."
 key_takeaway: Match prompt type to workflow step—one mega-prompt rarely covers intake, generation, and verification.
 reading_time: 1 min read
 slug: types-of-prompts-for-business-workflows

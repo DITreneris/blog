@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 date: 2026-05-28
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png
+hero_caption: "How the blog, training app, and implementation tools fit together without duplicating the same content."
 key_takeaway: Use the blog for frameworks and field notes; use training and tools on promptanatomy.app for hands-on practice.
 reading_time: 1 min read
 slug: prompt-anatomy-ecosystem-map

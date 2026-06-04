@@ -4,6 +4,7 @@ body_locked: true
 category: Opinion
 date: 2026-05-28
 hero_image: images/articles/context-window-myths/hero.png
+hero_caption: "A larger context window does not replace retrieval design, policy layers, or evaluation."
 key_takeaway: Bigger context is not a substitute for retrieval design, policy layers, and evaluation.
 reading_time: 1 min read
 slug: context-window-myths

@@ -4,6 +4,7 @@ body_locked: true
 category: Opinion
 date: 2026-05-28
 hero_image: images/articles/when-ai-hallucinates-confidence/hero.png
+hero_caption: "Fluent wrong answers relax reviewers—workflows need citations, checkers, or human sign-off before send."
 key_takeaway: Treat fluent tone as unrelated to factual accuracy—design workflows that require sources or human sign-off.
 reading_time: 1 min read
 slug: when-ai-hallucinates-confidence

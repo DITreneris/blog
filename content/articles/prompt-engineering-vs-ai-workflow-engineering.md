@@ -4,6 +4,7 @@ body_locked: true
 category: Prompt Systems
 date: 2026-05-05
 hero_image: images/articles/prompt-engineering-vs-ai-workflow-engineering/hero.png
+hero_caption: "One interaction optimized versus the full path from business intent to a verified outcome."
 key_takeaway: When quality varies by user but not by task, invest in workflow design before longer system prompts.
 reading_time: 1 min read
 slug: prompt-engineering-vs-ai-workflow-engineering

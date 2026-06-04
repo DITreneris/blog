@@ -15,12 +15,12 @@ Build and maintain a lean Python (Pelican) static knowledge hub for **https://pr
 
 ## MWB definition (done = all true)
 
-- [ ] Home lists hub sections with stub data rendering correctly
-- [ ] Article page: readable typography, max-width ~720px, code blocks
-- [ ] About page at `/about/`
-- [ ] RSS/Atom feed configured
-- [ ] `scripts/validate_content.py` passes on all posts
-- [ ] Vercel build succeeds; SITEURL correct in production
+- [x] Home lists hub sections with stub data rendering correctly
+- [x] Article page: readable typography, max-width ~720px, code blocks
+- [x] About page at `/about/`
+- [x] RSS/Atom feed configured
+- [x] `scripts/validate_content.py` passes on all posts
+- [x] Vercel build succeeds; SITEURL correct in production
 
 ## Content contract (frontmatter)
 

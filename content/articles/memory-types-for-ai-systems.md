@@ -4,6 +4,7 @@ body_locked: true
 category: Framework
 date: 2026-05-28
 hero_image: images/articles/memory-types-for-ai-systems/hero.png
+hero_caption: "Session, episodic, and organizational memory—each with different lifetimes, owners, and retention risk."
 key_takeaway: Choose memory types by retention risk and workflow need—not by maximizing what the model remembers.
 reading_time: 2 min read
 slug: memory-types-for-ai-systems

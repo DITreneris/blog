@@ -3,7 +3,7 @@
 Living backlog for **promptanatomy.blog**. Update checkboxes as work completes; mirror release notes in [`CHANGELOG.md`](CHANGELOG.md).
 
 **Last reviewed:** 2026-06-04  
-**Current baseline:** Content v0.2.0 + Satori v0.5.0 implemented locally; not necessarily committed/tagged/deployed.
+**Current baseline:** v0.5.0 shipped to `main` (tag `v0.5.0`); B.2 `hero_caption` sweep done locally (pending push).
 
 ---
 
@@ -51,31 +51,31 @@ On Windows without `make`, run the commands above in order (see [`docs/DEPLOY.md
 
 ### A.1 Git & release
 
-- [ ] Review diff; exclude secrets, `.env`, `__pycache__`, accidental `output/` commits.
-- [ ] Stage and commit: content, `data/og/`, `data/01_illustrations/Satori/*.png`, scripts, `package.json`, theme, docs, `CHANGELOG.md`.
-- [ ] Tag release(s) and push to `main`.
-- [ ] Confirm Vercel build succeeds (`scripts/vercel_build.sh` runs `build:satori`).
+- [x] Review diff; exclude secrets, `.env`, `__pycache__`, accidental `output/` commits.
+- [x] Stage and commit: content, `data/og/`, `data/01_illustrations/Satori/*.png`, scripts, `package.json`, theme, docs, `CHANGELOG.md`.
+- [x] Tag release(s) and push to `main` (`v0.5.0` single tag).
+- [x] Confirm Vercel build succeeds (`scripts/vercel_build.sh` runs `build:satori`).
 
 ### A.2 Production smoke test
 
-- [ ] Home `/` — hub sections, featured card, start-here cards.
-- [ ] Five Satori articles (heroes + captions):
-  - [ ] `/articles/what-is-context-architecture/`
-  - [ ] `/articles/case-study-vibe-prompting-to-structured-workflow/`
-  - [ ] `/articles/structured-prompt-system-blueprint/`
-  - [ ] `/articles/multi-agent-handoff-pattern/`
-  - [ ] `/articles/from-prompts-to-business-outcomes/`
-- [ ] Fallback OG: `https://www.promptanatomy.blog/static/img/og-default.png` → 200.
+- [x] Home `/` — hub sections, featured card, start-here cards.
+- [x] Five Satori articles (heroes + captions):
+  - [x] `/articles/what-is-context-architecture/`
+  - [x] `/articles/case-study-vibe-prompting-to-structured-workflow/`
+  - [x] `/articles/structured-prompt-system-blueprint/`
+  - [x] `/articles/multi-agent-handoff-pattern/`
+  - [x] `/articles/from-prompts-to-business-outcomes/`
+- [x] Fallback OG: `https://www.promptanatomy.blog/static/img/og-default.png` → 200.
 - [ ] Optional: Facebook/Twitter/LinkedIn card debuggers on flagship pillar.
 
 ### A.3 MWB sign-off ([`AGENTS.md`](AGENTS.md))
 
-- [ ] Home hub sections render from YAML.
-- [ ] Article typography / code blocks OK.
-- [ ] `/about/` live.
-- [ ] Atom feed `/feeds/all.atom.xml`.
-- [ ] `validate_content.py` passes (warnings OK; zero errors).
-- [ ] Vercel production `SITEURL` / canonical www correct.
+- [x] Home hub sections render from YAML.
+- [x] Article typography / code blocks OK.
+- [x] `/about/` live.
+- [x] Atom feed `/feeds/all.atom.xml`.
+- [x] `validate_content.py` passes (warnings OK; zero errors).
+- [x] Vercel production `SITEURL` / canonical www correct.
 
 ---
 
@@ -105,16 +105,16 @@ Add one-line figcaptions (what the diagram *means*, not title repeat).
 
 | Slug | Status |
 |------|--------|
-| `ai-implementation-maturity-ladder` | [ ] |
-| `context-window-myths` | [ ] |
-| `handoff-rules-between-humans-and-ai` | [ ] |
-| `memory-types-for-ai-systems` | [ ] |
-| `multi-agent-handoff-pattern` | [ ] |
-| `prompt-anatomy-ecosystem-map` | [ ] |
-| `prompt-engineering-vs-ai-workflow-engineering` | [ ] |
-| `team-rituals-for-ai-implementation` | [ ] |
-| `types-of-prompts-for-business-workflows` | [ ] |
-| `when-ai-hallucinates-confidence` | [ ] |
+| `ai-implementation-maturity-ladder` | [x] |
+| `context-window-myths` | [x] |
+| `handoff-rules-between-humans-and-ai` | [x] |
+| `memory-types-for-ai-systems` | [x] |
+| `multi-agent-handoff-pattern` | [x] |
+| `prompt-anatomy-ecosystem-map` | [x] |
+| `prompt-engineering-vs-ai-workflow-engineering` | [x] |
+| `team-rituals-for-ai-implementation` | [x] |
+| `types-of-prompts-for-business-workflows` | [x] |
+| `when-ai-hallucinates-confidence` | [x] |
 
 **Done when:** zero `published article missing hero_caption` warnings.
 
