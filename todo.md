@@ -3,7 +3,7 @@
 Living backlog for **promptanatomy.blog**. Update checkboxes as work completes; mirror release notes in [`CHANGELOG.md`](CHANGELOG.md).
 
 **Last reviewed:** 2026-06-04  
-**Current baseline:** v0.5.0 shipped (tag `v0.5.0`); B.2 `hero_caption` sweep on `main`. Next: Phase B.1 framework depth, B.3 prose rhythm.
+**Current baseline:** v0.6.0 shipped (tag `v0.6.0`); B.1 + B.2 + B.3 complete. Next: Phase B.4 draft hygiene, Phase C Satori templates.
 
 ---
 
@@ -97,7 +97,7 @@ Expand prose-first; add decision criteria, one composite example, 2–4 internal
 | `ai-implementation-maturity-ladder` | 264 | P1 | On Framework reading path |
 | `prompt-anatomy-foundations` | 174 | P2 | **Nav index** — expand lightly or document as intentional short hub page |
 
-**Done when:** no `framework article short` warnings for P1 slugs (except foundations if kept as nav).
+**Done when:** no `framework article short` warnings for P1 slugs (except foundations if kept as nav). **[x] Done (v0.6.0)** — P1 expanded; `prompt-anatomy-foundations` exempt via `content_tier: nav`.
 
 ### B.2 `hero_caption` sweep (published)
 
@@ -124,30 +124,30 @@ Rewrite H2 sections to **≥80 words** where validator flags `slide-deck rhythm`
 
 **AI Governance playbooks (P1 — reading path)**
 
-- [ ] `ai-governance-roles-and-ownership`
-- [ ] `ai-risk-review-cadence`
-- [ ] `audit-trails-for-ai-workflows`
-- [ ] `data-boundaries-for-ai-agents`
+- [x] `ai-governance-roles-and-ownership`
+- [x] `ai-risk-review-cadence`
+- [x] `audit-trails-for-ai-workflows`
+- [x] `data-boundaries-for-ai-agents`
 
 **AI Agents / implementation (P1)**
 
-- [ ] `ai-outreach-with-outlook-guardrails`
-- [ ] `ai-tender-response-pipeline`
-- [ ] `ai-workflow-canvas-template`
-- [ ] `multi-agent-handoff-pattern`
-- [ ] `handoff-rules-between-humans-and-ai`
-- [ ] `team-rituals-for-ai-implementation`
+- [x] `ai-outreach-with-outlook-guardrails`
+- [x] `ai-tender-response-pipeline`
+- [x] `ai-workflow-canvas-template`
+- [x] `multi-agent-handoff-pattern`
+- [x] `handoff-rules-between-humans-and-ai`
+- [x] `team-rituals-for-ai-implementation`
 
 **Other published (P2)**
 
-- [ ] `case-study-vibe-prompting-to-structured-workflow`
-- [ ] `from-prompts-to-business-outcomes`
-- [ ] `evaluation-hooks-for-ai-workflows`
-- [ ] `prompt-engineering-vs-ai-workflow-engineering`
-- [ ] `structured-prompt-system-blueprint`
-- [ ] `types-of-prompts-for-business-workflows`
-- [ ] `when-ai-hallucinates-confidence`
-- [ ] `your-company-does-not-need-more-ai-tools`
+- [x] `case-study-vibe-prompting-to-structured-workflow`
+- [x] `from-prompts-to-business-outcomes`
+- [x] `evaluation-hooks-for-ai-workflows`
+- [x] `prompt-engineering-vs-ai-workflow-engineering`
+- [x] `structured-prompt-system-blueprint`
+- [x] `types-of-prompts-for-business-workflows`
+- [x] `when-ai-hallucinates-confidence`
+- [x] `your-company-does-not-need-more-ai-tools`
 
 ### B.4 Draft hygiene
 
@@ -170,8 +170,8 @@ Rewrite H2 sections to **≥80 words** where validator flags `slide-deck rhythm`
 
 ### B.5 Release 3 docs
 
-- [ ] [`CHANGELOG.md`](CHANGELOG.md) — `[0.6.0]` entry.
-- [ ] [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) — note framework minimum and deck-rhythm expectations if tightened to errors.
+- [x] [`CHANGELOG.md`](CHANGELOG.md) — `[0.6.0]` entry.
+- [x] [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) — `nav` tier exempt from Framework 900-word minimum (deck rhythm remains warnings).
 
 ---
 

@@ -192,7 +192,11 @@ def validate_file(path: Path, slugs: set[str]) -> list[str]:
         elif meta.get("status") == "published" and not meta.get("hero_caption"):
             warnings.append(f"{path.name}: published article missing hero_caption")
 
-        if category == Category.FRAMEWORK.value and wc < MIN_FRAMEWORK_WORDS:
+        if (
+            category == Category.FRAMEWORK.value
+            and wc < MIN_FRAMEWORK_WORDS
+            and meta.get("content_tier") != "nav"
+        ):
             warnings.append(
                 f"{path.name}: framework article short ({wc} words, target {MIN_FRAMEWORK_WORDS}+)"
             )

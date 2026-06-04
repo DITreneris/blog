@@ -8,16 +8,20 @@ modified: 2026-06-04
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png
 hero_caption: "Outcome mapping — tie each workflow to one business metric, owner, and eval gate."
 key_takeaway: Every live workflow should tie to one business metric, one owner, and one eval gate—not activity metrics alone.
-reading_time: 3 min read
+reading_time: 5 min read
 slug: from-prompts-to-business-outcomes
 status: published
 summary: Map business metrics to workflows—support CSAT and handle time example, not tokens or demo applause.
 title: From Prompts to Business Outcomes
 ---
 
-Prompt quality is a means. **Business outcomes** are the end. Teams stall when they celebrate usage instead of measuring what changed.
+Prompt quality is a means. **Business outcomes** are the end. Teams stall when they celebrate usage—messages drafted, licenses active, workshops completed—instead of measuring what changed for customers or operators. Executives then ask for ROI proofs the organization cannot produce because nobody named a baseline metric or an owner accountable for it.
+
+Outcome mapping connects each workflow ID to **one primary business metric**, a human gate, and an eval signal that predicts harm before customers see it. Without that triangle, [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) become lab exercises and prompts become performance art.
 
 ## Outcome mapping template
+
+Copy the table per workflow on your canvas wiki page. If a row cannot be filled, the workflow is not ready for production promotion.
 
 | Business metric | Workflow | Model role | Human gate | Eval signal |
 |-----------------|----------|------------|------------|-------------|
@@ -25,23 +29,36 @@ Prompt quality is a means. **Business outcomes** are the end. Teams stall when t
 | Ticket resolution | Tier-2 routing assist | Recommend pod | Lead confirms | Mis-route rate |
 | Lead research | Account brief | Summarize public data | AE approves | Meetings booked |
 
-## Rules
+**Business metric** must exist before pilot—eight-week baseline recommended. **Model role** states what automation does *not* do (e.g., does not send). **Human gate** names role, not "human in the loop." **Eval signal** must correlate with metric movement—override rate often leads CSAT when quality is the hypothesis.
 
-1. **One primary metric per workflow** in pilot—avoid scorecards with ten KPIs.
-2. **Baseline before AI**—you need a pre-change comparison window.
-3. **Separate activity from outcome**—messages sent is not success; resolved cases is.
-4. **Review monthly** with the process owner, not only when executives ask.
+## Rules that keep mapping honest
+
+**One primary metric per workflow in pilot.** Scorecards with ten KPIs let teams claim success on whichever moved. Pick the metric the executive sponsor already cares about—CSAT, handle time, win rate, rework hours.
+
+**Baseline before AI.** Compare to pre-change window of equal season length; do not compare pilot week one to week twelve without control for volume spikes.
+
+**Separate activity from outcome.** Drafts generated, tokens consumed, and "active users" are activity. Resolved cases, compliant sends, and CSAT on touched queue are outcomes. Use activity only to diagnose friction (high drafts, low sends = bad drafts).
+
+**Review monthly with process owner**—not only when executives ask. Forum agenda item: metric trend + eval pass rate + one decision.
 
 ## Example: support-reply-v3 (Northline B2B)
 
-Northline tracked **median handle time** and **CSAT on the assisted queue**—not tokens generated. Baseline: eight weeks pre-pilot. Success: eighteen percent handle-time reduction and six to nine point CSAT lift while override rate stayed under eight percent. Activity metric "drafts generated" was reported but not used for promotion decisions.
+Northline tracked **median handle time** and **CSAT on the assisted queue** for workflow `support-reply-v3`. Baseline: eight weeks pre-pilot across tier-2 volume. Pilot success criteria: eighteen percent handle-time reduction range and six to nine point CSAT lift while override rate stayed under eight percent and eval pass held ≥92%.
 
-Details in the [case study](/articles/case-study-vibe-prompting-to-structured-workflow/). Outcome mapping filled on the [workflow canvas](/articles/ai-workflow-canvas-template/) before tool selection.
+They **refused** to tie promotion to "drafts generated" even when vendors pushed activity dashboards. Sponsor message: "We are not buying typing; we are buying reliable assist."
 
-## Tips
+Outcome row on [workflow canvas](/articles/ai-workflow-canvas-template/) preceded tool selection. Case narrative with ranges: [case study](/articles/case-study-vibe-prompting-to-structured-workflow/). Governance promotion votes required metric + eval evidence in [risk cadence](/articles/ai-risk-review-cadence/) minutes.
 
-- Pair each metric with an [eval gate](/articles/evaluation-hooks-for-ai-workflows/).
-- If executives ask for ROI too early, show pass rate and rework hours first.
-- Retire workflows that miss outcome targets for two review cycles—do not add tools.
+## Connecting eval gates to business metrics
 
-Framework context: [The Model Is Not the System](/articles/the-model-is-not-the-system/) — measure the system, not the chat window.
+Each metric should have a leading indicator in eval—policy violations predict CSAT risk; mis-route rate predicts resolution time. When pass rate dips, freeze traffic increases even if activity metrics look impressive.
+
+If executives demand ROI too early, show **pass rate, rework hours, and incident count** first—finance-friendly proxies while baseline stabilizes.
+
+Retire workflows that miss outcome targets for **two review cycles**—do not add tools to rescue undefined processes.
+
+## Framework context
+
+Measure the system, not the chat window—[the model is not the system](/articles/the-model-is-not-the-system/). Maturity expectations by level: [implementation ladder](/articles/ai-implementation-maturity-ladder/). When tool sprawl threatens mapping discipline, read [your company does not need more AI tools](/articles/your-company-does-not-need-more-ai-tools/).
+
+Every live workflow should tie to one business metric, one owner, and one eval gate—otherwise you are funding demos, not operations.

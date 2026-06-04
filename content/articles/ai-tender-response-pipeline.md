@@ -8,26 +8,34 @@ modified: 2026-06-04
 hero_image: images/articles/ai-tender-response-pipeline/hero.png
 hero_caption: "Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory legal assembly gate."
 key_takeaway: Tender AI works when only approved content enters drafts and legal sign-off stays mandatory.
-reading_time: 4 min read
+reading_time: 6 min read
 slug: ai-tender-response-pipeline
 status: published
 summary: RFP/tender pipeline with legal gates, clause checklist, and redacted section example—no auto-submit in v1.
 title: AI Tender Response Pipeline
 ---
 
-Tender and RFP work is document-heavy, time-bound, and unforgiving of invented clauses. A **pipeline** beats a single long prompt. This playbook is the legal/compliance depth companion to the proposal layer table in [The Model Is Not the System](/articles/the-model-is-not-the-system/)—not a duplicate strategic overview.
+Tender and RFP work is document-heavy, time-bound, and unforgiving of invented clauses. A single long prompt cannot hold evaluation criteria, mandatory sections, approved boilerplate, pricing rules, and indemnity limits at once—models will still produce fluent unacceptable terms. A **pipeline** beats a mega-prompt: staged steps with retrieval from tagged sources, compliance scan, and human assembly before any PDF leaves the building.
 
-## Stages
+This playbook is the legal/compliance depth companion to proposal workflow design in [how to design an AI agent workflow](/articles/how-to-design-an-ai-agent-workflow/) and the system frame in [the model is not the system](/articles/the-model-is-not-the-system/). No auto-submit to portals in v1; no external send without Legal sign-off on indemnity, SLA, and data-processing sections.
 
-1. **Intake** — parse deadline, mandatory sections, evaluation criteria.
-2. **Retrieve** — approved wins, boilerplate, pricing rules (tagged sources only).
-3. **Draft** — section-by-section generation with citation to source IDs.
-4. **Compliance scan** — keyword and clause checks; flag gaps.
-5. **Human assembly** — owner edits, legal review, final PDF.
+## Pipeline stages (what happens in order)
 
-No auto-submit to portals in v1. No external send without Legal sign-off on indemnity, SLA, and data-processing sections.
+Each stage has an owner and exit criteria—skipping a stage to meet deadline defaults to no-bid, not rushed send.
+
+**Intake** parses deadline, mandatory sections, and evaluation criteria into structured fields. Human confirms parsing—OCR and LLM extraction err on dates and annex references. Output: section checklist with due dates.
+
+**Retrieve** pulls only approved wins, boilerplate blocks, and pricing rules tagged `approved` in repository. Deny unreleased spreadsheets and draft wiki pages—same default-deny mindset as [data boundaries](/articles/data-boundaries-for-ai-agents/).
+
+**Draft** generates section-by-section with citation to source IDs (`LIB-B-12`), not one 40-page paste. Context stays bounded; eval can target trap sections.
+
+**Compliance scan** runs keyword and clause checks; flags gaps for Legal queue. Automated scan does not replace Legal accountability on indemnity and DPA.
+
+**Human assembly** — proposal owner edits, Legal reviews flagged sections, final PDF exported with reviewer IDs logged. Portal submission manual until Legal signs.
 
 ## Clause checklist (legal gate)
+
+Legal gate is a hard stop, not a comment thread after export.
 
 | Section | Check | Fail action |
 |---------|-------|-------------|
@@ -37,32 +45,34 @@ No auto-submit to portals in v1. No external send without Legal sign-off on inde
 | Pricing tier | Matches CRM band | Human verify |
 | Subcontractor disclosure | Required if RFP asks | Insert boilerplate B-12 only |
 
-Eval set must include **trap clauses**—e.g., unlimited liability language—that models tend to accept politely.
+Eval set must include **trap clauses**—unlimited liability, prohibited data residency, free-form indemnity favoring buyer—that models tend to accept politely. Fail closed in CI smoke where possible via [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/).
 
-## Redacted section example
+## Redacted section example (right vs wrong)
 
 **RFP asks:** "Describe indemnification for third-party IP claims."
 
-**Wrong (model-only):** Generic favorable indemnity not in library.
+**Wrong (model-only):** Generic favorable indemnity not in library—reads well, fails audit.
 
-**Right (pipeline output):** Draft pulls `clause-indemnity-2024-EU-v2` from approved repository; citation `LIB-B-12`; Legal reviewer ID required before PDF export.
+**Right (pipeline):** Draft pulls `clause-indemnity-2024-EU-v2`; citation `LIB-B-12`; export blocked until Legal reviewer ID attached. Log retrieval IDs per [audit trails](/articles/audit-trails-for-ai-workflows/).
 
-## Controls
+Teach proposal owners to spot "fluent wrong" without reading every word—checker flags unsupported clause IDs.
 
-- Version every boilerplate block in [prompt registry](/articles/structured-prompt-system-blueprint/).
-- Log retrieval IDs per [audit trails](/articles/audit-trails-for-ai-workflows/).
-- Run [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) on held-out RFP set before model changes.
+## Controls across registry, eval, and agents
 
-Agent-style automation for intake parsing may fit [agent workflow design](/articles/how-to-design-an-ai-agent-workflow/)—still with human assembly at the end.
+Version every boilerplate block in [structured prompt system](/articles/structured-prompt-system-blueprint/) registry—prompt IDs per section template, not one growing doc.
 
-## Tips
+Log retrieval IDs and `template_hash` on each section generation. Run eval on held-out RFP set before model or retrieval index changes.
 
-- Section-by-section generation beats one 40-page paste—context stays bounded.
-- Never train on unreleased pricing spreadsheets—tag sources `approved` only.
-- Time-box Legal review SLA; missed deadline defaults to no-bid, not rushed send.
+Intake parsing may use agent patterns from [agent workflow design](/articles/how-to-design-an-ai-agent-workflow/)—orchestrator hands off section drafts with handoff schema; human assembly remains mandatory.
 
-## What to do Monday
+Forum promotion follows [risk review cadence](/articles/ai-risk-review-cadence/) when increasing auto-retrieval scope.
 
-1. List mandatory RFP sections and matching boilerplate IDs.
-2. Add three trap clauses to eval set.
-3. Confirm portal submission is manual until Legal signs PDF.
+## Operating the pipeline under deadline pressure
+
+Time-box Legal review SLA; missed deadline defaults to **no-bid**, not stripped-down Legal review. Section-by-section generation beats monolithic context—cost and error rate both improve.
+
+Never train or retrieve on unreleased pricing—tag sources `approved` only; violations are governance incidents, not model bugs.
+
+**Monday start:** List mandatory RFP sections and boilerplate IDs. Add three trap clauses to eval set. Confirm portal submission manual until Legal signs PDF.
+
+Tender AI works when only approved content enters drafts and legal sign-off stays mandatory—every time.

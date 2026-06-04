@@ -70,11 +70,12 @@ If body-level conversion intent is needed (e.g. for a Templates article pointing
 | **Pillar** | `slug` in start-here / featured flagship | 1,200+ | Prose-first sections; `faq` in YAML frontmatter only |
 | **Standard** | Default published | 600+ (target) | 2+ paragraphs per major H2 before bullets |
 | **Short** | Templates, diagnostics | 150–250+ | Checklists OK (see category mins in `validate_content.py`) |
+| **Nav** | `content_tier: nav` (e.g. framework index) | — | Intentional routing page; exempt from 900-word Framework minimum in `validate_content.py` |
 | **Draft** | `status: draft` | — | Do not publish until tier met |
 
 Pillar minimum (1,200 words) enforced in [`scripts/validate_content.py`](../scripts/validate_content.py) for all start-here slugs: `the-model-is-not-the-system`, `10-signs-your-company-is-vibe-prompting`, and `how-to-design-an-ai-agent-workflow` (**Release 2**, v0.2.0). Pillar articles also require `hero_caption` and at least two `faq` items in frontmatter.
 
-**`content_tier` (optional frontmatter):** editorial signal — `pillar`, `playbook`, `template`, `opinion`, or `nav`. No template change required; use for hub curation and release checklists.
+**`content_tier` (optional frontmatter):** editorial signal — `pillar`, `playbook`, `template`, `opinion`, or `nav`. No template change required; use for hub curation and release checklists. **`nav`** marks a short hub/routing article (e.g. `prompt-anatomy-foundations`); validators skip the 900-word Framework minimum for that tier.
 
 **FAQ frontmatter:** use nested YAML lists under `faq:` — Pelican reads Markdown via [`scripts/pelican_frontmatter_reader.py`](../scripts/pelican_frontmatter_reader.py) (`READERS` in `pelicanconf.py`). Do not paste FAQ Q/A into the article body.
 

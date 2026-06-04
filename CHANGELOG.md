@@ -8,9 +8,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-06-04 — Content Release 3 (prose depth)
+
+### Added
+
+- **Framework expansions (B.1):** `memory-types-for-ai-systems`, `structured-prompt-system-blueprint`, `evaluation-hooks-for-ai-workflows`, and `ai-implementation-maturity-ladder` expanded to 900+ words with Northline `support-reply-v3` examples, decision criteria, and internal links.
+
 ### Changed
 
-- **Hero captions (Release 3 B.2):** `hero_caption` added to ten published articles that lacked figcaptions (`ai-implementation-maturity-ladder`, `context-window-myths`, `handoff-rules-between-humans-and-ai`, `memory-types-for-ai-systems`, `multi-agent-handoff-pattern`, `prompt-anatomy-ecosystem-map`, `prompt-engineering-vs-ai-workflow-engineering`, `team-rituals-for-ai-implementation`, `types-of-prompts-for-business-workflows`, `when-ai-hallucinates-confidence`).
+- **Hero captions (B.2):** `hero_caption` on ten published articles that lacked figcaptions.
+- **Slide-deck → essay rhythm (B.3):** Prose-first rewrites across governance playbooks, agent/implementation articles, and P2 catalog pieces—zero `slide-deck rhythm` warnings in `validate_content.py`.
+- **Validator:** `content_tier: nav` exempt from Framework 900-word minimum ([`scripts/validate_content.py`](scripts/validate_content.py)); documented in [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
 
 ## [0.5.0] - 2026-06-04 — Satori PNG regeneration (Phase 1)
 

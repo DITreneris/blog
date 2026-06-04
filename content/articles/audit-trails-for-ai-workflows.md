@@ -8,33 +8,40 @@ modified: 2026-06-04
 hero_image: images/articles/audit-trails-for-ai-workflows/hero.png
 hero_caption: "Minimum log fields — inputs, context versions, outputs, overrides, and retention for accountable AI workflows."
 key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational workflow—only a demo.
-reading_time: 4 min read
+reading_time: 6 min read
 slug: audit-trails-for-ai-workflows
 status: published
 summary: What to log for AI-assisted workflows—with sample JSON for Northline B2B ticket 4821.
 title: Audit Trails for AI Workflows
 ---
 
-Audit trails turn AI from a black box into an **accountable process**. Regulators, customers, and your own teams ask: what was sent, on what basis, and who approved it?
+Audit trails turn AI from a black box into an **accountable process**. Regulators, customers, and your own teams ask the same questions after a near-miss: what was sent, on what basis, which policy version applied, and who approved it? If answers require reconstructing someone's chat history, you have a demo—not a workflow ready for scale.
 
-**Northline B2B** logs every `support-reply-v3` run. This article lists minimum fields and a sample JSON row for ticket **#4821**. Cross-link [Governance Roles](/articles/ai-governance-roles-and-ownership/), [Risk Cadence](/articles/ai-risk-review-cadence/), and [Data Boundaries](/articles/data-boundaries-for-ai-agents/).
+**Northline B2B** logs every `support-reply-v3` run. This article lists minimum fields, explains why each matters, provides a sample JSON row for ticket **#4821**, and connects retention and review cadence to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk review](/articles/ai-risk-review-cadence/). Prompt text in a wiki is not proof; logs with hashes and versions are.
 
-## Minimum log fields
+## Minimum log fields (design once, enforce in IT)
+
+Compare your current logs to this set before buying another observability tool. Gaps here are gaps in accountability.
 
 | Field | Why it matters |
 |-------|----------------|
-| Workflow ID + version | Reproduce behavior after changes |
-| User / service identity | Accountability |
-| Input snapshot or hash | Evidence of what the model saw |
-| Context sources retrieved | Explainability |
-| Model + parameters | Regression when vendors update |
-| Raw model output | Compare to what was sent |
-| Human override flag | Prove review happened |
-| Timestamp (UTC) | Ordering across systems |
+| Workflow ID + version | Reproduce behavior after prompt or context changes |
+| User / service identity | Accountability for human vs automated actors |
+| Input snapshot or hash | Evidence of what the model saw without storing excess PII |
+| Context sources retrieved | Explainability when output cites or implies facts |
+| Model + parameters | Regression analysis when vendors update |
+| Raw model output | Compare to what was actually sent |
+| Human override flag | Prove review happened before customer-facing send |
+| Timestamp (UTC) | Ordering across CRM, ticket, and log systems |
+| Policy / context pack version | Tie language to Legal-approved library state |
 
-Northline added `policy_pack_version` after a near-miss in [risk review](/articles/ai-risk-review-cadence/)—plan for schema evolution.
+Northline added `policy_pack_version` after a near-miss discussed in [risk forum](/articles/ai-risk-review-cadence/)—plan for schema evolution in your registry, not as a one-off firefight.
+
+Optional but valuable: `checker_result`, `eval_gate` (smoke/pilot/prod), `boundary_denied` events, `template_hash` from [structured prompt system](/articles/structured-prompt-system-blueprint/).
 
 ## Sample log row (ticket #4821)
+
+The JSON below is representative of a governed assist run—use it in replay drills with process owners and Legal.
 
 ```json
 {
@@ -56,28 +63,32 @@ Northline added `policy_pack_version` after a near-miss in [risk review](/articl
 }
 ```
 
-Reviewers used this row to confirm the agent edited before send and that policy pack version matched the active legal library.
+Reviewers confirmed the agent edited before send, policy pack matched active legal library, and retrieved KB IDs were customer-safe tags only—aligned with [data boundaries](/articles/data-boundaries-for-ai-agents/). Without `sent_text` vs `raw_output`, override discipline is invisible.
 
-## Retention
+## Retention and storage classes
 
-- Align with existing records policy—do not invent a shorter window for "AI only."
-- Separate **debug logs** (verbose) from **compliance logs** (durable, immutable where possible).
+Do not invent a shorter window for "AI logs" if customer contracts require seven years for support correspondence. Align AI audit classes with existing records policy—Legal owns the mapping, IT implements immutability where required.
 
-Northline: compliance logs 7 years (customer contract); debug logs 30 days.
+**Compliance logs** — durable, access-controlled, indexed by `workflow_id` and `case_id`. Northline: seven years per contract.
 
-## Review cadence
+**Debug logs** — verbose prompts, retrieval traces; shorter TTL (e.g., thirty days). Never the only evidence for customer sends.
 
-- Monthly sample of high-risk cases for process owners.
-- After every prompt or context pack change, spot-check 10 cases from [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/).
+Separate classes prevent cost-driven deletion of evidence you will need in a dispute. Document retention in the same wiki page as the context spec in [context architecture](/articles/what-is-context-architecture/).
 
-## Tips
+## Review cadence tied to logs
 
-- Store **hash** of inputs when full snapshot is too large—but keep retrieval IDs.
-- Index logs by `workflow_id` and `case_id` for replay drills.
-- Include `checker_result` when automated policy scans run pre-send.
+Logging without review is storage expense. **Monthly**, process owners sample high-risk cases—overrides, VIP flags, checker failures. **After every prompt or policy pack change**, spot-check ten cases against [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) pass artifacts.
 
-## What to do Monday
+**Replay drills** quarterly: pick a ticket ID, reconstruct from logs alone, compare to ground truth in CRM. If drill fails, forum action owns schema fix—not "train agents better."
 
-1. Compare your logs to the nine minimum fields—list gaps.
-2. Run one replay drill: reconstruct ticket #4821-style case from logs alone.
-3. Add `policy_pack_version` (or equivalent) before next context change.
+Northline links drill results to forum minutes; failed drills block shadow traffic increases until IT closes gaps.
+
+## Operating audit trails in practice
+
+Store **hash** of inputs when full snapshot is too large—but keep retrieval IDs so humans can rebuild context. Index logs for common incident queries: workflow version changes on a date range, overrides by reason code, `boundary_denied` spikes.
+
+When integrators add tools, extend schema before launch—retrofit is painful under audit pressure. Include denial events even when no model call occurred; they prove [boundaries](/articles/data-boundaries-for-ai-agents/) work.
+
+**Monday start:** Gap-analysis workshop—nine minimum fields vs current export. One replay drill on a real or synthetic case. Add `policy_pack_version` or equivalent before the next context change ships.
+
+If you cannot reconstruct a case from logs, pause promotion until you can. Accountability is the product—not the model summary.
