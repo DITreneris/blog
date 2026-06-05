@@ -20,6 +20,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- **Hub OG (diagram-right):** `homepage-og` and `og-default` Satori templates use split layout with `hub-workflow-diagram.mjs` (mirrors homepage pipeline → engine → foundation). Hub manifest row gets explicit OG subtitle; `generate_satori_images.mjs` truncates at word boundaries. Homepage `og:title` aligned with hero headline; Organization JSON-LD logo → `apple-touch-icon.png`.
 - **CI parity:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs `vercel_install.sh` + `make build` (matches Vercel pipeline).
 - **Sitemap:** [`generate_sitemap.py`](scripts/generate_sitemap.py) and [`validate_seo_output.py`](scripts/validate_seo_output.py) include `/privacy/` and `/terms/` (real legal copy; no longer excluded).
 - **Author schema:** [`schema_person_about.html`](theme/promptanatomy/templates/partials/schema_person_about.html) `sameAs` from `SITE_CONFIG.social.links` (removes stale `TStaniulis_NFT`); [`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html) Person `url` → `/about/` with YAML-driven `sameAs`.

@@ -21,10 +21,18 @@ export const typography = {
     },
   },
   og: {
-    title: 58,
-    subtitle: 26,
-    badge: 20,
-    brand: 20,
+    title: 52,
+    subtitle: 22,
+    badge: 18,
+    brand: 18,
+    textColumnWidth: 520,
+    diagram: {
+      label: 13,
+      moduleTitle: 14,
+      moduleDesc: 11,
+      engineTitle: 16,
+      arrow: 18,
+    },
   },
 };
 

@@ -66,10 +66,17 @@ function loadFrontmatter(slug) {
 function truncate(text, max) {
   if (!text) return '';
   const s = String(text).replace(/\s+/g, ' ').trim();
-  return s.length <= max ? s : `${s.slice(0, max - 1)}…`;
+  if (s.length <= max) return s;
+  const slice = s.slice(0, max);
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace > max * 0.5 ? slice.slice(0, lastSpace) : slice;
+  return `${cut.trim()}…`;
 }
 
 function rawSubtitleFromRow(row) {
+  if (row.subtitle) {
+    return row.subtitle;
+  }
   if (row.hub_asset === 'og') {
     const hub = yaml.load(readFileSync(HUB_SECTIONS_YAML, 'utf8'));
     return row.subtitle || hub?.hero?.subhead || hub?.hero?.methodology || '';

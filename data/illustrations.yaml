@@ -332,6 +332,7 @@ illustrations:
     template: homepage-og
     source: Satori/hub-og.png
     title: "Build AI workflows your team can actually repeat"
+    subtitle: "Frameworks, templates, and field notes for repeatable AI workflows."
     usage: [hub_og]
     hub_asset: og
     status: mapped

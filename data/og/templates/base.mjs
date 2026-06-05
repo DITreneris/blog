@@ -279,6 +279,123 @@ export function categoryDefaultDiagram(category) {
   );
 }
 
+/** 1200×630 OG layout — copy left, diagram right (homepage + fallback). */
+export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }) {
+  const titleSx = titleStyle(title, oType.title);
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        background: `linear-gradient(160deg, ${brand.colors.brandDark} 0%, ${brand.colors.brandDarkMid} 55%, #0a2840 100%)`,
+        fontFamily: 'Inter',
+      },
+    },
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'row',
+          flex: 1,
+          width: '100%',
+          padding: '40px 48px',
+        },
+      },
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: `${oType.textColumnWidth}px`,
+            justifyContent: 'center',
+            paddingRight: '24px',
+          },
+        },
+        h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '16px',
+            },
+          },
+          boltIcon(1.1),
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                marginLeft: '12px',
+                color: brand.colors.textOnDarkMuted,
+                fontSize: px(oType.brand),
+              },
+            },
+            brand.name
+          )
+        ),
+        categoryBadge(category, category, 'og'),
+        h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              marginTop: '20px',
+              color: brand.colors.textOnDark,
+              ...titleSx,
+            },
+          },
+          title
+        ),
+        subtitle
+          ? h(
+              'div',
+              {
+                style: {
+                  display: 'flex',
+                  marginTop: '14px',
+                  color: brand.colors.textOnDarkMuted,
+                  fontSize: px(oType.subtitle),
+                  lineHeight: 1.35,
+                  maxLines: 2,
+                },
+              },
+              subtitle
+            )
+          : null
+      ),
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+        },
+        diagram
+      )
+    ),
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          height: '5px',
+          width: '100%',
+          backgroundColor: brand.colors.brandAccent,
+        },
+      }
+    )
+  );
+}
+
 /** Compact 1200×630 OG layout — title card without side diagram. */
 export function articleOgFrame({ category, title, subtitle }) {
   const titleSx = titleStyle(title, oType.title);
