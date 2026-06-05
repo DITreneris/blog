@@ -8,14 +8,14 @@
 <meta property="og:title" content="{{ HUB_SECTIONS.hero.headline }}" />
 <meta property="og:description" content="{{ SITE_CONFIG.brand.description }}" />
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/" />
-{% if HUB_OG_IMAGE %}{% set og_image_path = HUB_OG_IMAGE %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = HUB_SECTIONS.hero.image_alt|default(SITE_CONFIG.brand.name ~ ' — ' ~ SITE_CONFIG.brand.tagline) %}{% endif %}
+{% if HUB_OG_IMAGE %}{% set og_image_path = HUB_OG_IMAGE %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = HUB_SECTIONS.hero.og_image_alt|default(HUB_SECTIONS.hero.image_alt)|default(SITE_CONFIG.brand.name ~ ' — ' ~ SITE_CONFIG.brand.tagline) %}{% endif %}
 {% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 {% endblock %}
 
 {% block twitter %}
 <meta name="twitter:title" content="{{ HUB_SECTIONS.hero.headline }}" />
 <meta name="twitter:description" content="{{ SITE_CONFIG.brand.description }}" />
-{% if HUB_OG_IMAGE %}{% set og_image_path = HUB_OG_IMAGE %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = HUB_SECTIONS.hero.image_alt|default(SITE_CONFIG.brand.name ~ ' — ' ~ SITE_CONFIG.brand.tagline) %}{% endif %}
+{% if HUB_OG_IMAGE %}{% set og_image_path = HUB_OG_IMAGE %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = HUB_SECTIONS.hero.og_image_alt|default(HUB_SECTIONS.hero.image_alt)|default(SITE_CONFIG.brand.name ~ ' — ' ~ SITE_CONFIG.brand.tagline) %}{% endif %}
 {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 {% endblock %}
 

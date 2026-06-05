@@ -1,14 +1,14 @@
 import { brand, sizes } from '../brand.mjs';
-import { articleOgFrameWithDiagram } from './base.mjs';
-import { buildHubWorkflowDiagram } from './hub-workflow-diagram.mjs';
+import { textOgFrame } from './base.mjs';
 
-/** Site-wide fallback OG — 1200×630, diagram-right. */
+/** Site-wide fallback OG — 1200×630, value-first typography. */
 export function buildOgDefault() {
-  return articleOgFrameWithDiagram({
+  return textOgFrame({
     category: 'Knowledge Hub',
-    title: brand.name,
-    subtitle: brand.tagline,
-    diagram: buildHubWorkflowDiagram(),
+    title: brand.tagline,
+    subtitle: brand.name,
+    showBrandRow: false,
+    showWatermark: true,
   });
 }
 

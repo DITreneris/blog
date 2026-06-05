@@ -28,10 +28,10 @@ export const typography = {
     textColumnWidth: 520,
     diagram: {
       label: 13,
-      moduleTitle: 14,
-      moduleDesc: 11,
-      engineTitle: 16,
-      arrow: 18,
+      moduleTitle: 17,
+      moduleDesc: 12,
+      engineTitle: 19,
+      arrow: 20,
     },
   },
 };

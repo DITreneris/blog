@@ -27,24 +27,34 @@ export function boltIcon(scale = 1) {
 export function categoryBadge(label, category, surface = 'hero') {
   const style = getCategoryStyle(category || label);
   const badgeSize = surface === 'og' ? oType.badge : hType.badge;
+  const isOg = surface === 'og';
   return h(
     'div',
     {
       style: {
         display: 'flex',
-        alignItems: 'center',
-        padding: '8px 16px',
-        backgroundColor: style.badgeBg,
-        border: `1px solid ${style.accent}`,
-        borderRadius: '6px',
-        color: style.accent,
-        fontSize: px(badgeSize),
-        fontWeight: 700,
-        letterSpacing: '0.04em',
-        textTransform: 'uppercase',
+        alignSelf: isOg ? 'flex-start' : undefined,
       },
     },
-    label
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          padding: isOg ? '6px 14px' : '8px 16px',
+          backgroundColor: style.badgeBg,
+          border: `1px solid ${style.accent}`,
+          borderRadius: isOg ? '9999px' : '6px',
+          color: style.accent,
+          fontSize: px(badgeSize),
+          fontWeight: 700,
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase',
+        },
+      },
+      label
+    )
   );
 }
 
@@ -280,7 +290,13 @@ export function categoryDefaultDiagram(category) {
 }
 
 /** 1200×630 OG layout — copy left, diagram right (homepage + fallback). */
-export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }) {
+export function articleOgFrameWithDiagram({
+  category,
+  title,
+  subtitle,
+  diagram,
+  showBrandRow = true,
+}) {
   const titleSx = titleStyle(title, oType.title);
   return h(
     'div',
@@ -302,7 +318,7 @@ export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }
           flexDirection: 'row',
           flex: 1,
           width: '100%',
-          padding: '40px 48px',
+          padding: '32px 44px 28px',
         },
       },
       h(
@@ -312,40 +328,43 @@ export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }
             display: 'flex',
             flexDirection: 'column',
             width: `${oType.textColumnWidth}px`,
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
+            paddingTop: '4px',
             paddingRight: '24px',
           },
         },
-        h(
-          'div',
-          {
-            style: {
-              display: 'flex',
-              alignItems: 'center',
-              marginBottom: '16px',
-            },
-          },
-          boltIcon(1.1),
-          h(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                marginLeft: '12px',
-                color: brand.colors.textOnDarkMuted,
-                fontSize: px(oType.brand),
+        showBrandRow
+          ? h(
+              'div',
+              {
+                style: {
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '12px',
+                },
               },
-            },
-            brand.name
-          )
-        ),
+              boltIcon(1.1),
+              h(
+                'div',
+                {
+                  style: {
+                    display: 'flex',
+                    marginLeft: '12px',
+                    color: brand.colors.textOnDarkMuted,
+                    fontSize: px(oType.brand),
+                  },
+                },
+                brand.name
+              )
+            )
+          : null,
         categoryBadge(category, category, 'og'),
         h(
           'div',
           {
             style: {
               display: 'flex',
-              marginTop: '20px',
+              marginTop: '14px',
               color: brand.colors.textOnDark,
               ...titleSx,
             },
@@ -358,7 +377,7 @@ export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }
               {
                 style: {
                   display: 'flex',
-                  marginTop: '14px',
+                  marginTop: '10px',
                   color: brand.colors.textOnDarkMuted,
                   fontSize: px(oType.subtitle),
                   lineHeight: 1.35,
@@ -375,8 +394,9 @@ export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }
           style: {
             display: 'flex',
             flex: 1,
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
+            paddingTop: '4px',
           },
         },
         diagram
@@ -388,8 +408,140 @@ export function articleOgFrameWithDiagram({ category, title, subtitle, diagram }
         style: {
           display: 'flex',
           height: '5px',
-          width: '100%',
+          margin: '0 44px 14px',
           backgroundColor: brand.colors.brandAccent,
+          borderRadius: '2px',
+        },
+      }
+    )
+  );
+}
+
+/** Typography-led 1200×630 OG — hub + fallback (no side diagram). */
+export function textOgFrame({
+  category,
+  title,
+  subtitle,
+  showBrandRow = true,
+  showWatermark = true,
+}) {
+  const titleSx = titleStyle(title, oType.title);
+  const watermarkScale = 7.5;
+
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        background: `linear-gradient(160deg, ${brand.colors.brandDark} 0%, ${brand.colors.brandDarkMid} 55%, #0a2840 100%)`,
+        fontFamily: 'Inter',
+      },
+    },
+    showWatermark
+      ? h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              position: 'absolute',
+              right: '-40px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              opacity: 0.1,
+            },
+          },
+          boltIcon(watermarkScale)
+        )
+      : null,
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          flex: 1,
+          width: '100%',
+          padding: '48px 64px 40px',
+          justifyContent: 'center',
+        },
+      },
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: '920px',
+          },
+        },
+        showBrandRow
+          ? h(
+              'div',
+              {
+                style: {
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '16px',
+                },
+              },
+              boltIcon(1.2),
+              h(
+                'div',
+                {
+                  style: {
+                    display: 'flex',
+                    marginLeft: '12px',
+                    color: brand.colors.textOnDarkMuted,
+                    fontSize: px(oType.brand),
+                  },
+                },
+                brand.name
+              )
+            )
+          : null,
+        categoryBadge(category, category, 'og'),
+        h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              marginTop: showBrandRow ? '16px' : '0',
+              color: brand.colors.textOnDark,
+              ...titleSx,
+            },
+          },
+          title
+        ),
+        subtitle
+          ? h(
+              'div',
+              {
+                style: {
+                  display: 'flex',
+                  marginTop: '14px',
+                  color: brand.colors.textOnDarkMuted,
+                  fontSize: px(oType.subtitle),
+                  lineHeight: 1.35,
+                },
+              },
+              subtitle
+            )
+          : null
+      )
+    ),
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          height: '5px',
+          margin: '0 44px 14px',
+          backgroundColor: brand.colors.brandAccent,
+          borderRadius: '2px',
         },
       }
     )

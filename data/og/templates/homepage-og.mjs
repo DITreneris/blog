@@ -1,14 +1,14 @@
-import { articleOgFrameWithDiagram } from './base.mjs';
-import { buildHubWorkflowDiagram } from './hub-workflow-diagram.mjs';
+import { textOgFrame } from './base.mjs';
 
-/** Homepage social OG — 1200×630, diagram-right (matches live hub hero). */
+/** Homepage social OG — 1200×630, typography-led (diagram lives on-page only). */
 export function buildHomepageOg(props) {
-  return articleOgFrameWithDiagram({
+  return textOgFrame({
     category: 'Knowledge Hub',
     title: props.title || 'Build AI workflows your team can actually repeat',
     subtitle:
       props.subtitle ||
       'Frameworks, templates, and field notes for repeatable AI workflows.',
-    diagram: buildHubWorkflowDiagram(),
+    showBrandRow: true,
+    showWatermark: true,
   });
 }

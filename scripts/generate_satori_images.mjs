@@ -79,7 +79,13 @@ function rawSubtitleFromRow(row) {
   }
   if (row.hub_asset === 'og') {
     const hub = yaml.load(readFileSync(HUB_SECTIONS_YAML, 'utf8'));
-    return row.subtitle || hub?.hero?.subhead || hub?.hero?.methodology || '';
+    return (
+      hub?.hero?.og_subhead ||
+      row.subtitle ||
+      hub?.hero?.subhead ||
+      hub?.hero?.methodology ||
+      ''
+    );
   }
   if (row.category_slug) {
     return row.subtitle || '';
@@ -90,7 +96,9 @@ function rawSubtitleFromRow(row) {
 
 function propsFromRow(row, surface = 'hero') {
   const subtitleMax = surface === 'og' ? ogSubtitleMax : heroSubtitleMax;
-  const subtitle = truncate(rawSubtitleFromRow(row), subtitleMax);
+  const rawSubtitle = rawSubtitleFromRow(row);
+  const subtitle =
+    row.hub_asset === 'og' ? rawSubtitle : truncate(rawSubtitle, subtitleMax);
 
   if (row.hub_asset === 'og') {
     const hub = yaml.load(readFileSync(HUB_SECTIONS_YAML, 'utf8'));
@@ -289,8 +297,7 @@ async function main() {
 
   const only = args.only;
   const runHero = !only || only === 'hero';
-  const runOg =
-    !only || only === 'og' || only === 'og-default';
+  const runOg = !only || only === 'og';
   const runOgDefault =
     (!only || only === 'og-default') && !args.slug && !args.id;
 

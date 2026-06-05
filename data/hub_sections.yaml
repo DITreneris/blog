@@ -1,6 +1,7 @@
 hero:
   headline: "Build AI workflows your team can actually repeat"
   subhead: "Practical frameworks, templates, and field notes for moving from random prompting to structured AI implementation."
+  og_subhead: "Frameworks, templates, and field notes for repeatable AI workflows."
   methodology: "Prompts → Workflows → Agents → Business Outcomes"
   visual: diagram
   diagram:
@@ -30,6 +31,7 @@ hero:
         label: Workflow
         desc: "Repeatable system"
   image_alt: "AI workflow architecture diagram: Input, Context, Reasoning, and Output flow into Prompt Anatomy as the workflow engine, supported by Quality and Workflow layers."
+  og_image_alt: "Prompt Anatomy knowledge hub — build AI workflows your team can actually repeat."
   cta_primary:
     label: "Start with frameworks"
     href: "/topics/framework/"

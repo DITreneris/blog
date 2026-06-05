@@ -94,9 +94,9 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Primary CTA links to `/topics/framework/`; secondary to `/#latest`
 - [ ] `prefers-reduced-transparency`: diagram card and header use solid backgrounds (no blur)
 - [ ] Ecosystem map (`Ecosystem2.png`) centered in `#ecosystem`; spoke cards keyboard-reachable
-- [ ] `images/hub/og.png` 1200×630 — diagram-right: headline + subtitle left, compact workflow diagram right (Input → Context → Reasoning → Output → engine → Quality/Workflow); subtitle not truncated mid-word
-- [ ] `og-default.png` 1200×630 — same diagram-right frame (brand name + tagline left); shrink to ~400px wide — pipeline labels readable
-- [ ] Homepage `og:title` matches `HUB_SECTIONS.hero.headline`; `og:image:alt` matches diagram content
+- [ ] `images/hub/og.png` 1200×630 — text-first v3: centered headline + hub subhead; compact pill badge; optional faint bolt watermark; inset footer bar; readable at ~400px wide; under 150 KB
+- [ ] `og-default.png` 1200×630 — value-first copy (tagline title, brand subtitle); no wordmark row; same text-first frame; under 150 KB
+- [ ] Homepage `og:title` matches `HUB_SECTIONS.hero.headline`; `og:image:alt` uses `hero.og_image_alt` (diagram keeps separate `hero.image_alt`)
 
 ## Sign-off
 

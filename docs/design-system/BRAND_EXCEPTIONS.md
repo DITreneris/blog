@@ -40,4 +40,4 @@ Until full codegen (deferred):
 
 ## Hub hero diagram
 
-Live homepage hero uses native SVG in `partials/hero_architecture_diagram.html` (not Satori). The center bolt reuses the mother-repo lightning path with `currentColor` → `--color-brand-accent`. Social sharing uses Satori `homepage-og` → `images/hub/og.png` with a compact **diagram-right** layout (`hub-workflow-diagram.mjs` mirrors `hub_sections.yaml` pipeline → engine → foundation). Site fallback `og-default.png` uses the same diagram-right frame. `homepage-hero-frame.mjs` is deprecated for the in-page hub hero.
+Live homepage hero uses native SVG in `partials/hero_architecture_diagram.html` (not Satori). The center bolt reuses the mother-repo lightning path with `currentColor` → `--color-brand-accent`. Social sharing uses Satori `homepage-og` → `images/hub/og.png` with a **text-first** layout (`textOgFrame` in `base.mjs`) — typography-led card, not a diagram mirror. Site fallback `og-default.png` uses the same frame with value-first copy and no wordmark row. `hub-workflow-diagram.mjs` is deprecated for hub/fallback OG. `homepage-hero-frame.mjs` is deprecated for the in-page hub hero.
