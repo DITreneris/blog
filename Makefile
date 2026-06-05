@@ -1,6 +1,15 @@
 .PHONY: validate validate-theme validate-brand validate-satori build serve clean sync-images brand-assets analytics satori-images build-css
 
-PYTHON ?= python
+ifeq ($(OS),Windows_NT)
+  VENV_PY := .venv/Scripts/python.exe
+else
+  VENV_PY := .venv/bin/python
+endif
+ifneq ($(wildcard $(VENV_PY)),)
+  PYTHON ?= $(VENV_PY)
+else
+  PYTHON ?= python
+endif
 NPM ?= npm
 
 brand-assets:
@@ -31,7 +40,7 @@ validate: validate-theme validate-brand
 	$(PYTHON) scripts/validate_content.py
 
 build: validate satori-images validate-satori sync-images brand-assets analytics build-css
-	pelican content -s publishconf.py
+	$(PYTHON) -m pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
 	$(PYTHON) scripts/validate_seo_output.py
@@ -39,7 +48,7 @@ build: validate satori-images validate-satori sync-images brand-assets analytics
 	$(PYTHON) scripts/audit_image_weights.py --warn-only
 
 build-dev: validate satori-images validate-satori sync-images brand-assets build-css
-	pelican content
+	$(PYTHON) -m pelican content
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
 	$(PYTHON) scripts/validate_seo_output.py
