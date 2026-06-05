@@ -22,7 +22,7 @@ build-css:
 	$(PYTHON) scripts/build_css.py
 
 satori-images:
-	$(NPM) run build:satori
+	bash scripts/ensure_satori_assets.sh
 
 sync-images:
 	$(PYTHON) scripts/sync_illustrations.py

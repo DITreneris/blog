@@ -28,14 +28,11 @@ export function categoryBadge(label, category, surface = 'hero') {
   const style = getCategoryStyle(category || label);
   const badgeSize = surface === 'og' ? oType.badge : hType.badge;
   const isOg = surface === 'og';
+  const outerStyle = { display: 'flex' };
+  if (isOg) outerStyle.alignSelf = 'flex-start';
   return h(
     'div',
-    {
-      style: {
-        display: 'flex',
-        alignSelf: isOg ? 'flex-start' : undefined,
-      },
-    },
+    { style: outerStyle },
     h(
       'div',
       {
