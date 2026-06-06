@@ -8,6 +8,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **CI / Makefile build order:** `make build` and `make build-dev` now run `sync-images` before `validate-content`, matching [`scripts/vercel_build.sh`](scripts/vercel_build.sh). Fixes GitHub CI failure on clean checkout when `content/images/` heroes are gitignored.
+
 ## [1.0.0] - 2026-06-06 — Content wave + editorial ops
 
 ### Added

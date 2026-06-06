@@ -36,13 +36,16 @@ validate-satori:
 validate-brand:
 	$(PYTHON) scripts/validate_brand_sync.py
 
-validate: validate-theme validate-brand
+validate: validate-theme validate-brand validate-content
+
+validate-content:
 	$(PYTHON) scripts/validate_content.py
 
 audit-content:
 	$(PYTHON) scripts/audit_content_inventory.py --markdown
 
-build: validate satori-images validate-satori sync-images brand-assets analytics build-css
+# Sync heroes before validate-content — content/images/ is gitignored (generated at build).
+build: satori-images validate-satori sync-images brand-assets analytics build-css validate-theme validate-brand validate-content
 	$(PYTHON) -m pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
@@ -50,7 +53,7 @@ build: validate satori-images validate-satori sync-images brand-assets analytics
 	$(PYTHON) scripts/validate_a11y_landmarks.py
 	$(PYTHON) scripts/audit_image_weights.py --warn-only
 
-build-dev: validate satori-images validate-satori sync-images brand-assets build-css
+build-dev: satori-images validate-satori sync-images brand-assets build-css validate-theme validate-brand validate-content
 	$(PYTHON) -m pelican content
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
