@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: nav
-date: 2025-04-22
+date: 2025-03-31
 hero_caption: How the blog, training app, and implementation tools fit together without
   duplicating the same content.
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png

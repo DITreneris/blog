@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-09-27
+date: 2025-10-24
 hero_caption: Fluent wrong answers relax reviewers—workflows need citations, checkers,
   or human sign-off before send.
 hero_image: images/articles/when-ai-hallucinates-confidence/hero.png

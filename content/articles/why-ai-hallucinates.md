@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-10-19
+date: 2025-11-14
 hero_image: images/articles/why-ai-hallucinates/hero.png
 hero_caption: "Grounded vs ungrounded — controlled context and verification on the left; plausible guessing on the right."
 key_takeaway: Models predict plausible text; grounding and verification are workflow choices — not a bigger model SKU.

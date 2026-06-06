@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-06
+date: 2026-07-04
 hero_image: images/articles/ai-procurement-freeze/hero.png
 hero_caption: "Procurement freeze board: tool inventory, decision stages, and 90-day governance gates."
 key_takeaway: A temporary buying freeze helps leaders convert AI tool sprawl into one governed decision-stage operating model.

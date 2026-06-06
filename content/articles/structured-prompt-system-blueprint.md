@@ -1,7 +1,7 @@
 ---
 authors: Prompt Anatomy
 body_locked: true
-category: Framework
+category: Prompt Systems
 content_tier: playbook
 date: 2024-04-05
 hero_caption: Prompt registry — versioned templates, owners, environments, and eval-linked

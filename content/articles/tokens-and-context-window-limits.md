@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-12-26
+date: 2026-01-22
 hero_caption: Context tube — safe, limit, and overflow zones; more text does not mean
   better results.
 hero_image: images/articles/tokens-and-context-window-limits/hero.png

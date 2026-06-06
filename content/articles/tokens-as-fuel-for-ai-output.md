@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-12-03
+date: 2025-12-29
 hero_image: images/articles/tokens-as-fuel-for-ai-output/hero.png
 hero_caption: "Tokens as fuel — context window level drives full, degraded, or cut-off output from the same model."
 key_takeaway: Empty or starved context produces cut-off outputs; full does not mean paste everything — it means the right fuel."

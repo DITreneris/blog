@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-11-12
+date: 2025-12-07
 hero_caption: A larger context window does not replace retrieval design, policy layers,
   or evaluation.
 hero_image: images/articles/context-window-myths/hero.png

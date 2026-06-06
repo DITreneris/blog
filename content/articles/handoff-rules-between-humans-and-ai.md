@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2025-02-15
+date: 2025-01-22
 faq:
 - answer: Each rule needs a trigger, what the AI stops doing, the human action required,
     an owner role, and an SLA—logged in audit trails like any other workflow step.

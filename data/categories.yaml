@@ -4,23 +4,22 @@ categories:
     description: "Structured prompting, templates, and repeatable prompt workflows."
     reading_path:
       - slug: types-of-prompts-for-business-workflows
+      - slug: prompt-engineering-vs-ai-workflow-engineering
       - slug: structured-prompt-system-blueprint
       - slug: prompt-registry-playbook
       - slug: prompt-frameworks-race-tag-business
       - slug: prompt-regression-testing-week
-      - slug: prompt-engineering-vs-ai-workflow-engineering
   - title: "AI Agents"
     slug: "ai-agents"
     description: "Agent design, orchestration, and business-ready automation."
     reading_path:
       - slug: how-to-design-an-ai-agent-workflow
+      - slug: from-prompt-to-agent
       - slug: model-context-protocol-enterprise
+      - slug: multi-agent-handoff-pattern
       - slug: langgraph-vs-crewai-production-guide
       - slug: multi-agent-observability
-      - slug: from-prompt-to-agent
-      - slug: data-boundaries-for-ai-agents
       - slug: ai-outreach-with-outlook-guardrails
-      - slug: multi-agent-handoff-pattern
   - title: "AI Governance"
     slug: "ai-governance"
     description: "Policy, risk, and operating rules for AI inside organizations."
@@ -48,8 +47,8 @@ categories:
     reading_path:
       - slug: case-study-vibe-prompting-to-structured-workflow
       - slug: northline-part-2-scaling-eval-coverage
-      - slug: ai-tender-response-pipeline
       - slug: finance-workflow-case-study-controlled-draft-and-review
+      - slug: ai-tender-response-pipeline
   - title: "Templates"
     slug: "templates"
     description: "Canvases, checklists, and operating documents."
@@ -64,17 +63,18 @@ categories:
     description: "Perspective on tools, hype, and what actually works."
     reading_path:
       - slug: your-company-does-not-need-more-ai-tools
-      - slug: when-ai-hallucinates-confidence
-      - slug: context-window-myths
-      - slug: five-levels-of-ai-control
-      - slug: what-scales-ai-beyond-basics
-      - slug: chaos-vs-control-prompting
-      - slug: three-types-of-rag
-      - slug: why-ai-hallucinates
-      - slug: tokens-and-context-window-limits
-      - slug: prompt-engineering-memes-vs-reality
       - slug: what-your-ai-stack-reveals
+      - slug: chaos-vs-control-prompting
+      - slug: five-levels-of-ai-control
+      - slug: context-window-myths
+      - slug: tokens-and-context-window-limits
+      - slug: tokens-as-fuel-for-ai-output
+      - slug: why-ai-hallucinates
+      - slug: when-ai-hallucinates-confidence
+      - slug: three-types-of-rag
       - slug: three-types-of-ai-memory-short
+      - slug: what-scales-ai-beyond-basics
+      - slug: prompt-engineering-memes-vs-reality
   - title: "Framework"
     slug: "framework"
     description: "Original frameworks for predictable AI outcomes."
@@ -82,10 +82,11 @@ categories:
       - slug: the-model-is-not-the-system
       - slug: prompt-anatomy-foundations
       - slug: what-is-context-architecture
-      - slug: rag-in-production
       - slug: grounding-ai-outputs
-      - slug: evaluating-agents-with-clear
-      - slug: prompt-anatomy-glossary
-      - slug: evaluation-hooks-for-ai-workflows
+      - slug: context-rot-why-bigger-windows-make-agents-worse
+      - slug: rag-in-production
       - slug: memory-types-for-ai-systems
+      - slug: evaluation-hooks-for-ai-workflows
+      - slug: evaluating-agents-with-clear
       - slug: ai-implementation-maturity-ladder
+      - slug: prompt-anatomy-glossary

@@ -145,11 +145,20 @@ def build_report(rows: list[dict], clusters_cfg: dict) -> dict:
     missing_tier = [r["slug"] for r in published if not r["content_tier"]]
 
     reading_path_issues: list[dict] = []
+    reading_path_category_mismatch: list[dict] = []
     for cat_title, slugs in _load_reading_paths().items():
         for slug in slugs:
             if slug not in pub_slugs:
                 reading_path_issues.append(
                     {"category": cat_title, "slug": slug, "issue": "not_published"}
+                )
+            elif slug_cat.get(slug) != cat_title:
+                reading_path_category_mismatch.append(
+                    {
+                        "hub_category": cat_title,
+                        "slug": slug,
+                        "article_category": slug_cat[slug],
+                    }
                 )
 
     # Consistency
@@ -237,6 +246,7 @@ def build_report(rows: list[dict], clusters_cfg: dict) -> dict:
             "missing_tier_count": len(missing_tier),
             "missing_tier": missing_tier,
             "reading_path_issues": reading_path_issues,
+            "reading_path_category_mismatch": reading_path_category_mismatch,
         },
         "consistency": {
             "orphans": orphans,
@@ -265,6 +275,7 @@ def _format_stdout(report: dict) -> str:
             "",
             f"Taxonomy: {tax['missing_tags_count']} published without tags",
             f"Reading path issues: {len(tax['reading_path_issues'])}",
+            f"Reading path category mismatch: {len(tax.get('reading_path_category_mismatch', []))}",
         ]
     )
 
@@ -322,9 +333,18 @@ def _format_markdown(report: dict) -> str:
             f"- Published without tags: **{tax['missing_tags_count']}**",
             f"- Published without content_tier: **{tax['missing_tier_count']}**",
             f"- Reading path broken slugs: **{len(tax['reading_path_issues'])}**",
+            f"- Reading path category mismatch: **{len(tax.get('reading_path_category_mismatch', []))}**",
             "",
         ]
     )
+    if tax.get("reading_path_category_mismatch"):
+        lines.append("| Hub category | Slug | Article category |")
+        lines.append("|--------------|------|------------------|")
+        for issue in tax["reading_path_category_mismatch"]:
+            lines.append(
+                f"| {issue['hub_category']} | `{issue['slug']}` | {issue['article_category']} |"
+            )
+        lines.append("")
     if tax["reading_path_issues"]:
         lines.append("| Category | Slug | Issue |")
         lines.append("|----------|------|-------|")

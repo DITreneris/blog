@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2025-05-16
+date: 2025-04-22
 faq:
 - answer: The line-of-business process owner is accountable for outcomes; they maintain
     prompt templates with IT implementing integrations and Legal consulting on policy

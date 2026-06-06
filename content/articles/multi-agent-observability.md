@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-06-06
+date: 2026-06-26
 hero_image: images/articles/multi-agent-observability/hero.png
 hero_caption: "Multi-agent observability — handoff traces, failure modes, and governance-ready logs."
 key_takeaway: Multi-agent workflows need run-level traces that show handoff contracts, policy versions, and guardrail events—not only final output text.

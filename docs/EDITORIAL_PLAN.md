@@ -35,18 +35,20 @@ Prompt Anatomy Blog is a **structured AI implementation knowledge hub** — not 
 
 **Editorial audit (2026-06-06):** Keyword wave (20 slugs) + legacy taxonomy backfill + P3 finance case study + change log template + prose depth pass on 11 playbooks. Report: [`docs/reports/editorial-status-2026-06-06.md`](reports/editorial-status-2026-06-06.md).
 
+**Publish dates:** Curriculum `date` values are assigned by [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py) (`PUBLICATION_ORDER` + ~21–24 day jitter from 2024-01-06). Wave-2 keyword posts stagger across 2026 Q2—not bulk same-day. Homepage `#latest` sorts by `date` desc, then title asc.
+
 ### Published posts by category
 
 | Category | Count | Tier | Editorial status |
 |----------|------:|------|------------------|
 | Opinion | 13 | Moderate share | Funnel; spokes wired to pillars |
-| Framework | 12 | Strong | Grounding, RAG, CLEAR, glossary shipped |
+| Framework | 11 | Strong | Grounding, RAG, CLEAR, glossary shipped |
 | Implementation Notes | 9 | Strong | Procurement, ROI, orchestrator, platform selection |
-| AI Agents | 8 | Strong | MCP pillar, framework guide, observability, tender |
+| AI Agents | 7 | Strong | MCP pillar, framework guide, observability, outreach |
 | AI Governance | 5 | Strong | MCP security + existing cluster |
-| Prompt Systems | 5 | Strong | Registry pillar + frameworks + regression |
+| Prompt Systems | 6 | Strong | Registry pillar + blueprint + frameworks + regression |
 | Templates | 5 | Strong | Eval, RACI, MCP worksheets, canvas, change log |
-| Case Studies | 4 | Strong | Northline Part 1 + 2, tender, finance |
+| Case Studies | 4 | Strong | Northline Part 1 + 2, finance, tender pipeline |
 
 ### Pillar articles (start-here / flagship)
 
@@ -159,7 +161,7 @@ Ship in priority order unless a release theme overrides. Check this table before
 | **P2** | Measuring AI Workflow ROI | Implementation Notes | playbook | ✓ `measuring-ai-workflow-roi` |
 | **P3** | Glossary | Framework | nav | ✓ `prompt-anatomy-glossary` |
 | **P3** | MCP Server Selection Worksheet | Templates | template | ✓ `mcp-server-selection-worksheet` |
-| **P2** | Tender Response Pipeline Case Study | AI Agents | playbook | ✓ `ai-tender-response-pipeline` |
+| **P2** | Tender Response Pipeline Case Study | Case Studies | playbook | ✓ `ai-tender-response-pipeline` |
 | **P3** | Finance Workflow Case Study | Case Studies | playbook | ✓ `finance-workflow-case-study-controlled-draft-and-review` |
 | **P3** | AI Change Log Template | Templates | template | ✓ `ai-change-log-template-prompt-context-and-model-updates` |
 

@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2025-06-06
+date: 2025-05-16
 faq:
 - answer: Default deny. Add allow rows per workflow with owner sign-off and Legal
     consult for customer-facing reads or writes.

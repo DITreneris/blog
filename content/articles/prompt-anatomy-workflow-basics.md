@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
-date: 2026-05-09
+date: 2026-08-23
 hero_image: images/articles/prompt-anatomy-workflow-basics/hero.png
 key_takeaway: Minimum workflow elements now live in the AI Workflow Canvas template.
 reading_time: 1 min read

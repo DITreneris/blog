@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-01-17
+date: 2026-02-12
 hero_caption: Three RAG patterns — basic lookup, smart refine, and agentic act — as
   increasing control, not one feature toggle.
 hero_image: images/articles/three-types-of-rag/hero.png

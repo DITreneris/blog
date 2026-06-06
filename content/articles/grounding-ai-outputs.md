@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: pillar
-date: 2026-06-06
+date: 2026-05-29
 hero_image: images/articles/grounding-ai-outputs/hero.png
 hero_caption: "Grounding stack in one flow: scoped context, approved retrieval, and verification gates before external send."
 key_takeaway: Reliable AI output comes from one operating system that combines context architecture, retrieval boundaries, and verification gates.

@@ -36,7 +36,7 @@
 
 {% set latest_cfg = HUB_SECTIONS.latest %}
 {% set initial_count = latest_cfg.initial_count|default(12)|int %}
-{% set latest_sorted = articles|sort(attribute='date', reverse=True)|rejectattr('featured')|list %}
+{% set latest_sorted = articles|rejectattr('featured')|sort(attribute='title')|sort(attribute='date', reverse=True)|list %}
 {% set latest_initial = latest_sorted[:initial_count] %}
 {% set latest_more = latest_sorted[initial_count:] %}
 

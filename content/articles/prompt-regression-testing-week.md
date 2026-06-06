@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: playbook
-date: 2026-06-06
+date: 2026-05-26
 hero_image: images/articles/prompt-regression-testing-week/hero.png
 hero_caption: "One-week prompt regression plan — case collection, rubric setup, baseline, and release gate."
 key_takeaway: You can build a useful prompt regression set in one week if you scope one workflow, freeze cases, and tie results to release decisions.

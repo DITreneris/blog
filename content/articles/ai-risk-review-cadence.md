@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2025-07-21
+date: 2025-06-29
 hero_caption: Standing risk forum — incidents, eval regressions, and workflow changes
   on a fixed agenda.
 hero_image: images/articles/ai-risk-review-cadence/hero.png

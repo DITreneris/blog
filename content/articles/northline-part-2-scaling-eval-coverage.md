@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Case Studies
 content_tier: playbook
-date: 2026-06-06
+date: 2025-09-08
 hero_image: images/articles/northline-part-2-scaling-eval-coverage/hero.png
 hero_caption: "Eval coverage expansion — from 50% shadow traffic to 80% queue coverage after pass rate held four weeks."
 key_takeaway: Northline increased shadow traffic only after eval pass rate held and override review stayed disciplined—not when leadership wanted faster ROI."

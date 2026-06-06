@@ -19,6 +19,10 @@ Guidelines for articles on **promptanatomy.blog**. See also [AGENTS.md](../AGENT
 - [ ] Optional: `body_locked: true` after manual edit so `enrich_articles_from_manifest.py` does not overwrite.
 - [ ] Run `python scripts/validate_content.py` and `make build` (or Pelican equivalent).
 
+## Publish dates
+
+Assign `date` (and pillar `modified` when applicable) via [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py)—add new slugs to `PUBLICATION_ORDER` in curriculum order, then run the script. Do not rely on `new_post.py` defaulting to today's date for published curriculum posts; staggered dates keep homepage `#latest` and reading-path narrative believable.
+
 ## Article brief (recommended structure)
 
 1. Outcome-led intro (problem + cost of status quo).

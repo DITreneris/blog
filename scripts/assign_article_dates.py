@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Assign realistic publish dates from a fixed editorial order.
 
-Start: 2024-01-06, ~24-day cadence (jittered), curriculum order from hub + categories.
-Removes bulk ``modified: 2026-06-04`` unless a real refresh offset applies to pillars.
+Start: 2024-01-06, ~24-day cadence (jittered) for legacy curriculum; compressed
+~3–5 day cadence for wave-2 keyword posts (2026 Q2). Manual exceptions in
+``FIXED_DATES`` are preserved. Northline Part 2 lands ~7 weeks after Part 1.
 """
 from __future__ import annotations
 
@@ -14,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARTICLES = ROOT / "content" / "articles"
 
-# Curriculum: framework → prompts → implementation → agents → governance → case/template → opinion
+# Curriculum: framework → prompts → implementation → agents → governance → case/template → opinion → wave 2
 PUBLICATION_ORDER: list[str] = [
     "the-model-is-not-the-system",
     "prompt-anatomy-foundations",
@@ -32,7 +33,6 @@ PUBLICATION_ORDER: list[str] = [
     "how-to-design-an-ai-agent-workflow",
     "from-prompt-to-agent",
     "multi-agent-handoff-pattern",
-    "ai-tender-response-pipeline",
     "ai-outreach-with-outlook-guardrails",
     "handoff-rules-between-humans-and-ai",
     "team-rituals-for-ai-implementation",
@@ -43,6 +43,7 @@ PUBLICATION_ORDER: list[str] = [
     "audit-trails-for-ai-workflows",
     "ai-risk-review-cadence",
     "case-study-vibe-prompting-to-structured-workflow",
+    "northline-part-2-scaling-eval-coverage",
     "ai-workflow-canvas-template",
     "when-ai-hallucinates-confidence",
     "why-ai-hallucinates",
@@ -54,7 +55,32 @@ PUBLICATION_ORDER: list[str] = [
     "five-levels-of-ai-control",
     "prompt-engineering-memes-vs-reality",
     "what-your-ai-stack-reveals",
+    # Wave 2 — keyword integration (2026 Q2)
+    "prompt-registry-playbook",
+    "prompt-frameworks-race-tag-business",
+    "prompt-regression-testing-week",
+    "grounding-ai-outputs",
+    "context-rot-why-bigger-windows-make-agents-worse",
+    "rag-in-production",
+    "evaluating-agents-with-clear",
+    "prompt-anatomy-glossary",
+    "model-context-protocol-enterprise",
+    "langgraph-vs-crewai-production-guide",
+    "multi-agent-observability",
+    "securing-mcp-agent-tools",
+    "ai-procurement-freeze",
+    "measuring-ai-workflow-roi",
+    "agent-orchestrator-operating-model",
+    "choosing-workflow-automation-ai-pipelines",
+    "ai-workflow-eval-checklist",
+    "governance-raci-worksheet",
+    "mcp-server-selection-worksheet",
+    "ai-change-log-template-prompt-context-and-model-updates",
+    "finance-workflow-case-study-controlled-draft-and-review",
+    "ai-tender-response-pipeline",
 ]
+
+WAVE2_START_SLUG = "prompt-registry-playbook"
 
 # Drafts continue the cadence after published catalog (not shown on site while draft)
 DRAFT_ORDER: list[str] = [
@@ -68,9 +94,15 @@ DRAFT_ORDER: list[str] = [
     "twitter-engagement-bot-with-limits",
 ]
 
-# Slight jitter (days) per step so the calendar is not perfectly periodic
-# ~23-day average: 38 published posts from 2024-01-06 land near May 2026
 INTERVAL_DAYS = [22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23]
+WAVE2_INTERVAL_DAYS = [4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5]
+
+FIXED_DATES: dict[str, date] = {
+    "finance-workflow-case-study-controlled-draft-and-review": date(2026, 4, 2),
+    "ai-change-log-template-prompt-context-and-model-updates": date(2026, 4, 24),
+}
+
+NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
 PILLAR_SLUGS = frozenset(
     {
@@ -78,6 +110,10 @@ PILLAR_SLUGS = frozenset(
         "10-signs-your-company-is-vibe-prompting",
         "what-is-context-architecture",
         "how-to-design-an-ai-agent-workflow",
+        "prompt-registry-playbook",
+        "rag-in-production",
+        "grounding-ai-outputs",
+        "model-context-protocol-enterprise",
     }
 )
 
@@ -85,13 +121,38 @@ START = date(2024, 1, 6)
 TODAY = date.today()
 
 
-def _schedule(slugs: list[str], start: date) -> dict[str, date]:
+def _schedule(slugs: list[str], start: date, intervals: list[int]) -> dict[str, date]:
     out: dict[str, date] = {}
     d = start
     for i, slug in enumerate(slugs):
         out[slug] = d
         if i < len(slugs) - 1:
-            d += timedelta(days=INTERVAL_DAYS[i % len(INTERVAL_DAYS)])
+            d += timedelta(days=intervals[i % len(intervals)])
+    return out
+
+
+def _build_publication_dates() -> dict[str, date]:
+    wave_idx = PUBLICATION_ORDER.index(WAVE2_START_SLUG)
+    legacy_slugs = PUBLICATION_ORDER[:wave_idx]
+    wave_slugs = [s for s in PUBLICATION_ORDER[wave_idx:] if s not in FIXED_DATES]
+
+    out = _schedule(legacy_slugs, START, INTERVAL_DAYS)
+
+    part1 = out["case-study-vibe-prompting-to-structured-workflow"]
+    out["northline-part-2-scaling-eval-coverage"] = part1 + timedelta(
+        days=NORTHLINE_PART2_AFTER_PART1_DAYS
+    )
+
+    after_northline = legacy_slugs[legacy_slugs.index("northline-part-2-scaling-eval-coverage") + 1 :]
+    d = out["northline-part-2-scaling-eval-coverage"]
+    for i, slug in enumerate(after_northline):
+        d += timedelta(days=INTERVAL_DAYS[i % len(INTERVAL_DAYS)])
+        out[slug] = d
+
+    wave_start = out[legacy_slugs[-1]] + timedelta(days=WAVE2_INTERVAL_DAYS[0])
+    wave_dates = _schedule(wave_slugs, wave_start, WAVE2_INTERVAL_DAYS)
+    out.update(wave_dates)
+    out.update(FIXED_DATES)
     return out
 
 
@@ -127,10 +188,10 @@ def _patch_frontmatter(text: str, pub: date, mod: date | None) -> str:
 
 
 def main() -> int:
-    pub_dates = _schedule(PUBLICATION_ORDER, START)
+    pub_dates = _build_publication_dates()
     last_pub = max(pub_dates.values())
     draft_start = last_pub + timedelta(days=INTERVAL_DAYS[0])
-    draft_dates = _schedule(DRAFT_ORDER, draft_start)
+    draft_dates = _schedule(DRAFT_ORDER, draft_start, INTERVAL_DAYS)
     all_dates = {**pub_dates, **draft_dates}
 
     md_files = {p.stem: p for p in ARTICLES.glob("*.md")}
@@ -143,7 +204,10 @@ def main() -> int:
     if extra:
         print("Articles not in schedule (unchanged):", ", ".join(sorted(extra)), file=sys.stderr)
 
-    for slug, pub in all_dates.items():
+    for slug in PUBLICATION_ORDER + DRAFT_ORDER:
+        if slug not in all_dates:
+            continue
+        pub = all_dates[slug]
         path = md_files[slug]
         mod = _modified_for(slug, pub)
         new_text = _patch_frontmatter(path.read_text(encoding="utf-8"), pub, mod)

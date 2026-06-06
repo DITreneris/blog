@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2025-03-31
+date: 2025-03-08
 hero_caption: Outcome mapping — tie each workflow to one business metric, owner, and
   eval gate.
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png

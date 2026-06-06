@@ -1,9 +1,9 @@
 ---
 authors: Prompt Anatomy
 body_locked: true
-category: AI Agents
+category: Case Studies
 content_tier: playbook
-date: 2024-12-31
+date: 2026-08-01
 hero_caption: Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory
   legal assembly gate.
 hero_image: images/articles/ai-tender-response-pipeline/hero.png
@@ -19,6 +19,8 @@ tags:
 - northline
 title: AI Tender Response Pipeline
 ---
+
+*Anonymized composite (Northline B2B)—multiple implementations.*
 
 Tender and RFP work is document-heavy, time-bound, and unforgiving of invented clauses. A single long prompt cannot hold evaluation criteria, mandatory sections, approved boilerplate, pricing rules, and indemnity limits at once—models will still produce fluent unacceptable terms. A **pipeline** beats a mega-prompt: staged steps with retrieval from tagged sources, compliance scan, and human assembly before any PDF leaves the building.
 

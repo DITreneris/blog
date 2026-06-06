@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
-date: 2026-10-13
+date: 2027-01-27
 hero_image: images/articles/twitter-engagement-bot-with-limits/hero.png
 key_takeaway: Social automation needs agent workflow design and data boundaries—see the playbooks.
 reading_time: 1 min read

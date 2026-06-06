@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-06
+date: 2026-07-13
 hero_image: images/articles/agent-orchestrator-operating-model/hero.png
 hero_caption: "Agent orchestrator operating model — ownership, escalation, release gates, and run governance."
 key_takeaway: The orchestrator role is not a prompt writer; it is an operating function that keeps multi-agent workflows bounded, observable, and accountable.

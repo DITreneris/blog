@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2025-01-22
+date: 2024-12-31
 hero_caption: Outlook draft-and-review flow — shared mailbox, human send, rate caps,
   and approved snippets only.
 hero_image: images/articles/ai-outreach-with-outlook-guardrails/hero.png
