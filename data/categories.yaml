@@ -5,12 +5,18 @@ categories:
     reading_path:
       - slug: types-of-prompts-for-business-workflows
       - slug: structured-prompt-system-blueprint
+      - slug: prompt-registry-playbook
+      - slug: prompt-frameworks-race-tag-business
+      - slug: prompt-regression-testing-week
       - slug: prompt-engineering-vs-ai-workflow-engineering
   - title: "AI Agents"
     slug: "ai-agents"
     description: "Agent design, orchestration, and business-ready automation."
     reading_path:
       - slug: how-to-design-an-ai-agent-workflow
+      - slug: model-context-protocol-enterprise
+      - slug: langgraph-vs-crewai-production-guide
+      - slug: multi-agent-observability
       - slug: from-prompt-to-agent
       - slug: data-boundaries-for-ai-agents
       - slug: ai-outreach-with-outlook-guardrails
@@ -23,6 +29,7 @@ categories:
       - slug: data-boundaries-for-ai-agents
       - slug: audit-trails-for-ai-workflows
       - slug: ai-risk-review-cadence
+      - slug: securing-mcp-agent-tools
   - title: "Implementation Notes"
     slug: "implementation-notes"
     description: "Practical diagnostics and field notes from real deployments."
@@ -31,16 +38,27 @@ categories:
       - slug: team-rituals-for-ai-implementation
       - slug: handoff-rules-between-humans-and-ai
       - slug: from-prompts-to-business-outcomes
+      - slug: ai-procurement-freeze
+      - slug: measuring-ai-workflow-roi
+      - slug: agent-orchestrator-operating-model
+      - slug: choosing-workflow-automation-ai-pipelines
   - title: "Case Studies"
     slug: "case-studies"
     description: "How teams moved from experiments to controlled AI systems."
     reading_path:
       - slug: case-study-vibe-prompting-to-structured-workflow
+      - slug: northline-part-2-scaling-eval-coverage
+      - slug: ai-tender-response-pipeline
+      - slug: finance-workflow-case-study-controlled-draft-and-review
   - title: "Templates"
     slug: "templates"
     description: "Canvases, checklists, and operating documents."
     reading_path:
       - slug: ai-workflow-canvas-template
+      - slug: ai-workflow-eval-checklist
+      - slug: governance-raci-worksheet
+      - slug: mcp-server-selection-worksheet
+      - slug: ai-change-log-template-prompt-context-and-model-updates
   - title: "Opinion"
     slug: "opinion"
     description: "Perspective on tools, hype, and what actually works."
@@ -64,4 +82,10 @@ categories:
       - slug: the-model-is-not-the-system
       - slug: prompt-anatomy-foundations
       - slug: what-is-context-architecture
+      - slug: rag-in-production
+      - slug: grounding-ai-outputs
+      - slug: evaluating-agents-with-clear
+      - slug: prompt-anatomy-glossary
+      - slug: evaluation-hooks-for-ai-workflows
+      - slug: memory-types-for-ai-systems
       - slug: ai-implementation-maturity-ladder

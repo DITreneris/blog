@@ -8,31 +8,41 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-06-06 — Content wave + editorial ops
+
 ### Added
 
+- **Editorial audit tooling:** [`scripts/list_taxonomy_gaps.py`](scripts/list_taxonomy_gaps.py) (published slugs missing `tags` / `content_tier`); [`scripts/backfill_article_taxonomy.py`](scripts/backfill_article_taxonomy.py) (idempotent taxonomy backfill from slug map). On Windows without `make`, run validators via `.venv/Scripts/python.exe scripts/validate_content.py` and audit via `scripts/audit_content_inventory.py --markdown`.
+- **Editorial plan v1.1–v1.2:** [`docs/research/ai-keyword-research-trends-2026.txt`](docs/research/ai-keyword-research-trends-2026.txt) archived; [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md) §4.5 GEO/citation strategy, backlog closure, post-wave §4/§8/§9 refresh; four new clusters in [`data/editorial_clusters.yaml`](data/editorial_clusters.yaml); [`docs/research/keyword-to-backlog-map.md`](docs/research/keyword-to-backlog-map.md).
+- **Keyword-driven content wave (20 posts):** P1 — `prompt-registry-playbook`, `rag-in-production`, `ai-workflow-eval-checklist`, `northline-part-2-scaling-eval-coverage`, `model-context-protocol-enterprise`; P2/P3 — grounding, context rot, procurement freeze, MCP security, LangGraph/CrewAI guide, CLEAR eval, workflow platform selection, agent orchestrator, prompt frameworks, regression testing, multi-agent observability, ROI, RACI/MCP worksheets, glossary. Satori heroes + `reading_path` updates; `new_post.py` inserts manifest rows before `category_og`.
+- **P3 closure posts:** [`finance-workflow-case-study-controlled-draft-and-review.md`](content/articles/finance-workflow-case-study-controlled-draft-and-review.md) (Northline finance vertical); [`ai-change-log-template-prompt-context-and-model-updates.md`](content/articles/ai-change-log-template-prompt-context-and-model-updates.md) (template pack complete — 5 templates).
+- **Agent and skills system:** [`docs/AGENT_SYSTEM.md`](docs/AGENT_SYSTEM.md) routing hub; [`.cursor/agents/editorial-agent.md`](.cursor/agents/editorial-agent.md) (corpus audits, EDITORIAL_PLAN §2/§5); four project skills under [`.cursor/skills/`](.cursor/skills/) (`add-article`, `editorial-audit`, `theme-release`, `production-release`); [`scripts/audit_content_inventory.py`](scripts/audit_content_inventory.py) + [`data/editorial_clusters.yaml`](data/editorial_clusters.yaml); `make audit-content` → [`docs/reports/editorial-status-*.md`](docs/reports/).
 - **Pre-release hardening:** branded [`content/extra/404.html`](content/extra/404.html) (`noindex,follow`) copied to `output/404.html` for Vercel; FAQ frontmatter on [`audit-trails-for-ai-workflows.md`](content/articles/audit-trails-for-ai-workflows.md), [`handoff-rules-between-humans-and-ai.md`](content/articles/handoff-rules-between-humans-and-ai.md), [`multi-agent-handoff-pattern.md`](content/articles/multi-agent-handoff-pattern.md).
 - **Load-speed optimization (Phases 0–3):** self-hosted Inter (`fonts.css` + `@fontsource/inter` woff2), minified CSS bundles (`scripts/build_css.py` → `site.min.css`, `article.min.css`), Vercel immutable cache headers for `/static/` and `/images/`, WebP responsive heroes via `responsive_hero_img` macro + [`sync_illustrations.py`](scripts/sync_illustrations.py), Pygments syntax colors ([`pygments.css`](theme/promptanatomy/static/css/pygments.css)), homepage latest load-more ([`latest-load-more.js`](theme/promptanatomy/static/js/latest-load-more.js)), [`scripts/audit_image_weights.py`](scripts/audit_image_weights.py), Lighthouse CI ([`.github/workflows/performance.yml`](.github/workflows/performance.yml)), [`docs/PERFORMANCE_BASELINE.md`](docs/PERFORMANCE_BASELINE.md).
+- **Native hub hero diagram:** [`partials/hero_architecture_diagram.html`](theme/promptanatomy/templates/partials/hero_architecture_diagram.html) — pipeline diagram driven by `hero.diagram` in [`data/hub_sections.yaml`](data/hub_sections.yaml); wired from [`blog_hero.html`](theme/promptanatomy/templates/partials/blog_hero.html) when `hero.visual: diagram`.
+- **Hero depth tokens:** `--color-hero-bg`, `--color-hero-diagram-glow`, `--color-hero-diagram-surface`, `--color-hero-diagram-border`, `--shadow-hero-diagram`, `--radius-hero-diagram` in [`tokens.css`](theme/promptanatomy/static/css/tokens.css).
+- **Ecosystem play spokes:** eight `promptanatomy.lol` cards in [`data/ecosystem.yaml`](data/ecosystem.yaml) (Corporate Ladder live; seven placeholder paths).
+- **Conditional Satori on Vercel:** [`scripts/ensure_satori_assets.sh`](scripts/ensure_satori_assets.sh) — `--check` first; skip full PNG regen when committed masters exist; `FORCE_SATORI=1` forces full regen.
+
+### Changed
+
+- **Editorial audit + prose depth (2026-06-06):** Full-stack pass on 20 keyword-integration slugs; legacy **34** articles backfilled with `tags` + `content_tier`. **11 playbooks** expanded from slide-deck rhythm to essay prose. **5 in-place updates:** team rituals agendas, ecosystem map, prompt registry alignment, context engineering summary, tools opinion procurement checklist. Post-audit: **0** orphans, **0** cluster gaps, **0** missing taxonomy ([`docs/reports/editorial-status-2026-06-06.md`](docs/reports/editorial-status-2026-06-06.md)). [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md) v1.2 — 60 published, template pack + case study gates cleared.
+- **Case Studies / Templates reading paths:** [`data/categories.yaml`](data/categories.yaml) — added `ai-tender-response-pipeline`, `finance-workflow-case-study-controlled-draft-and-review`, `ai-change-log-template-prompt-context-and-model-updates`.
+- **Editorial ownership split:** **editorial-agent** owns corpus audits and EDITORIAL_PLAN §2/§5; **q-and-a-agent** refocused on CHANGELOG and design-system docs.
+- **Hub OG v3 (text-first):** Replaces diagram-right v1/v2 hub and fallback cards. New `textOgFrame` in [`base.mjs`](data/og/templates/base.mjs) for [`homepage-og`](data/og/templates/homepage-og.mjs) and [`og-default`](data/og/templates/og-default.mjs). [`hub-workflow-diagram.mjs`](data/og/templates/hub-workflow-diagram.mjs) deprecated for hub/fallback.
+- **CI parity:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs `vercel_install.sh` + `make build` (matches Vercel pipeline). [`Makefile`](Makefile) auto-uses `.venv/bin/python` when present.
+- **Sitemap:** [`generate_sitemap.py`](scripts/generate_sitemap.py) and [`validate_seo_output.py`](scripts/validate_seo_output.py) include `/privacy/` and `/terms/`.
+- **Homepage featured card (premium pass):** compact badges, gold badge on `.card--featured`, softer CTA gradient.
+- **Homepage hero copy and CTAs:** headline *Build AI workflows your team can actually repeat*; primary CTA → `/topics/framework/`; native diagram replaces in-page Satori `hub-hero` composite.
+- **Article publish dates:** curriculum-ordered timeline **2024-01-06 → 2026-04-17** via [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py).
+- **CSS delivery:** `site.min.css` on all pages; `article.min.css` conditional on article/category/design-system templates.
+- **Article LCP:** hero images use `<picture>` WebP + `fetchpriority="high"` + preload.
 
 ### Removed
 
 - **Google Fonts:** Inter no longer loaded from `fonts.googleapis.com`; preconnect links removed from [`base.html`](theme/promptanatomy/templates/base.html).
-- **Newsletter placeholder:** homepage “Coming soon” signup replaced with Atom + LinkedIn CTAs ([`newsletter_cta.html`](theme/promptanatomy/templates/partials/newsletter_cta.html), [`hub_sections.yaml`](data/hub_sections.yaml)).
-
-### Changed
-
-- **Hub OG v3 (text-first):** Replaces diagram-right v1/v2 hub and fallback cards. New `textOgFrame` in [`base.mjs`](data/og/templates/base.mjs) — typography-led 1200×630 layout for [`homepage-og`](data/og/templates/homepage-og.mjs) and [`og-default`](data/og/templates/og-default.mjs): vertically centered copy, pill badge inner wrapper (fixes Satori stretch), optional bolt watermark, inset footer. [`hub-workflow-diagram.mjs`](data/og/templates/hub-workflow-diagram.mjs) deprecated for hub/fallback. **Copy:** [`hub_sections.yaml`](data/hub_sections.yaml) `hero.og_subhead` (card-length subtitle, no `…` truncation); `hero.og_image_alt` for social meta (in-page diagram keeps `image_alt`); [`index.html`](theme/promptanatomy/templates/index.html) prefers `og_image_alt`. [`generate_satori_images.mjs`](scripts/generate_satori_images.mjs) skips char truncate on hub-og; subtitle `maxLines` removed in frame. Regenerated `hub-og.png`, `og-default.png`, synced `content/images/hub/og.png`. **Docs:** [`VISUAL_QA.md`](docs/VISUAL_QA.md), [`BRAND_EXCEPTIONS.md`](docs/design-system/BRAND_EXCEPTIONS.md).
-- **CI parity:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs `vercel_install.sh` + `make build` (matches Vercel pipeline). [`Makefile`](Makefile) auto-uses `.venv/bin/python` when present; `satori-images` runs [`ensure_satori_assets.sh`](scripts/ensure_satori_assets.sh) (check committed masters, skip full regen). Workflows use Node 24.
-- **Sitemap:** [`generate_sitemap.py`](scripts/generate_sitemap.py) and [`validate_seo_output.py`](scripts/validate_seo_output.py) include `/privacy/` and `/terms/` (real legal copy; no longer excluded).
-- **Author schema:** [`schema_person_about.html`](theme/promptanatomy/templates/partials/schema_person_about.html) `sameAs` from `SITE_CONFIG.social.links` (removes stale `TStaniulis_NFT`); [`schema_article.html`](theme/promptanatomy/templates/partials/schema_article.html) Person `url` → `/about/` with YAML-driven `sameAs`.
-- **Article cards:** meaningful hero `alt` from title in [`macros/ui.html`](theme/promptanatomy/templates/macros/ui.html) `article_card()`.
-- **Theme validator:** [`validate_theme_tokens.py`](scripts/validate_theme_tokens.py) skips generated `site.min.css` / `article.min.css` (bundles include `tokens.css` / Pygments hex).
-- **CSS delivery:** five render-blocking stylesheets replaced by `site.min.css` on all pages; `article.min.css` conditional on article, category, and design-system templates.
-- **Article LCP:** hero images use `<picture>` WebP + `fetchpriority="high"` + preload; OG/social meta remain PNG.
-- **Homepage `#latest`:** initial 12 cards + “Show more articles” (remaining cards in DOM, hidden until expanded).
-- **[`scripts/fetch_og_fonts.mjs`](scripts/fetch_og_fonts.mjs):** copies woff2 to `theme/promptanatomy/static/fonts/` for site and WOFF to `data/og/fonts/` for Satori.
-- **Hub hero diagram (premium pipeline, no micro-polish):** horizontal pipeline (Input → Context → Reasoning → Output) → Prompt Anatomy workflow engine → foundation row (Quality, Workflow). **Skipped micro-polish:** no dimmed arrows, no horizontal data-bus (vertical stem connector instead), wider foundation cards, comma-separated pipeline microcopy, standard caption contrast. **Files:** [`hero_architecture_diagram.html`](theme/promptanatomy/templates/partials/hero_architecture_diagram.html), [`data/hub_sections.yaml`](data/hub_sections.yaml), [`components.css`](theme/promptanatomy/static/css/components.css), [`tokens.css`](theme/promptanatomy/static/css/tokens.css). **Docs:** [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`docs/COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md).
-- **[`AGENTS.md`](AGENTS.md)**, **[`README.md`](README.md)**, **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)**, **[`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md)** — cross-links and per-workflow **Done when** lines pointing at the DoD hub.
-- **Article publish dates:** replaced bulk `2026-05-28` / `modified: 2026-06-04` frontmatter with a curriculum-ordered timeline from **2024-01-06** (~21–24 day cadence, jittered) across all 46 posts in `content/articles/`; published catalog spans **2024-01-06 → 2026-04-17**; drafts continue after that. Removed fake same-day `modified` except on four pillar posts (plausible refresh ~10–13 weeks after publish). Re-run via [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py) (`PUBLICATION_ORDER`, `INTERVAL_DAYS`).
+- **Newsletter placeholder:** homepage “Coming soon” signup replaced with Atom + LinkedIn CTAs.
+- **In-page Satori hub-hero composite:** `hub-hero` manifest row removed; social sharing via [`homepage-og`](data/og/templates/homepage-og.mjs) only.
 
 ## [0.7.4] - 2026-06-04 — Footer SaaS IA and conversion
 
@@ -102,35 +112,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Partial caption/intro bridges:** vibe-prompting, tools opinion, prompt vs workflow, types of prompts (two taxonomies), maturity ladder, hallucinates-confidence.
 - **Playbook cross-links** to new Opinion primers; Opinion and AI Agents [`reading_path`](data/categories.yaml) updated.
 - **Docs:** [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) — illustration-first vs caption-first rules.
-
-## [Unreleased]
-
-### Added
-
-- **Native hub hero diagram:** [`partials/hero_architecture_diagram.html`](theme/promptanatomy/templates/partials/hero_architecture_diagram.html) — six-node SVG card (Input, Context, Reasoning, Quality, Output, Workflow) driven by `hero.diagram` in [`data/hub_sections.yaml`](data/hub_sections.yaml); wired from [`blog_hero.html`](theme/promptanatomy/templates/partials/blog_hero.html) when `hero.visual: diagram`.
-- **Hero depth tokens:** `--color-hero-bg`, `--color-hero-diagram-glow`, `--color-hero-diagram-surface`, `--color-hero-diagram-border`, `--shadow-hero-diagram`, `--radius-hero-diagram` in [`tokens.css`](theme/promptanatomy/static/css/tokens.css); styles in [`components.css`](theme/promptanatomy/static/css/components.css) including `@media (prefers-reduced-transparency: reduce)` for header and diagram card.
-- **Style guide:** hero architecture diagram sample on `/design-system/`.
-- **Ecosystem play spokes:** eight `promptanatomy.lol` cards in [`data/ecosystem.yaml`](data/ecosystem.yaml) (Corporate Ladder live; seven placeholder paths for upcoming games), each with a distinct `icon` glyph.
-- **Field Notes spoke:** new ecosystem card → `promptanatomy.blog/#start-here` after Knowledge Hub moved to `.app`.
-- **Definition of Done (2.0) release contract:** 10-section checklist with `(CI)`, `(QA)`, and `(Major)` labels in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md); cross-links to [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) and [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md).
-- **Conditional Satori on Vercel:** [`scripts/ensure_satori_assets.sh`](scripts/ensure_satori_assets.sh) — runs `generate_satori_images.mjs --check` first; skips full PNG regen when committed masters and `og-default.png` exist; `FORCE_SATORI=1` forces full regen.
-
-### Changed
-
-- **Homepage featured card (premium pass):** `.stack` / `.card--has-visual` `align-items: flex-start`; compact badges and CTAs; `--text-featured-title`, gold badge on `.card--featured`, `.card__visual-frame`, tighter padding; `hub_sections.featured.title` cleared (lead-only section `h2`); softer `--color-cta-gradient` / `--color-cta-shadow`; style guide featured sample; docs in `DESIGN_SYSTEM.md`, `VISUAL_QA.md`, `COMPONENTS.md`.
-- **Homepage hero copy and CTAs:** headline *Build AI workflows your team can actually repeat*; primary CTA → `/topics/framework/`; secondary → `/#latest` ([`data/hub_sections.yaml`](data/hub_sections.yaml)).
-- **Homepage hero visual:** retired in-page Satori `hub-hero` composite ([`homepage-hero-frame`](data/og/templates/homepage-hero-frame.mjs) + `h1.png`); social sharing unchanged via Satori [`homepage-og`](data/og/templates/homepage-og.mjs) → `images/hub/og.png` (regenerated with new headline).
-- **Illustration manifest:** removed `hub-hero` row and `hub_images.hero` from [`data/illustrations.yaml`](data/illustrations.yaml); [`verify_build_assets.py`](scripts/verify_build_assets.py) no longer requires `output/images/hub/hero.png`.
-- **Brand description:** [`data/site.yaml`](data/site.yaml) aligned with new hero message.
-- **Docs:** [`COMPONENT_MAP.md`](docs/COMPONENT_MAP.md), [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), [`design-system/LAYOUT.md`](docs/design-system/LAYOUT.md), [`VISUAL_QA.md`](docs/VISUAL_QA.md), [`BRAND_EXCEPTIONS.md`](docs/design-system/BRAND_EXCEPTIONS.md) — native diagram vs Satori OG split; `h1.png` noted as archive-only in [`data/01_illustrations/README.md`](data/01_illustrations/README.md).
-- **Knowledge Hub URL:** ecosystem card now points to [`promptanatomy.app`](https://www.promptanatomy.app/) (was blog `#start-here`); outcome copy updated.
-- **Ecosystem card icons:** optional `icon` field in [`data/ecosystem.yaml`](data/ecosystem.yaml); [`ecosystem_spoke.html`](theme/promptanatomy/templates/partials/ecosystem_spoke.html) renders per-card glyphs (default `◆`).
-- **[`prompt-anatomy-ecosystem-map.md`](content/articles/prompt-anatomy-ecosystem-map.md):** `.lol` play row; Knowledge Hub vs blog roles aligned with homepage cards.
-- [`todo.md`](todo.md) baseline updated — v2.0.0 live on production; G.7.5 complete.
-- [`docs/VISUAL_QA.md`](docs/VISUAL_QA.md) sign-off — production OG smoke + breakpoint QA row for v2.0.0.
-- **Vercel build:** [`scripts/vercel_build.sh`](scripts/vercel_build.sh) uses `ensure_satori_assets.sh` instead of unconditional `npm run build:satori` — saves build minutes on content-only deploys when `data/01_illustrations/` masters are committed.
-- **Satori `--check`:** [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs) includes `theme/promptanatomy/static/img/og-default.png` in the asset check.
-- **Deploy docs:** [`docs/DEPLOY.md`](docs/DEPLOY.md), [`.cursor/rules/deploy-vercel.mdc`](.cursor/rules/deploy-vercel.mdc) — Vercel build-time section (commit masters after template/manifest changes).
 
 ## [2.0.0] - 2026-06-04 — Design System hardening (G.1–G.7)
 

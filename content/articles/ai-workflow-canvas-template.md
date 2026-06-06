@@ -4,13 +4,19 @@ body_locked: true
 category: Templates
 content_tier: template
 date: 2025-09-04
+hero_caption: Copy-paste template — fill the canvas before selecting tools or writing
+  prompts.
 hero_image: images/articles/ai-workflow-canvas-template/hero.png
-hero_caption: "Copy-paste template — fill the canvas before selecting tools or writing prompts."
-key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here become incidents later.
+key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here
+  become incidents later.
 reading_time: 5 min read
 slug: ai-workflow-canvas-template
 status: published
-summary: A one-page canvas to define outcome, steps, context, gates, eval, and ownership before you build.
+summary: A one-page canvas to define outcome, steps, context, gates, eval, and ownership
+  before you build.
+tags:
+- templates
+- workflow-automation
 title: AI Workflow Canvas (Template)
 ---
 

@@ -2,25 +2,35 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
-date: 2024-01-06
-modified: 2024-04-06
-featured: true
 content_tier: pillar
+date: 2024-01-06
+faq:
+- answer: No. The model generates text; durable value comes from workflow, context
+    architecture, evaluation, and governance wrapped around it.
+  question: Is the language model the whole AI system?
+- answer: Teams skip shared context, review gates, and ownership—so outputs are inconsistent,
+    non-reproducible, and hard to audit under real compliance pressure.
+  question: Why do chat-only AI pilots fail in operations?
+- answer: Name one workflow with a metric, pair ops with IT for context and evaluation,
+    pause new tool purchases until that workflow is documented, and run a pilot with
+    pass/fail criteria.
+  question: What should we build in the first 30 days?
+featured: true
+hero_caption: 'Figure: the model sits inside workflow, context, tools, memory, human
+  review, and governed output—not the other way around.'
 hero_image: images/articles/the-model-is-not-the-system/hero.png
-hero_caption: "Figure: the model sits inside workflow, context, tools, memory, human review, and governed output—not the other way around."
-key_takeaway: A language model is one component. Durable value comes from workflow, context, evaluation, and governance around it.
+key_takeaway: A language model is one component. Durable value comes from workflow,
+  context, evaluation, and governance around it.
+modified: 2024-04-06
 reading_time: 8 min read
 slug: the-model-is-not-the-system
 status: published
-summary: Teams fail when chat is the product. This framework maps the system around the model—workflow, context, evaluation, and governance.
+summary: Teams fail when chat is the product. This framework maps the system around
+  the model—workflow, context, evaluation, and governance.
+tags:
+- framework
+- governance
 title: The Model Is Not the System
-faq:
-  - question: Is the language model the whole AI system?
-    answer: No. The model generates text; durable value comes from workflow, context architecture, evaluation, and governance wrapped around it.
-  - question: Why do chat-only AI pilots fail in operations?
-    answer: Teams skip shared context, review gates, and ownership—so outputs are inconsistent, non-reproducible, and hard to audit under real compliance pressure.
-  - question: What should we build in the first 30 days?
-    answer: Name one workflow with a metric, pair ops with IT for context and evaluation, pause new tool purchases until that workflow is documented, and run a pilot with pass/fail criteria.
 ---
 
 Companies rarely fail at AI because the model is weak. They fail because the **system around the model**—workflow, context, evaluation, and governance—is undefined. Executives see fast demos in a chat window and assume the interface is the product. Operations then inherit inconsistent outputs, duplicate tools, and reviews that start only after a customer or regulator notices a problem.

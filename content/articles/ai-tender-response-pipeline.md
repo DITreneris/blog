@@ -4,13 +4,19 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2024-12-31
+hero_caption: Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory
+  legal assembly gate.
 hero_image: images/articles/ai-tender-response-pipeline/hero.png
-hero_caption: "Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory legal assembly gate."
-key_takeaway: Tender AI works when only approved content enters drafts and legal sign-off stays mandatory.
+key_takeaway: Tender AI works when only approved content enters drafts and legal sign-off
+  stays mandatory.
 reading_time: 6 min read
 slug: ai-tender-response-pipeline
 status: published
-summary: RFP/tender pipeline with legal gates, clause checklist, and redacted section example—no auto-submit in v1.
+summary: RFP/tender pipeline with legal gates, clause checklist, and redacted section
+  example—no auto-submit in v1.
+tags:
+- agents
+- northline
 title: AI Tender Response Pipeline
 ---
 

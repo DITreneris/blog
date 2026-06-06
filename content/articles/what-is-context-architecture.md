@@ -11,7 +11,10 @@ key_takeaway: Context architecture controls task, operational, policy, and memor
 reading_time: 7 min read
 slug: what-is-context-architecture
 status: published
-summary: How teams decide what models see, when, and why—with a context spec walkthrough, prompt assembly order, and data classification.
+summary: How teams decide what models see, when, and why—with a context spec walkthrough, prompt assembly order, context rot, and data classification.
+tags:
+  - context
+  - context-engineering
 title: What Is Context Architecture?
 faq:
   - question: Is context architecture the same as prompt engineering?
@@ -64,6 +67,12 @@ Before promoting prompt or model changes, rerun eval set `support-reply-eval-25`
 **Tip:** Version policy packs separately from prompt templates. Legal updates policy; ops updates task framing; IT wires retrieval.
 
 **Tip:** Link the spec from your [AI Workflow Canvas](/articles/ai-workflow-canvas-template/) so reviewers see intent and boundaries together.
+
+## Context rot — why bigger windows are not a strategy
+
+Massive context windows do not remove design work—they increase **context rot**: critical information buried in the middle of a long block is statistically under-weighted by models. Teams that paste entire corpora "because we have room" pay in cost, latency, and confident wrong answers.
+
+Context architecture treats context as a **scarce resource**: just-in-time retrieval, high-signal tokens at the start and end of prompts, and strict separation of static policy from dynamic operational data. See [Context Rot: Why Bigger Windows Make Agents Worse](/articles/context-rot-why-bigger-windows-make-agents-worse/) for diagnostics and remediation patterns.
 
 ## Prompt assembly order
 

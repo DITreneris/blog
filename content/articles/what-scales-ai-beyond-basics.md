@@ -4,13 +4,18 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2024-10-02
+hero_caption: Beyond chat basics — context engineering, chain-of-thought, tools, memory,
+  and agents as system skills.
 hero_image: images/articles/what-scales-ai-beyond-basics/hero.png
-hero_caption: "Beyond chat basics — context engineering, chain-of-thought, tools, memory, and agents as system skills."
-key_takeaway: Usage does not scale AI; systems do — context, tools, memory, and governed agents beat another chat subscription.
+key_takeaway: Usage does not scale AI; systems do — context, tools, memory, and governed
+  agents beat another chat subscription.
 reading_time: 4 min read
 slug: what-scales-ai-beyond-basics
 status: published
-summary: The hero lists five skills that turn casual users into operators — and why each needs workflow ownership, not another license.
+summary: The hero lists five skills that turn casual users into operators — and why
+  each needs workflow ownership, not another license.
+tags:
+- change-management
 title: What Scales AI Beyond the Basics
 ---
 

@@ -2,14 +2,21 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
+content_tier: playbook
 date: 2024-05-21
+hero_caption: Session, episodic, and organizational memory—each with different lifetimes,
+  owners, and retention risk.
 hero_image: images/articles/memory-types-for-ai-systems/hero.png
-hero_caption: "Session, episodic, and organizational memory—each with different lifetimes, owners, and retention risk."
-key_takeaway: Choose memory types by retention risk and workflow need—not by maximizing what the model remembers.
+key_takeaway: Choose memory types by retention risk and workflow need—not by maximizing
+  what the model remembers.
 reading_time: 5 min read
 slug: memory-types-for-ai-systems
 status: published
-summary: Session, episodic, and organizational memory for AI workflows—and when each belongs in your context architecture.
+summary: Session, episodic, and organizational memory for AI workflows—and when each
+  belongs in your context architecture.
+tags:
+- memory
+- context
 title: Memory Types for AI Systems
 ---
 

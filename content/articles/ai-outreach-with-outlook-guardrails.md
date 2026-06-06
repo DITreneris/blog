@@ -4,13 +4,19 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2025-01-22
+hero_caption: Outlook draft-and-review flow — shared mailbox, human send, rate caps,
+  and approved snippets only.
 hero_image: images/articles/ai-outreach-with-outlook-guardrails/hero.png
-hero_caption: "Outlook draft-and-review flow — shared mailbox, human send, rate caps, and approved snippets only."
-key_takeaway: Outreach AI belongs in draft-and-review mode with caps, opt-out respect, and brand-approved snippets.
+key_takeaway: Outreach AI belongs in draft-and-review mode with caps, opt-out respect,
+  and brand-approved snippets.
 reading_time: 6 min read
 slug: ai-outreach-with-outlook-guardrails
 status: published
-summary: Draft outreach in Microsoft Outlook with shared-mailbox workflow, rate limits, DLP triggers, and human send—no autonomous bulk email.
+summary: Draft outreach in Microsoft Outlook with shared-mailbox workflow, rate limits,
+  DLP triggers, and human send—no autonomous bulk email.
+tags:
+- agents
+- governance
 title: AI Outreach with Outlook Guardrails
 ---
 

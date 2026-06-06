@@ -2,14 +2,21 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Opinion
+content_tier: opinion
 date: 2025-11-12
+hero_caption: A larger context window does not replace retrieval design, policy layers,
+  or evaluation.
 hero_image: images/articles/context-window-myths/hero.png
-hero_caption: "A larger context window does not replace retrieval design, policy layers, or evaluation."
-key_takeaway: Bigger context is not a substitute for retrieval design, policy layers, and evaluation.
+key_takeaway: Bigger context is not a substitute for retrieval design, policy layers,
+  and evaluation.
 reading_time: 1 min read
 slug: context-window-myths
 status: published
-summary: Five myths about large context windows—and what actually improves accuracy and cost.
+summary: Five myths about large context windows—and what actually improves accuracy
+  and cost.
+tags:
+- context
+- context-engineering
 title: Context Window Myths
 ---
 
@@ -34,4 +41,4 @@ Large context windows are useful. They are not a strategy.
 
 ## What to do instead
 
-Right-size context per run, version policy packs, measure accuracy on held-out cases—not token count alone.
+Right-size context per run, version policy packs, measure accuracy on held-out cases—not token count alone. For the unified production design, see [Grounding AI Outputs](/articles/grounding-ai-outputs/) and [What Is Context Architecture](/articles/what-is-context-architecture/). When larger windows make agents worse despite more text, read [Context Rot](/articles/context-rot-why-bigger-windows-make-agents-worse/).

@@ -4,17 +4,23 @@ body_locked: true
 category: Framework
 content_tier: playbook
 date: 2024-04-05
+hero_caption: Prompt registry — versioned templates, owners, environments, and eval-linked
+  releases.
 hero_image: images/articles/structured-prompt-system-blueprint/hero.png
-hero_caption: "Prompt registry — versioned templates, owners, environments, and eval-linked releases."
-key_takeaway: A prompt system is versioned templates plus release discipline—not a shared doc anyone can edit.
+key_takeaway: A prompt registry is versioned templates plus release discipline—not a shared
+  doc anyone can edit.
 reading_time: 5 min read
 slug: structured-prompt-system-blueprint
 status: published
-summary: Build a prompt system with registry, owners, environments, changelog, and eval-linked release checklist.
-title: Structured Prompt System Blueprint
+summary: Prompt registry blueprint—owners, environment pins, changelog, and eval-linked
+  release checklist for production prompt systems.
+tags:
+- prompt-systems
+- governance
+title: Prompt Registry Blueprint
 ---
 
-Ad hoc prompts in shared docs drift the week after launch. Someone "just fixes" wording in prod during a Friday incident; three teams fork different versions; Legal discovers customer-facing language that never went through review. A **prompt system** is the alternative: versioned templates, named owners, environment pins, and releases tied to [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/)—the same discipline you expect from application code, applied to the text that frames model behavior.
+Ad hoc prompts in shared docs drift the week after launch. Someone "just fixes" wording in prod during a Friday incident; three teams fork different versions; Legal discovers customer-facing language that never went through review. A **prompt registry** is the alternative: versioned templates, named owners, environment pins, and releases tied to [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/)—the same discipline you expect from application code, applied to the text that frames model behavior.
 
 This blueprint defines registry components, walks through a sample entry for Northline B2B's `support-reply-v3`, explains rollout without boiling the ocean, and gives decision criteria for new prompt IDs versus version bumps. Pair it with [context architecture](/articles/what-is-context-architecture/) versioning and the [AI workflow canvas](/articles/ai-workflow-canvas-template/) before registry entries multiply.
 
@@ -110,4 +116,4 @@ Block Friday prod releases without a named on-call owner. Pair registry changes 
 
 ## Where to go next
 
-Document the workflow on the canvas before adding registry rows. Wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) before scaling traffic. Align context layers in [what is context architecture](/articles/what-is-context-architecture/) so prompt versions and policy packs version together. When ownership is unclear, start with [governance roles](/articles/ai-governance-roles-and-ownership/) RACI so someone can say no to scope creep—not another tool purchase.
+For the full operational guide—release checklist, rollback, and promotion paths—see [The Prompt Registry Playbook](/articles/prompt-registry-playbook/). Document the workflow on the canvas before adding registry rows. Wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) before scaling traffic. Align context layers in [what is context architecture](/articles/what-is-context-architecture/) so prompt versions and policy packs version together. When ownership is unclear, start with [governance roles](/articles/ai-governance-roles-and-ownership/) RACI so someone can say no to scope creep—not another tool purchase.

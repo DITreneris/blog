@@ -2,20 +2,26 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
+content_tier: playbook
 date: 2025-03-08
+hero_caption: Lightweight recurring forums—office hours, eval review, and change announcements—that
+  keep workflows honest after launch.
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
-hero_caption: "Lightweight recurring forums—office hours, eval review, and change announcements—that keep workflows honest after launch."
-key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts, context, and ownership.
-reading_time: 5 min read
+key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts,
+  context, and ownership.
+reading_time: 6 min read
 slug: team-rituals-for-ai-implementation
 status: published
-summary: Lightweight cadences that keep AI workflows current—office hours, eval review, and change announcements.
+summary: Lightweight cadences that keep AI workflows current—office hours, eval review,
+  and change announcements.
+tags:
+- change-management
 title: Team Rituals for AI Implementation
 ---
 
 Tools do not maintain themselves. Prompts drift, policy packs expire, connectors gain scopes, and new hires invent side-channel chats that bypass retrieval tags. **Rituals** beat one-off trainings because they keep workflows honest after launch—short, recurring forums with decisions and owners, not slide tours that end when the pilot badge is earned.
 
-Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/), [risk cadence](/articles/ai-risk-review-cadence/), and the [maturity ladder](/articles/ai-implementation-maturity-ladder/)—Level 3 is not "we launched" but "we still review eval biweekly." The [tokens-as-fuel](/articles/tokens-as-fuel-for-ai-output/) visual is a useful reminder in office hours: starved context degrades output even when attendance is high.
+Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk cadence](/articles/ai-risk-review-cadence/)—Level 3 on the maturity ladder is not "we launched" but "we still review eval biweekly."
 
 ## Suggested rituals (cadence and purpose)
 
@@ -32,7 +38,49 @@ Rituals connect daily work to [governance roles](/articles/ai-governance-roles-a
 
 **Change log standup** — fifteen minutes when registry version bumps: what changed, who approved, which environments pinned, which reps need Outlook re-training for snippet v4.
 
-**Risk forum** — full agenda in [risk cadence](/articles/ai-risk-review-cadence/) article; rituals feed it metrics and incidents, forum feeds rituals actions.
+**Risk forum** — full agenda in the risk cadence article; rituals feed it metrics and incidents, forum feeds rituals actions.
+
+## Sample agendas (timeboxed)
+
+Copy these into recurring calendar invites. If an item runs long, park follow-ups as owned actions—do not extend the meeting.
+
+### Weekly workflow standup (30 minutes)
+
+| Time | Item | Owner |
+|------|------|-------|
+| 0:00–0:05 | Open queue: blocked tickets, boundary denials since last week | Process owner |
+| 0:05–0:15 | One real failure walkthrough (override cluster, eval miss, connector scope change) | Rotating facilitator |
+| 0:15–0:22 | Canvas or registry deltas needed—prompt_id, context pack, eval case | IT + process owner |
+| 0:22–0:28 | Decisions: approve, defer to forum, or assign spike with due date | Process owner |
+| 0:28–0:30 | Capture actions in risk register; confirm next standup owner | Note-taker |
+
+**Output:** at least one logged action with owner and due date—not "we will monitor."
+
+### Monthly risk forum (45 minutes)
+
+| Time | Item | Owner |
+|------|------|-------|
+| 0:00–0:05 | Metrics rollup: eval pass rate trend, override themes, incident count | Process owner |
+| 0:05–0:15 | Promotion requests: shadow → prod, new workflow IDs, policy pack bumps | Workflow owners |
+| 0:15–0:25 | Open incidents and near-misses; audit replay gaps | Risk lead |
+| 0:25–0:35 | Tool or connector changes touching customer data | IT |
+| 0:35–0:42 | Retirements: deprecate prompt versions, sunset pilots | Forum chair |
+| 0:42–0:45 | Vote: approve / hold / reject with named approvers in minutes | Risk lead |
+
+Forum minutes link to audit trail fields so replay drills stay honest.
+
+### Quarterly implementation review (60 minutes)
+
+| Time | Item | Owner |
+|------|------|-------|
+| 0:00–0:10 | Maturity placement vs implementation ladder—what moved one level | Sponsor |
+| 0:10–0:25 | Workflow portfolio: pass rates, outcome metrics, workflows retired vs added | Process owners |
+| 0:25–0:40 | Governance health: RACI gaps, training debt, ritual attendance | Ops lead |
+| 0:40–0:50 | Budget and tool inventory: duplicates, renewals, freeze exceptions | CIO / finance delegate |
+| 0:50–0:58 | Next-quarter priorities: max two new workflow IDs or one major version bump | Sponsor |
+| 0:58–1:00 | Confirm forum dates and eval review cadence for the quarter | Forum chair |
+
+Quarterly review is where leaders decide **sequencing**—not whether AI is "important." Skip it and rituals devolve into status theater.
 
 ## Rules that keep rituals from becoming theater
 
@@ -44,13 +92,7 @@ Rotate facilitation so ops and IT both chair—prevents "IT-only AI club."
 
 ## Connecting rituals to artifacts
 
-Office hours outcomes update [workflow canvas](/articles/ai-workflow-canvas-template/) and [data boundaries](/articles/data-boundaries-for-ai-agents/) matrix.
-
-Eval review outcomes update cases in [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) and registry changelog.
-
-Change standup outcomes notify customer-facing teams when snippet or policy pack versions change.
-
-Forum outcomes link to [audit trail](/articles/audit-trails-for-ai-workflows/) replay drills when logs were insufficient.
+Standup outcomes update the [workflow canvas](/articles/ai-workflow-canvas-template/) and eval cases in [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/). Change standup outcomes notify customer-facing teams when snippet or policy pack versions change.
 
 ## Starting rituals without bureaucracy
 

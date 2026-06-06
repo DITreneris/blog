@@ -2,14 +2,21 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Opinion
+content_tier: opinion
 date: 2025-09-27
+hero_caption: Fluent wrong answers relax reviewers—workflows need citations, checkers,
+  or human sign-off before send.
 hero_image: images/articles/when-ai-hallucinates-confidence/hero.png
-hero_caption: "Fluent wrong answers relax reviewers—workflows need citations, checkers, or human sign-off before send."
-key_takeaway: Treat fluent tone as unrelated to factual accuracy—design workflows that require sources or human sign-off.
+key_takeaway: Treat fluent tone as unrelated to factual accuracy—design workflows
+  that require sources or human sign-off.
 reading_time: 5 min read
 slug: when-ai-hallucinates-confidence
 status: published
-summary: Why fluent wrong answers are dangerous—and how review gates, citations, and escalation reduce exposure.
+summary: Why fluent wrong answers are dangerous—and how review gates, citations, and
+  escalation reduce exposure.
+tags:
+- context
+- eval
 title: When AI Hallucinates Confidence
 ---
 
@@ -56,6 +63,6 @@ Legal owns policy packs; process owners own checker rules; IT enforces retrieval
 
 ## What readers should do next
 
-Audit one high-risk workflow: is send possible without citation or checker? Add three trap cases to eval. Log `unsupported_claim_blocked` for a month. Read [context architecture](/articles/what-is-context-architecture/) for layer design that reduces contradiction.
+Audit one high-risk workflow: is send possible without citation or checker? Add three trap cases to eval. Log `unsupported_claim_blocked` for a month. Read [Grounding AI Outputs](/articles/grounding-ai-outputs/) for the full verification system and [context architecture](/articles/what-is-context-architecture/) for layer design that reduces contradiction.
 
 Confidence is a tone. Accuracy is a system property—you build it with sources, gates, and logs, not hope.

@@ -2,20 +2,29 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
+content_tier: playbook
 date: 2025-02-15
+faq:
+- answer: Each rule needs a trigger, what the AI stops doing, the human action required,
+    an owner role, and an SLA—logged in audit trails like any other workflow step.
+  question: What makes a human-AI handoff rule operational?
+- answer: No. Without explicit triggers and SLAs, reviewers guess when to intervene
+    and automation silently ships risky outputs under queue pressure.
+  question: Is "human in the loop" enough without triggers?
+hero_caption: Explicit triggers and owners for when AI drafts, when humans decide,
+  and when work returns to the queue.
 hero_image: images/articles/handoff-rules-between-humans-and-ai/hero.png
-hero_caption: "Explicit triggers and owners for when AI drafts, when humans decide, and when work returns to the queue."
-key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process design.
+key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process
+  design.
 reading_time: 5 min read
 slug: handoff-rules-between-humans-and-ai
 status: published
-summary: Define when AI drafts, when humans decide, and when work returns to the queue—with SLAs and evidence.
+summary: Define when AI drafts, when humans decide, and when work returns to the queue—with
+  SLAs and evidence.
+tags:
+- workflow-automation
+- governance
 title: Handoff Rules Between Humans and AI
-faq:
-  - question: What makes a human-AI handoff rule operational?
-    answer: Each rule needs a trigger, what the AI stops doing, the human action required, an owner role, and an SLA—logged in audit trails like any other workflow step.
-  - question: Is "human in the loop" enough without triggers?
-    answer: No. Without explicit triggers and SLAs, reviewers guess when to intervene and automation silently ships risky outputs under queue pressure.
 ---
 
 Blurry handoffs create silent risk: the model assumed someone would check; the human assumed the model was sure; the queue shows "waiting on AI" while customers wait. Handoff rules are the same discipline you use between shifts in operations—**triggers, owners, SLAs, and evidence**—not hope that reviewers "usually catch issues."

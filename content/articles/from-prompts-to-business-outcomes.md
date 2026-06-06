@@ -4,13 +4,19 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2025-03-31
+hero_caption: Outcome mapping — tie each workflow to one business metric, owner, and
+  eval gate.
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png
-hero_caption: "Outcome mapping — tie each workflow to one business metric, owner, and eval gate."
-key_takeaway: Every live workflow should tie to one business metric, one owner, and one eval gate—not activity metrics alone.
+key_takeaway: Every live workflow should tie to one business metric, one owner, and
+  one eval gate—not activity metrics alone.
 reading_time: 5 min read
 slug: from-prompts-to-business-outcomes
 status: published
-summary: Map business metrics to workflows—support CSAT and handle time example, not tokens or demo applause.
+summary: Map business metrics to workflows—support CSAT and handle time example, not
+  tokens or demo applause.
+tags:
+- change-management
+- benchmarks
 title: From Prompts to Business Outcomes
 ---
 
@@ -58,6 +64,6 @@ Retire workflows that miss outcome targets for **two review cycles**—do not ad
 
 ## Framework context
 
-Measure the system, not the chat window—[the model is not the system](/articles/the-model-is-not-the-system/). Maturity expectations by level: [implementation ladder](/articles/ai-implementation-maturity-ladder/). When tool sprawl threatens mapping discipline, read [your company does not need more AI tools](/articles/your-company-does-not-need-more-ai-tools/).
+Measure the system, not the chat window—[the model is not the system](/articles/the-model-is-not-the-system/). Sponsor-ready ROI framing: [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/). Maturity expectations by level: [implementation ladder](/articles/ai-implementation-maturity-ladder/). When tool sprawl threatens mapping discipline, read [your company does not need more AI tools](/articles/your-company-does-not-need-more-ai-tools/).
 
 Every live workflow should tie to one business metric, one owner, and one eval gate—otherwise you are funding demos, not operations.

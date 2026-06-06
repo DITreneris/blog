@@ -4,22 +4,32 @@ body_locked: true
 category: AI Agents
 content_tier: pillar
 date: 2024-10-24
-modified: 2025-01-23
+faq:
+- answer: When the task needs repeated tool calls, state across steps, or integration
+    with systems of record—and when you can bound data, actions, and human escalation.
+  question: When should we use an agent instead of a prompt?
+- answer: Unbounded tools and missing audit trails. Teams ship a persona and API access
+    without eval gates or human send requirements.
+  question: What is the most common agent failure mode?
+- answer: Not for customer-facing or compliance-sensitive outputs in v1. Design draft-and-review
+    or recommend-and-confirm patterns first; measure override rates before automating
+    send.
+  question: Can we skip human review?
+hero_caption: Orchestrator diagram — bounded tasks, allowed tools, human escalation,
+  and evaluation gates before scale.
 hero_image: images/articles/how-to-design-an-ai-agent-workflow/hero.png
-hero_caption: "Orchestrator diagram — bounded tasks, allowed tools, human escalation, and evaluation gates before scale."
-key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not only a persona and API access.
+key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not
+  only a persona and API access.
+modified: 2025-01-23
 reading_time: 7 min read
 slug: how-to-design-an-ai-agent-workflow
 status: published
-summary: Map a business task to an agent-ready process—with boundaries, handoffs, evaluation gates, and a tier-2 ticket routing example.
+summary: Map a business task to an agent-ready process—with boundaries, handoffs,
+  evaluation gates, and a tier-2 ticket routing example.
+tags:
+- agents
+- orchestration
 title: How to Design an AI Agent Workflow
-faq:
-  - question: When should we use an agent instead of a prompt?
-    answer: When the task needs repeated tool calls, state across steps, or integration with systems of record—and when you can bound data, actions, and human escalation.
-  - question: What is the most common agent failure mode?
-    answer: Unbounded tools and missing audit trails. Teams ship a persona and API access without eval gates or human send requirements.
-  - question: Can we skip human review?
-    answer: Not for customer-facing or compliance-sensitive outputs in v1. Design draft-and-review or recommend-and-confirm patterns first; measure override rates before automating send.
 ---
 
 Agent hype collapses when workflows are vague. A language model with tools is not an agent workflow—it is a risk multiplier. Durable agent design starts with a **bounded business task**, explicit data boundaries, human escalation, and evaluation before scale.
@@ -149,3 +159,5 @@ Walk through a real ticket: if routing rules are purely deterministic (SKU prefi
 Agents reward disciplined workflow design. Bound the task, prove quality on real cases, then scale—not the reverse.
 
 **Northline note:** Their routing agent stayed in draft-and-confirm mode for six weeks while eval caught edge cases—promotion to wider automation waited on log evidence, not executive impatience. Copy that patience for your first agent pilot; the cost of a rushed auto-action is usually higher than the cost of a slower pilot.
+
+For a vertical example with Outlook guardrails and send gates, see [AI Outreach with Outlook Guardrails](/articles/ai-outreach-with-outlook-guardrails/). For the agent orchestrator operating model at scale, see [The Agent Orchestrator Role](/articles/agent-orchestrator-operating-model/).

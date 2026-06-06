@@ -439,6 +439,226 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-prompt-registry-playbook
+    generator: satori
+    template: category-default
+    source: Satori/prompt-registry-playbook.png
+    slug: prompt-registry-playbook
+    title: "The Prompt Registry Playbook: Version, Own, and Ship Prompt Changes"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+
+  - id: satori-rag-in-production
+    generator: satori
+    template: category-default
+    source: Satori/rag-in-production.png
+    slug: rag-in-production
+    title: "RAG in Production: Basic, Smart, and Agentic Patterns with Eval Gates"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: satori-ai-workflow-eval-checklist
+    generator: satori
+    template: category-default
+    source: Satori/ai-workflow-eval-checklist.png
+    slug: ai-workflow-eval-checklist
+    title: "AI Workflow Eval Checklist (Template)"
+    category: Templates
+    usage: [hero]
+    status: mapped
+
+  - id: satori-northline-part-2-scaling-eval-coverage
+    generator: satori
+    template: category-default
+    source: Satori/northline-part-2-scaling-eval-coverage.png
+    slug: northline-part-2-scaling-eval-coverage
+    title: "Northline Part 2: Scaling Eval Coverage from 50% to 80% Queue Traffic"
+    category: Case Studies
+    usage: [hero]
+    status: mapped
+
+  - id: satori-model-context-protocol-enterprise
+    generator: satori
+    template: category-default
+    source: Satori/model-context-protocol-enterprise.png
+    slug: model-context-protocol-enterprise
+    title: "Model Context Protocol for Enterprise Teams: Tools, Boundaries, and Security"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: satori-grounding-ai-outputs
+    generator: satori
+    template: category-default
+    source: Satori/grounding-ai-outputs.png
+    slug: grounding-ai-outputs
+    title: "Grounding AI Outputs: Context, Retrieval, and Verification in One System"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: satori-context-rot
+    generator: satori
+    template: category-default
+    source: Satori/context-rot-why-bigger-windows-make-agents-worse.png
+    slug: context-rot-why-bigger-windows-make-agents-worse
+    title: "Context Rot: Why Bigger Windows Make Agents Worse"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: satori-ai-procurement-freeze
+    generator: satori
+    template: category-default
+    source: Satori/ai-procurement-freeze.png
+    slug: ai-procurement-freeze
+    title: "The AI Procurement Freeze: A 90-Day Playbook for Leaders"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: satori-securing-mcp-agent-tools
+    generator: satori
+    template: category-default
+    source: Satori/securing-mcp-agent-tools.png
+    slug: securing-mcp-agent-tools
+    title: "Securing MCP and Agent Tools: Allowlists, Scoping, and Injection Defense"
+    category: AI Governance
+    usage: [hero]
+    status: mapped
+
+  - id: satori-langgraph-vs-crewai
+    generator: satori
+    template: category-default
+    source: Satori/langgraph-vs-crewai-production-guide.png
+    slug: langgraph-vs-crewai-production-guide
+    title: "LangGraph vs CrewAI vs Microsoft Agent Framework: A Production Selection Guide"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: satori-evaluating-agents-clear
+    generator: satori
+    template: category-default
+    source: Satori/evaluating-agents-with-clear.png
+    slug: evaluating-agents-with-clear
+    title: "Evaluating Agents with CLEAR: Cost, Latency, Efficacy, Assurance, Reliability"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: satori-choosing-workflow-automation
+    generator: satori
+    template: category-default
+    source: Satori/choosing-workflow-automation-ai-pipelines.png
+    slug: choosing-workflow-automation-ai-pipelines
+    title: "Choosing Workflow Automation for AI Pipelines (Without Tool Sprawl)"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: satori-agent-orchestrator
+    generator: satori
+    template: category-default
+    source: Satori/agent-orchestrator-operating-model.png
+    slug: agent-orchestrator-operating-model
+    title: "The Agent Orchestrator Role: Operating Model for a Digital Workforce"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: satori-prompt-frameworks-race-tag
+    generator: satori
+    template: category-default
+    source: Satori/prompt-frameworks-race-tag-business.png
+    slug: prompt-frameworks-race-tag-business
+    title: "Prompt Frameworks for Business: RACE, TAG, and When to Use Each"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+
+  - id: satori-prompt-regression-testing
+    generator: satori
+    template: category-default
+    source: Satori/prompt-regression-testing-week.png
+    slug: prompt-regression-testing-week
+    title: "Prompt Regression Testing: Build an Eval Set in a Week"
+    category: Prompt Systems
+    usage: [hero]
+    status: mapped
+
+  - id: satori-multi-agent-observability
+    generator: satori
+    template: category-default
+    source: Satori/multi-agent-observability.png
+    slug: multi-agent-observability
+    title: "Multi-Agent Observability: Logs, Handoffs, and Failure Modes"
+    category: AI Agents
+    usage: [hero]
+    status: mapped
+
+  - id: satori-measuring-ai-workflow-roi
+    generator: satori
+    template: category-default
+    source: Satori/measuring-ai-workflow-roi.png
+    slug: measuring-ai-workflow-roi
+    title: "Measuring AI Workflow ROI: Pass Rate, Time Saved, and Incident Cost"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
+  - id: satori-governance-raci-worksheet
+    generator: satori
+    template: category-default
+    source: Satori/governance-raci-worksheet.png
+    slug: governance-raci-worksheet
+    title: "Governance RACI Worksheet (Template)"
+    category: Templates
+    usage: [hero]
+    status: mapped
+
+  - id: satori-prompt-anatomy-glossary
+    generator: satori
+    template: category-default
+    source: Satori/prompt-anatomy-glossary.png
+    slug: prompt-anatomy-glossary
+    title: "Glossary: Prompt Anatomy Terms for Teams"
+    category: Framework
+    usage: [hero]
+    status: mapped
+
+  - id: satori-mcp-server-selection-worksheet
+    generator: satori
+    template: category-default
+    source: Satori/mcp-server-selection-worksheet.png
+    slug: mcp-server-selection-worksheet
+    title: "MCP Server Selection Worksheet"
+    category: Templates
+    usage: [hero]
+    status: mapped
+
+  - id: satori-finance-workflow-case-study-controlled-draft-and-review
+    generator: satori
+    template: category-default
+    source: Satori/finance-workflow-case-study-controlled-draft-and-review.png
+    slug: finance-workflow-case-study-controlled-draft-and-review
+    title: "Finance Workflow Case Study: Controlled Draft-and-Review"
+    category: Case Studies
+    usage: [hero]
+    status: mapped
+
+  - id: satori-ai-change-log-template-prompt-context-and-model-updates
+    generator: satori
+    template: category-default
+    source: Satori/ai-change-log-template-prompt-context-and-model-updates.png
+    slug: ai-change-log-template-prompt-context-and-model-updates
+    title: "AI Change Log Template: Prompt, Context, and Model Updates"
+    category: Templates
+    usage: [hero]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

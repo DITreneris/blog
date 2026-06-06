@@ -4,13 +4,19 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-07-21
+hero_caption: Standing risk forum — incidents, eval regressions, and workflow changes
+  on a fixed agenda.
 hero_image: images/articles/ai-risk-review-cadence/hero.png
-hero_caption: "Standing risk forum — incidents, eval regressions, and workflow changes on a fixed agenda."
-key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses, and workflow changes on the agenda.
+key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses,
+  and workflow changes on the agenda.
 reading_time: 6 min read
 slug: ai-risk-review-cadence
 status: published
-summary: Standing AI risk forum with sample Northline B2B meeting minutes—cadence, agenda, attendees, and decision outputs.
+summary: Standing AI risk forum with sample Northline B2B meeting minutes—cadence,
+  agenda, attendees, and decision outputs.
+tags:
+- governance
+- eval
 title: AI Risk Review Cadence
 ---
 

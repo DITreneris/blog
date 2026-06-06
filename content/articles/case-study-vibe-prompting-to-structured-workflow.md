@@ -4,13 +4,20 @@ body_locked: true
 category: Case Studies
 content_tier: playbook
 date: 2025-08-14
+hero_caption: Support queue before/after — one owned workflow with eval gates beat
+  scattered copilot experiments.
 hero_image: images/articles/case-study-vibe-prompting-to-structured-workflow/hero.png
-hero_caption: "Support queue before/after — one owned workflow with eval gates beat scattered copilot experiments."
-key_takeaway: A single owned workflow with eval gates beat a year of scattered copilot experiments.
+key_takeaway: A single owned workflow with eval gates beat a year of scattered copilot
+  experiments.
 reading_time: 6 min read
 slug: case-study-vibe-prompting-to-structured-workflow
 status: published
-summary: How Northline B2B moved from ad hoc chat to a measured support-assist workflow in twelve weeks—with eval set and context pack versioning.
+summary: How Northline B2B moved from ad hoc chat to a measured support-assist workflow
+  in twelve weeks—with eval set and context pack versioning.
+tags:
+- northline
+- change-management
+- eval
 title: 'Case Study: From Vibe Prompting to a Structured Support Workflow'
 ---
 
@@ -64,3 +71,5 @@ Start **eval cases before prompt workshops**—workshops produced elegant phrasi
 ## Next step for readers
 
 If your team mirrors this story—high activity, low reproducibility—run the diagnostic, pick one queue, fill the canvas, and schedule biweekly eval review before the next vendor demo. Depth on outcomes mapping: [from prompts to business outcomes](/articles/from-prompts-to-business-outcomes/). Depth on maturity placement: [implementation ladder](/articles/ai-implementation-maturity-ladder/).
+
+**Part 2:** [Scaling eval coverage from 50% to 80% queue traffic](/articles/northline-part-2-scaling-eval-coverage/) — how Northline expanded shadow traffic after pass rate held.

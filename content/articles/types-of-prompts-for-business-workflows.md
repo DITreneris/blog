@@ -2,14 +2,20 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
+content_tier: playbook
 date: 2024-03-13
+hero_caption: Task, system, retrieval, and checker prompts—matched to workflow step,
+  not one growing system message.
 hero_image: images/articles/types-of-prompts-for-business-workflows/hero.png
-hero_caption: "Task, system, retrieval, and checker prompts—matched to workflow step, not one growing system message."
-key_takeaway: Match prompt type to workflow step—one mega-prompt rarely covers intake, generation, and verification.
+key_takeaway: Match prompt type to workflow step—one mega-prompt rarely covers intake,
+  generation, and verification.
 reading_time: 5 min read
 slug: types-of-prompts-for-business-workflows
 status: published
-summary: Task, system, retrieval, and checker prompts—and where each belongs in a workflow.
+summary: Task, system, retrieval, and checker prompts—and where each belongs in a
+  workflow.
+tags:
+- prompt-systems
 title: Types of Prompts for Business Workflows
 ---
 
@@ -66,4 +72,4 @@ Anti-patterns are common because mega-prompts feel faster in week one. They are 
 - **Retrieval embedded in task**—cannot test search failures independently.
 - **Transformation before check**—polish hides unsupported claims.
 
-Match prompt type to workflow step—one mega-prompt rarely covers intake, generation, and verification with accountable change control.
+Match prompt type to workflow step—one mega-prompt rarely covers intake, generation, and verification with accountable change control. For named frameworks (RACE, TAG), see [Prompt Frameworks for Business](/articles/prompt-frameworks-race-tag-business/).

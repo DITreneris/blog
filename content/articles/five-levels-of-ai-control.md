@@ -4,13 +4,19 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-03-03
+hero_caption: Five levels of AI control — from tokens through RAG — shown as a ladder,
+  not a product checklist.
 hero_image: images/articles/five-levels-of-ai-control/hero.png
-hero_caption: "Five levels of AI control — from tokens through RAG — shown as a ladder, not a product checklist."
-key_takeaway: Control compounds upward; teams that skip levels confuse model features with an operating system.
+key_takeaway: Control compounds upward; teams that skip levels confuse model features
+  with an operating system.
 reading_time: 5 min read
 slug: five-levels-of-ai-control
 status: published
-summary: The hero ladder explains tokens, context, temperature, hallucination risk, and RAG — and why buying the top rung alone fails.
+summary: The hero ladder explains tokens, context, temperature, hallucination risk,
+  and RAG — and why buying the top rung alone fails.
+tags:
+- context
+- governance
 title: Five Levels of AI Control
 ---
 
@@ -50,4 +56,4 @@ Not all retrieval is equal. [Three Types of RAG](/articles/three-types-of-rag/) 
 
 ## Go deeper
 
-The ladder is a visual primer. Implementation lives in [The Model Is Not the System](/articles/the-model-is-not-the-system/) — workflow, context, evaluation, and governance around the model — and in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/) when more than one team touches the same workflow. For what comes after basic control, see [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) before you add agents and tools to an unstable base.
+The ladder is a visual primer. Implementation lives in [Grounding AI Outputs](/articles/grounding-ai-outputs/), [The Model Is Not the System](/articles/the-model-is-not-the-system/) — workflow, context, evaluation, and governance around the model — and in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/) when more than one team touches the same workflow. For what comes after basic control, see [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) before you add agents and tools to an unstable base.

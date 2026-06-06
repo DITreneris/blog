@@ -4,13 +4,19 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-12-26
+hero_caption: Context tube — safe, limit, and overflow zones; more text does not mean
+  better results.
 hero_image: images/articles/tokens-and-context-window-limits/hero.png
-hero_caption: "Context tube — safe, limit, and overflow zones; more text does not mean better results."
-key_takeaway: Filling the context window degrades quality and drops instructions — design smaller, governed context per run."
+key_takeaway: Filling the context window degrades quality and drops instructions —
+  design smaller, governed context per run."
 reading_time: 3 min read
 slug: tokens-and-context-window-limits
 status: published
-summary: Safe, limit, and overflow zones explain why huge prompts fail — and what to do instead of padding context.
+summary: Safe, limit, and overflow zones explain why huge prompts fail — and what
+  to do instead of padding context.
+tags:
+- context
+- context-engineering
 title: Tokens and Context Window Limits
 ---
 
@@ -37,4 +43,4 @@ If your workflow “needs” thirty pages in prompt, you need **retrieval and su
 
 ## Go deeper
 
-Windows sit inside architecture. [What Is Context Architecture](/articles/what-is-context-architecture/) explains layers; [Handoff Rules Between Humans and AI](/articles/handoff-rules-between-humans-and-ai/) explains when context must freeze before human sign-off.
+Windows sit inside architecture. [Grounding AI Outputs](/articles/grounding-ai-outputs/) unifies retrieval and verification; [What Is Context Architecture](/articles/what-is-context-architecture/) explains layers; [Context Rot](/articles/context-rot-why-bigger-windows-make-agents-worse/) covers when bigger windows degrade agent quality; [Handoff Rules Between Humans and AI](/articles/handoff-rules-between-humans-and-ai/) explains when context must freeze before human sign-off.

@@ -11,6 +11,9 @@ reading_time: 3 min read
 slug: tokens-as-fuel-for-ai-output
 status: published
 summary: The fuel-tank metaphor — full, low, and empty context — and why more tokens alone does not fix quality.
+tags:
+  - context
+  - context-engineering
 title: Tokens as Fuel for AI Output
 ---
 
@@ -30,7 +33,7 @@ Empty is not only literal token exhaustion. It is **missing** policy, missing CR
 
 ## More tokens is not more control
 
-Buying capacity without governance increases cost and hallucination surface. Pair this visual with [Tokens and Context Window Limits](/articles/tokens-and-context-window-limits/) for overflow mechanics and [Memory Types for AI Systems](/articles/memory-types-for-ai-systems/) for what should **not** sit in every run’s tank.
+Buying capacity without governance increases cost and hallucination surface. Pair this visual with [Tokens and Context Window Limits](/articles/tokens-and-context-window-limits/) for overflow mechanics, [Grounding AI Outputs](/articles/grounding-ai-outputs/) for verification in production, [What Is Context Architecture](/articles/what-is-context-architecture/) for layer design, and [Memory Types for AI Systems](/articles/memory-types-for-ai-systems/) for what should **not** sit in every run’s tank.
 
 ## Go deeper
 

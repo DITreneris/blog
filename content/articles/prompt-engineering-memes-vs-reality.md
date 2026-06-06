@@ -4,13 +4,18 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-03-26
+hero_caption: ROI meeting — employee asks for a raise while the dashboard shows AI
+  at $20/month with 100% productivity metrics.
 hero_image: images/articles/prompt-engineering-memes-vs-reality/hero.png
-hero_caption: "ROI meeting — employee asks for a raise while the dashboard shows AI at $20/month with 100% productivity metrics."
-key_takeaway: Memes about AI replacing labor confuse vendor demos with governed workflows — structure beats novelty in real operations.
+key_takeaway: Memes about AI replacing labor confuse vendor demos with governed workflows
+  — structure beats novelty in real operations.
 reading_time: 4 min read
 slug: prompt-engineering-memes-vs-reality
 status: published
-summary: The ROI meme is funny because it is half true — and why workflow ownership beats hot takes about prompt hacks.
+summary: The ROI meme is funny because it is half true — and why workflow ownership
+  beats hot takes about prompt hacks.
+tags:
+- prompt-systems
 title: Prompt Engineering Memes vs Reality
 ---
 

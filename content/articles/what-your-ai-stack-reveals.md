@@ -11,6 +11,10 @@ reading_time: 4 min read
 slug: what-your-ai-stack-reveals
 status: published
 summary: The mirror visual — shallow expert versus real expertise — and how to read your tools, rituals, and artifacts honestly.
+tags:
+  - change-management
+  - governance
+  - workflow-automation
 title: What Your AI Stack Reveals
 ---
 
@@ -52,4 +56,4 @@ Honest answers hurt once; vague answers hurt every quarter.
 
 ## Go deeper
 
-Tool sprawl without structure is its own meme — [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/). Architecture is the antidote — [The Model Is Not the System](/articles/the-model-is-not-the-system/). When buzzwords dominate meetings, assign the [AI workflow canvas](/articles/ai-workflow-canvas-template/) before the next purchase order.
+Tool sprawl without structure is its own meme — [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/). Score how far unstructured use has spread with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/). Architecture is the antidote — [The Model Is Not the System](/articles/the-model-is-not-the-system/). When buzzwords dominate meetings, assign the [AI workflow canvas](/articles/ai-workflow-canvas-template/) before the next purchase order.

@@ -2,8 +2,8 @@
 
 Living backlog for **promptanatomy.blog**. Update checkboxes as work completes; mirror release notes in [`CHANGELOG.md`](CHANGELOG.md).
 
-**Last reviewed:** 2026-06-04  
-**Current baseline:** **v2.0.0 live** on production ([`CHANGELOG.md`](CHANGELOG.md) `[2.0.0]`). Tag `v2.0.0` pushed; pillar `og.png` → 200; G.7.5 expanded DoD in [`DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md).
+**Last reviewed:** 2026-06-06  
+**Current baseline:** **v1.0.0** content wave + editorial ops ([`CHANGELOG.md`](CHANGELOG.md) `[1.0.0]`). Design system **v2.0.0** live on production.
 
 ---
 
@@ -48,6 +48,7 @@ On Windows without `make`, run the commands above in order (see [`docs/DEPLOY.md
 - [x] **v0.7.0 — Meme + Satori content realignment:** playbook Satori heroes, 8 Opinion primers, cross-links, `CONTENT_STANDARDS` illustration-first rules.
 - [x] **v0.7.1 — Satori typography:** [`data/og/typography.mjs`](data/og/typography.mjs), hero/OG regen, `--only` / `--check` on generator.
 - [x] **v0.7.2 — Audit closure:** Opinion `reading_path` (12 slugs), weak primer inbound links, expanded `five-levels-of-ai-control`, `chaos-vs-control-prompting`, `three-types-of-rag`; VISUAL_QA sign-off row.
+- [x] **v1.0.0 — Content wave + editorial ops:** 20 keyword posts, editorial agent/skills, audit scripts, performance Phases 0–3, self-hosted Inter, legal pages (privacy/terms), EDITORIAL_PLAN v1.2, P3 finance case study + change log template, playbook prose depth pass.
 
 ---
 

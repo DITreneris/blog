@@ -4,19 +4,29 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-06-29
+faq:
+- answer: At minimum, log workflow ID and version, actor identity, input snapshot
+    or hash, context sources, model and parameters, raw output, human override flags,
+    UTC timestamp, and policy or context pack version.
+  question: What is the minimum an AI workflow audit log must capture?
+- answer: Not always. Store hashes and version IDs when full text is sensitive or
+    bulky; ensure you can reconstruct a case with approved sources and policy versions
+    for investigations.
+  question: Do we need to store full prompts in every log row?
+hero_caption: Minimum log fields — inputs, context versions, outputs, overrides, and
+  retention for accountable AI workflows.
 hero_image: images/articles/audit-trails-for-ai-workflows/hero.png
-hero_caption: "Minimum log fields — inputs, context versions, outputs, overrides, and retention for accountable AI workflows."
-key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational workflow—only a demo.
+key_takeaway: If you cannot reconstruct a case from logs, you do not have an operational
+  workflow—only a demo.
 reading_time: 6 min read
 slug: audit-trails-for-ai-workflows
 status: published
-summary: What to log for AI-assisted workflows—with sample JSON for Northline B2B ticket 4821.
+summary: What to log for AI-assisted workflows—with sample JSON for Northline B2B
+  ticket 4821.
+tags:
+- governance
+- mcp
 title: Audit Trails for AI Workflows
-faq:
-  - question: What is the minimum an AI workflow audit log must capture?
-    answer: At minimum, log workflow ID and version, actor identity, input snapshot or hash, context sources, model and parameters, raw output, human override flags, UTC timestamp, and policy or context pack version.
-  - question: Do we need to store full prompts in every log row?
-    answer: Not always. Store hashes and version IDs when full text is sensitive or bulky; ensure you can reconstruct a case with approved sources and policy versions for investigations.
 ---
 
 Audit trails turn AI from a black box into an **accountable process**. Regulators, customers, and your own teams ask the same questions after a near-miss: what was sent, on what basis, which policy version applied, and who approved it? If answers require reconstructing someone's chat history, you have a demo—not a workflow ready for scale.

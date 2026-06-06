@@ -4,13 +4,19 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2024-08-19
+hero_caption: Chaos — vague chat prompts and failed outputs; Control — Role, Context,
+  Output, and Criteria before the model runs.
 hero_image: images/articles/chaos-vs-control-prompting/hero.png
-hero_caption: "Chaos — vague chat prompts and failed outputs; Control — Role, Context, Output, and Criteria before the model runs."
-key_takeaway: AI output variance is usually input design — structure Role, Context, Output, and Criteria instead of retrying vague chat.
+key_takeaway: AI output variance is usually input design — structure Role, Context,
+  Output, and Criteria instead of retrying vague chat.
 reading_time: 4 min read
 slug: chaos-vs-control-prompting
 status: published
-summary: The hero contrasts vague chat retries with a four-field prompt — and why control layers beat another model upgrade.
+summary: The hero contrasts vague chat retries with a four-field prompt — and why
+  control layers beat another model upgrade.
+tags:
+- prompt-systems
+- context
 title: Chaos vs Control Prompting
 ---
 

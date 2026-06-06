@@ -11,6 +11,10 @@ reading_time: 4 min read
 slug: why-ai-hallucinates
 status: published
 summary: The split visual — grounded control versus ungrounded guessing — and what teams must add beyond the model.
+tags:
+  - context
+  - eval
+  - governance
 title: Why AI Hallucinates
 ---
 
@@ -33,8 +37,8 @@ Ungrounded generation is fast and fluent. That fluency relaxes reviewers — esp
 3. **Eval on failure modes** — pricing tiers, dates, regulatory phrases.  
 4. **Audit fields** — see [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/).
 
-[When AI Hallucinates Confidence](/articles/when-ai-hallucinates-confidence/) covers the human factors; [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/) covers tool and data scope when agents retrieve on their own.
+[When AI Hallucinates Confidence](/articles/when-ai-hallucinates-confidence/) covers the human factors; [What Is Context Architecture](/articles/what-is-context-architecture/) defines the layers that make grounding repeatable; [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) shows where to attach checks before send; [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/) covers tool and data scope when agents retrieve on their own.
 
 ## Go deeper
 
-Model swaps do not replace architecture. [The Model Is Not the System](/articles/the-model-is-not-the-system/) places generation inside workflow and governance — where grounding becomes repeatable instead of heroic.
+Model swaps do not replace architecture. [Grounding AI Outputs](/articles/grounding-ai-outputs/) unifies context, retrieval, and verification in one system design. [The Model Is Not the System](/articles/the-model-is-not-the-system/) places generation inside workflow and governance — where grounding becomes repeatable instead of heroic.

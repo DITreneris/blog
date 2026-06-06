@@ -4,22 +4,33 @@ body_locked: true
 category: Implementation Notes
 content_tier: pillar
 date: 2024-07-26
-modified: 2024-10-11
+faq:
+- answer: Related but not identical. Shadow AI is use without IT or policy awareness.
+    Vibe prompting is when even approved tools produce inconsistent outcomes because
+    workflow, context, and evaluation are undefined.
+  question: Is vibe prompting the same as shadow AI?
+- answer: If you score seven or more, freeze new tool purchases until one high-risk
+    workflow is documented, owned, and measured for thirty days.
+  question: How many signs mean we should stop buying tools?
+- answer: Pick one workflow with a clear metric, fill the AI workflow canvas with
+    ops and IT, and run twenty real cases through it before expanding scope.
+  question: What is the fastest fix?
+hero_caption: Diagnostic visual — ten signs that outcomes depend on who asked and
+  which tool they opened, not on documented workflow.
 hero_image: images/articles/10-signs-your-company-is-vibe-prompting/hero.png
-hero_caption: "Diagnostic visual — ten signs that outcomes depend on who asked and which tool they opened, not on documented workflow."
-key_takeaway: If outcomes depend on who asked and which tool they opened, document one workflow and measure it for thirty days.
+key_takeaway: If outcomes depend on who asked and which tool they opened, document
+  one workflow and measure it for thirty days.
+modified: 2024-10-11
 reading_time: 7 min read
 slug: 10-signs-your-company-is-vibe-prompting
 status: published
-summary: A practical diagnostic for teams using AI without structure—score yourself, fix one workflow in 30 days, and measure pass rate.
+summary: A practical diagnostic for teams using AI without structure—score yourself,
+  fix one workflow in 30 days, and measure pass rate.
+tags:
+- change-management
+- governance
+- eval
 title: 10 Signs Your Company Is Vibe Prompting
-faq:
-  - question: Is vibe prompting the same as shadow AI?
-    answer: Related but not identical. Shadow AI is use without IT or policy awareness. Vibe prompting is when even approved tools produce inconsistent outcomes because workflow, context, and evaluation are undefined.
-  - question: How many signs mean we should stop buying tools?
-    answer: If you score seven or more, freeze new tool purchases until one high-risk workflow is documented, owned, and measured for thirty days.
-  - question: What is the fastest fix?
-    answer: Pick one workflow with a clear metric, fill the AI workflow canvas with ops and IT, and run twenty real cases through it before expanding scope.
 ---
 
 **Vibe prompting** means outcomes depend on who asks, which tool they open, and informal know-how—not on documented workflows. The model may be capable; the organization is not operating a system.
@@ -140,4 +151,4 @@ The full story is in the [case study](/articles/case-study-vibe-prompting-to-str
 
 Thirty days of focused structure beats a year of scattered copilot experiments. Vibe prompting is fixable when you treat it as a workflow problem, not a talent problem.
 
-**Next step:** If your score was four or higher, book a working session with ops and IT this week—before the next tool trial lands in your inbox. Bring one workflow name, one metric, and a blank copy of the canvas; leave model choice off the agenda until week two.
+**Next step:** If your score was four or higher, book a working session with ops and IT this week—before the next tool trial lands in your inbox. Bring one workflow name, one metric, and a blank copy of the canvas; leave model choice off the agenda until week two. For a blunt mirror on whether your stack reflects jargon or systems, read [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/).

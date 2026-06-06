@@ -2,25 +2,35 @@
 authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
+content_tier: playbook
 date: 2024-12-08
+faq:
+- answer: After a single-path workflow proves value with eval and audit. Multi-agent
+    adds coordination cost—use specialization with explicit handoff schemas, not chained
+    prompts without ownership.
+  question: When should a team split work across multiple agents?
+- answer: Goal, constraints, artifact references, open questions, and confidence—structured
+    and small. Do not forward full chat history as the contract between specialists.
+  question: What belongs in a handoff payload between agents?
+hero_caption: Orchestrator routes each step to a specialist agent with a minimal handoff
+  payload and human gates on external actions.
 hero_image: images/articles/multi-agent-handoff-pattern/hero.png
-hero_caption: "Orchestrator routes each step to a specialist agent with a minimal handoff payload and human gates on external actions."
-key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained prompts without ownership.
+key_takeaway: Multi-agent systems need handoff schemas and shared state—not chained
+  prompts without ownership.
 reading_time: 5 min read
 slug: multi-agent-handoff-pattern
 status: published
-summary: How to split work across specialized agents with explicit contracts, state, and human escalation between steps.
+summary: How to split work across specialized agents with explicit contracts, state,
+  and human escalation between steps.
+tags:
+- agents
+- orchestration
 title: Multi-Agent Handoff Pattern
-faq:
-  - question: When should a team split work across multiple agents?
-    answer: After a single-path workflow proves value with eval and audit. Multi-agent adds coordination cost—use specialization with explicit handoff schemas, not chained prompts without ownership.
-  - question: What belongs in a handoff payload between agents?
-    answer: Goal, constraints, artifact references, open questions, and confidence—structured and small. Do not forward full chat history as the contract between specialists.
 ---
 
 Multiple agents can work when each step has a **narrow contract**. Without that, you get expensive ping-pong—research agent asks draft agent to clarify, draft agent invents facts, checker fires late—and untraceable errors in production. The pattern is not "more agents because vendors sell orchestration." It is **specialization with explicit handoffs**, shared state, and human gates on anything that commits the business.
 
-Use this after a single-path workflow proves value with eval and audit. Early pilots should stay one retrieval + one model call until metrics justify complexity—see [how to design an AI agent workflow](/articles/how-to-design-an-ai-agent-workflow/) and [handoff rules between humans and AI](/articles/handoff-rules-between-humans-and-ai/) before splitting agents.
+Use this after a single-path workflow proves value with eval and audit. Early pilots should stay one retrieval + one model call until metrics justify complexity—see [how to design an AI agent workflow](/articles/how-to-design-an-ai-agent-workflow/) and [handoff rules between humans and AI](/articles/handoff-rules-between-humans-and-ai/) before splitting agents. For orchestration framework selection (LangGraph, CrewAI, Microsoft Agent Framework), see [production selection guide](/articles/langgraph-vs-crewai-production-guide/). For run-state logging at scale, see [Multi-Agent Observability](/articles/multi-agent-observability/).
 
 ## Pattern overview (orchestrator and specialists)
 

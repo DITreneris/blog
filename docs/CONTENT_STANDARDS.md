@@ -1,6 +1,6 @@
 # Content standards
 
-Guidelines for articles on **promptanatomy.blog**. See also [AGENTS.md](../AGENTS.md) for frontmatter contract.
+Guidelines for articles on **promptanatomy.blog**. See also [AGENTS.md](../AGENTS.md) for frontmatter contract and [EDITORIAL_PLAN.md](EDITORIAL_PLAN.md) for category balance, backlog priority, and hub-and-spoke linking.
 
 ## Voice
 

@@ -37,12 +37,14 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 
 ### Add a post
 
-1. Run `python scripts/new_post.py --title "..." --category "Framework"` (if script exists) or copy stub template
-2. Edit `content/articles/<slug>.md`
-3. `make validate && make serve` — check http://localhost:8000
-4. Do not commit secrets or `.env`
+1. Check [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md) — prefer next P1/P2 backlog item; confirm category and `content_tier` per plan §3
+2. Run `python scripts/new_post.py --title "..." --category "Framework"` (if script exists) or copy stub template
+3. Edit `content/articles/<slug>.md`; add `tags`; wire hub-and-spoke links per plan §6–§7
+4. Update `data/categories.yaml` `reading_path` when the post belongs in a curated series
+5. `make validate && make serve` — check http://localhost:8000
+6. Do not commit secrets or `.env`
 
-**Done when:** [`definition_of_done_system.md`](docs/definition_of_done_system.md) row *Add / edit article* — `make validate` exit 0; [CONTENT_STANDARDS](docs/CONTENT_STANDARDS.md) if publishing.
+**Done when:** [`definition_of_done_system.md`](docs/definition_of_done_system.md) row *Add / edit article* — `make validate` exit 0; [CONTENT_STANDARDS](docs/CONTENT_STANDARDS.md) if publishing; backlog item noted if shipping from [EDITORIAL_PLAN](docs/EDITORIAL_PLAN.md).
 
 ### Change theme
 
@@ -65,11 +67,14 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 
 ## Content quality
 
+- `docs/EDITORIAL_PLAN.md` — category balance, prioritized backlog, hub-and-spoke clusters, 30/90-day roadmap
 - `docs/CONTENT_STANDARDS.md` — voice, publish checklist, draft policy
 - Set `body_locked: true` after manual edits so `enrich_articles_from_manifest.py` does not overwrite body copy
 
 ## References
 
+- `docs/AGENT_SYSTEM.md` — agent roster, skills, delegation
+- `docs/EDITORIAL_PLAN.md` — content strategy, backlog, category rules, internal linking
 - `docs/ARCHITECTURE.md` — build pipeline, URLs
 - `docs/definition_of_done_system.md` — workflow-scoped completion gates and validator catalog
 - `docs/DESIGN_SYSTEM.md` — design system v2.0 (tokens, buttons, macros, DoD); child docs in `docs/design-system/`
@@ -83,10 +88,22 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 
 | Task | Agent | When |
 |------|-------|------|
-| Questions, **CHANGELOG**, design-system **docs** | `q-and-a-agent` | How things work; update `CHANGELOG.md`, `DESIGN_SYSTEM.md`, `COMPONENT_MAP.md`, `VISUAL_QA.md` after meaningful theme/doc changes |
-| Theme / Pelican **implementation** | default agent | Templates, CSS, `data/*.yaml`, content; leave changelog/design-doc bullets for Q&A if not updating docs inline |
+| Questions, **CHANGELOG**, design-system **docs**, **AGENT_SYSTEM** | `q-and-a-agent` | How things work; update `CHANGELOG.md`, `DESIGN_SYSTEM.md`, `COMPONENT_MAP.md`, `VISUAL_QA.md`, `AGENT_SYSTEM.md` after meaningful changes |
+| **Editorial audit**, taxonomy, **EDITORIAL_PLAN** §2/§5 refresh | `editorial-agent` | Corpus health, consistency, credibility report, backlog status; run `make audit-content` |
+| Theme / Pelican **implementation**, content | default agent | Templates, CSS, `data/*.yaml`, articles; use project skills below; leave CHANGELOG bullets for q-and-a |
 
-Agent definition: `.cursor/agents/q-and-a-agent.md`
+### Project skills (`.cursor/skills/`)
+
+| Skill | Use when |
+|-------|----------|
+| `add-article` | New or edited article |
+| `editorial-audit` | Editorial inventory / plan refresh |
+| `theme-release` | Theme, CSS, templates |
+| `production-release` | Deploy, production release |
+
+Full routing: [`docs/AGENT_SYSTEM.md`](docs/AGENT_SYSTEM.md)
+
+Agent definitions: [`.cursor/agents/q-and-a-agent.md`](.cursor/agents/q-and-a-agent.md) · [`.cursor/agents/editorial-agent.md`](.cursor/agents/editorial-agent.md)
 
 ## Out of scope unless user asks
 

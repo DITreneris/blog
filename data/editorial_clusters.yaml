@@ -1,0 +1,106 @@
+# Hub-and-spoke concept clusters for editorial audits.
+# Source of truth for scripts/audit_content_inventory.py and editorial-agent.
+# Summary table: docs/EDITORIAL_PLAN.md §6
+
+recommended_tags:
+  - context
+  - context-engineering
+  - eval
+  - governance
+  - agents
+  - rag
+  - memory
+  - mcp
+  - orchestration
+  - prompt-injection
+  - change-management
+  - northline
+  - templates
+  - prompt-systems
+  - geo
+  - benchmarks
+  - workflow-automation
+
+hub_categories:
+  - Framework
+  - AI Governance
+
+clusters:
+  context_tokens:
+    spokes:
+      - context-window-myths
+      - tokens-as-fuel-for-ai-output
+      - tokens-and-context-window-limits
+      - five-levels-of-ai-control
+    hub_slugs:
+      - grounding-ai-outputs
+      - what-is-context-architecture
+    target_pillar_backlog: "Grounding AI Outputs"
+
+  context_rot:
+    spokes:
+      - context-window-myths
+      - tokens-and-context-window-limits
+    hub_slugs:
+      - what-is-context-architecture
+    target_pillar_backlog: "Context Rot"
+
+  hallucination:
+    spokes:
+      - why-ai-hallucinates
+      - when-ai-hallucinates-confidence
+    hub_slugs:
+      - grounding-ai-outputs
+      - what-is-context-architecture
+      - evaluation-hooks-for-ai-workflows
+    target_pillar_backlog: "Grounding AI Outputs"
+
+  rag:
+    spokes:
+      - three-types-of-rag
+    hub_slugs:
+      - rag-in-production
+      - what-is-context-architecture
+      - data-boundaries-for-ai-agents
+    target_pillar_backlog: "RAG in Production"
+
+  memory:
+    spokes:
+      - three-types-of-ai-memory-short
+    hub_slugs:
+      - memory-types-for-ai-systems
+    target_pillar_backlog: null
+
+  tool_sprawl:
+    spokes:
+      - your-company-does-not-need-more-ai-tools
+      - what-your-ai-stack-reveals
+    hub_slugs:
+      - 10-signs-your-company-is-vibe-prompting
+      - the-model-is-not-the-system
+    target_pillar_backlog: "The AI Procurement Freeze"
+
+  mcp_integration:
+    spokes: []
+    hub_slugs:
+      - model-context-protocol-enterprise
+      - data-boundaries-for-ai-agents
+      - audit-trails-for-ai-workflows
+    target_pillar_backlog: "Model Context Protocol for Enterprise Teams"
+
+  orchestration_frameworks:
+    spokes:
+      - multi-agent-handoff-pattern
+      - from-prompt-to-agent
+    hub_slugs:
+      - how-to-design-an-ai-agent-workflow
+    target_pillar_backlog: "LangGraph vs CrewAI vs Microsoft Agent Framework"
+
+  workflow_platforms:
+    spokes:
+      - your-company-does-not-need-more-ai-tools
+      - what-your-ai-stack-reveals
+    hub_slugs:
+      - 10-signs-your-company-is-vibe-prompting
+      - the-model-is-not-the-system
+    target_pillar_backlog: "Choosing Workflow Automation for AI Pipelines"

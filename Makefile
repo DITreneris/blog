@@ -1,4 +1,4 @@
-.PHONY: validate validate-theme validate-brand validate-satori build serve clean sync-images brand-assets analytics satori-images build-css
+.PHONY: validate validate-theme validate-brand validate-satori audit-content build serve clean sync-images brand-assets analytics satori-images build-css
 
 ifeq ($(OS),Windows_NT)
   VENV_PY := .venv/Scripts/python.exe
@@ -38,6 +38,9 @@ validate-brand:
 
 validate: validate-theme validate-brand
 	$(PYTHON) scripts/validate_content.py
+
+audit-content:
+	$(PYTHON) scripts/audit_content_inventory.py --markdown
 
 build: validate satori-images validate-satori sync-images brand-assets analytics build-css
 	$(PYTHON) -m pelican content -s publishconf.py

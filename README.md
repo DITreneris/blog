@@ -22,6 +22,7 @@ Open http://localhost:8000
 | Command | Description |
 |---------|-------------|
 | `make validate` | Theme token lint + article/page frontmatter |
+| `make audit-content` | Editorial corpus report → `docs/reports/editorial-status-*.md` |
 | `make build` | Production build (`publishconf.py`) |
 | `make build-dev` | Local build (`pelicanconf.py`) |
 | `make serve` | Build and serve `output/` on port 8000 |
@@ -37,7 +38,10 @@ Production URL is set in `publishconf.py`: `https://promptanatomy.blog`
 ## Docs
 
 - [Architecture](docs/ARCHITECTURE.md)
+- [Agent system](docs/AGENT_SYSTEM.md)
 - [Definition of Done (system)](docs/definition_of_done_system.md)
+- [Editorial plan](docs/EDITORIAL_PLAN.md)
+- [Content standards](docs/CONTENT_STANDARDS.md)
 - [Design system](docs/DESIGN_SYSTEM.md) (v2.0)
 - [Visual QA checklist](docs/VISUAL_QA.md)
 - [Component map](docs/COMPONENT_MAP.md)

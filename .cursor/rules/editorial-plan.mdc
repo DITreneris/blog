@@ -1,0 +1,24 @@
+---
+description: Editorial strategy and content backlog for Prompt Anatomy Blog
+globs:
+  - content/articles/**
+  - data/categories.yaml
+  - docs/EDITORIAL_PLAN.md
+  - docs/CONTENT_STANDARDS.md
+---
+
+# Editorial plan
+
+Before adding or substantially editing articles:
+
+1. Read [`docs/EDITORIAL_PLAN.md`](../../docs/EDITORIAL_PLAN.md) — backlog (§5), category rules (§3), hub-and-spoke clusters (§6), linking rules (§7).
+2. Prefer **next P1/P2 backlog item** over ad hoc topics unless the user specifies otherwise.
+3. **Prompt Systems**, **Templates**, and **Case Studies** are under-covered — default new substantive posts there when intent fits.
+4. **Opinion** = illustration-first primers (~150–600w); link to Framework/Governance playbook hubs — do not publish thin Opinion as standalone authority.
+5. Prefer **decision-stage / comparison playbooks** over definitional Opinion for SEO; reject consumer AI tool keywords (video/photo editors, viral prompts, uncensored chatbots, generic tool roundups). See EDITORIAL_PLAN §4.5 GEO.
+6. Set `content_tier`, add `tags` from the recommended list in EDITORIAL_PLAN §3.
+7. Voice and publish checklist: [`docs/CONTENT_STANDARDS.md`](../../docs/CONTENT_STANDARDS.md).
+8. Update `data/categories.yaml` `reading_path` when a post belongs in a curated series.
+9. **editorial-agent** refreshes EDITORIAL_PLAN §2/§5 after audits or every 5 posts; **q-and-a-agent** updates CHANGELOG when process changes.
+
+**Northline B2B** is the standard anonymized composite for playbook examples; disclose composite status in case studies.

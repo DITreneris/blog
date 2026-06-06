@@ -4,24 +4,33 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-06-06
+faq:
+- answer: Default deny. Add allow rows per workflow with owner sign-off and Legal
+    consult for customer-facing reads or writes.
+  question: Should agents use a default-allow or default-deny data policy?
+- answer: No. Enforcement belongs in the integration layer—connectors must fail closed
+    when a workflow requests a denied resource.
+  question: Can prompt text alone enforce data boundaries?
+hero_caption: Allow/deny matrix — explicit data and action boundaries for agent tools,
+  enforced in the integration layer.
 hero_image: images/articles/data-boundaries-for-ai-agents/hero.png
-hero_caption: "Allow/deny matrix — explicit data and action boundaries for agent tools, enforced in the integration layer."
-key_takeaway: Agents need an explicit allow list for data and actions; everything else is out of scope by default.
+key_takeaway: Agents need an explicit allow list for data and actions; everything
+  else is out of scope by default.
 reading_time: 6 min read
 slug: data-boundaries-for-ai-agents
 status: published
-summary: Allow and deny matrices for agent tools—Northline B2B filled example for CRM, KB, email, and wiki.
+summary: Allow and deny matrices for agent tools—Northline B2B filled example for
+  CRM, KB, email, and wiki.
+tags:
+- governance
+- agents
+- mcp
 title: Data Boundaries for AI Agents
-faq:
-  - question: Should agents use a default-allow or default-deny data policy?
-    answer: Default deny. Add allow rows per workflow with owner sign-off and Legal consult for customer-facing reads or writes.
-  - question: Can prompt text alone enforce data boundaries?
-    answer: No. Enforcement belongs in the integration layer—connectors must fail closed when a workflow requests a denied resource.
 ---
 
 Agents that can "read everything" eventually read the wrong thing. **Data boundaries** define what an agent may retrieve, write, or infer—and what always requires a human. Prompt text alone is not enforcement; the integration layer must fail closed when a workflow requests a denied resource. Teams that learn this after a near-miss usually fix prompts first; auditors ask about connector configuration.
 
-**Northline B2B** documents boundaries for `support-reply-v3` and a pilot routing agent. This article explains default-deny design, a filled allow/deny matrix, policy triggers that force human review, and how to expand access with eval evidence—not optimism. Connect to [context architecture](/articles/what-is-context-architecture/) classification, [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [risk cadence](/articles/ai-risk-review-cadence/) for the full loop. For the grounded-vs-guessing visual, see [Why AI Hallucinates](/articles/why-ai-hallucinates/).
+**Northline B2B** documents boundaries for `support-reply-v3` and a pilot routing agent. This article explains default-deny design, a filled allow/deny matrix, policy triggers that force human review, and how to expand access with eval evidence—not optimism. Connect to [context architecture](/articles/what-is-context-architecture/) classification, [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [risk cadence](/articles/ai-risk-review-cadence/) for the full loop. When agents use [Model Context Protocol](/articles/model-context-protocol-enterprise/) servers, sanitize tool returns before they re-enter the prompt—see [Securing MCP and Agent Tools](/articles/securing-mcp-agent-tools/). For the grounded-vs-guessing visual, see [Why AI Hallucinates](/articles/why-ai-hallucinates/).
 
 ## Default deny and workflow-scoped matrices
 

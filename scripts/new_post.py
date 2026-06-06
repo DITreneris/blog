@@ -73,9 +73,9 @@ def _append_satori_manifest_row(slug: str, title: str, category: str) -> None:
         f"    usage: [hero]\n"
         f"    status: mapped\n"
     )
-    marker = "\nhub_images:"
+    marker = "\ncategory_og:"
     if marker not in text:
-        print("hub_images marker not found in illustrations.yaml", file=sys.stderr)
+        print("category_og marker not found in illustrations.yaml", file=sys.stderr)
         sys.exit(1)
     ILLUSTRATIONS_YAML.write_text(text.replace(marker, block + marker, 1), encoding="utf-8")
     print(f"Manifest: appended satori-{slug} row")

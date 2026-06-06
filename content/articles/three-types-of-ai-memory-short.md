@@ -4,13 +4,18 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-02-10
+hero_caption: Short (session), long (profile), and system memory — different lifetimes,
+  not one chat history.
 hero_image: images/articles/three-types-of-ai-memory-short/hero.png
-hero_caption: "Short (session), long (profile), and system memory — different lifetimes, not one chat history."
-key_takeaway: Session, profile, and system memory serve different jobs — conflating them creates retention and consistency risk."
+key_takeaway: Session, profile, and system memory serve different jobs — conflating
+  them creates retention and consistency risk."
 reading_time: 3 min read
 slug: three-types-of-ai-memory-short
 status: published
-summary: Session, profile, and system memory explained — and when each belongs in governed AI design.
+summary: Session, profile, and system memory explained — and when each belongs in
+  governed AI design.
+tags:
+- memory
 title: Three Types of AI Memory
 ---
 

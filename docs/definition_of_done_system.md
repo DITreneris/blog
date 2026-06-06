@@ -43,6 +43,7 @@ Pick the row that best matches your change. Run **CI** columns before claiming d
 |----------|---------------|----------|-----|-------|
 | **Any code, content, or theme** | mixed | Universal gate | — | — |
 | **Add / edit article** | `content/articles/` | `make validate` (includes `validate_content.py`) | [CONTENT_STANDARDS.md](CONTENT_STANDARDS.md) § Before publishing (`status: published`) | — |
+| **Editorial audit** | `content/articles/`, `docs/EDITORIAL_PLAN.md`, `data/editorial_clusters.yaml` | `make audit-content` or `python scripts/audit_content_inventory.py` | Compare report to EDITORIAL_PLAN §2; editorial-agent or editor confirms plan updates | — |
 | **Theme / CSS / templates** | `theme/promptanatomy/` | DoD 2.0 §1, §4, §5 | DoD 2.0 §6 if UX-visible | DoD 2.0 §9–§10 on release |
 | **Satori / illustrations / brand** | `data/og/`, `data/illustrations.yaml`, `tokens.css` + `brand.mjs` | DoD 2.0 §2–§3; `validate_brand_sync.py` if colors changed | [VISUAL_QA.md](VISUAL_QA.md) § Satori-generated heroes | Deploy smoke §8 after release |
 | **Data / nav only** | `data/*.yaml` | Universal gate (output may change) | Spot-check affected URLs on `make serve` | — |
@@ -55,9 +56,16 @@ Pick the row that best matches your change. Run **CI** columns before claiming d
 
 **Add / edit article**
 
+- Check [EDITORIAL_PLAN.md](EDITORIAL_PLAN.md) for backlog priority, category rules, and internal linking (§5–§7).
 - `body_locked: true` after manual body edits (see [AGENTS.md](../AGENTS.md)).
 - New Satori row: `npm run build:satori`, `make sync-images` (or full `make build`).
 - Publishing: zero errors from `validate_content.py`; warnings policy per content tier.
+
+**Editorial audit**
+
+- Run `make audit-content` or `python scripts/audit_content_inventory.py`.
+- **editorial-agent** interprets report; updates EDITORIAL_PLAN §2/§5 when baseline shifts.
+- q-and-a-agent updates CHANGELOG when agent system or editorial process docs change.
 
 **Theme / CSS / templates**
 
@@ -75,6 +83,7 @@ Pick the row that best matches your change. Run **CI** columns before claiming d
 | `scripts/validate_theme_tokens.py` | `make validate-theme`; `make validate` | Exit 0 |
 | `scripts/validate_brand_sync.py` | `make validate-brand`; `make validate` | Exit 0 |
 | `scripts/validate_content.py` | `make validate` | Exit 0; zero errors for publish |
+| `scripts/audit_content_inventory.py` | `make audit-content`; editorial audit workflow | Completes; report in `docs/reports/` when `--markdown` |
 | `npm run build:satori` | `make build`, `make build-dev` | Completes without error |
 | `scripts/validate_satori_manifest.py` | `make validate-satori`; after Satori in `build` | Exit 0 |
 | `scripts/sync_illustrations.py` | `make sync-images`; in `build` | Exit 0 |
@@ -119,7 +128,8 @@ Do not report “should pass” without running commands or stating why they wer
 | Agent | Delivers | Done when |
 |-------|----------|-----------|
 | **Default implementation agent** | Code, content, theme, data | Workflow matrix + universal gate + evidence |
-| **q-and-a-agent** | Answers, CHANGELOG, design-system docs | [Documentation Definition of Done](#documentation-definition-of-done-q-and-a-agent) |
+| **q-and-a-agent** | Answers, CHANGELOG, design-system docs, AGENT_SYSTEM | [Documentation Definition of Done](#documentation-definition-of-done-q-and-a-agent) |
+| **editorial-agent** | Corpus audits, EDITORIAL_PLAN §2/§5 recommendations | Audit report + plan updates when baseline shifts; CHANGELOG handoff to q-and-a |
 
 Implementation agents may leave CHANGELOG bullets for q-and-a-agent to merge.
 
@@ -157,6 +167,8 @@ Full checklist: [DESIGN_SYSTEM.md § Definition of Done (2.0)](DESIGN_SYSTEM.md#
 | [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) | Tokens, components, release DoD 2.0 |
 | [VISUAL_QA.md](VISUAL_QA.md) | Manual visual and a11y checks |
 | [CONTENT_STANDARDS.md](CONTENT_STANDARDS.md) | Voice, publish rules, tiers |
+| [EDITORIAL_PLAN.md](EDITORIAL_PLAN.md) | Content strategy, backlog, category balance, roadmap |
+| [AGENT_SYSTEM.md](AGENT_SYSTEM.md) | Agent roster, skills, delegation |
 | [DEPLOY.md](DEPLOY.md) | Vercel, Windows build sequence |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Pipeline and repo layers |
 | [COMPONENT_MAP.md](COMPONENT_MAP.md) | Template partial mapping |

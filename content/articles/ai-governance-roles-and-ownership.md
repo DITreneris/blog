@@ -4,24 +4,33 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-05-16
+faq:
+- answer: The line-of-business process owner is accountable for outcomes; they maintain
+    prompt templates with IT implementing integrations and Legal consulting on policy
+    context.
+  question: Who owns prompt templates in production?
+- answer: Name an executive sponsor, process owner, IT implementer, Legal consult,
+    and ops lead—with explicit accountable vs responsible rows for go-live, context,
+    changes, and incidents.
+  question: What is the minimum RACI for a governed AI workflow?
+hero_caption: RACI for AI workflows — named owners for outcomes, context, changes,
+  and incidents.
 hero_image: images/articles/ai-governance-roles-and-ownership/hero.png
-hero_caption: "RACI for AI workflows — named owners for outcomes, context, changes, and incidents."
-key_takeaway: Governance works when every workflow has a named owner for outcomes, context, changes, and incidents.
+key_takeaway: Governance works when every workflow has a named owner for outcomes,
+  context, changes, and incidents.
 reading_time: 6 min read
 slug: ai-governance-roles-and-ownership
 status: published
-summary: RACI for AI workflows using Northline B2B support-assist example—sponsor, process owner, IT, legal, and ops.
+summary: RACI for AI workflows using Northline B2B support-assist example—sponsor,
+  process owner, IT, legal, and ops.
+tags:
+- governance
 title: AI Governance Roles and Ownership
-faq:
-  - question: Who owns prompt templates in production?
-    answer: The line-of-business process owner is accountable for outcomes; they maintain prompt templates with IT implementing integrations and Legal consulting on policy context.
-  - question: What is the minimum RACI for a governed AI workflow?
-    answer: Name an executive sponsor, process owner, IT implementer, Legal consult, and ops lead—with explicit accountable vs responsible rows for go-live, context, changes, and incidents.
 ---
 
 AI governance is not a policy PDF in a drawer. It is **clear ownership** for how workflows change, what data they touch, and who answers when something goes wrong. Without RACI-style clarity, "everyone owns AI" becomes "no one owns incidents"—and the first serious near-miss becomes a circular email thread instead of a process update with a due date.
 
-This guide uses **Northline B2B**, a 120-person services firm, and their live workflow `support-reply-v3` (tier-2 assist). The same pattern applies to other workflows: adjust names and systems, not the structure of accountable vs responsible vs consulted vs informed. Pair this article with [AI risk review cadence](/articles/ai-risk-review-cadence/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [data boundaries](/articles/data-boundaries-for-ai-agents/) so ownership connects to forums, logs, and enforcement—not slides alone. For a visual primer on the control ladder (tokens through RAG), see [Five Levels of AI Control](/articles/five-levels-of-ai-control/).
+This guide uses **Northline B2B**, a 120-person services firm, and their live workflow `support-reply-v3` (tier-2 assist). The same pattern applies to other workflows: adjust names and systems, not the structure of accountable vs responsible vs consulted vs informed. Pair this article with [AI risk review cadence](/articles/ai-risk-review-cadence/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [data boundaries](/articles/data-boundaries-for-ai-agents/) so ownership connects to forums, logs, and enforcement—not slides alone. For a visual primer on the control ladder (tokens through RAG), see [Five Levels of AI Control](/articles/five-levels-of-ai-control/). When stakeholders confuse prompt tricks with operating discipline, [Prompt Engineering Memes vs Reality](/articles/prompt-engineering-memes-vs-reality/) names the gap governance must close.
 
 ## Why RACI matters for AI workflows
 

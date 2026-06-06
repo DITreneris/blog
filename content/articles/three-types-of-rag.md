@@ -4,15 +4,22 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-01-17
+hero_caption: Three RAG patterns — basic lookup, smart refine, and agentic act — as
+  increasing control, not one feature toggle.
 hero_image: images/articles/three-types-of-rag/hero.png
-hero_caption: "Three RAG patterns — basic lookup, smart refine, and agentic act — as increasing control, not one feature toggle."
-key_takeaway: Pick the RAG tier that matches risk — lookup for FAQs, refine for drafts, agentic only with tools and eval gates.
+key_takeaway: Pick the RAG tier that matches risk — lookup for FAQs, refine for drafts,
+  agentic only with tools and eval gates.
 reading_time: 4 min read
 slug: three-types-of-rag
 status: published
-summary: Basic, smart, and agentic RAG differ in steps and risk — match the pattern to workflow tier, not vendor marketing.
+summary: Basic, smart, and agentic RAG differ in steps and risk — match the pattern
+  to workflow tier, not vendor marketing.
+tags:
+- rag
 title: Three Types of RAG
 ---
+
+*Part 1 primer — for production implementation with eval gates, see [RAG in Production](/articles/rag-in-production/).*
 
 The hero breaks retrieval into three patterns: **basic** (lookup), **smart** (refine), **agentic** (plan, tools, verify). Vendors often sell “RAG” as one switch. Operators need the distinction because **each tier adds steps, latency, and failure modes** — and because audit questions change when tools enter the loop.
 
@@ -64,4 +71,4 @@ Document the active tier in the workflow canvas footer (`retrieval_tier: basic|s
 
 ## Go deeper
 
-Retrieval sits inside [context architecture](/articles/what-is-context-architecture/), not instead of it. For accountable logging when tiers change, see [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/). For the broader control ladder that ends at RAG, see [Five Levels of AI Control](/articles/five-levels-of-ai-control/).
+Retrieval sits inside [context architecture](/articles/what-is-context-architecture/), not instead of it. For the full production guide with tier promotion and eval gates, see [RAG in Production](/articles/rag-in-production/). For accountable logging when tiers change, see [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/). For the broader control ladder that ends at RAG, see [Five Levels of AI Control](/articles/five-levels-of-ai-control/).
