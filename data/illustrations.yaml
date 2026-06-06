@@ -106,7 +106,7 @@ illustrations:
 
   - id: basic-129
     generator: satori
-    template: category-default
+    template: observability-trace
     source: Satori/handoff-rules-between-humans-and-ai.png
     slug: handoff-rules-between-humans-and-ai
     title: "Handoff Rules Between Humans and AI"
@@ -142,7 +142,7 @@ illustrations:
 
   - id: basic-gemini-blueprint
     generator: satori
-    template: prompt-registry
+    template: prompt-registry-blueprint
     source: Satori/structured-prompt-system-blueprint.png
     slug: structured-prompt-system-blueprint
     title: "Structured Prompt System Blueprint"
@@ -213,6 +213,7 @@ illustrations:
   - id: gov-113
     generator: satori
     template: governance-raci
+    subtitle: "RACI for AI workflows — example roles with workflow context."
     source: Satori/ai-governance-roles-and-ownership.png
     slug: ai-governance-roles-and-ownership
     title: "AI Governance Roles and Ownership"
@@ -242,7 +243,7 @@ illustrations:
 
   - id: gov-137
     generator: satori
-    template: category-default
+    template: security-controls
     source: Satori/data-boundaries-for-ai-agents.png
     slug: data-boundaries-for-ai-agents
     title: "Data Boundaries for AI Agents"
@@ -361,7 +362,8 @@ illustrations:
   # --- Opinion primers (v0.7.0): Satori heroes; hand-authored masters optional later ---
   - id: poster-five-levels-ai-control
     generator: satori
-    template: category-default
+    template: tier-ladder
+    variant: control
     source: Satori/five-levels-of-ai-control.png
     slug: five-levels-of-ai-control
     title: "Five Levels of AI Control"
@@ -371,7 +373,8 @@ illustrations:
 
   - id: poster-scales-ai-beyond-basics
     generator: satori
-    template: category-default
+    template: tier-ladder
+    variant: scale
     source: Satori/what-scales-ai-beyond-basics.png
     slug: what-scales-ai-beyond-basics
     title: "What Scales AI Beyond the Basics"
@@ -381,7 +384,7 @@ illustrations:
 
   - id: poster-three-types-rag
     generator: satori
-    template: category-default
+    template: rag-ladder
     source: Satori/three-types-of-rag.png
     slug: three-types-of-rag
     title: "Three Types of RAG"
@@ -391,7 +394,8 @@ illustrations:
 
   - id: poster-why-ai-hallucinates
     generator: satori
-    template: category-default
+    template: split-compare
+    variant: hallucination
     source: Satori/why-ai-hallucinates.png
     slug: why-ai-hallucinates
     title: "Why AI Hallucinates"
@@ -401,7 +405,8 @@ illustrations:
 
   - id: poster-chaos-vs-control
     generator: satori
-    template: category-default
+    template: split-compare
+    variant: chaos
     source: Satori/chaos-vs-control-prompting.png
     slug: chaos-vs-control-prompting
     title: "Chaos vs Control Prompting"
@@ -411,7 +416,8 @@ illustrations:
 
   - id: poster-context-window-limits
     generator: satori
-    template: category-default
+    template: context-window-tube
+    variant: tube
     source: Satori/tokens-and-context-window-limits.png
     slug: tokens-and-context-window-limits
     title: "Tokens and Context Window Limits"
@@ -421,7 +427,8 @@ illustrations:
 
   - id: poster-tokens-as-fuel
     generator: satori
-    template: category-default
+    template: context-window-tube
+    variant: gauge
     source: Satori/tokens-as-fuel-for-ai-output.png
     slug: tokens-as-fuel-for-ai-output
     title: "Tokens as Fuel for AI Output"
@@ -431,7 +438,7 @@ illustrations:
 
   - id: poster-three-memory-types
     generator: satori
-    template: category-default
+    template: memory-tiers
     source: Satori/three-types-of-ai-memory-short.png
     slug: three-types-of-ai-memory-short
     title: "Three Types of AI Memory"
@@ -441,27 +448,30 @@ illustrations:
 
   - id: satori-prompt-registry-playbook
     generator: satori
-    template: category-default
+    template: prompt-registry
+    showReleaseFlow: true
     source: Satori/prompt-registry-playbook.png
     slug: prompt-registry-playbook
+    satori_title: "The Prompt Registry Playbook"
     title: "The Prompt Registry Playbook: Version, Own, and Ship Prompt Changes"
     category: Prompt Systems
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-rag-in-production
     generator: satori
-    template: category-default
+    template: rag-ladder
     source: Satori/rag-in-production.png
     slug: rag-in-production
+    satori_title: "RAG in Production"
     title: "RAG in Production: Basic, Smart, and Agentic Patterns with Eval Gates"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-ai-workflow-eval-checklist
     generator: satori
-    template: category-default
+    template: checklist-worksheet
     source: Satori/ai-workflow-eval-checklist.png
     slug: ai-workflow-eval-checklist
     title: "AI Workflow Eval Checklist (Template)"
@@ -471,9 +481,10 @@ illustrations:
 
   - id: satori-northline-part-2-scaling-eval-coverage
     generator: satori
-    template: category-default
+    template: case-study-eval-scale
     source: Satori/northline-part-2-scaling-eval-coverage.png
     slug: northline-part-2-scaling-eval-coverage
+    satori_title: "Northline Part 2: Scaling Eval Coverage"
     title: "Northline Part 2: Scaling Eval Coverage from 50% to 80% Queue Traffic"
     category: Case Studies
     usage: [hero]
@@ -481,17 +492,18 @@ illustrations:
 
   - id: satori-model-context-protocol-enterprise
     generator: satori
-    template: category-default
+    template: mcp-architecture
     source: Satori/model-context-protocol-enterprise.png
     slug: model-context-protocol-enterprise
+    satori_title: "MCP for Enterprise Teams"
     title: "Model Context Protocol for Enterprise Teams: Tools, Boundaries, and Security"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-grounding-ai-outputs
     generator: satori
-    template: category-default
+    template: grounding-stack
     source: Satori/grounding-ai-outputs.png
     slug: grounding-ai-outputs
     title: "Grounding AI Outputs: Context, Retrieval, and Verification in One System"
@@ -501,7 +513,7 @@ illustrations:
 
   - id: satori-context-rot
     generator: satori
-    template: category-default
+    template: context-rot
     source: Satori/context-rot-why-bigger-windows-make-agents-worse.png
     slug: context-rot-why-bigger-windows-make-agents-worse
     title: "Context Rot: Why Bigger Windows Make Agents Worse"
@@ -521,7 +533,8 @@ illustrations:
 
   - id: satori-securing-mcp-agent-tools
     generator: satori
-    template: category-default
+    template: mcp-architecture
+    emphasis: security
     source: Satori/securing-mcp-agent-tools.png
     slug: securing-mcp-agent-tools
     title: "Securing MCP and Agent Tools: Allowlists, Scoping, and Injection Defense"
@@ -531,9 +544,10 @@ illustrations:
 
   - id: satori-langgraph-vs-crewai
     generator: satori
-    template: category-default
+    template: platform-comparison
     source: Satori/langgraph-vs-crewai-production-guide.png
     slug: langgraph-vs-crewai-production-guide
+    satori_title: "LangGraph vs CrewAI vs MS Agent Framework"
     title: "LangGraph vs CrewAI vs Microsoft Agent Framework: A Production Selection Guide"
     category: AI Agents
     usage: [hero]
@@ -541,9 +555,10 @@ illustrations:
 
   - id: satori-evaluating-agents-clear
     generator: satori
-    template: category-default
+    template: clear-scorecard
     source: Satori/evaluating-agents-with-clear.png
     slug: evaluating-agents-with-clear
+    satori_title: "Evaluating Agents with CLEAR"
     title: "Evaluating Agents with CLEAR: Cost, Latency, Efficacy, Assurance, Reliability"
     category: Framework
     usage: [hero]
@@ -551,7 +566,7 @@ illustrations:
 
   - id: satori-choosing-workflow-automation
     generator: satori
-    template: category-default
+    template: platform-comparison
     source: Satori/choosing-workflow-automation-ai-pipelines.png
     slug: choosing-workflow-automation-ai-pipelines
     title: "Choosing Workflow Automation for AI Pipelines (Without Tool Sprawl)"
@@ -561,7 +576,7 @@ illustrations:
 
   - id: satori-agent-orchestrator
     generator: satori
-    template: category-default
+    template: observability-trace
     source: Satori/agent-orchestrator-operating-model.png
     slug: agent-orchestrator-operating-model
     title: "The Agent Orchestrator Role: Operating Model for a Digital Workforce"
@@ -581,7 +596,7 @@ illustrations:
 
   - id: satori-prompt-regression-testing
     generator: satori
-    template: category-default
+    template: governance-eval-gates
     source: Satori/prompt-regression-testing-week.png
     slug: prompt-regression-testing-week
     title: "Prompt Regression Testing: Build an Eval Set in a Week"
@@ -591,7 +606,7 @@ illustrations:
 
   - id: satori-multi-agent-observability
     generator: satori
-    template: category-default
+    template: observability-trace
     source: Satori/multi-agent-observability.png
     slug: multi-agent-observability
     title: "Multi-Agent Observability: Logs, Handoffs, and Failure Modes"
@@ -601,7 +616,7 @@ illustrations:
 
   - id: satori-measuring-ai-workflow-roi
     generator: satori
-    template: category-default
+    template: business-outcomes
     source: Satori/measuring-ai-workflow-roi.png
     slug: measuring-ai-workflow-roi
     title: "Measuring AI Workflow ROI: Pass Rate, Time Saved, and Incident Cost"
@@ -611,7 +626,7 @@ illustrations:
 
   - id: satori-governance-raci-worksheet
     generator: satori
-    template: category-default
+    template: governance-raci-worksheet
     source: Satori/governance-raci-worksheet.png
     slug: governance-raci-worksheet
     title: "Governance RACI Worksheet (Template)"
@@ -621,9 +636,10 @@ illustrations:
 
   - id: satori-prompt-anatomy-glossary
     generator: satori
-    template: category-default
+    template: glossary-terms
     source: Satori/prompt-anatomy-glossary.png
     slug: prompt-anatomy-glossary
+    satori_title: "Prompt Anatomy Glossary"
     title: "Glossary: Prompt Anatomy Terms for Teams"
     category: Framework
     usage: [hero]
@@ -631,7 +647,7 @@ illustrations:
 
   - id: satori-mcp-server-selection-worksheet
     generator: satori
-    template: category-default
+    template: checklist-worksheet
     source: Satori/mcp-server-selection-worksheet.png
     slug: mcp-server-selection-worksheet
     title: "MCP Server Selection Worksheet"
@@ -641,7 +657,8 @@ illustrations:
 
   - id: satori-finance-workflow-case-study-controlled-draft-and-review
     generator: satori
-    template: category-default
+    template: case-study-support
+    vertical: finance
     source: Satori/finance-workflow-case-study-controlled-draft-and-review.png
     slug: finance-workflow-case-study-controlled-draft-and-review
     title: "Finance Workflow Case Study: Controlled Draft-and-Review"
@@ -651,7 +668,7 @@ illustrations:
 
   - id: satori-ai-change-log-template-prompt-context-and-model-updates
     generator: satori
-    template: category-default
+    template: checklist-worksheet
     source: Satori/ai-change-log-template-prompt-context-and-model-updates.png
     slug: ai-change-log-template-prompt-context-and-model-updates
     title: "AI Change Log Template: Prompt, Context, and Model Updates"

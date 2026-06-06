@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-07-28
+date: 2026-05-30
 hero_image: images/articles/mcp-server-selection-worksheet/hero.png
 hero_caption: "MCP server selection checklist — security, governance, and operational fit for IT teams."
 key_takeaway: Score MCP servers on security and governance red lines first—total feature score does not override a failed allowlist or audit test.

@@ -14,6 +14,7 @@ const ROWS = [
 ];
 
 export function buildPromptRegistry(props) {
+  const showRelease = props.showReleaseFlow;
   const diagram = panelBox(
     h(
       'div',
@@ -64,18 +65,35 @@ export function buildPromptRegistry(props) {
           )
         )
       ),
-      h(
-        'div',
-        {
-          style: {
-            display: 'flex',
-            marginTop: '16px',
-            color: brand.colors.brandAccent,
-            fontSize: px(d.label),
-          },
-        },
-        'Versioned templates + eval-linked releases'
-      )
+      showRelease
+        ? h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '16px',
+                gap: '8px',
+                color: brand.colors.brandAccent,
+                fontSize: px(d.label),
+              },
+            },
+            'Draft → Eval → Release → Monitor'
+          )
+        : h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                marginTop: '16px',
+                color: brand.colors.brandAccent,
+                fontSize: px(d.label),
+              },
+            },
+            'Versioned templates + eval-linked releases'
+          )
     ),
     { width: '680px', padding: '28px 32px' }
   );

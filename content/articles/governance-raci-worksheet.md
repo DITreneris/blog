@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-07-25
+date: 2026-05-29
 hero_image: images/articles/governance-raci-worksheet/hero.png
 hero_caption: "Copy-paste RACI worksheet — accountable owners for AI workflow changes, releases, and incidents."
 key_takeaway: Fill this RACI before pilot traffic scales—incident response depends on named owners, not shared responsibility.

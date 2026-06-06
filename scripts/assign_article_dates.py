@@ -2,8 +2,9 @@
 """Assign realistic publish dates from a fixed editorial order.
 
 Start: 2024-01-06, ~24-day cadence (jittered) for legacy curriculum; compressed
-~3–5 day cadence for wave-2 keyword posts (2026 Q2). Manual exceptions in
-``FIXED_DATES`` are preserved. Northline Part 2 lands ~7 weeks after Part 1.
+cadence for wave-2 keyword posts ending by ``PUBLISH_CUTOFF`` (no Jun–Aug future
+dates when the catalog is frozen). Manual exceptions in ``FIXED_DATES`` are
+preserved. Northline Part 2 lands ~7 weeks after Part 1.
 """
 from __future__ import annotations
 
@@ -95,12 +96,16 @@ DRAFT_ORDER: list[str] = [
 ]
 
 INTERVAL_DAYS = [22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23]
-WAVE2_INTERVAL_DAYS = [4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5, 3, 4, 5]
+# One-day steps: 20 wave posts land May 12 → May 31 (catalog frozen 2026-06-06)
+WAVE2_INTERVAL_DAYS = [1]
 
 FIXED_DATES: dict[str, date] = {
     "finance-workflow-case-study-controlled-draft-and-review": date(2026, 4, 2),
     "ai-change-log-template-prompt-context-and-model-updates": date(2026, 4, 24),
 }
+
+# Latest allowed publish date (catalog frozen 2026-06-06 — no posts dated Jun/Aug 2026)
+PUBLISH_CUTOFF = date(2026, 5, 31)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
@@ -131,28 +136,54 @@ def _schedule(slugs: list[str], start: date, intervals: list[int]) -> dict[str, 
     return out
 
 
+def _schedule_to_end(slugs: list[str], end: date, intervals: list[int]) -> dict[str, date]:
+    """Assign dates forward through *slugs* so the last slug lands on *end*."""
+    if not slugs:
+        return {}
+    if len(slugs) == 1:
+        return {slugs[0]: end}
+    span = sum(intervals[i % len(intervals)] for i in range(len(slugs) - 1))
+    return _schedule(slugs, end - timedelta(days=span), intervals)
+
+
 def _build_publication_dates() -> dict[str, date]:
     wave_idx = PUBLICATION_ORDER.index(WAVE2_START_SLUG)
-    legacy_slugs = PUBLICATION_ORDER[:wave_idx]
+    tail_start_idx = PUBLICATION_ORDER.index("prompt-engineering-memes-vs-reality")
+    legacy_main = PUBLICATION_ORDER[:tail_start_idx]
+    legacy_tail = PUBLICATION_ORDER[tail_start_idx:wave_idx]
     wave_slugs = [s for s in PUBLICATION_ORDER[wave_idx:] if s not in FIXED_DATES]
 
-    out = _schedule(legacy_slugs, START, INTERVAL_DAYS)
+    out = _schedule(legacy_main, START, INTERVAL_DAYS)
 
     part1 = out["case-study-vibe-prompting-to-structured-workflow"]
     out["northline-part-2-scaling-eval-coverage"] = part1 + timedelta(
         days=NORTHLINE_PART2_AFTER_PART1_DAYS
     )
 
-    after_northline = legacy_slugs[legacy_slugs.index("northline-part-2-scaling-eval-coverage") + 1 :]
+    after_northline = legacy_main[legacy_main.index("northline-part-2-scaling-eval-coverage") + 1 :]
     d = out["northline-part-2-scaling-eval-coverage"]
     for i, slug in enumerate(after_northline):
         d += timedelta(days=INTERVAL_DAYS[i % len(INTERVAL_DAYS)])
         out[slug] = d
 
-    wave_start = out[legacy_slugs[-1]] + timedelta(days=WAVE2_INTERVAL_DAYS[0])
+    wave_start = PUBLISH_CUTOFF - timedelta(days=len(wave_slugs) - 1)
+    tail_dates = _schedule_to_end(legacy_tail, wave_start - timedelta(days=1), INTERVAL_DAYS)
+    if min(tail_dates.values()) <= out["five-levels-of-ai-control"]:
+        raise ValueError(
+            "Legacy opinion tail overlaps five-levels; widen PUBLISH_CUTOFF or shorten legacy tail."
+        )
+    out.update(tail_dates)
+
     wave_dates = _schedule(wave_slugs, wave_start, WAVE2_INTERVAL_DAYS)
     out.update(wave_dates)
     out.update(FIXED_DATES)
+
+    over = {s: d for s, d in out.items() if d > PUBLISH_CUTOFF}
+    if over:
+        raise ValueError(
+            "Publish dates after PUBLISH_CUTOFF: "
+            + ", ".join(f"{s}={d.isoformat()}" for s, d in sorted(over.items(), key=lambda x: x[1]))
+        )
     return out
 
 

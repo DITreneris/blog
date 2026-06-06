@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-04-22
+date: 2026-04-19
 hero_caption: ROI meeting — employee asks for a raise while the dashboard shows AI
   at $20/month with 100% productivity metrics.
 hero_image: images/articles/prompt-engineering-memes-vs-reality/hero.png

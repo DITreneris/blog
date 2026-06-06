@@ -8,9 +8,26 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- **Satori §5.1 template pack (P0–P2):** Eleven new modules in [`data/og/templates/`](data/og/templates/) — `split-compare`, `tier-ladder`, `context-window-tube`, `memory-tiers`, `grounding-stack`, `context-rot`, `checklist-worksheet`, `security-controls`, `observability-trace`, `governance-raci-worksheet`, `prompt-registry-blueprint`. Manifest diagram props (`variant`, `emphasis`, `vertical`, `showReleaseFlow`, …) pass through [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs).
+- **Tier F Satori heroes (8 bespoke templates):** Regenerated weakest keyword-wave heroes with topic-specific diagrams instead of `category-default` grid — `prompt-registry`, `governance-raci`, `clear-scorecard`, `rag-ladder`, `mcp-architecture`, `platform-comparison`, `case-study-eval-scale`, `glossary-terms` in [`data/og/templates/`](data/og/templates/). Optional `satori_title` in [`data/illustrations.yaml`](data/illustrations.yaml) + [`scripts/generate_satori_images.mjs`](scripts/generate_satori_images.mjs) for shorter card headlines. Dedicated OG cards for pillars `prompt-registry-playbook`, `rag-in-production`, `model-context-protocol-enterprise`.
+- **Publish chronology tooling:** [`scripts/assign_article_dates.py`](scripts/assign_article_dates.py) — wave-2 slugs in `PUBLICATION_ORDER`, `PUBLISH_CUTOFF` (2026-05-31), Northline Part 2 ~7-week gap, fixed P3 dates; [`scripts/audit_content_inventory.py`](scripts/audit_content_inventory.py) — `reading_path_category_mismatch` check.
+
+### Changed
+
+- **Satori hero quality (§5.1):** Wired 36 slugs off `category-default` to caption-aligned templates; **0** Opinion posts on generic grid; **8** P3 rows remain on `category-default`. [`data/illustrations.yaml`](data/illustrations.yaml) + regenerated masters under `data/01_illustrations/Satori/`.
+- **`new_post.py`:** `--satori-template` and tier/category template defaults; Opinion posts require explicit template or `--no-satori`.
+- **Content validators:** [`scripts/validate_content.py`](scripts/validate_content.py) warns on Opinion + `category-default` and `hero_caption` diagram keywords + `category-default`. [`scripts/validate_satori_manifest.py`](scripts/validate_satori_manifest.py) — 11 new templates in `KNOWN_TEMPLATES`.
+- **Reading paths and categories:** [`data/categories.yaml`](data/categories.yaml) — registry spine, Framework context-rot order, Opinion cluster funnel, Case Studies narrative (`tender` → Case Studies, `blueprint` → Prompt Systems). Homepage `#latest` stable sort (date desc, title asc) in [`index.html`](theme/promptanatomy/templates/index.html).
+- **Publish dates:** Wave-2 posts stagger **May 2026** (no Jun–Aug future dates); curriculum span documented in [`docs/CONTENT_STANDARDS.md`](docs/CONTENT_STANDARDS.md) and [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md) (v1.4 — §5.1 P0–P2 shipped).
+
 ### Fixed
 
+- **`measuring-ai-workflow-roi.md`:** Removed duplicate `content_tier` frontmatter key (blocked Satori generation).
+
 - **CI / Makefile build order:** `make build` and `make build-dev` now run `sync-images` before `validate-content`, matching [`scripts/vercel_build.sh`](scripts/vercel_build.sh). Fixes GitHub CI failure on clean checkout when `content/images/` heroes are gitignored.
+- **Silent reading-path gaps:** Three category/path mismatches resolved (`ai-tender-response-pipeline`, `structured-prompt-system-blueprint`, `data-boundaries` removed from AI Agents path).
 
 ## [1.0.0] - 2026-06-06 — Content wave + editorial ops
 

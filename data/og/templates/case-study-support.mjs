@@ -6,6 +6,19 @@ import { articleHeroFrame, panelBox } from './base.mjs';
 const d = typography.hero.diagram;
 
 export function buildCaseStudySupport(props) {
+  const isFinance = props.vertical === 'finance';
+  const beforeItems = props.beforeItems || (isFinance
+    ? ['Manual variance narratives', 'Analyst copy-paste from GL', 'Review bottlenecks', 'Close delays']
+    : ['Scattered copilots', 'No eval set', 'CSAT flat', '8/10 vibe signs']);
+  const afterItems = props.afterItems || (isFinance
+    ? ['Draft from approved GL extracts', 'Human review gate', 'Audit trail per narrative', 'Close cycle −2 days']
+    : ['One owned workflow', '25-case eval set', '+6–9 CSAT pts', '~18% handle time ↓']);
+  const footer = props.workflowFooter || (isFinance
+    ? 'finance-close-assist-v1'
+    : 'support-reply-v3');
+  const beforeTitle = props.beforeTitle || 'Before';
+  const afterTitle = props.afterTitle || (isFinance ? 'After (pilot)' : 'After (12 wk)');
+
   const column = (title, items, accent) =>
     panelBox(
       h(
@@ -69,16 +82,8 @@ export function buildCaseStudySupport(props) {
           gap: '16px',
         },
       },
-      column(
-        'Before',
-        ['Scattered copilots', 'No eval set', 'CSAT flat', '8/10 vibe signs'],
-        '#f59e0b'
-      ),
-      column(
-        'After (12 wk)',
-        ['One owned workflow', '25-case eval set', '+6–9 CSAT pts', '~18% handle time ↓'],
-        brand.colors.brandAccent
-      )
+      column(beforeTitle, beforeItems, '#f59e0b'),
+      column(afterTitle, afterItems, brand.colors.brandAccent)
     ),
     h(
       'div',
@@ -95,14 +100,18 @@ export function buildCaseStudySupport(props) {
           fontWeight: 700,
         },
       },
-      'support-reply-v3'
+      footer
     )
   );
 
   return articleHeroFrame({
     category: props.category || 'Case Studies',
     title: props.title,
-    subtitle: props.subtitle || 'Northline B2B — structured support pilot',
+    subtitle:
+      props.subtitle ||
+      (isFinance
+        ? 'Finance close assist — controlled draft and review workflow.'
+        : 'Northline B2B — structured support pilot'),
     diagram,
   });
 }

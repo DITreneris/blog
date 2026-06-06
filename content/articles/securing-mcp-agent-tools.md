@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2026-07-01
+date: 2026-05-23
 hero_image: images/articles/securing-mcp-agent-tools/hero.png
 hero_caption: "MCP security controls: tool allowlists, scoped permissions, and injection-resilient execution paths."
 key_takeaway: Secure agent tooling requires explicit allowlists, least-privilege scope, and injection defenses at every tool boundary.

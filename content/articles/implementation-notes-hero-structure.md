@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
-date: 2026-11-21
+date: 2026-09-20
 hero_image: images/articles/implementation-notes-hero-structure/hero.png
 key_takeaway: Use the ecosystem map to navigate blog, training, and related Prompt Anatomy properties.
 reading_time: 1 min read

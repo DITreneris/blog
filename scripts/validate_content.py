@@ -9,10 +9,16 @@ from enum import Enum
 from pathlib import Path
 
 import frontmatter
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 ARTICLES = CONTENT / "articles"
+ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
+
+CAPTION_DIAGRAM_KEYWORDS = re.compile(
+    r"\b(ladder|split|three types|tube|gauge|contrast|rungs|memory tiers)\b", re.I
+)
 
 BOILERPLATE_MARKER = "The hero diagram summarizes the core idea"
 FIELD_NOTES_SUMMARY = re.compile(r"^Field notes on ", re.I)
@@ -89,7 +95,21 @@ def _deck_section_warnings(body: str) -> list[str]:
     return []
 
 
-def validate_file(path: Path, slugs: set[str]) -> list[str]:
+def _slug_satori_templates() -> dict[str, str]:
+    if not ILLUSTRATIONS_YAML.is_file():
+        return {}
+    with ILLUSTRATIONS_YAML.open(encoding="utf-8") as f:
+        manifest = yaml.safe_load(f) or {}
+    out: dict[str, str] = {}
+    for row in manifest.get("illustrations") or []:
+        slug = row.get("slug")
+        template = row.get("template")
+        if slug and template:
+            out[str(slug)] = str(template)
+    return out
+
+
+def validate_file(path: Path, slugs: set[str], slug_templates: dict[str, str]) -> list[str]:
     errors: list[str] = []
     warnings: list[str] = []
     post = frontmatter.load(path)
@@ -204,6 +224,23 @@ def validate_file(path: Path, slugs: set[str]) -> list[str]:
         for msg in _deck_section_warnings(body):
             warnings.append(f"{path.name}: {msg}")
 
+        manifest_tpl = slug_templates.get(slug)
+        if meta.get("content_tier") == "opinion" and manifest_tpl == "category-default":
+            warnings.append(
+                f"{path.name}: Opinion post uses generic category-default Satori hero "
+                "(see EDITORIAL_PLAN §5.1)"
+            )
+        caption = str(meta.get("hero_caption") or "")
+        if (
+            manifest_tpl == "category-default"
+            and caption
+            and CAPTION_DIAGRAM_KEYWORDS.search(caption)
+        ):
+            warnings.append(
+                f"{path.name}: hero_caption describes a bespoke diagram but manifest "
+                "uses category-default"
+            )
+
     for warn in warnings:
         print(f"  warning: {warn}", file=sys.stderr)
 
@@ -219,9 +256,10 @@ def main() -> int:
         return 1
 
     slugs = _slug_paths()
+    slug_templates = _slug_satori_templates()
     all_errors: list[str] = []
     for path in sorted(paths):
-        all_errors.extend(validate_file(path, slugs))
+        all_errors.extend(validate_file(path, slugs, slug_templates))
 
     if all_errors:
         print("Validation failed:", file=sys.stderr)

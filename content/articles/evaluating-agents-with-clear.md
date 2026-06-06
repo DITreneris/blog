@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-06-10
+date: 2026-05-18
 hero_image: images/articles/evaluating-agents-with-clear/hero.png
 hero_caption: "CLEAR scorecard — cost, latency, efficacy, assurance, reliability measured at workflow level."
 key_takeaway: Agent quality is not one metric; CLEAR gives a practical, weekly operating scorecard that balances performance, risk, and stability.

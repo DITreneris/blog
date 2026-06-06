@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: pillar
-date: 2026-06-07
+date: 2026-05-17
 hero_image: images/articles/rag-in-production/hero.png
 hero_caption: "RAG production ladder — basic lookup, smart refine, and agentic act with eval gates at each tier transition."
 key_takeaway: Ship RAG as a governed retrieval tier with eval gates—not a vendor feature toggle without accountability."

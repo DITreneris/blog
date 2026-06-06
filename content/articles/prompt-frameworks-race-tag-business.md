@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: playbook
-date: 2026-05-21
+date: 2026-05-13
 hero_image: images/articles/prompt-frameworks-race-tag-business/hero.png
 hero_caption: "Framework chooser — RACE and TAG mapped to task type, risk, and operating intent."
 key_takeaway: RACE and TAG are both useful; choose by workflow purpose and control needs, then standardize usage in your registry.

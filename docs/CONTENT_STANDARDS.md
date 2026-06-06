@@ -21,7 +21,7 @@ Guidelines for articles on **promptanatomy.blog**. See also [AGENTS.md](../AGENT
 
 ## Publish dates
 
-Assign `date` (and pillar `modified` when applicable) via [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py)—add new slugs to `PUBLICATION_ORDER` in curriculum order, then run the script. Do not rely on `new_post.py` defaulting to today's date for published curriculum posts; staggered dates keep homepage `#latest` and reading-path narrative believable.
+Assign `date` (and pillar `modified` when applicable) via [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py)—add new slugs to `PUBLICATION_ORDER`, then run the script. Do not rely on `new_post.py` defaulting to today's date. **`PUBLISH_CUTOFF`** (currently `2026-05-31`) caps published dates so nothing appears dated in the future relative to the live catalog.
 
 ## Article brief (recommended structure)
 

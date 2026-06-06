@@ -116,11 +116,21 @@ function propsFromRow(row, surface = 'hero') {
     };
   }
   const fm = row.slug ? loadFrontmatter(row.slug) : {};
-  return {
-    title: fm.title || row.title || row.slug || 'Prompt Anatomy',
+  const props = {
+    title: row.satori_title || fm.title || row.title || row.slug || 'Prompt Anatomy',
     category: fm.category || row.category || 'Framework',
     subtitle,
+    slug: row.slug || '',
   };
+  const diagramKeys = [
+    'variant', 'emphasis', 'vertical', 'leftTitle', 'rightTitle', 'leftItems', 'rightItems',
+    'rungs', 'footer', 'tiers', 'metricStart', 'metricEnd', 'emptyGrid', 'showReleaseFlow',
+    'workflowFooter', 'beforeItems', 'afterItems', 'beforeTitle', 'afterTitle',
+  ];
+  for (const key of diagramKeys) {
+    if (row[key] !== undefined) props[key] = row[key];
+  }
+  return props;
 }
 
 function loadEmbedSrc(relativePath) {

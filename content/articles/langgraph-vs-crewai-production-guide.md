@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-06-22
+date: 2026-05-21
 hero_image: images/articles/langgraph-vs-crewai-production-guide/hero.png
 hero_caption: "Production platform selection: orchestration depth, governance controls, and operational fit."
 key_takeaway: Pick your agent framework based on orchestration and governance requirements, not demo velocity alone.

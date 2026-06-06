@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: nav
-date: 2026-06-14
+date: 2026-05-19
 hero_image: images/articles/prompt-anatomy-glossary/hero.png
 hero_caption: "Glossary nav — shared definitions for MCP, context rot, CLEAR, RAG tiers, and prompt registry terms."
 key_takeaway: Shared vocabulary speeds design reviews—link terms to canonical playbooks instead of redefining them in every meeting.

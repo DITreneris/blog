@@ -14,7 +14,26 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 ARTICLES = ROOT / "content" / "articles"
-SATORI_TEMPLATE = "category-default"
+DEFAULT_SATORI_TEMPLATE = "category-default"
+
+# Category/tier → suggested Satori template (Opinion requires explicit --satori-template).
+TIER_SATORI_TEMPLATE: dict[str, str | None] = {
+    "opinion": None,
+    "template": "checklist-worksheet",
+    "playbook": "category-default",
+    "pillar": "category-default",
+    "nav": "glossary-terms",
+}
+CATEGORY_SATORI_TEMPLATE: dict[str, str | None] = {
+    "Opinion": None,
+    "Templates": "checklist-worksheet",
+    "Case Studies": "case-study-support",
+    "AI Governance": "governance-raci",
+    "Framework": "category-default",
+    "Prompt Systems": "prompt-registry",
+    "AI Agents": "multi-agent-handoff",
+    "Implementation Notes": "category-default",
+}
 
 BODY_TEMPLATE = """\
 {intro}
@@ -57,15 +76,38 @@ def _hero_path(slug: str) -> str:
     return f"images/articles/{slug}/hero.png"
 
 
-def _append_satori_manifest_row(slug: str, title: str, category: str) -> None:
-    """Append a category-default Satori row before hub_images (preserves YAML comments)."""
+def _resolve_satori_template(
+    category: str,
+    *,
+    content_tier: str | None = None,
+    explicit: str | None = None,
+) -> str | None:
+    if explicit:
+        return explicit
+    if content_tier and content_tier in TIER_SATORI_TEMPLATE:
+        tier_tpl = TIER_SATORI_TEMPLATE[content_tier]
+        if tier_tpl is not None:
+            return tier_tpl
+        if content_tier == "opinion":
+            return None
+    return CATEGORY_SATORI_TEMPLATE.get(category, DEFAULT_SATORI_TEMPLATE)
+
+
+def _append_satori_manifest_row(
+    slug: str,
+    title: str,
+    category: str,
+    *,
+    template: str,
+) -> None:
+    """Append a Satori row before hub_images (preserves YAML comments)."""
     text = ILLUSTRATIONS_YAML.read_text(encoding="utf-8")
     if f"\n    slug: {slug}\n" in text or f"slug: {slug}\n" in text:
         return
     block = (
         f"\n  - id: satori-{slug}\n"
         f"    generator: satori\n"
-        f"    template: {SATORI_TEMPLATE}\n"
+        f"    template: {template}\n"
         f"    source: Satori/{slug}.png\n"
         f"    slug: {slug}\n"
         f'    title: "{title}"\n'
@@ -136,6 +178,16 @@ def main() -> int:
     parser.add_argument("--status", default="published", choices=("draft", "published"))
     parser.add_argument("--featured", action="store_true")
     parser.add_argument("--no-satori", action="store_true", help="Skip Satori manifest row")
+    parser.add_argument(
+        "--satori-template",
+        metavar="NAME",
+        help="Satori template module (required for Opinion; see data/og/templates/)",
+    )
+    parser.add_argument(
+        "--content-tier",
+        choices=("pillar", "playbook", "template", "opinion", "nav"),
+        help="content_tier hint for default Satori template selection",
+    )
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -176,7 +228,19 @@ def main() -> int:
         force=args.force,
     )
     if not args.no_satori:
-        _append_satori_manifest_row(slug, args.title, args.category)
+        tpl = _resolve_satori_template(
+            args.category,
+            content_tier=args.content_tier,
+            explicit=args.satori_template,
+        )
+        if tpl is None:
+            print(
+                "Opinion posts need an illustration-first template. "
+                "Pass --satori-template (e.g. split-compare, tier-ladder) or --no-satori.",
+                file=sys.stderr,
+            )
+            return 1
+        _append_satori_manifest_row(slug, args.title, args.category, template=tpl)
     return 0
 
 

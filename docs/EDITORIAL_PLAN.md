@@ -1,7 +1,7 @@
 # Editorial Plan
 
-**Version:** 1.2  
-**Last reviewed:** 2026-06-06 (post content wave + prose depth pass)  
+**Version:** 1.4  
+**Last reviewed:** 2026-06-06 (Satori §5.1 P0–P2 templates shipped)  
 **Scope:** Content strategy, category balance, backlog, and internal linking for [promptanatomy.blog](https://www.promptanatomy.blog)  
 **Owner:** content/editorial (human); **editorial-agent** maintains §2/§5 and audit reports; **q-and-a-agent** syncs CHANGELOG when process or agent docs change
 
@@ -35,7 +35,7 @@ Prompt Anatomy Blog is a **structured AI implementation knowledge hub** — not 
 
 **Editorial audit (2026-06-06):** Keyword wave (20 slugs) + legacy taxonomy backfill + P3 finance case study + change log template + prose depth pass on 11 playbooks. Report: [`docs/reports/editorial-status-2026-06-06.md`](reports/editorial-status-2026-06-06.md).
 
-**Publish dates:** Curriculum `date` values are assigned by [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py) (`PUBLICATION_ORDER` + ~21–24 day jitter from 2024-01-06). Wave-2 keyword posts stagger across 2026 Q2—not bulk same-day. Homepage `#latest` sorts by `date` desc, then title asc.
+**Publish dates:** Curriculum `date` values are assigned by [`scripts/assign_article_dates.py`](../scripts/assign_article_dates.py) (`PUBLICATION_ORDER` + jitter). Wave-2 posts compress into **May 2026**; `PUBLISH_CUTOFF` is **2026-05-31** (no published dates in Jun–Aug 2026). Homepage `#latest` sorts by `date` desc, then title asc.
 
 ### Published posts by category
 
@@ -105,7 +105,7 @@ Use these boundaries when assigning `category` and planning new posts.
 1. **GEO distribution** — YouTube pillar explainers and off-site citations not started; glossary and decision playbooks ready for citation.
 2. **Playbook prose rhythm** — keyword-wave playbooks expanded (2026-06-06); monitor new posts for slide-deck rhythm at ship time.
 3. **Case study vertical breadth** — four case studies (support, eval scale, tender, finance); consider ops/HR vertical only if search demand appears.
-4. **Hero weight audit** — legacy PNG heroes exceed 400 KB on several slugs; WebP variants help LCP but masters may need recompression.
+4. **Satori hero quality** — **8** slugs on acceptable `category-default` (P3 backlog); **0** Opinion on generic grid. §5.1 P0–P2 shipped 2026-06-06.
 
 ### Shipped (no longer gaps)
 
@@ -169,7 +169,112 @@ Ship in priority order unless a release theme overrides. Check this table before
 
 | P | Proposed title | Category | Tier | Intent | Why |
 |---|----------------|----------|------|--------|-----|
-| — | *No P1–P3 net-new slugs queued* | — | — | — | Next: GEO distribution + optional vertical case studies on demand |
+| — | *No P1–P3 net-new slugs queued* | — | — | — | Next: §5.1 P3 opportunistic upgrades + GEO distribution |
+
+### §5.1 Satori illustration backlog (2026-06-06 audit)
+
+**Problem (resolved P0–P2):** Was 28/53 Satori article heroes on `category-default`. All 8 Opinion caption mismatches fixed. Remaining **8** `category-default` rows are P3 acceptable (see table below).
+
+**Metrics (2026-06-06 ship):** `category-default` **28 → 8**; **0** Opinion on `category-default`.
+
+**Done when (each row):** `template` updated in [`data/illustrations.yaml`](../data/illustrations.yaml) → `npm run build:satori` → `make sync-images` → `hero_caption` matches diagram → [VISUAL_QA.md](VISUAL_QA.md) § Satori-generated heroes spot-check.
+
+**Process guardrails (shipped):**
+
+- [`scripts/new_post.py`](../scripts/new_post.py): `--satori-template` + tier/category defaults; Opinion requires explicit template or `--no-satori`.
+- Validator warn: `content_tier: opinion` + `template: category-default`; `hero_caption` diagram keywords + `category-default`.
+
+#### P0 — Caption mismatch (shipped 2026-06-06)
+
+| P | Slug | Template | Status |
+|---|------|----------|--------|
+| **P0** | `five-levels-of-ai-control` | `tier-ladder` | ✓ |
+| **P0** | `three-types-of-rag` | `rag-ladder` | ✓ |
+| **P0** | `three-types-of-ai-memory-short` | `memory-tiers` | ✓ |
+| **P0** | `tokens-and-context-window-limits` | `context-window-tube` | ✓ |
+| **P0** | `tokens-as-fuel-for-ai-output` | `context-window-tube` (gauge) | ✓ |
+| **P0** | `why-ai-hallucinates` | `split-compare` | ✓ |
+| **P0** | `chaos-vs-control-prompting` | `split-compare` | ✓ |
+| **P0** | `what-scales-ai-beyond-basics` | `tier-ladder` | ✓ |
+| **P0** | `grounding-ai-outputs` | `grounding-stack` | ✓ |
+| **P0** | `context-rot-why-bigger-windows-make-agents-worse` | `context-rot` | ✓ |
+| **P0** | `securing-mcp-agent-tools` | `mcp-architecture` (security) | ✓ |
+| **P0** | `finance-workflow-case-study-controlled-draft-and-review` | `case-study-support` (finance) | ✓ |
+
+#### P1 — New templates (build once, wire multiple slugs)
+
+| P | Template (new module in `data/og/templates/`) | Slugs to wire | Diagram intent |
+|---|-----------------------------------------------|---------------|----------------|
+| **P1** | **`tier-ladder`** | `five-levels-of-ai-control`, `what-scales-ai-beyond-basics` | Vertical rungs + labels; reusable for maturity/ladder content |
+| **P1** | **`split-compare`** | `why-ai-hallucinates`, `chaos-vs-control-prompting` | Two-column contrast panel |
+| **P1** | **`context-window-tube`** | `tokens-and-context-window-limits`, `tokens-as-fuel-for-ai-output` | Tube or gauge; props for zone labels |
+| **P1** | **`grounding-stack`** | `grounding-ai-outputs` | Scoped context → approved retrieval → verify gate |
+| **P1** | **`context-rot`** | `context-rot-why-bigger-windows-make-agents-worse` | Growing window + declining signal |
+| **P1** | **`memory-tiers`** | `three-types-of-ai-memory-short` | Short / long / system lifetimes |
+| **P1** | **`checklist-worksheet`** | `ai-workflow-eval-checklist`, `mcp-server-selection-worksheet`, `ai-change-log-template-prompt-context-and-model-updates` | Empty rows, ticks, copy-paste fields — not filled playbook examples |
+| **P1** | **`security-controls`** | `securing-mcp-agent-tools`, `data-boundaries-for-ai-agents` | Allow/deny matrix or control strip |
+| **P1** | **`observability-trace`** | `multi-agent-observability`, `agent-orchestrator-operating-model` | Handoff trace + failure-mode callouts |
+
+#### P1 — Reuse existing templates (manifest + props only)
+
+| P | Slug | Wire to template | Notes |
+|---|------|------------------|-------|
+| **P1** | `three-types-of-rag` | `rag-ladder` | Opinion spoke; link up to `rag-in-production` |
+| **P1** | `ai-workflow-eval-checklist` | `governance-eval-gates` | Template variant: checklist framing in subtitle |
+| **P1** | `prompt-regression-testing-week` | `governance-eval-gates` | Week timeline in subtitle; same Smoke → Pilot → Scale |
+| **P1** | `mcp-server-selection-worksheet` | `mcp-architecture` + **`checklist-worksheet`** | Prefer checklist template when P1 ships |
+| **P1** | `multi-agent-observability` | `multi-agent-handoff` → **`observability-trace`** | Extend handoff with log/trace layer |
+| **P1** | `data-boundaries-for-ai-agents` | **`security-controls`** | Allow/deny matrix per caption |
+
+#### P2 — De-duplicate identical diagrams (worksheet ≠ playbook)
+
+| P | Slug | Current | Target differentiation |
+|---|------|---------|------------------------|
+| **P2** | `governance-raci-worksheet` | `governance-raci` (pixel-identical) | Empty RACI grid / copy-paste rows; no filled example roles |
+| **P2** | `ai-governance-roles-and-ownership` | `governance-raci` | Keep filled example; add workflow context line |
+| **P2** | `structured-prompt-system-blueprint` | `prompt-registry` (pixel-identical) | Blueprint: architecture + registry placement in stack |
+| **P2** | `prompt-registry-playbook` | `prompt-registry` | Keep filled registry table; add release/eval flow |
+| **P2** | `northline-part-2-scaling-eval-coverage` | `case-study-eval-scale` | Show metric progression (50% → 80%); don't clone Part 1 layout |
+
+**New template modules for P2:** `governance-raci-worksheet`, `prompt-registry-blueprint` (or parameterized props on existing templates).
+
+#### P3 — Acceptable `category-default` (low urgency)
+
+Keep on `category-default` until a cluster gets a dedicated template — or upgrade opportunistically when touching the slug.
+
+| Slug | Category | Upgrade trigger |
+|------|----------|-----------------|
+| `prompt-anatomy-foundations` | Framework | Nav page — optional; consider hub-diagram echo |
+| `handoff-rules-between-humans-and-ai` | Implementation Notes | When **`observability-trace`** ships |
+| `team-rituals-for-ai-implementation` | Implementation Notes | Calendar/forum template if demand |
+| `ai-risk-review-cadence` | AI Governance | Risk-forum template |
+| `choosing-workflow-automation-ai-pipelines` | Implementation Notes | Decision matrix (like `platform-comparison`) |
+| `measuring-ai-workflow-roi` | Implementation Notes | **`business-outcomes`** extend (Outcome → Metric → Workflow) |
+| `prompt-frameworks-race-tag-business` | Prompt Systems | Framework chooser grid |
+| `ai-procurement-freeze` | Implementation Notes | Board/stage template |
+| `ai-workflow-canvas-template` | Templates | Canvas grid template |
+
+#### Template build order (recommended sequence)
+
+| Order | Template | Unblocks (slug count) |
+|------:|----------|----------------------:|
+| 1 | `split-compare` | 2 Opinion |
+| 2 | `tier-ladder` | 2 Opinion |
+| 3 | `rag-ladder` reuse | 1 Opinion |
+| 4 | `context-window-tube` | 2 Opinion |
+| 5 | `memory-tiers` | 1 Opinion |
+| 6 | `grounding-stack` | 1 pillar |
+| 7 | `context-rot` | 1 playbook |
+| 8 | `mcp-architecture` extend | 1 playbook |
+| 9 | `case-study-support` extend | 1 case study |
+| 10 | `checklist-worksheet` | 3 templates |
+| 11 | `security-controls` | 2 governance |
+| 12 | `observability-trace` | 2 agents/ops |
+| 13 | P2 dedupe variants | 4 slugs |
+
+**Metrics target:** Reduce `category-default` article heroes from **28 → ≤10** by end of P1; **0** Opinion posts on `category-default`.
+
+**Audit refresh:** Re-run inventory after every 3 template ships; update this table and §4 gap #4.
 
 ### In-place updates (completed 2026-06-06)
 
@@ -236,9 +341,9 @@ Reuse **Northline B2B** as the anonymized composite in playbooks; disclose compo
 | Week | Focus |
 |------|-------|
 | 1 | Production deploy of content wave; GSC sitemap resubmit |
-| 2 | YouTube explainer (first pillar: prompt registry or MCP) |
-| 3 | Off-site citation (ops/dev forum guest post or answer) |
-| 4 | Editorial audit refresh; hero PNG weight review |
+| 2 | P0 Satori Opinion templates: `split-compare`, `tier-ladder`, `rag-ladder` reuse |
+| 3 | P0 pillars: `grounding-stack`, `context-rot`; MCP security extend; YouTube explainer (first pillar) |
+| 4 | Off-site citation; editorial audit refresh; §5.1 Satori progress check |
 
 ### Next 90 days
 
@@ -256,7 +361,7 @@ Reuse **Northline B2B** as the anonymized composite in playbooks; disclose compo
 |---------|-------------------|-------|
 | Four pillars + governance playbooks | **Yes** | Strongest authority |
 | Agent design cluster | **Yes** | MCP + orchestration + observability shipped |
-| Opinion primers | **No** (as SEO landing) | Use as top-of-funnel only |
+| Opinion primers | **Partial** (as SEO landing) | P0 Satori shipped — 0 Opinion on `category-default`; promote with hub links |
 | Prompt Systems queries | **Yes** | Registry + frameworks + regression shipped |
 | Proof / templates | **Yes** | 4 case studies + 5 templates |
 | MCP queries | **Yes** | MCP pillar + security playbook shipped |
@@ -269,7 +374,7 @@ Reuse **Northline B2B** as the anonymized composite in playbooks; disclose compo
 
 ## 10. Agent workflow — plan a new post
 
-1. Check **§5 backlog** — prefer next P1/P2 item over ad hoc topics.
+1. Check **§5 backlog** — prefer next P1/P2 item over ad hoc topics; for hero/Satori work see **§5.1**.
 2. Confirm category per **§3**; set `content_tier`; add tags.
 3. Follow [CONTENT_STANDARDS.md](CONTENT_STANDARDS.md) article brief and publish checklist.
 4. Wire internal links per **§6–§7** (hub-and-spoke + 2–4 in-body links).

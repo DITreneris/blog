@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-05-13
+date: 2026-05-11
 hero_image: images/articles/what-your-ai-stack-reveals/hero.png
 hero_caption: "AI Truth Mirror — buzzword cloud versus structured flowchart reveals shallow versus operational expertise."
 key_takeaway: Your stack and rituals expose whether AI work is performative jargon or repeatable systems — not which logo you bought.
