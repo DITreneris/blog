@@ -81,10 +81,10 @@ latest:
 
 newsletter:
   title: "Stay updated"
-  description: "Follow new frameworks and implementation notes via Atom or LinkedIn—no signup form on the blog yet."
-  disclaimer: "Atom feed for readers and aggregators; LinkedIn for occasional release notes."
-  feed_label: "Subscribe via Atom"
-  feed_href: "/feeds/all.atom.xml"
+  description: "Follow new frameworks and implementation notes on X or LinkedIn—no signup form on the blog yet."
+  disclaimer: "X for release notes and threads; LinkedIn for occasional longer updates."
+  x_label: "Follow on X"
+  x_href: "https://x.com/promptanatom"
   linkedin_label: "Follow on LinkedIn"
   linkedin_href: "https://www.linkedin.com/in/staniulis"
 

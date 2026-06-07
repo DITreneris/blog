@@ -21,6 +21,7 @@ START_HERE_OG_SLUGS = (
 )
 
 REQUIRED = [
+    OUTPUT / "feeds" / "all.atom.xml",
     OUTPUT / "static" / "img" / "og-default.png",
     OUTPUT / "static" / "favicon-32x32.png",
     OUTPUT / "static" / "css" / "site.min.css",
