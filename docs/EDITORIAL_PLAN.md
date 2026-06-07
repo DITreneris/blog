@@ -1,7 +1,7 @@
 # Editorial Plan
 
-**Version:** 1.4  
-**Last reviewed:** 2026-06-06 (Satori §5.1 P0–P2 templates shipped)  
+**Version:** 1.5  
+**Last reviewed:** 2026-06-07 (editorial repair wave — 8 Opinion spokes)  
 **Scope:** Content strategy, category balance, backlog, and internal linking for [promptanatomy.blog](https://www.promptanatomy.blog)  
 **Owner:** content/editorial (human); **editorial-agent** maintains §2/§5 and audit reports; **q-and-a-agent** syncs CHANGELOG when process or agent docs change
 
@@ -21,17 +21,20 @@ Prompt Anatomy Blog is a **structured AI implementation knowledge hub** — not 
 
 ---
 
-## 2. Baseline inventory (2026-06-06, post content wave)
+## 2. Baseline inventory (2026-06-07, post editorial repair)
 
 | Metric | Value |
 |--------|------:|
 | Total article files | 68 |
 | Published | 60 |
 | Draft redirects (merged stubs) | 8 |
-| Avg word count (published) | ~780 |
+| Avg word count (published) | ~889 |
 | Tags in use | Full corpus (`content_tier` + tags on all published) |
-| Orphans (zero inbound) | 0 |
+| Orphans (zero inbound) | 0 (post reader-journey link wave) |
 | Cluster hub link gaps | 0 |
+| Article continue-learning | Resolved at build via [`scripts/resolve_article_journey.py`](../scripts/resolve_article_journey.py) |
+
+**Reader journey system (2026-06-07):** Replaced category+date related cards with continue-learning navigation (`continue_learning.html`, `resolve_article_journey.py`); P0/P1 inbound link wave on nav hubs and weak playbooks; ecosystem map in Implementation Notes `reading_path`; fourth Start Here card → foundations.
 
 **Editorial audit (2026-06-06):** Keyword wave (20 slugs) + legacy taxonomy backfill + P3 finance case study + change log template + prose depth pass on 11 playbooks. Report: [`docs/reports/editorial-status-2026-06-06.md`](reports/editorial-status-2026-06-06.md).
 
@@ -41,10 +44,10 @@ Prompt Anatomy Blog is a **structured AI implementation knowledge hub** — not 
 
 | Category | Count | Tier | Editorial status |
 |----------|------:|------|------------------|
-| Opinion | 13 | Moderate share | Funnel; spokes wired to pillars |
+| Opinion | 14 | Strong | Repair wave — spokes expanded; context cluster differentiated |
 | Framework | 11 | Strong | Grounding, RAG, CLEAR, glossary shipped |
 | Implementation Notes | 9 | Strong | Procurement, ROI, orchestrator, platform selection |
-| AI Agents | 7 | Strong | MCP pillar, framework guide, observability, outreach |
+| AI Agents | 6 | Strong | MCP pillar, framework guide, observability, outreach |
 | AI Governance | 5 | Strong | MCP security + existing cluster |
 | Prompt Systems | 6 | Strong | Registry pillar + blueprint + frameworks + regression |
 | Templates | 5 | Strong | Eval, RACI, MCP worksheets, canvas, change log |

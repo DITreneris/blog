@@ -4,43 +4,57 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-01-22
-hero_caption: Context tube — safe, limit, and overflow zones; more text does not mean
-  better results.
+modified: 2026-06-07
+hero_caption: Safe, limit, and overflow zones — plus step-split budgets for research,
+  draft, and checker calls.
 hero_image: images/articles/tokens-and-context-window-limits/hero.png
-key_takeaway: Filling the context window degrades quality and drops instructions —
-  design smaller, governed context per run."
+key_takeaway: Context windows are working memory — split workflow steps and budget
+  tokens per step instead of padding one mega-prompt.
 reading_time: 3 min read
 slug: tokens-and-context-window-limits
 status: published
-summary: Safe, limit, and overflow zones explain why huge prompts fail — and what
-  to do instead of padding context.
+summary: Safe, limit, and overflow zones — and when to split research, draft, and
+  checker steps with token budgets per call.
 tags:
 - context
 - context-engineering
-title: Tokens and Context Window Limits
+title: 'Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps'
 ---
 
-The hero shows a tube filling with tokens: **safe** (clear output), **limit** (quality drops), **overflow** (ignored instructions). Footer text: **more text ≠ better results.** Teams treat the context window like storage. It is **working memory for one run** — unevenly attended and expensive.
+The hero shows a tube filling with tokens: **safe** (clear output), **limit** (quality drops), **overflow** (ignored instructions). Teams treat the context window like storage. It is **working memory for one run** — unevenly attended, expensive, and the first place early constraints fall off when crowded.
+
+*Mechanics companion — for vendor myths see [Context Window Myths](/articles/context-window-myths/).*
+
+Northline B2B combined research, draft, and policy check in one call for `support-reply-v3` until overflow dropped checker instructions on long tickets. Splitting into three steps with explicit budgets raised pass rate seven points and made finance’s token report legible per step — not one opaque blob.
 
 ## Tokens are fuel, not strategy
 
-A token is roughly a word fragment. Counting tokens helps finance and capacity planning. It does not tell you **which** paragraphs belong in a customer email draft. Strategy is: what is allowed, what is forbidden, what must be retrieved on demand instead of pasted.
+A token is roughly a word fragment. Counting tokens helps finance and capacity planning. It does not tell you **which** paragraphs belong in a customer email draft. Strategy is: what is allowed, what is forbidden, what must be retrieved on demand instead of pasted — see [Prompt Engineering vs AI Workflow Engineering](/articles/prompt-engineering-vs-ai-workflow-engineering/) when the gap is workflow design, not window size.
 
 ## The three zones matter operationally
 
-**Safe zone** — room for task, policy, retrieved snippets, and output schema without crowding.  
-**Limit zone** — model still responds, but adherence to format and citations softens. Reviewers notice “almost right” drift.  
-**Overflow zone** — early instructions and edge constraints fall off first. This is how refund rules disappear while the prose still sounds confident.
+**Safe zone** — room for task framing, policy slice, retrieved snippets, and output schema without crowding. Reviewers see stable citations and format adherence.
 
-If your workflow “needs” thirty pages in prompt, you need **retrieval and summarization steps**, not a bigger window.
+**Limit zone** — model still responds, but adherence softens. “Almost right” drift shows up in regulated fields first — dates, tiers, jurisdiction phrases.
 
-## Design habits that stay in the safe zone
+**Overflow zone** — early instructions and edge constraints fall off first. Refund rules disappear while prose still sounds confident. This is the failure mode that fuels metaphors in [Tokens as Fuel for AI Output](/articles/tokens-as-fuel-for-ai-output/) — measure it with pack version hashes in logs.
 
-- One job per call — separate research, draft, and checker.  
-- Version policy packs; do not append ad hoc rules in chat.  
-- Measure quality vs token count on held-out cases.  
-- Read [Context Window Myths](/articles/context-window-myths/) for vendor myths.
+If your workflow “needs” thirty pages in one prompt, you need **retrieval and summarization steps**, not a bigger window.
 
-## Go deeper
+## Split-call pattern — research, draft, checker
 
-Windows sit inside architecture. [Grounding AI Outputs](/articles/grounding-ai-outputs/) unifies retrieval and verification; [What Is Context Architecture](/articles/what-is-context-architecture/) explains layers; [Context Rot](/articles/context-rot-why-bigger-windows-make-agents-worse/) covers when bigger windows degrade agent quality; [Handoff Rules Between Humans and AI](/articles/handoff-rules-between-humans-and-ai/) explains when context must freeze before human sign-off.
+One job per call. Each step gets a token budget and a policy pack version — not a growing mega-message.
+
+| Step | Job | Max tokens (example) | Policy pack | Output |
+|------|-----|----------------------|-------------|--------|
+| Research | Retrieve approved snippets | 8,000 | `retrieval-v2` | Chunk IDs + summary |
+| Draft | Compose customer reply | 12,000 | `policy-v4` + research summary | Draft JSON |
+| Checker | Verify tiers, dates, denials | 6,000 | `checker-rules-v1` + draft | Pass/fail + cites |
+
+Northline’s budgets are illustrative — your limits depend on model and schema. The discipline is **fixed ceilings per step** recorded on the [AI Workflow Canvas](/articles/ai-workflow-canvas-template/), with eval cases that fail when any step exceeds budget and drops instructions.
+
+## Staying in the safe zone
+
+Version policy packs; do not append ad hoc rules in chat. Measure quality vs token count on held-out cases — if pass rate falls while tokens rise, you are in limit or overflow territory. When humans must sign off, freeze context before review per [Handoff Rules Between Humans and AI](/articles/handoff-rules-between-humans-and-ai/).
+
+Windows sit inside architecture. [Grounding AI Outputs](/articles/grounding-ai-outputs/) unifies retrieval and verification; [What Is Context Architecture](/articles/what-is-context-architecture/) explains layers; [Context Rot](/articles/context-rot-why-bigger-windows-make-agents-worse/) covers when bigger windows degrade agent quality across many steps.

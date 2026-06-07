@@ -28,7 +28,7 @@ faq:
 
 Before MCP, connecting an agent to Jira, a database, or a document store meant bespoke integrations per model and per tool—brittle, unaudited, and expensive to maintain. The **Model Context Protocol (MCP)** is an open standard that defines how reasoning engines discover **tools** (executable functions), **resources** (read-only data), and **prompts** (reusable instruction templates) through standardized servers. Anthropic open-sourced MCP in late 2024; by 2026 major providers and IDEs support it—making MCP a practical integration layer for enterprise agents, not only experimental chat plugins.
 
-This pillar explains MCP for operations and engineering leaders: what it standardizes, when it beats direct API scripts, where token overhead matters, and how to pair MCP with [data boundaries](/articles/data-boundaries-for-ai-agents/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [agent workflow design](/articles/how-to-design-an-ai-agent-workflow/). It is **not** a directory of community servers—a checklist for adoption lives in the [MCP Server Selection Worksheet](/articles/mcp-server-selection-worksheet/).
+This pillar explains MCP for operations and engineering leaders: what it standardizes, when it beats direct API scripts, where token overhead matters, and how to pair MCP with [data boundaries](/articles/data-boundaries-for-ai-agents/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [agent workflow design](/articles/how-to-design-an-ai-agent-workflow/). It is **not** a directory of community servers—a checklist for adoption lives in the [MCP Server Selection Worksheet](/articles/mcp-server-selection-worksheet/). MCP terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## MCP primitives
 

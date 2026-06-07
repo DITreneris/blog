@@ -51,6 +51,6 @@ Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/)
 | Setting ownership | [Governance roles](/articles/ai-governance-roles-and-ownership/) |
 | Planning a pilot | [AI Workflow Canvas](/articles/ai-workflow-canvas-template/) |
 
-Training and hands-on templates: [promptanatomy.app](https://www.promptanatomy.app/). Ecosystem map: [Prompt Anatomy properties](/articles/prompt-anatomy-ecosystem-map/).
+Training and hands-on templates: [promptanatomy.app](https://www.promptanatomy.app/). Ecosystem map: [Prompt Anatomy properties](/articles/prompt-anatomy-ecosystem-map/). Term definitions: [Glossary](/articles/prompt-anatomy-glossary/).
 
 Framework overview article retired—this page is the single framework index.

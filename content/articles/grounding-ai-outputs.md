@@ -28,7 +28,7 @@ faq:
 
 Most teams treat hallucination, context overload, and retrieval errors as separate problems. In production, they are one system problem: the model is asked to answer without a controlled evidence path. If you want fewer confident mistakes, stop tuning prompts in isolation and build a grounding system that connects context architecture, retrieval policy, and verification.
 
-This article is the hub for that system. It connects the core failure patterns in [Why AI Hallucinates](/articles/why-ai-hallucinates/), context design from [What Is Context Architecture](/articles/what-is-context-architecture/), retrieval operations from [RAG in Production](/articles/rag-in-production/), gate design from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/), and release discipline from [Prompt Registry Playbook](/articles/prompt-registry-playbook/).
+This article is the hub for that system. It connects the core failure patterns in [Why AI Hallucinates](/articles/why-ai-hallucinates/), the fuel-and-refueling metaphor in [Tokens as Fuel: Why Full Context Windows Still Produce Empty Outputs](/articles/tokens-as-fuel-for-ai-output/), context design from [What Is Context Architecture](/articles/what-is-context-architecture/), retrieval operations from [RAG in Production](/articles/rag-in-production/), gate design from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/), and release discipline from [Prompt Registry Playbook](/articles/prompt-registry-playbook/). Grounding and eval terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## The grounding stack
 
@@ -94,8 +94,6 @@ After six weeks, override reasons shifted from "incorrect policy language" to "t
 **Token expansion as architecture.** Bigger windows often increase contradiction exposure and reviewer fatigue.
 
 **RAG as checkbox.** Unscoped retrieval imports liability into the context window.
-
-**Eval theater.** Teams run one benchmark before launch and skip recurring held-out checks after changes.
 
 **Prompt drift without registry control.** "Small wording edits" silently change behavior across teams.
 

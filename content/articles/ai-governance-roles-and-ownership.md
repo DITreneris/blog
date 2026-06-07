@@ -78,7 +78,7 @@ You do not need a twenty-page policy to start. You need five roles filled with h
 
 **Legal only after a breach** makes governance cleanup, not design. Involve Legal when policy packs are created, not when a regulator asks for logs you do not have.
 
-**RACI in a deck, not in the wiki** drifts within a quarter. Publish RACI next to the [workflow canvas](/articles/ai-workflow-canvas-template/) and link from the risk register.
+**RACI in a deck, not in the wiki** drifts within a quarter. Publish RACI next to the [workflow canvas](/articles/ai-workflow-canvas-template/) and link from the risk register. Copy-paste rows: [Governance RACI Worksheet](/articles/governance-raci-worksheet/).
 
 **Deputy owners missing** means vacation stops releases or encourages shadow edits. Name backups for high-risk workflows.
 

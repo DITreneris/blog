@@ -29,7 +29,9 @@ faq:
 
 Prompt design is how layers **meet in one invocation**. Architecture is how those layers are sourced, classified, versioned, and governed over time. Both matter; conflating them produces brittle chat hacks that break when staff rotate or models change.
 
-If your organization is still debating model selection while nobody owns context, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines the context layer in that system and shows how to document it in a spec your team can implement.
+If your organization is still debating model selection while nobody owns context, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines the context layer in that system and shows how to document it in a spec your team can implement. Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
+
+For entry points on window size and mechanics, see [Context Window Myths](/articles/context-window-myths/) and [Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps](/articles/tokens-and-context-window-limits/).
 
 ## Layers to design
 

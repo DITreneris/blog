@@ -56,6 +56,10 @@ start_here:
       description: "Map a business task to bounded tools, handoffs, and eval gates—with a worked example."
       href: "/articles/how-to-design-an-ai-agent-workflow/"
       icon: "agents"
+    - title: "New here? Start by role"
+      description: "Route to the right framework, diagnostic, or agent guide for your job."
+      href: "/articles/prompt-anatomy-foundations/"
+      icon: "framework"
 
 templates:
   id: "templates"

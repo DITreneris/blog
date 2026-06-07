@@ -22,6 +22,14 @@ CATEGORIES_YAML = ROOT / "data" / "categories.yaml"
 REPORTS_DIR = ROOT / "docs" / "reports"
 LINK_PATTERN = re.compile(r"\]\(/articles/([a-z0-9-]+)/")
 COMPOSITE_MARKERS = re.compile(r"anonymized composite|composite \(", re.I)
+NAV_HUB_SLUGS = frozenset(
+    {
+        "prompt-anatomy-foundations",
+        "prompt-anatomy-glossary",
+        "prompt-anatomy-ecosystem-map",
+    }
+)
+NAV_HUB_INBOUND_MIN = 3
 PILLAR_SLUGS = frozenset(
     {
         "the-model-is-not-the-system",
@@ -96,6 +104,62 @@ def _inbound_counts(published: list[dict]) -> Counter:
 
 def _slug_category_map(published: list[dict]) -> dict[str, str]:
     return {r["slug"]: r["category"] for r in published}
+
+
+def _journey_coverage(published: list[dict], clusters_cfg: dict) -> dict:
+    """Resolve continue-learning slots for published corpus (stub articles)."""
+    from resolve_article_journey import (
+        attach_journey_to_articles,
+        journey_has_primary_slot,
+    )
+
+    with CATEGORIES_YAML.open(encoding="utf-8") as f:
+        categories_data = yaml.safe_load(f) or {}
+
+    stubs = []
+    for row in published:
+        stub = type("ArticleStub", (), {})()
+        stub.slug = row["slug"]
+        stub.title = row["title"]
+        stub.content_tier = row["content_tier"]
+        stub.tags = row["tags"]
+        stub.category = type("Cat", (), {"name": row["category"]})()
+        stub.date = None
+        stubs.append(stub)
+
+    attach_journey_to_articles(
+        stubs,
+        categories_data=categories_data,
+        clusters_data=clusters_cfg,
+    )
+
+    with_primary = 0
+    empty: list[str] = []
+    for stub in stubs:
+        cl = getattr(stub, "continue_learning", {}) or {}
+        has_nav = any(
+            cl.get(k) is not None for k in ("previous", "next", "hub", "deeper", "practical")
+        ) or bool(cl.get("related"))
+        if journey_has_primary_slot(cl) or has_nav:
+            with_primary += 1
+        else:
+            empty.append(stub.slug)
+
+    total = len(stubs) or 1
+    return {
+        "with_primary_slot_pct": round(100 * with_primary / total),
+        "with_primary_slot_count": with_primary,
+        "empty_journey": empty,
+    }
+
+
+def _nav_hub_inbound(inbound: Counter) -> list[dict]:
+    issues = []
+    for slug in sorted(NAV_HUB_SLUGS):
+        count = inbound.get(slug, 0)
+        if count < NAV_HUB_INBOUND_MIN:
+            issues.append({"slug": slug, "inbound": count, "min": NAV_HUB_INBOUND_MIN})
+    return issues
 
 
 def _run_validate_summary() -> dict:
@@ -227,6 +291,8 @@ def build_report(rows: list[dict], clusters_cfg: dict) -> dict:
             )
 
     validity = _run_validate_summary()
+    journey = _journey_coverage(published, clusters_cfg)
+    nav_hub_inbound = _nav_hub_inbound(inbound)
 
     return {
         "generated": date.today().isoformat(),
@@ -252,6 +318,8 @@ def build_report(rows: list[dict], clusters_cfg: dict) -> dict:
             "orphans": orphans,
             "low_inbound": low_inbound,
             "cluster_gaps": cluster_gaps,
+            "journey_coverage": journey,
+            "nav_hub_inbound": nav_hub_inbound,
         },
         "validity": validity,
         "credibility": credibility,
@@ -286,6 +354,9 @@ def _format_stdout(report: dict) -> str:
             f"Orphans (0 inbound): {len(con['orphans'])}",
             f"  {', '.join(con['orphans']) or 'none'}",
             f"Cluster hub link gaps: {len(con['cluster_gaps'])}",
+            f"Journey coverage: {con['journey_coverage']['with_primary_slot_pct']}% "
+            f"({con['journey_coverage']['with_primary_slot_count']}/{inv['published']})",
+            f"Nav hub inbound gaps: {len(con.get('nav_hub_inbound', []))}",
         ]
     )
 
@@ -374,6 +445,31 @@ def _format_markdown(report: dict) -> str:
             lines.append(f"- `{gap['spoke']}` ({gap['cluster']}) missing links to {missing}")
     else:
         lines.append("- none")
+
+    jc = con.get("journey_coverage", {})
+    if jc:
+        lines.extend(
+            [
+                "",
+                "### Journey coverage",
+                "",
+                f"- Articles with continue-learning slots: **{jc.get('with_primary_slot_pct', 0)}%** "
+                f"({jc.get('with_primary_slot_count', 0)}/{inv['published']})",
+            ]
+        )
+        if jc.get("empty_journey"):
+            lines.append(f"- Empty journey: `{', '.join(jc['empty_journey'][:10])}`"
+                         + (" …" if len(jc["empty_journey"]) > 10 else ""))
+
+    nav_issues = con.get("nav_hub_inbound") or []
+    lines.extend(["", "### Nav hub inbound", ""])
+    if nav_issues:
+        for issue in nav_issues:
+            lines.append(
+                f"- `{issue['slug']}` inbound **{issue['inbound']}** (min {issue['min']})"
+            )
+    else:
+        lines.append("- all nav hubs meet minimum inbound")
 
     val = report["validity"]
     lines.extend(

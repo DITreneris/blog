@@ -37,7 +37,7 @@ title: 10 Signs Your Company Is Vibe Prompting
 
 That gap shows up quietly at first. A senior AE gets excellent proposal drafts; a new hire gets confident nonsense. Support fixes AI replies every night while leadership sees high "copilot adoption." Compliance learns about AI from a customer complaint, not from a design review. The cost is rework, audit exposure, and teams who stop trusting anything except their private chat threads.
 
-If that pattern sounds familiar, you are not under-skilled at prompting. You are missing workflow, context, evaluation, and ownership—the layers described in [The Model Is Not the System](/articles/the-model-is-not-the-system/). The ten signs below help you diagnose how far unstructured use has spread and what to fix first.
+If that pattern sounds familiar, you are not under-skilled at prompting. You are missing workflow, context, evaluation, and ownership—the layers described in [The Model Is Not the System](/articles/the-model-is-not-the-system/). Not sure where to start by role? Use [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). The ten signs below help you diagnose how far unstructured use has spread and what to fix first. For a **15-minute stack scorecard** (owners, eval, replay), use [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/).
 
 The hero image makes the same point visually: a fast car stuck in traffic—**you added AI, not speed**. New capability inside an unchanged process still bottlenecks on handoffs, approvals, and missing context. The checklist below names where that traffic jam shows up in your operating model.
 
@@ -151,4 +151,4 @@ The full story is in the [case study](/articles/case-study-vibe-prompting-to-str
 
 Thirty days of focused structure beats a year of scattered copilot experiments. Vibe prompting is fixable when you treat it as a workflow problem, not a talent problem.
 
-**Next step:** If your score was four or higher, book a working session with ops and IT this week—before the next tool trial lands in your inbox. Bring one workflow name, one metric, and a blank copy of the canvas; leave model choice off the agenda until week two. For a blunt mirror on whether your stack reflects jargon or systems, read [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/).
+**Next step:** If your score was four or higher, book a working session with ops and IT this week—before the next tool trial lands in your inbox. Bring one workflow name, one metric, and a blank copy of the canvas; leave model choice off the agenda until week two. Route by role: [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). For a blunt mirror on whether your stack reflects jargon or systems, read [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/). Diagnostic terms: [Glossary](/articles/prompt-anatomy-glossary/).

@@ -32,7 +32,7 @@ Best for: stable knowledge bases, internal FAQs, support macros with citations.
 Risk profile: wrong chunk still produces fluent answers — you need held-out eval cases and versioned indexes.  
 This tier is enough for many workflows if policy packs and denial rules are explicit.
 
-Basic RAG still requires **operational hygiene**: chunking strategy owned by someone, index refresh tied to doc versions, and denial when retrieval confidence is low. Log which document IDs influenced a draft so reviewers can spot stale policy. In forums, basic tier is the right default for tier-1 macros and internal wikis with quarterly Legal review — not a stepping stone you must escape in ninety days.
+Basic RAG still requires operational hygiene — chunk owners, index version IDs, and denial when confidence is low. Implementation detail lives in [RAG in Production](/articles/rag-in-production/).
 
 When Legal asks “which policy version was in context,” basic tier must answer with corpus version IDs — not “the model searched Confluence.”
 
@@ -43,7 +43,7 @@ Best for: noisy corpora, long PDFs, mixed-quality wikis.
 Why it matters: first-pass retrieval often returns “related but wrong.” Refinement reduces obvious misses without full agent autonomy.  
 Cost: extra model calls — justify with measured accuracy lift, not intuition.
 
-Smart tier is where teams should **prove ROI**: compare pass rate on a held-out set with and without rerank. Document latency impact on SLA. If refinement only helps 3% of cases, stay on basic and fix chunking first. When refinement wins, version the rerank prompt like any other template and add near-misses from wrong-chunk wins to the eval set — those failures are subtle and expensive.
+Smart tier is where teams should **prove ROI** on a held-out set before promoting tier — see [RAG in Production](/articles/rag-in-production/) for rerank versioning and eval discipline.
 
 Support leads often feel smart tier is “just better search.” Frame it as **quality gates on evidence** before generation — same accountability as checkers, different placement in the pipeline.
 
@@ -53,15 +53,15 @@ Flow: query → plan → tools → verify → answer.
 Best for: multi-source investigations, tender research, complex ops tasks — **with** human gates on send and spend.  
 Risk profile: tool misuse, runaway loops, unaudited side effects. Requires [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/) and [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) before production.
 
-Agentic retrieval implies **tool allow lists**, per-run budgets, and logs that capture plan steps — not only final text. Humans remain accountable for external commitments in v1. Pair with [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/) when orchestration spans multiple systems. If audit asks “what did the system do,” a chat transcript is not enough; you need structured traces aligned with [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/).
+Agentic retrieval implies tool allow lists, per-run budgets, and structured traces — not only final text. Full rollout patterns are in [RAG in Production](/articles/rag-in-production/) and [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/).
 
-## Choosing a tier
+## Choosing a tier (visual labels)
 
-| Situation | Start here |
-|-----------|------------|
-| Single approved KB, low external risk | Basic |
-| Retrieval quality inconsistent | Smart |
-| Multi-step research, controlled tools | Agentic + governance |
+| Label on hero | Risk level | Start when |
+|---------------|------------|------------|
+| Basic — lookup | Lowest step count | Single approved KB, low external risk |
+| Smart — refine | Extra model call | Retrieval quality inconsistent |
+| Agentic — act | Tools + verification | Multi-step research with human send gate |
 
 Do not deploy agentic RAG because the diagram’s green box looks “most advanced.” Deploy it when **accountability** matches the step count.
 

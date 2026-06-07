@@ -40,7 +40,7 @@ Categories: Prompt Systems | AI Agents | AI Governance | Implementation Notes | 
 1. Check [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md) — prefer next P1/P2 backlog item; confirm category and `content_tier` per plan §3
 2. Run `python scripts/new_post.py --title "..." --category "Framework"` (if script exists) or copy stub template
 3. Edit `content/articles/<slug>.md`; add `tags`; wire hub-and-spoke links per plan §6–§7
-4. Update `data/categories.yaml` `reading_path` when the post belongs in a curated series
+4. Update `data/categories.yaml` `reading_path` when the post belongs in a curated series (continue-learning prev/next resolves from this list at build time)
 5. `make validate && make serve` — check http://localhost:8000
 6. Do not commit secrets or `.env`
 

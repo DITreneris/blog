@@ -45,7 +45,7 @@ Assign `date` (and pillar `modified` when applicable) via [`scripts/assign_artic
 
 These patterns duplicate or conflict with template-rendered components — do not add them to article bodies.
 
-- **No inline `## Related reading` H2 + bullet list.** The `partials/related_articles.html` template renders same-category related articles as styled cards automatically below the prose. An inline list duplicates that surface and clutters the body.
+- **No inline `## Related reading` H2 + bullet list.** The `partials/continue_learning.html` template renders journey-aware prev/next links and curated cards from `data/categories.yaml` reading paths and `data/editorial_clusters.yaml` hubs. An inline list duplicates that surface and clutters the body.
 - **No bare-sentence training CTA at end of article** (e.g. `[Training](https://www.promptanatomy.app/) when you standardize…`). The `partials/article_cta.html` template renders a consistent dark-band CTA block (gold button to `SITE_CONFIG.hub.training_url`) below every article. Body CTAs read as broken design.
 - **In-paragraph topic links are still required** — the "2 to 4 topic-specific internal links" rule means *links woven into body paragraphs*, not a standalone Related H2.
 

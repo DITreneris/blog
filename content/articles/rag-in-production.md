@@ -28,7 +28,7 @@ faq:
 
 Retrieval-augmented generation is not one switch in a vendor console. In production it is a **governed retrieval tier** inside [context architecture](/articles/what-is-context-architecture/)—with chunking ownership, index versioning, denial rules, and eval gates before traffic scales. Teams that treat RAG as "turn on search" inherit fluent wrong answers, stale policy in drafts, and audit questions nobody can answer.
 
-This pillar upgrades the visual primer [Three Types of RAG](/articles/three-types-of-rag/) (Part 1) into an implementation guide: how to choose basic, smart, or agentic patterns; what to log; when to promote tiers; and how to wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) and [data boundaries](/articles/data-boundaries-for-ai-agents/) before production.
+This pillar upgrades the visual primer [Three Types of RAG](/articles/three-types-of-rag/) (Part 1) into an implementation guide: how to choose basic, smart, or agentic patterns; what to log; when to promote tiers; and how to wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) and [data boundaries](/articles/data-boundaries-for-ai-agents/) before production. RAG tier definitions: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## The production ladder
 

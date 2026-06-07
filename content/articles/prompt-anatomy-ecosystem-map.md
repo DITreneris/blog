@@ -23,7 +23,7 @@ Prompt Anatomy spans **education, field notes, and implementation tools**. Each 
 
 ## Three properties that matter first
 
-Most readers need only three surfaces to start. Everything else in the table below is a specialized workflow product—not a substitute for the blog or the app.
+Most readers need only three surfaces to start. For framework reading paths by role, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). Everything else in the table below is a specialized workflow product—not a substitute for the blog or the app.
 
 ### promptanatomy.blog (this site)
 

@@ -1,0 +1,54 @@
+{% from 'macros/ui.html' import section_heading, article_card %}
+{% set cl = article.continue_learning %}
+{% if cl %}
+{% set has_nav = cl.previous or cl.next %}
+{% set ns = namespace(slots=[]) %}
+{% if cl.hub %}{% set ns.slots = ns.slots + [('Cluster hub', cl.hub)] %}{% endif %}
+{% if cl.deeper %}{% set ns.slots = ns.slots + [('Go deeper', cl.deeper)] %}{% endif %}
+{% if cl.practical %}{% set ns.slots = ns.slots + [('Template', cl.practical)] %}{% endif %}
+{% for rel in cl.related or [] %}
+  {% if ns.slots|length < 3 %}{% set ns.slots = ns.slots + [('Related', rel)] %}{% endif %}
+{% endfor %}
+{% if has_nav or ns.slots %}
+<section class="continue-learning container" aria-labelledby="continue-learning-heading">
+  {{ section_heading('Continue learning', heading_id='continue-learning-heading') }}
+
+  {% if article.path_position %}
+  <p class="continue-learning__path-meta">
+    Step {{ article.path_position.index }} of {{ article.path_position.total }} in {{ article.path_position.category }}
+    {% if article.path_position.category_slug %}
+    · <a href="/topics/{{ article.path_position.category_slug }}/#reading-path-heading">Full reading order</a>
+    {% endif %}
+  </p>
+  {% endif %}
+
+  {% if has_nav %}
+  <nav class="continue-learning__nav" aria-label="Reading path steps">
+    {% if cl.previous %}
+    <a class="continue-learning__nav-link continue-learning__nav-link--prev" href="/{{ cl.previous.url }}">
+      <span class="continue-learning__nav-label">Previous</span>
+      <span class="continue-learning__nav-title">{{ cl.previous.title }}</span>
+    </a>
+    {% endif %}
+    {% if cl.next %}
+    <a class="continue-learning__nav-link continue-learning__nav-link--next" href="/{{ cl.next.url }}">
+      <span class="continue-learning__nav-label">Next</span>
+      <span class="continue-learning__nav-title">{{ cl.next.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+  {% if ns.slots %}
+  <div class="grid grid--2 continue-learning__cards">
+    {% for role, item in ns.slots %}
+    <div class="continue-learning__card-wrap">
+      <p class="continue-learning__role">{{ role }}</p>
+      {{ article_card(item) }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endif %}
+{% endif %}

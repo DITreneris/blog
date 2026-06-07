@@ -1,7 +1,7 @@
 ---
 authors: Prompt Anatomy
 body_locked: true
-category: AI Agents
+category: Opinion
 content_tier: opinion
 date: 2024-11-17
 hero_caption: Five stages — Prompt, Template, Workflow, Assistant, Agent — AI maturity

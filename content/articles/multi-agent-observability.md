@@ -139,4 +139,4 @@ See outcome framing in [From Prompts to Business Outcomes](/articles/from-prompt
 - Set max handoff depth with mandatory escalation.
 - Review one recent incident and map which missing log fields blocked root cause.
 
-Multi-agent systems need the same discipline as distributed software systems: traceable contracts, bounded components, and observable failure. If your team can replay a failed run end-to-end with evidence, you can improve safely. If not, postpone added autonomy until observability catches up.
+Multi-agent systems need the same discipline as distributed software systems: traceable contracts, bounded components, and observable failure. If your team can replay a failed run end-to-end with evidence, you can improve safely. If not, postpone added autonomy until observability catches up. Vertical example with send guardrails: [AI Outreach with Outlook Guardrails](/articles/ai-outreach-with-outlook-guardrails/).

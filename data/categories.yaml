@@ -14,7 +14,6 @@ categories:
     description: "Agent design, orchestration, and business-ready automation."
     reading_path:
       - slug: how-to-design-an-ai-agent-workflow
-      - slug: from-prompt-to-agent
       - slug: model-context-protocol-enterprise
       - slug: multi-agent-handoff-pattern
       - slug: langgraph-vs-crewai-production-guide
@@ -33,6 +32,7 @@ categories:
     slug: "implementation-notes"
     description: "Practical diagnostics and field notes from real deployments."
     reading_path:
+      - slug: prompt-anatomy-ecosystem-map
       - slug: 10-signs-your-company-is-vibe-prompting
       - slug: team-rituals-for-ai-implementation
       - slug: handoff-rules-between-humans-and-ai
@@ -74,6 +74,7 @@ categories:
       - slug: three-types-of-rag
       - slug: three-types-of-ai-memory-short
       - slug: what-scales-ai-beyond-basics
+      - slug: from-prompt-to-agent
       - slug: prompt-engineering-memes-vs-reality
   - title: "Framework"
     slug: "framework"

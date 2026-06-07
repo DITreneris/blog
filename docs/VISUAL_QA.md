@@ -52,11 +52,12 @@ Use local `make serve` (or `python -m http.server` in `output/`) and check `http
 - [ ] Key takeaway block aligns its left edge with the prose column (not the wider container)
 - [ ] Tables in prose have a styled header background and 1px row borders (not browser default)
 - [ ] TOC sidebar on desktop has a 1px left rule + padding (frame, not floating nav)
-- [ ] End-of-article CTA renders as dark band with gold primary button before related articles
+- [ ] End-of-article CTA renders as dark band with gold primary button before continue-learning block
+- [ ] Continue learning: prev/next when in category `reading_path`; cluster hub card on Opinion spokes
 - [ ] Author bio shows no gray-disc placeholder when avatar is not configured
 - [ ] Featured card on homepage: `h2` title at featured scale; compact gold badge (not full-width blue bar); content-width gold CTA; section intro is `hub_sections.featured.lead` as `h2` (no "Featured" label)
 - [ ] Meta line dates show as `Month YYYY` (e.g. "May 2026"), with `Updated Month YYYY` when modified > published
-- [ ] No article body contains an inline `## Related reading` H2 (auto-rendered as cards below)
+- [ ] No article body contains an inline `## Related reading` H2 (auto-rendered as continue-learning below)
 
 ## Article reading experience (v1.1)
 

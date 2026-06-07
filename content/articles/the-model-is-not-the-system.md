@@ -37,7 +37,7 @@ Companies rarely fail at AI because the model is weak. They fail because the **s
 
 Chat-only AI feels like progress because the first draft is instant. That speed hides what production actually requires: known inputs, repeatable steps, measurable quality, and named owners when something goes wrong. Without that wrapper, every “successful” pilot is a one-off performance—not an implementation discipline your org can run next quarter.
 
-If your team is still debating which model to buy while nobody owns the workflow, you are optimizing the wrong layer. The sections below define what a system includes, what breaks when you skip it, and how to move from demo to a bounded pilot in thirty days.
+If your team is still debating which model to buy while nobody owns the workflow, you are optimizing the wrong layer. The sections below define what a system includes, what breaks when you skip it, and how to move from demo to a bounded pilot in thirty days. Key terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## The model is one component
 
@@ -107,4 +107,4 @@ The goal of the first month is not more tools. It is one workflow documented end
 
 4. **Run a pilot with pass/fail criteria, not slide decks only.** Define what “promote to production” means: evaluation thresholds, rollback plan, and who may change prompts in production. Report pass rate and cycle time, not adoption screenshots. **Failure mode:** declaring victory after a single executive demo. **Owner:** pilot lead publishes weekly scorecard.
 
-Thirty days of focused system design beats a year of model shopping. Access to a strong model is table stakes; architecture is the advantage.
+Thirty days of focused system design beats a year of model shopping. Access to a strong model is table stakes; architecture is the advantage. For reading paths by role and category, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). Shared terms: [Glossary](/articles/prompt-anatomy-glossary/).

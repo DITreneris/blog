@@ -27,7 +27,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | TableOfContents | `partials/toc.html` + `toc-active.js` | Article headings (JS scan); `<details class="toc-collapsible">` on mobile |
 | ReadingProgress | `partials/reading_progress.html` + `reading-progress.js` | Article pages only |
 | ArticleCTA | `partials/article_cta.html` | `HUB_SECTIONS.article_cta` + `SITE_CONFIG.hub.training_url`; dark band, gold primary button |
-| RelatedArticles | `partials/related_articles.html` | Same category, exclude current |
+| RelatedArticles | `partials/continue_learning.html` | `article.continue_learning`, `article.path_position` (from `resolve_article_journey.py` + `categories.yaml` + `editorial_clusters.yaml`) |
 | FAQBlock | `partials/faq.html` | `article.faq` metadata |
 | AuthorBio | `partials/author_bio.html` | `SITE_CONFIG.author` (avatar block hidden when `author.avatar` unset) |
 | Schema Article | `partials/schema_article.html` | `article` |
@@ -39,7 +39,7 @@ Maps product brief names to theme files. When adding or renaming partials, updat
 | Page | Template | Sections |
 |------|----------|----------|
 | Hub home | `index.html` | Header → Hero → Featured → Start Here → Topics → Templates → Latest → Ecosystem → Newsletter → Footer |
-| Article | `article.html` | Progress → Breadcrumb → Header → Lead → Takeaway → Prose (+ TOC) → [FAQ if featured] → ArticleCTA → Related → Author → [FAQ if not featured] |
+| Article | `article.html` | Progress → Breadcrumb → Header → Lead → Takeaway → Prose (+ TOC) → [FAQ if featured] → ArticleCTA → Continue learning → Author → [FAQ if not featured] |
 | Static page | `page.html` | Header → Page title → Prose |
 | Category | `category.html` | Header → Title → ArticleCard grid |
 | Design system (style guide) | `design_system.html` + `partials/style_guide.html` | Static page `content/pages/design-system.md` |

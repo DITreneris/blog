@@ -4,41 +4,54 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-11-14
+modified: 2026-06-07
 hero_image: images/articles/why-ai-hallucinates/hero.png
-hero_caption: "Grounded vs ungrounded — controlled context and verification on the left; plausible guessing on the right."
-key_takeaway: Models predict plausible text; grounding and verification are workflow choices — not a bigger model SKU.
-reading_time: 4 min read
+hero_caption: Grounded vs ungrounded — controlled context and verification versus
+  plausible guessing; choose your next playbook by failure mode.
+key_takeaway: Models predict plausible text — grounding is a workflow choice; use the
+  decision table to pick your next playbook.
+reading_time: 5 min read
 slug: why-ai-hallucinates
 status: published
-summary: The split visual — grounded control versus ungrounded guessing — and what teams must add beyond the model.
+summary: The grounded-vs-guessing split — a visual primer and decision table for which
+  grounding playbook to read next.
 tags:
   - context
   - eval
   - governance
-title: Why AI Hallucinates
+title: 'Why AI Hallucinates: The Grounded-vs-Guessing Split (Primer)'
 ---
 
-The hero is a split screen: **grounded** (controlled context, verification) versus **hallucination** (guessing what sounds right). The subtitle is the whole lesson: **AI predicts words; it does not verify truth.** Hallucination is not a bug you eliminate with a premium tier — it is the default behavior of generative text without a system around it.
+The hero is a split screen: **grounded** (controlled context, verification) versus **hallucination** (guessing what sounds right). The lesson in one line: **AI predicts words; it does not verify truth.** Hallucination is not a bug you eliminate with a premium tier — it is default behavior without a system around the model.
+
+*Visual primer — hub article: [Grounding AI Outputs](/articles/grounding-ai-outputs/).*
+
+Use this page to orient your team, then follow the decision table below. Detailed checker design, human factors, and production architecture live in sibling articles — not repeated here.
 
 ## Grounded is a design choice
 
 Grounded means **known inputs**: approved snippets, tagged retrieval, policy packs with version IDs, denial rules on sensitive fields. Verification means checkers, human sign-off, or automated assertions before customer-facing send. None of that is automatic when you enable copilot in a browser.
 
-Teams say they want “accurate AI” but skip the boring work: indexing scope, freshness rules, and eval cases that fail when a clause drifts. Grounding is operations — not a checkbox in a procurement deck.
+Teams say they want “accurate AI” but skip indexing scope, freshness rules, and eval cases that fail when a clause drifts. Grounding is operations — not a checkbox in a procurement deck. [What Is Context Architecture](/articles/what-is-context-architecture/) names the layers that make grounding repeatable.
 
 ## Ungrounded feels productive
 
-Ungrounded generation is fast and fluent. That fluency relaxes reviewers — especially under queue pressure. The right panel’s message (“plausible ≠ true”) is what Legal learns after the first wrong disclaimer ships. Confidence tone is a **language-model feature**, not evidence of correctness.
+Ungrounded generation is fast and fluent. That fluency relaxes reviewers — especially under queue pressure. Confidence tone is a **language-model feature**, not evidence of correctness. Legal often learns “plausible ≠ true” after the first wrong disclaimer ships.
 
-## What actually reduces harm
+Northline B2B added a held-out eval case after a fluent wrong **enterprise pricing tier** reached a customer inbox — tone and structure passed review; tier did not. The case now blocks promotion when citation miss rate rises, even if average CSAT looks fine.
 
-1. **Scope retrieval** — only `approved` sources enter the prompt.  
-2. **Separate checker step** — do not ask the same call to draft and certify.  
-3. **Eval on failure modes** — pricing tiers, dates, regulatory phrases.  
-4. **Audit fields** — see [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/).
+## Choose your next read
 
-[When AI Hallucinates Confidence](/articles/when-ai-hallucinates-confidence/) covers the human factors; [What Is Context Architecture](/articles/what-is-context-architecture/) defines the layers that make grounding repeatable; [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) shows where to attach checks before send; [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/) covers tool and data scope when agents retrieve on their own.
+| If your failure mode looks like… | Read next |
+|----------------------------------|-----------|
+| Fluent wrong answers; reviewers trust tone | [When AI Hallucinates Confidence](/articles/when-ai-hallucinates-confidence/) |
+| Need unified context + retrieval + verify design | [Grounding AI Outputs](/articles/grounding-ai-outputs/) |
+| Need gates before send / held-out cases | [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) |
+| Agents retrieve or call tools on their own | [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/) |
+| Need replay and incident evidence | [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/) |
 
-## Go deeper
+## One eval case to add this week
 
-Model swaps do not replace architecture. [Grounding AI Outputs](/articles/grounding-ai-outputs/) unifies context, retrieval, and verification in one system design. [The Model Is Not the System](/articles/the-model-is-not-the-system/) places generation inside workflow and governance — where grounding becomes repeatable instead of heroic.
+Pick a regulated field your workflow touches — pricing tier, warranty period, jurisdiction-specific clause. Write one held-out case where the **wrong but fluent** value is plausible. If your current eval set would not fail that case, your grounding system has a gap — regardless of model SKU.
+
+Model swaps do not replace architecture. [The Model Is Not the System](/articles/the-model-is-not-the-system/) places generation inside workflow and governance — where grounding becomes repeatable instead of heroic.

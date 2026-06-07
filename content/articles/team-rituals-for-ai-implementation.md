@@ -19,7 +19,7 @@ tags:
 title: Team Rituals for AI Implementation
 ---
 
-Tools do not maintain themselves. Prompts drift, policy packs expire, connectors gain scopes, and new hires invent side-channel chats that bypass retrieval tags. **Rituals** beat one-off trainings because they keep workflows honest after launch—short, recurring forums with decisions and owners, not slide tours that end when the pilot badge is earned.
+Tools do not maintain themselves. Prompts drift, policy packs expire, connectors gain scopes, and new hires invent side-channel chats that bypass retrieval tags. **Rituals** beat one-off trainings because they keep workflows honest after launch—short, recurring forums with decisions and owners, not slide tours that end when the pilot badge is earned. If your team is new to the blog vs training app split, read [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/) first.
 
 Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk cadence](/articles/ai-risk-review-cadence/)—Level 3 on the maturity ladder is not "we launched" but "we still review eval biweekly."
 

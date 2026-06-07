@@ -30,7 +30,7 @@ Freeze is not anti-innovation; it is **sequencing**. Prove one controlled surfac
 
 ## Structure compounds
 
-Workflows, evaluation hooks, and governance roles let you reuse context and improve one system at a time. Context architecture beats another retrieval plugin when accuracy drifts. A structured prompt registry beats a fourth doc titled "Final_prompt_v7_REALLY_FINAL."
+Workflows, evaluation hooks, and governance roles let you reuse context and improve one system at a time. Context architecture beats another retrieval plugin when accuracy drifts. A structured prompt registry beats a fourth doc titled "Final_prompt_v7_REALLY_FINAL." The system around the model—not another copilot—is what compounds; see [The Model Is Not the System](/articles/the-model-is-not-the-system/).
 
 Structure does not mean slow—it means **one improvement surface** instead of ten disconnected chats. Northline's twelve-week pilot moved metrics with one workflow while other departments waited—not because they lacked tools, but because structure was not ready.
 

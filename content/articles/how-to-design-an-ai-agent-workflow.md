@@ -34,7 +34,7 @@ title: How to Design an AI Agent Workflow
 
 Agent hype collapses when workflows are vague. A language model with tools is not an agent workflow—it is a risk multiplier. Durable agent design starts with a **bounded business task**, explicit data boundaries, human escalation, and evaluation before scale.
 
-This guide maps a business task to an **agent-ready process**. It assumes you already treat the model as one component inside workflow and governance, not as the whole system—see [The Model Is Not the System](/articles/the-model-is-not-the-system/) if that foundation is still debated in your org. If your team is debating whether to add tools, memory, and orchestration before basics are stable, read the visual primer [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) first—it names the ladder from context engineering through agents without skipping control layers.
+This guide maps a business task to an **agent-ready process**. It assumes you already treat the model as one component inside workflow and governance, not as the whole system—see [The Model Is Not the System](/articles/the-model-is-not-the-system/) if that foundation is still debated in your org. Agent and MCP terms: [Glossary](/articles/prompt-anatomy-glossary/). For orchestration framework comparison (LangGraph, CrewAI, Microsoft Agent Framework), see [production selection guide](/articles/langgraph-vs-crewai-production-guide/). If your team is debating whether to add tools, memory, and orchestration before basics are stable, read the visual primer [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) first—it names the ladder from context engineering through agents without skipping control layers.
 
 ## Step 1 — Define the task
 

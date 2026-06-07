@@ -22,7 +22,7 @@ title: From Prompts to Business Outcomes
 
 Prompt quality is a means. **Business outcomes** are the end. Teams stall when they celebrate usage—messages drafted, licenses active, workshops completed—instead of measuring what changed for customers or operators. Executives then ask for ROI proofs the organization cannot produce because nobody named a baseline metric or an owner accountable for it.
 
-Outcome mapping connects each workflow ID to **one primary business metric**, a human gate, and an eval signal that predicts harm before customers see it. Without that triangle, [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) become lab exercises and prompts become performance art.
+Outcome mapping connects each workflow ID to **one primary business metric**, a human gate, and an eval signal that predicts harm before customers see it. Without that triangle, [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) become lab exercises and prompts become performance art. New to the blog properties? See [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## Outcome mapping template
 

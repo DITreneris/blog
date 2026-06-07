@@ -16,6 +16,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- **Editorial repair wave (8 Opinion spokes):** In-place rewrites with hub spoke lines, FAQ on `what-scales-ai-beyond-basics` and `context-window-myths`, distinct SEO intent per context/hallucination/tool-sprawl cluster. Retitled slugs: `what-scales-ai-beyond-basics`, `context-window-myths`, `tokens-as-fuel-for-ai-output`, `tokens-and-context-window-limits`, `why-ai-hallucinates`, `prompt-engineering-memes-vs-reality`, `what-your-ai-stack-reveals`, `three-types-of-ai-memory-short`. Hub inbound links on `what-is-context-architecture`, `grounding-ai-outputs`, `10-signs-your-company-is-vibe-prompting`. `from-prompt-to-agent` → category Opinion + Opinion `reading_path`. RAG primer dedupe in `three-types-of-rag.md`; evidence table on `five-levels-of-ai-control.md`.
+- **Satori:** `context-window-myths` migrated from hand Memes PNG to `context-window-tube` / `variant: myths` ([`data/og/templates/context-window-tube.mjs`](data/og/templates/context-window-tube.mjs)); regenerated heroes for retitled slugs.
 - **Satori hero quality (§5.1):** Wired 36 slugs off `category-default` to caption-aligned templates; **0** Opinion posts on generic grid; **8** P3 rows remain on `category-default`. [`data/illustrations.yaml`](data/illustrations.yaml) + regenerated masters under `data/01_illustrations/Satori/`.
 - **`new_post.py`:** `--satori-template` and tier/category template defaults; Opinion posts require explicit template or `--no-satori`.
 - **Content validators:** [`scripts/validate_content.py`](scripts/validate_content.py) warns on Opinion + `category-default` and `hero_caption` diagram keywords + `category-default`. [`scripts/validate_satori_manifest.py`](scripts/validate_satori_manifest.py) — 11 new templates in `KNOWN_TEMPLATES`.
@@ -24,6 +26,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- **`grounding-ai-outputs.md`:** Removed duplicate “Eval theater” failure-mode bullet.
 - **`measuring-ai-workflow-roi.md`:** Removed duplicate `content_tier` frontmatter key (blocked Satori generation).
 
 - **CI / Makefile build order:** `make build` and `make build-dev` now run `sync-images` before `validate-content`, matching [`scripts/vercel_build.sh`](scripts/vercel_build.sh). Fixes GitHub CI failure on clean checkout when `content/images/` heroes are gitignored.

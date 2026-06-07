@@ -54,6 +54,18 @@ RAG grounds answers in **approved facts** — when retrieval, policy, and eval a
 
 Not all retrieval is equal. [Three Types of RAG](/articles/three-types-of-rag/) distinguishes lookup, refine, and agentic patterns — each adds steps and accountability. Level 5 means indexed corpora with owners, regression eval when indexes change, and audit fields that record which chunks influenced a send. Buying “enterprise RAG” without those artifacts is still Level 1 with a fancier invoice.
 
+## Claimed rung vs evidence required
+
+Use this table in steering and risk forums — not to shame teams, but to align slides with artifacts.
+
+| Claimed rung | Evidence required before you claim it |
+|--------------|----------------------------------------|
+| Level 1 — Tokens | Cost estimate per workflow; refusal to treat window size as accuracy fix |
+| Level 2 — Context window | Versioned context pack + replay with pack hash |
+| Level 3 — Temperature | Registry pin + eval on parameter change |
+| Level 4 — Hallucination | Checker step or human gate; override/citation metrics |
+| Level 5 — RAG | Index owners, tier documented, eval on index change |
+
 ## Go deeper
 
-The ladder is a visual primer. Implementation lives in [Grounding AI Outputs](/articles/grounding-ai-outputs/), [The Model Is Not the System](/articles/the-model-is-not-the-system/) — workflow, context, evaluation, and governance around the model — and in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/) when more than one team touches the same workflow. For what comes after basic control, see [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) before you add agents and tools to an unstable base.
+The ladder is a visual primer. Implementation lives in [Grounding AI Outputs](/articles/grounding-ai-outputs/), [The Model Is Not the System](/articles/the-model-is-not-the-system/) — workflow, context, evaluation, and governance around the model — and in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/) when more than one team touches the same workflow. For what comes after basic control, see [What Actually Scales AI Beyond Chat Basics](/articles/what-scales-ai-beyond-basics/) before you add agents and tools to an unstable base.

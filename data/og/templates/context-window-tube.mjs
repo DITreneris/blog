@@ -159,18 +159,105 @@ function gaugeDiagram() {
   );
 }
 
+function mythsDiagram() {
+  const myths = [
+    'Paste the whole drive',
+    'Window replaces memory',
+    'Fits = understands all',
+    'Size fixes workflows',
+    'Vendor size = ready',
+  ];
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        maxWidth: '640px',
+        gap: '10px',
+      },
+    },
+    ...myths.map((m) =>
+      panelBox(
+        h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              width: '100%',
+              gap: '12px',
+            },
+          },
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                color: '#ef4444',
+                fontSize: px(d.caption),
+                fontWeight: 700,
+                width: '24px',
+              },
+            },
+            '✕'
+          ),
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                color: brand.colors.textOnDarkMuted,
+                fontSize: px(d.caption),
+                textDecoration: 'line-through',
+              },
+            },
+            m
+          )
+        ),
+        { padding: '10px 16px', width: '100%' }
+      )
+    ),
+    panelBox(
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            color: brand.colors.brandAccent,
+            fontSize: px(d.caption),
+            fontWeight: 600,
+          },
+        },
+        'Strategy = retrieval + policy + eval — not window size alone.'
+      ),
+      { padding: '14px 18px', width: '100%' }
+    )
+  );
+}
+
 export function buildContextWindowTube(props) {
-  const isGauge = props.variant === 'gauge';
-  const diagram = isGauge ? gaugeDiagram() : tubeDiagram();
+  const variant = props.variant || 'tube';
+  const diagram =
+    variant === 'gauge'
+      ? gaugeDiagram()
+      : variant === 'myths'
+        ? mythsDiagram()
+        : tubeDiagram();
+
+  const defaultSubtitle =
+    variant === 'gauge'
+      ? 'Token fuel level — full, degraded, or cut-off output.'
+      : variant === 'myths'
+        ? 'Five myths that inflate cost and hallucination risk.'
+        : 'Context tube — safe, limit, and overflow zones.';
 
   return articleHeroFrame({
     category: props.category || 'Opinion',
     title: props.title,
-    subtitle:
-      props.subtitle ||
-      (isGauge
-        ? 'Token fuel level — full, degraded, or cut-off output.'
-        : 'Context tube — safe, limit, and overflow zones.'),
+    subtitle: props.subtitle || defaultSubtitle,
     diagram,
   });
 }

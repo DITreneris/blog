@@ -24,6 +24,7 @@ def _load_yaml(name: str) -> dict:
 SITE_CONFIG = _load_yaml("site.yaml")
 HUB_SECTIONS = _load_yaml("hub_sections.yaml")
 CATEGORIES_DATA = _load_yaml("categories.yaml")
+EDITORIAL_CLUSTERS = _load_yaml("editorial_clusters.yaml")
 ECOSYSTEM = _load_yaml("ecosystem.yaml")
 ILLUSTRATIONS = _load_yaml("illustrations.yaml")
 
@@ -135,22 +136,35 @@ CATEGORY_FEED_ATOM = None
 TAG_FEED_ATOM = None
 
 def _finalize_articles(sender):
+    from resolve_article_journey import attach_journey_to_articles
+
     sender.articles = [
         a
         for a in sender.articles
         if getattr(a, "status", "published") != "draft"
     ]
+    attach_journey_to_articles(
+        sender.articles,
+        categories_data=CATEGORIES_DATA,
+        clusters_data=EDITORIAL_CLUSTERS,
+    )
     for article in sender.articles:
-        related = [
-            a
-            for a in sender.articles
-            if a.category == article.category and a.slug != article.slug
-        ]
-        related.sort(key=lambda a: a.date, reverse=True)
-        article.related_articles = related[:3]
+        cl = getattr(article, "continue_learning", None)
+        pp = getattr(article, "path_position", None)
+        if cl is not None:
+            article.metadata["continue_learning"] = cl
+        if pp is not None:
+            article.metadata["path_position"] = pp
 
 
 def register():
     from pelican import signals
 
+    if getattr(register, "_connected", False):
+        return
     signals.article_generator_finalized.connect(_finalize_articles)
+    register._connected = True  # type: ignore[attr-defined]
+
+
+# Pelican 4.x does not auto-call pelicanconf.register(); connect at import time.
+register()

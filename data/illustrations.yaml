@@ -271,7 +271,7 @@ illustrations:
   - id: memes-107
     source: Memes/107_Prompt_Anatomy.png
     slug: prompt-engineering-memes-vs-reality
-    title: "Prompt Engineering Memes vs Reality"
+    title: "When AI ROI Memes Drive Real Budget Decisions"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -279,15 +279,18 @@ illustrations:
   - id: memes-exposes
     source: Memes/AI_Exposes.png
     slug: what-your-ai-stack-reveals
-    title: "What Your AI Stack Reveals"
+    title: "What Your AI Stack Reveals: A 15-Minute Performative-vs-Operational Audit"
     category: Opinion
     usage: [hero, og]
     status: mapped
 
   - id: memes-context-window
-    source: Memes/context_window (2).png
+    generator: satori
+    template: context-window-tube
+    variant: myths
+    source: Satori/context-window-myths.png
     slug: context-window-myths
-    title: "Context Window Myths"
+    title: "Context Window Myths That Inflate Cost and Hallucination Risk"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -377,7 +380,7 @@ illustrations:
     variant: scale
     source: Satori/what-scales-ai-beyond-basics.png
     slug: what-scales-ai-beyond-basics
-    title: "What Scales AI Beyond the Basics"
+    title: "What Actually Scales AI Beyond Chat Basics"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -398,7 +401,7 @@ illustrations:
     variant: hallucination
     source: Satori/why-ai-hallucinates.png
     slug: why-ai-hallucinates
-    title: "Why AI Hallucinates"
+    title: "Why AI Hallucinates: The Grounded-vs-Guessing Split (Primer)"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -420,7 +423,7 @@ illustrations:
     variant: tube
     source: Satori/tokens-and-context-window-limits.png
     slug: tokens-and-context-window-limits
-    title: "Tokens and Context Window Limits"
+    title: "Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -431,7 +434,7 @@ illustrations:
     variant: gauge
     source: Satori/tokens-as-fuel-for-ai-output.png
     slug: tokens-as-fuel-for-ai-output
-    title: "Tokens as Fuel for AI Output"
+    title: "Tokens as Fuel: Why Full Context Windows Still Produce Empty Outputs"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -441,7 +444,7 @@ illustrations:
     template: memory-tiers
     source: Satori/three-types-of-ai-memory-short.png
     slug: three-types-of-ai-memory-short
-    title: "Three Types of AI Memory"
+    title: "Three Types of AI Memory (And How They Map to Production Design)"
     category: Opinion
     usage: [hero, og]
     status: mapped
