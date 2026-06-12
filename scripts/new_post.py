@@ -14,25 +14,25 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 ARTICLES = ROOT / "content" / "articles"
-DEFAULT_SATORI_TEMPLATE = "category-default"
+DEFAULT_SATORI_TEMPLATE = "checklist-worksheet"
 
 # Category/tier → suggested Satori template (Opinion requires explicit --satori-template).
 TIER_SATORI_TEMPLATE: dict[str, str | None] = {
     "opinion": None,
     "template": "checklist-worksheet",
-    "playbook": "category-default",
-    "pillar": "category-default",
-    "nav": "glossary-terms",
+    "playbook": "checklist-worksheet",
+    "pillar": "checklist-worksheet",
+    "nav": "implementation-stack",
 }
 CATEGORY_SATORI_TEMPLATE: dict[str, str | None] = {
     "Opinion": None,
     "Templates": "checklist-worksheet",
     "Case Studies": "case-study-support",
     "AI Governance": "governance-raci",
-    "Framework": "category-default",
+    "Framework": "implementation-stack",
     "Prompt Systems": "prompt-registry",
     "AI Agents": "multi-agent-handoff",
-    "Implementation Notes": "category-default",
+    "Implementation Notes": "checklist-worksheet",
 }
 
 BODY_TEMPLATE = """\

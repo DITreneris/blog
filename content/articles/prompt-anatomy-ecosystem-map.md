@@ -7,23 +7,24 @@ date: 2025-03-31
 hero_caption: How the blog, training app, and implementation tools fit together without
   duplicating the same content.
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png
-key_takeaway: Read frameworks on .blog, practice workflows on .app, and treat .lol as
-  optional play—not your implementation path.
+key_takeaway: Read frameworks on .blog, discover on .site, practice on .app, and treat
+  .lol as optional play—not your implementation path.
 reading_time: 3 min read
 slug: prompt-anatomy-ecosystem-map
 status: published
-summary: Where to read, practice, and build—promptanatomy.blog for frameworks, promptanatomy.app
-  for training, and how other properties fit without duplicating content.
+summary: Where to read, practice, and build—promptanatomy.blog for frameworks, promptanatomy.site
+  for discover-and-try, promptanatomy.app for training, and how other properties fit without
+  duplicating content.
 tags:
 - prompt-systems
 title: The Prompt Anatomy Ecosystem Map
 ---
 
-Prompt Anatomy spans **education, field notes, and implementation tools**. Each property has a job. The mistake teams make is treating every URL as the same product—copying playbook text into training slides, or buying a subscription when a free framework article already answers the design question. This map clarifies **where to read**, **where to practice**, and **what to ignore** when you are building governed AI workflows under real compliance pressure.
+Prompt Anatomy spans **education, field notes, and implementation tools**. Each property has a job. The mistake teams make is treating every URL as the same product—copying playbook text into training slides, or buying a subscription when a free framework article already answers the design question. This map clarifies **where to read**, **where to discover**, **where to practice**, and **what to ignore** when you are building governed AI workflows under real compliance pressure.
 
-## Three properties that matter first
+## Four properties that matter first
 
-Most readers need only three surfaces to start. For framework reading paths by role, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). Everything else in the table below is a specialized workflow product—not a substitute for the blog or the app.
+Most readers need four surfaces to start. For framework reading paths by role, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). Everything else in the table below is a specialized workflow product—not a substitute for the blog or the app.
 
 ### promptanatomy.blog (this site)
 
@@ -41,9 +42,15 @@ Use `.app` when a playbook on the blog resonated and you need your team to execu
 
 If you are deciding whether to subscribe, read the relevant playbook first on `.blog`. Training without a documented workflow ID on your side still produces enthusiastic individuals—not operational AI.
 
+### promptanatomy.site
+
+**Role: Discover and try.** Official marketing site with the nine-domain journey map, interactive five-part Anatomizer (Persona, Context, Variables, Instructions, Constraints), and a 60-second maturity quiz with tier and domain recommendation. Launched **2025-04-12**; see [Prompt Anatomy Marketing Site Launch](/articles/prompt-anatomy-marketing-site-launch/) for the field note and sister repo.
+
+Use `.site` when a sponsor or new teammate needs the ecosystem story in one sitting—not when you need eval gates, RACI worksheets, or audit trail templates. Those live on `.blog`. The Anatomizer teaches prompt shape; production still requires registry discipline and owners documented in your playbooks.
+
 ### promptanatomy.lol
 
-**Role: Play.** [Corporate Ladder](https://www.promptanatomy.lol/) is a satirical office-climb game in Telegram—entertainment and brand flavor, not an implementation path. It does not teach governance, host templates, or connect to your eval sets.
+**Role: Play.** [Corporate Ladder](https://www.promptanatomy.lol/) is a satirical office-climb game in Telegram—entertainment and brand flavor, not an implementation path. It soft-launched 2026-06-15 and is listed on [tApps Center](https://tapps.center/application/corporateladder); see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for the live field note. For the deployment stack, see [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/).
 
 Treat `.lol` as optional. Leaders and implementers should not confuse game engagement with implementation maturity. If your team cites `.lol` in a procurement deck, you are probably avoiding the canvas.
 
@@ -55,6 +62,7 @@ The table below lists specialized surfaces. They extend the core read → practi
 |----------|------|
 | **[promptanatomy.app](https://www.promptanatomy.app/)** | Practice — training, methodology, pricing |
 | **promptanatomy.blog** (this site) | Read — frameworks, field notes, templates, case studies |
+| **[promptanatomy.site](https://promptanatomy.site/)** | Discover — ecosystem story, Anatomizer, maturity quiz |
 | **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — Corporate Ladder (satirical; not for ops) |
 | **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons |
 | **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library |

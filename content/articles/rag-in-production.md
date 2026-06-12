@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: pillar
-date: 2026-05-17
+date: 2026-05-29
 hero_image: images/articles/rag-in-production/hero.png
 hero_caption: "RAG production ladder — basic lookup, smart refine, and agentic act with eval gates at each tier transition."
 key_takeaway: Ship RAG as a governed retrieval tier with eval gates—not a vendor feature toggle without accountability."
@@ -16,7 +16,7 @@ tags:
   - eval
   - governance
   - context-engineering
-title: "RAG in Production: Basic, Smart, and Agentic Patterns with Eval Gates"
+title: "RAG in Production"
 faq:
   - question: What is the difference between basic, smart, and agentic RAG?
     answer: Basic is query-search-answer on approved docs. Smart adds refine/rerank before generation. Agentic adds planning, tools, and verification—with higher risk and audit requirements.
@@ -28,7 +28,7 @@ faq:
 
 Retrieval-augmented generation is not one switch in a vendor console. In production it is a **governed retrieval tier** inside [context architecture](/articles/what-is-context-architecture/)—with chunking ownership, index versioning, denial rules, and eval gates before traffic scales. Teams that treat RAG as "turn on search" inherit fluent wrong answers, stale policy in drafts, and audit questions nobody can answer.
 
-This pillar upgrades the visual primer [Three Types of RAG](/articles/three-types-of-rag/) (Part 1) into an implementation guide: how to choose basic, smart, or agentic patterns; what to log; when to promote tiers; and how to wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) and [data boundaries](/articles/data-boundaries-for-ai-agents/) before production. RAG tier definitions: [Glossary](/articles/prompt-anatomy-glossary/).
+This pillar upgrades the visual primer [Three Types of RAG](/articles/three-types-of-rag/) (Part 1) into an implementation guide: how to choose basic, smart, or agentic patterns; what to log; when to promote tiers; and how to wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) and [data boundaries](/articles/data-boundaries-for-ai-agents/) before production. RAG tier definitions: [Glossary](/articles/prompt-anatomy-glossary/). New to the stack? Start at [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).
 
 ## The production ladder
 
@@ -133,6 +133,8 @@ Retrieval sits inside context architecture, not instead of it. [Memory types](/a
 
 When they experimented with smart rerank, pilot pass rate rose from ninety-one to ninety-four percent on twenty-five cases—enough to justify latency cost for that queue only.
 
+Treat tier promotion like a software release: document the retrieval tier on the canvas, bump corpus or rerank version in the registry, and re-run the held-out set before shadow traffic increases. Sponsors should see pass-rate and incident trends—not retrieval feature names—in the steering deck. Pair every tier change with [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/) scorecard rows so quality and throughput stay visible together.
+
 ## Anti-patterns
 
 - Deploying agentic RAG because the diagram's third box looks advanced.  
@@ -143,4 +145,4 @@ When they experimented with smart rerank, pilot pass rate rose from ninety-one t
 
 ## Where to go next
 
-Start with [Three Types of RAG](/articles/three-types-of-rag/) for the visual primer. Document retrieval tier on the [workflow canvas](/articles/ai-workflow-canvas-template/). Wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) before pilot. For agent tool standards, see [Model Context Protocol for Enterprise Teams](/articles/model-context-protocol-enterprise/) when retrieval calls external systems through MCP servers.
+Start with [Three Types of RAG](/articles/three-types-of-rag/) for the visual primer. Document retrieval tier on the [workflow canvas](/articles/ai-workflow-canvas-template/). Wire [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) before pilot. For agent tool standards, see [Model Context Protocol for Enterprise Teams](/articles/model-context-protocol-enterprise/) when retrieval calls external systems through MCP servers. Grounding hub: [Grounding AI Outputs](/articles/grounding-ai-outputs/). Shared terms: [Glossary](/articles/prompt-anatomy-glossary/) and [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).

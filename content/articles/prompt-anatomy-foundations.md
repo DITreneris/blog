@@ -16,7 +16,7 @@ hero_caption: Implementation stack — outcome, workflow, context, model step, e
 hero_image: images/articles/prompt-anatomy-foundations/hero.png
 key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context,
   model step, evaluation, governance.'
-reading_time: 2 min read
+reading_time: 3 min read
 slug: prompt-anatomy-foundations
 status: published
 summary: Entry point for the Prompt Anatomy stack—where to start by role and reading
@@ -50,6 +50,14 @@ Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/)
 | Designing context | [Context architecture](/articles/what-is-context-architecture/) |
 | Setting ownership | [Governance roles](/articles/ai-governance-roles-and-ownership/) |
 | Planning a pilot | [AI Workflow Canvas](/articles/ai-workflow-canvas-template/) |
+
+### By persona
+
+**Operations or enablement (diagnose first).** You need a shared vocabulary for what is broken before anyone buys another copilot. Start with [10 Signs](/articles/10-signs-your-company-is-vibe-prompting/) and the [15-minute stack scorecard](/articles/what-your-ai-stack-reveals/); use [Glossary](/articles/prompt-anatomy-glossary/) terms in steering meetings so “eval” and “workflow ID” mean the same thing to IT and the business.
+
+**Architecture or engineering (design the system).** Map one workflow on the [canvas](/articles/ai-workflow-canvas-template/), then read [Grounding AI Outputs](/articles/grounding-ai-outputs/) and [RAG in Production](/articles/rag-in-production/) before adding connectors. Agent paths: [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/) and [MCP for enterprise](/articles/model-context-protocol-enterprise/).
+
+**Governance or risk (control change).** Pair [Governance roles](/articles/ai-governance-roles-and-ownership/) with [Audit trails](/articles/audit-trails-for-ai-workflows/) and [Risk review cadence](/articles/ai-risk-review-cadence/). Prompt and context changes ship through the [Prompt Registry Playbook](/articles/prompt-registry-playbook/)—not shared docs.
 
 Training and hands-on templates: [promptanatomy.app](https://www.promptanatomy.app/). Ecosystem map: [Prompt Anatomy properties](/articles/prompt-anatomy-ecosystem-map/). Term definitions: [Glossary](/articles/prompt-anatomy-glossary/).
 

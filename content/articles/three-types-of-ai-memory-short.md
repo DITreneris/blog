@@ -4,7 +4,6 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-03-07
-modified: 2026-06-07
 hero_caption: Short (session), long (profile), and system memory — mapped to production
   session, episodic, and organizational layers with TTL and owners.
 hero_image: images/articles/three-types-of-ai-memory-short/hero.png
@@ -17,7 +16,7 @@ summary: Session, profile, and system memory explained — with a mapping table 
   session, episodic, and organizational design.
 tags:
 - memory
-title: Three Types of AI Memory (And How They Map to Production Design)
+title: Three Types of AI Memory
 ---
 
 The hero card stack is simple: **short** (session), **long** (profile), **system** (controls behavior). “Remembers now / remembers you / controls output” is consumer language — useful only when you translate it into **retention rules, TTL, and owners** before production.

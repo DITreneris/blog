@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2026-05-23
+date: 2026-06-04
 hero_image: images/articles/securing-mcp-agent-tools/hero.png
 hero_caption: "MCP security controls: tool allowlists, scoped permissions, and injection-resilient execution paths."
 key_takeaway: Secure agent tooling requires explicit allowlists, least-privilege scope, and injection defenses at every tool boundary.
@@ -16,12 +16,12 @@ tags:
   - governance
   - security
   - agents
-title: "Securing MCP and Agent Tools: Allowlists, Scoping, and Injection Defense"
+title: "Securing MCP and Agent Tools"
 ---
 
 The fastest way to turn a useful agent into an incident generator is broad tool access without control boundaries. MCP integrations make tool connectivity easier, but connectivity is not governance. The security model must decide what an agent is allowed to call, with which scope, under which conditions, and how unsafe instructions are blocked.
 
-If your team is still framing MCP as "just a transport layer," start with [Model Context Protocol for Enterprise Teams](/articles/model-context-protocol-enterprise/). For policy boundaries across data classes, use [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/). For evidence and replay requirements after incidents, rely on [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/).
+If your team is still framing MCP as "just a transport layer," start with [Model Context Protocol for Enterprise Teams](/articles/model-context-protocol-enterprise/). For policy boundaries across data classes, use [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/). For evidence and replay requirements after incidents, rely on [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/). MCP and security terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## Threat model first, integration second
 

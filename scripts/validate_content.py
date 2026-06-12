@@ -17,7 +17,10 @@ ARTICLES = CONTENT / "articles"
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 
 CAPTION_DIAGRAM_KEYWORDS = re.compile(
-    r"\b(ladder|split|three types|tube|gauge|contrast|rungs|memory tiers)\b", re.I
+    r"\b(ladder|split|three types|tube|gauge|contrast|rungs|memory tiers|"
+    r"stack|canvas|cadence|forum|procurement|timeline|worksheet|agenda|ritual|"
+    r"scorecard|timeline|matrix|pipeline|registry|RACI|audit|gates)\b",
+    re.I,
 )
 
 BOILERPLATE_MARKER = "The hero diagram summarizes the core idea"
@@ -40,6 +43,11 @@ PILLAR_SLUGS = frozenset(
         "the-model-is-not-the-system",
         "10-signs-your-company-is-vibe-prompting",
         "how-to-design-an-ai-agent-workflow",
+        "what-is-context-architecture",
+        "prompt-registry-playbook",
+        "rag-in-production",
+        "grounding-ai-outputs",
+        "model-context-protocol-enterprise",
     }
 )
 PILLAR_SLUGS_RELEASE_2: frozenset[str] = frozenset()

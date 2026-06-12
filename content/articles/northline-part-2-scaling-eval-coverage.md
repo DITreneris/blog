@@ -7,7 +7,7 @@ date: 2025-09-08
 hero_image: images/articles/northline-part-2-scaling-eval-coverage/hero.png
 hero_caption: "Eval coverage expansion — from 50% shadow traffic to 80% queue coverage after pass rate held four weeks."
 key_takeaway: Northline increased shadow traffic only after eval pass rate held and override review stayed disciplined—not when leadership wanted faster ROI."
-reading_time: 4 min read
+reading_time: 5 min read
 slug: northline-part-2-scaling-eval-coverage
 status: published
 summary: How Northline B2B expanded support-assist shadow traffic from 50% to 80% after eval held — composite case study Part 2.
@@ -16,7 +16,7 @@ tags:
   - eval
   - change-management
   - case-studies
-title: "Northline Part 2: Scaling Eval Coverage from 50% to 80% Queue Traffic"
+title: "Northline Part 2"
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations. [Part 1](/articles/case-study-vibe-prompting-to-structured-workflow/) covers the move from vibe prompting to structured `support-reply-v3`.*
@@ -48,6 +48,8 @@ Leadership agreed to increase shadow traffic in **two steps**—sixty-five perce
 | Rollback drill | Prior registry pin <30 min | Repeated |
 
 Forum rejected a request to skip the sixty-five percent step. That delay cost two weeks of sponsor enthusiasm—and prevented a VIP escalation miss at seventy-two percent traffic that became eval case #38.
+
+**Failed gate (week 15):** Weekly pass rate dipped to 89% for one week at sixty-five percent traffic—below the ≥92% gate. Process owner held traffic, added twelve override-driven cases within five days, and re-ran eval before retrying. Sponsors saw a **hold decision with evidence**, not a narrative debate. Those cases fed the monthly [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/) scorecard: pass rate and incident rate moved together before leadership approved eighty percent coverage.
 
 ## Results (ranges)
 

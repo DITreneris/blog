@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-16
+date: 2026-05-28
 hero_image: images/articles/context-rot-why-bigger-windows-make-agents-worse/hero.png
 hero_caption: "Long windows, weak signal: when context grows faster than structure, agent decisions degrade."
 key_takeaway: Bigger context windows can reduce agent quality when teams do not manage relevance, ordering, and retrieval boundaries.
@@ -16,7 +16,7 @@ tags:
   - agents
   - eval
   - framework
-title: "Context Rot: Why Bigger Windows Make Agents Worse"
+title: "Context Rot in AI Agents"
 ---
 
 Large context windows sound like a free upgrade: add more documents, preserve more memory, reduce truncation. In real workflows, teams often get the opposite result. Agents become slower, less consistent, and more confidently wrong. This is context rot: useful evidence is still present, but drowned by stale, conflicting, or poorly ordered context.

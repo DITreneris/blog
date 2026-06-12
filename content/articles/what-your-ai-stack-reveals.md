@@ -3,14 +3,13 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-05-11
-modified: 2026-06-07
+date: 2026-05-23
 hero_image: images/articles/what-your-ai-stack-reveals/hero.png
 hero_caption: AI Truth Mirror — buzzword cloud versus structured flowchart; score your
   stack in 15 minutes with the rubric below.
 key_takeaway: Score your stack on owners, eval, and traceability — performative AI
   buys logos; operational AI ships workflow IDs and pass rates.
-reading_time: 3 min read
+reading_time: 5 min read
 slug: what-your-ai-stack-reveals
 status: published
 summary: A 15-minute performative-vs-operational stack audit — 10-item scorecard with
@@ -19,12 +18,14 @@ tags:
   - change-management
   - governance
   - workflow-automation
-title: 'What Your AI Stack Reveals: A 15-Minute Performative-vs-Operational Audit'
+title: "What Your AI Stack Reveals"
 ---
 
 The poster asks a uncomfortable question: **AI exposes shallow experts.** Two figures look credible outside the mirror; inside, one reflects buzzwords, the other a flowchart — objective, inputs, analysis, decision, outputs. Your **stack** (tools, integrations, prompts, forums, logs) is which reflection you are building.
 
-*Scorecard companion — for the ten-symptom diagnostic see [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/); for procurement rules see [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/).*
+**This article is a scorecard, not a symptom list.** [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) names organizational patterns; this audit scores **artifacts you can verify in fifteen minutes**—owners, eval sets, replay logs—before a steering meeting or renewal.
+
+*Scorecard companion — for procurement rules see [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/).*
 
 This audit scores **rituals and artifacts**, not vendor logos. Complete it before the next steering meeting or tool renewal.
 
@@ -69,9 +70,14 @@ A mid-market ops team scored **8**: they had copilots in support and sales, quar
 
 **90-day plan they adopted:**
 
-1. Week 1–2: One workflow on the [AI workflow canvas](/articles/ai-workflow-canvas-template/) — `support-reply-v3` only.  
-2. Week 3–6: Twenty held-out cases; pass-rate baseline; no new tools.  
-3. Week 7–12: Risk forum promotes or holds based on metric + eval — [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/).
+| Weeks | Action | Owner | Exit criteria |
+|-------|--------|-------|---------------|
+| 1–2 | One workflow on [AI workflow canvas](/articles/ai-workflow-canvas-template/) — `support-reply-v3` only | Support ops | Canvas complete, denied data named |
+| 3–4 | Twenty held-out cases; smoke gate in CI | Engineering + ops | Baseline pass rate recorded |
+| 5–8 | No net-new tools; registry row for task framing | Process owner | Prod pin + changelog |
+| 9–12 | Risk forum promote/hold on metric + eval | Governance | Re-score target **14+** on this rubric |
+
+Week 6 checkpoint: if pass rate below 85%, pause expansion and add override-driven eval cases—same discipline as [Northline Part 2](/articles/northline-part-2-scaling-eval-coverage/). Week 12: tie sponsor deck to [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/) scorecard rows, not license counts.
 
 Re-score at day 90. Target **14+** before second workflow or agent tooling.
 

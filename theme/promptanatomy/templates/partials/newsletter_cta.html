@@ -7,9 +7,14 @@
     {{ section_heading(n.title, heading_id='newsletter-heading') }}
     <p class="hero__subhead">{{ n.description }}</p>
     <p class="newsletter__actions">
-      {{ btn(n.x_href, n.x_label, 'secondary', true) }}
+      {{ btn(n.x_href, n.x_label, 'primary', true) }}
       {{ btn(n.linkedin_href, n.linkedin_label, 'secondary', true) }}
     </p>
-    <p id="newsletter-note" class="newsletter__note">{{ n.disclaimer }}</p>
+    {% if n.feed_href %}
+    <p id="newsletter-note" class="newsletter__note">
+      {{ n.feed_note }}
+      <a href="{{ n.feed_href }}">{{ n.feed_label }}</a>
+    </p>
+    {% endif %}
   </div>
 </section>

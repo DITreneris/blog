@@ -4,7 +4,6 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-11-14
-modified: 2026-06-07
 hero_image: images/articles/why-ai-hallucinates/hero.png
 hero_caption: Grounded vs ungrounded — controlled context and verification versus
   plausible guessing; choose your next playbook by failure mode.
@@ -19,7 +18,7 @@ tags:
   - context
   - eval
   - governance
-title: 'Why AI Hallucinates: The Grounded-vs-Guessing Split (Primer)'
+title: Why AI Hallucinates
 ---
 
 The hero is a split screen: **grounded** (controlled context, verification) versus **hallucination** (guessing what sounds right). The lesson in one line: **AI predicts words; it does not verify truth.** Hallucination is not a bug you eliminate with a premium tier — it is default behavior without a system around the model.

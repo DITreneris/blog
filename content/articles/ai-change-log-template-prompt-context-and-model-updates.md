@@ -19,7 +19,7 @@ tags:
 - prompt-systems
 - governance
 - change-management
-title: AI Change Log Template (Prompt, Context, and Model Updates)
+title: AI Change Log Template
 ---
 
 Copy this change log into your wiki, registry repo, or ticket system. Complete a row **before** promoting any change to production traffic—not after a controller or customer reports drift. Silent upgrades destroy trust faster than model quality debates.

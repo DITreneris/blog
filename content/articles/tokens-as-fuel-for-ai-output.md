@@ -4,7 +4,6 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-12-29
-modified: 2026-06-07
 hero_image: images/articles/tokens-as-fuel-for-ai-output/hero.png
 hero_caption: Token fuel levels — full, degraded, and cut-off output — plus who refuels
   context packs and when eval must rerun.
@@ -18,7 +17,7 @@ summary: Why full context windows still produce empty outputs — the fuel metap
 tags:
   - context
   - context-engineering
-title: 'Tokens as Fuel: Why Full Context Windows Still Produce Empty Outputs'
+title: "Tokens as Fuel for AI Output"
 ---
 
 **Tokens = fuel. Your prompt runs on this.** The diagram shows a tank feeding a model with three output paths: **full** (clear), **low** (degraded), **empty** (cut off). Operators confuse **having fuel** with **pouring in the wrong fuel** — or forgetting that someone must refuel on a schedule.

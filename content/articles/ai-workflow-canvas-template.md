@@ -17,7 +17,7 @@ summary: A one-page canvas to define outcome, steps, context, gates, eval, and o
 tags:
 - templates
 - workflow-automation
-title: AI Workflow Canvas (Template)
+title: AI Workflow Canvas
 ---
 
 Copy this canvas into your wiki or ticket. Complete it with **process owner and IT** before pilot launch—not after a vendor demo convinces leadership the tool is the workflow. Gaps on the canvas become incidents in production: missing eval, blurry handoffs, denied data still reachable, no log field for policy version.
@@ -59,6 +59,18 @@ If any element is blank, pause tool selection until named. Add [evaluation hooks
 | **Target pilot end date** | |
 
 Store completed canvases next to eval results so reviewers see intent and evidence together. One canvas per workflow ID—avoid mega-documents mixing unrelated processes.
+
+## Bad vs good filled canvas (quick check)
+
+| Signal | Weak canvas | Strong canvas |
+|--------|-------------|---------------|
+| Outcome | “Improve support with AI” | “Reduce tier-2 handle time without increasing escalations” |
+| Metric | “Usage” or blank | Median handle time + CSAT on assisted queue |
+| Denied data | “Sensitive stuff” | Named systems/fields (HR, other customers’ tickets) |
+| Eval | “We’ll test later” | 25 cases, ≥92% pass, 0 policy violations |
+| Owner | Team name only | Named person + IT integration owner |
+
+If more than two rows look like the weak column, pause pilot traffic until fixed—gaps here become incidents under audit pressure.
 
 ## Filled example: support-reply-v3 (Northline)
 

@@ -18,7 +18,7 @@ tags:
 - northline
 - change-management
 - eval
-title: 'Case Study: From Vibe Prompting to a Structured Support Workflow'
+title: "From Vibe Prompting to Structured Workflow"
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations.*

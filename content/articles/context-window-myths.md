@@ -4,7 +4,6 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-12-07
-modified: 2026-06-07
 hero_caption: Five context-window myths that inflate token cost and hallucination risk
   — and the operator fixes that actually improve accuracy.
 hero_image: images/articles/context-window-myths/hero.png
@@ -18,7 +17,7 @@ summary: Five expensive context-window mistakes ops teams still fund — with sy
 tags:
 - context
 - context-engineering
-title: Context Window Myths That Inflate Cost and Hallucination Risk
+title: Context Window Myths
 faq:
   - question: Does a larger context window reduce the need for RAG?
     answer: No. RAG governs which approved facts enter a run; window size only sets

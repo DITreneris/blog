@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: pillar
-date: 2026-05-20
+date: 2026-06-01
 hero_image: images/articles/model-context-protocol-enterprise/hero.png
 hero_caption: "MCP architecture — decoupled reasoning engine, standardized tool servers, OAuth boundaries, and audit logging."
 key_takeaway: MCP standardizes how agents discover tools and data—security and governance belong at the protocol layer, not afterthought."
@@ -16,7 +16,7 @@ tags:
   - agents
   - governance
   - prompt-injection
-title: "Model Context Protocol for Enterprise Teams: Tools, Boundaries, and Security"
+title: "MCP for Enterprise Teams"
 faq:
   - question: What is the Model Context Protocol (MCP)?
     answer: An open standard for how AI models discover and interact with external tools, resources, and reusable prompt templates—replacing bespoke per-integration connectors.

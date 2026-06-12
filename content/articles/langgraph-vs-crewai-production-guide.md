@@ -3,11 +3,11 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-05-21
+date: 2026-06-02
 hero_image: images/articles/langgraph-vs-crewai-production-guide/hero.png
 hero_caption: "Production platform selection: orchestration depth, governance controls, and operational fit."
 key_takeaway: Pick your agent framework based on orchestration and governance requirements, not demo velocity alone.
-reading_time: 4 min read
+reading_time: 5 min read
 slug: langgraph-vs-crewai-production-guide
 status: published
 summary: A production-focused comparison of LangGraph, CrewAI, and Microsoft Agent Framework with selection criteria, trade-offs, and rollout guidance.
@@ -16,14 +16,14 @@ tags:
   - orchestration
   - framework-selection
   - implementation
-title: "LangGraph vs CrewAI vs Microsoft Agent Framework: A Production Selection Guide"
+title: "LangGraph vs CrewAI vs MS Agent Framework"
 ---
 
 Most framework comparisons stop at developer experience. Production selection needs a different lens: reliability under real workflows, governance controls, and operational burden over months, not hackathon speed over days.
 
 This guide compares LangGraph, CrewAI, and Microsoft Agent Framework using criteria that matter after pilot: state management, handoff control, security posture, observability, and enterprise integration path.
 
-If you are designing collaborative agents, read [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/) first. If your workflow boundaries are still unclear, start with [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/) before choosing any framework.
+If you are designing collaborative agents, read [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/) first. If your workflow boundaries are still unclear, start with [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/) before choosing any framework. Orchestration terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## Quick recommendation logic
 
@@ -103,6 +103,32 @@ Framework selection anti-patterns usually trace back to misaligned incentives: e
 **Skipping migration path planning.** Framework switching later is expensive without interface boundaries now.
 
 **Conflating vendor ecosystem fit with workflow fit.** Platform alignment helps, but workflow control and risk posture still decide outcomes.
+
+## When a single agent is enough
+
+Not every business task needs a multi-agent graph on day one. If your workflow is **one retrieval step, one draft, one human send gate**, a single orchestrated pipeline with explicit state may outperform a role-based multi-agent demo. Promote to LangGraph or CrewAI when you have evidence that **decomposition** improves pass rate or diagnosability—not when a vendor labels the chatbot an "agent."
+
+Northline kept `support-reply-v3` on a linear pipeline for twelve weeks before adding a routing agent. The routing agent earned its place only after handoff payloads, audit fields, and eval cases existed—see [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/).
+
+## Bake-off scorecard example
+
+Score each platform 1–5 on the same workflow (`support-reply-v3` routing pilot). Weights reflect audit-heavy customer-facing constraints.
+
+| Criterion | Weight | LangGraph | CrewAI | MS Agent Framework |
+|-----------|--------|-----------|--------|---------------------|
+| State/retry control | 25% | 5 | 3 | 4 |
+| Handoff traceability | 20% | 5 | 3 | 4 |
+| Data boundary enforcement | 20% | 4 | 3 | 4 |
+| Incident replay speed | 15% | 4 | 3 | 5 |
+| Team maintainability | 10% | 3 | 4 | 4 |
+| Entra/Purview fit | 10% | 2 | 2 | 5 |
+| **Weighted total** | | **4.2** | **3.1** | **4.3** |
+
+Microsoft Agent Framework won on identity integration for this composite; LangGraph won on explicit graph replay when Legal required step-by-step evidence. CrewAI remained useful for **internal** brainstorming agents with no customer send.
+
+### Microsoft Agent Framework portability
+
+Enterprise fit is real—but **portability is not**. Agent Framework assumes Microsoft identity, telemetry, and connector patterns. Validate exit criteria before broad adoption: can you export orchestration logic, replay logs, and eval cases if policy requires a second cloud? Pair selection with [Securing MCP and Agent Tools](/articles/securing-mcp-agent-tools/) when MCP servers sit in the graph.
 
 ## What to do Monday
 

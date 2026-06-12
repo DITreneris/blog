@@ -139,6 +139,8 @@ Agents inherit the same classes—[Data Boundaries for AI Agents](/articles/data
 
 **Context window myths.** "We can fit the whole drive now." **Recovery:** Read [Context Window Myths](/articles/context-window-myths/) and invest in retrieval design, not bigger paste areas.
 
+When layers contradict each other, the model resolves conflicts probabilistically—Legal sees violations, marketing sees tone drift, engineering sees retries. A single context owner with authority to reject scope creep prevents the architecture from becoming a pile of append-only rules.
+
 ## What to do Monday
 
 1. Pick one workflow and write a context spec with allowed/denied sources.
@@ -146,4 +148,4 @@ Agents inherit the same classes—[Data Boundaries for AI Agents](/articles/data
 3. Reorder your next prompt template: policy, task, operational.
 4. Add three eval cases that fail if policy is buried or sources are wrong.
 
-Context architecture turns access into accountable design. The model will use whatever you give it—design that gift deliberately.
+Context architecture turns access into accountable design. The model will use whatever you give it—design that gift deliberately. For the full grounding system (scope + retrieval + verify), read [Grounding AI Outputs](/articles/grounding-ai-outputs/). Term index: [Glossary](/articles/prompt-anatomy-glossary/).

@@ -3,15 +3,15 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-05-25
+date: 2026-06-06
 hero_image: images/articles/measuring-ai-workflow-roi/hero.png
-hero_caption: "ROI model — pass rate, time saved, and incident cost for sponsor-ready business cases."
+hero_caption: "Track pass rate, time saved, and incident cost before scaling automation."
 key_takeaway: Sponsor-ready ROI combines pass rate, net cycle time, and incident cost—activity metrics alone will not justify scale.
 reading_time: 5 min read
 slug: measuring-ai-workflow-roi
 status: published
 summary: A practical ROI model for AI workflows using pass rate, time saved, and incident cost with sponsor-ready formulas.
-title: "Measuring AI Workflow ROI: Pass Rate, Time Saved, and Incident Cost"
+title: "Measuring AI Workflow ROI"
 tags:
   - eval
   - benchmarks

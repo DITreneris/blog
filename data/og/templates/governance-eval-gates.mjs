@@ -1,7 +1,7 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
 import { typography, px } from '../typography.mjs';
-import { articleHeroFrame, panelBox } from './base.mjs';
+import { articleHeroFrame, panelBox, flowArrowRight } from './base.mjs';
 
 const d = typography.hero.diagram;
 
@@ -64,20 +64,7 @@ function gateColumn(gate) {
 }
 
 function arrow() {
-  return h(
-    'div',
-    {
-      style: {
-        display: 'flex',
-        alignItems: 'center',
-        color: brand.colors.brandAccent,
-        fontSize: px(d.arrow),
-        fontWeight: 700,
-        margin: '0 6px',
-      },
-    },
-    '→'
-  );
+  return flowArrowRight(d.arrow);
 }
 
 export function buildGovernanceEvalGates(props) {

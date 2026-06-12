@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-05-28
+date: 2026-06-09
 hero_image: images/articles/ai-workflow-eval-checklist/hero.png
 hero_caption: "Copy-paste eval checklist — smoke, pilot, and scale gates before AI workflow traffic increases."
 key_takeaway: Run smoke, pilot, and scale gates on held-out cases before increasing traffic—not after a customer complaint."
@@ -15,7 +15,7 @@ tags:
   - eval
   - templates
   - governance
-title: AI Workflow Eval Checklist (Template)
+title: AI Workflow Eval Checklist
 ---
 
 Copy this checklist into your wiki, ticket, or risk forum agenda. Complete it with **process owner and IT** before pilot traffic increases—not after leadership asks why CSAT dropped. Gaps here become incidents: scaling without held-out cases, promoting on demo quality, or skipping override review while pass rate drifts.

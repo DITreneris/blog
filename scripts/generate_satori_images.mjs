@@ -126,6 +126,7 @@ function propsFromRow(row, surface = 'hero') {
     'variant', 'emphasis', 'vertical', 'leftTitle', 'rightTitle', 'leftItems', 'rightItems',
     'rungs', 'footer', 'tiers', 'metricStart', 'metricEnd', 'emptyGrid', 'showReleaseFlow',
     'workflowFooter', 'beforeItems', 'afterItems', 'beforeTitle', 'afterTitle',
+    'slots', 'cadenceTitle', 'sections', 'phases', 'canvasTitle', 'layers', 'badgeLabel',
   ];
   for (const key of diagramKeys) {
     if (row[key] !== undefined) props[key] = row[key];

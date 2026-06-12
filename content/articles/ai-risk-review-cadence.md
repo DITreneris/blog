@@ -4,8 +4,7 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-06-29
-hero_caption: Standing risk forum — incidents, eval regressions, and workflow changes
-  on a fixed agenda.
+hero_caption: "Sample minutes you can paste into a wiki — decisions logged, not emailed."
 hero_image: images/articles/ai-risk-review-cadence/hero.png
 key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses,
   and workflow changes on the agenda.

@@ -11,8 +11,7 @@ faq:
 - answer: Ten to thirty cases covering high-risk fields, policy denials, and edge
     cases Legal cares about—plus new cases from incidents within a week.
   question: What belongs in a workflow eval set?
-hero_caption: Eval gates — smoke, pilot, and scale checkpoints before workflow changes
-  reach production.
+hero_caption: Run smoke on every PR; full eval set weekly in pilot — same cases, every change.
 hero_image: images/articles/evaluation-hooks-for-ai-workflows/hero.png
 key_takeaway: Treat eval sets like unit tests for workflows—run them before every
   prompt, context, or model change.

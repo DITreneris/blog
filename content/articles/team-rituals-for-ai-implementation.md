@@ -4,8 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2025-02-15
-hero_caption: Lightweight recurring forums—office hours, eval review, and change announcements—that
-  keep workflows honest after launch.
+hero_caption: Thirty-minute standups with owned actions — not slide tours after pilot launch.
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
 key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts,
   context, and ownership.

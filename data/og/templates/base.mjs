@@ -4,6 +4,70 @@ import { typography, titleStyle, px } from '../typography.mjs';
 
 const { hero: hType, og: oType } = typography;
 
+/** Horizontal flow arrow — SVG avoids missing-glyph boxes for Unicode → in Satori. */
+export function flowArrowRight(size = 28) {
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        margin: '0 10px',
+      },
+    },
+    h(
+      'svg',
+      {
+        width: size,
+        height: size,
+        viewBox: '0 0 24 24',
+      },
+      h('path', {
+        d: 'M5 12h12M13 7l5 5-5 5',
+        fill: 'none',
+        stroke: brand.colors.brandAccent,
+        strokeWidth: 2.5,
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
+      })
+    )
+  );
+}
+
+/** Vertical flow arrow for worksheet-style diagrams. */
+export function flowArrowDown(size = 24) {
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        padding: '4px 0',
+      },
+    },
+    h(
+      'svg',
+      {
+        width: size,
+        height: size,
+        viewBox: '0 0 24 24',
+      },
+      h('path', {
+        d: 'M12 5v12M7 13l5 5 5-5',
+        fill: 'none',
+        stroke: brand.colors.brandAccent,
+        strokeWidth: 2.5,
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
+      })
+    )
+  );
+}
+
 /** Lightning bolt path from theme/promptanatomy/static/favicon.svg (scaled). */
 export function boltIcon(scale = 1) {
   const s = scale;
@@ -111,7 +175,7 @@ export function heroBackground(width, height) {
  * Article hero shell: badge, title, subtitle, diagram area.
  * Title placed in vertical center third for OG crop safety.
  */
-export function articleHeroFrame({ category, title, subtitle, diagram }) {
+export function articleHeroFrame({ category, badgeLabel, title, subtitle, diagram }) {
   const titleSx = titleStyle(title, hType.title);
   return h(
     'div',
@@ -147,7 +211,7 @@ export function articleHeroFrame({ category, title, subtitle, diagram }) {
             paddingRight: '40px',
           },
         },
-        categoryBadge(category, category, 'hero'),
+        categoryBadge(badgeLabel || category, category, 'hero'),
         h(
           'div',
           {

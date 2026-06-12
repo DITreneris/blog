@@ -7,7 +7,17 @@
 - [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — workflow, context, evaluation, governance.
 - [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): diagnostic + 30-day remediation.
 - [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/): bounded agent design with tier-2 routing example.
+- [Grounding AI Outputs](https://www.promptanatomy.blog/articles/grounding-ai-outputs/): grounding hub — scoped context, approved retrieval, and verification gates in one system.
+- [The Prompt Registry Playbook](https://www.promptanatomy.blog/articles/prompt-registry-playbook/): prompt release ops — version, own, eval-link, and ship changes.
+- [RAG in Production](https://www.promptanatomy.blog/articles/rag-in-production/): basic, smart, and agentic RAG patterns with eval gates before scale.
+- [Model Context Protocol for Enterprise Teams](https://www.promptanatomy.blog/articles/model-context-protocol-enterprise/): MCP adoption — tools, boundaries, and security for regulated teams.
+- [Evaluation Hooks for AI Workflows](https://www.promptanatomy.blog/articles/evaluation-hooks-for-ai-workflows/): eval cases and pass/fail gates before prompt, context, or model changes promote.
+- [Evaluating Agents with CLEAR](https://www.promptanatomy.blog/articles/evaluating-agents-with-clear/): cost, latency, efficacy, assurance, and reliability thresholds for production agents.
+- [AI Risk Review Cadence](https://www.promptanatomy.blog/articles/ai-risk-review-cadence/): standing risk forum — cadence, agenda, attendees, and decision outputs.
+- [Team Rituals for AI Implementation](https://www.promptanatomy.blog/articles/team-rituals-for-ai-implementation/): office hours, eval review, and change announcements that keep workflows current.
+- [Securing MCP and Agent Tools](https://www.promptanatomy.blog/articles/securing-mcp-agent-tools/): allowlists, permission scoping, and prompt injection defense for MCP and agent tools.
 - [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): implementation stack index.
+- [Glossary: Prompt Anatomy Terms for Teams](https://www.promptanatomy.blog/articles/prompt-anatomy-glossary/): shared vocabulary for MCP, RAG tiers, CLEAR, context rot, and registry terms.
 - [What Is Context Architecture?](https://www.promptanatomy.blog/articles/what-is-context-architecture/): context spec, layers, and prompt assembly order.
 - [The Prompt Anatomy Ecosystem Map](https://www.promptanatomy.blog/articles/prompt-anatomy-ecosystem-map/): how blog, training app, and library fit together.
 

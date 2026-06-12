@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-05-24
+date: 2026-06-05
 hero_image: images/articles/ai-procurement-freeze/hero.png
 hero_caption: "Procurement freeze board: tool inventory, decision stages, and 90-day governance gates."
 key_takeaway: A temporary buying freeze helps leaders convert AI tool sprawl into one governed decision-stage operating model.
@@ -16,14 +16,14 @@ tags:
   - governance
   - implementation
   - tooling
-title: "The AI Procurement Freeze: A 90-Day Playbook for Leaders"
+title: "The AI Procurement Freeze"
 ---
 
 Many leadership teams have the same AI problem and describe it differently: innovation chaos, pilot fatigue, budget leakage, procurement backlog. Underneath, it is usually tool sprawl without a decision-stage model. New products keep entering, few get retired, and nobody can explain which workflow each tool owns.
 
 A 90-day procurement freeze is not anti-innovation. It is a reset that creates operating clarity before more spend. The goal is to pause net-new buying long enough to map existing tools to business workflows, governance controls, and measurable outcomes.
 
-If your organization is already seeing early warning signs, compare with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/). If teams argue that "more tools equals more progress," align on [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/) before day 1.
+If your organization is already seeing early warning signs, compare with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/). If teams argue that "more tools equals more progress," align on [Your Company Does Not Need More AI Tools](/articles/your-company-does-not-need-more-ai-tools/) before day 1. For the stack index and role-based paths, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).
 
 ## What the freeze is (and is not)
 
@@ -55,6 +55,17 @@ Before you can buy well, classify what each tool actually does:
 4. **Control stage** - logs, approvals, policy enforcement, and rollback.
 
 Most sprawl happens when multiple tools compete in draft stage while review/control stages remain underfunded.
+
+## 90-day timeline at a glance
+
+| Phase | Days | Focus | Key deliverable |
+|-------|------|-------|-----------------|
+| Inventory | 1–15 | Freeze net-new buys; map estate | Tool sheet with stage + owner |
+| Rationalize | 16–45 | Retire overlap; bake-offs | Deprecation list with migration owners |
+| Governance | 46–75 | Approval templates; logging | Stage-based procurement workflow |
+| Restart | 76–90 | Controlled reopen | Budget envelopes + sunset on every pilot |
+
+Pair rationalization with [Choosing Workflow Automation for AI Pipelines](/articles/choosing-workflow-automation-ai-pipelines/) when automation platforms overlap, and with [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/) when sponsors ask for proof before reopening spend.
 
 ## 90-day playbook
 

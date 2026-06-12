@@ -29,6 +29,20 @@ import { buildSecurityControls } from './security-controls.mjs';
 import { buildObservabilityTrace } from './observability-trace.mjs';
 import { buildGovernanceRaciWorksheet } from './governance-raci-worksheet.mjs';
 import { buildPromptRegistryBlueprint } from './prompt-registry-blueprint.mjs';
+import { buildWorkflowCanvas } from './workflow-canvas.mjs';
+import { buildFrameworkChooser } from './framework-chooser.mjs';
+import { buildProcurementTimeline } from './procurement-timeline.mjs';
+import { buildImplementationStack } from './implementation-stack.mjs';
+import { buildOperatingCadence } from './operating-cadence.mjs';
+import { buildWorkflowRoi } from './workflow-roi.mjs';
+import { buildAgentOrchestrator } from './agent-orchestrator.mjs';
+import { buildEvalHooksWorksheet } from './eval-hooks-worksheet.mjs';
+import { buildPromptRegressionWeek } from './prompt-regression-week.mjs';
+import { buildClearScorecardWorksheet } from './clear-scorecard-worksheet.mjs';
+import { buildTeamRitualsWorksheet } from './team-rituals-worksheet.mjs';
+import { buildRiskForumWorksheet } from './risk-forum-worksheet.mjs';
+import { buildBusinessOutcomesFlow } from './business-outcomes-flow.mjs';
+import { buildMultiAgentHandoffWorksheet } from './multi-agent-handoff-worksheet.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -57,6 +71,20 @@ export const TEMPLATES = {
   'checklist-worksheet': buildChecklistWorksheet,
   'security-controls': buildSecurityControls,
   'observability-trace': buildObservabilityTrace,
+  'workflow-canvas': buildWorkflowCanvas,
+  'framework-chooser': buildFrameworkChooser,
+  'procurement-timeline': buildProcurementTimeline,
+  'implementation-stack': buildImplementationStack,
+  'operating-cadence': buildOperatingCadence,
+  'workflow-roi': buildWorkflowRoi,
+  'agent-orchestrator': buildAgentOrchestrator,
+  'eval-hooks-worksheet': buildEvalHooksWorksheet,
+  'prompt-regression-week': buildPromptRegressionWeek,
+  'clear-scorecard-worksheet': buildClearScorecardWorksheet,
+  'team-rituals-worksheet': buildTeamRitualsWorksheet,
+  'risk-forum-worksheet': buildRiskForumWorksheet,
+  'business-outcomes-flow': buildBusinessOutcomesFlow,
+  'multi-agent-handoff-worksheet': buildMultiAgentHandoffWorksheet,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

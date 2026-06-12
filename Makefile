@@ -1,4 +1,4 @@
-.PHONY: validate validate-theme validate-brand validate-satori audit-content build serve clean sync-images brand-assets analytics satori-images build-css
+.PHONY: validate validate-theme validate-brand validate-satori validate-satori-quality validate-llms-citations audit-content build serve clean sync-images brand-assets analytics satori-images build-css
 
 ifeq ($(OS),Windows_NT)
   VENV_PY := .venv/Scripts/python.exe
@@ -36,7 +36,15 @@ validate-satori:
 validate-brand:
 	$(PYTHON) scripts/validate_brand_sync.py
 
-validate: validate-theme validate-brand validate-content
+.validate: validate-theme validate-brand validate-content validate-satori-quality validate-satori validate-llms-citations
+
+validate: validate-theme validate-brand validate-content validate-satori-quality validate-satori validate-llms-citations
+
+validate-llms-citations:
+	$(PYTHON) scripts/sync_llms_citations.py --check
+
+validate-satori-quality:
+	$(PYTHON) scripts/validate_satori_quality.py
 
 validate-content:
 	$(PYTHON) scripts/validate_content.py
@@ -45,7 +53,7 @@ audit-content:
 	$(PYTHON) scripts/audit_content_inventory.py --markdown
 
 # Sync heroes before validate-content — content/images/ is gitignored (generated at build).
-build: satori-images validate-satori sync-images brand-assets analytics build-css validate-theme validate-brand validate-content
+build: satori-images validate-satori sync-images brand-assets analytics build-css validate-theme validate-brand validate-content validate-satori-quality
 	$(PYTHON) -m pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py
@@ -53,7 +61,7 @@ build: satori-images validate-satori sync-images brand-assets analytics build-cs
 	$(PYTHON) scripts/validate_a11y_landmarks.py
 	$(PYTHON) scripts/audit_image_weights.py --warn-only
 
-build-dev: satori-images validate-satori sync-images brand-assets build-css validate-theme validate-brand validate-content
+build-dev: satori-images validate-satori sync-images brand-assets build-css validate-theme validate-brand validate-content validate-satori-quality
 	$(PYTHON) -m pelican content
 	$(PYTHON) scripts/generate_sitemap.py
 	$(PYTHON) scripts/verify_build_assets.py

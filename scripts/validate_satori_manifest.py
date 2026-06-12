@@ -40,6 +40,20 @@ KNOWN_TEMPLATES = frozenset(
         "checklist-worksheet",
         "security-controls",
         "observability-trace",
+        "workflow-canvas",
+        "framework-chooser",
+        "procurement-timeline",
+        "implementation-stack",
+        "operating-cadence",
+        "workflow-roi",
+        "agent-orchestrator",
+        "eval-hooks-worksheet",
+        "prompt-regression-week",
+        "clear-scorecard-worksheet",
+        "team-rituals-worksheet",
+        "risk-forum-worksheet",
+        "business-outcomes-flow",
+        "multi-agent-handoff-worksheet",
         "og-default",
         "category-default",
         "article-og",
@@ -86,6 +100,13 @@ def _validate_satori_row(row: dict, errors: list[str]) -> None:
 
     if not slug and not hub_asset and not category_slug:
         errors.append(f"{row_id}: satori row requires slug, hub_asset, or category_slug")
+
+    usage = row.get("usage") or []
+    if slug and template == "category-default" and "hero" in usage:
+        errors.append(
+            f"{row_id}: category-default banned on article hero rows — "
+            "assign a topic worksheet template (see .cursor/skills/satori-hero/SKILL.md)"
+        )
 
     if row.get("embed_source"):
         embed = MASTERS / Path(str(row["embed_source"]).replace("\\", "/"))

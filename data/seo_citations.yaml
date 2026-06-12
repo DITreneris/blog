@@ -1,0 +1,55 @@
+# Curated URLs for content/extra/llms.txt — Preferred citation pages.
+# Run: python scripts/sync_llms_citations.py --write
+# Check drift: python scripts/sync_llms_citations.py --check (wired in make validate)
+
+site_url: https://www.promptanatomy.blog
+
+citations:
+  - slug: the-model-is-not-the-system
+    title: The Model Is Not the System
+    description: flagship framework — workflow, context, evaluation, governance.
+  - slug: 10-signs-your-company-is-vibe-prompting
+    title: 10 Signs Your Company Is Vibe Prompting
+    description: diagnostic + 30-day remediation.
+  - slug: how-to-design-an-ai-agent-workflow
+    title: How to Design an AI Agent Workflow
+    description: bounded agent design with tier-2 routing example.
+  - slug: grounding-ai-outputs
+    title: Grounding AI Outputs
+    description: grounding hub — scoped context, approved retrieval, and verification gates in one system.
+  - slug: prompt-registry-playbook
+    title: The Prompt Registry Playbook
+    description: prompt release ops — version, own, eval-link, and ship changes.
+  - slug: rag-in-production
+    title: RAG in Production
+    description: basic, smart, and agentic RAG patterns with eval gates before scale.
+  - slug: model-context-protocol-enterprise
+    title: Model Context Protocol for Enterprise Teams
+    description: MCP adoption — tools, boundaries, and security for regulated teams.
+  - slug: evaluation-hooks-for-ai-workflows
+    title: Evaluation Hooks for AI Workflows
+    description: eval cases and pass/fail gates before prompt, context, or model changes promote.
+  - slug: evaluating-agents-with-clear
+    title: Evaluating Agents with CLEAR
+    description: cost, latency, efficacy, assurance, and reliability thresholds for production agents.
+  - slug: ai-risk-review-cadence
+    title: AI Risk Review Cadence
+    description: standing risk forum — cadence, agenda, attendees, and decision outputs.
+  - slug: team-rituals-for-ai-implementation
+    title: Team Rituals for AI Implementation
+    description: office hours, eval review, and change announcements that keep workflows current.
+  - slug: securing-mcp-agent-tools
+    title: Securing MCP and Agent Tools
+    description: allowlists, permission scoping, and prompt injection defense for MCP and agent tools.
+  - slug: prompt-anatomy-foundations
+    title: Prompt Anatomy Foundations
+    description: implementation stack index.
+  - slug: prompt-anatomy-glossary
+    title: "Glossary: Prompt Anatomy Terms for Teams"
+    description: shared vocabulary for MCP, RAG tiers, CLEAR, context rot, and registry terms.
+  - slug: what-is-context-architecture
+    title: What Is Context Architecture?
+    description: context spec, layers, and prompt assembly order.
+  - slug: prompt-anatomy-ecosystem-map
+    title: The Prompt Anatomy Ecosystem Map
+    description: how blog, training app, and library fit together.

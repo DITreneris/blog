@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-05-27
+date: 2026-06-08
 hero_image: images/articles/choosing-workflow-automation-ai-pipelines/hero.png
 hero_caption: "Workflow automation decision matrix — fit, control, maintainability, and operating risk."
 key_takeaway: Choose automation tooling by workflow constraints and operating model, not by feature demos or marketplace volume.
@@ -16,14 +16,14 @@ tags:
   - implementation
   - governance
   - ai-agents
-title: "Choosing Workflow Automation for AI Pipelines (Without Tool Sprawl)"
+title: "Workflow Automation for AI Pipelines"
 ---
 
 Most AI pipeline failures are not model failures. They are workflow failures: brittle triggers, unclear ownership, unmonitored retries, and a second automation tool added to "fix" the first one.
 
 That is how tool sprawl starts. One team buys for speed, another buys for integrations, and six months later nobody can explain which workflow is authoritative.
 
-This playbook gives a simple way to choose workflow automation for AI pipelines without hype and without vendor theology. If your stack already feels fragmented, read [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/) and [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) first. They show why unstructured tooling creates performance drift even when teams are skilled.
+This playbook gives a simple way to choose workflow automation for AI pipelines without hype and without vendor theology. If your stack already feels fragmented, read [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/) and [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) first. They show why unstructured tooling creates performance drift even when teams are skilled. For the implementation stack index, see [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).
 
 ## Start with workflow constraints, not tool features
 

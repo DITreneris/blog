@@ -3,15 +3,15 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: nav
-date: 2026-05-19
+date: 2026-05-31
 hero_image: images/articles/prompt-anatomy-glossary/hero.png
 hero_caption: "Glossary nav — shared definitions for MCP, context rot, CLEAR, RAG tiers, and prompt registry terms."
 key_takeaway: Shared vocabulary speeds design reviews—link terms to canonical playbooks instead of redefining them in every meeting.
-reading_time: 5 min read
+reading_time: 6 min read
 slug: prompt-anatomy-glossary
 status: published
 summary: Shared definitions for core Prompt Anatomy terms, from MCP and RAG tiers to context rot, CLEAR, and prompt registry operations.
-title: "Glossary: Prompt Anatomy Terms for Teams"
+title: "Prompt Anatomy Glossary"
 tags:
   - context
   - context-engineering
@@ -96,6 +96,25 @@ Practical maturity levels for retrieval systems:
 3. **Agentic RAG** - orchestration across tools/steps with stronger guardrails.
 
 Read [Three Types of RAG](/articles/three-types-of-rag/) and [RAG in Production](/articles/rag-in-production/).
+
+### RAG tier comparison
+
+| Tier | Controls | Typical failure | Promote when |
+|------|----------|-----------------|--------------|
+| **Basic** | Allowlisted index, chunk IDs in logs | Wrong chunk, fluent error | Pass rate stable on held-out set |
+| **Smart** | Rerank, freshness rules, deny lists | Latency/cost without accuracy lift | Smart beats basic on same eval cases |
+| **Agentic** | Tool allow list, spend caps, human send | Loops, unaudited side effects | Forum approves after bounded pilot |
+
+**Eval gate types**  
+Release checkpoints that gate prompt, context, retrieval, or model changes:
+
+| Gate | When | Minimum evidence | Owner |
+|------|------|------------------|-------|
+| **Smoke** | Every change in CI | 10 held-out cases, 0 policy violations | Engineering |
+| **Pilot** | Before production traffic | 20+ cases, pass rate held 2 weeks | Process owner |
+| **Scale** | Before traffic or tier bump | Risk forum vote + rollback drill | Governance + sponsor |
+
+Details: [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) and [AI Workflow Eval Checklist](/articles/ai-workflow-eval-checklist/). Stack index: [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).
 
 **Risk review cadence**  
 A recurring forum where teams review incidents, drift signals, and release decisions. See [AI Risk Review Cadence](/articles/ai-risk-review-cadence/).

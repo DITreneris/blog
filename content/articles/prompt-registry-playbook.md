@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: pillar
-date: 2026-05-12
+date: 2026-05-24
 hero_image: images/articles/prompt-registry-playbook/hero.png
 hero_caption: "Prompt registry — versioned templates, environment pins, eval-linked releases, and named owners for production prompts."
 key_takeaway: A prompt registry is how teams version, own, and ship prompt changes in production—not a shared doc anyone can edit."
@@ -16,7 +16,7 @@ tags:
   - eval
   - governance
   - change-management
-title: "The Prompt Registry Playbook: Version, Own, and Ship Prompt Changes"
+title: "The Prompt Registry Playbook"
 faq:
   - question: What is a prompt registry?
     answer: A canonical store of prompt IDs, versions, environment pins, owners, and eval links—so production loads addressable templates, not wiki copy that drifts.

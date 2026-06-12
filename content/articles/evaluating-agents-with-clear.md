@@ -3,9 +3,9 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-18
+date: 2026-05-30
 hero_image: images/articles/evaluating-agents-with-clear/hero.png
-hero_caption: "CLEAR scorecard — cost, latency, efficacy, assurance, reliability measured at workflow level."
+hero_caption: "One row per workflow, updated weekly — weaknesses visible before scale requests reach the forum."
 key_takeaway: Agent quality is not one metric; CLEAR gives a practical, weekly operating scorecard that balances performance, risk, and stability.
 reading_time: 8 min read
 slug: evaluating-agents-with-clear
@@ -16,14 +16,14 @@ tags:
   - ai-agents
   - governance
   - implementation
-title: "Evaluating Agents with CLEAR: Cost, Latency, Efficacy, Assurance, Reliability"
+title: "Evaluating Agents with CLEAR"
 ---
 
 Most teams evaluate agents with one number because one number is easy to present. Usually it is accuracy, or cost per run, or "users like it." In production, that shortcut fails. An agent can be cheap and unsafe, fast and wrong, accurate and too fragile to survive traffic spikes.
 
 CLEAR is a practical way to score an agent as an operating system, not a demo artifact. It stands for **Cost, Latency, Efficacy, Assurance, and Reliability**. Together, these five dimensions make trade-offs explicit before incidents force them.
 
-If your team already uses workflow-level gates from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/), CLEAR gives you the scorecard to decide whether a workflow should stay in pilot, scale, or roll back.
+If your team already uses workflow-level gates from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/), CLEAR gives you the scorecard to decide whether a workflow should stay in pilot, scale, or roll back. Term definitions: [Glossary](/articles/prompt-anatomy-glossary/).
 
 ## Why single-metric evaluation breaks
 

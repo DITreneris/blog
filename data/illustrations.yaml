@@ -70,10 +70,11 @@ illustrations:
   # --- Basic (new posts) ---
   - id: basic-116
     generator: satori
-    template: category-default
+    template: implementation-stack
     source: Satori/prompt-anatomy-foundations.png
     slug: prompt-anatomy-foundations
     title: "Prompt Anatomy Foundations"
+    subtitle: "Implementation stack — outcome through workflow, context, model, evaluation, governance."
     category: Framework
     usage: [hero, og]
     status: mapped
@@ -96,10 +97,11 @@ illustrations:
 
   - id: basic-128
     generator: satori
-    template: governance-eval-gates
+    template: eval-hooks-worksheet
     source: Satori/evaluation-hooks-for-ai-workflows.png
     slug: evaluation-hooks-for-ai-workflows
     title: "Evaluation Hooks for AI Workflows"
+    subtitle: "Pass/fail gates before prompt, context, or model changes reach production."
     category: Framework
     usage: [hero, og]
     status: mapped
@@ -116,10 +118,11 @@ illustrations:
 
   - id: basic-133
     generator: satori
-    template: category-default
+    template: team-rituals-worksheet
     source: Satori/team-rituals-for-ai-implementation.png
     slug: team-rituals-for-ai-implementation
     title: "Team Rituals for AI Implementation"
+    subtitle: "Lightweight recurring forums — office hours, eval review, and change announcements."
     category: Implementation Notes
     usage: [hero, og]
     status: mapped
@@ -145,7 +148,7 @@ illustrations:
     template: prompt-registry-blueprint
     source: Satori/structured-prompt-system-blueprint.png
     slug: structured-prompt-system-blueprint
-    title: "Structured Prompt System Blueprint"
+    title: "Prompt Registry Blueprint"
     category: Framework
     usage: [hero, og]
     status: mapped
@@ -177,7 +180,7 @@ illustrations:
 
   - id: agents-gemini-handoff
     generator: satori
-    template: multi-agent-handoff
+    template: multi-agent-handoff-worksheet
     source: Satori/multi-agent-handoff-pattern.png
     slug: multi-agent-handoff-pattern
     title: "Multi-Agent Handoff Pattern"
@@ -223,10 +226,11 @@ illustrations:
 
   - id: gov-114
     generator: satori
-    template: category-default
+    template: risk-forum-worksheet
     source: Satori/ai-risk-review-cadence.png
     slug: ai-risk-review-cadence
     title: "AI Risk Review Cadence"
+    subtitle: "Standing risk forum — incidents, eval regressions, and workflow changes on a fixed agenda."
     category: AI Governance
     usage: [hero, og]
     status: mapped
@@ -279,7 +283,7 @@ illustrations:
   - id: memes-exposes
     source: Memes/AI_Exposes.png
     slug: what-your-ai-stack-reveals
-    title: "What Your AI Stack Reveals: A 15-Minute Performative-vs-Operational Audit"
+    title: "What Your AI Stack Reveals"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -290,7 +294,7 @@ illustrations:
     variant: myths
     source: Satori/context-window-myths.png
     slug: context-window-myths
-    title: "Context Window Myths That Inflate Cost and Hallucination Risk"
+    title: "Context Window Myths"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -305,12 +309,29 @@ illustrations:
     status: merged
 
   - id: promo-ecosystem
-    source: Ecosystem2.png
+    source: Ecosystem3.png
     slug: prompt-anatomy-ecosystem-map
     title: "The Prompt Anatomy Ecosystem Map"
     category: Implementation Notes
     usage: [hero, hub, og]
     hub_asset: ecosystem
+    status: mapped
+
+  - id: promo-anatomy-site
+    source: anatomy_site.png
+    og_source: anatomy_site.png
+    slug: prompt-anatomy-marketing-site-launch
+    title: "Prompt Anatomy Marketing Site Launch"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
+  - id: promo-telegram-game-stack
+    source: Basic/telegram-game-architecture.png
+    slug: how-to-build-a-telegram-game-stack
+    title: "Telegram Game Stack"
+    category: Implementation Notes
+    usage: [hero]
     status: mapped
 
   - id: promo-hero-1
@@ -323,7 +344,7 @@ illustrations:
 
   - id: promo-hero-2
     generator: satori
-    template: business-outcomes
+    template: business-outcomes-flow
     source: Satori/from-prompts-to-business-outcomes.png
     slug: from-prompts-to-business-outcomes
     title: "From Prompts to Business Outcomes"
@@ -345,7 +366,7 @@ illustrations:
     template: case-study-support
     source: Satori/case-study-vibe-prompting-to-structured-workflow.png
     slug: case-study-vibe-prompting-to-structured-workflow
-    title: "Case Study: From Vibe Prompting to a Structured Support Workflow"
+    title: "From Vibe Prompting to Structured Workflow"
     category: Case Studies
     usage: [hero, og]
     status: mapped
@@ -353,10 +374,11 @@ illustrations:
 
   - id: template-workflow-canvas
     generator: satori
-    template: category-default
+    template: workflow-canvas
     source: Satori/ai-workflow-canvas-template.png
     slug: ai-workflow-canvas-template
-    title: "AI Workflow Canvas (Template)"
+    title: "AI Workflow Canvas"
+    subtitle: "Copy-paste canvas — outcome, steps, context, gates before you build."
     category: Templates
     usage: [hero, og]
     status: mapped
@@ -401,7 +423,7 @@ illustrations:
     variant: hallucination
     source: Satori/why-ai-hallucinates.png
     slug: why-ai-hallucinates
-    title: "Why AI Hallucinates: The Grounded-vs-Guessing Split (Primer)"
+    title: "Why AI Hallucinates"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -423,7 +445,7 @@ illustrations:
     variant: tube
     source: Satori/tokens-and-context-window-limits.png
     slug: tokens-and-context-window-limits
-    title: "Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps"
+    title: "Context Window Limits"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -434,7 +456,7 @@ illustrations:
     variant: gauge
     source: Satori/tokens-as-fuel-for-ai-output.png
     slug: tokens-as-fuel-for-ai-output
-    title: "Tokens as Fuel: Why Full Context Windows Still Produce Empty Outputs"
+    title: "Tokens as Fuel for AI Output"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -444,7 +466,7 @@ illustrations:
     template: memory-tiers
     source: Satori/three-types-of-ai-memory-short.png
     slug: three-types-of-ai-memory-short
-    title: "Three Types of AI Memory (And How They Map to Production Design)"
+    title: "Three Types of AI Memory"
     category: Opinion
     usage: [hero, og]
     status: mapped
@@ -456,7 +478,7 @@ illustrations:
     source: Satori/prompt-registry-playbook.png
     slug: prompt-registry-playbook
     satori_title: "The Prompt Registry Playbook"
-    title: "The Prompt Registry Playbook: Version, Own, and Ship Prompt Changes"
+    title: "The Prompt Registry Playbook"
     category: Prompt Systems
     usage: [hero, og]
     status: mapped
@@ -467,7 +489,7 @@ illustrations:
     source: Satori/rag-in-production.png
     slug: rag-in-production
     satori_title: "RAG in Production"
-    title: "RAG in Production: Basic, Smart, and Agentic Patterns with Eval Gates"
+    title: "RAG in Production"
     category: Framework
     usage: [hero, og]
     status: mapped
@@ -477,7 +499,7 @@ illustrations:
     template: checklist-worksheet
     source: Satori/ai-workflow-eval-checklist.png
     slug: ai-workflow-eval-checklist
-    title: "AI Workflow Eval Checklist (Template)"
+    title: "AI Workflow Eval Checklist"
     category: Templates
     usage: [hero]
     status: mapped
@@ -487,8 +509,8 @@ illustrations:
     template: case-study-eval-scale
     source: Satori/northline-part-2-scaling-eval-coverage.png
     slug: northline-part-2-scaling-eval-coverage
-    satori_title: "Northline Part 2: Scaling Eval Coverage"
-    title: "Northline Part 2: Scaling Eval Coverage from 50% to 80% Queue Traffic"
+    satori_title: "Northline Part 2"
+    title: "Northline Part 2"
     category: Case Studies
     usage: [hero]
     status: mapped
@@ -499,7 +521,7 @@ illustrations:
     source: Satori/model-context-protocol-enterprise.png
     slug: model-context-protocol-enterprise
     satori_title: "MCP for Enterprise Teams"
-    title: "Model Context Protocol for Enterprise Teams: Tools, Boundaries, and Security"
+    title: "MCP for Enterprise Teams"
     category: AI Agents
     usage: [hero, og]
     status: mapped
@@ -509,7 +531,7 @@ illustrations:
     template: grounding-stack
     source: Satori/grounding-ai-outputs.png
     slug: grounding-ai-outputs
-    title: "Grounding AI Outputs: Context, Retrieval, and Verification in One System"
+    title: "Grounding AI Outputs"
     category: Framework
     usage: [hero]
     status: mapped
@@ -519,17 +541,18 @@ illustrations:
     template: context-rot
     source: Satori/context-rot-why-bigger-windows-make-agents-worse.png
     slug: context-rot-why-bigger-windows-make-agents-worse
-    title: "Context Rot: Why Bigger Windows Make Agents Worse"
+    title: "Context Rot in AI Agents"
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-ai-procurement-freeze
     generator: satori
-    template: category-default
+    template: procurement-timeline
     source: Satori/ai-procurement-freeze.png
     slug: ai-procurement-freeze
-    title: "The AI Procurement Freeze: A 90-Day Playbook for Leaders"
+    title: "The AI Procurement Freeze"
+    subtitle: "90-day freeze — inventory to controlled restart."
     category: Implementation Notes
     usage: [hero]
     status: mapped
@@ -540,9 +563,9 @@ illustrations:
     emphasis: security
     source: Satori/securing-mcp-agent-tools.png
     slug: securing-mcp-agent-tools
-    title: "Securing MCP and Agent Tools: Allowlists, Scoping, and Injection Defense"
+    title: "Securing MCP and Agent Tools"
     category: AI Governance
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-langgraph-vs-crewai
@@ -551,20 +574,21 @@ illustrations:
     source: Satori/langgraph-vs-crewai-production-guide.png
     slug: langgraph-vs-crewai-production-guide
     satori_title: "LangGraph vs CrewAI vs MS Agent Framework"
-    title: "LangGraph vs CrewAI vs Microsoft Agent Framework: A Production Selection Guide"
+    title: "LangGraph vs CrewAI vs MS Agent Framework"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-evaluating-agents-clear
     generator: satori
-    template: clear-scorecard
+    template: clear-scorecard-worksheet
     source: Satori/evaluating-agents-with-clear.png
     slug: evaluating-agents-with-clear
     satori_title: "Evaluating Agents with CLEAR"
-    title: "Evaluating Agents with CLEAR: Cost, Latency, Efficacy, Assurance, Reliability"
+    title: "Evaluating Agents with CLEAR"
+    subtitle: "Five dimensions, one decision row — not a single vanity metric."
     category: Framework
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-choosing-workflow-automation
@@ -572,39 +596,44 @@ illustrations:
     template: platform-comparison
     source: Satori/choosing-workflow-automation-ai-pipelines.png
     slug: choosing-workflow-automation-ai-pipelines
-    title: "Choosing Workflow Automation for AI Pipelines (Without Tool Sprawl)"
+    satori_title: "Workflow Automation for AI Pipelines"
+    title: "Workflow Automation for AI Pipelines"
+    subtitle: "Without tool sprawl — fit, control, maintainability, and operating risk."
     category: Implementation Notes
     usage: [hero]
     status: mapped
 
   - id: satori-agent-orchestrator
     generator: satori
-    template: observability-trace
+    template: agent-orchestrator
     source: Satori/agent-orchestrator-operating-model.png
     slug: agent-orchestrator-operating-model
-    title: "The Agent Orchestrator Role: Operating Model for a Digital Workforce"
+    satori_title: "Agent Orchestrator Operating Model"
+    title: "Agent Orchestrator Operating Model"
+    subtitle: "Route work, manage handoffs, check quality, and keep an audit trail across AI agents."
     category: Implementation Notes
     usage: [hero]
     status: mapped
 
   - id: satori-prompt-frameworks-race-tag
     generator: satori
-    template: category-default
+    template: framework-chooser
     source: Satori/prompt-frameworks-race-tag-business.png
     slug: prompt-frameworks-race-tag-business
-    title: "Prompt Frameworks for Business: RACE, TAG, and When to Use Each"
+    title: "Prompt Frameworks for Business"
     category: Prompt Systems
     usage: [hero]
     status: mapped
 
   - id: satori-prompt-regression-testing
     generator: satori
-    template: governance-eval-gates
+    template: prompt-regression-week
     source: Satori/prompt-regression-testing-week.png
     slug: prompt-regression-testing-week
-    title: "Prompt Regression Testing: Build an Eval Set in a Week"
+    title: "Prompt Regression Testing"
+    subtitle: "Build a regression set in five working days — one workflow, frozen cases, release gate."
     category: Prompt Systems
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-multi-agent-observability
@@ -612,19 +641,30 @@ illustrations:
     template: observability-trace
     source: Satori/multi-agent-observability.png
     slug: multi-agent-observability
-    title: "Multi-Agent Observability: Logs, Handoffs, and Failure Modes"
+    title: "Multi-Agent Observability"
     category: AI Agents
-    usage: [hero]
+    usage: [hero, og]
     status: mapped
 
   - id: satori-measuring-ai-workflow-roi
     generator: satori
-    template: business-outcomes
+    template: workflow-roi
     source: Satori/measuring-ai-workflow-roi.png
     slug: measuring-ai-workflow-roi
-    title: "Measuring AI Workflow ROI: Pass Rate, Time Saved, and Incident Cost"
+    satori_title: "Measure AI Workflow ROI"
+    title: "Measuring AI Workflow ROI"
+    subtitle: "Track pass rate, time saved, and incident cost before scaling automation."
     category: Implementation Notes
-    usage: [hero]
+    usage: [hero, og]
+    status: mapped
+
+  - id: play-corporate-ladder-og
+    source: Corporate_Ladder_og.png
+    og_source: Corporate_Ladder_og.png
+    slug: corporate-ladder-soft-launch
+    title: "Corporate Ladder Soft Launch"
+    category: Implementation Notes
+    usage: [hero, og]
     status: mapped
 
   - id: satori-governance-raci-worksheet
@@ -632,7 +672,7 @@ illustrations:
     template: governance-raci-worksheet
     source: Satori/governance-raci-worksheet.png
     slug: governance-raci-worksheet
-    title: "Governance RACI Worksheet (Template)"
+    title: "Governance RACI Worksheet"
     category: Templates
     usage: [hero]
     status: mapped
@@ -643,7 +683,7 @@ illustrations:
     source: Satori/prompt-anatomy-glossary.png
     slug: prompt-anatomy-glossary
     satori_title: "Prompt Anatomy Glossary"
-    title: "Glossary: Prompt Anatomy Terms for Teams"
+    title: "Prompt Anatomy Glossary"
     category: Framework
     usage: [hero]
     status: mapped
@@ -664,7 +704,7 @@ illustrations:
     vertical: finance
     source: Satori/finance-workflow-case-study-controlled-draft-and-review.png
     slug: finance-workflow-case-study-controlled-draft-and-review
-    title: "Finance Workflow Case Study: Controlled Draft-and-Review"
+    title: "Finance Workflow Case Study"
     category: Case Studies
     usage: [hero]
     status: mapped
@@ -674,7 +714,7 @@ illustrations:
     template: checklist-worksheet
     source: Satori/ai-change-log-template-prompt-context-and-model-updates.png
     slug: ai-change-log-template-prompt-context-and-model-updates
-    title: "AI Change Log Template: Prompt, Context, and Model Updates"
+    title: "AI Change Log Template"
     category: Templates
     usage: [hero]
     status: mapped

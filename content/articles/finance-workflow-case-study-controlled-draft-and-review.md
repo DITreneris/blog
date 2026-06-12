@@ -18,7 +18,7 @@ tags:
 - northline
 - governance
 - change-management
-title: 'Case Study: Finance Workflow — Controlled Draft-and-Review'
+title: "Finance Workflow Case Study"
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations.*

@@ -36,6 +36,10 @@ PILLAR_SLUGS = frozenset(
         "10-signs-your-company-is-vibe-prompting",
         "how-to-design-an-ai-agent-workflow",
         "what-is-context-architecture",
+        "prompt-registry-playbook",
+        "rag-in-production",
+        "grounding-ai-outputs",
+        "model-context-protocol-enterprise",
     }
 )
 THIN_OPINION_WORDS = 600

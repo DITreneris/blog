@@ -33,6 +33,7 @@ categories:
     description: "Practical diagnostics and field notes from real deployments."
     reading_path:
       - slug: prompt-anatomy-ecosystem-map
+      - slug: prompt-anatomy-marketing-site-launch
       - slug: 10-signs-your-company-is-vibe-prompting
       - slug: team-rituals-for-ai-implementation
       - slug: handoff-rules-between-humans-and-ai
@@ -41,6 +42,8 @@ categories:
       - slug: measuring-ai-workflow-roi
       - slug: agent-orchestrator-operating-model
       - slug: choosing-workflow-automation-ai-pipelines
+      - slug: how-to-build-a-telegram-game-stack
+      - slug: corporate-ladder-soft-launch
   - title: "Case Studies"
     slug: "case-studies"
     description: "How teams moved from experiments to controlled AI systems."

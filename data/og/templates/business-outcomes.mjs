@@ -1,7 +1,7 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
 import { typography, px } from '../typography.mjs';
-import { articleHeroFrame, panelBox } from './base.mjs';
+import { articleHeroFrame, panelBox, flowArrowRight } from './base.mjs';
 
 const d = typography.hero.diagram;
 
@@ -64,21 +64,7 @@ export function buildBusinessOutcomes(props) {
         { padding: '24px 20px' }
       );
       if (i === 0) return [box];
-      return [
-        h(
-          'div',
-          {
-            style: {
-              display: 'flex',
-              color: brand.colors.brandAccent,
-              fontSize: px(d.metric),
-              margin: '0 12px',
-            },
-          },
-          '→'
-        ),
-        box,
-      ];
+      return [flowArrowRight(d.metric), box];
     })
   );
 

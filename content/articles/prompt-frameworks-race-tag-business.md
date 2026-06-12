@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: playbook
-date: 2026-05-13
+date: 2026-05-25
 hero_image: images/articles/prompt-frameworks-race-tag-business/hero.png
 hero_caption: "Framework chooser — RACE and TAG mapped to task type, risk, and operating intent."
 key_takeaway: RACE and TAG are both useful; choose by workflow purpose and control needs, then standardize usage in your registry.
@@ -16,7 +16,7 @@ tags:
   - implementation
   - governance
   - workflow-design
-title: "Prompt Frameworks for Business: RACE, TAG, and When to Use Each"
+title: "Prompt Frameworks for Business"
 ---
 
 Teams often ask which prompt framework is "best." That question usually creates debate, not better workflows.
@@ -136,6 +136,32 @@ Framework debates become productivity drains when teams optimize for loyalty ins
 ## Practical implementation checklist
 
 Implementation should take two weeks per recurring workflow, not a quarter of framework training slides. Classify risk, pick default framework or split pattern, write one canonical registry template, define eval criteria aligned to framework purpose, then review with real failure examples—not synthetic demos. The checklist below keeps framework choice tied to outcomes. Northline runs this checklist when onboarding a new business unit to the shared prompt registry.
+
+### Registry metadata example
+
+Tag framework choice in registry rows so eval and regression target the right failure modes:
+
+```yaml
+prompt_id: support-reply-v3/task-framing
+framework: RACE
+workflow_id: support-reply-v3
+owner: support-ops@northline.example
+version: 1.4.2
+eval_set_id: support-reply-eval-25
+min_pass_rate: 0.92
+```
+
+```yaml
+prompt_id: renewal-nudge-v1/draft
+framework: TAG
+workflow_id: renewal-nudge-v1
+owner: marketing-ops@northline.example
+version: 1.0.3
+eval_set_id: renewal-tone-eval-15
+min_pass_rate: 0.88
+```
+
+The `framework` field is not decorative—it tells reviewers which criteria to apply in regression tests.
 
 For each workflow:
 

@@ -79,6 +79,8 @@ PUBLICATION_ORDER: list[str] = [
     "ai-change-log-template-prompt-context-and-model-updates",
     "finance-workflow-case-study-controlled-draft-and-review",
     "ai-tender-response-pipeline",
+    "how-to-build-a-telegram-game-stack",
+    "corporate-ladder-soft-launch",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -102,10 +104,12 @@ WAVE2_INTERVAL_DAYS = [1]
 FIXED_DATES: dict[str, date] = {
     "finance-workflow-case-study-controlled-draft-and-review": date(2026, 4, 2),
     "ai-change-log-template-prompt-context-and-model-updates": date(2026, 4, 24),
+    "how-to-build-a-telegram-game-stack": date(2026, 6, 12),
+    "corporate-ladder-soft-launch": date(2026, 6, 15),
 }
 
-# Latest allowed publish date (catalog frozen 2026-06-06 — no posts dated Jun/Aug 2026)
-PUBLISH_CUTOFF = date(2026, 5, 31)
+# Latest allowed publish date (Corporate Ladder soft launch 2026-06-15)
+PUBLISH_CUTOFF = date(2026, 6, 15)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

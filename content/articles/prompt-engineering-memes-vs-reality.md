@@ -3,8 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-04-19
-modified: 2026-06-07
+date: 2026-05-01
 hero_caption: ROI meeting meme — employee asks for a raise while the dashboard shows
   AI at $20/month with 100% productivity; use the reply template before Slack becomes
   policy.

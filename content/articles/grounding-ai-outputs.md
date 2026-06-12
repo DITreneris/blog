@@ -3,11 +3,11 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: pillar
-date: 2026-05-15
+date: 2026-05-27
 hero_image: images/articles/grounding-ai-outputs/hero.png
 hero_caption: "Grounding stack in one flow: scoped context, approved retrieval, and verification gates before external send."
 key_takeaway: Reliable AI output comes from one operating system that combines context architecture, retrieval boundaries, and verification gates.
-reading_time: 5 min read
+reading_time: 7 min read
 slug: grounding-ai-outputs
 status: published
 summary: A practical framework for grounding AI outputs by combining context architecture, retrieval policy, and evaluation checks in one production system.
@@ -16,7 +16,7 @@ tags:
   - eval
   - rag
   - framework
-title: "Grounding AI Outputs: Context, Retrieval, and Verification in One System"
+title: "Grounding AI Outputs"
 faq:
   - question: Is grounding just adding RAG?
     answer: No. Retrieval helps, but grounding also needs scoped context, policy boundaries, and verification gates that block unsafe or unsupported claims.
@@ -24,6 +24,8 @@ faq:
     answer: No. Better models may reduce error frequency, but they still generate plausible language. Verification is a workflow responsibility, not a model feature.
   - question: What should we implement first?
     answer: Start with context scoping and one held-out eval set. Then add retrieval controls and release gates so quality does not drift during updates.
+  - question: How do I know which grounding maturity level we are at?
+    answer: Use the maturity table in this article—scope-only, RAG-only, verify-only, or full stack—and promote only when the next layer has owners and eval evidence.
 ---
 
 Most teams treat hallucination, context overload, and retrieval errors as separate problems. In production, they are one system problem: the model is asked to answer without a controlled evidence path. If you want fewer confident mistakes, stop tuning prompts in isolation and build a grounding system that connects context architecture, retrieval policy, and verification.
@@ -40,6 +42,19 @@ Grounding is not one component. It is a sequence:
 4. **Log versions and decisions** so teams can replay incidents.
 
 When any layer is missing, failure shifts to another layer. A larger context window without retrieval policy introduces noise. Better retrieval without verification increases fluent but non-compliant outputs. Verification without version logging catches issues but does not make debugging fast.
+
+## Grounding maturity levels
+
+Teams rarely jump to a full stack on day one. Use this table to name your current level and the next promotion criteria—same discipline as RAG tier promotion in [RAG in Production](/articles/rag-in-production/).
+
+| Level | What exists | Typical symptom | Promote when |
+|-------|-------------|-----------------|--------------|
+| **Scope-only** | Allow/deny context fields, policy pack | Model improvises facts outside pack | Held-out eval on scoped runs |
+| **RAG-only** | Retrieval wired, weak freshness/deny rules | “Grounded” answers from stale chunks | Citation + freshness gates pass |
+| **Verify-only** | Checker rules, no retrieval governance | Blocks some errors; misses source drift | Retrieval policy documented |
+| **Full stack** | Scope + governed retrieval + verify + logs | Residual tone/preferences, not policy misses | Pass rate stable; overrides categorized |
+
+Northline stalled at **RAG-only** for six weeks: retrieval worked, but archived policy text entered drafts until freshness windows and deny lists shipped. Promotion to **full stack** required a registry pin and forty-case eval—not a model upgrade.
 
 ## Layer 1: Context architecture (what the model may see)
 
@@ -87,6 +102,8 @@ The fix was not a new model. They implemented the full grounding stack:
 
 After six weeks, override reasons shifted from "incorrect policy language" to "tone preferences," which is an acceptable maturity transition.
 
+A second Northline lesson: grounding failures clustered on **long tickets** where context rot drowned checker instructions—see [Context Rot: Why Bigger Windows Make Agents Worse](/articles/context-rot-why-bigger-windows-make-agents-worse/). Splitting research, draft, and checker into separate calls with token budgets per step (documented on the [workflow canvas](/articles/ai-workflow-canvas-template/)) raised pass rate without changing the model. Grounding is as much **step design** as retrieval quality.
+
 ## Failure modes this hub is designed to prevent
 
 **Model swap as risk strategy.** A better model can improve average quality while leaving high-severity failure modes unchanged.
@@ -113,6 +130,8 @@ If your org is early-stage, implement in this order:
 6. Gate promotions through registry and replay checks.
 
 Do not scale traffic until these six steps exist in one operating flow.
+
+Promotion between maturity levels should follow the same evidence bar as RAG tier changes: held-out eval pass rate, zero policy violations on the set, and a named owner who can explain what changed in the changelog. Skipping a level because a vendor demo looked good recreates the same incidents with better typography.
 
 ## What to do Monday
 

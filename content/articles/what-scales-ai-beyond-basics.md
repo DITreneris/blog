@@ -4,7 +4,6 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2024-10-02
-modified: 2026-06-07
 hero_caption: Five system capabilities — context, auditable reasoning, tools, memory
   routing, and governed agents — each with promotion evidence before production.
 hero_image: images/articles/what-scales-ai-beyond-basics/hero.png

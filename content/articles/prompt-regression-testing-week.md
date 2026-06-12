@@ -3,9 +3,9 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: playbook
-date: 2026-05-14
+date: 2026-05-26
 hero_image: images/articles/prompt-regression-testing-week/hero.png
-hero_caption: "One-week prompt regression plan — case collection, rubric setup, baseline, and release gate."
+hero_caption: "Northline built 30 cases in five days and blocked a wording tweak when policy pass dropped below gate."
 key_takeaway: You can build a useful prompt regression set in one week if you scope one workflow, freeze cases, and tie results to release decisions.
 reading_time: 4 min read
 slug: prompt-regression-testing-week
@@ -16,7 +16,7 @@ tags:
   - eval
   - change-management
   - implementation
-title: "Prompt Regression Testing: Build an Eval Set in a Week"
+title: "Prompt Regression Testing"
 ---
 
 Most prompt quality regressions are predictable. A template gets "slightly improved," a checker rule changes, a retrieval source is updated, and output quality drifts before anyone notices.

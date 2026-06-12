@@ -3,9 +3,9 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-05-26
+date: 2026-06-07
 hero_image: images/articles/agent-orchestrator-operating-model/hero.png
-hero_caption: "Agent orchestrator operating model — ownership, escalation, release gates, and run governance."
+hero_caption: "Route work, manage handoffs, check quality, and keep an audit trail across AI agents."
 key_takeaway: The orchestrator role is not a prompt writer; it is an operating function that keeps multi-agent workflows bounded, observable, and accountable.
 reading_time: 7 min read
 slug: agent-orchestrator-operating-model
@@ -16,7 +16,7 @@ tags:
   - workflow-automation
   - governance
   - operating-model
-title: "The Agent Orchestrator Role: Operating Model for a Digital Workforce"
+title: "Agent Orchestrator Operating Model"
 ---
 
 Many teams deploy multiple agents and discover the same problem: each workflow works "well enough" in isolation, but together they create handoff failures, unclear ownership, and rising incident noise.

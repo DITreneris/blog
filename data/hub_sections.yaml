@@ -80,13 +80,15 @@ latest:
   show_more_label: "Show more articles"
 
 newsletter:
-  title: "Stay updated"
-  description: "Follow new frameworks and implementation notes on X or LinkedIn—no signup form on the blog yet."
-  disclaimer: "X for release notes and threads; LinkedIn for occasional longer updates."
-  x_label: "Follow on X"
+  title: "Follow the work as it ships"
+  description: "Playbooks, eval checklists, and implementation notes—shared when they publish."
+  x_label: "X · threads & release notes"
   x_href: "https://x.com/promptanatom"
-  linkedin_label: "Follow on LinkedIn"
+  linkedin_label: "LinkedIn · playbooks & field notes"
   linkedin_href: "https://www.linkedin.com/in/staniulis"
+  feed_note: "Prefer RSS?"
+  feed_label: "Atom feed"
+  feed_href: "/feeds/all.atom.xml"
 
 article_cta:
   title: "Move from pilot to program"
