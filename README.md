@@ -4,6 +4,8 @@ Premium knowledge hub for [promptanatomy.blog](https://promptanatomy.blog), buil
 
 **Repository:** [github.com/DITreneris/blog](https://github.com/DITreneris/blog)
 
+Internal development docs and agent config are maintained locally, not in this repository.
+
 ## Quick start
 
 ```bash
@@ -22,7 +24,6 @@ Open http://localhost:8000
 | Command | Description |
 |---------|-------------|
 | `make validate` | Theme token lint + article/page frontmatter |
-| `make audit-content` | Editorial corpus report → `docs/reports/editorial-status-*.md` |
 | `make build` | Production build (`publishconf.py`) |
 | `make build-dev` | Local build (`pelicanconf.py`) |
 | `make serve` | Build and serve `output/` on port 8000 |
@@ -31,22 +32,11 @@ Without `make` (Windows): `python scripts/validate_theme_tokens.py`, `python scr
 
 ## Deploy
 
-GitHub → Vercel. See [docs/DEPLOY.md](docs/DEPLOY.md).
+Push to `main` → Vercel builds automatically (`vercel.json`, `scripts/vercel_build.sh`).
 
-Production URL is set in `publishconf.py`: `https://promptanatomy.blog`
+Production URL: `https://promptanatomy.blog` (set in `publishconf.py`).
 
-## Docs
-
-- [Architecture](docs/ARCHITECTURE.md)
-- [Agent system](docs/AGENT_SYSTEM.md)
-- [Definition of Done (system)](docs/definition_of_done_system.md)
-- [Editorial plan](docs/EDITORIAL_PLAN.md)
-- [Content standards](docs/CONTENT_STANDARDS.md)
-- [Design system](docs/DESIGN_SYSTEM.md) (v2.0)
-- [Visual QA checklist](docs/VISUAL_QA.md)
-- [Component map](docs/COMPONENT_MAP.md)
-- [Agent instructions](AGENTS.md)
-- [Changelog](CHANGELOG.md)
+GitHub Actions runs `make build` on push and pull requests; Lighthouse runs on pull requests.
 
 After `make serve`, open `/design-system/` for a live component reference.
 
