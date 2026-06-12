@@ -318,6 +318,7 @@ illustrations:
     status: mapped
 
   - id: promo-anatomy-site
+    manual: true
     source: anatomy_site.png
     og_source: anatomy_site.png
     slug: prompt-anatomy-marketing-site-launch
@@ -659,6 +660,7 @@ illustrations:
     status: mapped
 
   - id: play-corporate-ladder-og
+    manual: true
     source: Corporate_Ladder_og.png
     og_source: Corporate_Ladder_og.png
     slug: corporate-ladder-soft-launch

@@ -149,6 +149,31 @@ function ogSourceForRow(row) {
   return `Satori/${row.slug}-og.png`;
 }
 
+/** Operator hand art — never pass through Satori OG render. */
+function isManualOgRow(row) {
+  if (row.manual === true) return true;
+  const ogSrc = row.og_source;
+  if (ogSrc && !String(ogSrc).replace(/\\/g, '/').startsWith('Satori/')) {
+    return true;
+  }
+  const usage = row.usage || [];
+  if (!usage.includes('og') || row.generator === 'satori') return false;
+  const src = row.source;
+  if (
+    src &&
+    !String(src).replace(/\\/g, '/').startsWith('Satori/') &&
+    row.satori_og !== true
+  ) {
+    return true;
+  }
+  return false;
+}
+
+/** Legacy opt-in: non-Satori row that explicitly requests Satori OG output. */
+function isSatoriOgOptInRow(row) {
+  return row.satori_og === true && row.generator !== 'satori' && row.slug;
+}
+
 function relPath(dest) {
   return dest.replace(ROOT + '\\', '').replace(ROOT + '/', '');
 }
@@ -314,14 +339,12 @@ async function main() {
 
   const allRows = manifest.illustrations || [];
   let satoriRows = allRows.filter((r) => r.generator === 'satori');
-  let ogRows = allRows.filter(
-    (r) => (r.usage || []).includes('og') && r.slug && !r.generator
-  );
+  let satoriOgOptInRows = allRows.filter((r) => isSatoriOgOptInRow(r));
   let categoryOgRows = manifest.category_og || [];
 
   if (args.id || args.slug) {
     satoriRows = satoriRows.filter((r) => rowMatchesFilter(r, args));
-    ogRows = ogRows.filter((r) => rowMatchesFilter(r, args));
+    satoriOgOptInRows = satoriOgOptInRows.filter((r) => rowMatchesFilter(r, args));
     categoryOgRows = categoryOgRows.filter((r) => rowMatchesFilter(r, args));
   }
 
@@ -329,7 +352,7 @@ async function main() {
     ? satoriRows.filter((r) => r.hub_asset !== 'og').length
     : 0;
   const ogCount = runOg
-    ? ogRows.length +
+    ? satoriOgOptInRows.length +
       categoryOgRows.length +
       satoriRows.filter((r) => (r.usage || []).includes('og') && r.slug).length +
       satoriRows.filter((r) => r.hub_asset === 'og').length
@@ -360,7 +383,7 @@ async function main() {
       }
     }
 
-    for (const row of ogRows) {
+    for (const row of satoriOgOptInRows) {
       await renderOgRow(row, args.dryRun);
     }
 
