@@ -327,6 +327,36 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: promo-app-launch
+    manual: true
+    source: promptanatomy_app_launch.png
+    og_source: promptanatomy_app_launch.png
+    slug: shipping-prompt-anatomy
+    title: "Shipping Prompt Anatomy"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
+  - id: promo-cpb-launch
+    manual: true
+    source: cpb_online_og.png
+    og_source: cpb_online_og.png
+    slug: classroom-prompt-builder-launch
+    title: "Classroom Prompt Builder Launch"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
+  - id: promo-ceo-operations
+    manual: true
+    source: ceo_og.png
+    og_source: ceo_og.png
+    slug: weekly-ceo-brief-pattern
+    title: "The Weekly CEO Brief Pattern"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-telegram-game-stack
     source: Basic/telegram-game-architecture.png
     slug: how-to-build-a-telegram-game-stack
@@ -667,6 +697,15 @@ illustrations:
     title: "Corporate Ladder Soft Launch"
     category: Implementation Notes
     usage: [hero, og]
+    status: mapped
+
+  - id: agents-critique-v09
+    manual: true
+    source: repo_brain.png
+    slug: critique-agent-v09-audit-stats
+    title: "Critique Agent v0.9: Local Audit Stats"
+    category: Implementation Notes
+    usage: [hero]
     status: mapped
 
   - id: satori-governance-raci-worksheet

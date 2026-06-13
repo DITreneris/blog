@@ -11,10 +11,12 @@ from datetime import date, datetime
 from pathlib import Path
 
 import frontmatter
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output"
 ARTICLES = ROOT / "content" / "articles"
+PRIORITY_SLUGS_YAML = ROOT / "data" / "seo_priority_slugs.yaml"
 
 OG_IMAGE_RE = re.compile(
     r'<meta\s+(?:property="og:image"|name="twitter:image")\s+content="([^"]*)"',
@@ -124,6 +126,29 @@ def _check_sitemap(article_dates: dict[str, str]) -> list[str]:
     return errors
 
 
+def _load_priority_slugs() -> list[str]:
+    if not PRIORITY_SLUGS_YAML.is_file():
+        return []
+    data = yaml.safe_load(PRIORITY_SLUGS_YAML.read_text(encoding="utf-8")) or {}
+    return [str(s) for s in data.get("priority_slugs") or []]
+
+
+def _check_priority_slugs_in_sitemap(priority_slugs: list[str]) -> list[str]:
+    if not priority_slugs:
+        return []
+    sitemap = OUTPUT / "sitemap.xml"
+    if not sitemap.is_file():
+        return ["output/sitemap.xml missing (priority slug check skipped)"]
+
+    text = sitemap.read_text(encoding="utf-8")
+    errors: list[str] = []
+    for slug in priority_slugs:
+        needle = f"/articles/{slug}/"
+        if needle not in text:
+            errors.append(f"sitemap.xml missing priority published slug: {slug}")
+    return errors
+
+
 def main() -> int:
     if not OUTPUT.is_dir():
         print("output/ not found. Run pelican first.", file=sys.stderr)
@@ -153,6 +178,7 @@ def main() -> int:
         errors.extend(_check_canonical(sample_article))
 
     errors.extend(_check_sitemap(article_dates))
+    errors.extend(_check_priority_slugs_in_sitemap(_load_priority_slugs()))
 
     if errors:
         print("SEO output validation failed:", file=sys.stderr)

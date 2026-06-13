@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-03-29
+date: 2026-04-22
 hero_caption: Five levels of AI control — from tokens through RAG — shown as a ladder,
   not a product checklist.
 hero_image: images/articles/five-levels-of-ai-control/hero.png

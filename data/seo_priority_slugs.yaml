@@ -1,0 +1,19 @@
+# Published article slugs that must appear in output/sitemap.xml after every build.
+# Checked by scripts/validate_seo_output.py — keep list short (high crawl priority).
+
+priority_slugs:
+  - the-model-is-not-the-system
+  - what-is-context-architecture
+  - context-window-myths
+  - tokens-and-context-window-limits
+  - memory-types-for-ai-systems
+  - context-rot-why-bigger-windows-make-agents-worse
+  - ai-workflow-canvas-template
+  - prompt-engineering-vs-ai-workflow-engineering
+  - grounding-ai-outputs
+  - prompt-registry-playbook
+  - rag-in-production
+  - how-to-design-an-ai-agent-workflow
+  - 10-signs-your-company-is-vibe-prompting
+  - prompt-anatomy-foundations
+  - prompt-anatomy-glossary

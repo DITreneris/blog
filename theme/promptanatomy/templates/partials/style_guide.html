@@ -206,15 +206,13 @@
 
   <div class="container prose">
 
-    {{ section_heading('Prose sample', None, 'sg-prose-heading') }}
+    {{ section_heading('Prose sample', 'First paragraph uses lead styling; second uses default body.', 'sg-prose-heading') }}
+
+    <p>This opening paragraph uses `.prose > p:first-of-type` lead styling — slightly larger type on `--color-text-primary`.</p>
 
     <p>Body copy with a <a href="#">prose link</a> using --color-link.</p>
 
-    <p>Inline <code>code sample</code> and a block:</p>
-
-    <pre><code>def example():
-
-    return "structured"</code></pre>
+    <p>Inline <code>code sample</code> on the light surface.</p>
 
     <aside class="takeaway-box" aria-label="Key takeaway">
 
@@ -439,6 +437,136 @@
         <tr><td>Evaluation</td><td>Hooks before production handoff</td></tr>
       </tbody>
     </table>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-code-highlight-heading">
+
+  <div class="container prose">
+
+    {{ section_heading('Highlighted code block', 'CodeHilite wraps fences in div.highlight on a dark surface.', 'sg-code-highlight-heading') }}
+
+    <div class="highlight"><pre><span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;structured&quot;</span></pre></div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-toc-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Table of contents', 'Desktop: sticky sidebar with left rule. Mobile: collapsible details.', 'sg-toc-heading') }}
+
+    <nav class="toc" aria-label="Table of contents" style="max-width:16rem;border-left:1px solid var(--color-border);padding-left:var(--space-md);">
+      <p class="toc__title">On this page</p>
+      <ul>
+        <li><a class="toc__link--h2 is-active" href="#">Context layers</a></li>
+        <li><a class="toc__link--h3" href="#">Worked example</a></li>
+        <li><a class="toc__link--h2" href="#">Evaluation hooks</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-author-bio-heading">
+
+  <div class="container stack">
+
+    {{ section_heading('Author bio', 'Avatar when photo exists; no placeholder disc when missing.', 'sg-author-bio-heading') }}
+
+    <aside class="author-bio author-bio--no-avatar" aria-label="About the author">
+      <div>
+        <p><a class="author-bio__name-link" href="https://www.linkedin.com/in/staniulis" rel="noopener noreferrer me" target="_blank"><strong>Tomás Staniulis</strong></a> — Founder</p>
+        <p>Structured AI implementation for teams shipping under real operational constraints.</p>
+      </div>
+    </aside>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-template-band-heading">
+
+  <div class="container">
+
+    {{ section_heading('Template band', 'Elevated surface CTA on the homepage templates section.', 'sg-template-band-heading') }}
+
+    <div class="template-band">
+      {{ section_heading('Implementation templates', 'Use ready-made canvases, checklists, and operating documents to structure AI work inside teams.', 'sg-template-band-inner-heading') }}
+      {{ btn('/topics/templates/', 'Browse templates') }}
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section section--dark" aria-labelledby="sg-newsletter-heading">
+
+  <div class="container newsletter">
+
+    {{ section_heading('Homepage social band', None, 'sg-newsletter-heading') }}
+
+    <p class="hero__subhead">Playbooks, eval checklists, and implementation notes—shared when they publish.</p>
+
+    <p class="newsletter__actions">
+      {{ btn('https://x.com/promptanatom', 'X · threads & release notes', 'primary', true) }}
+      {{ btn('https://www.linkedin.com/in/staniulis', 'LinkedIn · playbooks & field notes', 'secondary', true) }}
+    </p>
+
+    <p class="newsletter__note">
+      Prefer RSS?
+      <a href="/feeds/all.atom.xml">Atom feed</a>
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" aria-labelledby="sg-continue-learning-heading">
+
+  <div class="container continue-learning">
+
+    {{ section_heading('Continue learning', 'After article CTA — path meta, prev/next, role-labeled cards.', 'sg-continue-learning-heading') }}
+
+    <p class="continue-learning__path-meta">Step 2 of 5 in Framework · <a href="/topics/framework/#reading-path-heading">Full reading order</a></p>
+
+    <nav class="continue-learning__nav" aria-label="Reading path steps">
+      <a class="continue-learning__nav-link continue-learning__nav-link--prev" href="#">
+        <span class="continue-learning__nav-label">Previous</span>
+        <span class="continue-learning__nav-title">The model is not the system</span>
+      </a>
+      <a class="continue-learning__nav-link continue-learning__nav-link--next" href="#">
+        <span class="continue-learning__nav-label">Next</span>
+        <span class="continue-learning__nav-title">How to design an AI agent workflow</span>
+      </a>
+    </nav>
+
+    {% set sg_cat = namespace(name='Framework', url='topics/framework/') %}
+    {% set sg_cl_article = namespace(title='Context layers in prompt design', summary='Define what models see, when, and why.', url='articles/context-layers-in-prompt-design/', hero_image=none, category=sg_cat, reading_time='6 min read', date=none, modified=none) %}
+    <div class="grid grid--2 continue-learning__cards">
+      <div class="continue-learning__card-wrap">
+        <p class="continue-learning__role">Go deeper</p>
+        {{ article_card(sg_cl_article) }}
+      </div>
+    </div>
 
   </div>
 

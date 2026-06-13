@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Case Studies
 content_tier: playbook
-date: 2025-07-21
+date: 2025-08-14
 hero_caption: Support queue before/after — one owned workflow with eval gates beat
   scattered copilot experiments.
 hero_image: images/articles/case-study-vibe-prompting-to-structured-workflow/hero.png

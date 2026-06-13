@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Prompt Systems
 content_tier: playbook
-date: 2026-05-26
+date: 2026-05-30
 hero_image: images/articles/prompt-regression-testing-week/hero.png
 hero_caption: "Northline built 30 cases in five days and blocked a wording tweak when policy pass dropped below gate."
 key_takeaway: You can build a useful prompt regression set in one week if you scope one workflow, freeze cases, and tie results to release decisions.

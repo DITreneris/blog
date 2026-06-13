@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-05-23
+date: 2026-05-27
 hero_image: images/articles/what-your-ai-stack-reveals/hero.png
 hero_caption: AI Truth Mirror — buzzword cloud versus structured flowchart; score your
   stack in 15 minutes with the rubric below.

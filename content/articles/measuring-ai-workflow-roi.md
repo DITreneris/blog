@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-06
+date: 2026-06-10
 hero_image: images/articles/measuring-ai-workflow-roi/hero.png
 hero_caption: "Track pass rate, time saved, and incident cost before scaling automation."
 key_takeaway: Sponsor-ready ROI combines pass rate, net cycle time, and incident cost—activity metrics alone will not justify scale.

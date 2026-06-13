@@ -43,13 +43,28 @@ citations:
     description: allowlists, permission scoping, and prompt injection defense for MCP and agent tools.
   - slug: prompt-anatomy-foundations
     title: Prompt Anatomy Foundations
-    description: implementation stack index.
+    description: implementation stack index—six layers from outcome to governance, with role-based paths into diagnostics, agents, eval, and procurement playbooks.
   - slug: prompt-anatomy-glossary
     title: "Glossary: Prompt Anatomy Terms for Teams"
     description: shared vocabulary for MCP, RAG tiers, CLEAR, context rot, and registry terms.
   - slug: what-is-context-architecture
     title: What Is Context Architecture?
     description: context spec, layers, and prompt assembly order.
+  - slug: memory-types-for-ai-systems
+    title: Memory Types for AI Systems
+    description: session, episodic, and organizational memory — lifetimes, owners, and retention rules.
+  - slug: context-rot-why-bigger-windows-make-agents-worse
+    title: "Context Rot in AI Agents"
+    description: why larger context windows can reduce agent quality — and how to prevent rot with architecture.
+  - slug: prompt-engineering-vs-ai-workflow-engineering
+    title: Prompt Engineering vs AI Workflow Engineering
+    description: prompt, context, and workflow engineering compared — when to invest in system design over longer prompts.
+  - slug: ai-workflow-canvas-template
+    title: AI Workflow Canvas
+    description: one-page template — outcome, steps, context, gates, eval, and ownership before you build.
   - slug: prompt-anatomy-ecosystem-map
     title: The Prompt Anatomy Ecosystem Map
     description: how blog, training app, and library fit together.
+  - slug: shipping-prompt-anatomy
+    title: Shipping Prompt Anatomy
+    description: field note on the promptanatomy.app hub — checkout, access model, six-module training, ecosystem role.

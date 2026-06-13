@@ -110,6 +110,23 @@
   font-size: 0.9rem;
 }
 
+/* CodeHilite wraps fenced blocks in div.highlight; pygments.css clears inner pre bg */
+.prose .highlight {
+  overflow-x: auto;
+  margin-block: var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-dark);
+}
+
+.prose .highlight pre {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-code-text);
+  padding: var(--space-md);
+  font-size: 0.9rem;
+}
+
 .prose code {
   font-family: var(--font-mono);
   font-size: 0.9em;

@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-12-29
+date: 2026-01-22
 hero_image: images/articles/tokens-as-fuel-for-ai-output/hero.png
 hero_caption: Token fuel levels — full, degraded, and cut-off output — plus who refuels
   context packs and when eval must rerun.

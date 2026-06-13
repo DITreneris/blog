@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-30
+date: 2026-06-03
 hero_image: images/articles/evaluating-agents-with-clear/hero.png
 hero_caption: "One row per workflow, updated weekly — weaknesses visible before scale requests reach the forum."
 key_takeaway: Agent quality is not one metric; CLEAR gives a practical, weekly operating scorecard that balances performance, risk, and stability.

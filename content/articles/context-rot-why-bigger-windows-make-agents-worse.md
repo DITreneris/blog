@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Framework
 content_tier: playbook
-date: 2026-05-28
+date: 2026-06-01
 hero_image: images/articles/context-rot-why-bigger-windows-make-agents-worse/hero.png
 hero_caption: "Long windows, weak signal: when context grows faster than structure, agent decisions degrade."
 key_takeaway: Bigger context windows can reduce agent quality when teams do not manage relevance, ordering, and retrieval boundaries.

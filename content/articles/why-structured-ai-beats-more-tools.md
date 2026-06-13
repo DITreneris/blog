@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
-date: 2026-09-09
+date: 2026-09-13
 hero_image: images/articles/why-structured-ai-beats-more-tools/hero.png
 key_takeaway: Structured implementation beats tool sprawl—see the canonical tools pillar article.
 reading_time: 1 min read

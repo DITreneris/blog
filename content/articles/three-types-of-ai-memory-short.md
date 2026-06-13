@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-03-07
+date: 2026-03-31
 hero_caption: Short (session), long (profile), and system memory — mapped to production
   session, episodic, and organizational layers with TTL and owners.
 hero_image: images/articles/three-types-of-ai-memory-short/hero.png

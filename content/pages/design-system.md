@@ -6,4 +6,4 @@ Template: design_system
 status: published
 ---
 
-This page documents the Prompt Anatomy blog theme (version 1.0). The canonical spec lives in `docs/DESIGN_SYSTEM.md` in the repository.
+This page is the living reference for tokens, components, and UI patterns (Design System **2.1.0**). The canonical spec lives in `docs/DESIGN_SYSTEM.md` in the repository.

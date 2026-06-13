@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-07
+date: 2026-06-11
 hero_image: images/articles/agent-orchestrator-operating-model/hero.png
 hero_caption: "Route work, manage handoffs, check quality, and keep an audit trail across AI agents."
 key_takeaway: The orchestrator role is not a prompt writer; it is an operating function that keeps multi-agent workflows bounded, observable, and accountable.

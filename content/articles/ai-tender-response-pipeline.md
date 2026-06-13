@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Case Studies
 content_tier: playbook
-date: 2026-06-12
+date: 2026-06-16
 hero_caption: Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory
   legal assembly gate.
 hero_image: images/articles/ai-tender-response-pipeline/hero.png

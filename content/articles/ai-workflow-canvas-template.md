@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2025-09-30
+date: 2025-10-24
 hero_caption: Copy-paste template — fill the canvas before selecting tools or writing
   prompts.
 hero_image: images/articles/ai-workflow-canvas-template/hero.png

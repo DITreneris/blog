@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2026-01-22
+date: 2026-02-15
 hero_caption: Safe, limit, and overflow zones — plus step-split budgets for research,
   draft, and checker calls.
 hero_image: images/articles/tokens-and-context-window-limits/hero.png

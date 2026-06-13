@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Governance
 content_tier: playbook
-date: 2025-06-06
+date: 2025-06-29
 faq:
 - answer: At minimum, log workflow ID and version, actor identity, input snapshot
     or hash, context sources, model and parameters, raw output, human override flags,

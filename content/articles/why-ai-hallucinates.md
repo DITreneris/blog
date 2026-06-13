@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Opinion
 content_tier: opinion
-date: 2025-11-14
+date: 2025-12-08
 hero_image: images/articles/why-ai-hallucinates/hero.png
 hero_caption: Grounded vs ungrounded — controlled context and verification versus
   plausible guessing; choose your next playbook by failure mode.

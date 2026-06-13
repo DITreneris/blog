@@ -2,7 +2,7 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Framework
-date: 2026-08-19
+date: 2026-08-23
 hero_image: images/articles/prompt-anatomy-framework-overview/hero.png
 key_takeaway: Framework map consolidated into Prompt Anatomy Foundations.
 reading_time: 1 min read

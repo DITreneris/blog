@@ -39,6 +39,7 @@ PUBLICATION_ORDER: list[str] = [
     "team-rituals-for-ai-implementation",
     "from-prompts-to-business-outcomes",
     "prompt-anatomy-ecosystem-map",
+    "shipping-prompt-anatomy",
     "ai-governance-roles-and-ownership",
     "data-boundaries-for-ai-agents",
     "audit-trails-for-ai-workflows",
@@ -79,8 +80,11 @@ PUBLICATION_ORDER: list[str] = [
     "ai-change-log-template-prompt-context-and-model-updates",
     "finance-workflow-case-study-controlled-draft-and-review",
     "ai-tender-response-pipeline",
+    "weekly-ceo-brief-pattern",
+    "classroom-prompt-builder-launch",
     "how-to-build-a-telegram-game-stack",
     "corporate-ladder-soft-launch",
+    "critique-agent-v09-audit-stats",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -102,14 +106,18 @@ INTERVAL_DAYS = [22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23]
 WAVE2_INTERVAL_DAYS = [1]
 
 FIXED_DATES: dict[str, date] = {
+    "shipping-prompt-anatomy": date(2026, 3, 15),
     "finance-workflow-case-study-controlled-draft-and-review": date(2026, 4, 2),
     "ai-change-log-template-prompt-context-and-model-updates": date(2026, 4, 24),
+    "weekly-ceo-brief-pattern": date(2026, 4, 9),
+    "classroom-prompt-builder-launch": date(2026, 5, 15),
     "how-to-build-a-telegram-game-stack": date(2026, 6, 12),
     "corporate-ladder-soft-launch": date(2026, 6, 15),
+    "critique-agent-v09-audit-stats": date(2026, 6, 16),
 }
 
-# Latest allowed publish date (Corporate Ladder soft launch 2026-06-15)
-PUBLISH_CUTOFF = date(2026, 6, 15)
+# Latest allowed publish date (Critique Agent v0.9 field note 2026-06-16)
+PUBLISH_CUTOFF = date(2026, 6, 16)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

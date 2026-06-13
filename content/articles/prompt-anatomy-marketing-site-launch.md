@@ -28,7 +28,7 @@ This article is a field note on what shipped, how the three interactives work, a
 
 promptanatomy.site is the **marketing and demo** layer for Prompt Anatomy. It explains the ecosystem story, lets visitors assemble a prompt in five layers, and returns a maturity tier in under a minute. It is **not** the knowledge hub—that is **promptanatomy.blog** (this site), where frameworks, governance playbooks, and templates live in long form. It is also **not** the training checkout—that is **[promptanatomy.app](https://www.promptanatomy.app/)**, where drills and methodology modules turn reading into repeatable team practice.
 
-If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/). The marketing site fills the gap between "what is this brand?" and "I need the RACI worksheet now"—orientation before depth.
+If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/). For Platform HQ ship details—checkout, magic-link access, and six-module training—see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). The marketing site fills the gap between "what is this brand?" and "I need the RACI worksheet now"—orientation before depth.
 
 ## Three shipped interactives
 

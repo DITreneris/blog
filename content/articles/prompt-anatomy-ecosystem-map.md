@@ -9,7 +9,7 @@ hero_caption: How the blog, training app, and implementation tools fit together 
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png
 key_takeaway: Read frameworks on .blog, discover on .site, practice on .app, and treat
   .lol as optional play—not your implementation path.
-reading_time: 3 min read
+reading_time: 6 min read
 slug: prompt-anatomy-ecosystem-map
 status: published
 summary: Where to read, practice, and build—promptanatomy.blog for frameworks, promptanatomy.site
@@ -38,7 +38,7 @@ The blog does **not** host hands-on labs, graded exercises, or account-based pro
 
 **Role: Practice and buy.** Paid training, methodology modules, and pricing for teams that want structured practice after reading frameworks on the blog. The app is where prompts, context layers, and workflow steps become **repeatable drills**—not one-off chat experiments.
 
-Use `.app` when a playbook on the blog resonated and you need your team to execute the same steps under feedback: registry discipline, canvas completion, eval case design. Free blog content points here when standardization is the next stage; it is the intentional conversion surface, not a duplicate article archive.
+Use `.app` when a playbook on the blog resonated and you need your team to execute the same steps under feedback: registry discipline, canvas completion, eval case design. Free blog content points here when standardization is the next stage; it is the intentional conversion surface, not a duplicate article archive. For what shipped on the hub—checkout, access model, and six-module training—see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/).
 
 If you are deciding whether to subscribe, read the relevant playbook first on `.blog`. Training without a documented workflow ID on your side still produces enthusiastic individuals—not operational AI.
 
@@ -47,6 +47,18 @@ If you are deciding whether to subscribe, read the relevant playbook first on `.
 **Role: Discover and try.** Official marketing site with the nine-domain journey map, interactive five-part Anatomizer (Persona, Context, Variables, Instructions, Constraints), and a 60-second maturity quiz with tier and domain recommendation. Launched **2025-04-12**; see [Prompt Anatomy Marketing Site Launch](/articles/prompt-anatomy-marketing-site-launch/) for the field note and sister repo.
 
 Use `.site` when a sponsor or new teammate needs the ecosystem story in one sitting—not when you need eval gates, RACI worksheets, or audit trail templates. Those live on `.blog`. The Anatomizer teaches prompt shape; production still requires registry discipline and owners documented in your playbooks.
+
+### promptanatomy.ceo
+
+**Role: Manage — executive operations brief.** [AI Operations Center](https://www.promptanatomy.ceo/en/) is a free, no-account web app that assembles structured CEO/COO prompts across **DAILY**, **WEEKLY**, and **STRATEGIC** modes with **Fast**, **Deep**, and **Board** output depth. Launched **2026-04-09**; see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/) for the playbook and sister repo [DITreneris/ceo](https://github.com/DITreneris/ceo). The site does **not** call an AI API; executives copy prompts into ChatGPT, Claude, or Gemini and log decisions themselves.
+
+Use `.ceo` when leadership needs a weekly operating cadence—not when you need K–12 prompt structure (`.online`) or team governance playbooks alone. Optional paid PDF playbooks ship from the same property; they do not replace blog frameworks or `.app` training.
+
+### promptanatomy.online
+
+**Role: Try (K–12 vertical).** [Classroom Prompt Builder](https://www.promptanatomy.online/) is a free, no-account web app that assembles structured prompts for US K–12 teachers across five modes—lesson, assessment, tasks, presentation, and strategy. Launched **2026-05-15**; see [Classroom Prompt Builder Launch](/articles/classroom-prompt-builder-launch/) for the field note and sister repo. The site does **not** call an AI API; teachers copy prompts into ChatGPT, Claude, or Gemini and verify output before classroom use.
+
+Use `.online` when the question is teacher-facing prompt structure—not when you need enterprise governance playbooks or team training checkout. Those stay on `.blog` and `.app`. Optional paid PDF guides ship from the same property; they do not replace blog frameworks.
 
 ### promptanatomy.lol
 
@@ -63,6 +75,7 @@ The table below lists specialized surfaces. They extend the core read → practi
 | **[promptanatomy.app](https://www.promptanatomy.app/)** | Practice — training, methodology, pricing |
 | **promptanatomy.blog** (this site) | Read — frameworks, field notes, templates, case studies |
 | **[promptanatomy.site](https://promptanatomy.site/)** | Discover — ecosystem story, Anatomizer, maturity quiz |
+| **[promptanatomy.online](https://www.promptanatomy.online/)** | Try (K–12) — free Classroom Prompt Builder; optional PDF guides |
 | **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — Corporate Ladder (satirical; not for ops) |
 | **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons |
 | **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library |
