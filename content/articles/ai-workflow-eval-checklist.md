@@ -4,6 +4,17 @@ body_locked: true
 category: Templates
 content_tier: template
 date: 2026-06-13
+faq:
+- answer: Smoke gates run on every change before merge or promotion. Pilot gates run
+    before traffic increases beyond the pilot cohort. Scale gates run before organization-wide
+    rollout or auto-send expansion.
+  question: When must smoke vs pilot vs scale gates run?
+- answer: Process owner and IT sign pre-flight together. Legal consults when policy
+    assertions appear in eval cases or fail criteria.
+  question: Who signs the pre-flight block?
+- answer: Each gate row needs an evidence link—workflow canvas, eval set ID, audit schema
+    doc, or registry pin—not verbal confirmation from a kickoff call.
+  question: What evidence links are required on the checklist?
 hero_image: images/articles/ai-workflow-eval-checklist/hero.png
 hero_caption: "Copy-paste eval checklist — smoke, pilot, and scale gates before AI workflow traffic increases."
 key_takeaway: Run smoke, pilot, and scale gates on held-out cases before increasing traffic—not after a customer complaint."
@@ -24,6 +35,8 @@ The checklist implements the gates described in [Evaluation Hooks for AI Workflo
 
 ## Pre-flight (before any pilot traffic)
 
+Pre-flight gates exist to stop "pilot by enthusiasm." Customer-facing workflows should not receive traffic until canvas, eval set, human send rule, audit schema, and data boundaries are named artifacts—not verbal agreements from a kickoff call. Process owner and IT sign this block together; Legal consults when policy assertions appear in eval cases.
+
 | # | Gate | Pass? | Owner | Evidence link |
 |---|------|-------|-------|---------------|
 | 1 | Workflow canvas complete with outcome, owner, metric | ☐ | Process owner | |
@@ -37,6 +50,8 @@ The checklist implements the gates described in [Evaluation Hooks for AI Workflo
 
 ## Smoke gate (10 cases — before staging promotion)
 
+Smoke is the fastest feedback loop: ten held-out cases that must pass before staging or pilot traffic moves. Run smoke on every prompt, context, or routing change in CI when possible—Friday-afternoon manual smoke is how regressions reach customers on Monday.
+
 | # | Check | Pass? | Notes |
 |---|-------|-------|-------|
 | 1 | 10/10 held-out cases pass fail criteria | ☐ | |
@@ -48,6 +63,8 @@ The checklist implements the gates described in [Evaluation Hooks for AI Workflo
 **Rule:** 100% pass on smoke before staging or pilot traffic. No exceptions for "internal only" if content may reach customers later.
 
 ## Pilot gate (25+ cases — before shadow traffic increase)
+
+Pilot gates force weekly discipline while real traffic is partial. Pass rate trends matter more than a single good week—Northline held ninety-two percent on twenty-five cases for four weeks before raising shadow traffic. Override review belongs here: if reviewers rewrite the same clause every day, add a case instead of blaming "user error."
 
 | # | Check | Pass? | Notes |
 |---|-------|-------|-------|
@@ -61,6 +78,8 @@ Northline held ninety-two percent on twenty-five cases for four weeks before inc
 
 ## Scale gate (before major traffic or tier change)
 
+Scale gates connect eval evidence to forum votes and rollback drills. Do not interpret a green pilot dashboard as permission to org-wide rollout if audit replay still fails on random tickets or if retrieval tier bumps lack corpus version IDs in logs.
+
 | # | Check | Pass? | Notes |
 |---|-------|-------|-------|
 | 1 | Risk forum vote recorded for traffic % or retrieval tier change | ☐ | |
@@ -70,6 +89,8 @@ Northline held ninety-two percent on twenty-five cases for four weeks before inc
 | 5 | [Audit trail](/articles/audit-trails-for-ai-workflows/) replay drill on 5 random tickets | ☐ | |
 
 ## RAG-specific add-ons
+
+Retrieval workflows fail differently from pure generation workflows: wrong chunks look fluent, and agentic tiers add tool risk. Add these rows when `retrieval_tier` on the canvas is basic, smart, or agentic—see [RAG in Production](/articles/rag-in-production/) for promotion criteria.
 
 If workflow uses retrieval, add:
 

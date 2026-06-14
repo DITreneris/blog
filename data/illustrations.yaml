@@ -108,7 +108,7 @@ illustrations:
 
   - id: basic-129
     generator: satori
-    template: observability-trace
+    template: human-handoff-worksheet
     source: Satori/handoff-rules-between-humans-and-ai.png
     slug: handoff-rules-between-humans-and-ai
     title: "Handoff Rules Between Humans and AI"
@@ -357,6 +357,26 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: promo-cloud-lesson
+    manual: true
+    source: cloud_lesson_og.png
+    og_source: cloud_lesson_og.png
+    slug: first-ai-lesson-cloud-launch
+    title: "Quick Send Check First — The First AI Lesson on promptanatomy.cloud"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
+  - id: promo-info-library-launch
+    manual: true
+    source: loop.png
+    og_source: loop.png
+    slug: daily-workflow-library-info-launch
+    title: "Who Orchestrates the Builders — Shipping promptanatomy.info"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-telegram-game-stack
     source: Basic/telegram-game-architecture.png
     slug: how-to-build-a-telegram-game-stack
@@ -590,7 +610,7 @@ illustrations:
 
   - id: satori-securing-mcp-agent-tools
     generator: satori
-    template: mcp-architecture
+    template: mcp-security-controls
     emphasis: security
     source: Satori/securing-mcp-agent-tools.png
     slug: securing-mcp-agent-tools
@@ -601,7 +621,7 @@ illustrations:
 
   - id: satori-langgraph-vs-crewai
     generator: satori
-    template: platform-comparison
+    template: agent-framework-comparison
     source: Satori/langgraph-vs-crewai-production-guide.png
     slug: langgraph-vs-crewai-production-guide
     satori_title: "LangGraph vs CrewAI vs MS Agent Framework"
@@ -741,7 +761,7 @@ illustrations:
 
   - id: satori-finance-workflow-case-study-controlled-draft-and-review
     generator: satori
-    template: case-study-support
+    template: case-study-finance
     vertical: finance
     source: Satori/finance-workflow-case-study-controlled-draft-and-review.png
     slug: finance-workflow-case-study-controlled-draft-and-review

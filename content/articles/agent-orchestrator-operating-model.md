@@ -4,6 +4,18 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-11
+faq:
+- answer: End-to-end workflow behavior across agent boundaries, escalation logic, retries,
+    run controls, release coordination, and incident evidence—not individual prompt
+    quality inside one agent.
+  question: What does an agent orchestrator own?
+- answer: A prompt engineer optimizes inputs and outputs for one step. An orchestrator
+    owns how multiple agents, tools, and humans coordinate—with RACI, gates, and weekly
+    governance rhythms.
+  question: How is the orchestrator role different from a prompt engineer?
+- answer: Weekly handoff review, eval drift check, incident postmortem slot, and change
+    announcement for prompt, tool, or policy updates that affect production workflows.
+  question: What weekly rituals should the orchestrator role run?
 hero_image: images/articles/agent-orchestrator-operating-model/hero.png
 hero_caption: "Route work, manage handoffs, check quality, and keep an audit trail across AI agents."
 key_takeaway: The orchestrator role is not a prompt writer; it is an operating function that keeps multi-agent workflows bounded, observable, and accountable.

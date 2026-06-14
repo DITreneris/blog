@@ -5,11 +5,11 @@ import { articleHeroFrame, panelBox } from './base.mjs';
 
 const d = typography.hero.diagram;
 
-const PLATFORMS = ['n8n', 'Zapier', 'Custom code'];
+const PLATFORMS = ['LangGraph', 'CrewAI', 'MS Agent'];
 const ROWS = [
-  { label: 'Build speed', values: ['Medium', 'High', 'Low'] },
-  { label: 'Control / branching', values: ['High', 'Medium', 'Highest'] },
-  { label: 'Data residency', values: ['Self-host', 'SaaS', 'Your infra'] },
+  { label: 'State / graph', values: ['Strong', 'Light', 'Medium'] },
+  { label: 'Multi-agent', values: ['First-class', 'Role teams', 'Enterprise path'] },
+  { label: 'Ops fit', values: ['Eng-heavy', 'Fast pilot', 'MS stack'] },
 ];
 
 function cell(text, accent, bold = false) {
@@ -32,7 +32,8 @@ function cell(text, accent, bold = false) {
   );
 }
 
-export function buildPlatformComparison(props) {
+/** Agent orchestration framework comparison (LangGraph / CrewAI / MS Agent). */
+export function buildAgentFrameworkComparison(props) {
   const category = props.category || 'AI Agents';
   const style = getCategoryStyle(category);
 
@@ -84,7 +85,7 @@ export function buildPlatformComparison(props) {
     title: props.title,
     subtitle:
       props.subtitle ||
-      'Workflow automation selection — build speed, control, and data residency.',
+      'Agent framework selection — graph depth, multi-agent patterns, ops fit.',
     diagram,
   });
 }

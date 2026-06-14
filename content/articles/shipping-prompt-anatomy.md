@@ -97,7 +97,7 @@ Treat `.app` completion as **practice and purchase**, not proof of enterprise im
 
 - A certificate or finished Module 3 does not replace a documented workflow ID, RACI, or eval gate pack on your side.
 - Do not paste hub or training copy into procurement decks; link the relevant playbook on `.blog` and cite pass rate, cycle time, or incident cost on real workflows.
-- Free ecosystem spokes (`.info`, `.space`, `.help`, `.ceo`, `.pro`, `.cloud`) complement daily work; they do not replace paid training when you need the full six-module path. For the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/).
+- Free ecosystem spokes (`.cloud`, `.info`, `.space`, `.help`, `.ceo`, `.pro`) complement daily work; they do not replace paid training when you need the full six-module path. For the **Enter** spoke—first AI lesson and quick send check—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/); for the **Use** spoke—five-locale daily org-context library—see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/); for the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/).
 
 We learned this on sister properties: [Classroom Prompt Builder](/articles/classroom-prompt-builder-launch/) had a webhook pointed at `.app` while buyers returned to `.online`—payment succeeded, fulfillment failed. **Same-host checkout, webhook, and success URL** is a launch guardrail, not an implementation detail.
 

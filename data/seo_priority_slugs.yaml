@@ -17,3 +17,8 @@ priority_slugs:
   - 10-signs-your-company-is-vibe-prompting
   - prompt-anatomy-foundations
   - prompt-anatomy-glossary
+  - model-context-protocol-enterprise
+  - evaluating-agents-with-clear
+  - evaluation-hooks-for-ai-workflows
+  - langgraph-vs-crewai-production-guide
+  - securing-mcp-agent-tools

@@ -4,6 +4,7 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2024-01-28
+modified: 2026-06-14
 faq:
 - answer: Start with one business outcome and workflow, then context architecture,
     then model steps—with evaluation and governance before scaling tools.
@@ -42,6 +43,8 @@ Prompt Anatomy is a **methodology for predictable AI operations**, not a collect
 
 ## The stack
 
+The stack is the reading order for implementation—not a shopping list of models and copilots. Outcome and workflow come first; the model step sits inside context, eval, and governance. Skipping layers produces demos that cannot survive audit or scale.
+
 ```text
 Business outcome
   → Workflow (steps, owners, handoffs)
@@ -53,6 +56,8 @@ Business outcome
 Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/).
 
 ## Where to go next
+
+Use the table as a routing index by job-to-be-done. Pick one row, finish that playbook, then return here—foundations is a hub, not a reading assignment for every stakeholder on day one.
 
 | If you are… | Start with |
 |-------------|------------|
@@ -86,6 +91,8 @@ For outcome framing before you buy anything, read [From Prompts to Business Outc
 **Governance or risk (control change).** Pair [Governance roles](/articles/ai-governance-roles-and-ownership/) with the [Governance RACI Worksheet](/articles/governance-raci-worksheet/), [Audit trails](/articles/audit-trails-for-ai-workflows/), and [Risk review cadence](/articles/ai-risk-review-cadence/). Prompt and context changes ship through the [Prompt Registry Playbook](/articles/prompt-registry-playbook/)—not shared docs.
 
 ## Templates and proof
+
+Templates and case studies turn methodology into artifacts auditors and sponsors can inspect. Copy them into your wiki with workflow IDs filled in—empty templates in a shared drive do not count as governance.
 
 - **Templates** — [Eval checklist](/articles/ai-workflow-eval-checklist/), [RACI worksheet](/articles/governance-raci-worksheet/), [change log template](/articles/ai-change-log-template-prompt-context-and-model-updates/)
 - **Case studies** — [Northline Part 1](/articles/case-study-vibe-prompting-to-structured-workflow/) (diagnostic arc); [finance workflow](/articles/finance-workflow-case-study-controlled-draft-and-review/) for controlled draft and review

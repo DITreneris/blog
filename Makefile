@@ -1,4 +1,4 @@
-.PHONY: validate validate-theme validate-brand validate-satori validate-satori-quality validate-llms-citations audit-content build serve clean sync-images brand-assets analytics satori-images build-css
+.PHONY: validate validate-theme validate-brand validate-satori validate-satori-quality validate-llms-citations audit-content audit-prose build serve clean sync-images brand-assets analytics satori-images build-css
 
 ifeq ($(OS),Windows_NT)
   VENV_PY := .venv/Scripts/python.exe
@@ -51,6 +51,9 @@ validate-content:
 
 audit-content:
 	$(PYTHON) scripts/audit_content_inventory.py --markdown
+
+audit-prose:
+	$(PYTHON) scripts/audit_prose_style.py --markdown
 
 # Sync heroes before validate-content — content/images/ is gitignored (generated at build).
 build: satori-images validate-satori sync-images brand-assets analytics build-css validate-theme validate-brand validate-content validate-satori-quality

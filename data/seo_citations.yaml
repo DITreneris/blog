@@ -68,3 +68,18 @@ citations:
   - slug: shipping-prompt-anatomy
     title: Shipping Prompt Anatomy
     description: field note on the promptanatomy.app hub — checkout, access model, six-module training, ecosystem role.
+  - slug: langgraph-vs-crewai-production-guide
+    title: LangGraph vs CrewAI vs MS Agent Framework
+    description: production framework selection — orchestration depth, governance controls, rollout criteria.
+  - slug: agent-orchestrator-operating-model
+    title: Agent Orchestrator Operating Model
+    description: orchestrator RACI — handoffs, run controls, weekly governance rhythms for multi-agent ops.
+  - slug: audit-trails-for-ai-workflows
+    title: Audit Trails for AI Workflows
+    description: minimum log fields, retention, and reconstructability for accountable AI workflows.
+  - slug: ai-governance-roles-and-ownership
+    title: AI Governance Roles and Ownership
+    description: who owns prompts, eval, incidents, and change approval before pilot traffic scales.
+  - slug: multi-agent-handoff-pattern
+    title: Multi-Agent Handoff Pattern
+    description: bounded handoff contracts — inputs, outputs, escalation, and eval gates between agents.

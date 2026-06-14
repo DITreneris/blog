@@ -43,6 +43,10 @@ import { buildTeamRitualsWorksheet } from './team-rituals-worksheet.mjs';
 import { buildRiskForumWorksheet } from './risk-forum-worksheet.mjs';
 import { buildBusinessOutcomesFlow } from './business-outcomes-flow.mjs';
 import { buildMultiAgentHandoffWorksheet } from './multi-agent-handoff-worksheet.mjs';
+import { buildCaseStudyFinance } from './case-study-finance.mjs';
+import { buildMcpSecurityControls } from './mcp-security-controls.mjs';
+import { buildHumanHandoffWorksheet } from './human-handoff-worksheet.mjs';
+import { buildAgentFrameworkComparison } from './agent-framework-comparison.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -85,6 +89,10 @@ export const TEMPLATES = {
   'risk-forum-worksheet': buildRiskForumWorksheet,
   'business-outcomes-flow': buildBusinessOutcomesFlow,
   'multi-agent-handoff-worksheet': buildMultiAgentHandoffWorksheet,
+  'case-study-finance': buildCaseStudyFinance,
+  'mcp-security-controls': buildMcpSecurityControls,
+  'human-handoff-worksheet': buildHumanHandoffWorksheet,
+  'agent-framework-comparison': buildAgentFrameworkComparison,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

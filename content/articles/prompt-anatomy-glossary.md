@@ -4,6 +4,7 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2026-06-04
+modified: 2026-06-14
 hero_image: images/articles/prompt-anatomy-glossary/hero.png
 hero_caption: "Glossary nav — shared definitions for MCP, context rot, CLEAR, RAG tiers, and prompt registry terms."
 key_takeaway: Shared vocabulary speeds design reviews—link terms to canonical playbooks instead of redefining them in every meeting.
@@ -24,6 +25,8 @@ Teams lose weeks arguing over terms that sound familiar but mean different thing
 
 ## A
 
+Terms in this section cover agent design and accountable logging—the two places teams most often confuse "the model answered" with "the workflow ran."
+
 **Agent workflow**  
 A bounded process where a model can call tools, pass work across steps, and escalate to humans under explicit rules. Start with [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/).
 
@@ -31,6 +34,8 @@ A bounded process where a model can call tools, pass work across steps, and esca
 A replayable record of inputs, versions, actions, and approvals for each workflow run. See [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/).
 
 ## C
+
+Context terms describe what the model may see and how quality decays when windows grow without discipline.
 
 **CLEAR (Cost, Latency, Efficacy, Assurance, Reliability)**  
 A practical evaluation lens for deciding if an AI workflow should scale. CLEAR helps prevent "fast but unsafe" launches by balancing quality and economics. See [Evaluating Agents with CLEAR](/articles/evaluating-agents-with-clear/) and [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/).
@@ -43,15 +48,21 @@ Performance decay caused by oversized or stale context: relevant facts get dilut
 
 ## D
 
+Data boundaries are enforcement mechanisms—not prompt instructions alone.
+
 **Data boundary**  
 A formal allow/deny definition of what each workflow can read or write. Prompt instructions alone are not a boundary; connector and policy enforcement are. See [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/).
 
 ## E
 
+Eval vocabulary separates demo quality from promotion rights.
+
 **Eval gate**  
 A release checkpoint where changes must pass predefined test criteria before promotion. Use [AI Workflow Eval Checklist](/articles/ai-workflow-eval-checklist/) for a copy-paste implementation.
 
 ## G
+
+Governance and discovery terms show up in steering meetings and procurement decks—define them once here.
 
 **GEO (Generative Engine Optimization)**  
 Content strategy for visibility in AI-generated answers (citations and synthesized responses), not only traditional search ranking. For implementation context, see the decision-oriented framing in [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/).
@@ -61,6 +72,8 @@ Role mapping for who is responsible, accountable, consulted, and informed for wo
 
 ## H
 
+Handoff terms matter when work crosses agents or humans under time pressure.
+
 **Handoff contract**  
 A structured payload that explains what one agent passes to another, under which conditions, and with which expected output format. See [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/).
 
@@ -68,6 +81,8 @@ A structured payload that explains what one agent passes to another, under which
 A required human approval before customer-facing or system-of-record actions. Common in v1 deployments where quality is improving but not fully automated.
 
 ## M
+
+MCP and memory terms anchor integration and retention decisions.
 
 **MCP (Model Context Protocol)**  
 An open protocol that standardizes how models discover and use tools, resources, and prompts. It reduces custom integration overhead while improving governance consistency. Read [Model Context Protocol for Enterprise Teams](/articles/model-context-protocol-enterprise/) and implement with [MCP Server Selection Worksheet](/articles/mcp-server-selection-worksheet/).
@@ -77,6 +92,8 @@ Different retention layers (session, workflow, long-term system memory) with dis
 
 ## P
 
+Prompt-system terms describe versioning and operating layers—not single chat messages.
+
 **Prompt registry**  
 A controlled catalog of prompt versions, ownership, release notes, and rollback history. Core guide: [Prompt Registry Playbook](/articles/prompt-registry-playbook/). Complementary architecture: [Structured Prompt System Blueprint](/articles/structured-prompt-system-blueprint/).
 
@@ -84,6 +101,8 @@ A controlled catalog of prompt versions, ownership, release notes, and rollback 
 The broader operating layer around prompt text: versions, context dependencies, eval, and governance. Primer: [Prompt Engineering vs AI Workflow Engineering](/articles/prompt-engineering-vs-ai-workflow-engineering/).
 
 ## R
+
+Retrieval terms distinguish maturity levels; treat tier jumps as governance events, not feature toggles.
 
 **RAG (Retrieval-Augmented Generation)**  
 A pattern where models fetch relevant external data before generating output. Treat RAG as an architectural choice with quality and governance tradeoffs, not a magic accuracy switch.
@@ -121,10 +140,14 @@ A recurring forum where teams review incidents, drift signals, and release decis
 
 ## T
 
+Token vocabulary connects cost, latency, and silent context loss.
+
 **Token budget**  
 The practical limit of how much context and output you can afford per task without degrading latency or cost. Foundations: [Tokens as Fuel for AI Output](/articles/tokens-as-fuel-for-ai-output/).
 
 ## V
+
+Diagnostic terms name failure modes before tool purchases.
 
 **Vibe prompting**  
 Unstructured, improvisational prompting without version control, defined ownership, or eval discipline. Diagnostic guide: [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/).

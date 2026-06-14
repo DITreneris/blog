@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2025-02-15
+modified: 2026-06-14
 hero_caption: Thirty-minute standups with owned actions — not slide tours after pilot launch.
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
 key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts,
@@ -23,6 +24,8 @@ Tools do not maintain themselves. Prompts drift, policy packs expire, connectors
 Rituals connect daily work to [governance roles](/articles/ai-governance-roles-and-ownership/) and [risk cadence](/articles/ai-risk-review-cadence/)—Level 3 on the maturity ladder is not "we launched" but "we still review eval biweekly."
 
 ## Suggested rituals (cadence and purpose)
+
+Recurring forums beat hero launches because they maintain versioned artifacts after go-live. The table below is a minimum set—add domain-specific rituals only when they produce decisions logged with owners, not additional status meetings.
 
 | Ritual | Frequency | Purpose |
 |--------|-----------|---------|
@@ -83,6 +86,8 @@ Quarterly review is where leaders decide **sequencing**—not whether AI is "imp
 
 ## Rules that keep rituals from becoming theater
 
+Rituals fail when they become status updates without decisions. Time-box sessions, require one real failure narrative, and log owners in the risk register—the same register your [risk forum](/articles/ai-risk-review-cadence/) reads. Vendor demos and generic AI town halls are not substitutes for eval review or change standups tied to workflow IDs.
+
 Time-box to 30–45 minutes except monthly forum. **Bring one real failure** per session—near-miss, override cluster, boundary denial spike. Decisions logged with owner and due date in risk register, not "we will monitor."
 
 No vendor demos replacing failure review. No ritual without process owner present—they own follow-through.
@@ -91,11 +96,11 @@ Rotate facilitation so ops and IT both chair—prevents "IT-only AI club."
 
 ## Connecting rituals to artifacts
 
-Standup outcomes update the [workflow canvas](/articles/ai-workflow-canvas-template/) and eval cases in [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/). Change standup outcomes notify customer-facing teams when snippet or policy pack versions change.
+Ritual outputs must land in versioned artifacts or they evaporate. Standup decisions update the [workflow canvas](/articles/ai-workflow-canvas-template/) and eval cases in [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/). Change standup outcomes notify customer-facing teams when snippet or policy pack versions change—Outlook snippets and CRM templates are part of the workflow, not side channels.
 
 ## Starting rituals without bureaucracy
 
-Week one of pilot: schedule office hours and biweekly eval review before go-live. Book six forum dates. Publish wiki template for minutes.
+You do not need a program office to start. Week one of pilot: schedule office hours and biweekly eval review before go-live, book six forum dates, and publish a one-page minutes template. When stakeholders push back on meeting load, cut generic awareness sessions—not forums tied to metrics and workflow IDs.
 
 When team says "too many meetings," cut generic AI town halls—not forums tied to workflow IDs and metrics.
 

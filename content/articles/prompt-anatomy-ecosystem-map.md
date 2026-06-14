@@ -48,6 +48,12 @@ If you are deciding whether to subscribe, read the relevant playbook first on `.
 
 Use `.site` when a sponsor or new teammate needs the ecosystem story in one sitting—not when you need eval gates, RACI worksheets, or audit trail templates. Those live on `.blog`. The Anatomizer teaches prompt shape; production still requires registry discipline and owners documented in your playbooks.
 
+### promptanatomy.cloud
+
+**Role: Enter — first AI lesson.** [promptanatomy.cloud](https://promptanatomy.cloud/) is a free, no-account interactive lesson: five-part prompt framework, 2-minute practice, quick send check before depth templates, dual prompt library, and a short quiz. Launched **2026-04-29**; see [Quick Send Check First — The First AI Lesson on promptanatomy.cloud](/articles/first-ai-lesson-cloud-launch/) for the field note and sister repo [DITreneris/lead](https://github.com/DITreneris/lead). The site does **not** call an AI API; visitors copy prompts into external tools.
+
+Use `.cloud` when someone needs structured first steps and a send gate habit—not when you need K–12 prompt structure (`.online`), executive brief cadence (`.ceo`), or team governance playbooks alone. Optional EN/LT PDF summaries ship from the same property; they do not replace blog frameworks or `.app` training.
+
 ### promptanatomy.ceo
 
 **Role: Manage — executive operations brief.** [AI Operations Center](https://www.promptanatomy.ceo/en/) is a free, no-account web app that assembles structured CEO/COO prompts across **DAILY**, **WEEKLY**, and **STRATEGIC** modes with **Fast**, **Deep**, and **Board** output depth. Launched **2026-04-09**; see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/) for the playbook and sister repo [DITreneris/ceo](https://github.com/DITreneris/ceo). The site does **not** call an AI API; executives copy prompts into ChatGPT, Claude, or Gemini and log decisions themselves.
@@ -59,6 +65,12 @@ Use `.ceo` when leadership needs a weekly operating cadence—not when you need 
 **Role: Try (K–12 vertical).** [Classroom Prompt Builder](https://www.promptanatomy.online/) is a free, no-account web app that assembles structured prompts for US K–12 teachers across five modes—lesson, assessment, tasks, presentation, and strategy. Launched **2026-05-15**; see [Classroom Prompt Builder Launch](/articles/classroom-prompt-builder-launch/) for the field note and sister repo. The site does **not** call an AI API; teachers copy prompts into ChatGPT, Claude, or Gemini and verify output before classroom use.
 
 Use `.online` when the question is teacher-facing prompt structure—not when you need enterprise governance playbooks or team training checkout. Those stay on `.blog` and `.app`. Optional paid PDF guides ship from the same property; they do not replace blog frameworks.
+
+### promptanatomy.info
+
+**Role: Use — daily workflow library.** [promptanatomy.info](https://www.promptanatomy.info/en/) is a free, no-account static library with eight org-analysis prompts across **LT, EN, ET, LV, and JA**. Visitors copy structured prompts into external AI tools; the site does not call an AI API. Production cutover shipped **2026-05-29** (v1.4.0); see [Who Orchestrates the Builders — Shipping promptanatomy.info](/articles/daily-workflow-library-info-launch/) for the field note and sister repo [DITreneris/automation](https://github.com/DITreneris/automation).
+
+Use `.info` when practitioners need org-context prompts and a daily library—not when you need first-touch onboarding (`.cloud`), executive cadence (`.ceo`), or team governance playbooks alone. A closed-loop builder agent system localized UI, UX, and prompt copy across five locales; finishing the library does not replace workflow IDs or eval gates on your side.
 
 ### promptanatomy.lol
 
@@ -77,8 +89,8 @@ The table below lists specialized surfaces. They extend the core read → practi
 | **[promptanatomy.site](https://promptanatomy.site/)** | Discover — ecosystem story, Anatomizer, maturity quiz |
 | **[promptanatomy.online](https://www.promptanatomy.online/)** | Try (K–12) — free Classroom Prompt Builder; optional PDF guides |
 | **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — Corporate Ladder (satirical; not for ops) |
-| **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons |
-| **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library |
+| **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons; see [field note](/articles/first-ai-lesson-cloud-launch/) |
+| **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library; see [field note](/articles/daily-workflow-library-info-launch/) |
 | **[promptanatomy.space](https://www.promptanatomy.space/en/)** | Create — marketing content system |
 | **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR workflow system |
 | **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |

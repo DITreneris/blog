@@ -4,6 +4,17 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2026-06-06
+faq:
+- answer: Choose LangGraph when you need explicit graph and state control with custom
+    orchestration. Choose CrewAI for fast role-based multi-agent prototyping with
+    lighter platform overhead.
+  question: When should we choose LangGraph vs CrewAI?
+- answer: Prioritize state management, handoff control, security posture, observability,
+    and enterprise integration path—not demo velocity or feature checklists alone.
+  question: What governance criteria matter most in a framework bake-off?
+- answer: When enterprise identity, policy integration, and Microsoft ecosystem alignment
+    are primary constraints—not when you only need a quick multi-agent prototype.
+  question: When is Microsoft Agent Framework the default?
 hero_image: images/articles/langgraph-vs-crewai-production-guide/hero.png
 hero_caption: "Production platform selection: orchestration depth, governance controls, and operational fit."
 key_takeaway: Pick your agent framework based on orchestration and governance requirements, not demo velocity alone.
