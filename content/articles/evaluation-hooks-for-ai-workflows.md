@@ -116,7 +116,7 @@ cases:
 
 **How to run:** IT wires a job on prompt/context PRs for smoke (ten cases, one hundred percent). Support ops runs full set weekly during pilot; results posted to risk forum with override count. **Who acts on failure:** process owner blocks promotion; Legal engaged if policy asserts fail; IT rolls back prod pin if a change already shipped.
 
-Log pass rate beside registry `version` and `policy_pack_version` in audit samples so replay after a near-miss is factual. Teams building eval on code workflows can mirror the same history-before-stats discipline on a local stack—[Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) documents persisted audit rows before aggregate `/audit_stats`.
+Log pass rate beside registry `version` and `policy_pack_version` in audit samples so replay after a near-miss is factual. Teams building eval on code workflows can mirror the same history-before-stats discipline on a local stack—[Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) documents persisted audit rows before aggregate `/audit_stats`; [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) adds a seven-section output contract before rows land in SQLite.
 
 ## Building cases from incidents
 

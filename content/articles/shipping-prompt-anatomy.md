@@ -87,7 +87,7 @@ Progress persists locally; the app includes glossary, tools catalog, and a promp
 
 The launch hero encodes the hub chain: **Plans → checkout → magic link → module progress → governed workflow on `.blog`**.
 
-Random chat produces enthusiastic individuals. Structured blocks produce **designed artifacts**. Training produces **repeatable drills**. The blog produces **owned workflows** with eval gates and RACI. Sponsors fund the last step—not the first demo.
+Random chat produces enthusiastic individuals. Structured blocks produce **designed artifacts**. Training produces **repeatable drills**. The blog produces **owned workflows** with eval gates and RACI. Sponsors fund the last step—not the first demo. The hub is not the runtime—see [The Model Is Not the System](/articles/the-model-is-not-the-system/). Checkout and module progress live on `.app`; governed workflows live on `.blog`.
 
 That progression mirrors how we write on `.blog`: diagnose with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/), design on the [AI Workflow Canvas](/articles/ai-workflow-canvas-template/), gate with [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/).
 
@@ -97,7 +97,7 @@ Treat `.app` completion as **practice and purchase**, not proof of enterprise im
 
 - A certificate or finished Module 3 does not replace a documented workflow ID, RACI, or eval gate pack on your side.
 - Do not paste hub or training copy into procurement decks; link the relevant playbook on `.blog` and cite pass rate, cycle time, or incident cost on real workflows.
-- Free ecosystem spokes (`.cloud`, `.info`, `.space`, `.help`, `.ceo`, `.pro`) complement daily work; they do not replace paid training when you need the full six-module path. For the **Enter** spoke—first AI lesson and quick send check—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/); for the **Use** spoke—five-locale daily org-context library—see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/); for the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/).
+- Free ecosystem spokes (`.cloud`, `.info`, `.space`, `.help`, `.ceo`, `.pro`, `.lol`) complement daily work; they do not replace paid training when you need the full six-module path. For the **Enter** spoke—first AI lesson and quick send check—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/); for the **Use** spoke—five-locale daily org-context library—see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/); for the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/); for the **Play** spoke—optional brand game on Telegram—see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/).
 
 We learned this on sister properties: [Classroom Prompt Builder](/articles/classroom-prompt-builder-launch/) had a webhook pointed at `.app` while buyers returned to `.online`—payment succeeded, fulfillment failed. **Same-host checkout, webhook, and success URL** is a launch guardrail, not an implementation detail.
 

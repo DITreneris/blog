@@ -2,8 +2,9 @@
 authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
-content_tier: opinion
+content_tier: playbook
 date: 2026-06-15
+modified: 2026-06-15
 hero_caption: Promo card — dodge meetings, climb the org chart, play free on Telegram via
   @CorporateLadder_bot.
 hero_image: images/articles/corporate-ladder-soft-launch/hero.png
@@ -17,10 +18,15 @@ summary: Soft-launch field note on Corporate Ladder—now live on Telegram and l
   AI workflows.
 tags:
   - workflow-automation
+  - change-management
 title: "Corporate Ladder Soft Launch"
 ---
 
 Prompt Anatomy's first Telegram mini app, **Corporate Ladder**, soft-launched on **2026-06-15**. The game is playable at [promptanatomy.lol](https://www.promptanatomy.lol/) and through [@CorporateLadder_bot](https://t.me/corporateladder_bot). The same week, Corporate Ladder appeared on [tApps Center](https://tapps.center/application/corporateladder)—Telegram's mini-app directory and community discovery surface—tagged *"Lumberjack meets Office life."*
+
+The tApps tag—*"Lumberjack meets Office life"*—is lineage, not random copy. Telegram's 2016 Lumberjack, one of @gamebot's first HTML5 hits, showed that a one-thumb timing loop could live inside a chat app for tens of millions of taps. Corporate Ladder rides the same rail but swaps the axe for org-chart gaps: closer to *Jumping Jack* (1983)—climb through scrolling openings, one wrong beat and you drop—than to a lumber-yard sim.
+
+At nine, loading *Jumping Jack* from cassette on a ZX Spectrum—beep, chirp, border colors, wait—the idea of handing a playable loop to hundreds of millions of chat users would have sounded cosmic. Bits as bird-voice noise on tape; today a commit on GitHub and a deploy on Vercel. Same urge to climb one more floor; different loader.
 
 This is a **soft launch**: the bot, leaderboards, and Web App are live; polish, load tuning, and scoring-rule hardening continue. This article is a field note on what shipped, how play feels, and where the game sits relative to governed AI work on `.blog`.
 
@@ -74,8 +80,8 @@ The tApps Center listing matters for distribution, not for stack design. It plac
 
 Treat `.lol` engagement as **optional play**, not proof of AI implementation maturity:
 
-- Do not cite game MAUs or leaderboard rank in procurement or governance decks; redirect sponsors to pass rate, cycle time, and incident cost on real workflows.
+- Do not cite game MAUs or leaderboard rank in procurement or governance decks; redirect sponsors to pass rate, cycle time, and incident cost on real workflows per [AI Procurement Freeze](/articles/ai-procurement-freeze/)—the same category error as citing [Classroom Prompt Builder Launch](/articles/classroom-prompt-builder-launch/) PDF sales in a governance forum.
 - Soft launch is not a freeze on scoring rules—tag releases when player-visible math changes, same as any production API.
 - Satire stays on-brand; still avoid harassment patterns in copy or user-generated hooks if you extend social features later.
 
-Corporate Ladder demonstrates that the same **boundary discipline** we recommend for AI workflows—thin client, authoritative API, persistent store, separate deploy surfaces—applies to a two-minute consumer game. The game is live; the core Prompt Anatomy job remains structured implementation on `.blog` and practice on `.app`.
+Corporate Ladder demonstrates that the same **boundary discipline** we recommend in [The Model Is Not the System](/articles/the-model-is-not-the-system/)—thin client, authoritative API, persistent store, separate deploy surfaces—applies to a two-minute consumer game. The game is live; the core Prompt Anatomy job remains structured implementation on `.blog` and practice on `.app`.

@@ -148,4 +148,4 @@ Start with one workflow that already hurts—missed SLAs, manual rework, or repe
 3. Decide with process owner + IT together, not in separate meetings.
 4. Publish ownership and release rules before go-live.
 
-The right workflow automation choice is the one your team can run safely for twelve months, not the one that impressed everyone in a twenty-minute demo.
+The right workflow automation choice is the one your team can run safely for twelve months, not the one that impressed everyone in a twenty-minute demo. For a consumer-side worked example of the same **separate deploy surfaces** discipline—static UI, API, database, distribution channel—see [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/).

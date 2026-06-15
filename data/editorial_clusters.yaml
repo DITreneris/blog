@@ -104,3 +104,18 @@ clusters:
       - 10-signs-your-company-is-vibe-prompting
       - the-model-is-not-the-system
     target_pillar_backlog: "Choosing Workflow Automation for AI Pipelines"
+
+  ecosystem_properties:
+    spokes:
+      - shipping-prompt-anatomy
+      - weekly-ceo-brief-pattern
+      - first-ai-lesson-cloud-launch
+      - prompt-anatomy-marketing-site-launch
+      - classroom-prompt-builder-launch
+      - daily-workflow-library-info-launch
+      - how-to-build-a-telegram-game-stack
+      - corporate-ladder-soft-launch
+    hub_slugs:
+      - prompt-anatomy-ecosystem-map
+      - the-model-is-not-the-system
+    target_pillar_backlog: null

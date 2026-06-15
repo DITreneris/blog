@@ -4,8 +4,9 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-12
+modified: 2026-06-15
 hero_caption: Six-layer pipeline from GitHub through backend, Supabase, Railway, Vercel,
-  and Telegram—the stack behind Corporate Ladder (pre-launch).
+  and Telegram—the stack behind Corporate Ladder on Telegram.
 hero_image: images/articles/how-to-build-a-telegram-game-stack/hero.png
 key_takeaway: Ship a Telegram mini app by separating game rules on a hosted API, persistent
   scores in a managed database, and the player UI on static hosting—not by bolting logic
@@ -13,18 +14,21 @@ key_takeaway: Ship a Telegram mini app by separating game rules on a hosted API,
 reading_time: 7 min read
 slug: how-to-build-a-telegram-game-stack
 status: published
-summary: Pre-launch field notes on the six-service stack behind Corporate Ladder—GitHub
-  through Telegram—architecture, deployment flow, and what to build in each layer.
+summary: Architecture and deployment playbook for the six-service stack behind Corporate
+  Ladder—GitHub through Telegram—with what to build in each layer and how to reuse the
+  pattern.
 tags:
   - workflow-automation
 title: "Telegram Game Stack"
 ---
 
-Prompt Anatomy's first game, **Corporate Ladder**, is a satirical office-climb mini app for Telegram—dodge meetings, climb the org chart, survive reorgs. It is **pre-launch** at [promptanatomy.lol](https://www.promptanatomy.lol/); the public bot link is not live yet. This article documents the **streamlined stack** we are shipping so you can reuse the pattern without treating Telegram as a monolith.
-
-**Update (2026-06-15):** Corporate Ladder soft-launched on Telegram and is listed on [tApps Center](https://tapps.center/application/corporateladder). Play at [promptanatomy.lol](https://www.promptanatomy.lol/) or [@CorporateLadder_bot](https://t.me/corporateladder_bot)—see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for the live field note.
+Prompt Anatomy's first game, **Corporate Ladder**, is a satirical office-climb mini app for Telegram—dodge meetings, climb the org chart, survive reorgs. It **soft-launched on 2026-06-15** and is playable at [promptanatomy.lol](https://www.promptanatomy.lol/) and through [@CorporateLadder_bot](https://t.me/corporateladder_bot); it is also listed on [tApps Center](https://tapps.center/application/corporateladder). See [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for live surfaces, how to play, and what shipped. This article documents the **six-layer stack** behind the game so you can reuse the pattern without treating Telegram as a monolith.
 
 The hero diagram shows six boxes in order: **GitHub → Backend → Supabase → Railway → Vercel → Telegram**. That is not marketing wallpaper. Each box is a deployable boundary with a single job. Skip a boundary and you inherit the usual mini-app failures: scores that reset, logic trapped in one host, or a UI that cannot ship independently of your API.
+
+Forty years ago, "shipping" meant feeding a cassette into a ZX Spectrum and listening to the loader scream until Jack could finally jump. The six layers here are that ritual abstracted: GitHub holds the image, Railway and Vercel are the loader, Telegram is the screen you hand to the player. Minutes of tape noise became seconds of HTTPS deploy.
+
+*Jumping Jack* climbed through gap timing on wraparound floors; Lumberjack chopped on one axis in Telegram's first HTML5 wave. Corporate Ladder is the same discipline—binary choice every beat, authoritative state somewhere else—not a new genre, a new host.
 
 For where play fits in the wider Prompt Anatomy properties, see [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/). Corporate Ladder is **optional brand flavor**, not an implementation path for governed AI workflows.
 
@@ -49,7 +53,7 @@ Read the pipeline left to right as **ownership**, not as "install order only."
 | **Vercel** | Static game UI (HTML/JS/CSS) | Slow iteration on visuals; API mixed with assets |
 | **Telegram** | Distribution, identity hint, Web App chrome | No audience; you rebuild auth and notifications |
 
-The thin lines in the diagram—GitHub feeding every downstream box and Telegram looping back—encode **continuous delivery**: merge on `main`, CI runs tests, Railway and Vercel pick up artifacts, bot commands stay pointed at the current UI URL.
+The thin lines in the diagram—GitHub feeding every downstream box and Telegram looping back—encode **continuous delivery**: merge on `main`, CI runs tests, Railway and Vercel pick up artifacts, bot commands stay pointed at the current UI URL. The same boundary discipline applies when you pick workflow automation for AI pipelines—see [Choosing Workflow Automation for AI Pipelines](/articles/choosing-workflow-automation-ai-pipelines/) for platform selection by operating model, not demo flash.
 
 ### 1. GitHub — code and workflow
 
@@ -83,7 +87,7 @@ Separation here is the same lesson as [The Model Is Not the System](/articles/th
 
 Register a bot (e.g. `@CorporateLadder_bot`), set the **Web App** menu button or `/start` inline keyboard to open your Vercel URL inside Telegram's in-app browser. Telegram supplies lightweight identity via `initData`; your backend verifies the HMAC before trusting `user.id`.
 
-Distribution is Telegram's moat: channels, groups, and "Play free on Telegram" CTAs—like the pre-launch promo card—drive installs without an app store review cycle.
+Distribution is Telegram's moat: channels, groups, and "Play free on Telegram" CTAs—like the live promo card—drive installs without an app store review cycle.
 
 ## End-to-end request flow
 
@@ -97,9 +101,9 @@ A single tap illustrates why the split stack exists:
 
 If step 4 is missing, expect fabricated high scores within a week.
 
-## Pre-launch checklist
+## Ship checklist
 
-Use this before flipping Corporate Ladder (or your clone) to public:
+Use this before flipping your clone to public. For Corporate Ladder, core surfaces are live—see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/)—and remaining items cover polish, security, and load hardening:
 
 - [ ] **BotFather** — Web App URL points to production Vercel; test on iOS and Android Telegram clients.
 - [ ] **initData verification** — reject tampered user ids; rotate bot token if leaked.
@@ -109,10 +113,8 @@ Use this before flipping Corporate Ladder (or your clone) to public:
 - [ ] **Observability** — structured logs on API; alert on 5xx rate during traffic spikes.
 - [ ] **Content policy** — satire is on-brand; still avoid hate/harassment patterns in copy and UGC hooks.
 
-Corporate Ladder remains **pre-launch** while we finish polish and load checks. Watch [promptanatomy.lol](https://www.promptanatomy.lol/) for the live bot link—no playable bot URL yet; this article will update when `@CorporateLadder_bot` is open.
-
 ## When this pattern is enough—and when it is not
 
-This stack is appropriate for **casual mini apps** with leaderboard depth and a small team. Upgrade when you need real-time PvP, economies with fraud risk, or heavy server simulation—in those cases, add a dedicated game server layer and anti-cheat analytics, and treat Telegram as one client among many.
+This stack is appropriate for **casual mini apps** with leaderboard depth and a small team. Upgrade when you need real-time PvP, economies with fraud risk, or heavy server simulation—in those cases, add a dedicated game server layer and anti-cheat analytics, and treat Telegram as one client among many. For a sibling field note on separate deploy surfaces and builder-side vs runtime boundaries on a multilingual library, see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/).
 
 For structured AI workflows (the core of Prompt Anatomy), stay on `.blog` frameworks and `.app` practice drills. The game stack is a **field note on boundaries**, not a replacement for [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).

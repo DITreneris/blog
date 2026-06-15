@@ -92,7 +92,7 @@ Separate classes prevent cost-driven deletion of evidence you will need in a dis
 
 Logging without review is storage expense. **Monthly**, process owners sample high-risk cases—overrides, VIP flags, checker failures. **After every prompt or policy pack change**, spot-check ten cases against [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) pass artifacts.
 
-Stable row-level history must exist before aggregate dashboards mean anything—see [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) for a local stack that persisted audit rows before shipping `/audit_stats`.
+Stable row-level history must exist before aggregate dashboards mean anything—see [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) for a local stack that persisted audit rows before shipping `/audit_stats`, and [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) for validate-before-persist on a local CLI stack.
 
 **Replay drills** quarterly: pick a ticket ID, reconstruct from logs alone, compare to ground truth in CRM. If drill fails, forum action owns schema fix—not "train agents better."
 

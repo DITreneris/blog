@@ -59,7 +59,7 @@ The hero diagram shows the model at the center of a larger design. In practice, 
 
 **Governance** names who may change prompts, tools, data access, and production configuration—and how changes are reviewed. Without governance, “quick fixes” in one team’s chat thread become everyone’s undeclared policy.
 
-Together, these layers turn access into an operable capability. The model remains one component inside them.
+Together, these layers turn access into an operable capability. The model remains one component inside them. The same split applies outside enterprise AI—a Telegram mini app's Web App renders frames while a hosted API owns scores ([Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/)).
 
 ## The cost of chat-only AI
 

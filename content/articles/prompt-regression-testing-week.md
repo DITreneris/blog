@@ -7,7 +7,7 @@ date: 2026-05-30
 hero_image: images/articles/prompt-regression-testing-week/hero.png
 hero_caption: "Northline built 30 cases in five days and blocked a wording tweak when policy pass dropped below gate."
 key_takeaway: You can build a useful prompt regression set in one week if you scope one workflow, freeze cases, and tie results to release decisions.
-reading_time: 4 min read
+reading_time: 7 min read
 slug: prompt-regression-testing-week
 status: published
 summary: A day-by-day playbook to create a practical prompt regression test set in one week and connect it to workflow release gates.
@@ -23,7 +23,7 @@ Most prompt quality regressions are predictable. A template gets "slightly impro
 
 The fix is not a bigger prompt. The fix is **regression testing** with a stable eval set and explicit release gates. You do not need a quarter-long program to start. You can build a credible first version in one week.
 
-This playbook gives a practical day-by-day plan. It aligns with workflow-level gating from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) and release discipline from [The Prompt Registry Playbook](/articles/prompt-registry-playbook/). Regression discipline applies on local stacks too—not only hosted APIs; [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) shows frozen cases and release gates on Ubuntu with Ollama.
+This playbook gives a practical day-by-day plan. It aligns with workflow-level gating from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) and release discipline from [The Prompt Registry Playbook](/articles/prompt-registry-playbook/). Regression discipline applies on local stacks too—not only hosted APIs; [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) shows frozen cases and release gates on Ubuntu with Ollama, and [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) adds a seven-section output validation layer before SQLite persist.
 
 ## What "good enough in one week" means
 

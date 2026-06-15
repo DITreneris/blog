@@ -728,6 +728,15 @@ illustrations:
     usage: [hero]
     status: mapped
 
+  - id: agents-critique-v10
+    manual: true
+    source: v01.png
+    slug: critique-agent-v10-verified-local-audits
+    title: "Critique Agent v1.0: Verified Local Code Audits"
+    category: Implementation Notes
+    usage: [hero]
+    status: mapped
+
   - id: satori-governance-raci-worksheet
     generator: satori
     template: governance-raci-worksheet

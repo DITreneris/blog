@@ -87,6 +87,7 @@ PUBLICATION_ORDER: list[str] = [
     "how-to-build-a-telegram-game-stack",
     "corporate-ladder-soft-launch",
     "critique-agent-v09-audit-stats",
+    "critique-agent-v10-verified-local-audits",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -118,10 +119,11 @@ FIXED_DATES: dict[str, date] = {
     "how-to-build-a-telegram-game-stack": date(2026, 6, 12),
     "corporate-ladder-soft-launch": date(2026, 6, 15),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
+    "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
 }
 
-# Latest allowed publish date (Critique Agent v0.9 field note 2026-06-16)
-PUBLISH_CUTOFF = date(2026, 6, 16)
+# Latest allowed publish date (Critique Agent v1.0 field note 2026-06-17)
+PUBLISH_CUTOFF = date(2026, 6, 17)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

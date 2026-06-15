@@ -50,6 +50,7 @@ categories:
       - slug: how-to-build-a-telegram-game-stack
       - slug: corporate-ladder-soft-launch
       - slug: critique-agent-v09-audit-stats
+      - slug: critique-agent-v10-verified-local-audits
   - title: "Case Studies"
     slug: "case-studies"
     description: "How teams moved from experiments to controlled AI systems."
