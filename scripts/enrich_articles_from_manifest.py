@@ -3,19 +3,19 @@
 
 from __future__ import annotations
 
-import math
 import re
 from pathlib import Path
 
 import frontmatter
 import yaml
 
+from reading_time import label_from_text
+
 ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS_YAML = ROOT / "data" / "illustrations.yaml"
 ARTICLES = ROOT / "content" / "articles"
 
 BOILERPLATE_MARKER = "The hero diagram summarizes the core idea"
-WORDS_PER_MINUTE = 200
 
 CATEGORY_INTRO = {
     "Framework": "This framework note helps teams move from ad hoc prompting to repeatable implementation.",
@@ -62,12 +62,6 @@ Most groups buy another tool or rewrite prompts when results drift. That treats 
 
 Explore training and templates on [Prompt Anatomy](https://www.promptanatomy.app/#pricing) when you are ready to standardize across teams.
 """
-
-
-def _reading_time_label(text: str) -> str:
-    words = len(re.findall(r"\w+", text or ""))
-    minutes = max(1, math.ceil(words / WORDS_PER_MINUTE))
-    return f"{minutes} min read"
 
 
 def _should_skip_body_update(post) -> bool:
@@ -120,7 +114,7 @@ def main() -> int:
             post.content = _body(row["title"], row["category"], slug)
 
         if post.content:
-            post.metadata["reading_time"] = _reading_time_label(post.content)
+            post.metadata["reading_time"] = label_from_text(post.content)
 
         path.write_text(frontmatter.dumps(post), encoding="utf-8")
         print(f"  enriched: {slug}")

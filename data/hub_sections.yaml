@@ -44,10 +44,6 @@ hero:
 start_here:
   title: "Start here"
   cards:
-    - title: "Start with the Framework"
-      description: "Why the model is one component—workflow, context, evaluation, and governance around it."
-      href: "/articles/the-model-is-not-the-system/"
-      icon: "framework"
     - title: "Context Architecture"
       description: "Define what models see, when, and why—with a context spec your team can implement."
       href: "/articles/what-is-context-architecture/"
@@ -80,8 +76,18 @@ featured:
 latest:
   title: "Latest articles"
   lead: "New implementation notes, frameworks, and field guides—sorted by publish date."
-  initial_count: 12
+  initial_count: 6
+  page_size: 6
+  max_visible: 18
+  include_tiers:
+    - pillar
+    - playbook
+    - template
+  exclude_slugs: []
   show_more_label: "Show more articles"
+  show_fewer_label: "Show fewer articles"
+  browse_href: "/#topics-heading"
+  browse_label: "Browse by topic"
 
 newsletter:
   title: "Follow the work as it ships"

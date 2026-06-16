@@ -121,7 +121,7 @@
 
 
 {% macro article_card(article) %}
-<article class="card{% if article.hero_image %} card--has-visual{% endif %}">
+<article class="card card--listing{% if article.hero_image %} card--has-visual{% endif %}">
   {% if article.hero_image %}
   <a class="card__thumb-link" href="/{{ article.url }}" tabindex="-1" aria-hidden="true">
     {{ responsive_hero_img(hero_image_url(article), article.title|striptags|truncate(80, True, '…'), 'card__thumb', 400, 225, false, '400px') }}
@@ -131,18 +131,46 @@
   {{ category_badge(article.category, '/' ~ article.category.url) }}
   {% endif %}
   <h3 class="card__title"><a href="/{{ article.url }}">{{ article.title }}</a></h3>
-  <p class="card__desc">{{ article.summary }}</p>
+  <p class="card__desc">{{ article.summary|striptags }}</p>
   {{ meta_line(article) }}
 </article>
 {% endmacro %}
 
 
 
-{% macro card(title, description, href=None, extra_classes='', card_id=None, icon=None) %}
+{% macro path_card(title, description, href, step, icon=None, card_id=None) %}
+
+  {% set cid = card_id if card_id else step %}
+  {% set icon_accent = {'framework': 1, 'diagnostic': 4, 'agents': 3}.get(icon, 1) if icon else none %}
+
+  <article class="path-card path-card--linked">
+
+    <span class="path-card__step" aria-hidden="true">Step {{ step }}</span>
+
+    {% if icon %}
+
+    <span class="path-card__accent path-card__accent--{{ icon_accent }}" aria-hidden="true"></span>
+
+    {% endif %}
+
+    <h3 class="path-card__title" id="path-card-title-{{ cid }}"><span>{{ title }}</span></h3>
+
+    <p class="path-card__desc">{{ description }}</p>
+
+    <a class="path-card__stretched-link" href="{{ href }}" aria-labelledby="path-card-title-{{ cid }}"><span class="sr-only">{{ title }}</span></a>
+
+  </article>
+
+{% endmacro %}
+
+
+
+{% macro card(title, description, href=None, extra_classes='', card_id=None, icon=None, thumb=None) %}
 
   {% set cid = card_id if card_id else (title|replace(' ', '-')|lower) %}
+  {% set icon_accent = {'framework': 1, 'diagnostic': 4, 'agents': 3}.get(icon, 1) if icon else none %}
 
-  <article class="card{% if href %} card--linked{% endif %}{{ ' ' ~ extra_classes if extra_classes else '' }}">
+  <article class="card{% if href %} card--linked{% endif %}{% if thumb %} card--has-visual{% endif %}{{ ' ' ~ extra_classes if extra_classes else '' }}">
 
     {% if href %}
 
@@ -150,9 +178,13 @@
 
     {% endif %}
 
-    {% if icon %}
+    {% if thumb %}
 
-    <span class="card__icon-badge" aria-hidden="true">{{ icon[0]|upper }}</span>
+    {{ responsive_hero_img('/' ~ thumb, title|striptags|truncate(80, True, '…'), 'card__thumb', 400, 225, false, '(max-width: 640px) 100vw, 400px') }}
+
+    {% elif icon %}
+
+    <span class="card__icon-badge card__icon-badge--{{ icon_accent }}" aria-hidden="true"></span>
 
     {% endif %}
 

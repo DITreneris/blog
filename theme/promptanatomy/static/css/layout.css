@@ -7,6 +7,18 @@
   padding-block: var(--section-padding);
 }
 
+.section--compact {
+  padding-block: var(--section-padding-compact);
+}
+
+.section--elevated {
+  background: var(--color-surface-elevated);
+}
+
+.section--surface {
+  background: var(--color-surface);
+}
+
 .section--dark {
   background: var(--color-surface-dark);
   color: var(--color-text-on-dark);
@@ -41,6 +53,46 @@
 
 .grid--3 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.section--compact .section-lead {
+  margin-bottom: var(--section-lead-gap);
+}
+
+.hub-home .card,
+.hub-home .topic-card,
+.hub-home .path-card {
+  padding: var(--space-card-compact);
+}
+
+.hub-home .card--has-visual.card--linked {
+  padding-top: 0;
+}
+
+.hub-home .grid {
+  gap: var(--space-md);
+}
+
+@media (min-width: 48rem) { /* --bp-nav */
+  .grid--start-here {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid--latest {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .grid--latest {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) { /* --bp-toc */
+  .grid--latest {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .grid--4 {

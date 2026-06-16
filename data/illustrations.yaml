@@ -719,6 +719,16 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: play-corporate-ladder-v24
+    manual: true
+    source: investor.png
+    og_source: investor.png
+    slug: corporate-ladder-v24-score-trust
+    title: "Corporate Ladder v2.4: Score Trust After Soft Launch"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: agents-critique-v09
     manual: true
     source: repo_brain.png

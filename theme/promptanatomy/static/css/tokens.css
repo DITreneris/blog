@@ -83,9 +83,12 @@
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
+  --space-card-compact: 1.25rem;
   --space-xl: 3rem;
   --space-2xl: 4rem;
   --section-padding: clamp(3.5rem, 6vw, 6rem);
+  --section-padding-compact: clamp(2rem, 3.5vw, 3.5rem);
+  --section-lead-gap: var(--space-md);
   --container-max: 75rem;
   --article-max: 45rem;
 
@@ -104,6 +107,7 @@
   /* Z-index */
   --z-header: 100;
   --z-progress: 110;
+  --z-back-to-top: 105;
 
   /* Breakpoints (mirror @media literals — var() not valid in @media) */
   --bp-table: 36rem;

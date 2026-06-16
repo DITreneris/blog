@@ -81,7 +81,7 @@ The tApps Center listing matters for distribution, not for stack design. It plac
 Treat `.lol` engagement as **optional play**, not proof of AI implementation maturity:
 
 - Do not cite game MAUs or leaderboard rank in procurement or governance decks; redirect sponsors to pass rate, cycle time, and incident cost on real workflows per [AI Procurement Freeze](/articles/ai-procurement-freeze/)—the same category error as citing [Classroom Prompt Builder Launch](/articles/classroom-prompt-builder-launch/) PDF sales in a governance forum.
-- Soft launch is not a freeze on scoring rules—tag releases when player-visible math changes, same as any production API.
+- Soft launch is not a freeze on scoring rules—tag releases when player-visible math changes, same as any production API. Rank ladder and scoring contract updated in [Corporate Ladder v2.4](/articles/corporate-ladder-v24-score-trust/).
 - Satire stays on-brand; still avoid harassment patterns in copy or user-generated hooks if you extend social features later.
 
 Corporate Ladder demonstrates that the same **boundary discipline** we recommend in [The Model Is Not the System](/articles/the-model-is-not-the-system/)—thin client, authoritative API, persistent store, separate deploy surfaces—applies to a two-minute consumer game. The game is live; the core Prompt Anatomy job remains structured implementation on `.blog` and practice on `.app`.

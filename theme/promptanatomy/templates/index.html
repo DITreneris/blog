@@ -20,48 +20,58 @@
 {% endblock %}
 
 {% block content %}
-{% set ns = namespace(featured=none) %}
-{% for a in articles %}
-  {% if a.featured and not ns.featured %}
-    {% set ns.featured = a %}
-  {% endif %}
-{% endfor %}
-
 {% include 'partials/blog_hero.html' %}
-{% set article = ns.featured %}
-{% include 'partials/featured_article.html' %}
+
+<div class="hub-home">
 {% include 'partials/start_here_cards.html' %}
-{% include 'partials/topic_cluster_grid.html' %}
-{% include 'partials/template_download.html' %}
 
 {% set latest_cfg = HUB_SECTIONS.latest %}
-{% set initial_count = latest_cfg.initial_count|default(12)|int %}
-{% set latest_sorted = articles|rejectattr('featured')|sort(attribute='title')|sort(attribute='date', reverse=True)|list %}
-{% set latest_initial = latest_sorted[:initial_count] %}
-{% set latest_more = latest_sorted[initial_count:] %}
+{% set initial_count = latest_cfg.initial_count|default(6)|int %}
+{% set page_size = latest_cfg.page_size|default(6)|int %}
+{% set max_visible = latest_cfg.max_visible|default(18)|int %}
+{% set include_tiers = latest_cfg.include_tiers|default(['pillar', 'playbook', 'template']) %}
+{% set start_here_slugs = [] %}
+{% for item in HUB_SECTIONS.start_here.cards %}
+{% if start_here_slugs.append(item.href.rstrip('/').split('/')[-1]) %}{% endif %}
+{% endfor %}
+{% set exclude_slugs = latest_cfg.exclude_slugs|default([]) %}
+{% set blocked = start_here_slugs + exclude_slugs %}
+{% set latest_sorted = articles|rejectattr('featured')|rejectattr('slug', 'in', blocked)|selectattr('content_tier', 'defined')|selectattr('content_tier', 'in', include_tiers)|sort(attribute='title')|sort(attribute='date', reverse=True)|list %}
+{% set pool_total = latest_sorted|length %}
+{% set latest_visible = latest_sorted[:max_visible] %}
 
-<section class="section" id="latest" aria-labelledby="latest-heading">
+<section class="section section--compact section--surface" id="latest" aria-labelledby="latest-heading">
   <div class="container">
-    {{ section_heading(latest_cfg.title, latest_cfg.lead, heading_id='latest-heading') }}
-    <div class="grid grid--2" id="latest-grid">
-      {% for article in latest_initial %}
+    {{ section_heading(latest_cfg.title, None, heading_id='latest-heading') }}
+    <div class="grid grid--latest" id="latest-grid">
+      {% for article in latest_visible %}
+      <div class="latest-card"{% if loop.index0 >= initial_count %} hidden{% endif %}>
         {{ article_card(article) }}
+      </div>
       {% endfor %}
     </div>
-    {% if latest_more %}
-    <div class="grid grid--2" id="latest-more" hidden>
-      {% for article in latest_more %}
-        {{ article_card(article) }}
-      {% endfor %}
-    </div>
-    <p class="latest-more-actions">
-      <button type="button" class="btn btn--secondary" id="latest-load-more" aria-controls="latest-more" aria-expanded="false">
+    {% if latest_visible|length > initial_count or pool_total > max_visible %}
+    <div class="latest-footer cluster">
+      {% if latest_visible|length > initial_count %}
+      <button type="button" class="btn btn--ghost" id="latest-load-more"
+        aria-controls="latest-grid" aria-expanded="false"
+        data-page-size="{{ page_size }}"
+        data-initial="{{ initial_count }}"
+        data-show-more="{{ latest_cfg.show_more_label|default('Show more articles') }}"
+        data-show-fewer="{{ latest_cfg.show_fewer_label|default('Show fewer articles') }}">
         {{ latest_cfg.show_more_label|default('Show more articles') }}
       </button>
-    </p>
+      {% endif %}
+      {% if pool_total > max_visible %}
+      <a class="latest-footer__browse" href="{{ latest_cfg.browse_href|default('/#topics-heading') }}">{{ latest_cfg.browse_label|default('Browse by topic') }}</a>
+      {% endif %}
+    </div>
     {% endif %}
   </div>
 </section>
+
+{% include 'partials/topic_cluster_grid.html' %}
+</div>
 
 {% include 'partials/ecosystem_spoke.html' %}
 {% include 'partials/newsletter_cta.html' %}

@@ -1,16 +1,20 @@
 {% from 'macros/ui.html' import section_heading %}
 
-<section class="section" aria-labelledby="topics-heading">
+{% set t = HUB_SECTIONS.templates %}
+
+<section class="section section--compact section--elevated" aria-labelledby="topics-heading">
 
   <div class="container">
 
-    {{ section_heading('Explore by topic', 'Browse implementation notes organized by practice area.', 'topics-heading') }}
+    {{ section_heading('Explore by topic', None, 'topics-heading') }}
 
     <div class="grid grid--topics">
 
       {% for cat in CATEGORIES %}
 
       <a class="topic-card" href="/topics/{{ cat.slug }}/">
+
+        <span class="topic-card__accent topic-card__accent--{{ loop.index0 % 4 }}" aria-hidden="true"></span>
 
         <h3 class="topic-card__title">{{ cat.title }}</h3>
 
@@ -20,9 +24,16 @@
 
       {% endfor %}
 
+      <a class="topic-card topic-card--featured" href="{{ t.cta_href }}" id="{{ t.id }}">
+
+        <h3 class="topic-card__title">{{ t.title }}</h3>
+
+        <span class="btn btn--primary">{{ t.cta_label }}</span>
+
+      </a>
+
     </div>
 
   </div>
 
 </section>
-

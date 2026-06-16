@@ -1,16 +1,16 @@
-{% from 'macros/ui.html' import section_heading, card %}
+{% from 'macros/ui.html' import section_heading, path_card %}
 
-<section class="section" id="start-here" aria-labelledby="start-here-heading">
+<section class="section section--compact section--elevated" id="start-here" aria-labelledby="start-here-heading">
 
   <div class="container">
 
     {{ section_heading(HUB_SECTIONS.start_here.title, heading_id='start-here-heading') }}
 
-    <div class="grid grid--4">
+    <div class="grid grid--2 grid--start-here">
 
       {% for item in HUB_SECTIONS.start_here.cards %}
 
-      {{ card(item.title, item.description, item.href, card_id=loop.index, icon=item.icon) }}
+      {{ path_card(item.title, item.description, item.href, loop.index, icon=item.icon, card_id=loop.index) }}
 
       {% endfor %}
 
@@ -19,4 +19,3 @@
   </div>
 
 </section>
-

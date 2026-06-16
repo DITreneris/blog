@@ -98,6 +98,9 @@ MARKDOWN = {
 }
 PYGMENTS_STYLE = "monokai"
 
+TYPOGRIFY = True
+TYPOGRIFY_IGNORE_TAGS = ["pre", "code", "kbd", "samp", "var"]
+
 STATIC_PATHS = ["images", "extra"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
@@ -136,6 +139,14 @@ CATEGORY_FEED_ATOM = None
 TAG_FEED_ATOM = None
 
 def _finalize_articles(sender):
+    import frontmatter
+
+    from reading_time import (
+        iso_duration,
+        label_from_words,
+        minutes_from_words,
+        word_count,
+    )
     from resolve_article_journey import attach_journey_to_articles
 
     sender.articles = [
@@ -155,6 +166,28 @@ def _finalize_articles(sender):
             article.metadata["continue_learning"] = cl
         if pp is not None:
             article.metadata["path_position"] = pp
+
+        source_path = getattr(article, "source_path", None)
+        body = ""
+        if source_path:
+            try:
+                body = frontmatter.load(source_path).content or ""
+            except OSError:
+                body = getattr(article, "_content", None) or ""
+        else:
+            body = getattr(article, "_content", None) or ""
+
+        words = word_count(body)
+        computed_mins = minutes_from_words(words)
+        computed_label = label_from_words(words)
+        override = article.metadata.get("reading_time")
+
+        article.metadata["reading_time"] = override or computed_label
+        article.metadata["reading_time_minutes"] = computed_mins
+        article.metadata["time_required"] = iso_duration(computed_mins)
+        article.reading_time = article.metadata["reading_time"]
+        article.reading_time_minutes = computed_mins
+        article.time_required = article.metadata["time_required"]
 
 
 def register():

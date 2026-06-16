@@ -50,6 +50,12 @@
 
   "articleSection": {{ article.category.name|tojson }},
 
+  {% if article.time_required %}
+  "timeRequired": {{ article.time_required|tojson }},
+  {% elif article.reading_time_minutes %}
+  "timeRequired": {{ ('PT' ~ article.reading_time_minutes ~ 'M')|tojson }},
+  {% endif %}
+
   "mainEntityOfPage": {
 
     "@type": "WebPage",

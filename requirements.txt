@@ -6,3 +6,4 @@ PyYAML>=6.0
 pygments>=2.17
 Pillow>=10.0
 rcssmin>=1.1.0
+typogrify>=2.0.11

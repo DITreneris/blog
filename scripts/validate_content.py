@@ -11,6 +11,8 @@ from pathlib import Path
 import frontmatter
 import yaml
 
+from reading_time import WORDS_PER_MINUTE, minutes_from_label, word_count
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 ARTICLES = CONTENT / "articles"
@@ -32,7 +34,6 @@ STRUCTURED_TAKEAWAY = re.compile(
     r"^Structured implementation turns .+ into repeatable outcomes\.$", re.I
 )
 LINK_PATTERN = re.compile(r"\]\(/articles/([a-z0-9-]+)/")
-WORDS_PER_MINUTE = 200
 MIN_CASE_STUDY_WORDS = 250
 MIN_TEMPLATE_WORDS = 150
 MIN_FRAMEWORK_WORDS = 900
@@ -74,15 +75,6 @@ def _slug_paths() -> set[str]:
     return {p.stem for p in ARTICLES.glob("*.md")}
 
 
-def _word_count(text: str) -> int:
-    return len(re.findall(r"\w+", text or ""))
-
-
-def _reading_time_minutes(label: str) -> int | None:
-    m = re.match(r"^(\d+)\s*min read$", (label or "").strip(), re.I)
-    return int(m.group(1)) if m else None
-
-
 def _deck_section_warnings(body: str) -> list[str]:
     """Warn when most H2 sections are thin (slide-deck rhythm)."""
     sections = re.split(r"\n##\s+", body.strip())
@@ -92,7 +84,7 @@ def _deck_section_warnings(body: str) -> list[str]:
     counted = 0
     for section in sections[1:]:
         chunk = section.split("\n##", 1)[0]
-        wc = _word_count(chunk)
+        wc = word_count(chunk)
         counted += 1
         if wc < DECK_SECTION_MIN_WORDS:
             thin += 1
@@ -171,9 +163,9 @@ def validate_file(path: Path, slugs: set[str], slug_templates: dict[str, str]) -
         if GENERIC_TAKEAWAY.search(takeaway) or STRUCTURED_TAKEAWAY.match(takeaway):
             errors.append(f"{path.name}: key_takeaway looks like auto-generated stub")
 
-        rt = _reading_time_minutes(str(meta.get("reading_time") or ""))
+        rt = minutes_from_label(str(meta.get("reading_time") or ""))
         if rt is not None:
-            expected = max(1, (_word_count(body) + WORDS_PER_MINUTE - 1) // WORDS_PER_MINUTE)
+            expected = max(1, (word_count(body) + WORDS_PER_MINUTE - 1) // WORDS_PER_MINUTE)
             if abs(rt - expected) > 2:
                 errors.append(
                     f"{path.name}: reading_time '{rt} min' mismatches ~{expected} min from word count"
@@ -184,7 +176,7 @@ def validate_file(path: Path, slugs: set[str], slug_templates: dict[str, str]) -
                 errors.append(f"{path.name}: broken internal link to /articles/{slug}/")
 
         category = meta.get("category")
-        wc = _word_count(body)
+        wc = word_count(body)
         if category == Category.CASE_STUDIES.value and wc < MIN_CASE_STUDY_WORDS:
             errors.append(
                 f"{path.name}: case study too short ({wc} words, min {MIN_CASE_STUDY_WORDS})"

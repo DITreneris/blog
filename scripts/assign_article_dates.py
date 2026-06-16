@@ -86,6 +86,7 @@ PUBLICATION_ORDER: list[str] = [
     "daily-workflow-library-info-launch",
     "how-to-build-a-telegram-game-stack",
     "corporate-ladder-soft-launch",
+    "corporate-ladder-v24-score-trust",
     "critique-agent-v09-audit-stats",
     "critique-agent-v10-verified-local-audits",
 ]
@@ -118,6 +119,7 @@ FIXED_DATES: dict[str, date] = {
     "daily-workflow-library-info-launch": date(2026, 5, 30),
     "how-to-build-a-telegram-game-stack": date(2026, 6, 12),
     "corporate-ladder-soft-launch": date(2026, 6, 15),
+    "corporate-ladder-v24-score-trust": date(2026, 6, 16),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
     "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
 }

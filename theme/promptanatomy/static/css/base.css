@@ -32,6 +32,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 img {
   max-width: 100%;
   height: auto;

@@ -1,4 +1,4 @@
-{% from 'macros/ui.html' import section_heading, btn, card, category_badge, meta_line, article_card %}
+{% from 'macros/ui.html' import section_heading, btn, card, path_card, category_badge, meta_line, article_card %}
 
 
 
@@ -152,11 +152,31 @@
 
 
 
+<section class="section" aria-labelledby="sg-path-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Path card', 'Homepage Start here — curated onboarding paths (no hero).', 'sg-path-card-heading') }}
+
+    <div class="grid grid--2 grid--start-here">
+
+      {{ path_card('Context Architecture', 'Define what models see, when, and why—with a context spec your team can implement.', '#', 1, icon='framework', card_id='sg-path-1') }}
+
+      {{ path_card('Design an Agent Workflow', 'Map a business task to bounded tools, handoffs, and eval gates.', '#', 2, icon='agents', card_id='sg-path-2') }}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <section class="section" aria-labelledby="sg-card-heading">
 
   <div class="container">
 
-    {{ section_heading('Card', None, 'sg-card-heading') }}
+    {{ section_heading('Card', 'Generic linked hub card (style guide reference).', 'sg-card-heading') }}
 
     <div class="grid grid--3">
 
@@ -169,6 +189,34 @@
   </div>
 
 </section>
+
+
+
+{% set sg_listing_article = articles|selectattr('hero_image')|first %}
+
+{% if sg_listing_article %}
+
+<section class="section" aria-labelledby="sg-listing-card-heading">
+
+  <div class="container">
+
+    {{ section_heading('Article listing card', 'Homepage Latest — thumb, badge, meta, equal-height grid.', 'sg-listing-card-heading') }}
+
+    <div class="grid grid--latest">
+
+      <div class="latest-card">
+
+        {{ article_card(sg_listing_article) }}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{% endif %}
 
 
 
@@ -252,7 +300,7 @@
 
   <div class="container">
 
-    {{ section_heading('Featured card', 'Homepage flagship for the article with featured: true — compact badge and CTA, editorial title scale.', 'sg-featured-card-heading') }}
+    {{ section_heading('Featured card', 'Style guide reference for card--featured — not rendered on the homepage (pass 2).', 'sg-featured-card-heading') }}
 
     {% set sg_cat = namespace(name='Framework', url='topics/framework/') %}
     {% set sg_featured = namespace(title='The Model Is Not the System', summary='Teams fail when chat is the product. This framework maps the system around the model—workflow, context, evaluation, and governance.', url='articles/the-model-is-not-the-system/', hero_image='images/articles/the-model-is-not-the-system/hero.png', category=sg_cat, reading_time='8 min read', date=none, modified=none) %}
@@ -285,22 +333,29 @@
 
 
 
-<section class="section" aria-labelledby="sg-topic-card-heading">
+<section class="section section--compact" aria-labelledby="sg-topic-card-heading">
 
   <div class="container">
 
-    {{ section_heading('Topic card', None, 'sg-topic-card-heading') }}
+    {{ section_heading('Topic card', 'Homepage topic grid with accent stripe; templates tile uses topic-card--featured.', 'sg-topic-card-heading') }}
 
     <div class="grid grid--topics">
 
       <a class="topic-card" href="#">
+        <span class="topic-card__accent topic-card__accent--0" aria-hidden="true"></span>
         <h3 class="topic-card__title">Framework</h3>
         <p class="topic-card__desc">Implementation methodology and maturity models.</p>
       </a>
 
       <a class="topic-card" href="#">
+        <span class="topic-card__accent topic-card__accent--1" aria-hidden="true"></span>
         <h3 class="topic-card__title">AI Agents</h3>
         <p class="topic-card__desc">Workflow design, handoffs, and guardrails.</p>
+      </a>
+
+      <a class="topic-card topic-card--featured" href="/topics/templates/">
+        <h3 class="topic-card__title">Implementation templates</h3>
+        <span class="btn btn--primary">Browse templates</span>
       </a>
 
     </div>
@@ -503,7 +558,7 @@
 
   <div class="container">
 
-    {{ section_heading('Template band', 'Elevated surface CTA on the homepage templates section.', 'sg-template-band-heading') }}
+    {{ section_heading('Template band', 'Legacy elevated surface — homepage uses topic-card--featured in the topic grid instead.', 'sg-template-band-heading') }}
 
     <div class="template-band">
       {{ section_heading('Implementation templates', 'Use ready-made canvases, checklists, and operating documents to structure AI work inside teams.', 'sg-template-band-inner-heading') }}
