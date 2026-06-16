@@ -42,6 +42,7 @@ illustrations:
     generator: satori
     template: context-architecture
     source: Satori/what-is-context-architecture.png
+    og_source: context2.png
     slug: what-is-context-architecture
     title: "What Is Context Architecture?"
     category: Framework
