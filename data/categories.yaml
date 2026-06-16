@@ -1,7 +1,7 @@
 categories:
   - title: "Prompt Systems"
     slug: "prompt-systems"
-    description: "Structured prompting, templates, and repeatable prompt workflows."
+    description: "Registry, testing, and release ops for prompts—not general workflow design."
     reading_path:
       - slug: types-of-prompts-for-business-workflows
       - slug: prompt-engineering-vs-ai-workflow-engineering
@@ -30,7 +30,8 @@ categories:
       - slug: securing-mcp-agent-tools
   - title: "Implementation Notes"
     slug: "implementation-notes"
-    description: "Practical diagnostics and field notes from real deployments."
+    home_title: "Field notes"
+    description: "Ship logs, diagnostics, and field notes from real deployments."
     reading_path:
       - slug: prompt-anatomy-ecosystem-map
       - slug: shipping-prompt-anatomy
@@ -62,7 +63,8 @@ categories:
       - slug: ai-tender-response-pipeline
   - title: "Templates"
     slug: "templates"
-    description: "Canvases, checklists, and operating documents."
+    home_title: "Worksheets & checklists"
+    description: "Worksheets and checklists you paste into team rituals—not long playbooks."
     reading_path:
       - slug: ai-workflow-canvas-template
       - slug: ai-workflow-eval-checklist

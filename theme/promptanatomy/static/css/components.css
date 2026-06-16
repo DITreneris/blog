@@ -824,6 +824,12 @@
   color: var(--color-text-primary);
 }
 
+.latest-footer__sep {
+  color: var(--color-text-muted);
+  font-size: var(--text-meta);
+  user-select: none;
+}
+
 /* Badge */
 .badge {
   display: inline-block;
@@ -1223,10 +1229,14 @@
   height: 4px;
 }
 
-.topic-card__accent--0 { background: var(--color-ecosystem-1); }
-.topic-card__accent--1 { background: var(--color-ecosystem-2); }
-.topic-card__accent--2 { background: var(--color-ecosystem-3); }
-.topic-card__accent--3 { background: var(--color-ecosystem-4); }
+.topic-card__accent--framework { background: var(--color-topic-framework); }
+.topic-card__accent--prompt-systems { background: var(--color-topic-prompt-systems); }
+.topic-card__accent--ai-agents { background: var(--color-topic-ai-agents); }
+.topic-card__accent--ai-governance { background: var(--color-topic-ai-governance); }
+.topic-card__accent--implementation-notes { background: var(--color-topic-implementation-notes); }
+.topic-card__accent--case-studies { background: var(--color-topic-case-studies); }
+.topic-card__accent--templates { background: var(--color-topic-templates); }
+.topic-card__accent--opinion { background: var(--color-topic-opinion); }
 
 .topic-card--featured {
   display: flex;

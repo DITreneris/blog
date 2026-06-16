@@ -160,9 +160,9 @@
 
     <div class="grid grid--2 grid--start-here">
 
-      {{ path_card('Context Architecture', 'Define what models see, when, and why—with a context spec your team can implement.', '#', 1, icon='framework', card_id='sg-path-1') }}
+      {{ path_card('The Model Is Not the System', 'Teams fail when chat is the product. Map the system around the model—workflow, context, evaluation, and governance.', '#', 1, icon='framework', card_id='sg-path-1') }}
 
-      {{ path_card('Design an Agent Workflow', 'Map a business task to bounded tools, handoffs, and eval gates.', '#', 2, icon='agents', card_id='sg-path-2') }}
+      {{ path_card('Context Architecture', 'Define what models see, when, and why—with a context spec your team can implement.', '#', 2, icon='framework', card_id='sg-path-2') }}
 
     </div>
 
@@ -337,25 +337,20 @@
 
   <div class="container">
 
-    {{ section_heading('Topic card', 'Homepage topic grid with accent stripe; templates tile uses topic-card--featured.', 'sg-topic-card-heading') }}
+    {{ section_heading('Topic card', 'Homepage topic grid — one card per category with slug-mapped accent stripe.', 'sg-topic-card-heading') }}
 
     <div class="grid grid--topics">
 
       <a class="topic-card" href="#">
-        <span class="topic-card__accent topic-card__accent--0" aria-hidden="true"></span>
+        <span class="topic-card__accent topic-card__accent--framework" aria-hidden="true"></span>
         <h3 class="topic-card__title">Framework</h3>
         <p class="topic-card__desc">Implementation methodology and maturity models.</p>
       </a>
 
       <a class="topic-card" href="#">
-        <span class="topic-card__accent topic-card__accent--1" aria-hidden="true"></span>
-        <h3 class="topic-card__title">AI Agents</h3>
-        <p class="topic-card__desc">Workflow design, handoffs, and guardrails.</p>
-      </a>
-
-      <a class="topic-card topic-card--featured" href="/topics/templates/">
-        <h3 class="topic-card__title">Implementation templates</h3>
-        <span class="btn btn--primary">Browse templates</span>
+        <span class="topic-card__accent topic-card__accent--templates" aria-hidden="true"></span>
+        <h3 class="topic-card__title">Worksheets &amp; checklists</h3>
+        <p class="topic-card__desc">Worksheets and checklists you paste into team rituals—not long playbooks.</p>
       </a>
 
     </div>
@@ -558,7 +553,7 @@
 
   <div class="container">
 
-    {{ section_heading('Template band', 'Legacy elevated surface — homepage uses topic-card--featured in the topic grid instead.', 'sg-template-band-heading') }}
+    {{ section_heading('Template band', 'Elevated CTA surface for templates — used on /design-system/; homepage templates discovery via Latest footer link.', 'sg-template-band-heading') }}
 
     <div class="template-band">
       {{ section_heading('Implementation templates', 'Use ready-made canvases, checklists, and operating documents to structure AI work inside teams.', 'sg-template-band-inner-heading') }}

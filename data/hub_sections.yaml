@@ -44,14 +44,14 @@ hero:
 start_here:
   title: "Start here"
   cards:
+    - title: "The Model Is Not the System"
+      description: "Teams fail when chat is the product. Map the system around the model—workflow, context, evaluation, and governance."
+      href: "/articles/the-model-is-not-the-system/"
+      icon: "framework"
     - title: "Context Architecture"
       description: "Define what models see, when, and why—with a context spec your team can implement."
       href: "/articles/what-is-context-architecture/"
       icon: "framework"
-    - title: "Diagnostic: Vibe Prompting"
-      description: "Score ten signs of unstructured AI use and follow a 30-day fix plan."
-      href: "/articles/10-signs-your-company-is-vibe-prompting/"
-      icon: "diagnostic"
     - title: "Design an Agent Workflow"
       description: "Map a business task to bounded tools, handoffs, and eval gates—with a worked example."
       href: "/articles/how-to-design-an-ai-agent-workflow/"
@@ -86,6 +86,8 @@ latest:
   exclude_slugs: []
   show_more_label: "Show more articles"
   show_fewer_label: "Show fewer articles"
+  templates_href: "/topics/templates/"
+  templates_label: "Browse worksheets"
   browse_href: "/#topics-heading"
   browse_label: "Browse by topic"
 

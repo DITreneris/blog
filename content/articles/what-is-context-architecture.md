@@ -4,11 +4,10 @@ body_locked: true
 category: Framework
 content_tier: pillar
 date: 2024-04-27
-modified: 2024-07-27
+modified: 2026-06-16
 hero_image: images/articles/what-is-context-architecture/hero.png
 hero_caption: "Layered context stack — task, policy, operational data, and memory strategy designed before prompt assembly."
 key_takeaway: Context architecture controls task, operational, policy, and memory layers—not stuffing the prompt window.
-reading_time: 7 min read
 slug: what-is-context-architecture
 status: published
 summary: How teams decide what models see, when, and why—with a context spec walkthrough, prompt assembly order, context rot, and data classification.
@@ -20,16 +19,18 @@ faq:
   - question: Is context architecture the same as prompt engineering?
     answer: No. Prompt engineering optimizes one invocation. Context architecture defines what information may enter any invocation, from which sources, under which policy, and with what retention—across the workflow lifecycle.
   - question: Should we put everything in the prompt because the window is large?
-    answer: No. Kitchen-sink context increases cost, latency, and contradiction risk. Design layers and retrieval boundaries instead—see Context Window Myths for why size is not a strategy.
+    answer: No. Kitchen-sink context increases cost, latency, and contradiction risk. Design layers and retrieval boundaries instead—see the Context Window Myths article for why size is not a strategy.
   - question: Who owns the context spec?
     answer: One named owner per workflow—usually ops or domain lead—with IT implementing retrieval and Legal owning policy packs. Split ownership without a single approver creates contradictory layers.
 ---
+
+Support teams paste full ticket threads and wiki exports into chat because the window is large enough. The model replies fluently—and cites draft internal notes, promises refunds outside policy, or mixes one customer's case with another's. Legal finds the violation weeks later; engineering cannot reproduce the good answer from last Tuesday. The model was adequate. Nobody had designed what it was allowed to see.
 
 **Context architecture** is the discipline of deciding what information a model receives, in what order, with what authority—and what must never be included. It is not "how long can we make the prompt." Teams that confuse the two pay in confident wrong answers, compliance remediation, and unreproducible wins.
 
 Prompt design is how layers **meet in one invocation**. Architecture is how those layers are sourced, classified, versioned, and governed over time. Both matter; conflating them produces brittle chat hacks that break when staff rotate or models change.
 
-If your organization is still debating model selection while nobody owns context, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines the context layer in that system and shows how to document it in a spec your team can implement. Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
+After [The Model Is Not the System](/articles/the-model-is-not-the-system/), this article defines the context layer in that system and shows how to document it in a spec your team can implement. Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 For entry points on window size and mechanics, see [Context Window Myths](/articles/context-window-myths/) and [Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps](/articles/tokens-and-context-window-limits/).
 
@@ -44,6 +45,7 @@ Four layers appear in most business workflows. Design each explicitly; do not re
 **Policy context** — red lines, jurisdictions, retention rules, approved phrasing. Policy should not be an afterthought appended when someone remembers compliance.
 
 **Memory strategy** — what persists across sessions vs what must be forgotten. Session scratchpad, episodic case history, organizational KB, and denied classes (e.g., raw payment data) need separate rules—[Memory Types for AI Systems](/articles/memory-types-for-ai-systems/) covers runtime choices.
+
 **Anti-pattern:** Dumping operational data first because it is easy to retrieve. **Better:** Policy and task frames before operational details so the model optimizes for compliance, not completion.
 
 ## Context spec walkthrough: support-reply-v3
@@ -129,6 +131,8 @@ Agents inherit the same classes—[Data Boundaries for AI Agents](/articles/data
 
 ## Failure modes and recovery
 
+Most production context failures trace to a small set of diagnosable patterns—not a bad prompt on Tuesday. Each pattern below has a named recovery path; fixing the symptom in chat without updating the spec, eval set, or owner usually brings the failure back within a sprint.
+
 **Kitchen-sink retrieval.** Everything indexed "just in case." **Recovery:** Shrink to tagged subsets; measure eval pass rate vs latency.
 
 **Stale policy packs.** Model cites last year's refund rules. **Recovery:** Policy version in logs; block deploy if pack older than threshold.
@@ -143,9 +147,11 @@ When layers contradict each other, the model resolves conflicts probabilisticall
 
 ## What to do Monday
 
+Another architecture deck will not fix context drift. The minimum viable move is one workflow, one named owner, and three eval cases that fail when policy is buried or sources are wrong—evidence you can show Legal and engineering in the same meeting.
+
 1. Pick one workflow and write a context spec with allowed/denied sources.
 2. Assign one context owner and one policy pack version field.
 3. Reorder your next prompt template: policy, task, operational.
 4. Add three eval cases that fail if policy is buried or sources are wrong.
 
-Context architecture turns access into accountable design. The model will use whatever you give it—design that gift deliberately. For the full grounding system (scope + retrieval + verify), read [Grounding AI Outputs](/articles/grounding-ai-outputs/). Term index: [Glossary](/articles/prompt-anatomy-glossary/).
+Context architecture turns access into accountable design. The model will use whatever you give it—design that gift deliberately. For the full grounding system (scope + retrieval + verify), read [Grounding AI Outputs](/articles/grounding-ai-outputs/).

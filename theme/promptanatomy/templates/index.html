@@ -50,7 +50,6 @@
       </div>
       {% endfor %}
     </div>
-    {% if latest_visible|length > initial_count or pool_total > max_visible %}
     <div class="latest-footer cluster">
       {% if latest_visible|length > initial_count %}
       <button type="button" class="btn btn--ghost" id="latest-load-more"
@@ -62,11 +61,10 @@
         {{ latest_cfg.show_more_label|default('Show more articles') }}
       </button>
       {% endif %}
-      {% if pool_total > max_visible %}
+      <a class="latest-footer__browse" href="{{ latest_cfg.templates_href|default('/topics/templates/') }}">{{ latest_cfg.templates_label|default('Browse worksheets') }}</a>
+      <span class="latest-footer__sep" aria-hidden="true">&middot;</span>
       <a class="latest-footer__browse" href="{{ latest_cfg.browse_href|default('/#topics-heading') }}">{{ latest_cfg.browse_label|default('Browse by topic') }}</a>
-      {% endif %}
     </div>
-    {% endif %}
   </div>
 </section>
 

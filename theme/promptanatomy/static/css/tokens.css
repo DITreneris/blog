@@ -61,6 +61,16 @@
   --color-ecosystem-3: #3f6fff;
   --color-ecosystem-4: #f38a3f;
 
+  /* Topic grid accents (mirror data/og/brand.mjs categoryStyles) */
+  --color-topic-framework: #cfa73a;
+  --color-topic-prompt-systems: #60a5fa;
+  --color-topic-ai-agents: #34d399;
+  --color-topic-ai-governance: #a78bfa;
+  --color-topic-implementation-notes: #fbbf24;
+  --color-topic-case-studies: #f472b6;
+  --color-topic-templates: #2dd4bf;
+  --color-topic-opinion: #fb923c;
+
   /* Typography */
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;

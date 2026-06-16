@@ -103,6 +103,18 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+@media (min-width: 48rem) {
+  .grid--topics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 68rem) {
+  .grid--topics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .stack {
   display: flex;
   flex-direction: column;
