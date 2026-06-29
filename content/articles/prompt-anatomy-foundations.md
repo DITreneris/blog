@@ -4,7 +4,6 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2024-01-28
-modified: 2026-06-14
 faq:
 - answer: Start with one business outcome and workflow, then context architecture,
     then model steps—with evaluation and governance before scaling tools.

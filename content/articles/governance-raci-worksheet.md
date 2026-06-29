@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-06-14
+date: 2026-06-15
 faq:
 - answer: Before pilot traffic scales and before any promotion when ownership is unclear.
     Fill one workflow first—do not wait for enterprise-wide policy to be perfect.

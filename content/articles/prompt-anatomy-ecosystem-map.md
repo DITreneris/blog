@@ -9,7 +9,7 @@ hero_caption: How the blog, training app, and implementation tools fit together 
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png
 key_takeaway: Read frameworks on .blog, discover on .site, practice on .app, and treat
   .lol as optional play—not your implementation path.
-reading_time: 6 min read
+reading_time: 9 min read
 slug: prompt-anatomy-ecosystem-map
 status: published
 summary: Where to read, practice, and build—promptanatomy.blog for frameworks, promptanatomy.site
@@ -72,6 +72,18 @@ Use `.online` when the question is teacher-facing prompt structure—not when yo
 
 Use `.info` when practitioners need org-context prompts and a daily library—not when you need first-touch onboarding (`.cloud`), executive cadence (`.ceo`), or team governance playbooks alone. A closed-loop builder agent system localized UI, UX, and prompt copy across five locales; finishing the library does not replace workflow IDs or eval gates on your side.
 
+### promptanatomy.help
+
+**Role: Hire — HR hiring prompts.** [promptanatomy.help](https://promptanatomy.help/en/) is a free, EN-only static site with ten structured hiring prompts for US recruiters—sourcing, screening, structured interviews, scorecards, and decision messaging. Launched **2026-06-24**; see [Hiring Prompts Without the Data Leak](/articles/hiring-prompts-help-launch/) for the field note and sister repo [DITreneris/personalas](https://github.com/DITreneris/personalas). The site does **not** call an AI API; recruiters copy prompts into ChatGPT, Claude, or Gemini and keep candidate data out of the builder.
+
+Use `.help` when the question is recruiter-facing prompt structure with candidate-data boundaries—not when you need enterprise governance playbooks or an applicant-tracking system. Optional paid PDF guides ship from the same property; they do not replace blog frameworks.
+
+### promptanatomy.pro
+
+**Role: Decide — executive decision OS.** [promptanatomy.pro](https://promptanatomy.pro/) is an open-source (MIT) Executive OS that compiles CEO/COO decision prompts—Global Context, executive modules, clarity practice, a safety check, and a printable Max Value Kit. Launched **2026-07-16**; see [The Prism Test for Executive Decisions](/articles/executive-os-pro-launch/) for the field note and sister repo [DITreneris/leader](https://github.com/DITreneris/leader). The site does **not** call an AI API; leaders copy prompts into external tools and own the decision.
+
+Use `.pro` for higher-stakes allocation and scaling decisions—not the weekly operating cadence, which lives on `.ceo` ([The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/)). Manage and Decide are different jobs; do not merge the two executive surfaces.
+
 ### promptanatomy.lol
 
 **Role: Play.** [Corporate Ladder](https://www.promptanatomy.lol/) is a satirical office-climb game in Telegram—entertainment and brand flavor, not an implementation path. It soft-launched 2026-06-15 and is listed on [tApps Center](https://tapps.center/application/corporateladder); see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for the live field note. For the deployment stack, see [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/).
@@ -92,9 +104,9 @@ The table below lists specialized surfaces. They extend the core read → practi
 | **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons; see [field note](/articles/first-ai-lesson-cloud-launch/) |
 | **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library; see [field note](/articles/daily-workflow-library-info-launch/) |
 | **[promptanatomy.space](https://www.promptanatomy.space/en/)** | Create — marketing content system |
-| **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR workflow system |
+| **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR hiring prompts; see [field note](/articles/hiring-prompts-help-launch/) |
 | **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |
-| **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — scaling and decisions |
+| **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — executive decision OS; see [field note](/articles/executive-os-pro-launch/) |
 
 ## How to navigate without duplication
 
@@ -108,3 +120,5 @@ Follow this sequence once—not every property on day one.
 For outcome framing before you buy anything, read [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/).
 
 **Rule of thumb:** if two properties answer the same question, prefer the blog for depth and `.app` for drills. Never copy playbook prose into Slack and call it training—link the article, then assign the lab.
+
+**Operator lab builds** (sister repos, not `promptanatomy.*` domains) are documented as Implementation Notes field notes—e.g. [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) and [BTC Buzz Bot](/articles/btcbuzzbot-x-publish-loop-field-notes/). They prove publish loops and audit patterns; they are not properties in the table above.

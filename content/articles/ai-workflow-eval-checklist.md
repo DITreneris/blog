@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-06-13
+date: 2026-06-14
 faq:
 - answer: Smoke gates run on every change before merge or promotion. Pilot gates run
     before traffic increases beyond the pilot cohort. Scale gates run before organization-wide

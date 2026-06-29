@@ -45,6 +45,7 @@ PUBLICATION_ORDER: list[str] = [
     "audit-trails-for-ai-workflows",
     "ai-risk-review-cadence",
     "case-study-vibe-prompting-to-structured-workflow",
+    "btcbuzzbot-x-publish-loop-field-notes",
     "northline-part-2-scaling-eval-coverage",
     "ai-workflow-canvas-template",
     "when-ai-hallucinates-confidence",
@@ -89,6 +90,8 @@ PUBLICATION_ORDER: list[str] = [
     "corporate-ladder-v24-score-trust",
     "critique-agent-v09-audit-stats",
     "critique-agent-v10-verified-local-audits",
+    "hiring-prompts-help-launch",
+    "executive-os-pro-launch",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -122,10 +125,13 @@ FIXED_DATES: dict[str, date] = {
     "corporate-ladder-v24-score-trust": date(2026, 6, 16),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
     "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
+    "btcbuzzbot-x-publish-loop-field-notes": date(2025, 9, 15),
+    "hiring-prompts-help-launch": date(2026, 6, 24),
+    "executive-os-pro-launch": date(2026, 7, 16),
 }
 
-# Latest allowed publish date (Critique Agent v1.0 field note 2026-06-17)
-PUBLISH_CUTOFF = date(2026, 6, 17)
+# Latest allowed publish date (Executive OS .pro field note 2026-07-16)
+PUBLISH_CUTOFF = date(2026, 7, 16)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

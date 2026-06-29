@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Templates
 content_tier: template
-date: 2026-06-15
+date: 2026-06-16
 faq:
 - answer: No allowlist enforcement, no audit log for tool calls, no permission scoping,
     or no documented owner for server updates—these fail regardless of feature score.

@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: playbook
-date: 2026-06-06
+date: 2026-06-07
 faq:
 - answer: Choose LangGraph when you need explicit graph and state control with custom
     orchestration. Choose CrewAI for fast role-based multi-agent prototyping with

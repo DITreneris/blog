@@ -4,7 +4,7 @@ body_locked: true
 category: Framework
 content_tier: pillar
 date: 2024-04-27
-modified: 2026-06-16
+modified: 2024-07-27
 hero_image: images/articles/what-is-context-architecture/hero.png
 hero_caption: "Layered context stack — task, policy, operational data, and memory strategy designed before prompt assembly."
 key_takeaway: Context architecture controls task, operational, policy, and memory layers—not stuffing the prompt window.

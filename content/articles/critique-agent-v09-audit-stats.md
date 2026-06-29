@@ -18,27 +18,28 @@ hero_caption: Before/after — repo-aware critique replaces zero-context chat. v
   the audit loop and history; v0.9 adds /audit_stats. Context and inspect boxes on
   the hero are next, not current.
 hero_image: images/articles/critique-agent-v09-audit-stats/hero.png
-key_takeaway: A local critique agent becomes operational when audit results persist,
-  history is retrievable, and aggregate stats expose GO/FIX mix—not when Ollama returns
-  fluent chat.
-reading_time: 8 min read
+key_takeaway: Do not add aggregate stats until audit history is stable—weekly FIX counts
+  lie when the schema behind saved rows is still moving.
 slug: critique-agent-v09-audit-stats
 status: published
-summary: Critique Agent v0.9 on Ubuntu with Ollama, Gemma 12B, and Pydantic AI — v0.8
-  audit history, new /audit_stats aggregates, and an honest roadmap for repo context.
+summary: Do not add aggregate audit stats until history schema is stable—otherwise weekly
+  FIX counts lie. Critique Agent v0.9 on a local stack adds /audit_stats on top of persisted
+  history, with an honest roadmap for repo context next.
 tags:
 - agents
 - eval
 - workflow-automation
 - governance
-title: 'Critique Agent v0.9: Local Audit Stats'
+title: When Local Audit Stats Earn Trust
 ---
 
-Pasting a code block into a cloud chatbot is fast—and operationally hollow. The model guesses from zero project context, returns prose you cannot gate, and leaves no row Legal could replay after a near-miss. I built **Critique Agent** on Ubuntu with Ollama, Gemma 12B, and Pydantic AI to close a smaller loop first: **structured local audit, persisted history, aggregate stats**—not a ChatGPT clone. Four years of breaking models open in chat taught me where they lie; this build is the boring half—where the win is a row you can replay, not a clever reply.
+*Part 1 — measurement: history before stats.*
 
-The hero diagram frames the destination: *before*, a chatbot judges from zero context; *now*, an agent reads the repo before judging it. **v0.9 does not ship full repo context or file inspect yet.** It ships **`/audit_stats`** on top of the v0.8 audit loop.
+After a near-miss, Legal does not want a chat transcript—they want a row they can replay: verdict, file reference, confidence, retry flag, timestamp. Pasting a code block into a cloud chatbot is fast and operationally hollow. The model guesses from zero project context, returns prose you cannot gate, and leaves nothing durable behind.
 
-For the wider lesson that inference is not the system, see [The Model Is Not the System](/articles/the-model-is-not-the-system/).
+I built **Critique Agent** on a local Ubuntu stack (Ollama, Gemma 12B, Pydantic AI) to close a smaller loop first: **structured local audit, persisted history, aggregate stats**—not a ChatGPT clone. The hero diagram frames the destination: *before*, a chatbot judges from zero context; *now*, an agent reads the repo before judging it. **v0.9 does not ship full repo context or file inspect yet.** It ships **`/audit_stats`** on top of the v0.8 audit loop. For the wider lesson that inference is not the system, see [The Model Is Not the System](/articles/the-model-is-not-the-system/).
+
+Northline's platform lead ran weekly `/audit_stats` for a month—the GO mix looked healthy. Then security asked for replay on a flagged merge. The rows existed, but nothing in them documented what "validated output" meant run to run. Aggregates without a stable contract lie with the same confidence as good ones. That gap is what v0.9 closes at the measurement layer—and what [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) closes at validation.
 
 ## What v0.8 already closed
 
@@ -51,13 +52,6 @@ select code block → local audit → validate structured output → retry once 
 
 Each accepted run stores a structured verdict—not free text. The enum is **`GO`**, **`GO_WITH_NOTES`**, or **`FIX`**, with confidence, file reference, retry flag, and a timezone-aware UTC timestamp. Invalid structured output triggers **one retry**; if validation still fails, the run does not land in history as a false positive. Prompting was improvisation; **`GO` / `FIX` enums with one retry** is the first time `elif` felt like governance.
 
-The `/audit_history` command lists recent rows newest first. Optional limit works:
-
-```text
-/audit_history
-/audit_history 5
-```
-
 A real persisted row from development looked like this:
 
 ```text
@@ -66,7 +60,7 @@ A real persisted row from development looked like this:
 
 That format is deliberate. [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) treat pass/fail gates as promotion rights; this CLI encodes the same discipline for a **single-agent code critique**—schema first, retry once, persist only accepted rows. [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/) ask what you can reconstruct after an incident; here the minimum is verdict, location, confidence, retry, and timestamp—not a chat transcript.
 
-v0.8 also hardened operator basics: stripped input before exit checks, replaced deprecated `datetime.utcnow()` with `datetime.now(UTC)`, and added regression coverage for `get_recent_audit_results`. Less copy-paste, more owning the branch. The external `pydantic_ai` deprecation warning about event loops is noted but out of project scope.
+The `/audit_history` command lists recent rows newest first. Everything runs **100% local**—no API keys, no egress. Stack and install details live in the sister repo, not duplicated here.
 
 ## What v0.9 adds — `/audit_stats`
 
@@ -86,24 +80,7 @@ First time those numbers came from real runs—not demo data—I cared more abou
 
 Use it in weekly review the same way teams use CLEAR scorecards—[Evaluating Agents with CLEAR](/articles/evaluating-agents-with-clear/) separates efficacy from assurance and reliability. `/audit_history` is the drill-down row; `/audit_stats` is the weekly headline. If FIX counts climb after a model swap, you have a signal to freeze promotion until eval cases catch up—not a vibe in standup.
 
-v0.9 intentionally does **not** add file filtering, pagination, embeddings, RAG, multi-agent orchestration, or dashboards. Those were explicit **do not do yet** items after v0.8; stats are the smallest next command that still teaches something about operating a local agent.
-
-## Local stack (what runs underneath)
-
-Before agent behavior, the inference stack has to be boring and reproducible. Ollama up and Gemma answering on-box still hits different from an API key and a prayer. The in-body diagram shows the install pipeline—**not** the full capability ring around "Private AI Assistant."
-
-![Local inference stack — Ollama, Gemma 12B, and Pydantic AI on Ubuntu](/images/articles/critique-agent-v09-audit-stats/local-stack.png)
-
-*Figure: User → Ollama → Gemma → Pydantic AI → local assistant. Knowledge, Documents, and Analytics on the poster are deferred—not shipped in v0.9.*
-
-| Gate | Check |
-|------|-------|
-| **Ollama alive** | Model pulls and responds to a one-line smoke prompt on-box |
-| **Python env** | Pinned `pydantic` and `pydantic-ai` in a venv; tests pass |
-| **Structured output** | Audit schema validates before any persist |
-| **CLI loop** | Select block → audit → history row → stats headline |
-
-Everything runs **100% local**—no API keys, no egress. That aligns with [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/): when source code cannot leave the machine, the boundary is physical, not prompt text. The stack chapter is install discipline; the agent chapter is governance discipline.
+v0.9 intentionally does **not** add file filtering, pagination, embeddings, RAG, multi-agent orchestration, or dashboards. Stats are the smallest next command that still teaches something about operating a local agent.
 
 ## Hero boxes — shipped vs roadmap
 
@@ -117,16 +94,15 @@ The repo-brain hero lists five capabilities. Treat it as a **roadmap with honest
 | **Context** | Roadmap — repo-aware context before verdict |
 | **Inspect** | Roadmap — targeted file read before audit |
 
-The `own_gpt` stack poster also shows Knowledge, Automation, Documents, and Analytics around a generic assistant—**none of that ring is v0.9 scope**; automation here means CLI commands and tests, not orchestration, and documents/analytics dashboards wait until history and stats prove stable.
-
 Next build steps follow [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/): add context and inspect as bounded tools with the same structured output and persist rules—still no RAG, still no embedding index, still no multi-agent handoffs until the single-agent audit loop is boring.
 
 ## Operating discipline (what I would not skip again)
 
-Three decisions kept v0.9 shippable:
+Two decisions kept v0.9 shippable:
 
 1. **History before stats.** `/audit_stats` came after `/audit_history` worked in CLI and pytest—not the reverse.
 2. **Schema before fluency.** A chatty local model that ignores `GO` / `FIX` enums is a demo, not an agent.
-3. **Defer the platform.** Embeddings, RAG, orchestration, and dashboards were written down as *do not do yet*—and v0.9 respected that list.
 
-Same energy as the rush—aimed at rows you can diff. Less theater, more `GO` / `FIX`. Still fun. If you are building your own local critique agent, copy the loop, not the poster. Install Ollama, enforce structured output, persist accepted audits, list history, then aggregate. Next in the series: [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) (validate before persist). Context and repo inspect belong on the hero because they are the next chapter—not because v0.9 already shipped them.
+Embeddings, RAG, orchestration, and dashboards stay on the *do not do yet* list until history and stats prove stable.
+
+Same energy as the rush—aimed at rows you can diff. Less theater, more `GO` / `FIX`. Still fun. If you are building your own local critique agent, copy the loop, not the poster: enforce structured output, persist accepted audits, list history, then aggregate. Next in the series: [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/)—what *accepted* means before SQLite persist. Context and repo inspect belong on the hero because they are the next chapter—not because v0.9 already shipped them.

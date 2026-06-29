@@ -4,7 +4,6 @@ body_locked: true
 category: Templates
 content_tier: template
 date: 2026-04-24
-modified: 2026-06-14
 hero_caption: Copy-paste change log — prompt, context, model, and tool rows with owners
   and rollback pins.
 hero_image: images/articles/ai-change-log-template-prompt-context-and-model-updates/hero.png

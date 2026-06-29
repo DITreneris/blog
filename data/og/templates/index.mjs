@@ -47,6 +47,7 @@ import { buildCaseStudyFinance } from './case-study-finance.mjs';
 import { buildMcpSecurityControls } from './mcp-security-controls.mjs';
 import { buildHumanHandoffWorksheet } from './human-handoff-worksheet.mjs';
 import { buildAgentFrameworkComparison } from './agent-framework-comparison.mjs';
+import { buildXPublishLoop } from './x-publish-loop.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -93,6 +94,7 @@ export const TEMPLATES = {
   'mcp-security-controls': buildMcpSecurityControls,
   'human-handoff-worksheet': buildHumanHandoffWorksheet,
   'agent-framework-comparison': buildAgentFrameworkComparison,
+  'x-publish-loop': buildXPublishLoop,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

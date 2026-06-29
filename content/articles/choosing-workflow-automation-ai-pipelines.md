@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-12
+date: 2026-06-13
 hero_image: images/articles/choosing-workflow-automation-ai-pipelines/hero.png
 hero_caption: "Workflow automation decision matrix — fit, control, maintainability, and operating risk."
 key_takeaway: Choose automation tooling by workflow constraints and operating model, not by feature demos or marketplace volume.

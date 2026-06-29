@@ -113,10 +113,22 @@ clusters:
       - prompt-anatomy-marketing-site-launch
       - classroom-prompt-builder-launch
       - daily-workflow-library-info-launch
+      - hiring-prompts-help-launch
+      - executive-os-pro-launch
       - how-to-build-a-telegram-game-stack
       - corporate-ladder-soft-launch
       - corporate-ladder-v24-score-trust
     hub_slugs:
       - prompt-anatomy-ecosystem-map
       - the-model-is-not-the-system
+    target_pillar_backlog: null
+
+  operator_builds:
+    spokes:
+      - critique-agent-v09-audit-stats
+      - critique-agent-v10-verified-local-audits
+      - btcbuzzbot-x-publish-loop-field-notes
+    hub_slugs:
+      - the-model-is-not-the-system
+      - how-to-design-an-ai-agent-workflow
     target_pillar_backlog: null

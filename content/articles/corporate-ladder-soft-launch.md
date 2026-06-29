@@ -4,31 +4,29 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-15
-modified: 2026-06-15
 hero_caption: Promo card — dodge meetings, climb the org chart, play free on Telegram via
   @CorporateLadder_bot.
 hero_image: images/articles/corporate-ladder-soft-launch/hero.png
 key_takeaway: Corporate Ladder is live as optional brand play on promptanatomy.lol; tApps
   listing validates distribution, but game engagement is not implementation maturity.
-reading_time: 4 min read
 slug: corporate-ladder-soft-launch
 status: published
-summary: Soft-launch field note on Corporate Ladder—now live on Telegram and listed on
-  tApps Center—with how to play, what shipped, and why it stays separate from governed
-  AI workflows.
+summary: Optional brand play is not AI implementation maturity—Corporate Ladder on promptanatomy.lol
+  and Telegram is satirical one-thumb engagement, listed on tApps Center, separate from governed
+  workflows on .blog.
 tags:
   - workflow-automation
   - change-management
 title: "Corporate Ladder Soft Launch"
 ---
 
-Prompt Anatomy's first Telegram mini app, **Corporate Ladder**, soft-launched on **2026-06-15**. The game is playable at [promptanatomy.lol](https://www.promptanatomy.lol/) and through [@CorporateLadder_bot](https://t.me/corporateladder_bot). The same week, Corporate Ladder appeared on [tApps Center](https://tapps.center/application/corporateladder)—Telegram's mini-app directory and community discovery surface—tagged *"Lumberjack meets Office life."*
+Prompt Anatomy's first Telegram mini app, **Corporate Ladder**, soft-launched on **2026-06-15**. The game is playable at [promptanatomy.lol](https://www.promptanatomy.lol/) and through [@CorporateLadder_bot](https://t.me/corporateladder_bot). The same week, Corporate Ladder appeared on [tApps Center](https://tapps.center/application/corporateladder)—Telegram's mini-app directory—tagged *"Lumberjack meets Office life."* Optional play is brand flavor, not proof of governed AI maturity on `.blog`.
 
 The tApps tag—*"Lumberjack meets Office life"*—is lineage, not random copy. Telegram's 2016 Lumberjack, one of @gamebot's first HTML5 hits, showed that a one-thumb timing loop could live inside a chat app for tens of millions of taps. Corporate Ladder rides the same rail but swaps the axe for org-chart gaps: closer to *Jumping Jack* (1983)—climb through scrolling openings, one wrong beat and you drop—than to a lumber-yard sim.
 
 At nine, loading *Jumping Jack* from cassette on a ZX Spectrum—beep, chirp, border colors, wait—the idea of handing a playable loop to hundreds of millions of chat users would have sounded cosmic. Bits as bird-voice noise on tape; today a commit on GitHub and a deploy on Vercel. Same urge to climb one more floor; different loader.
 
-This is a **soft launch**: the bot, leaderboards, and Web App are live; polish, load tuning, and scoring-rule hardening continue. This article is a field note on what shipped, how play feels, and where the game sits relative to governed AI work on `.blog`.
+This is a **soft launch**: the bot, leaderboards, and Web App are live; polish, load tuning, and scoring-rule hardening continue. This field note covers how play feels and where the game sits relative to governed AI work on `.blog`. Stack depth stays in [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/); repo layout and CI live in [DITreneris/ladder](https://github.com/DITreneris/ladder).
 
 ## What Corporate Ladder is
 
@@ -64,17 +62,7 @@ From the live build and [open monorepo](https://github.com/DITreneris/ladder):
 
 What works in review: frictionless entry from a bot deep link, immediate feedback on wrong-side taps, and satire that reads in two seconds ("dodge meetings, climb the org chart"). What it is not: training, workflow templates, or a stand-in for [Measuring AI Workflow ROI](/articles/measuring-ai-workflow-roi/).
 
-## What shipped (surfaces)
-
-| Surface | URL |
-|---------|-----|
-| **Mini App** | [promptanatomy.lol](https://www.promptanatomy.lol/) |
-| **Bot** | [@CorporateLadder_bot](https://t.me/corporateladder_bot) |
-| **API** | [ladder-production-642d.up.railway.app/health](https://ladder-production-642d.up.railway.app/health) |
-
-Builders who want repo layout, CI, and local dev commands should use the sister repo [DITreneris/ladder](https://github.com/DITreneris/ladder) (TypeScript/Vite/Tailwind mini app on Vercel; Python FastAPI API and aiogram bot on Railway; Supabase Postgres for users and scores). **Architecture depth**—the six-layer boundary model from GitHub through Telegram—stays in [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/); this post does not duplicate that playbook.
-
-The tApps Center listing matters for distribution, not for stack design. It places Corporate Ladder where Telegram users already browse mini apps, alongside community news and catalog search—validation that the Web App URL, bot registration, and store metadata are coherent enough for external discovery.
+The tApps Center listing matters for distribution—it places Corporate Ladder where Telegram users already browse mini apps, validation that Web App URL, bot registration, and store metadata are coherent enough for external discovery.
 
 ## Soft-launch guardrails
 

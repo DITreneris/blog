@@ -4,7 +4,6 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-12
-modified: 2026-06-15
 hero_caption: Six-layer pipeline from GitHub through backend, Supabase, Railway, Vercel,
   and Telegram—the stack behind Corporate Ladder on Telegram.
 hero_image: images/articles/how-to-build-a-telegram-game-stack/hero.png

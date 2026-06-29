@@ -18,25 +18,24 @@ hero_caption: Level 6 Angel Investor—funding, ego, exit; same two-button loop,
 hero_image: images/articles/corporate-ladder-v24-score-trust/hero.png
 key_takeaway: Leaderboard rows are trustworthy only after the API accepts a run under
   a documented plausibility contract—not when the Web App alone says you climbed.
-reading_time: 5 min read
 slug: corporate-ladder-v24-score-trust
 status: published
-summary: v2.4 tagged release closes soft-launch scoring gaps—run_duration_ms plausibility,
-  filing UX, extended rank ladder through Angel Investor—and invites play on Telegram
-  without claiming implementation maturity.
+summary: A leaderboard that rejects legal runs destroys trust faster than no leaderboard.
+  Corporate Ladder v2.4 closes soft-launch scoring gaps with run_duration_ms plausibility,
+  filing UX, and extended ranks through Angel Investor.
 tags:
 - workflow-automation
 - change-management
 title: "Corporate Ladder v2.4: Score Trust After Soft Launch"
 ---
 
-[Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) went live on **2026-06-15** with the bot, leaderboards, and Web App on [promptanatomy.lol](https://www.promptanatomy.lol/). The one-thumb loop was already clear—tap left or right, dodge meetings, climb Career Years. What followed was quite a sprint: not new mechanics, but **UI, UX, visuals, and algorithm** until scores, surfaces, and endgame behaved under real Telegram traffic. We tagged **`v2.4.0`** in [DITreneris/ladder](https://github.com/DITreneris/ladder) when filing trust caught up to the loop.
+A leaderboard that rejects legal runs destroys trust faster than no leaderboard. [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) went live on **2026-06-15** on [promptanatomy.lol](https://www.promptanatomy.lol/). The one-thumb loop was already clear—tap left or right, dodge meetings, climb Career Years. What followed was a sprint on UI, UX, visuals, and algorithm until scores behaved under real Telegram traffic. We tagged **`v2.4.0`** in [DITreneris/ladder](https://github.com/DITreneris/ladder) when filing trust caught up to the loop.
 
-This field note is what that sprint closed—especially **plausibility**, where the API must reason in milliseconds while Supabase, Railway, and the bot stay in sync. Stack depth stays in [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/); here we document the **trust layer** players and operators feel after soft launch.
+The game borrows the same instinct as a one-beat timing climb—one wrong side and the run ends—but the trust problem is eval-gate discipline, not nostalgia. Stack depth stays in [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/); here we document the **trust layer** players and operators feel after soft launch.
 
 ## What soft launch did not guarantee
 
-Soft launch was honest about open work: polish, load tuning, and **scoring-rule hardening** continued, with tagged releases when player-visible math changed. The live field note also stopped the rank ladder at **CEO (35y)**. The [open repo README](https://github.com/DITreneris/ladder) now runs through **Board Member (50y)** and **Angel Investor (75y)**, with scores filing up to **100y**—late-game satire on the hero, same binary loop, new hazards (**Quorum**, **Runway**) without new UI chrome per beat.
+Soft launch was honest about open work: polish, load tuning, and **scoring-rule hardening** continued, with tagged releases when player-visible math changed. The live field note stopped the rank ladder at **CEO (35y)**; v2.4 extends through **Board Member (50y)** and **Angel Investor (75y)**, with scores filing up to **100y**—late-game satire on the hero, same binary loop, new hazards (**Quorum**, **Runway**) without new UI chrome per beat. Full rank milestones live in the soft-launch post and [open repo README](https://github.com/DITreneris/ladder).
 
 Worse for trust: power-user runs could **400** on submit despite legal play. The Web App showed a strong run; Supabase never got a row. Daily and weekly boards looked thinner than they were—a leaderboard that lies by omission is worse than no leaderboard. v2.4 fixes the definition of **accepted** before persist, the same discipline we encode in [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) for local audits.
 
@@ -67,34 +66,21 @@ Getting those three clocks—client throttle, unix seconds, true milliseconds—
 
 ## What v2.4 ships (player-visible)
 
-**Filing UX.** Post-run **sync chip**, serial submit queue, and **`best_score`** on the API response so you see filing state instead of guessing. Game-over card trimmed to one context line and one punchline—**RE-APPLY** stays above the fold. Wrong-side taps surface **Employment Terminated** with an immediate retry path; the run ends clearly, not silently.
+**Filing UX.** Post-run **sync chip** and **`best_score`** on the API response so you see filing state instead of guessing. Rejected submits return **400 + HR audit toast**—no silent drop.
 
-**Visuals and endgame.** Progressive **corp-env ghost** backdrops shift per floor band (Intern Pit through Investor Lounge) without competing with obstacles. **Board Member** and **Angel Investor** bands reuse the same left/right discipline; the hero promo card shows Level 6 satire—funding, ego, exit—not a new control scheme.
+**Visuals and endgame.** Progressive **corp-env ghost** backdrops shift per floor band without competing with obstacles. **Board Member** and **Angel Investor** bands reuse the same left/right discipline; the hero promo card shows Level 6 satire—funding, ego, exit—not a new control scheme. Production friction (CSP, ad hosts, marquee ticker) shipped in the same tag but does not change the trust contract—see the sister repo release notes.
 
-**Production friction.** Vercel **CSP** blocked inline handlers—Leaderboard and Share needed **`data-action` listeners** under Telegram's in-app browser. Rewarded **HR Training** revive needed AdsGram hosts in the allowlist after v2.3 security headers shipped. Home **marquee ticker** rotates shift-aware headlines; headlines freeze on Punch In so vindicated deaths stay fair.
+## Deploy discipline
 
-**Canonical rank ladder (post–v2.4):**
+Three surfaces must stay aligned when scoring rules change:
 
-| Rank | Career Years |
-|------|----------------|
-| Intern | Start |
-| Manager | 10y |
-| Director | 20y |
-| CEO | 35y |
-| Board Member | 50y |
-| Angel Investor | 75y |
-
-Scores file up to **100y** when the API accepts the run.
-
-## Swiss-clock chain (Supabase, Railway, bot)
-
-**Supabase** must behave like a Swiss clock: `submit_cooldowns`, run rows, and leaderboard RPCs mean one thing per schema version. Migrations **002** and **003** are required before v2.4 sign-off—cooldown persistence and leaderboard grants are not optional polish.
-
-**Railway (API)** is the authoritative gate. It validates plausibility, writes only accepted runs, and returns structured errors the client can show. Deploy **API before mini-app** when scoring rules change so you never debug UI v2.4 against API v2.3.
-
-**Bot** stays thin: distribution and Web App chrome, not game rules trapped in aiogram. High care on the bot means stable deep links and menu URLs pointed at the current Vercel bundle—otherwise players open stale JS against a fresh API.
+- **Railway (API)** is the authoritative gate—it validates plausibility, writes only accepted runs, and returns structured errors the client can show. Deploy **API before mini-app** when scoring rules change.
+- **Supabase** holds run rows and leaderboard RPCs—one meaning per schema version.
+- **Bot** stays thin: distribution and Web App chrome, not game rules trapped in aiogram. Stable deep links must point at the current Vercel bundle.
 
 We **freeze a commit**, run Tier A–C gates in [SHIP_GATES.md](https://github.com/DITreneris/ladder/blob/main/SHIP_GATES.md), update the prod bundle anchor, then cut **`v2.4.0`**. Same promotion discipline as [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) on `.blog`: define accepted, then persist.
+
+Corporate Ladder v2.4 applies the same **boundary discipline** we recommend in [The Model Is Not the System](/articles/the-model-is-not-the-system/)—thin client, authoritative API, persistent store, separate deploy surfaces. The mini-app displays a run; only the API decides what counts.
 
 ## Guardrails
 

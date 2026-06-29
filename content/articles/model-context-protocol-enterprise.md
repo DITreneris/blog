@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: AI Agents
 content_tier: pillar
-date: 2026-06-05
+date: 2026-06-06
 hero_image: images/articles/model-context-protocol-enterprise/hero.png
 hero_caption: "MCP architecture — decoupled reasoning engine, standardized tool servers, OAuth boundaries, and audit logging."
 key_takeaway: MCP standardizes how agents discover tools and data—security and governance belong at the protocol layer, not afterthought."

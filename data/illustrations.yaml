@@ -378,6 +378,26 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: promo-help-hr-launch
+    manual: true
+    source: help.png
+    og_source: help.png
+    slug: hiring-prompts-help-launch
+    title: "Hiring Prompts Without the Data Leak"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
+  - id: promo-pro-executive-launch
+    manual: true
+    source: pro_app.png
+    og_source: pro_app.png
+    slug: executive-os-pro-launch
+    title: "The Prism Test for Executive Decisions"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-telegram-game-stack
     source: Basic/telegram-game-architecture.png
     slug: how-to-build-a-telegram-game-stack
@@ -746,6 +766,18 @@ illustrations:
     title: "Critique Agent v1.0: Verified Local Code Audits"
     category: Implementation Notes
     usage: [hero]
+    status: mapped
+
+  - id: satori-btcbuzzbot-x-loop
+    generator: satori
+    template: x-publish-loop
+    source: Satori/btcbuzzbot-x-publish-loop-field-notes.png
+    slug: btcbuzzbot-x-publish-loop-field-notes
+    satori_title: "X Publish Loop with Limits"
+    title: "BTC Buzz Bot: X Publish Loop with Limits"
+    subtitle: "Scheduler, ingest, LLM gate, post-only publish—not reply automation."
+    category: Implementation Notes
+    usage: [hero, og]
     status: mapped
 
   - id: satori-governance-raci-worksheet

@@ -3,7 +3,7 @@ authors: Prompt Anatomy
 body_locked: true
 category: Implementation Notes
 content_tier: playbook
-date: 2026-06-11
+date: 2026-06-12
 faq:
 - answer: End-to-end workflow behavior across agent boundaries, escalation logic, retries,
     run controls, release coordination, and incident evidence—not individual prompt

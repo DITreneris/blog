@@ -9,12 +9,11 @@ hero_caption: Fuzzy prompt → five-part anatomy → quick send check → copy-r
 hero_image: images/articles/first-ai-lesson-cloud-launch/hero.png
 key_takeaway: Onboarding should teach a 30-second send gate before template libraries—fuzzy
   prompts scale faster than fuzzy review habits.
-reading_time: 6 min read
 slug: first-ai-lesson-cloud-launch
 status: published
-summary: Field note on the April 2026 launch of promptanatomy.cloud—a 15-slide enter lesson
-  that puts quick send check before prompt depth—and what enablement teams can borrow from
-  the architecture.
+summary: Teams that open with a template library scale fuzzy review habits faster than quality—paste-ready
+  prompts without a send gate ship invented facts. promptanatomy.cloud puts quick send check
+  before prompt depth in a 15-slide enter lesson.
 tags:
   - prompt-systems
   - change-management
@@ -22,9 +21,9 @@ tags:
 title: Quick Send Check First — The First AI Lesson on promptanatomy.cloud
 ---
 
-In late April 2026, Prompt Anatomy shipped the **Enter** spoke at [promptanatomy.cloud](https://promptanatomy.cloud/)—a free, no-account interactive lesson with a five-part prompt framework, a copy-ready library, and a short quiz. Source and deploy details live in the open sister repo [DITreneris/lead](https://github.com/DITreneris/lead): a single static lesson built to `site/` with EN at `/` and LT at `/lt/`. The MVP landed **2026-04-29**; canonical host cutover and EN social cards shipped through **2026-04-30**.
+Teams that open with a template library scale fuzzy review habits faster than they scale quality—paste-ready prompts without a send gate ship invented facts. In late April 2026, Prompt Anatomy shipped the **Enter** spoke at [promptanatomy.cloud](https://promptanatomy.cloud/) (EN at `/`, LT at `/lt/`)—a free, no-account interactive lesson with a five-part prompt framework, copy-ready library, and short quiz, never calling an AI API. Source lives in the open sister repo [DITreneris/lead](https://github.com/DITreneris/lead).
 
-This article is a field note on what shipped, why the **slide order** teaches governance before template depth, and where `.cloud` sits beside governed implementation content on `.blog` and team practice on `.app`. If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+This field note covers what shipped, why **slide order** teaches governance before template depth, and where `.cloud` sits beside governed implementation content on `.blog`. If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## What promptanatomy.cloud is
 
@@ -51,7 +50,7 @@ That separation mirrors a rule we repeat on `.blog`: the lesson is not the execu
 
 Most onboarding products rush visitors to a template library. `.cloud` deliberately does the opposite: after basics, framework, and a fuzzy→structured practice, the **roadmap** names six workflows—and puts **Quick send check** at the front of the queue, before meeting plans, email drafts, and the rest.
 
-That order is the editorial argument. Teams that copy library prompts without a send gate scale **fuzzy review habits** faster than they scale quality. The quick send check asks four questions in under thirty seconds: Are facts true? What context is missing? What are two or three reputational risks? What must you verify with an independent source?
+That order is the editorial argument. The enter chain on the hero reads **fuzzy prompt → five-part anatomy → quick send check → copy-ready library**—habit before scale. Teams that copy library prompts without a send gate scale **fuzzy review habits** faster than they scale quality. The quick send check asks four questions in under thirty seconds: Are facts true? What context is missing? What are two or three reputational risks? What must you verify with an independent source?
 
 | Depth template on `.cloud` | Blog parallel |
 |----------------------------|---------------|
@@ -68,40 +67,17 @@ Northline's enablement lead rolled out the [daily workflow library on promptanat
 
 The lesson teaches **Role → Context → Reasoning → Output → Quality control**—not as vocabulary trivia but as blocks you add when answers stay fuzzy or stakes rise. Often two or three blocks are enough; all five matter when you cannot risk mistakes on client, leadership, or partner communication.
 
-For the registry and versioning story behind those blocks, see [Structured Prompt System Blueprint](/articles/structured-prompt-system-blueprint/). Prompt Anatomy uses "anatomy" at three layers; do not merge them in procurement decks. The five-part lesson on `.cloud` is the **enter** frame; the five-part Anatomizer on `.site` is discover-and-demo; the six-block system in training on `.app` is write-and-drill. The comparison table lives in [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/)—read it once, then pick the surface that matches your stage.
+For the registry story behind those blocks, see [Structured Prompt System Blueprint](/articles/structured-prompt-system-blueprint/). The five-part lesson on `.cloud` is the **enter** frame; the Anatomizer on `.site` is discover-and-demo; the six-block system in training on `.app` is write-and-drill. The comparison table lives in [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/)—read it once, then pick the surface that matches your stage.
 
-## Architecture lessons for implementers
+## Builder patterns (for implementers)
 
-Builders evaluating a similar enter product—or auditing how Prompt Anatomy extends the brand—should note six patterns from the sister repo. The same assembly≠execution pattern shipped earlier on [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/) (April 2026, `DITreneris/ceo`); `.cloud` reuses the stack for first-touch onboarding:
+Three patterns from the sister repo worth copying:
 
-1. **Prompt text SOT** — copy-ready templates live in `libraryPrompts` (LT inline) and [`assets/prompt-library-en.js`](https://github.com/DITreneris/lead/blob/main/assets/prompt-library-en.js); HTML `pre` blocks hydrate via `syncLibraryDom`. Treat it as a lightweight prompt registry for product copy—the same idea as versioned packs in the blueprint article.
-2. **Prompt assembly ≠ AI execution** — the lesson constructs text; execution happens in a tool the user controls. The send check is the enter-spoke version of handoff rules before external send.
-3. **EN-first locale build** — `npm run build` emits `site/index.html` (EN, `/`) and `site/lt/index.html` (LT, `/lt/`); `npm run verify` checks library key parity and EN locale leaks.
-4. **Lesson host vs brand host** — [promptanatomy.cloud](https://promptanatomy.cloud/) owns canonical lesson URLs; [promptanatomy.app](https://www.promptanatomy.app/) owns brand, pricing, and training. Do not merge them in meta or checkout flows.
-5. **GEO artifacts** — build generates `llms.txt`, `llms-full.txt`, FAQ JSON-LD, and crawler-friendly `robots.txt` for citation—not thin definitional SEO on the blog.
-6. **CI verify pipeline** — `verify-library-keys`, `verify-en-locale`, and `verify-social-meta` run after every build; OG PNG must be 1200×630 with versioned `?v=` cache busting.
+- **Prompt text SOT** — copy-ready templates in `libraryPrompts` and [`assets/prompt-library-en.js`](https://github.com/DITreneris/lead/blob/main/assets/prompt-library-en.js); treat it as a lightweight prompt registry for product copy.
+- **Assembly ≠ execution** — the lesson constructs text; the send check is the enter-spoke version of handoff rules before external send.
+- **Lesson host vs brand host** — [promptanatomy.cloud](https://promptanatomy.cloud/) owns canonical lesson URLs; [promptanatomy.app](https://www.promptanatomy.app/) owns brand, pricing, and training. Do not merge them in meta or checkout flows.
 
-Deploy checklists, locale rules, and operator runbooks stay in the sister repo ([AGENTS.md](https://github.com/DITreneris/lead/blob/main/AGENTS.md), SETUP.md)—not duplicated here.
-
-## What shipped (surfaces)
-
-| Surface | URL |
-|---------|-----|
-| **Lesson (EN)** | [promptanatomy.cloud](https://promptanatomy.cloud/) |
-| **Lesson (LT)** | [promptanatomy.cloud/lt/](https://promptanatomy.cloud/lt/) |
-| **Repository** | [github.com/DITreneris/lead](https://github.com/DITreneris/lead) |
-| **Training / pricing** | [promptanatomy.app](https://www.promptanatomy.app/) |
-| **Executive kit (hero link)** | [promptanatomy.pro](https://promptanatomy.pro/en/) |
-
-The stack is intentionally thin: one source `index.html`, locale build scripts, Vercel `site/` output, no backend and no AI API. Design System v2.0 lives in sister `docs/design_system.md`.
-
-## Read the hero diagram
-
-The launch hero encodes the enter chain: **Fuzzy prompt → Five-part anatomy → Quick send check → Copy-ready library**.
-
-Random chat produces inconsistent quality and no shared vocabulary. **Five-part anatomy** turns chat into a designed artifact with explicit QC. **Quick send check** is the thirty-second gate before anything leaves the building. **Copy-ready library** scales daily work only after the habit exists—not instead of it.
-
-That progression parallels the marketing-site hero (*Random Prompt → Logic Layer → Team Workflow → Repeatable Output*) in [Prompt Anatomy Marketing Site Launch](/articles/prompt-anatomy-marketing-site-launch/)—except `.cloud` stops before "team workflow" because **the reader owns the workflow**. Discover the brand on `.site`; enter through `.cloud`; read depth on `.blog`.
+Locale rules and operator runbooks stay in the sister repo ([AGENTS.md](https://github.com/DITreneris/lead/blob/main/AGENTS.md), SETUP.md)—not duplicated here.
 
 ## Launch guardrails
 

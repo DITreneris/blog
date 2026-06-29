@@ -58,6 +58,7 @@ KNOWN_TEMPLATES = frozenset(
         "risk-forum-worksheet",
         "business-outcomes-flow",
         "multi-agent-handoff-worksheet",
+        "x-publish-loop",
         "og-default",
         "category-default",
         "article-og",
