@@ -4,6 +4,7 @@ body_locked: true
 category: Templates
 content_tier: template
 date: 2025-10-24
+modified: 2026-06-29
 hero_caption: Copy-paste template — fill the canvas before selecting tools or writing
   prompts.
 hero_image: images/articles/ai-workflow-canvas-template/hero.png
@@ -39,6 +40,7 @@ Before the full table, confirm five elements exist. Predictable AI outputs come 
 **Metric** — one primary business measure the sponsor cares about—not token count or "adoption."
 
 If any element is blank, pause tool selection until named. Add [evaluation hooks](/articles/evaluation-hooks-for-ai-workflows/) count and pass threshold before pilot traffic.
+
 ## AI workflow canvas (blank)
 
 | Section | Your answer |

@@ -4,6 +4,7 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2026-06-08
+modified: 2026-06-29
 hero_image: images/articles/multi-agent-observability/hero.png
 hero_caption: "Multi-agent observability — handoff traces, failure modes, and governance-ready logs."
 key_takeaway: Multi-agent workflows need run-level traces that show handoff contracts, policy versions, and guardrail events—not only final output text.
@@ -20,7 +21,7 @@ tags:
   - workflow-automation
 ---
 
-Multi-agent workflows fail in ways single-prompt systems never do: one agent rewrites assumptions, another agent executes stale instructions, and the final output looks polished while being operationally wrong. If you cannot see who handed what to whom, and under which policy/version context, you cannot debug or govern the system.
+Multi-agent workflows fail in ways single-prompt systems never do. One agent rewrites assumptions. Another executes stale instructions. The final output looks polished while being operationally wrong. If you cannot see who handed what to whom, and under which policy or version context, you cannot debug or govern the system.
 
 This playbook gives you a practical observability baseline for production multi-agent systems. Pair it with [Multi-Agent Handoff Pattern](/articles/multi-agent-handoff-pattern/) for orchestration design, and [Audit Trails for AI Workflows](/articles/audit-trails-for-ai-workflows/) for governance evidence requirements.
 

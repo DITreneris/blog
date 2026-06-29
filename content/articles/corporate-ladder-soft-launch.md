@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-15
+modified: 2026-06-29
 hero_caption: Promo card — dodge meetings, climb the org chart, play free on Telegram via
   @CorporateLadder_bot.
 hero_image: images/articles/corporate-ladder-soft-launch/hero.png

@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-11
+modified: 2026-06-29
 hero_image: images/articles/measuring-ai-workflow-roi/hero.png
 hero_caption: "Track pass rate, time saved, and incident cost before scaling automation."
 key_takeaway: Sponsor-ready ROI combines pass rate, net cycle time, and incident cost—activity metrics alone will not justify scale.
@@ -22,7 +23,7 @@ tags:
 
 Most AI ROI discussions fail because teams report activity metrics ("number of prompts," "agent usage," "tokens consumed") instead of operating outcomes. Executive sponsors do not approve scale based on excitement. They approve based on dependable quality, measurable time impact, and risk-adjusted cost.
 
-This playbook gives a simple, repeatable ROI model you can use in governance and steering meetings. It ties directly to outcome framing in [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/) and to case evidence patterns used in the Northline series, including [Northline Part 2: Scaling Eval Coverage](/articles/northline-part-2-scaling-eval-coverage/) and [Case Study: Vibe Prompting to Structured Workflow](/articles/case-study-vibe-prompting-to-structured-workflow/).
+This playbook gives a simple, repeatable ROI model you can use in governance and steering meetings. It ties to outcome framing in [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/). For case evidence patterns, see the Northline series—[Northline Part 2: Scaling Eval Coverage](/articles/northline-part-2-scaling-eval-coverage/) and [Case Study: Vibe Prompting to Structured Workflow](/articles/case-study-vibe-prompting-to-structured-workflow/).
 
 ## The three ROI drivers
 

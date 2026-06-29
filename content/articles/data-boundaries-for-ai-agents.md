@@ -4,6 +4,7 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-06-06
+modified: 2026-06-29
 faq:
 - answer: Default deny. Add allow rows per workflow with owner sign-off and Legal
     consult for customer-facing reads or writes.
@@ -30,7 +31,9 @@ title: Data Boundaries for AI Agents
 
 Agents that can "read everything" eventually read the wrong thing. **Data boundaries** define what an agent may retrieve, write, or infer—and what always requires a human. Prompt text alone is not enforcement; the integration layer must fail closed when a workflow requests a denied resource. Teams that learn this after a near-miss usually fix prompts first; auditors ask about connector configuration.
 
-**Northline B2B** documents boundaries for `support-reply-v3` and a pilot routing agent. This article explains default-deny design, a filled allow/deny matrix, policy triggers that force human review, and how to expand access with eval evidence—not optimism. Connect to [context architecture](/articles/what-is-context-architecture/) classification, [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [risk cadence](/articles/ai-risk-review-cadence/) for the full loop. When agents use [Model Context Protocol](/articles/model-context-protocol-enterprise/) servers, sanitize tool returns before they re-enter the prompt—see [Securing MCP and Agent Tools](/articles/securing-mcp-agent-tools/). For the grounded-vs-guessing visual, see [Why AI Hallucinates](/articles/why-ai-hallucinates/).
+**Northline B2B** documents boundaries for `support-reply-v3` and a pilot routing agent. This article explains default-deny design, a filled allow/deny matrix, policy triggers that force human review, and how to expand access with eval evidence—not optimism.
+
+Connect to [context architecture](/articles/what-is-context-architecture/) classification, [governance roles](/articles/ai-governance-roles-and-ownership/), [audit trails](/articles/audit-trails-for-ai-workflows/), and [risk cadence](/articles/ai-risk-review-cadence/) for the full loop. When agents use [Model Context Protocol](/articles/model-context-protocol-enterprise/) servers, sanitize tool returns before they re-enter the prompt—see [Securing MCP and Agent Tools](/articles/securing-mcp-agent-tools/). For the grounded-vs-guessing visual, see [Why AI Hallucinates](/articles/why-ai-hallucinates/).
 
 ## Default deny and workflow-scoped matrices
 

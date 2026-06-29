@@ -4,6 +4,7 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2025-12-31
+modified: 2026-06-29
 hero_caption: Five context-window myths that inflate token cost and hallucination risk
   — and the operator fixes that actually improve accuracy.
 hero_image: images/articles/context-window-myths/hero.png

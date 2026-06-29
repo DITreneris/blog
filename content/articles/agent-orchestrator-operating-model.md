@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-12
+modified: 2026-06-29
 faq:
 - answer: End-to-end workflow behavior across agent boundaries, escalation logic, retries,
     run controls, release coordination, and incident evidence—not individual prompt
@@ -56,7 +57,7 @@ Without decision rights, the role becomes theater.
 
 ## Why digital workforce programs stall without this role
 
-Digital workforce programs stall when autonomy scales faster than coordination. Each team ships an agent that looks successful in isolation, but cross-agent failures—duplicate sends, missing audit links, incompatible retry behavior—accumulate without a single owner. The pattern below appears in month three of multi-agent pilots, not week one. Northline assigned an orchestrator only after proposal workflows showed rising incident noise; retroactively publishing topology and retry standards took six weeks that could have been avoided on day one.
+Digital workforce programs stall when autonomy scales faster than coordination. Each team ships an agent that looks successful in isolation, but cross-agent failures accumulate without a single owner. Duplicate sends, missing audit links, and incompatible retry behavior pile up in month three of multi-agent pilots—not week one. Northline assigned an orchestrator only after proposal workflows showed rising incident noise. Retroactively publishing topology and retry standards took six weeks that could have been avoided on day one.
 
 Common failure pattern:
 
@@ -71,7 +72,7 @@ An orchestrator closes that gap by owning cross-agent operating mechanics.
 
 ## Core responsibilities
 
-The orchestrator role spans four responsibility domains below. Each domain needs a named artifact—topology map, retry runbook, release ticket template, incident register—or the role collapses into status meetings without enforcement power. Without artifacts, incidents repeat and nobody can prove what changed. Splitting responsibilities across committees without a single accountable orchestrator recreates the stall pattern this model exists to prevent. Northline's orchestrator maintains all four artifacts for high-risk workflow domains and blocks promotion when version links are missing from release tickets.
+The orchestrator role spans four responsibility domains below. Each domain needs a named artifact—topology map, retry runbook, release ticket template, incident register—or the role collapses into status meetings without enforcement power. Without artifacts, incidents repeat and nobody can prove what changed. Splitting responsibilities across committees without a single accountable orchestrator recreates the stall pattern this model exists to prevent. Northline's orchestrator maintains all four artifacts for high-risk workflow domains. Promotion is blocked when version links are missing from release tickets.
 
 ### 1) Workflow topology ownership
 
@@ -136,7 +137,7 @@ Do not leave this implicit. If escalation authority is unclear, unsafe automatio
 
 ## Operating cadence
 
-Cadence converts the orchestrator role from title to operating function. Daily health checks catch blocked escalations before they age; weekly reviews drive release decisions with evidence; monthly control-debt reviews retire duplicate workflows and unresolved incidents. Skipping the daily rhythm is tempting until an incident queue grows over a weekend. Northline's orchestrator runs a fifteen-minute stand-up with ops and process owners every morning during pilot, which cut mean time to rollback from hours to minutes within six weeks.
+Cadence converts the orchestrator role from title to operating function. Daily health checks catch blocked escalations before they age. Weekly reviews drive release decisions with evidence. Monthly control-debt reviews retire duplicate workflows and unresolved incidents. Skipping the daily rhythm is tempting until an incident queue grows over a weekend. Northline's orchestrator runs a fifteen-minute stand-up with ops and process owners every morning during pilot. Mean time to rollback dropped from hours to minutes within six weeks.
 
 A lightweight but disciplined rhythm:
 
@@ -153,7 +154,7 @@ Artifacts to maintain:
 
 ## Metrics that indicate role effectiveness
 
-Activity metrics—number of automations shipped, prompts written, agents deployed—reward sprawl. The table below tracks operating quality: containment speed, repeated incidents, escalation closure, change failure rate, and unowned workflows. If unowned workflow count rises while incident rate falls on paper, you are measuring the wrong domain. Northline's orchestrator reports these five metrics weekly; steering holds scale requests when repeated incident rate climbs two months in a row.
+Activity metrics—number of automations shipped, prompts written, agents deployed—reward sprawl. The table below tracks operating quality: containment speed, repeated incidents, escalation closure, change failure rate, and unowned workflows. If unowned workflow count rises while incident rate falls on paper, you are measuring the wrong domain. Northline's orchestrator reports these five metrics weekly. Steering holds scale requests when repeated incident rate climbs two months in a row.
 
 Track metrics that reflect operating quality, not activity theater:
 
@@ -188,7 +189,7 @@ The model did not change. The operating function did.
 
 ## Anti-patterns
 
-Orchestrator anti-patterns usually trace to authority mismatch: impressive title, no rollback rights, success measured by shipped automations. Each item below sustains incident noise while leadership believes governance exists because someone attended the stand-up. Review anti-patterns when hiring or assigning the role—decision rights must appear in RACI, not in culture alone. Northline explicitly gave their orchestrator authority to freeze new launches for two weeks during topology cleanup; without that freeze, duplicate sends would have continued.
+Orchestrator anti-patterns usually trace to authority mismatch: impressive title, no rollback rights, success measured by shipped automations. Each item below sustains incident noise while leadership believes governance exists because someone attended the stand-up. Review anti-patterns when hiring or assigning the role. Decision rights must appear in RACI, not in culture alone. Northline explicitly gave their orchestrator authority to freeze new launches for two weeks during topology cleanup. Without that freeze, duplicate sends would have continued.
 
 - Calling the role "orchestrator" but giving no release or rollback authority.
 - Splitting orchestration across three teams with no single accountable owner.
@@ -197,7 +198,7 @@ Orchestrator anti-patterns usually trace to authority mismatch: impressive title
 
 ## What to do Monday
 
-Monday setup should produce three artifacts: named orchestrator, published RACI, and a single runbook covering retries, escalation, and rollback. Pick one high-risk domain first—customer-facing support, regulated drafting, or multi-agent proposal flows—rather than enterprise-wide reorganization. Northline started with proposal workflows because four agents touched the same send path; within one week the orchestrator published topology and enforced idempotency standards on retry logic.
+Monday setup should produce three artifacts: named orchestrator, published RACI, and a single runbook covering retries, escalation, and rollback. Pick one high-risk domain first—customer-facing support, regulated drafting, or multi-agent proposal flows—rather than enterprise-wide reorganization. Northline started with proposal workflows because four agents touched the same send path. Within one week the orchestrator published topology and enforced idempotency standards on retry logic.
 
 1. Name one orchestrator per high-risk workflow domain.
 2. Publish RACI with explicit decision rights.

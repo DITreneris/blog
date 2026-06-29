@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-13
+modified: 2026-06-29
 hero_image: images/articles/choosing-workflow-automation-ai-pipelines/hero.png
 hero_caption: "Workflow automation decision matrix — fit, control, maintainability, and operating risk."
 key_takeaway: Choose automation tooling by workflow constraints and operating model, not by feature demos or marketplace volume.
@@ -27,7 +28,7 @@ This playbook gives a simple way to choose workflow automation for AI pipelines 
 
 ## Start with workflow constraints, not tool features
 
-Platform evaluations go wrong when the demo drives the requirements. Write workflow constraints first—criticality, failure cost, data boundaries, change cadence, and who owns incidents—then score tools against that same page. Without constraints, every vendor looks adequate and teams buy for familiarity or integration count. Northline delayed an automation purchase until process owners signed a one-page constraint brief for `support-reply-v3`; that brief made n8n versus Zapier debates factual instead of religious.
+Platform evaluations go wrong when the demo drives the requirements. Write workflow constraints first—criticality, failure cost, data boundaries, change cadence, and who owns incidents. Then score tools against that same page. Without constraints, every vendor looks adequate and teams buy for familiarity or integration count. Northline delayed an automation purchase until process owners signed a one-page constraint brief for `support-reply-v3`. That brief made n8n versus Zapier debates factual instead of religious.
 
 Before comparing platforms, define the workflow:
 
@@ -73,7 +74,7 @@ Read the last column carefully: your operating model matters more than the logo.
 
 ## A weighted scoring example
 
-Weighted scoring forces explicit trade-offs: observability versus build speed, self-host control versus business-led usability. Adjust weights by risk tier—customer-facing compliance workflows should overweight branching control and replay; internal assist may accept faster setup with stricter manual gates. Score both candidates on the same workflow with the same team availability assumptions. Northline used a twenty-percent weight on observability for customer-facing pipelines after an incident required manual log reconstruction across three systems.
+Weighted scoring forces explicit trade-offs: observability versus build speed, self-host control versus business-led usability. Adjust weights by risk tier. Customer-facing compliance workflows should overweight branching control and replay. Internal assist may accept faster setup with stricter manual gates. Score both candidates on the same workflow with the same team availability assumptions. Northline used a twenty-percent weight on observability for customer-facing pipelines after an incident required manual log reconstruction across three systems.
 
 For a customer-facing pipeline with compliance review, a sample weighting could be:
 

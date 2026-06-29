@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: opinion
 date: 2026-03-15
+modified: 2026-06-29
 hero_caption: Plans → checkout → magic link → module progress — the hub chain promptanatomy.app
   ships.
 hero_image: images/articles/shipping-prompt-anatomy/hero.png
