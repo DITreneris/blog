@@ -338,6 +338,16 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: training-da-soft-launch
+    manual: true
+    source: ship142.png
+    og_source: ship142.png
+    slug: click-and-do-data-analysis-soft-launch
+    title: "Click-and-Do Before Slide Decks: promptanatomy.app"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-cpb-launch
     manual: true
     source: cpb_online_og.png

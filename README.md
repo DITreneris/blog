@@ -19,6 +19,8 @@ make serve
 
 Open http://localhost:8000
 
+Roadmap → [`todo.md`](todo.md) · Content strategy → [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md)
+
 ## Commands
 
 | Command | Description |

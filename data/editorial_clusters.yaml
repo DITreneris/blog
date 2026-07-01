@@ -108,6 +108,7 @@ clusters:
   ecosystem_properties:
     spokes:
       - shipping-prompt-anatomy
+      - click-and-do-data-analysis-soft-launch
       - weekly-ceo-brief-pattern
       - first-ai-lesson-cloud-launch
       - prompt-anatomy-marketing-site-launch
