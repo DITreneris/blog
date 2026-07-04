@@ -778,6 +778,16 @@ illustrations:
     usage: [hero]
     status: mapped
 
+  - id: agents-critique-field-test
+    manual: true
+    source: Critic.png
+    og_source: Critic.png
+    slug: critique-agent-field-test-trust-workflow
+    title: "Critique Agent: Field Test"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: satori-btcbuzzbot-x-loop
     generator: satori
     template: x-publish-loop

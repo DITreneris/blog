@@ -28,6 +28,8 @@
 - [LangGraph vs CrewAI vs MS Agent Framework](https://www.promptanatomy.blog/articles/langgraph-vs-crewai-production-guide/): production framework selection — orchestration depth, governance controls, rollout criteria.
 - [Agent Orchestrator Operating Model](https://www.promptanatomy.blog/articles/agent-orchestrator-operating-model/): orchestrator RACI — handoffs, run controls, weekly governance rhythms for multi-agent ops.
 - [Audit Trails for AI Workflows](https://www.promptanatomy.blog/articles/audit-trails-for-ai-workflows/): minimum log fields, retention, and reconstructability for accountable AI workflows.
+- [When Local Audit Stats Earn Trust](https://www.promptanatomy.blog/articles/critique-agent-v09-audit-stats/): Critique Agent Part 1 — persist audit history before aggregate /audit_stats on a local CLI stack.
+- [Critique Agent Field Test](https://www.promptanatomy.blog/articles/critique-agent-field-test-trust-workflow/): Critique Agent Part 3 — cross-repo field test; six audits, false positives; valid output still needs human triage; tests beat patches.
 - [AI Governance Roles and Ownership](https://www.promptanatomy.blog/articles/ai-governance-roles-and-ownership/): who owns prompts, eval, incidents, and change approval before pilot traffic scales.
 - [Multi-Agent Handoff Pattern](https://www.promptanatomy.blog/articles/multi-agent-handoff-pattern/): bounded handoff contracts — inputs, outputs, escalation, and eval gates between agents.
 

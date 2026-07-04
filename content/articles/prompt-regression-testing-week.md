@@ -23,7 +23,7 @@ Most prompt quality regressions are predictable. A template gets "slightly impro
 
 The fix is not a bigger prompt. The fix is **regression testing** with a stable eval set and explicit release gates. You do not need a quarter-long program to start. You can build a credible first version in one week.
 
-This playbook gives a practical day-by-day plan. It aligns with workflow-level gating from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) and release discipline from [The Prompt Registry Playbook](/articles/prompt-registry-playbook/). Regression discipline applies on local stacks too—not only hosted APIs; [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) shows frozen cases and release gates on Ubuntu with Ollama, and [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) adds a seven-section output validation layer before SQLite persist.
+This playbook gives a practical day-by-day plan. It aligns with workflow-level gating from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) and release discipline from [The Prompt Registry Playbook](/articles/prompt-registry-playbook/). Regression discipline applies on local stacks too—not only hosted APIs; [Critique Agent v0.9](/articles/critique-agent-v09-audit-stats/) shows frozen cases and release gates on Ubuntu with Ollama, [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/) adds a seven-section output validation layer before SQLite persist, and [Part 3](/articles/critique-agent-field-test-trust-workflow/) shows one audit becoming two regression tests on an external repo—tests, not auto-fixes.
 
 ## What "good enough in one week" means
 

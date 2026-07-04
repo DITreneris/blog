@@ -91,6 +91,7 @@ PUBLICATION_ORDER: list[str] = [
     "click-and-do-data-analysis-soft-launch",
     "critique-agent-v09-audit-stats",
     "critique-agent-v10-verified-local-audits",
+    "critique-agent-field-test-trust-workflow",
     "hiring-prompts-help-launch",
     "executive-os-pro-launch",
 ]
@@ -127,6 +128,7 @@ FIXED_DATES: dict[str, date] = {
     "click-and-do-data-analysis-soft-launch": date(2026, 7, 2),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
     "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
+    "critique-agent-field-test-trust-workflow": date(2026, 7, 3),
     "btcbuzzbot-x-publish-loop-field-notes": date(2025, 9, 15),
     "hiring-prompts-help-launch": date(2026, 6, 24),
     "executive-os-pro-launch": date(2026, 7, 16),

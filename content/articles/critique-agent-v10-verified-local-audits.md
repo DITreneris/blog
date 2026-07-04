@@ -112,3 +112,5 @@ Three decisions kept v1.0 shippable:
 3. **Defer the platform.** Embeddings, RAG, orchestration, and dashboards stay on the *do not do yet* list.
 
 I stopped adding features when duplication showed up—that was the first time the project felt like a system, not a script stack. Still fun when pytest goes green. Copy the pipeline on the hero, not the repo-brain poster. Enforce the seven-section contract, reject invalid output without storing, list history, then aggregate. Context and repo inspect remain the next chapter on the poster—not because v1.0 already shipped them.
+
+Next in the series: [Critique Agent: Field Test](/articles/critique-agent-field-test-trust-workflow/)—Part 3 field test on an external repo, false positives, and one regression-test payoff.

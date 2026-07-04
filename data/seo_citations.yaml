@@ -77,6 +77,12 @@ citations:
   - slug: audit-trails-for-ai-workflows
     title: Audit Trails for AI Workflows
     description: minimum log fields, retention, and reconstructability for accountable AI workflows.
+  - slug: critique-agent-v09-audit-stats
+    title: When Local Audit Stats Earn Trust
+    description: Critique Agent Part 1 — persist audit history before aggregate /audit_stats on a local CLI stack.
+  - slug: critique-agent-field-test-trust-workflow
+    title: Critique Agent Field Test
+    description: Critique Agent Part 3 — cross-repo field test; six audits, false positives; valid output still needs human triage; tests beat patches.
   - slug: ai-governance-roles-and-ownership
     title: AI Governance Roles and Ownership
     description: who owns prompts, eval, incidents, and change approval before pilot traffic scales.

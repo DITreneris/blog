@@ -14,9 +14,8 @@ faq:
     per accepted run. History must be stable before stats—otherwise aggregates lie
     about a moving schema.
   question: What is the minimum audit record to persist before adding /audit_stats?
-hero_caption: Before/after — repo-aware critique replaces zero-context chat. v0.8 ships
-  the audit loop and history; v0.9 adds /audit_stats. Context and inspect boxes on
-  the hero are next, not current.
+hero_caption: Part 1 — measurement only. v0.8 audit loop and history; v0.9 adds /audit_stats.
+  Repo context and inspect shipped in later series parts (see Part 3 field test).
 hero_image: images/articles/critique-agent-v09-audit-stats/hero.png
 key_takeaway: Do not add aggregate stats until audit history is stable—weekly FIX counts
   lie when the schema behind saved rows is still moving.
@@ -34,6 +33,12 @@ title: When Local Audit Stats Earn Trust
 ---
 
 *Part 1 — measurement: history before stats.*
+
+| Part | Article | Lesson |
+|------|---------|--------|
+| 1 | When Local Audit Stats Earn Trust (this post) | History before stats |
+| 2 | [Critique Agent v1.0: Verified Local Code Audits](/articles/critique-agent-v10-verified-local-audits/) | Validate before persist |
+| 3 | [Critique Agent: Field Test](/articles/critique-agent-field-test-trust-workflow/) | Trust workflow, not verdict |
 
 After a near-miss, Legal does not want a chat transcript—they want a row they can replay: verdict, file reference, confidence, retry flag, timestamp. Pasting a code block into a cloud chatbot is fast and operationally hollow. The model guesses from zero project context, returns prose you cannot gate, and leaves nothing durable behind.
 
@@ -105,4 +110,4 @@ Two decisions kept v0.9 shippable:
 
 Embeddings, RAG, orchestration, and dashboards stay on the *do not do yet* list until history and stats prove stable.
 
-Same energy as the rush—aimed at rows you can diff. Less theater, more `GO` / `FIX`. Still fun. If you are building your own local critique agent, copy the loop, not the poster: enforce structured output, persist accepted audits, list history, then aggregate. Next in the series: [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/)—what *accepted* means before SQLite persist. Context and repo inspect belong on the hero because they are the next chapter—not because v0.9 already shipped them.
+Same energy as the rush—aimed at rows you can diff. Less theater, more `GO` / `FIX`. Still fun. If you are building your own local critique agent, copy the loop, not the poster: enforce structured output, persist accepted audits, list history, then aggregate. Next in the series: [Critique Agent v1.0](/articles/critique-agent-v10-verified-local-audits/)—what *accepted* means before SQLite persist; then [Part 3](/articles/critique-agent-field-test-trust-workflow/)—cross-repo field test, false positives, and one regression-test payoff. Context and repo inspect belong on the hero because they are the next chapter—not because v0.9 already shipped them.
