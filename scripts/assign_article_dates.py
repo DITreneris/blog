@@ -94,6 +94,7 @@ PUBLICATION_ORDER: list[str] = [
     "critique-agent-field-test-trust-workflow",
     "hiring-prompts-help-launch",
     "executive-os-pro-launch",
+    "manifest-before-you-broadcast",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -132,10 +133,11 @@ FIXED_DATES: dict[str, date] = {
     "btcbuzzbot-x-publish-loop-field-notes": date(2025, 9, 15),
     "hiring-prompts-help-launch": date(2026, 6, 24),
     "executive-os-pro-launch": date(2026, 7, 16),
+    "manifest-before-you-broadcast": date(2026, 7, 18),
 }
 
 # Latest allowed publish date (Executive OS .pro field note 2026-07-16)
-PUBLISH_CUTOFF = date(2026, 7, 16)
+PUBLISH_CUTOFF = date(2026, 7, 18)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

@@ -84,6 +84,12 @@ Use `.help` when the question is recruiter-facing prompt structure with candidat
 
 Use `.pro` for higher-stakes allocation and scaling decisions—not the weekly operating cadence, which lives on `.ceo` ([The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/)). Manage and Decide are different jobs; do not merge the two executive surfaces.
 
+### [@prompt_anatomy](https://t.me/prompt_anatomy) (Telegram channel)
+
+**Role: Broadcast / Learn — curriculum CMS.** The open sister repo [DITreneris/telegram](https://github.com/DITreneris/telegram) collects **234 micro-lessons**—copy, PNGs, and polls—on **Vercel** (`web/`, publish API), syncs them to a delivery manifest, and broadcasts today via [@prompt_anatomy](https://t.me/prompt_anatomy). An admin-only queue bot on Railway orchestrates `/next`, schedule, and persisted state. See [Manifest Before You Broadcast](/articles/manifest-before-you-broadcast/) for the field note.
+
+Use the channel when you want **habit-shaped exposure**—short lessons between meetings, not a forty-five-minute LMS block. It is **not** training checkout (`.app`), the enter lesson (`.cloud`), or satirical play (`.lol`). Primary conversion CTA remains [promptanatomy.app](https://promptanatomy.app); curated posts may link to `.blog` deep reads via the sister repo crosswalk.
+
 ### promptanatomy.lol
 
 **Role: Play.** [Corporate Ladder](https://www.promptanatomy.lol/) is a satirical office-climb game in Telegram—entertainment and brand flavor, not an implementation path. It soft-launched 2026-06-15 and is listed on [tApps Center](https://tapps.center/application/corporateladder); see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for the live field note. For the deployment stack, see [Telegram Game Stack](/articles/how-to-build-a-telegram-game-stack/).
@@ -107,6 +113,7 @@ The table below lists specialized surfaces. They extend the core read → practi
 | **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR hiring prompts; see [field note](/articles/hiring-prompts-help-launch/) |
 | **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |
 | **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — executive decision OS; see [field note](/articles/executive-os-pro-launch/) |
+| **[@prompt_anatomy](https://t.me/prompt_anatomy)** | Broadcast / Learn — curriculum channel; see [field note](/articles/manifest-before-you-broadcast/) |
 
 ## How to navigate without duplication
 
@@ -121,4 +128,4 @@ For outcome framing before you buy anything, read [From Prompts to Business Outc
 
 **Rule of thumb:** if two properties answer the same question, prefer the blog for depth and `.app` for drills. Never copy playbook prose into Slack and call it training—link the article, then assign the lab.
 
-**Operator lab builds** (sister repos, not `promptanatomy.*` domains) are documented as Implementation Notes field notes—e.g. the [Critique Agent trilogy](/articles/critique-agent-v09-audit-stats/) ([Part 1](/articles/critique-agent-v09-audit-stats/) measurement, [Part 2](/articles/critique-agent-v10-verified-local-audits/) validation, [Part 3](/articles/critique-agent-field-test-trust-workflow/) cross-repo field test) and [BTC Buzz Bot](/articles/btcbuzzbot-x-publish-loop-field-notes/). They prove publish loops and audit patterns; they are not properties in the table above.
+**Operator lab builds** (sister repos, not `promptanatomy.*` domains) are documented as Implementation Notes field notes—e.g. the [Critique Agent trilogy](/articles/critique-agent-v09-audit-stats/) ([Part 1](/articles/critique-agent-v09-audit-stats/) measurement, [Part 2](/articles/critique-agent-v10-verified-local-audits/) validation, [Part 3](/articles/critique-agent-field-test-trust-workflow/) cross-repo field test), [BTC Buzz Bot](/articles/btcbuzzbot-x-publish-loop-field-notes/), and the [Telegram curriculum CMS](/articles/manifest-before-you-broadcast/) ([DITreneris/telegram](https://github.com/DITreneris/telegram)). They prove publish loops, manifest discipline, and audit patterns; the curriculum channel is also listed in the table above.

@@ -59,6 +59,7 @@ KNOWN_TEMPLATES = frozenset(
         "business-outcomes-flow",
         "multi-agent-handoff-worksheet",
         "x-publish-loop",
+        "telegram-curriculum-cms",
         "og-default",
         "category-default",
         "article-og",

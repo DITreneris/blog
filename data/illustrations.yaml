@@ -800,6 +800,18 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-manifest-before-broadcast
+    generator: satori
+    template: telegram-curriculum-cms
+    source: Satori/manifest-before-you-broadcast.png
+    slug: manifest-before-you-broadcast
+    satori_title: "Manifest Before You Broadcast"
+    title: "Manifest Before You Broadcast"
+    subtitle: "Vercel authoring · manifest sync · plug-in channels"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: satori-governance-raci-worksheet
     generator: satori
     template: governance-raci-worksheet

@@ -48,6 +48,7 @@ import { buildMcpSecurityControls } from './mcp-security-controls.mjs';
 import { buildHumanHandoffWorksheet } from './human-handoff-worksheet.mjs';
 import { buildAgentFrameworkComparison } from './agent-framework-comparison.mjs';
 import { buildXPublishLoop } from './x-publish-loop.mjs';
+import { buildTelegramCurriculumCms } from './telegram-curriculum-cms.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -95,6 +96,7 @@ export const TEMPLATES = {
   'human-handoff-worksheet': buildHumanHandoffWorksheet,
   'agent-framework-comparison': buildAgentFrameworkComparison,
   'x-publish-loop': buildXPublishLoop,
+  'telegram-curriculum-cms': buildTelegramCurriculumCms,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,
