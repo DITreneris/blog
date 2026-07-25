@@ -8,9 +8,9 @@
 
   "@type": "Article",
 
-  "headline": {{ article.title|tojson }},
+  "headline": {{ article.title|seo_plain|tojson }},
 
-  "description": {{ (article.summary or '')|striptags|tojson }},
+  "description": {{ (article.summary or '')|seo_plain|tojson }},
 
   "inLanguage": "en-US",
 

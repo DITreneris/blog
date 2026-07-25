@@ -4,6 +4,17 @@ body_locked: true
 category: Prompt Systems
 content_tier: pillar
 date: 2024-02-21
+faq:
+- answer: Prompt engineering optimizes instructions for a model call. AI workflow
+    engineering designs the system around that call—context, steps, gates, eval, and
+    ownership—so outputs stay repeatable under real operations.
+  question: What is the difference between prompt engineering and AI workflow engineering?
+- answer: When outputs must be reproducible, auditable, or customer-facing—shared
+    context, review gates, and eval beats stacking more instructions into chat.
+  question: When should we invest in workflow engineering instead of longer prompts?
+- answer: No. Strong prompts help a single run; evaluation and governance decide whether
+    a change can promote across environments.
+  question: Does better prompting replace evaluation and governance?
 hero_caption: Chat (one-shot answer) versus Deep Research (plan, search, analyze,
   report) — same model, different system path.
 hero_image: images/articles/prompt-engineering-vs-ai-workflow-engineering/hero.png

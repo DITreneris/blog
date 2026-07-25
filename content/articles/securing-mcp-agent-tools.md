@@ -4,19 +4,32 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2026-06-09
+faq:
+- answer: Allowlists, least-privilege permission scoping, audit logging for tool calls,
+    and prompt-injection defenses before write scopes touch production data.
+  question: What is the minimum security baseline for MCP agent tools?
+- answer: No. Failed allowlist, auth, or audit requirements block selection regardless
+    of demo polish.
+  question: Can a high-feature MCP server override a failed security gate?
+- answer: IT owns connector and scope controls; the workflow owner owns business use;
+    governance signs off when red lines pass.
+  question: Who owns MCP tool security decisions?
+hero_caption: 'MCP security controls: tool allowlists, scoped permissions, and injection-resilient
+  execution paths.'
 hero_image: images/articles/securing-mcp-agent-tools/hero.png
-hero_caption: "MCP security controls: tool allowlists, scoped permissions, and injection-resilient execution paths."
-key_takeaway: Secure agent tooling requires explicit allowlists, least-privilege scope, and injection defenses at every tool boundary.
+key_takeaway: Secure agent tooling requires explicit allowlists, least-privilege scope,
+  and injection defenses at every tool boundary.
 reading_time: 7 min read
 slug: securing-mcp-agent-tools
 status: published
-summary: A production security playbook for MCP and agent tool access, including allowlists, permission scoping, and prompt injection defense.
+summary: A production security playbook for MCP and agent tool access, including allowlists,
+  permission scoping, and prompt injection defense.
 tags:
-  - mcp
-  - governance
-  - security
-  - agents
-title: "Securing MCP and Agent Tools"
+- mcp
+- governance
+- security
+- agents
+title: Securing MCP and Agent Tools
 ---
 
 The fastest way to turn a useful agent into an incident generator is broad tool access without control boundaries. MCP integrations make tool connectivity easier, but connectivity is not governance. The security model must decide what an agent is allowed to call, with which scope, under which conditions, and how unsafe instructions are blocked.

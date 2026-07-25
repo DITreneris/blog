@@ -4,21 +4,34 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2026-06-08
-modified: 2026-06-29
+faq:
+- answer: Per-agent traces, handoff payloads, tool calls, latency/cost, and failure
+    reasons so you can reconstruct a run end to end.
+  question: What should multi-agent observability include?
+- answer: Handoffs and tool side effects span agents; without structured logs you
+    cannot assign ownership or replay failures.
+  question: Why is chat-log debugging insufficient for multi-agent systems?
+- answer: Before production write scopes or customer-facing multi-agent paths—if you
+    cannot reconstruct a failed run, do not scale traffic.
+  question: When is observability a launch blocker?
+hero_caption: Multi-agent observability — handoff traces, failure modes, and governance-ready
+  logs.
 hero_image: images/articles/multi-agent-observability/hero.png
-hero_caption: "Multi-agent observability — handoff traces, failure modes, and governance-ready logs."
-key_takeaway: Multi-agent workflows need run-level traces that show handoff contracts, policy versions, and guardrail events—not only final output text.
+key_takeaway: Multi-agent workflows need run-level traces that show handoff contracts,
+  policy versions, and guardrail events—not only final output text.
+modified: 2026-06-29
 reading_time: 5 min read
 slug: multi-agent-observability
 status: published
-summary: Practical observability for multi-agent workflows with handoff tracing, failure-mode detection, and governance-ready logs.
-title: "Multi-Agent Observability"
+summary: Practical observability for multi-agent workflows with handoff tracing, failure-mode
+  detection, and governance-ready logs.
 tags:
-  - agents
-  - orchestration
-  - governance
-  - eval
-  - workflow-automation
+- agents
+- orchestration
+- governance
+- eval
+- workflow-automation
+title: Multi-Agent Observability
 ---
 
 Multi-agent workflows fail in ways single-prompt systems never do. One agent rewrites assumptions. Another executes stale instructions. The final output looks polished while being operationally wrong. If you cannot see who handed what to whom, and under which policy or version context, you cannot debug or govern the system.

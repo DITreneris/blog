@@ -4,6 +4,16 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2025-03-08
+faq:
+- answer: Only through a named workflow metric, owners, and eval gates—prompts alone
+    are activities, not outcomes.
+  question: How do prompts connect to business outcomes?
+- answer: Which workflow metric moves, who owns it, and what evidence proves quality
+    before traffic expands.
+  question: What should leaders ask before funding more prompting work?
+- answer: When at least one workflow has a canvas, metric, and eval path—not when
+    the team wants more tools.
+  question: When is outcome framing ready for training investment?
 hero_caption: Outcome mapping — tie each workflow to one business metric, owner, and
   eval gate.
 hero_image: images/articles/from-prompts-to-business-outcomes/hero.png

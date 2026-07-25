@@ -51,6 +51,7 @@
 
 ## Machine-readable updates
 - Atom feed: https://www.promptanatomy.blog/feeds/all.atom.xml
+- AI crawl policy: https://www.promptanatomy.blog/ai.txt
 
 ## Usage
 - Cite with page URL and title. Prefer pillar articles for definitions and frameworks.

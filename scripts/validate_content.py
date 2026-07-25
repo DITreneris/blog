@@ -52,6 +52,16 @@ PILLAR_SLUGS = frozenset(
     }
 )
 PILLAR_SLUGS_RELEASE_2: frozenset[str] = frozenset()
+
+# Ecosystem soft-launch field notes — FAQ deferred (CONTENT_STANDARDS / SEO Phase B).
+FAQ_DEFER_SLUG_SUFFIXES = ("-launch", "-soft-launch")
+FAQ_DEFER_SLUGS = frozenset(
+    {
+        "corporate-ladder-soft-launch",
+        "executive-os-pro-launch",
+        "shipping-prompt-anatomy",
+    }
+)
 FAQ_BODY_LEAK = re.compile(r"^\s*[-*]?\s*question:\s", re.I | re.M)
 DECK_SECTION_MIN_WORDS = 80
 DECK_SECTION_THRESHOLD = 0.5
@@ -211,6 +221,20 @@ def validate_file(path: Path, slugs: set[str], slug_templates: dict[str, str]) -
                 )
         elif meta.get("status") == "published" and not meta.get("hero_caption"):
             warnings.append(f"{path.name}: published article missing hero_caption")
+
+        tier = str(meta.get("content_tier") or "")
+        if (
+            meta.get("status") == "published"
+            and tier in {"playbook", "template"}
+            and slug not in FAQ_DEFER_SLUGS
+            and not any(slug.endswith(suf) for suf in FAQ_DEFER_SLUG_SUFFIXES)
+        ):
+            faq = meta.get("faq") or []
+            if len(faq) < 2:
+                warnings.append(
+                    f"{path.name}: published {tier} has fewer than 2 FAQ items "
+                    "(prefer ≥2 for GEO; see CONTENT_STANDARDS)"
+                )
 
         if (
             category == Category.FRAMEWORK.value

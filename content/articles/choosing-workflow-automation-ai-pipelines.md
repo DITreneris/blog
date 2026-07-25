@@ -4,20 +4,34 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-13
-modified: 2026-06-29
+faq:
+- answer: Use deterministic automation for stable rules; add AI steps where judgment
+    or language is required—and keep gates explicit at the boundary.
+  question: How do we choose between workflow automation and AI pipelines?
+- answer: Replacing a working workflow tool with a chat model for steps that should
+    stay deterministic and testable.
+  question: What is a common selection mistake?
+- answer: Data sensitivity, need for human review, eval feasibility, and whether failure
+    modes are acceptable without model creativity.
+  question: What decision criteria matter most?
+hero_caption: Workflow automation decision matrix — fit, control, maintainability,
+  and operating risk.
 hero_image: images/articles/choosing-workflow-automation-ai-pipelines/hero.png
-hero_caption: "Workflow automation decision matrix — fit, control, maintainability, and operating risk."
-key_takeaway: Choose automation tooling by workflow constraints and operating model, not by feature demos or marketplace volume.
+key_takeaway: Choose automation tooling by workflow constraints and operating model,
+  not by feature demos or marketplace volume.
+modified: 2026-06-29
 reading_time: 5 min read
 slug: choosing-workflow-automation-ai-pipelines
 status: published
-summary: A practical decision guide for selecting workflow automation tooling for AI pipelines using objective criteria to avoid tool sprawl and hidden operating risk.
+summary: A practical decision guide for selecting workflow automation tooling for
+  AI pipelines using objective criteria to avoid tool sprawl and hidden operating
+  risk.
 tags:
-  - workflow-automation
-  - implementation
-  - governance
-  - ai-agents
-title: "Workflow Automation for AI Pipelines"
+- workflow-automation
+- implementation
+- governance
+- ai-agents
+title: Workflow Automation for AI Pipelines
 ---
 
 Most AI pipeline failures are not model failures. They are workflow failures: brittle triggers, unclear ownership, unmonitored retries, and a second automation tool added to "fix" the first one.

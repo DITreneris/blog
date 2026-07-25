@@ -109,6 +109,7 @@ clusters:
     spokes:
       - shipping-prompt-anatomy
       - click-and-do-data-analysis-soft-launch
+      - role-paths-before-generic-analytics
       - weekly-ceo-brief-pattern
       - first-ai-lesson-cloud-launch
       - prompt-anatomy-marketing-site-launch

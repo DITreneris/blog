@@ -4,19 +4,32 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2026-05-30
+faq:
+- answer: Pick one default per workflow risk class—RACE or TAG—or a documented split
+    pattern; avoid mixing frameworks without eval criteria.
+  question: When should teams use RACE vs TAG frameworks?
+- answer: No. Framework choice must land as one canonical registry template with owners
+    and eval links for the recurring workflow.
+  question: Do framework slides replace a registry template?
+- answer: About two weeks per recurring workflow—audit live prompts, tag them, and
+    standardize one path—not a quarter of slide training.
+  question: How fast should framework alignment take?
+hero_caption: Framework chooser — RACE and TAG mapped to task type, risk, and operating
+  intent.
 hero_image: images/articles/prompt-frameworks-race-tag-business/hero.png
-hero_caption: "Framework chooser — RACE and TAG mapped to task type, risk, and operating intent."
-key_takeaway: RACE and TAG are both useful; choose by workflow purpose and control needs, then standardize usage in your registry.
+key_takeaway: RACE and TAG are both useful; choose by workflow purpose and control
+  needs, then standardize usage in your registry.
 reading_time: 7 min read
 slug: prompt-frameworks-race-tag-business
 status: published
-summary: A practical guide to using RACE and TAG prompt frameworks in business workflows, including selection rules, examples, and governance integration.
+summary: A practical guide to using RACE and TAG prompt frameworks in business workflows,
+  including selection rules, examples, and governance integration.
 tags:
-  - prompt-systems
-  - implementation
-  - governance
-  - workflow-design
-title: "Prompt Frameworks for Business"
+- prompt-systems
+- implementation
+- governance
+- workflow-design
+title: Prompt Frameworks for Business
 ---
 
 Teams often ask which prompt framework is "best." That question usually creates debate, not better workflows.

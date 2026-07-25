@@ -1,0 +1,21 @@
+{% if article.howto_steps %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ article.title|seo_plain|tojson }},
+  "description": {{ (article.summary or '')|seo_plain|tojson }},
+  "inLanguage": "en-US",
+  "step": [
+    {% for step in article.howto_steps %}
+    {
+      "@type": "HowToStep",
+      "position": {{ loop.index }},
+      "name": {{ step.name|seo_plain|tojson }},
+      "text": {{ step.text|seo_plain|tojson }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

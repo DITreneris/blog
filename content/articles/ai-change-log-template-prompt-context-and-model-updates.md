@@ -4,11 +4,21 @@ body_locked: true
 category: Templates
 content_tier: template
 date: 2026-04-24
+faq:
+- answer: Prompt, context, and model updates with version IDs, owner, reason, eval
+    evidence, and rollback pointer.
+  question: What belongs in an AI change log?
+- answer: Before promotion to a higher environment—not after an incident forces reconstruction
+    from chat history.
+  question: When must a change log entry be written?
+- answer: The process owner for business impact; IT for runtime pins; Legal when policy
+    assertions change.
+  question: Who signs the change log entry?
 hero_caption: Copy-paste change log — prompt, context, model, and tool rows with owners
   and rollback pins.
 hero_image: images/articles/ai-change-log-template-prompt-context-and-model-updates/hero.png
-key_takeaway: Log every prompt, context pack, model, and tool change with owner, eval evidence,
-  and rollback pin—before production traffic moves.
+key_takeaway: Log every prompt, context pack, model, and tool change with owner, eval
+  evidence, and rollback pin—before production traffic moves.
 reading_time: 4 min read
 slug: ai-change-log-template-prompt-context-and-model-updates
 status: published

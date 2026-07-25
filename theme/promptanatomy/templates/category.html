@@ -27,9 +27,9 @@
 
 
 
-{% block title %}{{ category }} — {{ SITENAME }}{% endblock %}
+{% block title %}{{ category|seo_plain }} — {{ SITENAME }}{% endblock %}
 
-{% block description %}{{ ns.lead|striptags|truncate(160) }}{% endblock %}
+{% block description %}{{ ns.lead|seo_plain|truncate(160) }}{% endblock %}
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ category.url }}{% endblock %}
 
@@ -43,9 +43,9 @@
 
 <meta property="og:type" content="website" />
 
-<meta property="og:title" content="{{ category }} — {{ SITENAME }}" />
+<meta property="og:title" content="{{ category|seo_plain }} — {{ SITENAME }}" />
 
-<meta property="og:description" content="{{ ns.lead|striptags|truncate(160) }}" />
+<meta property="og:description" content="{{ ns.lead|seo_plain|truncate(160) }}" />
 
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ category.url }}" />
 
@@ -59,9 +59,9 @@
 
 {% block twitter %}
 
-<meta name="twitter:title" content="{{ category }} — {{ SITENAME }}" />
+<meta name="twitter:title" content="{{ category|seo_plain }} — {{ SITENAME }}" />
 
-<meta name="twitter:description" content="{{ ns.lead|striptags|truncate(160) }}" />
+<meta name="twitter:description" content="{{ ns.lead|seo_plain|truncate(160) }}" />
 
 {% if ns.slug and ns.slug in TOPIC_OG_IMAGES %}{% set og_image_path = TOPIC_OG_IMAGES[ns.slug] %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = category ~ ' — ' ~ SITENAME %}{% endif %}
 

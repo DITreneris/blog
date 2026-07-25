@@ -4,6 +4,16 @@ body_locked: true
 category: Case Studies
 content_tier: playbook
 date: 2025-08-14
+faq:
+- answer: How a team moved from ad-hoc vibe prompting to a structured workflow with
+    owners, context, and eval—without waiting for a perfect platform.
+  question: What does this case study demonstrate?
+- answer: Naming one workflow, documenting the canvas, and adding review gates before
+    expanding tools or traffic.
+  question: What was the first operational change?
+- answer: Northline is the anonymized composite used across Prompt Anatomy playbooks;
+    treat metrics as illustrative ranges unless disclosed otherwise.
+  question: Is the Northline example a real single customer?
 hero_caption: Support queue before/after — one owned workflow with eval gates beat
   scattered copilot experiments.
 hero_image: images/articles/case-study-vibe-prompting-to-structured-workflow/hero.png
@@ -18,7 +28,7 @@ tags:
 - northline
 - change-management
 - eval
-title: "From Vibe Prompting to Structured Workflow"
+title: From Vibe Prompting to Structured Workflow
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations.*

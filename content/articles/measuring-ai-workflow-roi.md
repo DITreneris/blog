@@ -4,21 +4,33 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-11
-modified: 2026-06-29
+faq:
+- answer: Tie one primary business metric to the workflow—handle time, error rate,
+    cycle time—then compare against a baseline before and after gated rollout.
+  question: How should we measure AI workflow ROI?
+- answer: Token volume and adoption can rise while quality or cost-to-serve worsen;
+    ROI needs outcome metrics and failure costs.
+  question: Why is model usage a weak ROI metric?
+- answer: When pilot gates pass on held-out cases and the primary metric moves without
+    increasing policy violations or escalations.
+  question: When is ROI evidence good enough to scale?
+hero_caption: Track pass rate, time saved, and incident cost before scaling automation.
 hero_image: images/articles/measuring-ai-workflow-roi/hero.png
-hero_caption: "Track pass rate, time saved, and incident cost before scaling automation."
-key_takeaway: Sponsor-ready ROI combines pass rate, net cycle time, and incident cost—activity metrics alone will not justify scale.
+key_takeaway: Sponsor-ready ROI combines pass rate, net cycle time, and incident cost—activity
+  metrics alone will not justify scale.
+modified: 2026-06-29
 reading_time: 5 min read
 slug: measuring-ai-workflow-roi
 status: published
-summary: A practical ROI model for AI workflows using pass rate, time saved, and incident cost with sponsor-ready formulas.
-title: "Measuring AI Workflow ROI"
+summary: A practical ROI model for AI workflows using pass rate, time saved, and incident
+  cost with sponsor-ready formulas.
 tags:
-  - eval
-  - benchmarks
-  - change-management
-  - northline
-  - workflow-automation
+- eval
+- benchmarks
+- change-management
+- northline
+- workflow-automation
+title: Measuring AI Workflow ROI
 ---
 
 Most AI ROI discussions fail because teams report activity metrics ("number of prompts," "agent usage," "tokens consumed") instead of operating outcomes. Executive sponsors do not approve scale based on excitement. They approve based on dependable quality, measurable time impact, and risk-adjusted cost.

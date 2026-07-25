@@ -7,7 +7,12 @@
       "@id": "{{ CANONICAL_SITEURL }}/#organization",
       "name": {{ SITE_CONFIG.brand.name|tojson }},
       "url": "{{ CANONICAL_SITEURL }}/",
-      "logo": "{{ CANONICAL_SITEURL }}/{{ THEME_STATIC_DIR }}/apple-touch-icon.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ CANONICAL_SITEURL }}/{{ THEME_STATIC_DIR }}/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
       "email": {{ SITE_CONFIG.organization.email|tojson }},
       "address": {
         "@type": "PostalAddress",

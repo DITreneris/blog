@@ -4,7 +4,18 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2025-02-15
-hero_caption: Thirty-minute standups with owned actions — not slide tours after pilot launch.
+faq:
+- answer: Office hours for operators, scheduled eval review, and clear change announcements
+    when prompts, context, or models update.
+  question: Which team rituals keep AI workflows current?
+- answer: Without review cadence and ownership habits, prompts drift and failures
+    surface only after customers or auditors notice.
+  question: Why are rituals more important than another tool rollout?
+- answer: At least on a standing cadence tied to your risk forum—before promotions
+    and after material prompt, context, or model changes.
+  question: How often should eval review run?
+hero_caption: Thirty-minute standups with owned actions — not slide tours after pilot
+  launch.
 hero_image: images/articles/team-rituals-for-ai-implementation/hero.png
 key_takeaway: Rituals beat one-off trainings—short, recurring forums maintain prompts,
   context, and ownership.

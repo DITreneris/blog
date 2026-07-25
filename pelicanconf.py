@@ -11,6 +11,7 @@ import sys
 sys.path.insert(0, str(BASE_DIR / "scripts"))
 from pelican_frontmatter_reader import FrontmatterMarkdownReader  # noqa: E402
 from generate_brand_assets import find_author_photo_source  # noqa: E402
+from seo_plain import seo_plain  # noqa: E402
 
 AUTHOR_HAS_PHOTO = find_author_photo_source() is not None
 
@@ -105,6 +106,8 @@ STATIC_PATHS = ["images", "extra"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/llms.txt": {"path": "llms.txt"},
+    "extra/ai.txt": {"path": "ai.txt"},
+    "extra/.well-known/security.txt": {"path": ".well-known/security.txt"},
     "extra/404.html": {"path": "404.html"},
     "extra/google7305663b2567346e.html": {"path": "google7305663b2567346e.html"},
 }
@@ -112,6 +115,10 @@ EXTRA_PATH_METADATA = {
 JINJA_ENVIRONMENT = {
     "trim_blocks": True,
     "lstrip_blocks": True,
+}
+
+JINJA_FILTERS = {
+    "seo_plain": seo_plain,
 }
 
 ENABLE_VERCEL_ANALYTICS = False

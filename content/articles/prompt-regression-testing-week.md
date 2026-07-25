@@ -4,19 +4,32 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2026-05-31
+faq:
+- answer: A focused period to run held-out eval cases against prompt, context, or
+    model changes before promotion—catching silent quality drops.
+  question: What is a prompt regression testing week?
+- answer: Representative successes, known failure modes, and policy-sensitive cases
+    with explicit pass/fail criteria.
+  question: What should be in the regression suite?
+- answer: The process owner owns pass/fail decisions; IT owns harness and logging
+    so results are reproducible.
+  question: Who owns regression results?
+hero_caption: Northline built 30 cases in five days and blocked a wording tweak when
+  policy pass dropped below gate.
 hero_image: images/articles/prompt-regression-testing-week/hero.png
-hero_caption: "Northline built 30 cases in five days and blocked a wording tweak when policy pass dropped below gate."
-key_takeaway: You can build a useful prompt regression set in one week if you scope one workflow, freeze cases, and tie results to release decisions.
+key_takeaway: You can build a useful prompt regression set in one week if you scope
+  one workflow, freeze cases, and tie results to release decisions.
 reading_time: 7 min read
 slug: prompt-regression-testing-week
 status: published
-summary: A day-by-day playbook to create a practical prompt regression test set in one week and connect it to workflow release gates.
+summary: A day-by-day playbook to create a practical prompt regression test set in
+  one week and connect it to workflow release gates.
 tags:
-  - prompt-systems
-  - eval
-  - change-management
-  - implementation
-title: "Prompt Regression Testing"
+- prompt-systems
+- eval
+- change-management
+- implementation
+title: Prompt Regression Testing
 ---
 
 Most prompt quality regressions are predictable. A template gets "slightly improved," a checker rule changes, a retrieval source is updated, and output quality drifts before anyone notices.

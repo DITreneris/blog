@@ -4,7 +4,17 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2025-07-21
-hero_caption: "Sample minutes you can paste into a wiki — decisions logged, not emailed."
+faq:
+- answer: A standing forum with fixed agenda, attendees, and decision outputs that
+    reviews workflow risk before traffic or privilege expands.
+  question: What is an AI risk review cadence?
+- answer: Clear decisions—approve, hold, or roll back—with owners and due dates, not
+    open discussion without outcomes.
+  question: What should every risk forum produce?
+- answer: Process owner, IT/platform, and Legal/compliance for policy-bearing workflows;
+    exec sponsor as needed for scope or budget calls.
+  question: Who should attend the risk review?
+hero_caption: Sample minutes you can paste into a wiki — decisions logged, not emailed.
 hero_image: images/articles/ai-risk-review-cadence/hero.png
 key_takeaway: Schedule risk review like any operational cadence—incidents, near-misses,
   and workflow changes on the agenda.

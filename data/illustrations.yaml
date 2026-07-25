@@ -812,6 +812,42 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-six-block-prompt-system
+    generator: satori
+    template: six-block-worksheet
+    source: Satori/six-block-prompt-system.png
+    slug: six-block-prompt-system
+    satori_title: "The Six-Block Prompt System"
+    title: "The Six-Block Prompt System"
+    subtitle: "Meta through Advanced — write structured prompts before you scale tools."
+    category: Prompt Systems
+    usage: [hero, og]
+    status: mapped
+
+  - id: satori-six-block-canvas-template
+    generator: satori
+    template: six-block-canvas
+    source: Satori/six-block-canvas-template.png
+    slug: six-block-canvas-template
+    satori_title: "Six-Block Prompt Canvas"
+    title: "Six-Block Prompt Canvas"
+    subtitle: "Blank Meta → Advanced grid — paste into wiki, then attach registry and eval."
+    category: Templates
+    usage: [hero, og]
+    status: mapped
+
+  - id: satori-role-paths-before-generic-analytics
+    generator: satori
+    template: role-paths-fork
+    source: Satori/role-paths-before-generic-analytics.png
+    slug: role-paths-before-generic-analytics
+    satori_title: "Role Paths Before Generic Analytics"
+    title: "Role Paths Before Generic Analytics"
+    subtitle: "Six org roles on one analysis spine — not one generic analyst script."
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: satori-governance-raci-worksheet
     generator: satori
     template: governance-raci-worksheet

@@ -17,6 +17,18 @@ faq:
   question: How does this worksheet relate to the AI governance roles playbook?
 hero_image: images/articles/governance-raci-worksheet/hero.png
 hero_caption: "Assign clear owners for AI changes, releases, and incidents before pilot traffic scales."
+howto_steps:
+- name: Pick one workflow ID
+  text: Choose a single workflow identifier (for example support-reply-v3) so ownership
+    is scoped to one production path.
+- name: Name real people for each RACI column
+  text: Assign Exec Sponsor, Process Owner, IT/Platform, Legal/Compliance, and Ops/QA
+    Lead with people or named roles—not team labels alone.
+- name: Fill every activity row
+  text: Complete the core activity table without blanks; add domain rows only after
+    core rows have owners.
+- name: Review on cadence
+  text: Revisit the table in the monthly risk forum and after each major workflow release.
 key_takeaway: Fill this RACI before pilot traffic scales—incident response depends on named owners, not shared responsibility.
 reading_time: 3 min read
 slug: governance-raci-worksheet

@@ -5,9 +5,32 @@ category: Templates
 content_tier: template
 date: 2025-10-24
 modified: 2026-06-29
+faq:
+- question: When should we fill the AI workflow canvas?
+  answer: Before selecting tools or writing prompts—complete it with the process owner
+    and IT before pilot launch so gaps do not become production incidents.
+- question: What five elements are non-negotiable on the canvas?
+  answer: Trigger, numbered steps (human vs model), allowed context sources with denied
+    data named, a human review gate, and one primary business metric.
+- question: Who should fill the canvas together?
+  answer: Process owner and IT complete it jointly; governance roles and risk forums
+    reference the finished page as the workflow contract.
 hero_caption: Copy-paste template — fill the canvas before selecting tools or writing
   prompts.
 hero_image: images/articles/ai-workflow-canvas-template/hero.png
+howto_steps:
+- name: Confirm the five non-negotiable elements
+  text: Name trigger, steps, allowed context and denied data, review gate, and one
+    primary business metric before tool selection.
+- name: Fill the blank canvas table
+  text: Copy the canvas into your wiki or ticket and complete outcome, owners, eval
+    count, pass threshold, and audit log location.
+- name: Quality-check against weak vs strong signals
+  text: Compare your answers to the weak/strong table; pause pilot traffic if more
+    than two rows look weak.
+- name: Store next to eval evidence
+  text: Keep one canvas per workflow ID beside eval results so reviewers see intent
+    and evidence together.
 key_takeaway: Fill the canvas before selecting tools or writing prompts—gaps here
   become incidents later.
 reading_time: 5 min read

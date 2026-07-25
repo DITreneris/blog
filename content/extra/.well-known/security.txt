@@ -1,0 +1,3 @@
+Contact: mailto:info@promptanatomy.app
+Canonical: https://www.promptanatomy.blog/.well-known/security.txt
+Preferred-Languages: en

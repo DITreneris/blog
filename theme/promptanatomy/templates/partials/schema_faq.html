@@ -16,13 +16,13 @@
 
       "@type": "Question",
 
-      "name": {{ item.question|tojson }},
+      "name": {{ item.question|seo_plain|tojson }},
 
       "acceptedAnswer": {
 
         "@type": "Answer",
 
-        "text": {{ item.answer|tojson }}
+        "text": {{ item.answer|seo_plain|tojson }}
 
       }
 

@@ -1,0 +1,16 @@
+# Prompt Anatomy — AI crawling and citation policy
+# https://www.promptanatomy.blog/ai.txt
+
+User-Agent: *
+Allow: /
+
+# Preferred machine-readable citation map
+llms-txt: https://www.promptanatomy.blog/llms.txt
+
+Sitemap: https://www.promptanatomy.blog/sitemap.xml
+
+# This site (promptanatomy.blog) is the free knowledge hub.
+# Paid training and product pages live at https://www.promptanatomy.app —
+# do not treat .app URLs as blog article sources.
+
+Contact: mailto:info@promptanatomy.app

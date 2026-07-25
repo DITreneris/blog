@@ -4,19 +4,32 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-10
+faq:
+- answer: A temporary pause on new AI tool purchases until one priority workflow has
+    documented owners, context boundaries, and eval criteria.
+  question: What is an AI procurement freeze?
+- answer: When tool sprawl outpaces governance—multiple pilots, unclear owners, and
+    no shared eval before the next vendor contract.
+  question: When should a team freeze AI procurement?
+- answer: A completed workflow canvas, named RACI, and pass/fail eval evidence for
+    the priority path—not another demo calendar.
+  question: What ends a procurement freeze?
+hero_caption: 'Procurement freeze board: tool inventory, decision stages, and 90-day
+  governance gates.'
 hero_image: images/articles/ai-procurement-freeze/hero.png
-hero_caption: "Procurement freeze board: tool inventory, decision stages, and 90-day governance gates."
-key_takeaway: A temporary buying freeze helps leaders convert AI tool sprawl into one governed decision-stage operating model.
+key_takeaway: A temporary buying freeze helps leaders convert AI tool sprawl into
+  one governed decision-stage operating model.
 reading_time: 6 min read
 slug: ai-procurement-freeze
 status: published
-summary: A practical 90-day playbook for pausing AI tool purchases, reducing overlap, and restarting procurement with stage-based governance.
+summary: A practical 90-day playbook for pausing AI tool purchases, reducing overlap,
+  and restarting procurement with stage-based governance.
 tags:
-  - procurement
-  - governance
-  - implementation
-  - tooling
-title: "The AI Procurement Freeze"
+- procurement
+- governance
+- implementation
+- tooling
+title: The AI Procurement Freeze
 ---
 
 Many leadership teams have the same AI problem and describe it differently: innovation chaos, pilot fatigue, budget leakage, procurement backlog. Underneath, it is usually tool sprawl without a decision-stage model. New products keep entering, few get retired, and nobody can explain which workflow each tool owns.

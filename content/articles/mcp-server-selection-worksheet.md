@@ -16,6 +16,19 @@ faq:
   question: Can feature score override a failed security gate?
 hero_image: images/articles/mcp-server-selection-worksheet/hero.png
 hero_caption: "MCP server selection checklist — security, governance, and operational fit for IT teams."
+howto_steps:
+- name: Score security and governance criteria first
+  text: Score each criterion from 1 to 5 and mark red-line failures as blockers regardless
+    of total score.
+- name: Attach evidence links
+  text: Keep docs, test logs, and security notes in the evidence column for every scored
+    row.
+- name: Run the IT go/no-go checklist
+  text: Confirm auth, least-privilege scopes, staging audit fields, injection tests,
+    escalation rules, rollback, and RACI ownership before production write scopes.
+- name: Link the worksheet to governance RACI
+  text: Store the completed worksheet with the workflow RACI so incident response has
+    a named owner when configuration drifts.
 key_takeaway: Score MCP servers on security and governance red lines first—total feature score does not override a failed allowlist or audit test.
 reading_time: 3 min read
 slug: mcp-server-selection-worksheet

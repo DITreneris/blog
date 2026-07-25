@@ -4,6 +4,16 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2024-03-13
+faq:
+- answer: Different prompt jobs need different context, review, and eval—treating
+    every call as free-form chat creates inconsistent risk.
+  question: Why classify prompt types for business workflows?
+- answer: Policy-bearing drafts get under-reviewed and simple transforms get over-governed—classification
+    keeps gates proportional.
+  question: What happens if every prompt uses the same template?
+- answer: In the prompt registry metadata for each template so reviewers know risk
+    class and required checks.
+  question: Where should prompt types be recorded?
 hero_caption: Task, system, retrieval, and checker prompts—matched to workflow step,
   not one growing system message.
 hero_image: images/articles/types-of-prompts-for-business-workflows/hero.png

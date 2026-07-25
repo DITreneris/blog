@@ -4,11 +4,21 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2024-04-05
+faq:
+- answer: Versioned prompts with owners, environment pins, context assembly rules,
+    and eval links—so production loads addressable templates, not chat paste.
+  question: What is a structured prompt system?
+- answer: Without structure, every team invents variants; the blueprint defines registry,
+    change control, and promotion gates first.
+  question: Why blueprint before building more prompts?
+- answer: The blueprint is the design; the registry is the operational store of IDs,
+    versions, owners, and eval links.
+  question: How does the blueprint relate to a prompt registry?
 hero_caption: Prompt registry — versioned templates, owners, environments, and eval-linked
   releases.
 hero_image: images/articles/structured-prompt-system-blueprint/hero.png
-key_takeaway: A prompt registry is versioned templates plus release discipline—not a shared
-  doc anyone can edit.
+key_takeaway: A prompt registry is versioned templates plus release discipline—not
+  a shared doc anyone can edit.
 reading_time: 5 min read
 slug: structured-prompt-system-blueprint
 status: published

@@ -24,7 +24,6 @@ hero_caption: Implementation stack — outcome, workflow, context, model step, e
 hero_image: images/articles/prompt-anatomy-foundations/hero.png
 key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context,
   model step, evaluation, governance.'
-reading_time: 2 min read
 slug: prompt-anatomy-foundations
 status: published
 summary: Implementation stack index—six layers from outcome to governance, with role-based
@@ -62,6 +61,7 @@ Use the table as a routing index by job-to-be-done. Pick one row, finish that pl
 |-------------|------------|
 | Diagnosing chaos | [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) |
 | Designing agents | [Agent workflow guide](/articles/how-to-design-an-ai-agent-workflow/) — path visual: [From Prompt to Agent](/articles/from-prompt-to-agent/) |
+| Writing structured prompts | [Six-block prompt system](/articles/six-block-prompt-system/) |
 | Designing context | [Context architecture](/articles/what-is-context-architecture/) |
 | Setting ownership | [Governance roles](/articles/ai-governance-roles-and-ownership/) |
 | Planning a pilot | [AI Workflow Canvas](/articles/ai-workflow-canvas-template/) |
@@ -77,7 +77,7 @@ Follow this sequence once—not every playbook on day one.
 1. **Diagnose** with [10 Signs](/articles/10-signs-your-company-is-vibe-prompting/) and the [stack scorecard](/articles/what-your-ai-stack-reveals/).
 2. **Design** one workflow on the [AI Workflow Canvas](/articles/ai-workflow-canvas-template/).
 3. **Gate** changes with [Evaluation Hooks](/articles/evaluation-hooks-for-ai-workflows/) before pilot scale.
-4. **Standardize** on [training at promptanatomy.app](https://www.promptanatomy.app/) when the team repeats the same steps.
+4. **Standardize** write structure with [The Six-Block Prompt System](/articles/six-block-prompt-system/), then practice on [training at promptanatomy.app](https://www.promptanatomy.app/) when the team repeats the same steps.
 
 For outcome framing before you buy anything, read [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/).
 
@@ -93,7 +93,7 @@ For outcome framing before you buy anything, read [From Prompts to Business Outc
 
 Templates and case studies turn methodology into artifacts auditors and sponsors can inspect. Copy them into your wiki with workflow IDs filled in—empty templates in a shared drive do not count as governance.
 
-- **Templates** — [Eval checklist](/articles/ai-workflow-eval-checklist/), [RACI worksheet](/articles/governance-raci-worksheet/), [change log template](/articles/ai-change-log-template-prompt-context-and-model-updates/)
+- **Templates** — [Six-Block Prompt Canvas](/articles/six-block-canvas-template/), [Eval checklist](/articles/ai-workflow-eval-checklist/), [RACI worksheet](/articles/governance-raci-worksheet/), [change log template](/articles/ai-change-log-template-prompt-context-and-model-updates/)
 - **Case studies** — [Northline Part 1](/articles/case-study-vibe-prompting-to-structured-workflow/) (diagnostic arc); [finance workflow](/articles/finance-workflow-case-study-controlled-draft-and-review/) for controlled draft and review
 - **Browse all** — [Templates](/topics/templates/) and [Case Studies](/topics/case-studies/)
 

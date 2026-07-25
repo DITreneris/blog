@@ -4,19 +4,32 @@ body_locked: true
 category: Case Studies
 content_tier: playbook
 date: 2025-10-02
+faq:
+- answer: How the composite team scaled eval coverage after the first structured workflow—more
+    cases, clearer fail criteria, and promotion gates before traffic grew.
+  question: What does Northline Part 2 cover?
+- answer: Before widening the pilot cohort or adding auto-send—new failure modes need
+    held-out cases, not only happy-path demos.
+  question: When should eval coverage expand?
+- answer: Part 1 established the controlled workflow; Part 2 deepens measurement so
+    quality does not collapse as volume rises.
+  question: How does Part 2 relate to Part 1?
+hero_caption: Eval coverage expansion — from 50% shadow traffic to 80% queue coverage
+  after pass rate held four weeks.
 hero_image: images/articles/northline-part-2-scaling-eval-coverage/hero.png
-hero_caption: "Eval coverage expansion — from 50% shadow traffic to 80% queue coverage after pass rate held four weeks."
-key_takeaway: Northline increased shadow traffic only after eval pass rate held and override review stayed disciplined—not when leadership wanted faster ROI."
+key_takeaway: Northline increased shadow traffic only after eval pass rate held and
+  override review stayed disciplined—not when leadership wanted faster ROI."
 reading_time: 5 min read
 slug: northline-part-2-scaling-eval-coverage
 status: published
-summary: How Northline B2B expanded support-assist shadow traffic from 50% to 80% after eval held — composite case study Part 2.
+summary: How Northline B2B expanded support-assist shadow traffic from 50% to 80%
+  after eval held — composite case study Part 2.
 tags:
-  - northline
-  - eval
-  - change-management
-  - case-studies
-title: "Northline Part 2"
+- northline
+- eval
+- change-management
+- case-studies
+title: Northline Part 2
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations. [Part 1](/articles/case-study-vibe-prompting-to-structured-workflow/) covers the move from vibe prompting to structured `support-reply-v3`.*

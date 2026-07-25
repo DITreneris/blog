@@ -4,6 +4,16 @@ body_locked: true
 category: Case Studies
 content_tier: playbook
 date: 2026-04-02
+faq:
+- answer: AI drafts inside approved context; humans review and send; eval catches
+    policy and number errors before broader use.
+  question: What is the controlled draft-and-review pattern in finance?
+- answer: Material misstatements and policy breaches are high cost—auto-send is not
+    a v1 default for controller-facing outputs.
+  question: Why keep humans in the finance send path?
+- answer: Held-out eval pass rate, named owners, and audit fields for prompt/context
+    versions on each draft.
+  question: What evidence did the pilot need before scaling?
 hero_caption: Finance close assist — draft variance narratives from approved GL extracts,
   mandatory controller review before any external send.
 hero_image: images/articles/finance-workflow-case-study-controlled-draft-and-review/hero.png
@@ -18,7 +28,7 @@ tags:
 - northline
 - governance
 - change-management
-title: "Finance Workflow Case Study"
+title: Finance Workflow Case Study
 ---
 
 *Anonymized composite (Northline B2B)—multiple implementations.*

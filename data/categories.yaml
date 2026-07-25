@@ -6,6 +6,7 @@ categories:
       - slug: types-of-prompts-for-business-workflows
       - slug: prompt-engineering-vs-ai-workflow-engineering
       - slug: structured-prompt-system-blueprint
+      - slug: six-block-prompt-system
       - slug: prompt-registry-playbook
       - slug: prompt-frameworks-race-tag-business
       - slug: prompt-regression-testing-week
@@ -36,6 +37,7 @@ categories:
       - slug: prompt-anatomy-ecosystem-map
       - slug: shipping-prompt-anatomy
       - slug: click-and-do-data-analysis-soft-launch
+      - slug: role-paths-before-generic-analytics
       - slug: weekly-ceo-brief-pattern
       - slug: first-ai-lesson-cloud-launch
       - slug: prompt-anatomy-marketing-site-launch
@@ -73,6 +75,7 @@ categories:
     description: "Worksheets and checklists you paste into team rituals—not long playbooks."
     reading_path:
       - slug: ai-workflow-canvas-template
+      - slug: six-block-canvas-template
       - slug: ai-workflow-eval-checklist
       - slug: governance-raci-worksheet
       - slug: mcp-server-selection-worksheet

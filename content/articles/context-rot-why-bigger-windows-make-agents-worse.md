@@ -4,19 +4,32 @@ body_locked: true
 category: Framework
 content_tier: playbook
 date: 2026-06-02
+faq:
+- answer: Quality drops when oversized or stale context crowds out the signal the
+    model needs—larger windows alone do not fix architecture.
+  question: What is context rot in AI agents?
+- answer: More tokens can dilute instructions, mix denied or outdated sources, and
+    hide failures until outputs look confident but wrong.
+  question: Why can bigger context windows make agents worse?
+- answer: Scope context by layer, refresh sources on a schedule, and verify retrieval
+    with eval gates instead of pasting everything into the window.
+  question: How do we prevent context rot?
+hero_caption: 'Long windows, weak signal: when context grows faster than structure,
+  agent decisions degrade.'
 hero_image: images/articles/context-rot-why-bigger-windows-make-agents-worse/hero.png
-hero_caption: "Long windows, weak signal: when context grows faster than structure, agent decisions degrade."
-key_takeaway: Bigger context windows can reduce agent quality when teams do not manage relevance, ordering, and retrieval boundaries.
+key_takeaway: Bigger context windows can reduce agent quality when teams do not manage
+  relevance, ordering, and retrieval boundaries.
 reading_time: 6 min read
 slug: context-rot-why-bigger-windows-make-agents-worse
 status: published
-summary: Why agent performance often drops with larger context windows, and how to prevent context rot with architecture and retrieval discipline.
+summary: Why agent performance often drops with larger context windows, and how to
+  prevent context rot with architecture and retrieval discipline.
 tags:
-  - context
-  - agents
-  - eval
-  - framework
-title: "Context Rot in AI Agents"
+- context
+- agents
+- eval
+- framework
+title: Context Rot in AI Agents
 ---
 
 Large context windows sound like a free upgrade: add more documents, preserve more memory, reduce truncation. In real workflows, teams often get the opposite result. Agents become slower, less consistent, and more confidently wrong. This is context rot: useful evidence is still present, but drowned by stale, conflicting, or poorly ordered context.

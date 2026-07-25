@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
+{% block title %}{{ article.title|seo_plain }} — {{ SITENAME }}{% endblock %}
 
-{% block description %}{{ article.summary|striptags|truncate(160) }}{% endblock %}
+{% block description %}{{ article.summary|seo_plain|truncate(160) }}{% endblock %}
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ article.url }}{% endblock %}
 
@@ -20,9 +20,9 @@
 
 <meta property="og:type" content="article" />
 
-<meta property="og:title" content="{{ article.title|striptags }}" />
+<meta property="og:title" content="{{ article.title|seo_plain }}" />
 
-<meta property="og:description" content="{{ article.summary|striptags }}" />
+<meta property="og:description" content="{{ article.summary|seo_plain }}" />
 
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ article.url }}" />
 
@@ -33,7 +33,7 @@
 
 {% set _og_path = article_og_image_path(article) %}
 
-{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
+{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|seo_plain %}{% endif %}
 
 {% with meta_scope='og' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 
@@ -43,15 +43,15 @@
 
 {% block twitter %}
 
-<meta name="twitter:title" content="{{ article.title|striptags }}" />
+<meta name="twitter:title" content="{{ article.title|seo_plain }}" />
 
-<meta name="twitter:description" content="{{ article.summary|striptags }}" />
+<meta name="twitter:description" content="{{ article.summary|seo_plain }}" />
 
 {% from 'macros/ui.html' import article_og_image_path %}
 
 {% set _og_path = article_og_image_path(article) %}
 
-{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|striptags %}{% endif %}
+{% if _og_path %}{% set og_image_path = _og_path %}{% set og_image_width = 1200 %}{% set og_image_height = 630 %}{% set og_image_alt = article.title|seo_plain %}{% endif %}
 
 {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 
@@ -68,6 +68,8 @@
 {% include 'partials/schema_breadcrumb.html' %}
 
 {% include 'partials/schema_faq.html' %}
+
+{% include 'partials/schema_howto.html' %}
 
 {% endblock %}
 

@@ -4,21 +4,28 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-12
+faq:
+- answer: A field-oriented build note on assembling a Telegram game stack with clear
+    boundaries between bot logic, content, and ops—not a consumer growth hack list.
+  question: What is this Telegram game stack article for?
+- answer: Secrets, unbounded tool write access, and unpublished curriculum—keep allowlists
+    and human ops paths explicit.
+  question: What should stay out of the game bot prompt layer?
 hero_caption: Six-layer pipeline from GitHub through backend, Supabase, Railway, Vercel,
   and Telegram—the stack behind Corporate Ladder on Telegram.
 hero_image: images/articles/how-to-build-a-telegram-game-stack/hero.png
 key_takeaway: Ship a Telegram mini app by separating game rules on a hosted API, persistent
-  scores in a managed database, and the player UI on static hosting—not by bolting logic
-  into the bot script alone.
+  scores in a managed database, and the player UI on static hosting—not by bolting
+  logic into the bot script alone.
 reading_time: 7 min read
 slug: how-to-build-a-telegram-game-stack
 status: published
 summary: Architecture and deployment playbook for the six-service stack behind Corporate
-  Ladder—GitHub through Telegram—with what to build in each layer and how to reuse the
-  pattern.
+  Ladder—GitHub through Telegram—with what to build in each layer and how to reuse
+  the pattern.
 tags:
-  - workflow-automation
-title: "Telegram Game Stack"
+- workflow-automation
+title: Telegram Game Stack
 ---
 
 Prompt Anatomy's first game, **Corporate Ladder**, is a satirical office-climb mini app for Telegram—dodge meetings, climb the org chart, survive reorgs. It **soft-launched on 2026-06-15** and is playable at [promptanatomy.lol](https://www.promptanatomy.lol/) and through [@CorporateLadder_bot](https://t.me/corporateladder_bot); it is also listed on [tApps Center](https://tapps.center/application/corporateladder). See [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/) for live surfaces, how to play, and what shipped. This article documents the **six-layer stack** behind the game so you can reuse the pattern without treating Telegram as a monolith.

@@ -99,3 +99,5 @@ Treat `.app` progress as **practice and purchase**, not proof of enterprise impl
 - Free spokes (`.cloud`, `.info`, `.site`) complement training; they do not replace Core when you need the full six-block path plus analytics depth. Enter-spoke habit-before-scale lives in [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/).
 
 The soft launch is not a victory lap. It is a request for better signals: where learners hesitate, where diagrams teach faster than prose, and where the Data Analysis path needs one more pass before general release. If you are a Core buyer and want to test M7-9, email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 tester`.
+
+*Part 1 — soft launch.* What those signals produced—six org-role paths on Module 7 in v1.4.7—is in [Role Paths Before Generic Analytics](/articles/role-paths-before-generic-analytics/).

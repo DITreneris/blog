@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ page.title }} — {{ SITENAME }}{% endblock %}
+{% block title %}{{ page.title|seo_plain }} — {{ SITENAME }}{% endblock %}
 
-{% block description %}{{ page.summary|default(SITE_CONFIG.brand.description)|striptags|truncate(160) }}{% endblock %}
+{% block description %}{{ page.summary|default(SITE_CONFIG.brand.description)|seo_plain|truncate(160) }}{% endblock %}
 
 {% block canonical %}{{ CANONICAL_SITEURL }}/{{ page.url }}{% endblock %}
 
@@ -22,9 +22,9 @@
 
 <meta property="og:type" content="website" />
 
-<meta property="og:title" content="{{ page.title|striptags }}" />
+<meta property="og:title" content="{{ page.title|seo_plain }}" />
 
-<meta property="og:description" content="{{ page.summary|default(SITE_CONFIG.brand.description)|striptags|truncate(160) }}" />
+<meta property="og:description" content="{{ page.summary|default(SITE_CONFIG.brand.description)|seo_plain|truncate(160) }}" />
 
 <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ page.url }}" />
 
@@ -36,9 +36,9 @@
 
 {% block twitter %}
 
-<meta name="twitter:title" content="{{ page.title|striptags }}" />
+<meta name="twitter:title" content="{{ page.title|seo_plain }}" />
 
-<meta name="twitter:description" content="{{ page.summary|default(SITE_CONFIG.brand.description)|striptags|truncate(160) }}" />
+<meta name="twitter:description" content="{{ page.summary|default(SITE_CONFIG.brand.description)|seo_plain|truncate(160) }}" />
 
 {% with meta_scope='twitter' %}{% include 'partials/meta_og_image.html' %}{% endwith %}
 

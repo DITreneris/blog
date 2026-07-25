@@ -4,6 +4,16 @@ body_locked: true
 category: Framework
 content_tier: playbook
 date: 2024-05-21
+faq:
+- answer: Session memory (short-lived), episodic memory (run history), and organizational
+    memory (approved policies and facts)—each with different owners and retention.
+  question: What are the three memory types for AI systems?
+- answer: A named process or knowledge owner with retention rules—not an unbounded
+    chat history treated as the system of record.
+  question: Who should own organizational memory?
+- answer: Mixing them leaks temporary chat state into durable policy context and makes
+    audits and rollbacks unreliable.
+  question: Why separate session memory from organizational memory?
 hero_caption: Session, episodic, and organizational memory—each with different lifetimes,
   owners, and retention risk.
 hero_image: images/articles/memory-types-for-ai-systems/hero.png

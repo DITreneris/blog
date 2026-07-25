@@ -4,6 +4,16 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-04-09
+faq:
+- answer: A bounded AI-assisted brief with fixed sources, a human review gate, and
+    a stable outline so executives get decision-ready updates—not chat dumps.
+  question: What is the weekly CEO brief pattern?
+- answer: Final send authority and judgment on sensitive recommendations; the model
+    drafts inside an approved context pack.
+  question: What must stay human in the CEO brief?
+- answer: Version the outline and context sources, run a small eval set on tone/facts,
+    and announce changes when either updates.
+  question: How do we keep the brief from drifting?
 hero_caption: Scattered KPIs → structured brief → Fast / Deep / Board depth → human
   decision—not another dashboard.
 hero_image: images/articles/weekly-ceo-brief-pattern/hero.png
@@ -17,9 +27,9 @@ summary: How founders turn scattered KPIs into a repeatable weekly brief—DAILY
   and STRATEGIC modes with Fast, Deep, and Board output contracts—and where the free
   AI Operations Center at promptanatomy.ceo fits in the Prompt Anatomy ecosystem.
 tags:
-  - prompt-systems
-  - change-management
-  - workflow-automation
+- prompt-systems
+- change-management
+- workflow-automation
 title: The Weekly CEO Brief Pattern
 ---
 

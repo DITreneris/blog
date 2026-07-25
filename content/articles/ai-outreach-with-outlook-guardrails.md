@@ -4,6 +4,16 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2024-12-31
+faq:
+- answer: Approved templates, data boundaries, human send, and logging—never auto-send
+    personalized outreach from raw CRM dumps.
+  question: What guardrails matter for AI outreach in Outlook?
+- answer: Reputation and compliance risk; v1 should keep humans as the send gate while
+    AI drafts inside policy.
+  question: Why not fully automate first-touch email?
+- answer: Template/prompt version, context sources used, reviewer, and send decision
+    so complaints are reconstructable.
+  question: What should be logged for outreach assists?
 hero_caption: Outlook draft-and-review flow — shared mailbox, human send, rate caps,
   and approved snippets only.
 hero_image: images/articles/ai-outreach-with-outlook-guardrails/hero.png

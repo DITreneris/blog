@@ -28,7 +28,7 @@
 
       "position": 2,
 
-      "name": {{ article.category.name|tojson }},
+      "name": {{ article.category.name|seo_plain|tojson }},
 
       "item": "{{ CANONICAL_SITEURL }}/{{ article.category.url }}"
 
@@ -40,7 +40,7 @@
 
       "position": 3,
 
-      "name": {{ article.title|tojson }},
+      "name": {{ article.title|seo_plain|tojson }},
 
       "item": "{{ CANONICAL_SITEURL }}/{{ article.url }}"
 
@@ -54,7 +54,7 @@
 
       "position": 2,
 
-      "name": {{ page.title|tojson }},
+      "name": {{ page.title|seo_plain|tojson }},
 
       "item": "{{ CANONICAL_SITEURL }}/{{ page.url }}"
 
@@ -68,7 +68,7 @@
 
       "position": 2,
 
-      "name": {{ (category.name if category.name is defined else category)|tojson }},
+      "name": {{ (category.name if category.name is defined else category)|seo_plain|tojson }},
 
       "item": "{{ CANONICAL_SITEURL }}/{{ category.url }}"
 

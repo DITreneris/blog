@@ -40,6 +40,8 @@ PUBLICATION_ORDER: list[str] = [
     "from-prompts-to-business-outcomes",
     "prompt-anatomy-ecosystem-map",
     "shipping-prompt-anatomy",
+    "six-block-prompt-system",
+    "six-block-canvas-template",
     "ai-governance-roles-and-ownership",
     "data-boundaries-for-ai-agents",
     "audit-trails-for-ai-workflows",
@@ -89,6 +91,7 @@ PUBLICATION_ORDER: list[str] = [
     "corporate-ladder-soft-launch",
     "corporate-ladder-v24-score-trust",
     "click-and-do-data-analysis-soft-launch",
+    "role-paths-before-generic-analytics",
     "critique-agent-v09-audit-stats",
     "critique-agent-v10-verified-local-audits",
     "critique-agent-field-test-trust-workflow",
@@ -117,6 +120,8 @@ WAVE2_INTERVAL_DAYS = [1]
 
 FIXED_DATES: dict[str, date] = {
     "shipping-prompt-anatomy": date(2026, 3, 15),
+    "six-block-prompt-system": date(2026, 4, 16),
+    "six-block-canvas-template": date(2026, 4, 18),
     "finance-workflow-case-study-controlled-draft-and-review": date(2026, 4, 2),
     "ai-change-log-template-prompt-context-and-model-updates": date(2026, 4, 24),
     "weekly-ceo-brief-pattern": date(2026, 4, 9),
@@ -127,6 +132,7 @@ FIXED_DATES: dict[str, date] = {
     "corporate-ladder-soft-launch": date(2026, 6, 15),
     "corporate-ladder-v24-score-trust": date(2026, 6, 16),
     "click-and-do-data-analysis-soft-launch": date(2026, 7, 2),
+    "role-paths-before-generic-analytics": date(2026, 7, 25),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
     "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
     "critique-agent-field-test-trust-workflow": date(2026, 7, 3),
@@ -136,8 +142,8 @@ FIXED_DATES: dict[str, date] = {
     "manifest-before-you-broadcast": date(2026, 7, 18),
 }
 
-# Latest allowed publish date (Executive OS .pro field note 2026-07-16)
-PUBLISH_CUTOFF = date(2026, 7, 18)
+# Latest allowed publish date (role-paths field note 2026-07-25)
+PUBLISH_CUTOFF = date(2026, 7, 25)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

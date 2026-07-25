@@ -4,6 +4,16 @@ body_locked: true
 category: Case Studies
 content_tier: playbook
 date: 2026-06-17
+faq:
+- answer: A staged workflow that drafts tender answers from approved sources with
+    legal/compliance review gates before submission.
+  question: What is an AI tender response pipeline?
+- answer: Before final submission—humans own commitments, pricing assertions, and
+    legal language that binds the company.
+  question: Where should AI stop in tender work?
+- answer: Only approved past responses, policy packs, and product facts on an allow
+    list—never other customers’ confidential bids.
+  question: What context is allowed in tender drafting?
 hero_caption: Tender pipeline — intake, retrieval, draft, compliance scan, and mandatory
   legal assembly gate.
 hero_image: images/articles/ai-tender-response-pipeline/hero.png

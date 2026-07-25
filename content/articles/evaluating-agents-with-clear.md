@@ -4,19 +4,32 @@ body_locked: true
 category: Framework
 content_tier: playbook
 date: 2026-06-04
+faq:
+- answer: Cost, Latency, Efficacy, Assurance, and Reliability—thresholds you set before
+    promoting an agent to production traffic.
+  question: What does CLEAR stand for in agent evaluation?
+- answer: A cheap wrong answer or a slow correct one still fails the business. CLEAR
+    forces tradeoffs into explicit pass/fail gates.
+  question: Why score agents on more than task accuracy?
+- answer: 'Before wider traffic or auto-actions: if any CLEAR dimension misses its
+    threshold, keep the agent in pilot until evidence improves.'
+  question: When should CLEAR thresholds block promotion?
+hero_caption: One row per workflow, updated weekly — weaknesses visible before scale
+  requests reach the forum.
 hero_image: images/articles/evaluating-agents-with-clear/hero.png
-hero_caption: "One row per workflow, updated weekly — weaknesses visible before scale requests reach the forum."
-key_takeaway: Agent quality is not one metric; CLEAR gives a practical, weekly operating scorecard that balances performance, risk, and stability.
+key_takeaway: Agent quality is not one metric; CLEAR gives a practical, weekly operating
+  scorecard that balances performance, risk, and stability.
 reading_time: 8 min read
 slug: evaluating-agents-with-clear
 status: published
-summary: A practical framework for evaluating production agents across cost, latency, efficacy, assurance, and reliability with thresholds and weekly operating rituals.
+summary: A practical framework for evaluating production agents across cost, latency,
+  efficacy, assurance, and reliability with thresholds and weekly operating rituals.
 tags:
-  - eval
-  - ai-agents
-  - governance
-  - implementation
-title: "Evaluating Agents with CLEAR"
+- eval
+- ai-agents
+- governance
+- implementation
+title: Evaluating Agents with CLEAR
 ---
 
 Most teams evaluate agents with one number because one number is easy to present. Usually it is accuracy, or cost per run, or "users like it." In production, that shortcut fails. An agent can be cheap and unsafe, fast and wrong, accurate and too fragile to survive traffic spikes.
