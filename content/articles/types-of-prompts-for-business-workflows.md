@@ -29,7 +29,7 @@ tags:
 title: Types of Prompts for Business Workflows
 ---
 
-Business workflows need **different prompt roles**, not one growing system message that accumulates policy, task instructions, retrieval hints, and checker rules until nobody can version it safely. Splitting types lets Legal own policy packs, ops own task templates, and IT own retrieval connectors—each with eval cases and registry IDs—see [structured prompt system](/articles/structured-prompt-system-blueprint/).
+Business workflows need **different prompt roles**, not one growing system message that accumulates policy, task instructions, retrieval hints, and checker rules until nobody can version it safely. Splitting types lets Legal own policy packs, ops own task templates, and IT own retrieval connectors—each with eval cases and registry IDs—see [structured prompt system](/articles/structured-prompt-system-blueprint/). Treat the shared system or policy pack as a [team contract with release discipline](/articles/system-prompt-team-contract/), not a sidebar experiment.
 
 Mega-prompts fail audits: you cannot tell which sentence changed when a near-miss occurs, and you cannot re-run checker logic without re-running generation. Type separation is how prompt engineering scales inside [workflow engineering](/articles/prompt-engineering-vs-ai-workflow-engineering/).
 

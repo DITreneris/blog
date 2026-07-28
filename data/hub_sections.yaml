@@ -83,6 +83,7 @@ latest:
     - pillar
     - playbook
     - template
+    - opinion
   exclude_slugs: []
   show_more_label: "Show more articles"
   show_fewer_label: "Show fewer articles"

@@ -40,6 +40,7 @@ PILLAR_SLUGS = frozenset(
         "rag-in-production",
         "grounding-ai-outputs",
         "model-context-protocol-enterprise",
+        "prompt-engineering-vs-ai-workflow-engineering",
     }
 )
 THIN_OPINION_WORDS = 600

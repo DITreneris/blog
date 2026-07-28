@@ -18,7 +18,7 @@ import { buildMcpArchitecture } from './mcp-architecture.mjs';
 import { buildPlatformComparison } from './platform-comparison.mjs';
 import { buildCaseStudyEvalScale } from './case-study-eval-scale.mjs';
 import { buildGlossaryTerms } from './glossary-terms.mjs';
-import { buildSplitCompare } from './split-compare.mjs';
+import { buildSplitCompare, buildSplitCompareOg } from './split-compare.mjs';
 import { buildTierLadder } from './tier-ladder.mjs';
 import { buildContextWindowTube } from './context-window-tube.mjs';
 import { buildMemoryTiers } from './memory-tiers.mjs';
@@ -52,6 +52,20 @@ import { buildTelegramCurriculumCms } from './telegram-curriculum-cms.mjs';
 import { buildSixBlockWorksheet } from './six-block-worksheet.mjs';
 import { buildSixBlockCanvas } from './six-block-canvas.mjs';
 import { buildRolePathsFork } from './role-paths-fork.mjs';
+import {
+  buildMultiAgentObservabilityWorksheet,
+  buildMultiAgentObservabilityOg,
+} from './multi-agent-observability-worksheet.mjs';
+import { buildGroundingSystemWorksheet } from './grounding-system-worksheet.mjs';
+import {
+  buildHandoffTriggerTable,
+  buildHandoffTriggerTableOg,
+} from './handoff-trigger-table.mjs';
+import { buildGlossaryRoutingMap } from './glossary-routing-map.mjs';
+import {
+  buildScaleCapabilityGates,
+  buildScaleCapabilityGatesOg,
+} from './scale-capability-gates.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -72,6 +86,7 @@ export const TEMPLATES = {
   'platform-comparison': buildPlatformComparison,
   'glossary-terms': buildGlossaryTerms,
   'split-compare': buildSplitCompare,
+  'split-compare-og': buildSplitCompareOg,
   'tier-ladder': buildTierLadder,
   'context-window-tube': buildContextWindowTube,
   'memory-tiers': buildMemoryTiers,
@@ -103,6 +118,14 @@ export const TEMPLATES = {
   'six-block-worksheet': buildSixBlockWorksheet,
   'six-block-canvas': buildSixBlockCanvas,
   'role-paths-fork': buildRolePathsFork,
+  'multi-agent-observability-worksheet': buildMultiAgentObservabilityWorksheet,
+  'multi-agent-observability-og': buildMultiAgentObservabilityOg,
+  'grounding-system-worksheet': buildGroundingSystemWorksheet,
+  'handoff-trigger-table': buildHandoffTriggerTable,
+  'handoff-trigger-table-og': buildHandoffTriggerTableOg,
+  'glossary-routing-map': buildGlossaryRoutingMap,
+  'scale-capability-gates': buildScaleCapabilityGates,
+  'scale-capability-gates-og': buildScaleCapabilityGatesOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

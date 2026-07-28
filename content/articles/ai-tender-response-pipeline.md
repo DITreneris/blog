@@ -19,7 +19,7 @@ hero_caption: Tender pipeline — intake, retrieval, draft, compliance scan, and
 hero_image: images/articles/ai-tender-response-pipeline/hero.png
 key_takeaway: Tender AI works when only approved content enters drafts and legal sign-off
   stays mandatory.
-reading_time: 6 min read
+reading_time: 3 min read
 slug: ai-tender-response-pipeline
 status: published
 summary: RFP/tender pipeline with legal gates, clause checklist, and redacted section

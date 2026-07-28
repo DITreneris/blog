@@ -92,6 +92,7 @@ PUBLICATION_ORDER: list[str] = [
     "corporate-ladder-v24-score-trust",
     "click-and-do-data-analysis-soft-launch",
     "role-paths-before-generic-analytics",
+    "system-prompt-team-contract",
     "critique-agent-v09-audit-stats",
     "critique-agent-v10-verified-local-audits",
     "critique-agent-field-test-trust-workflow",
@@ -133,6 +134,7 @@ FIXED_DATES: dict[str, date] = {
     "corporate-ladder-v24-score-trust": date(2026, 6, 16),
     "click-and-do-data-analysis-soft-launch": date(2026, 7, 2),
     "role-paths-before-generic-analytics": date(2026, 7, 25),
+    "system-prompt-team-contract": date(2026, 7, 28),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
     "critique-agent-v10-verified-local-audits": date(2026, 6, 17),
     "critique-agent-field-test-trust-workflow": date(2026, 7, 3),
@@ -142,8 +144,8 @@ FIXED_DATES: dict[str, date] = {
     "manifest-before-you-broadcast": date(2026, 7, 18),
 }
 
-# Latest allowed publish date (role-paths field note 2026-07-25)
-PUBLISH_CUTOFF = date(2026, 7, 25)
+# Latest allowed publish date (system-prompt team-contract Opinion 2026-07-28)
+PUBLISH_CUTOFF = date(2026, 7, 28)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

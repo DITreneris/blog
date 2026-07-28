@@ -5,7 +5,7 @@ category: Framework
 content_tier: nav
 date: 2026-06-05
 hero_image: images/articles/prompt-anatomy-glossary/hero.png
-hero_caption: "Glossary nav — shared definitions for MCP, context rot, CLEAR, RAG tiers, and prompt registry terms."
+hero_caption: "Glossary as a routing map — Context, Eval, Agents, Governance clusters to canonical playbooks."
 key_takeaway: Shared vocabulary speeds design reviews—link terms to canonical playbooks instead of redefining them in every meeting.
 reading_time: 6 min read
 slug: prompt-anatomy-glossary

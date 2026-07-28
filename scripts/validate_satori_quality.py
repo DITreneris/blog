@@ -26,13 +26,8 @@ TIER_B_TEMPLATES = frozenset(
     }
 )
 
-# Slugs where Tier-B template is an acceptable semantic fit (observability / handoff topics)
-TIER_B_ALLOWLIST = frozenset(
-    {
-        "multi-agent-observability",
-        "handoff-rules-between-humans-and-ai",
-    }
-)
+# Slugs where Tier-B template is an acceptable semantic fit
+TIER_B_ALLOWLIST = frozenset()
 
 # Templates intentionally shared across multiple teaching articles
 DUPLICATE_TEMPLATE_ALLOWLIST = frozenset(

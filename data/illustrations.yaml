@@ -109,11 +109,13 @@ illustrations:
 
   - id: basic-129
     generator: satori
-    template: human-handoff-worksheet
+    template: handoff-trigger-table
     source: Satori/handoff-rules-between-humans-and-ai.png
     slug: handoff-rules-between-humans-and-ai
     title: "Handoff Rules Between Humans and AI"
     category: Implementation Notes
+    subtitle: "Triggers, owners, and SLAs — not vague human-in-the-loop."
+    og_template: handoff-trigger-table-og
     usage: [hero, og]
     status: mapped
 
@@ -480,12 +482,13 @@ illustrations:
 
   - id: poster-scales-ai-beyond-basics
     generator: satori
-    template: tier-ladder
-    variant: scale
+    template: scale-capability-gates
     source: Satori/what-scales-ai-beyond-basics.png
     slug: what-scales-ai-beyond-basics
     title: "What Actually Scales AI Beyond Chat Basics"
     category: Opinion
+    subtitle: "Five capabilities — each needs promotion evidence before production."
+    og_template: scale-capability-gates-og
     usage: [hero, og]
     status: mapped
 
@@ -507,6 +510,8 @@ illustrations:
     slug: why-ai-hallucinates
     title: "Why AI Hallucinates"
     category: Opinion
+    subtitle: "Ungrounded guessing vs scoped retrieval and verify-before-send."
+    og_template: split-compare-og
     usage: [hero, og]
     status: mapped
 
@@ -518,6 +523,8 @@ illustrations:
     slug: chaos-vs-control-prompting
     title: "Chaos vs Control Prompting"
     category: Opinion
+    subtitle: "Vague chat prompts vs role, structure, and eval-linked control."
+    og_template: split-compare-og
     usage: [hero, og]
     status: mapped
 
@@ -610,11 +617,12 @@ illustrations:
 
   - id: satori-grounding-ai-outputs
     generator: satori
-    template: grounding-stack
+    template: grounding-system-worksheet
     source: Satori/grounding-ai-outputs.png
     slug: grounding-ai-outputs
     title: "Grounding AI Outputs"
     category: Framework
+    subtitle: "Scope, retrieve, verify, log — one evidence path before send."
     usage: [hero]
     status: mapped
 
@@ -720,11 +728,13 @@ illustrations:
 
   - id: satori-multi-agent-observability
     generator: satori
-    template: observability-trace
+    template: multi-agent-observability-worksheet
     source: Satori/multi-agent-observability.png
     slug: multi-agent-observability
     title: "Multi-Agent Observability"
     category: AI Agents
+    subtitle: "Run-level traces: who handed what, under which policy version."
+    og_template: multi-agent-observability-og
     usage: [hero, og]
     status: mapped
 
@@ -860,12 +870,13 @@ illustrations:
 
   - id: satori-prompt-anatomy-glossary
     generator: satori
-    template: glossary-terms
+    template: glossary-routing-map
     source: Satori/prompt-anatomy-glossary.png
     slug: prompt-anatomy-glossary
     satori_title: "Prompt Anatomy Glossary"
     title: "Prompt Anatomy Glossary"
     category: Framework
+    subtitle: "Shared terms that route to canonical playbooks."
     usage: [hero]
     status: mapped
 
@@ -898,6 +909,19 @@ illustrations:
     title: "AI Change Log Template"
     category: Templates
     usage: [hero]
+    status: mapped
+
+  - id: satori-system-prompt-team-contract
+    generator: satori
+    template: split-compare
+    variant: system_contract
+    source: Satori/system-prompt-team-contract.png
+    slug: system-prompt-team-contract
+    title: "Your System Prompt Is a Team Contract"
+    category: Opinion
+    subtitle: "Private chat history vs a versioned system pack every run inherits."
+    og_template: split-compare-og
+    usage: [hero, og]
     status: mapped
 
 category_og:

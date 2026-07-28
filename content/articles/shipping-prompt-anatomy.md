@@ -67,7 +67,7 @@ Access is email-based: checkout through Stripe, then magic-link entry from the P
 
 Progress persists locally; the app includes glossary, tools catalog, and a prompt library with copy actions. Community support runs through the public [Telegram group](https://t.me/prompt_anatomy).
 
-## What shipped (technical surfaces)
+## Hub stack and deploy shape
 
 | Surface | URL / repo |
 |---------|------------|
@@ -84,7 +84,7 @@ Progress persists locally; the app includes glossary, tools catalog, and a promp
 
 **Intentional thin scope:** No CMS on the hub. Training content ships as versioned JSON (`modules.json`, `glossary.json`, `promptLibrary.json`)—content edits do not require React refactors.
 
-## Read the hero diagram
+## From checkout to owned workflow
 
 The launch hero encodes the hub chain: **Plans → checkout → magic link → module progress → governed workflow on `.blog`**.
 

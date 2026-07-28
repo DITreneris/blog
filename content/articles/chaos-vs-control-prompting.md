@@ -22,7 +22,7 @@ title: Chaos vs Control Prompting
 
 The headline on the poster is uncomfortable and true: **AI is not random — your input is.** The left side is chaos: “make it better,” “try again,” scattered asks, red Xs on outputs. The right side is control: **Role, Context, Output, Criteria** feeding a result that matches spec. Same model family; different **contract**.
 
-The visual is not arguing that models are perfect. It argues that **variance you blame on “AI mood” is usually missing fields** — who may act, what evidence counts, what shape the answer must take, and what fails the run before a human ships. Once those fields exist, retries drop because the first pass is scoped.
+The visual is not arguing that models are perfect. It argues that **variance you blame on “AI mood” is usually missing fields** — who may act, what evidence counts, what shape the answer must take, and what fails the run before a human ships. Once those fields exist, retries drop because the first pass is scoped. When the shared system layer is the contract—not a private chat tweak—see [Your System Prompt Is a Team Contract](/articles/system-prompt-team-contract/).
 
 ## What chaos looks like in operations
 

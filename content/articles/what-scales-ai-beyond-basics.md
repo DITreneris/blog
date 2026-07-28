@@ -4,8 +4,8 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2024-10-02
-hero_caption: Five system capabilities — context, auditable reasoning, tools, memory
-  routing, and governed agents — each with promotion evidence before production.
+hero_caption: Five system capabilities with promotion evidence per rung — not a chat license upgrade.
+
 hero_image: images/articles/what-scales-ai-beyond-basics/hero.png
 key_takeaway: Scale requires evidence per capability — context packs, eval gates, boundaries,
   and audit fields — not another chat subscription.

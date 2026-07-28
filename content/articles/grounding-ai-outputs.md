@@ -5,7 +5,7 @@ category: Framework
 content_tier: pillar
 date: 2026-06-01
 hero_image: images/articles/grounding-ai-outputs/hero.png
-hero_caption: "Grounding stack in one flow: scoped context, approved retrieval, and verification gates before external send."
+hero_caption: "Four grounding layers with a maturity strip — promote only when the next layer has owners and eval."
 key_takeaway: Reliable AI output comes from one operating system that combines context architecture, retrieval boundaries, and verification gates.
 reading_time: 7 min read
 slug: grounding-ai-outputs

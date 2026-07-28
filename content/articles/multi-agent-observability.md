@@ -14,8 +14,8 @@ faq:
 - answer: Before production write scopes or customer-facing multi-agent paths—if you
     cannot reconstruct a failed run, do not scale traffic.
   question: When is observability a launch blocker?
-hero_caption: Multi-agent observability — handoff traces, failure modes, and governance-ready
-  logs.
+hero_caption: Five reconstructability questions plus run envelope fields — not a chat log.
+
 hero_image: images/articles/multi-agent-observability/hero.png
 key_takeaway: Multi-agent workflows need run-level traces that show handoff contracts,
   policy versions, and guardrail events—not only final output text.

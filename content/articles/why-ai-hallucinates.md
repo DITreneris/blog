@@ -9,7 +9,7 @@ hero_caption: Grounded vs ungrounded — controlled context and verification ver
   plausible guessing; choose your next playbook by failure mode.
 key_takeaway: Models predict plausible text — grounding is a workflow choice; use the
   decision table to pick your next playbook.
-reading_time: 5 min read
+reading_time: 2 min read
 slug: why-ai-hallucinates
 status: published
 summary: The grounded-vs-guessing split — a visual primer and decision table for which

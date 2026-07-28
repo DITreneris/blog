@@ -48,7 +48,7 @@ The **Team Assessment** is a 60-second maturity quiz. It returns a tier result a
 
 Together, the three surfaces give a coherent first visit: map the system, try structured prompt assembly, gauge where the team sits—then link to the article that matches the diagnosis.
 
-## Read the hero diagram
+## The chain the site sells
 
 The launch hero encodes the same chain the site sells: **Random Prompt → Logic Layer → Team Workflow → Repeatable Output**.
 
@@ -56,7 +56,7 @@ Random prompts produce inconsistent quality and unclear ownership. The **logic l
 
 That progression mirrors how we write on the blog: diagnose chaos, design structure, operationalize. For the blueprint behind the logic layer, see [Structured Prompt System Blueprint](/articles/structured-prompt-system-blueprint/). For outcome framing before you buy training, read [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/).
 
-## What shipped (surfaces)
+## Where to open the properties
 
 | Surface | URL |
 |---------|-----|

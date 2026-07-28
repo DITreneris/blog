@@ -10,7 +10,7 @@ hero_caption: Five context-window myths that inflate token cost and hallucinatio
 hero_image: images/articles/context-window-myths/hero.png
 key_takeaway: Bigger context is not a substitute for retrieval design, policy layers,
   memory routing, and evaluation — each myth has an ops fix.
-reading_time: 6 min read
+reading_time: 3 min read
 slug: context-window-myths
 status: published
 summary: Five expensive context-window mistakes ops teams still fund — with symptoms,

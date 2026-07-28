@@ -29,7 +29,7 @@
 {% set initial_count = latest_cfg.initial_count|default(6)|int %}
 {% set page_size = latest_cfg.page_size|default(6)|int %}
 {% set max_visible = latest_cfg.max_visible|default(18)|int %}
-{% set include_tiers = latest_cfg.include_tiers|default(['pillar', 'playbook', 'template']) %}
+{% set include_tiers = latest_cfg.include_tiers|default(['pillar', 'playbook', 'template', 'opinion']) %}
 {% set start_here_slugs = [] %}
 {% for item in HUB_SECTIONS.start_here.cards %}
 {% if start_here_slugs.append(item.href.rstrip('/').split('/')[-1]) %}{% endif %}

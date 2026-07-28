@@ -11,8 +11,8 @@ faq:
 - answer: No. Without explicit triggers and SLAs, reviewers guess when to intervene
     and automation silently ships risky outputs under queue pressure.
   question: Is "human in the loop" enough without triggers?
-hero_caption: Explicit triggers and owners for when AI drafts, when humans decide,
-  and when work returns to the queue.
+hero_caption: Example trigger table — low confidence, policy keyword, eval failure — with AI stops, human action, and SLA.
+
 hero_image: images/articles/handoff-rules-between-humans-and-ai/hero.png
 key_takeaway: Handoffs need triggers, owners, and SLAs—same as human-to-human process
   design.
