@@ -46,7 +46,7 @@ If you are deciding whether to subscribe, read the relevant playbook first on `.
 
 **Role: Discover and try.** Official marketing site with the nine-domain journey map, interactive five-part Anatomizer (Persona, Context, Variables, Instructions, Constraints), and a 60-second maturity quiz with tier and domain recommendation. Launched **2025-04-12**; see [Prompt Anatomy Marketing Site Launch](/articles/prompt-anatomy-marketing-site-launch/) for the field note and sister repo.
 
-Use `.site` when a sponsor or new teammate needs the ecosystem story in one sitting—not when you need eval gates, RACI worksheets, or audit trail templates. Those live on `.blog`. The Anatomizer teaches prompt shape; production still requires registry discipline and owners documented in your playbooks.
+Use `.site` when a sponsor or new teammate needs the ecosystem story in one sitting—not when you need eval gates, RACI worksheets, or audit trail templates. Those live on `.blog`. The Anatomizer teaches prompt shape; production still requires registry discipline and owners documented in your playbooks. To run `.site` as a twenty-five-minute workshop opener (map → assemble → diagnose → hand off), see [Interactive Demos as Workshop Instruments](/articles/interactive-demos-as-workshop-instruments/).
 
 ### promptanatomy.cloud
 

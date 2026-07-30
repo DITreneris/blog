@@ -72,6 +72,8 @@ KNOWN_TEMPLATES = frozenset(
         "glossary-routing-map",
         "scale-capability-gates",
         "scale-capability-gates-og",
+        "workshop-instruments",
+        "workshop-instruments-og",
         "og-default",
         "category-default",
         "article-og",

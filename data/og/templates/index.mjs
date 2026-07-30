@@ -66,6 +66,10 @@ import {
   buildScaleCapabilityGates,
   buildScaleCapabilityGatesOg,
 } from './scale-capability-gates.mjs';
+import {
+  buildWorkshopInstruments,
+  buildWorkshopInstrumentsOg,
+} from './workshop-instruments.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -126,6 +130,8 @@ export const TEMPLATES = {
   'glossary-routing-map': buildGlossaryRoutingMap,
   'scale-capability-gates': buildScaleCapabilityGates,
   'scale-capability-gates-og': buildScaleCapabilityGatesOg,
+  'workshop-instruments': buildWorkshopInstruments,
+  'workshop-instruments-og': buildWorkshopInstrumentsOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

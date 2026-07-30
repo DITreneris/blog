@@ -924,6 +924,18 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-interactive-demos-as-workshop-instruments
+    generator: satori
+    template: workshop-instruments
+    og_template: workshop-instruments-og
+    source: Satori/interactive-demos-as-workshop-instruments.png
+    slug: interactive-demos-as-workshop-instruments
+    title: "Interactive Demos as Workshop Instruments"
+    category: Implementation Notes
+    subtitle: "Ecosystem map, Anatomizer, assessment, handoff — the room does the work."
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

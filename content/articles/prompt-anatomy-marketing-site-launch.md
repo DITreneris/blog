@@ -44,7 +44,7 @@ The **Prompt Builder** is an interactive five-part Anatomizer: **Persona**, **Co
 
 ### Team Assessment
 
-The **Team Assessment** is a 60-second maturity quiz. It returns a tier result and a recommended domain to explore next. Useful for workshop openers and sponsor alignment; **not** a substitute for [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) or a procurement readiness review.
+The **Team Assessment** is a 60-second maturity quiz. It returns a tier result and a recommended domain to explore next. Useful for workshop openers and sponsor alignment; **not** a substitute for [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) or a procurement readiness review. For how to run map → Anatomizer → quiz as a facilitation agenda—not a property tour—see [Interactive Demos as Workshop Instruments](/articles/interactive-demos-as-workshop-instruments/).
 
 Together, the three surfaces give a coherent first visit: map the system, try structured prompt assembly, gauge where the team sits—then link to the article that matches the diagnosis.
 

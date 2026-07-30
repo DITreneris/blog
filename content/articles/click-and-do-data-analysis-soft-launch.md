@@ -49,7 +49,7 @@ Starter-tier buyers, Modules 1-3, are not in this cohort unless they upgrade to 
 
 Decks teach block names; they rarely teach **when to verify a number before it reaches a client**. Analysts copy polished outputs into email and dashboards, then invent metrics at scale. That failure mode is vocabulary without judgment.
 
-Twenty years in classrooms and enablement taught one rule: adults learn when they **do something measurable in under three minutes**, not when they admire a deck. Duolingo and Udemy get one thing right: micro-loops and gated depth. We borrowed the pattern, not the gamification: short sessions, copy-run-check, certificates at a threshold, and PDF handouts for transfer, not streaks or leaderboards as proof of maturity.
+Twenty years in classrooms and enablement taught one rule: adults learn when they **do something measurable in under three minutes**, not when they admire a deck. Duolingo and Udemy get one thing right: micro-loops and gated depth. We borrowed the pattern, not the gamification: short sessions, copy-run-check, certificates at a threshold, and PDF handouts for transfer, not streaks or leaderboards as proof of maturity. For the free **workshop opener** before modules—map, assemble, diagnose on `.site`—see [Interactive Demos as Workshop Instruments](/articles/interactive-demos-as-workshop-instruments/).
 
 | Pattern | Learner action | Bloom level | Where in training |
 |---------|----------------|-------------|-------------------|
