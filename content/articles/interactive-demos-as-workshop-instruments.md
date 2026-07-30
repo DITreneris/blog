@@ -15,8 +15,8 @@ faq:
   - question: How long should an interactive workshop opener run?
     answer: About twenty-five minutes—map, assemble one shared prompt, diagnose,
       then hand off to a concrete next step. Longer openers drift back into lecture.
-hero_caption: A twenty-five-minute opener — four named instruments on .site, then
-  a handoff to .cloud, .app, or a .blog playbook.
+hero_caption: Four jobs, four surfaces — pick the instrument for this sitting,
+  then hand off ownership.
 hero_image: images/articles/interactive-demos-as-workshop-instruments/hero.png
 key_takeaway: Open AI workshops with map-build-diagnose instruments, not decks; demos
   orient, drills deepen judgment, playbooks own production.

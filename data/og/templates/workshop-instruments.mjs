@@ -5,89 +5,81 @@ import {
   articleHeroFrame,
   articleOgFrameWithDiagram,
   panelBox,
-  flowArrowRight,
 } from './base.mjs';
 
 const d = typography.hero.diagram;
 const od = typography.og.diagram;
 
-const STEPS = [
+const ROWS = [
   {
-    time: '0-5',
-    instrument: 'Ecosystem map',
-    action: 'Orient one domain',
-    surfaces: ['.site'],
+    job: 'Orient + language',
+    surfaceLabel: 'Marketing demos',
+    surfaceTld: '.site',
+    action: 'Map · assemble · maturity check',
   },
   {
-    time: '5-15',
-    instrument: 'Anatomizer',
-    action: 'Same messy prompt',
-    surfaces: ['.site'],
+    job: 'First habit',
+    surfaceLabel: 'Cloud lesson',
+    surfaceTld: '.cloud',
+    action: 'Ordered send check',
   },
   {
-    time: '15-20',
-    instrument: 'Team Assessment',
-    action: 'Score maturity',
-    surfaces: ['.site'],
+    job: 'Measurable practice',
+    surfaceLabel: 'App drills',
+    surfaceTld: '.app',
+    action: 'Click-and-do under checks',
   },
   {
-    time: '20-25',
-    instrument: 'Hand off',
-    action: 'Owned next step',
-    surfaces: ['.cloud', '.app', '.blog'],
+    job: 'Owners + gates',
+    surfaceLabel: 'Blog playbooks',
+    surfaceTld: '.blog',
+    action: 'Workflows after the room',
   },
 ];
 
-const PANEL_TITLE = '25-Minute Workshop Opener';
-const PANEL_SUBTITLE = 'Instruments, not decks — the room does the move';
+const HEADERS = ['Job', 'Surface', 'Learners do'];
+
+const PANEL_TITLE = 'Instruments by job';
+const PANEL_SUBTITLE =
+  "Match the room's job to one surface — demos orient; drills deepen; playbooks own";
 const FOOTER = 'Use for: workshop openers · enablement · replace slide decks';
 
-function surfaceTokens(step, fontSize) {
-  return h(
-    'div',
-    {
-      style: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        rowGap: '2px',
-        columnGap: '6px',
-        maxWidth: '100%',
-      },
-    },
-    ...step.surfaces.map((s) =>
-      h(
-        'div',
-        {
-          style: {
-            display: 'flex',
-            color: brand.colors.brandAccent,
-            fontSize: px(fontSize),
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            opacity: 0.85,
-          },
-        },
-        s
-      )
-    )
-  );
-}
+const DEFAULT_SUBTITLE =
+  'Job to surface — demos orient, drills deepen, playbooks own.';
 
-function stepCard(step) {
+const FLEXES = [1.15, 1.2, 1.45];
+
+function surfaceCell(row, opts = {}) {
+  const { header = false, compact = false, flex = 1 } = opts;
+  if (header) {
+    return h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flex,
+          padding: compact ? '6px 8px' : '10px 12px',
+          color: brand.colors.brandAccent,
+          fontSize: px(compact ? od.moduleDesc : d.caption),
+          fontWeight: 700,
+          lineHeight: 1.3,
+          borderBottom: `2px solid ${brand.colors.borderDark}`,
+        },
+      },
+      'Surface'
+    );
+  }
   return h(
     'div',
     {
       style: {
         display: 'flex',
         flexDirection: 'column',
-        flex: 1,
+        flex,
+        padding: compact ? '6px 8px' : '10px 12px',
+        gap: '2px',
+        borderBottom: `1px solid ${brand.colors.borderDark}`,
         minWidth: '0',
-        padding: '10px 12px',
-        borderRadius: '8px',
-        border: `1px solid ${brand.colors.borderDark}`,
-        background: 'rgba(15, 23, 42, 0.55)',
-        gap: '4px',
       },
     },
     h(
@@ -95,165 +87,89 @@ function stepCard(step) {
       {
         style: {
           display: 'flex',
-          color: brand.colors.brandAccent,
-          fontSize: px(d.caption - 1),
-          fontWeight: 700,
-          letterSpacing: '0.04em',
-        },
-      },
-      step.time
-    ),
-    h(
-      'div',
-      {
-        style: {
-          display: 'flex',
           color: brand.colors.textOnDark,
-          fontSize: px(d.caption + 1),
-          fontWeight: 700,
-          lineHeight: 1.2,
-        },
-      },
-      step.instrument
-    ),
-    h(
-      'div',
-      {
-        style: {
-          display: 'flex',
-          color: brand.colors.textOnDarkMuted,
-          fontSize: px(d.caption - 1),
+          fontSize: px(compact ? od.moduleDesc : d.caption),
+          fontWeight: 600,
           lineHeight: 1.3,
         },
       },
-      step.action
+      row.surfaceLabel
     ),
-    surfaceTokens(step, d.caption - 2)
-  );
-}
-
-function stepRow() {
-  const nodes = [];
-  STEPS.forEach((step, i) => {
-    nodes.push(stepCard(step));
-    if (i < STEPS.length - 1) {
-      nodes.push(
-        h(
-          'div',
-          {
-            style: {
-              display: 'flex',
-              alignItems: 'center',
-              padding: '0 4px',
-              flexShrink: 0,
-            },
-          },
-          flowArrowRight(18)
-        )
-      );
-    }
-  });
-  return h(
-    'div',
-    {
-      style: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'stretch',
-        width: '100%',
-        gap: '0',
-      },
-    },
-    ...nodes
-  );
-}
-
-function compactStepRow(step, isLast) {
-  return h(
-    'div',
-    {
-      style: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        width: '100%',
-        padding: '6px 10px',
-        gap: '12px',
-        borderBottom: isLast ? 'none' : `1px solid ${brand.colors.borderDark}`,
-      },
-    },
     h(
       'div',
       {
         style: {
           display: 'flex',
-          width: '42px',
-          flexShrink: 0,
           color: brand.colors.brandAccent,
-          fontSize: px(od.moduleDesc),
-          fontWeight: 700,
-          letterSpacing: '0.04em',
+          fontSize: px(compact ? od.moduleDesc - 1 : d.caption - 1),
+          fontWeight: 600,
+          letterSpacing: '0.02em',
+          opacity: 0.85,
         },
       },
-      step.time
-    ),
-    h(
-      'div',
-      {
-        style: {
-          display: 'flex',
-          flex: 1.3,
-          color: brand.colors.textOnDark,
-          fontSize: px(od.moduleDesc),
-          fontWeight: 700,
-        },
-      },
-      step.instrument
-    ),
-    h(
-      'div',
-      {
-        style: {
-          display: 'flex',
-          flex: 1.4,
-          color: brand.colors.textOnDarkMuted,
-          fontSize: px(od.moduleDesc - 1),
-        },
-      },
-      step.action
-    ),
-    h(
-      'div',
-      {
-        style: {
-          display: 'flex',
-          flex: 1.1,
-          justifyContent: 'flex-end',
-        },
-      },
-      surfaceTokens(step, od.moduleDesc - 1)
+      row.surfaceTld
     )
   );
 }
 
-function compactSteps() {
+function textCell(text, opts = {}) {
+  const { header = false, compact = false, flex = 1 } = opts;
   return h(
     'div',
     {
       style: {
         display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        borderRadius: '8px',
-        border: `1px solid ${brand.colors.borderDark}`,
-        background: 'rgba(15, 23, 42, 0.55)',
+        flex,
+        padding: compact ? '6px 8px' : '10px 12px',
+        color: header
+          ? brand.colors.brandAccent
+          : brand.colors.textOnDark,
+        fontSize: px(compact ? od.moduleDesc : d.caption),
+        fontWeight: header ? 700 : 500,
+        lineHeight: 1.3,
+        borderBottom: header
+          ? `2px solid ${brand.colors.borderDark}`
+          : `1px solid ${brand.colors.borderDark}`,
+        minWidth: '0',
       },
     },
-    ...STEPS.map((step, i) => compactStepRow(step, i === STEPS.length - 1))
+    text
   );
 }
 
-function workshopPanel(compact) {
+function headerRow(compact) {
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+      },
+    },
+    textCell(HEADERS[0], { header: true, compact, flex: FLEXES[0] }),
+    surfaceCell(null, { header: true, compact, flex: FLEXES[1] }),
+    textCell(HEADERS[2], { header: true, compact, flex: FLEXES[2] })
+  );
+}
+
+function dataRow(row, compact) {
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+      },
+    },
+    textCell(row.job, { compact, flex: FLEXES[0] }),
+    surfaceCell(row, { compact, flex: FLEXES[1] }),
+    textCell(row.action, { compact, flex: FLEXES[2] })
+  );
+}
+
+function worksheet(compact) {
   return panelBox(
     h(
       'div',
@@ -262,6 +178,7 @@ function workshopPanel(compact) {
           display: 'flex',
           flexDirection: 'column',
           width: '100%',
+          maxWidth: compact ? '520px' : '780px',
         },
       },
       h(
@@ -284,12 +201,14 @@ function workshopPanel(compact) {
             display: 'flex',
             color: brand.colors.textOnDarkMuted,
             fontSize: px(compact ? od.moduleDesc : d.caption),
-            marginBottom: compact ? '10px' : '16px',
+            marginBottom: compact ? '10px' : '14px',
+            lineHeight: 1.35,
           },
         },
         PANEL_SUBTITLE
       ),
-      compact ? compactSteps() : stepRow(),
+      headerRow(compact),
+      ...ROWS.map((row) => dataRow(row, compact)),
       compact
         ? null
         : h(
@@ -346,7 +265,7 @@ function workshopDiagram() {
         transform: 'translate(-50%, -50%)',
       },
     }),
-    workshopPanel(false)
+    worksheet(false)
   );
 }
 
@@ -355,9 +274,7 @@ export function buildWorkshopInstruments(props) {
     category: props.category || 'Implementation Notes',
     badgeLabel: 'WORKSHOP DESIGN',
     title: props.title,
-    subtitle:
-      props.subtitle ||
-      'Ecosystem map, Anatomizer, assessment, handoff — the room does the work.',
+    subtitle: props.subtitle || DEFAULT_SUBTITLE,
     diagram: workshopDiagram(),
   });
 }
@@ -366,9 +283,7 @@ export function buildWorkshopInstrumentsOg(props) {
   return articleOgFrameWithDiagram({
     category: props.category || 'Implementation Notes',
     title: props.title,
-    subtitle:
-      props.subtitle ||
-      'Ecosystem map, Anatomizer, assessment, handoff — the room does the work.',
-    diagram: workshopPanel(true),
+    subtitle: props.subtitle || DEFAULT_SUBTITLE,
+    diagram: worksheet(true),
   });
 }
