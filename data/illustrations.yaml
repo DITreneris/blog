@@ -350,6 +350,16 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: training-3a-before-you-build-an-agent
+    manual: true
+    source: 3A.png
+    og_source: 3A.png
+    slug: 3a-before-you-build-an-agent
+    title: "3A Before You Build an Agent"
+    category: Implementation Notes
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-cpb-launch
     manual: true
     source: cpb_online_og.png

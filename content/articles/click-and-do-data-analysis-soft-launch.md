@@ -72,7 +72,7 @@ Modules 1-6 teach the **six-block prompt system**, the foundation every other pa
 
 ## What soft launch does not guarantee
 
-Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the production M1-9 bundle, not a promise that every interactive schema has passed full manual browser QA. Modules **10-12** for agent engineering remain in the **authoring catalog** only; they are not in the production build buyers receive today.
+Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the production M1-9 bundle, not a promise that every interactive schema has passed full manual browser QA. Modules **10–12** (agent engineering) are now a **tester grant** for existing buyers—see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/). They are not a public Corporate checkout yet.
 
 What soft launch does guarantee is a complete **M7-9** path: adaptive focus branches, an M8 knowledge check, an M9 capstone workflow, a Tier 3 certificate path at **70% or higher** on M8, and DiagramKit-style step navigation across M1-9 so diagrams behave like instruments, not wallpaper.
 
@@ -100,4 +100,4 @@ Treat `.app` progress as **practice and purchase**, not proof of enterprise impl
 
 The soft launch is not a victory lap. It is a request for better signals: where learners hesitate, where diagrams teach faster than prose, and where the Data Analysis path needs one more pass before general release. If you are a Core buyer and want to test M7-9, email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 tester`.
 
-*Part 1 — soft launch.* What those signals produced—six org-role paths on Module 7 in v1.4.7—is in [Role Paths Before Generic Analytics](/articles/role-paths-before-generic-analytics/).
+*Part 1 — soft launch.* What those signals produced—six org-role paths on Module 7 in v1.4.7—is in [Role Paths Before Generic Analytics](/articles/role-paths-before-generic-analytics/). Part 3 is gated agent practice: [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/).

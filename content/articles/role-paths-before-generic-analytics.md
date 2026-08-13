@@ -26,7 +26,7 @@ tags:
 title: Role Paths Before Generic Analytics
 ---
 
-*Part 2 — after soft launch.* Part 1 covers click-and-do pedagogy: [Click-and-Do Before Slide Decks](/articles/click-and-do-data-analysis-soft-launch/).
+*Part 2 — after soft launch.* Part 1 covers click-and-do pedagogy: [Click-and-Do Before Slide Decks](/articles/click-and-do-data-analysis-soft-launch/). Agent depth after analysis practice is a tester grant in [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/).
 
 One "data analysis" course fails six jobs. Sales needs forecasts and pipeline honesty. People teams need retention language without inventing HR metrics. Executives need risk-aware summaries, not another chart dump. When every learner pastes the same generic analyst prompt, the failure mode is polished wrongness that looks like progress.
 

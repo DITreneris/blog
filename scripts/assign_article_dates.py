@@ -92,6 +92,7 @@ PUBLICATION_ORDER: list[str] = [
     "corporate-ladder-v24-score-trust",
     "click-and-do-data-analysis-soft-launch",
     "role-paths-before-generic-analytics",
+    "3a-before-you-build-an-agent",
     "system-prompt-team-contract",
     "interactive-demos-as-workshop-instruments",
     "critique-agent-v09-audit-stats",
@@ -135,6 +136,7 @@ FIXED_DATES: dict[str, date] = {
     "corporate-ladder-v24-score-trust": date(2026, 6, 16),
     "click-and-do-data-analysis-soft-launch": date(2026, 7, 2),
     "role-paths-before-generic-analytics": date(2026, 7, 25),
+    "3a-before-you-build-an-agent": date(2026, 8, 13),
     "system-prompt-team-contract": date(2026, 7, 28),
     "interactive-demos-as-workshop-instruments": date(2026, 7, 30),
     "critique-agent-v09-audit-stats": date(2026, 6, 16),
@@ -146,8 +148,8 @@ FIXED_DATES: dict[str, date] = {
     "manifest-before-you-broadcast": date(2026, 7, 18),
 }
 
-# Latest allowed publish date (workshop instruments playbook 2026-07-30)
-PUBLISH_CUTOFF = date(2026, 7, 30)
+# Latest allowed publish date (3A agent field note 2026-08-13)
+PUBLISH_CUTOFF = date(2026, 8, 13)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
