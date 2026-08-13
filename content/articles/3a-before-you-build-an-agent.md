@@ -33,15 +33,15 @@ Everyone wants to skip the 80%. I did too. And I paid for those mistakes myself.
 
 The pitch is always the same. One agent, one goal, full autonomy: emails, outreach, research, strategy, marketing, video, follow-ups, reporting. It sounds great until you try to build it. Then the uncomfortable part shows up. **You cannot automate a process you do not understand.** If the workflow lives in someone's head, if the rules are implicit, if exceptions are handled "by experience," the agent has nothing reliable to operate on.
 
-On **2026-08-13**, [promptanatomy.app](https://www.promptanatomy.app/) soft-launched **Modules 10–12**, the Agent path, for a **limited tester cohort** among existing buyers. The Data Analysis path (M7–9) is already public practice; this note is about what stays gated and why. For how blog vs training fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+On **2026-08-13**, [promptanatomy.app](https://www.promptanatomy.app/) soft-launched **Modules 10–12**, the Agent path, for a **limited tester cohort** among existing buyers. For how blog vs training fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## Three bands before a build
 
-I learned this the expensive way. Before AI can run a process, you need the process in detail. What triggers it? What information is required? Which decisions get made? Where are the exceptions? What can go wrong? When does a human need to step in?
+Before AI can run a process, you need the process in detail. What triggers it? What information is required? Which decisions get made? Where are the exceptions? What can go wrong? When does a human need to step in?
 
-That changes the order. **80% Automate**—rules, workflows, repetitive execution. **15% Assist**—AI does the work; a human makes the call. **5% Autonomize**—AI acts inside a bound. The figure’s split is a planning heuristic, not a measured mix and not an ROI claim. Autonomy is not the starting point. **It is the last step.** Everyone wants the 5%. Very few will do the work required to build the 80% first.
+That changes the order. The figure’s **80 / 15 / 5** split is a planning heuristic, not a measured mix and not an ROI claim. Autonomy is not the starting point. **It is the last step.**
 
-**3A** is a portfolio mix, not a promotion ladder. You do not graduate into Autonomize. You assign **each process** a band before anyone builds. That is a different axis from the five-stage path in [From Prompt to Agent](/articles/from-prompt-to-agent/)—control maturity there, mix of work here.
+**3A** is a portfolio mix, not a promotion ladder. You assign **each process** a band before anyone builds. That is a different axis from the five-stage path in [From Prompt to Agent](/articles/from-prompt-to-agent/)—control maturity there, mix of work here.
 
 | Band | When it fits | Typical miss |
 |------|----------------|--------------|
@@ -51,9 +51,7 @@ That changes the order. **80% Automate**—rules, workflows, repetitive executio
 
 The stealable move takes ten minutes. Write three of **your** processes. Assign a band to each. If all three land on Autonomize, that is hype, not a plan.
 
-The Automate spine is **trigger → condition → action**. A webhook is a type of trigger, not a fourth step. A router splits work by type. An orchestrator (coordinator) splits the job, delegates, and joins results. Mixing those labels is how you get three "agents" and no owner.
-
-Human approval is **risk architecture**. Score consequence times whether you can reverse the action. It is not a badge that you are "not mature yet." Bounded tasks, allowed tools, and escalation still live in [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/). The lesson host on `.app` assembles practice; ChatGPT, Claude, or Gemini execute. That wedge is [The Model Is Not the System](/articles/the-model-is-not-the-system/).
+A webhook is a type of trigger, not a fourth step. A router splits work by type. An orchestrator (coordinator) splits the job, delegates, and joins results. Mixing those labels is how you get three "agents" and no owner. Human approval is **risk architecture**: consequence times whether you can reverse the action—not a badge that you are "not mature yet." Bounded tasks, allowed tools, and escalation still live in [How to Design an AI Agent Workflow](/articles/how-to-design-an-ai-agent-workflow/). The lesson host on `.app` assembles practice; ChatGPT, Claude, or Gemini execute. That wedge is [The Model Is Not the System](/articles/the-model-is-not-the-system/).
 
 ## The Northline jump
 
@@ -62,8 +60,6 @@ Northline's enablement lead (composite) shipped a "support agent" in a week. It 
 ## Who can test M10-12
 
 We are recruiting a **limited tester cohort** while we close remaining bugs, check tools and schemas, and finish design polish. Soft launch is not a promise that every interactive schema passed full manual QA. The path stays gated so we can watch real buyers work trigger-condition-action and human-approval drills before Corporate checkout exists.
-
-Existing Core buyers already have Modules 1–6. That is enough context to judge a band. The Data Analysis path (M7–9) is useful analysis practice and already public. It is not a gate for this grant.
 
 **Who:** Existing **Core** buyers with Modules 1–6 on [promptanatomy.app](https://www.promptanatomy.app/#pricing). M7–9 helps; it is **not** required. Starter (Modules 1–3) is out until Core.
 
@@ -79,5 +75,4 @@ Treat `.app` progress as practice, not a production agent:
 
 - A finished Agent path or certificate does not replace a workflow ID, RACI, eval gate, or runtime you own.
 - Do not paste training copy into procurement decks.
-- Do not treat Autonomize as the default band.
-- Plans stay on [promptanatomy.app/#pricing](https://www.promptanatomy.app/#pricing). Today, M10–12 access is the tester grant.
+- Plans stay on [promptanatomy.app/#pricing](https://www.promptanatomy.app/#pricing).
