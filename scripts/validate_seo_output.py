@@ -19,6 +19,7 @@ OUTPUT = ROOT / "output"
 ARTICLES = ROOT / "content" / "articles"
 PRIORITY_SLUGS_YAML = ROOT / "data" / "seo_priority_slugs.yaml"
 SITE_YAML = ROOT / "data" / "site.yaml"
+VERCEL_JSON = ROOT / "vercel.json"
 
 OG_IMAGE_RE = re.compile(
     r'<meta\s+(?:property="og:image"|name="twitter:image")\s+content="([^"]*)"',
@@ -38,7 +39,7 @@ JSON_LD_RE = re.compile(
     r'<script\s+type="application/ld\+json">\s*(\{.*?\})\s*</script>',
     re.S,
 )
-SITEMAP_EXCLUDE = {"design-system", "drafts", "author"}
+SITEMAP_EXCLUDE = {"design-system", "drafts", "author", "privacy", "terms", "tag"}
 SITEMAP_NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 CHECKED_SCHEMA_TYPES = frozenset({"Article", "BreadcrumbList", "FAQPage", "HowTo"})
 STRING_KEYS = frozenset({"headline", "name", "description", "text"})
@@ -60,6 +61,17 @@ def _published_slugs() -> list[str]:
         post = frontmatter.load(path)
         meta = post.metadata or {}
         if str(meta.get("status", "published")).lower() != "published":
+            continue
+        slugs.append(str(meta.get("slug") or path.stem))
+    return sorted(slugs)
+
+
+def _draft_slugs() -> list[str]:
+    slugs: list[str] = []
+    for path in ARTICLES.glob("*.md"):
+        post = frontmatter.load(path)
+        meta = post.metadata or {}
+        if str(meta.get("status", "published")).lower() != "draft":
             continue
         slugs.append(str(meta.get("slug") or path.stem))
     return sorted(slugs)
@@ -245,6 +257,53 @@ def _check_slugs_in_sitemap(slugs: list[str], label: str) -> list[str]:
     return errors
 
 
+def _check_drafts_absent_from_sitemap(slugs: list[str]) -> list[str]:
+    if not slugs:
+        return []
+    sitemap = OUTPUT / "sitemap.xml"
+    if not sitemap.is_file():
+        return ["output/sitemap.xml missing (draft slug check skipped)"]
+
+    text = sitemap.read_text(encoding="utf-8")
+    errors: list[str] = []
+    for slug in slugs:
+        needle = f"/articles/{slug}/"
+        if needle in text:
+            errors.append(f"sitemap.xml includes draft slug: {slug}")
+    return errors
+
+
+def _check_no_tag_html() -> list[str]:
+    errors: list[str] = []
+    tag_dir = OUTPUT / "tag"
+    if tag_dir.is_dir():
+        errors.append("output/tag/ exists (tag pages must not be generated)")
+    leftover = sorted(OUTPUT.rglob("tag/*.html"))
+    for path in leftover:
+        errors.append(f"{path.relative_to(OUTPUT).as_posix()}: leftover tag HTML")
+    return errors
+
+
+def _check_draft_redirects(slugs: list[str]) -> list[str]:
+    if not slugs:
+        return []
+    if not VERCEL_JSON.is_file():
+        return ["vercel.json missing (draft redirect check skipped)"]
+
+    data = json.loads(VERCEL_JSON.read_text(encoding="utf-8"))
+    sources = [
+        str(rule.get("source") or "")
+        for rule in (data.get("redirects") or [])
+        if isinstance(rule, dict)
+    ]
+    joined = "\n".join(sources)
+    errors: list[str] = []
+    for slug in slugs:
+        if slug not in joined:
+            errors.append(f"vercel.json missing redirect source for draft slug: {slug}")
+    return errors
+
+
 def main() -> int:
     if not OUTPUT.is_dir():
         print("output/ not found. Run pelican first.", file=sys.stderr)
@@ -275,9 +334,13 @@ def main() -> int:
     if sample_article:
         errors.extend(_check_canonical(sample_article))
 
+    draft_slugs = _draft_slugs()
     errors.extend(_check_sitemap(article_dates))
     errors.extend(_check_slugs_in_sitemap(_load_priority_slugs(), "priority"))
     errors.extend(_check_slugs_in_sitemap(_published_slugs(), "published"))
+    errors.extend(_check_drafts_absent_from_sitemap(draft_slugs))
+    errors.extend(_check_no_tag_html())
+    errors.extend(_check_draft_redirects(draft_slugs))
 
     if errors:
         print("SEO output validation failed:", file=sys.stderr)

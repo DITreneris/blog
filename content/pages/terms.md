@@ -3,6 +3,7 @@ title: Terms of Service
 slug: terms
 summary: "Terms for using promptanatomy.blog."
 modified: 2026-06-04
+seo_robots: noindex
 ---
 
 These Terms of Service (“Terms”) govern your use of **promptanatomy.blog** (the “Site”), operated by **Prompt Anatomy**. Training, pricing, and product terms on [promptanatomy.app](https://www.promptanatomy.app/) are separate.

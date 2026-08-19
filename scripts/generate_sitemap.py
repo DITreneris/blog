@@ -17,7 +17,7 @@ ARTICLES = ROOT / "content" / "articles"
 SITE_CONFIG = yaml.safe_load((ROOT / "data" / "site.yaml").read_text(encoding="utf-8"))
 SITEURL = SITE_CONFIG.get("brand", {}).get("site_url", "https://www.promptanatomy.blog")
 
-EXCLUDE = {"design-system", "drafts", "author"}
+EXCLUDE = {"design-system", "drafts", "author", "privacy", "terms", "tag"}
 
 
 def _article_lastmod_map() -> dict[str, str]:

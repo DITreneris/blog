@@ -144,6 +144,9 @@ DISPLAY_CATEGORIES_ON_MENU = False
 ARTICLE_TRANSLATION_FEED = None
 CATEGORY_FEED_ATOM = None
 TAG_FEED_ATOM = None
+TAG_SAVE_AS = ""
+TAG_URL = ""
+TAGS_SAVE_AS = ""
 
 def _finalize_articles(sender):
     import frontmatter

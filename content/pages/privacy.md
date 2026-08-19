@@ -3,6 +3,7 @@ title: Privacy Policy
 slug: privacy
 summary: "How Prompt Anatomy handles information on promptanatomy.blog."
 modified: 2026-06-04
+seo_robots: noindex
 ---
 
 This Privacy Policy describes how **Prompt Anatomy** (“we,” “us”) handles information when you use **promptanatomy.blog** (the “Site”). Paid training and product pages on [promptanatomy.app](https://www.promptanatomy.app/) are separate properties with their own policies.
