@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: nav
 date: 2025-03-31
+modified: 2026-09-02
 hero_caption: How the blog, training app, and implementation tools fit together without
   duplicating the same content.
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png
@@ -38,7 +39,7 @@ The blog does **not** host hands-on labs, graded exercises, or account-based pro
 
 **Role: Practice and buy.** Paid training, methodology modules, and pricing for teams that want structured practice after reading frameworks on the blog. The app is where prompts, context layers, and workflow steps become **repeatable drills**—not one-off chat experiments.
 
-Use `.app` when a playbook on the blog resonated and you need your team to execute the same steps under feedback: registry discipline, canvas completion, eval case design. Free blog content points here when standardization is the next stage; it is the intentional conversion surface, not a duplicate article archive. For what shipped on the hub—checkout, access model, and six-module training—see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/).
+Use `.app` when a playbook on the blog resonated and you need your team to execute the same steps under feedback: registry discipline, canvas completion, eval case design. Free blog content points here when standardization is the next stage; it is the intentional conversion surface, not a duplicate article archive. For what shipped on the hub—checkout, Stripe modules 1–6, and grant-only later paths—see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/).
 
 If you are deciding whether to subscribe, read the relevant playbook first on `.blog`. Training without a documented workflow ID on your side still produces enthusiastic individuals—not operational AI.
 

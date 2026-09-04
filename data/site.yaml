@@ -8,8 +8,8 @@ brand:
 
 hub:
   site_url: "https://www.promptanatomy.app"
-  pricing_url: "https://www.promptanatomy.app/#pricing"
-  training_url: "https://www.promptanatomy.app/"
+  pricing_url: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=header_plans&utm_campaign=ecosystem#pricing"
+  training_url: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=article_cta&utm_campaign=ecosystem"
   faq_url: "https://www.promptanatomy.app/#faq"
   what_is_url: "https://www.promptanatomy.app/#what-is-prompt-anatomy"
   methodology_url: "https://www.promptanatomy.app/#methodology"
@@ -35,16 +35,16 @@ nav:
     href: "/topics/ai-agents/"
     external: false
   - label: "Training"
-    href: "https://www.promptanatomy.app/"
+    href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=nav_training&utm_campaign=ecosystem"
     external: true
   - label: "Pricing"
-    href: "https://www.promptanatomy.app/#pricing"
+    href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=nav_pricing&utm_campaign=ecosystem#pricing"
     external: true
 
 cta:
   label: "Choose a plan"
   header_label: "Plans"
-  href: "https://www.promptanatomy.app/#pricing"
+  href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=header_plans&utm_campaign=ecosystem#pricing"
   external: true
 
 footer:
@@ -55,7 +55,7 @@ footer:
   entity_href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=entity_footer&utm_campaign=ecosystem"
   ctas:
     - label: "View plans"
-      href: "https://www.promptanatomy.app/#pricing"
+      href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=footer_plans&utm_campaign=ecosystem#pricing"
       external: true
     - label: "Explore frameworks"
       href: "/topics/framework/"
@@ -70,10 +70,10 @@ footer:
           href: "/topics/ai-agents/"
           external: false
         - label: "Training"
-          href: "https://www.promptanatomy.app/"
+          href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=footer_plans&utm_campaign=ecosystem"
           external: true
         - label: "Pricing"
-          href: "https://www.promptanatomy.app/#pricing"
+          href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=footer_plans&utm_campaign=ecosystem#pricing"
           external: true
         - label: "Library (AI automation)"
           href: "https://www.promptanatomy.info/en/"

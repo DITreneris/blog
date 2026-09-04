@@ -24,7 +24,7 @@
 - [Prompt Engineering vs AI Workflow Engineering](https://www.promptanatomy.blog/articles/prompt-engineering-vs-ai-workflow-engineering/): prompt, context, and workflow engineering compared — when to invest in system design over longer prompts.
 - [AI Workflow Canvas](https://www.promptanatomy.blog/articles/ai-workflow-canvas-template/): one-page template — outcome, steps, context, gates, eval, and ownership before you build.
 - [The Prompt Anatomy Ecosystem Map](https://www.promptanatomy.blog/articles/prompt-anatomy-ecosystem-map/): how blog, training app, and library fit together.
-- [Shipping Prompt Anatomy](https://www.promptanatomy.blog/articles/shipping-prompt-anatomy/): field note on the promptanatomy.app hub — checkout, access model, six-module training, ecosystem role.
+- [Shipping Prompt Anatomy](https://www.promptanatomy.blog/articles/shipping-prompt-anatomy/): field note on the promptanatomy.app hub — checkout, access model, Stripe foundation path, ecosystem role.
 - [LangGraph vs CrewAI vs MS Agent Framework](https://www.promptanatomy.blog/articles/langgraph-vs-crewai-production-guide/): production framework selection — orchestration depth, governance controls, rollout criteria.
 - [Agent Orchestrator Operating Model](https://www.promptanatomy.blog/articles/agent-orchestrator-operating-model/): orchestrator RACI — handoffs, run controls, weekly governance rhythms for multi-agent ops.
 - [Audit Trails for AI Workflows](https://www.promptanatomy.blog/articles/audit-trails-for-ai-workflows/): minimum log fields, retention, and reconstructability for accountable AI workflows.

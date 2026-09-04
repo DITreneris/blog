@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: opinion
 date: 2026-03-15
-modified: 2026-06-29
+modified: 2026-09-02
 hero_caption: Plans → checkout → magic link → module progress — the hub chain promptanatomy.app
   ships.
 hero_image: images/articles/shipping-prompt-anatomy/hero.png
@@ -14,7 +14,7 @@ reading_time: 5 min read
 slug: shipping-prompt-anatomy
 status: published
 summary: Field note on shipping the Prompt Anatomy hub — bilingual landing, Stripe lifetime
-  access, six-module training, and where it sits in the ecosystem beside .blog and .site.
+  access, and where it sits in the ecosystem beside .blog and .site.
 tags:
   - prompt-systems
   - workflow-automation
@@ -22,9 +22,9 @@ tags:
 title: Shipping Prompt Anatomy
 ---
 
-In mid-March 2026, Prompt Anatomy shipped **Platform HQ** at [promptanatomy.app](https://www.promptanatomy.app/)—the bilingual conversion and training hub for the brand. Source and deploy details live in the open mother repo [DITreneris/promptanatomy](https://github.com/DITreneris/promptanatomy); the interactive course ships as a git submodule from [DITreneris/inzinerija](https://github.com/DITreneris/inzinerija), built into the same Vercel deploy under `frontend/dist/anatomy/`.
+Teams treat a certificate—or a “full catalog” purchase—as implementation maturity. Then they discover checkout sold the **foundation path**, not every module in the production bundle. That gap is why [promptanatomy.app](https://www.promptanatomy.app/) exists as a conversion hub, not as proof that the workflow is owned.
 
-This article is a field note on what shipped, how the hub differs from the blog and marketing site, and what counts as proof of implementation maturity versus product engagement. If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+This field note records what the hub sells, how it differs from the blog and marketing site, and what counts as practice versus a governed workflow. Source and deploy details live in the open mother repo [DITreneris/promptanatomy](https://github.com/DITreneris/promptanatomy); the interactive course ships as a git submodule from [DITreneris/inzinerija](https://github.com/DITreneris/inzinerija). If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## What promptanatomy.app is
 
@@ -34,7 +34,7 @@ promptanatomy.app is **Platform HQ**—not the knowledge hub and not the discove
 
 **promptanatomy.site** (launched 2025-04-12) is discover-and-try: ecosystem journey map, five-part Anatomizer, 60-second maturity quiz. See [Prompt Anatomy Marketing Site Launch](/articles/prompt-anatomy-marketing-site-launch/).
 
-**promptanatomy.app** is where reading becomes **repeatable drills**: six training modules, the 6-block prompt system, knowledge checks, business scenarios, context engineering, and a capstone project. Conversion and [plans and pricing](https://www.promptanatomy.app/#pricing) live on the hub root—not on deep training routes.
+**promptanatomy.app** is where reading becomes **repeatable drills**: the 6-block prompt system, knowledge checks, business scenarios, context engineering, and a capstone. Stripe checkout sells the foundation path (modules 1–6). Later paths are operator grants. Conversion and [plans and pricing](https://www.promptanatomy.app/#pricing) live on the hub root—not on deep training routes.
 
 The hub fills the gap between "I understand the framework on the blog" and "my team executes the same steps under feedback."
 
@@ -50,20 +50,21 @@ Prompt Anatomy uses "anatomy" at three layers. Mixing them causes teams to buy t
 
 All three are intentional: write prompts in training, discover structure on `.site`, operate workflows on `.blog`. For the founder essay on why an operating system beats a chatbox, see [Beyond the Chatbox on Medium](https://medium.com/@tomas.staniulis76/beyond-the-chatbox-mastering-the-prompt-anatomy-ai-operating-system-ad955724804e).
 
-## Six modules and pricing
+## What checkout sells
 
-| Module | What learners do |
-|--------|------------------|
-| 1 | 6-block system — theory and workflow patterns |
-| 2 | Knowledge check — certificate path from 70% |
-| 3 | Six business scenarios — step-by-step practice |
-| 4 | Context engineering — RAG, token economics, verification |
-| 5 | Presentation sprint — timed draft + comprehension check |
-| 6 | Capstone — one integrated project using all six blocks |
+The production training bundle holds modules 1–12. Stripe Phase 1 does not sell that whole bundle.
 
-**Starter (39 EUR)** unlocks modules 1–3. **Core (99 EUR)** unlocks the full path including context engineering and project work. Both are one-time, lifetime access—no subscription expiry. See [plans and pricing](https://www.promptanatomy.app/#pricing) on the hub.
+| Path | Modules | How you get it |
+|------|---------|----------------|
+| **Starter** (39 EUR) | 1–3 | Stripe checkout |
+| **Core** (99 EUR) | 1–6 | Stripe checkout |
+| **Data Analysis** | 7–9 | Operator grant — not checkout |
+| **Agent path** | 10–12 | Operator grant; tester cohort by email — see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/) |
+| **B2B workshop** (399 EUR) | Live session, 3 hours, ≤10 people, license excluded | Not a Stripe plan |
 
-Access is email-based: checkout through Stripe, then magic-link entry from the Pricing section—no separate password account. The interactive course lives at the `/anatomy/` path on the same domain **after purchase**; from this blog, start at the hub root or pricing section, not a gated deep link.
+Core is the paid **foundation path**, not the full bundle. Starter and Core are one-time, lifetime access—no subscription expiry. See [plans and pricing](https://www.promptanatomy.app/#pricing) on the hub.
+
+Access is email-based: checkout through Stripe, then magic-link entry from the Pricing section—no separate password account. From this blog, start at the hub root or pricing section, not a gated deep link.
 
 Progress persists locally; the app includes glossary, tools catalog, and a prompt library with copy actions. Community support runs through the public [Telegram group](https://t.me/prompt_anatomy).
 
@@ -78,7 +79,7 @@ Progress persists locally; the app includes glossary, tools catalog, and a promp
 
 **Hub frontend:** Vite + React, Tailwind, LT/EN locale routing (`/`, `/en`, `/lt`), SEO head per route.
 
-**Commerce backend:** FastAPI—`create-checkout-session`, Stripe webhooks, `GET /api/access` by email, magic-link redirect into training. Supabase `user_access` stores highest plan per purchaser.
+**Commerce backend:** Production checkout runs on Vercel `api/`; FastAPI is local and CI. Stripe webhooks upsert Supabase `user_access` (highest plan per purchaser). Magic-link entry follows from the Pricing section.
 
 **Deploy:** Single Vercel project—landing at root, training SPA under `/anatomy/`, legacy `/anatomija/` 301. CI "Golden Legacy" builds frontend + submodule with production `VITE_*` parity and runs backend pytest.
 
@@ -98,7 +99,7 @@ Treat `.app` completion as **practice and purchase**, not proof of enterprise im
 
 - A certificate or finished Module 3 does not replace a documented workflow ID, RACI, or eval gate pack on your side.
 - Do not paste hub or training copy into procurement decks; link the relevant playbook on `.blog` and cite pass rate, cycle time, or incident cost on real workflows.
-- Free ecosystem spokes (`.cloud`, `.info`, `.space`, `.help`, `.ceo`, `.pro`, `.lol`) complement daily work; they do not replace paid training when you need the full six-module path. For the **Enter** spoke—first AI lesson and quick send check—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/); for the **Use** spoke—five-locale daily org-context library—see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/); for the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/); for the **Play** spoke—optional brand game on Telegram—see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/).
+- Free ecosystem spokes (`.cloud`, `.info`, `.space`, `.help`, `.ceo`, `.pro`, `.lol`) complement daily work; they do not replace the paid foundation path on `.app`. For the **Enter** spoke—first AI lesson and quick send check—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/); for the **Use** spoke—five-locale daily org-context library—see [Who Orchestrates the Builders](/articles/daily-workflow-library-info-launch/); for the **Manage** spoke—weekly CEO brief pattern and AI Operations Center—see [The Weekly CEO Brief Pattern](/articles/weekly-ceo-brief-pattern/); for the **Play** spoke—optional brand game on Telegram—see [Corporate Ladder Soft Launch](/articles/corporate-ladder-soft-launch/).
 
 We learned this on sister properties: [Classroom Prompt Builder](/articles/classroom-prompt-builder-launch/) had a webhook pointed at `.app` while buyers returned to `.online`—payment succeeded, fulfillment failed. **Same-host checkout, webhook, and success URL** is a launch guardrail, not an implementation detail.
 

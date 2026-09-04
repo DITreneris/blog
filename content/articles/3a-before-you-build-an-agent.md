@@ -4,15 +4,16 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-08-13
+modified: 2026-09-02
 faq:
   - question: Who can test Modules 10-12?
     answer: Existing Core buyers with Modules 1-6 on promptanatomy.app. The Data Analysis path (M7-9) helps but is not required. Starter buyers need Core first. Email info@promptanatomy.app with subject M10-12 tester, your purchase email, and LT or EN.
   - question: Can I buy Corporate training today?
-    answer: No. Pilot training from 399 EUR is the forthcoming Corporate list price when checkout opens. What is live now is a tester grant for existing buyers, not a public price change.
+    answer: No. 399 EUR is a B2B IVS workshop (3 hours, up to 10 people, license excluded), not a Stripe plan. Live checkout is Starter and Core only. M10-12 remains a tester grant for existing buyers.
   - question: Does finishing the Agent path replace production agents or governance?
     answer: No. Practice on promptanatomy.app proves judgment inside training. Workflow IDs, eval gates, RACI, and the runtime still belong on your systems.
   - question: Must I finish Modules 7-9 before M10-12?
-    answer: No. Modules 1-6 are enough to join the tester cohort. M7-9 is useful analysis practice and already public; it is not a gate for this grant.
+    answer: No. Modules 1-6 are enough to join the tester cohort. M7-9 is an operator grant for Core buyers, not a checkout SKU and not a gate for this grant.
 hero_caption: Everyone wants the 5%. The work is the 80%—Automate, Assist, then Autonomize.
 hero_image: images/articles/3a-before-you-build-an-agent/hero.png
 key_takeaway: Autonomy is the last step. Assign each process to Automate, Assist, or Autonomize before you build; M10-12 on promptanatomy.app is a tester grant for existing M1-6 buyers, not production proof.
@@ -59,11 +60,11 @@ Northline's enablement lead (composite) shipped a "support agent" in a week. It 
 
 ## Who can test M10-12
 
-We are recruiting a **limited tester cohort** while we close remaining bugs, check tools and schemas, and finish design polish. Soft launch is not a promise that every interactive schema passed full manual QA. The path stays gated so we can watch real buyers work trigger-condition-action and human-approval drills before Corporate checkout exists.
+We are recruiting a **limited tester cohort** while we close remaining bugs, check tools and schemas, and finish design polish. Soft launch is not a promise that every interactive schema passed full manual QA. The path stays gated so we can watch real buyers work trigger-condition-action and human-approval drills. There is no Stripe Corporate plan.
 
 **Who:** Existing **Core** buyers with Modules 1–6 on [promptanatomy.app](https://www.promptanatomy.app/#pricing). M7–9 helps; it is **not** required. Starter (Modules 1–3) is out until Core.
 
-**Offer:** Free **M10–12** access during the soft-launch window. This is a tester grant, not a public price change. **Pilot training from 399 EUR** is the forthcoming Corporate list price when that checkout opens—not what is live today.
+**Offer:** Free **M10–12** access during the soft-launch window. This is a tester grant, not a public price change. **399 EUR** is a B2B IVS workshop (3 hours, ≤10 people, license excluded)—not a Stripe plan and not what checkout sells today.
 
 **Apply:** Email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M10-12 tester`, your **purchase email**, and **LT or EN**.
 

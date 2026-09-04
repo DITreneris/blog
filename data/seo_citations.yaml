@@ -67,7 +67,7 @@ citations:
     description: how blog, training app, and library fit together.
   - slug: shipping-prompt-anatomy
     title: Shipping Prompt Anatomy
-    description: field note on the promptanatomy.app hub — checkout, access model, six-module training, ecosystem role.
+    description: field note on the promptanatomy.app hub — checkout, access model, Stripe foundation path, ecosystem role.
   - slug: langgraph-vs-crewai-production-guide
     title: LangGraph vs CrewAI vs MS Agent Framework
     description: production framework selection — orchestration depth, governance controls, rollout criteria.

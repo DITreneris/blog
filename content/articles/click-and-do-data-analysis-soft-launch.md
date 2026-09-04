@@ -4,21 +4,22 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-07-02
+modified: 2026-09-02
 faq:
-  - question: Who qualifies for free M7-9 tester access?
-    answer: Core plan buyers with Modules 1-6 access on promptanatomy.app can apply by emailing info@promptanatomy.app with their purchase email and preferred locale. Starter buyers need Core first because the Data Analysis path assumes six-block fluency.
+  - question: How do Core buyers request M7-9 access?
+    answer: M7-9 is an operator grant, not a Stripe plan and not a public price. Core buyers with Modules 1-6 email info@promptanatomy.app with their purchase email and preferred locale. Starter buyers need Core first because the Data Analysis path assumes six-block fluency.
   - question: Does a Tier 3 certificate during soft launch replace governance artifacts?
     answer: No. It proves practice depth inside the training app, not workflow IDs, eval gates, RACI, or audit trails on production systems.
 hero_caption: Click-and-do modules on promptanatomy.app—M7-9 adds data-analysis
-  practice, gated checks, and a Core buyer tester cohort during soft launch.
+  practice, gated checks, and an operator grant for Core buyers.
 hero_image: images/articles/click-and-do-data-analysis-soft-launch/hero.png
 key_takeaway: Click-and-do practice on promptanatomy.app teaches analysis judgment
   in-session; certificates prove practice depth, not production governance.
 slug: click-and-do-data-analysis-soft-launch
 status: published
 summary: Soft launch v1.4.2 ships the M7-9 Data Analysis path on promptanatomy.app—click-and-do
-  practice, gated checks, and handouts instead of slide-first training; Core buyers
-  can apply to test before general release.
+  practice, gated checks, and handouts instead of slide-first training. Core buyers
+  request the operator grant; checkout does not sell M7-9.
 tags:
   - prompt-systems
   - change-management
@@ -29,21 +30,17 @@ title: "Click-and-Do Before Slide Decks: promptanatomy.app"
 
 Teams buy "AI prompt training" and receive slide decks. On [promptanatomy.app](https://www.promptanatomy.app/), we ship the opposite: **click-and-do** modules where learners run prompts, pass checks, and earn certificates—not passive slides.
 
-In early July 2026, Prompt Anatomy shipped **v1.4.2** on [promptanatomy.app](https://www.promptanatomy.app/)—soft-launching **M7-9**, the Data Analysis path, for Core buyers after purchase. We are also recruiting **Core** buyers who completed Modules 1-6 for free tester access while diagrams and copy harden. For hub checkout, tiers, and M1-6, see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). For the property map, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+In early July 2026, Prompt Anatomy shipped **v1.4.2** on [promptanatomy.app](https://www.promptanatomy.app/)—the **M7-9** Data Analysis path for Core buyers after the foundation modules. Stripe still sells Starter and Core only; M7–9 is an **operator grant**, not a checkout SKU. For hub checkout and the catalog split, see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). For the property map, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
-## Who we need
+## How M7-9 access works
 
-We are recruiting a **limited tester cohort** for M7-9 during soft launch. Work through the path, try the diagrams and checks, download the handout, and tell us where it creates confidence or confusion.
+**Who:** Purchasers of the **Core** plan, Modules 1–6, on [promptanatomy.app](https://www.promptanatomy.app/#pricing).
 
-**Who:** Purchasers of the **Core** plan, Modules 1-6, on [promptanatomy.app](https://www.promptanatomy.app/#pricing).
+**Offer:** **M7–9** as an operator grant. This is not a Stripe plan and not a public price change.
 
-**Offer:** Free **M7-9** access during the soft-launch window. This is a tester grant, not a public price change.
+**Request:** Email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 grant`, your **purchase email**, and **LT or EN** locale.
 
-**Apply:** Email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 tester`, your **purchase email**, and **LT or EN** locale.
-
-**Ask:** Complete M7-9 within 30 days and reply with three bullets: what confused you, what worked, and one bug or typo. Feedback shapes the general-availability cut; it does not replace support SLAs.
-
-Starter-tier buyers, Modules 1-3, are not in this cohort unless they upgrade to Core first. The path assumes six-block fluency before data-analysis specialization.
+Starter-tier buyers, Modules 1–3, need Core first. The path assumes six-block fluency before data-analysis specialization.
 
 ## Click-and-do beats slide-first
 
@@ -72,7 +69,7 @@ Modules 1-6 teach the **six-block prompt system**, the foundation every other pa
 
 ## What soft launch does not guarantee
 
-Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the production M1-9 bundle, not a promise that every interactive schema has passed full manual browser QA. Modules **10–12** (agent engineering) are now a **tester grant** for existing buyers—see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/). They are not a public Corporate checkout yet.
+Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the production M1-9 bundle, not a promise that every interactive schema has passed full manual browser QA. Modules **10–12** (agent engineering) are a **tester grant** for existing buyers—see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/). They are not a Stripe plan.
 
 What soft launch does guarantee is a complete **M7-9** path: adaptive focus branches, an M8 knowledge check, an M9 capstone workflow, a Tier 3 certificate path at **70% or higher** on M8, and DiagramKit-style step navigation across M1-9 so diagrams behave like instruments, not wallpaper.
 
@@ -98,6 +95,6 @@ Treat `.app` progress as **practice and purchase**, not proof of enterprise impl
 - Graded scenario answers and go-to-market experiments stay inside the app—the same boundary as governed content on `.blog`.
 - Free spokes (`.cloud`, `.info`, `.site`) complement training; they do not replace Core when you need the full six-block path plus analytics depth. Enter-spoke habit-before-scale lives in [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/).
 
-The soft launch is not a victory lap. It is a request for better signals: where learners hesitate, where diagrams teach faster than prose, and where the Data Analysis path needs one more pass before general release. If you are a Core buyer and want to test M7-9, email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 tester`.
+The v1.4.2 ship recorded where learners hesitate, where diagrams teach faster than prose, and where the Data Analysis path still needs a pass. If you are a Core buyer and want the M7–9 grant, email [info@promptanatomy.app](mailto:info@promptanatomy.app) with subject `M7-9 grant`.
 
 *Part 1 — soft launch.* What those signals produced—six org-role paths on Module 7 in v1.4.7—is in [Role Paths Before Generic Analytics](/articles/role-paths-before-generic-analytics/). Part 3 is gated agent practice: [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/).

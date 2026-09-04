@@ -3,7 +3,7 @@ paragraph: "One AI operating system for learning, daily work, automation, market
 image: images/hub/ecosystem.png
 image_alt: "Hub-and-spoke diagram of the Prompt Anatomy ecosystem—promptanatomy.app at the center with spokes for learning, workflows, marketing, HR, operations, decisions, and Corporate Ladder on promptanatomy.lol."
 cta_label: "Plans and access"
-cta_href: "https://www.promptanatomy.app/#pricing"
+cta_href: "https://www.promptanatomy.app/?utm_source=blog&utm_medium=ecosystem_cta&utm_campaign=ecosystem#pricing"
 cards:
   - title: "First AI Lesson"
     outcome: "Enter — guided first steps on the cloud learning hub."

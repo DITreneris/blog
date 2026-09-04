@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-07-25
-modified: 2026-07-25
+modified: 2026-09-02
 faq:
   - question: Does finishing a Module 7 role path replace production governance?
     answer: No. Role-adapted practice proves judgment inside training on promptanatomy.app. Workflow IDs, eval gates, RACI, and audit trails still belong on your systems.
@@ -30,7 +30,7 @@ title: Role Paths Before Generic Analytics
 
 One "data analysis" course fails six jobs. Sales needs forecasts and pipeline honesty. People teams need retention language without inventing HR metrics. Executives need risk-aware summaries, not another chart dump. When every learner pastes the same generic analyst prompt, the failure mode is polished wrongness that looks like progress.
 
-On **2026-07-25**, [promptanatomy.app](https://www.promptanatomy.app/) shipped **v1.4.7**—the Data Analysis path. For hub checkout and Modules 1–6, see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). For how blog vs training fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+On **2026-07-25**, [promptanatomy.app](https://www.promptanatomy.app/) shipped **v1.4.7**—the Data Analysis path. For hub checkout and Modules 1–6, see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). Data Analysis (M7–9) is an operator grant, not a checkout SKU. For how blog vs training fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 
 ## Six roles, one analysis spine
 
@@ -62,6 +62,6 @@ Northline's enablement lead (composite) rolled one "analyst" prompt pack to sale
 - A Tier 3 certificate or finished Module 9 capstone does not replace workflow IDs, RACI, or eval gates—use [Grounding AI Outputs](/articles/grounding-ai-outputs/) and [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/) on real workflows.
 - Do not paste training copy into procurement decks; cite owned metrics per [AI Procurement Freeze](/articles/ai-procurement-freeze/).
 - Pick the role path that matches the job; do not collect all six as proof of maturity.
-- Plans and access stay on [promptanatomy.app/#pricing](https://www.promptanatomy.app/#pricing)—Core assumes Modules 1–6 before the Data Analysis specialization.
+- Plans and access stay on [promptanatomy.app/#pricing](https://www.promptanatomy.app/#pricing)—Core assumes Modules 1–6 before the Data Analysis specialization. Checkout does not sell M7–9.
 
 Pick one role path that matches the job on [promptanatomy.app](https://www.promptanatomy.app/). Certificates prove practice depth—not production readiness.

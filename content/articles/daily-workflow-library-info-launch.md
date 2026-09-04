@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-05-30
+modified: 2026-09-02
 hero_caption: Execution agents localize UI, UX, and prompt copy across EN · ET · LV · JA ·
   LT; the learning loop turns locale QA failures into rules for the next translation pass.
 hero_image: images/articles/daily-workflow-library-info-launch/hero.png
@@ -117,6 +118,6 @@ Treat `.info` completion as **orientation and daily habit**, not proof of enterp
 - Do not paste library copy into procurement decks; link the relevant playbook on `.blog` and cite pass rate, cycle time, or incident cost per [AI Procurement Freeze](/articles/ai-procurement-freeze/).
 - Library host (`.info`) and course host (`.app`) must stay distinct in analytics and CTAs—the same class of mistake as cross-domain webhook mismatches in [Classroom Prompt Builder Launch](/articles/classroom-prompt-builder-launch/).
 
-Free ecosystem spokes complement training; they do not replace the full six-module path on `.app`. See [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/) for hub access and where **Enter** (`.cloud`) and **Manage** (`.ceo`) fit.
+Free ecosystem spokes complement training; they do not replace the paid foundation path (modules 1–6) on `.app`. See [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/) for hub access and where **Enter** (`.cloud`) and **Manage** (`.ceo`) fit.
 
 promptanatomy.info gives practitioners **org-aware daily prompts in five locales**. The job of this blog remains turning that curiosity into repeatable, owned AI workflows—with owners, eval gates, and audit trails that survive the next model swap.
