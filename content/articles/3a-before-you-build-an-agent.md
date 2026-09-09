@@ -4,11 +4,11 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-08-13
-modified: 2026-09-02
+modified: 2026-09-09
 faq:
   - question: Who can test Modules 10-12?
     answer: Existing Core buyers with Modules 1-6 on promptanatomy.app. The Data Analysis path (M7-9) helps but is not required. Starter buyers need Core first. Email info@promptanatomy.app with subject M10-12 tester, your purchase email, and LT or EN.
-  - question: Can I buy Corporate training today?
+  - question: Can I buy a Corporate Stripe plan today?
     answer: No. 399 EUR is a B2B IVS workshop (3 hours, up to 10 people, license excluded), not a Stripe plan. Live checkout is Starter and Core only. M10-12 remains a tester grant for existing buyers.
   - question: Does finishing the Agent path replace production agents or governance?
     answer: No. Practice on promptanatomy.app proves judgment inside training. Workflow IDs, eval gates, RACI, and the runtime still belong on your systems.
@@ -19,7 +19,7 @@ hero_image: images/articles/3a-before-you-build-an-agent/hero.png
 key_takeaway: Autonomy is the last step. Assign each process to Automate, Assist, or Autonomize before you build; M10-12 on promptanatomy.app is a tester grant for existing M1-6 buyers, not production proof.
 slug: 3a-before-you-build-an-agent
 status: published
-summary: Everyone wants to skip the 80% and start with an autonomous agent. 3A puts Automate and Assist first. promptanatomy.app soft-launches M10-12 as a tester grant for existing M1-6 buyers, not a public Corporate checkout.
+summary: Everyone wants to skip the 80% and start with an autonomous agent. 3A puts Automate and Assist first. promptanatomy.app soft-launches M10-12 as a tester grant for existing M1-6 buyers, not a Stripe plan.
 tags:
   - agents
   - workflow-automation

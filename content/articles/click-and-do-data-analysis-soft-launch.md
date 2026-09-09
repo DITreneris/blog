@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-07-02
-modified: 2026-09-02
+modified: 2026-09-09
 faq:
   - question: How do Core buyers request M7-9 access?
     answer: M7-9 is an operator grant, not a Stripe plan and not a public price. Core buyers with Modules 1-6 email info@promptanatomy.app with their purchase email and preferred locale. Starter buyers need Core first because the Data Analysis path assumes six-block fluency.
@@ -69,7 +69,7 @@ Modules 1-6 teach the **six-block prompt system**, the foundation every other pa
 
 ## What soft launch does not guarantee
 
-Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the production M1-9 bundle, not a promise that every interactive schema has passed full manual browser QA. Modules **10–12** (agent engineering) are a **tester grant** for existing buyers—see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/). They are not a Stripe plan.
+Soft launch acknowledges open work. **v1.4.2** is a **readability and diagram-trust sprint** on the shipped M1–9 training code (checkout is still Starter/Core only; M7–9 is an operator grant), not a promise that every interactive schema has passed full manual browser QA. Modules **10–12** (agent engineering) are a **tester grant** for existing buyers—see [3A Before You Build an Agent](/articles/3a-before-you-build-an-agent/). They are not a Stripe plan.
 
 What soft launch does guarantee is a complete **M7-9** path: adaptive focus branches, an M8 knowledge check, an M9 capstone workflow, a Tier 3 certificate path at **70% or higher** on M8, and DiagramKit-style step navigation across M1-9 so diagrams behave like instruments, not wallpaper.
 
