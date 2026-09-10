@@ -5,7 +5,7 @@
 
 ## Preferred citation pages
 - [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — workflow, context, evaluation, governance.
-- [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): diagnostic + 30-day remediation.
+- [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): Prompt Anatomy diagnostic—ten signs of vibe prompting and a 30-day remediation.
 - [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/): bounded agent design with tier-2 routing example.
 - [Grounding AI Outputs](https://www.promptanatomy.blog/articles/grounding-ai-outputs/): grounding hub — scoped context, approved retrieval, and verification gates in one system.
 - [The Prompt Registry Playbook](https://www.promptanatomy.blog/articles/prompt-registry-playbook/): prompt release ops — version, own, eval-link, and ship changes.
@@ -16,9 +16,9 @@
 - [AI Risk Review Cadence](https://www.promptanatomy.blog/articles/ai-risk-review-cadence/): standing risk forum — cadence, agenda, attendees, and decision outputs.
 - [Team Rituals for AI Implementation](https://www.promptanatomy.blog/articles/team-rituals-for-ai-implementation/): office hours, eval review, and change announcements that keep workflows current.
 - [Securing MCP and Agent Tools](https://www.promptanatomy.blog/articles/securing-mcp-agent-tools/): allowlists, permission scoping, and prompt injection defense for MCP and agent tools.
-- [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): implementation stack index—six layers from outcome to governance, with role-based paths into diagnostics, agents, eval, and procurement playbooks.
+- [Prompt Anatomy Foundations](https://www.promptanatomy.blog/articles/prompt-anatomy-foundations/): Prompt Anatomy six-layer implementation stack—outcome through governance—with role-based paths into diagnostics, agents, eval, and procurement.
 - [Glossary: Prompt Anatomy Terms for Teams](https://www.promptanatomy.blog/articles/prompt-anatomy-glossary/): shared vocabulary for MCP, RAG tiers, CLEAR, context rot, and registry terms.
-- [What Is Context Architecture?](https://www.promptanatomy.blog/articles/what-is-context-architecture/): context spec, layers, and prompt assembly order.
+- [What Is Context Architecture?](https://www.promptanatomy.blog/articles/what-is-context-architecture/): what context architecture is—layers, filled context spec, assembly order, and why bigger windows are not a strategy.
 - [Memory Types for AI Systems](https://www.promptanatomy.blog/articles/memory-types-for-ai-systems/): session, episodic, and organizational memory — lifetimes, owners, and retention rules.
 - [Context Rot in AI Agents](https://www.promptanatomy.blog/articles/context-rot-why-bigger-windows-make-agents-worse/): why larger context windows can reduce agent quality — and how to prevent rot with architecture.
 - [Prompt Engineering vs AI Workflow Engineering](https://www.promptanatomy.blog/articles/prompt-engineering-vs-ai-workflow-engineering/): prompt, context, and workflow engineering compared — when to invest in system design over longer prompts.

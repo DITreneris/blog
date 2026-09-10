@@ -4,12 +4,13 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2024-01-28
+modified: 2026-09-10
 faq:
 - answer: Start with one business outcome and workflow, then context architecture,
     then model steps—with evaluation and governance before scaling tools.
   question: Where should a team start in the Prompt Anatomy stack?
 - answer: No. It is a methodology for predictable AI operations—workflow, context,
-    evaluation, and governance around the model step.
+    evaluation, and governance around the model step. The model is one layer, not the product.
   question: Is Prompt Anatomy only about writing prompts?
 - answer: Six ordered layers—business outcome, workflow, context architecture, model
     step, evaluation, and governance—with the model as one step inside the system,
@@ -19,15 +20,14 @@ faq:
     before new tool trials; finance teams can follow the finance workflow case study
     after the canvas template.
   question: Which article should procurement or finance leads read first?
-hero_caption: Implementation stack — outcome, workflow, context, model step, evaluation,
-  governance.
+hero_caption: Prompt Anatomy six-layer stack — outcome, workflow, context, model step,
+  evaluation, governance.
 hero_image: images/articles/prompt-anatomy-foundations/hero.png
-key_takeaway: 'Implementation stacks layers in order: outcome, workflow, context,
+key_takeaway: 'Prompt Anatomy stacks implementation in order: outcome, workflow, context,
   model step, evaluation, governance.'
 slug: prompt-anatomy-foundations
 status: published
-summary: Implementation stack index—six layers from outcome to governance, with role-based
-  paths into diagnostics, agents, eval, and procurement playbooks.
+summary: Prompt Anatomy foundations—the six-layer implementation stack from outcome to governance, with role-based paths into diagnostics, agents, eval, and procurement.
 tags:
 - prompt-systems
 - context
@@ -37,7 +37,7 @@ tags:
 title: Prompt Anatomy Foundations
 ---
 
-Prompt Anatomy is a **methodology for predictable AI operations**, not a collection of clever prompts. This page routes you into the blog by job-to-be-done. If you need to know which property to use first—blog, training app, or marketing site—read the [Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/) before picking a path below.
+**Prompt Anatomy** (promptanatomy.blog) is a **methodology for predictable AI operations**, not a collection of clever prompts. The six-layer implementation stack is the reading order: outcome → workflow → context architecture → model step → evaluation → governance. This page is the hub index—route by job-to-be-done, then return here. If you need to know which property to use first—blog, training app, or marketing site—read the [Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/) before picking a path below.
 
 ## The stack
 
@@ -51,7 +51,7 @@ Business outcome
         → Evaluation (pass/fail before scale)
           → Governance (who may change what)
 ```
-Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/).
+Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/). Context layer: [What Is Context Architecture?](/articles/what-is-context-architecture/). Diagnose unstructured use: [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/).
 
 ## Where to go next
 

@@ -20,12 +20,11 @@ hero_caption: Diagnostic visual — ten signs that outcomes depend on who asked 
 hero_image: images/articles/10-signs-your-company-is-vibe-prompting/hero.png
 key_takeaway: If outcomes depend on who asked and which tool they opened, document
   one workflow and measure it for thirty days.
-modified: 2024-10-11
+modified: 2026-09-10
 reading_time: 7 min read
 slug: 10-signs-your-company-is-vibe-prompting
 status: published
-summary: A practical diagnostic for teams using AI without structure—score yourself,
-  fix one workflow in 30 days, and measure pass rate.
+summary: Prompt Anatomy diagnostic—ten signs of vibe prompting, a self-score, and a 30-day fix for one governed workflow.
 tags:
 - change-management
 - governance
@@ -33,11 +32,11 @@ tags:
 title: 10 Signs Your Company Is Vibe Prompting
 ---
 
-**Vibe prompting** means outcomes depend on who asks, which tool they open, and informal know-how—not on documented workflows. The model may be capable; the organization is not operating a system.
+**Vibe prompting** means outcomes depend on who asks, which tool they open, and informal know-how—not on documented workflows. The model may be capable; the organization is not operating a system. This is the **Prompt Anatomy** diagnostic for that gap—the same operating model indexed in [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/).
 
 That gap shows up quietly at first. A senior AE gets excellent proposal drafts; a new hire gets confident nonsense. Support fixes AI replies every night while leadership sees high "copilot adoption." Compliance learns about AI from a customer complaint, not from a design review. The cost is rework, audit exposure, and teams who stop trusting anything except their private chat threads.
 
-If that pattern sounds familiar, you are not under-skilled at prompting. You are missing workflow, context, evaluation, and ownership—the layers described in [The Model Is Not the System](/articles/the-model-is-not-the-system/). Not sure where to start by role? Use [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/). The ten signs below help you diagnose how far unstructured use has spread and what to fix first. For a **15-minute stack scorecard** (owners, eval, replay), use [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/).
+If that pattern sounds familiar, you are not under-skilled at prompting. You are missing workflow, context, evaluation, and ownership—the layers described in [The Model Is Not the System](/articles/the-model-is-not-the-system/). When the failure is “the model saw the wrong thing,” read [What Is Context Architecture?](/articles/what-is-context-architecture/). The ten signs below help you diagnose how far unstructured use has spread and what to fix first. For a **15-minute stack scorecard** (owners, eval, replay), use [What Your AI Stack Reveals](/articles/what-your-ai-stack-reveals/).
 
 The hero image makes the same point visually: a fast car stuck in traffic—**you added AI, not speed**. New capability inside an unchanged process still bottlenecks on handoffs, approvals, and missing context. The checklist below names where that traffic jam shows up in your operating model.
 

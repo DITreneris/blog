@@ -10,7 +10,7 @@ citations:
     description: flagship framework — workflow, context, evaluation, governance.
   - slug: 10-signs-your-company-is-vibe-prompting
     title: 10 Signs Your Company Is Vibe Prompting
-    description: diagnostic + 30-day remediation.
+    description: Prompt Anatomy diagnostic—ten signs of vibe prompting and a 30-day remediation.
   - slug: how-to-design-an-ai-agent-workflow
     title: How to Design an AI Agent Workflow
     description: bounded agent design with tier-2 routing example.
@@ -43,13 +43,13 @@ citations:
     description: allowlists, permission scoping, and prompt injection defense for MCP and agent tools.
   - slug: prompt-anatomy-foundations
     title: Prompt Anatomy Foundations
-    description: implementation stack index—six layers from outcome to governance, with role-based paths into diagnostics, agents, eval, and procurement playbooks.
+    description: Prompt Anatomy six-layer implementation stack—outcome through governance—with role-based paths into diagnostics, agents, eval, and procurement.
   - slug: prompt-anatomy-glossary
     title: "Glossary: Prompt Anatomy Terms for Teams"
     description: shared vocabulary for MCP, RAG tiers, CLEAR, context rot, and registry terms.
   - slug: what-is-context-architecture
     title: What Is Context Architecture?
-    description: context spec, layers, and prompt assembly order.
+    description: what context architecture is—layers, filled context spec, assembly order, and why bigger windows are not a strategy.
   - slug: memory-types-for-ai-systems
     title: Memory Types for AI Systems
     description: session, episodic, and organizational memory — lifetimes, owners, and retention rules.

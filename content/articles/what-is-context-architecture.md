@@ -4,18 +4,20 @@ body_locked: true
 category: Framework
 content_tier: pillar
 date: 2024-04-27
-modified: 2024-07-27
+modified: 2026-09-10
 hero_image: images/articles/what-is-context-architecture/hero.png
-hero_caption: "Layered context stack — task, policy, operational data, and memory strategy designed before prompt assembly."
-key_takeaway: Context architecture controls task, operational, policy, and memory layers—not stuffing the prompt window.
+hero_caption: "Context architecture — design task, policy, operational data, and memory before you assemble the prompt."
+key_takeaway: Context architecture decides what the model may see, in what order, under which policy—not how large the window is.
 slug: what-is-context-architecture
 status: published
-summary: How teams decide what models see, when, and why—with a context spec walkthrough, prompt assembly order, context rot, and data classification.
+summary: Context architecture is how teams decide what models see, when, and why—layers, a filled context spec, assembly order, and why bigger windows are not a strategy.
 tags:
   - context
   - context-engineering
 title: What Is Context Architecture?
 faq:
+  - question: What is context architecture?
+    answer: Context architecture is the discipline of deciding what information a model receives, in what order, with what authority, and what must never be included—across task, operational, policy, and memory layers for a workflow.
   - question: Is context architecture the same as prompt engineering?
     answer: No. Prompt engineering optimizes one invocation. Context architecture defines what information may enter any invocation, from which sources, under which policy, and with what retention—across the workflow lifecycle.
   - question: Should we put everything in the prompt because the window is large?
@@ -26,11 +28,11 @@ faq:
 
 Support teams paste full ticket threads and wiki exports into chat because the window is large enough. The model replies fluently—and cites draft internal notes, promises refunds outside policy, or mixes one customer's case with another's. Legal finds the violation weeks later; engineering cannot reproduce the good answer from last Tuesday. The model was adequate. Nobody had designed what it was allowed to see.
 
-**Context architecture** is the discipline of deciding what information a model receives, in what order, with what authority—and what must never be included. It is not "how long can we make the prompt." Teams that confuse the two pay in confident wrong answers, compliance remediation, and unreproducible wins.
+**Context architecture** is the discipline of deciding what information a model receives, in what order, with what authority—and what must never be included. It is not "how long can we make the prompt." Teams that confuse the two pay in confident wrong answers, compliance remediation, and unreproducible wins. Outcome for operators: one named owner, one context spec, and eval cases that fail when policy is buried.
 
 Prompt design is how layers **meet in one invocation**. Architecture is how those layers are sourced, classified, versioned, and governed over time. Both matter; conflating them produces brittle chat hacks that break when staff rotate or models change.
 
-After [The Model Is Not the System](/articles/the-model-is-not-the-system/), this article defines the context layer in that system and shows how to document it in a spec your team can implement. Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
+This is the context layer in the [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/) stack—after [The Model Is Not the System](/articles/the-model-is-not-the-system/). If unstructured AI use is the symptom, diagnose with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/). Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 For entry points on window size and mechanics, see [Context Window Myths](/articles/context-window-myths/) and [Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps](/articles/tokens-and-context-window-limits/).
 
