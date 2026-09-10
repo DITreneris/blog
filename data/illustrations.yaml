@@ -946,6 +946,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-buy-vs-build-agent-stack
+    generator: satori
+    template: split-compare
+    variant: buy_build
+    source: Satori/buy-vs-build-agent-stack.png
+    slug: buy-vs-build-agent-stack
+    title: "When to Buy vs Build an Agent Stack"
+    category: Implementation Notes
+    subtitle: "Do not buy a chat window. Buy the runtime; own policy and eval."
+    og_template: split-compare-og
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

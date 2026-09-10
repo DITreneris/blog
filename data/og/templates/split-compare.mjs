@@ -52,6 +52,17 @@ const PRESETS = {
     defaultSubtitle:
       'Private chat history vs a versioned system pack every run inherits.',
   },
+  buy_build: {
+    badgeLabel: 'BUY VS BUILD',
+    leftTitle: 'Buy as the product',
+    rightTitle: 'Buy the runtime',
+    leftItems: ['Vendor owns policy', 'No eval or send gate', 'Chat window as the stack'],
+    rightItems: ['Your eval and audit fields', 'Human send gate', 'Policy packs you version'],
+    leftAccent: AMBER,
+    rightAccent: brand.colors.brandAccent,
+    footer: 'Use for: procurement gates · hybrid stacks · regulated agent pilots',
+    defaultSubtitle: 'Do not buy a chat window. Buy the runtime; own policy, eval, and audit.',
+  },
 };
 
 function resolvePreset(props) {

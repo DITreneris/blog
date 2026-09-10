@@ -101,6 +101,7 @@ PUBLICATION_ORDER: list[str] = [
     "hiring-prompts-help-launch",
     "executive-os-pro-launch",
     "manifest-before-you-broadcast",
+    "buy-vs-build-agent-stack",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -146,10 +147,11 @@ FIXED_DATES: dict[str, date] = {
     "hiring-prompts-help-launch": date(2026, 6, 24),
     "executive-os-pro-launch": date(2026, 7, 16),
     "manifest-before-you-broadcast": date(2026, 7, 18),
+    "buy-vs-build-agent-stack": date(2026, 9, 10),
 }
 
-# Latest allowed publish date (3A agent field note 2026-08-13)
-PUBLISH_CUTOFF = date(2026, 8, 13)
+# Latest allowed publish date (buy-vs-build playbook 2026-09-10)
+PUBLISH_CUTOFF = date(2026, 9, 10)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

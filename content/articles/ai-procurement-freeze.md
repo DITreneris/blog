@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-10
+modified: 2026-09-10
 faq:
 - answer: A temporary pause on new AI tool purchases until one priority workflow has
     documented owners, context boundaries, and eval criteria.
@@ -152,4 +153,4 @@ Monday actions should be announceable and measurable—freeze policy published, 
 3. Tag every tool by decision stage and data sensitivity.
 4. Schedule a weekly retirement board for duplicate capability clusters.
 
-A procurement freeze works when it is operational, time-bound, and linked to a decision-stage model. Done well, it turns AI from scattered experimentation into governed portfolio management.
+A procurement freeze works when it is operational, time-bound, and linked to a decision-stage model. Done well, it turns AI from scattered experimentation into governed portfolio management. When the freeze ends, choose [when to buy vs build an agent stack](/articles/buy-vs-build-agent-stack/) before the next vendor contract.
