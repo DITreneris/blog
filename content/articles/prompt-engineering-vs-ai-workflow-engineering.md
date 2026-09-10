@@ -30,9 +30,10 @@ tags:
 - workflow-automation
 - context-engineering
 title: Prompt Engineering vs AI Workflow Engineering
+modified: 2026-09-10
 ---
 
-Prompt engineering optimizes a single interaction—tone, format, guardrails in one template. **Context engineering** decides what evidence, policy, and history reach that template on each run: retrieval scope, allow lists, memory boundaries, and pack versions—not more adjectives in the system message. **Workflow engineering** optimizes the path from business intent to verified outcome: triggers, context, handoffs, evaluation, logging, and governance. Teams confuse all three because they happen in chat UIs; vendors blur them because prompt libraries are easier to sell than RACI.
+**Prompt engineering** optimizes one model call—tone, format, and guardrails in a template. **AI workflow engineering** designs the system around that call: triggers, context, handoffs, evaluation, logging, and ownership so the same task stays repeatable under real operations. Teams confuse the two because both happen in chat UIs; vendors blur them because prompt libraries are easier to sell than RACI.
 
 If one expert gets excellent results while peers struggle on the **same task**, longer system prompts are rarely the fix. Shared workflow, context architecture, and eval usually are—see [types of prompts](/articles/types-of-prompts-for-business-workflows/) for how prompt roles split inside a workflow, not one mega-message.
 

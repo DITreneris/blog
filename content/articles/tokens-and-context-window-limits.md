@@ -4,6 +4,19 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2026-02-15
+modified: 2026-09-10
+faq:
+- question: Is a larger context window the same as better AI performance?
+  answer: No. A context window is working memory for one run—when crowded, early
+    instructions drop first while fluent prose continues, which looks like the model
+    ignored policy.
+- question: What should teams do instead of one mega-prompt?
+  answer: Split research, draft, and checker into separate steps with explicit token
+    budgets per call so finance can see which step overflowed and which instruction fell out.
+- question: What are the safe, limit, and overflow zones?
+  answer: Safe leaves room for framing, policy, retrieval, and schema; limit is where
+    quality drops unevenly; overflow is where constraints are ignored even if the answer
+    still reads confidently.
 hero_caption: Safe, limit, and overflow zones — plus step-split budgets for research,
   draft, and checker calls.
 hero_image: images/articles/tokens-and-context-window-limits/hero.png

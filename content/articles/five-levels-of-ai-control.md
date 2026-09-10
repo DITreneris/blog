@@ -18,11 +18,12 @@ tags:
 - context
 - governance
 title: Five Levels of AI Control
+modified: 2026-09-10
 ---
 
-The poster shows a ladder: **tokens**, **context window**, **temperature**, **hallucination**, **RAG**. It is not a shopping list for features. It is a reminder that **control compounds** — and that teams who jump to the top rung without the lower ones confuse access with architecture.
+**AI control compounds upward:** tokens → context window → temperature → hallucination handling → RAG. Buying the top rung alone fails. Teams that jump to “we enabled RAG” without scoped inputs, sampling rules, or eval confuse model features with an operating system.
 
-Procurement often arrives with a slide that says “we enabled RAG.” Operations still sees wrong answers because nobody scoped inputs, documented sampling rules, or designed eval before scale. The ladder is a conversation tool for steering and risk forums: which rung you are actually operating on, and what must exist before you claim the next one.
+The poster ladder is a steering tool—not a shopping list. Use it in risk forums to name which rung you actually operate on and what evidence must exist before you claim the next one.
 
 ## Level 1 — Tokens
 

@@ -18,9 +18,18 @@ tags:
 - agents
 - prompt-systems
 title: From Prompt to Agent
+modified: 2026-09-10
 ---
 
-The hero shows five glass steps: **Prompt → Template → Workflow → Assistant → Agent**, with the tagline **AI maturity is control maturity.** Better prompts become systems — not bigger prompts in the same chaotic chat. Teams skip steps because vendors label everything “agent.” Skipping shows up as **autonomy without accountability**.
+**Promote to agents only after templates, workflow, and eval exist.** AI maturity is control maturity—not feature access. The path is **Prompt → Template → Workflow → Assistant → Agent**. Vendors label everything “agent”; skipping stages shows up as autonomy without accountability.
+
+| Stage | What you gain | Promote when |
+|-------|---------------|--------------|
+| Prompt | Exploration | Never as production strategy |
+| Template | Repeatable structure | Registry ID + owner |
+| Workflow | Named steps + gates | Canvas lists triggers, data, send gates |
+| Assistant | Session/profile memory | TTL + no cross-customer blend |
+| Agent | Tool use under allow lists | Eval stable + audit fields + human approval on send/spend |
 
 ## Prompt — ask once
 

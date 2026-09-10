@@ -23,9 +23,10 @@ tags:
 - eval
 - governance
 title: Evaluation Hooks for AI Workflows
+modified: 2026-09-10
 ---
 
-Teams scale AI on anecdotes until a bad output reaches a customer. A fluent draft in a demo is not evidence; neither is "the team loves it." **Evaluation hooks** are pass/fail gates—like unit tests for workflows—run before prompt, context, model, or connector changes promote to production. They sit in the implementation stack **below** celebration of a new model and **above** hope that reviewers catch everything manually.
+**Evaluation hooks** are pass/fail gates—like unit tests for workflows—run before every prompt, context, model, or connector change promotes to production. A fluent demo draft is not evidence; neither is "the team loves it." Without hooks, teams scale AI on anecdotes until a bad output reaches a customer.
 
 If your organization buys faster models while eval is optional, read [The Model Is Not the System](/articles/the-model-is-not-the-system/) first. This article defines where eval fits, how to structure smoke / pilot / scale gates, how Northline B2B runs cases for `support-reply-v3`, and how to turn near-misses into new cases within a week. If prompts are still chaotic, fix input structure first — [Chaos vs Control Prompting](/articles/chaos-vs-control-prompting/).
 

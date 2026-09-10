@@ -57,6 +57,16 @@ FEED_DOMAIN = CANONICAL_SITEURL
 ENABLE_VERCEL_ANALYTICS = True
 JINJA_GLOBALS["ENABLE_VERCEL_ANALYTICS"] = True
 
+# PostHog EU — same project as hub (.app). Reuse the hub public key (phc_…).
+# Accept POSTHOG_PROJECT_API_KEY or VITE_POSTHOG_KEY (hub training env name).
+ENABLE_POSTHOG = True
+POSTHOG_PROJECT_API_KEY = (
+    os.environ.get("POSTHOG_PROJECT_API_KEY", "").strip()
+    or os.environ.get("VITE_POSTHOG_KEY", "").strip()
+)
+JINJA_GLOBALS["ENABLE_POSTHOG"] = ENABLE_POSTHOG
+JINJA_GLOBALS["POSTHOG_PROJECT_API_KEY"] = POSTHOG_PROJECT_API_KEY
+
 # Production: no draft HTML or Pelican utility index pages (wrong canonical / thin dupes).
 DRAFT_SAVE_AS = ""
 ARCHIVES_SAVE_AS = ""

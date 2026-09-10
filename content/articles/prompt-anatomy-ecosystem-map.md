@@ -4,7 +4,18 @@ body_locked: true
 category: Implementation Notes
 content_tier: nav
 date: 2025-03-31
-modified: 2026-09-02
+modified: 2026-09-10
+faq:
+- question: What is the difference between promptanatomy.blog and promptanatomy.app?
+  answer: The blog is where you read free frameworks, playbooks, and templates. The
+    app is where teams practice and buy training after the design questions are clear.
+- question: Should I buy training before reading the frameworks?
+  answer: No. Diagnose and design on the blog first—especially vibe-prompting signs
+    and foundations—then use the app for repeatable drills, not as a substitute for
+    owners, eval gates, and audit trails.
+- question: Which properties matter first in the Prompt Anatomy ecosystem?
+  answer: Start with four surfaces—.blog to read, .site to discover and try, .app to
+    practice and buy, and treat .lol as optional play—not your implementation path.
 hero_caption: How the blog, training app, and implementation tools fit together without
   duplicating the same content.
 hero_image: images/articles/prompt-anatomy-ecosystem-map/hero.png

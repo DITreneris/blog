@@ -4,7 +4,17 @@ body_locked: true
 category: Implementation Notes
 content_tier: opinion
 date: 2026-03-15
-modified: 2026-09-02
+modified: 2026-09-10
+faq:
+- question: What does Stripe checkout on promptanatomy.app sell?
+  answer: The foundation path—modules 1–6 via Starter or Core plans. Later modules are
+    operator grants, not proof that checkout sold the entire production training bundle.
+- question: Is a 399 EUR workshop a Stripe plan on the hub?
+  answer: No. The 399 EUR offering is a B2B IVS workshop, not a Stripe catalog plan.
+    Training checkout on the hub remains the 39/99 foundation path.
+- question: How does the hub differ from the blog?
+  answer: The blog publishes free frameworks and field notes; the hub is Platform HQ for
+    conversion, magic-link access, and repeatable drills after you understand the design.
 hero_caption: Plans → checkout → magic link → module progress — the hub chain promptanatomy.app
   ships.
 hero_image: images/articles/shipping-prompt-anatomy/hero.png

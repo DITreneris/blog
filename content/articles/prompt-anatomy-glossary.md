@@ -4,6 +4,18 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2026-06-05
+modified: 2026-09-10
+faq:
+- question: What is the Prompt Anatomy glossary for?
+  answer: It is a shared vocabulary for design reviews and governance forums—definitions
+    for MCP, RAG tiers, CLEAR, context rot, and registry ops that link to canonical
+    playbooks instead of redefining terms in every meeting.
+- question: Should every team redefine MCP, RAG, and CLEAR in their own docs?
+  answer: No. Adopt one glossary, link terms to the playbooks that own the practice,
+    and only add local aliases when Legal or a regulator requires different wording.
+- question: Where should I go after looking up a term?
+  answer: Follow the in-glossary links to the hub playbook for that cluster—agents,
+    eval, governance, or context—rather than treating the glossary as the full system.
 hero_image: images/articles/prompt-anatomy-glossary/hero.png
 hero_caption: "Glossary as a routing map — Context, Eval, Agents, Governance clusters to canonical playbooks."
 key_takeaway: Shared vocabulary speeds design reviews—link terms to canonical playbooks instead of redefining them in every meeting.

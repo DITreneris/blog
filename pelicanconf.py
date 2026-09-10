@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import datetime
+import os
 import yaml
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -122,6 +123,13 @@ JINJA_FILTERS = {
 }
 
 ENABLE_VERCEL_ANALYTICS = False
+ENABLE_POSTHOG = False
+# Same public phc_… key as .app (EU project 155249). Prefer POSTHOG_PROJECT_API_KEY;
+# also accept VITE_POSTHOG_KEY so operators can reuse the hub env name/value.
+POSTHOG_PROJECT_API_KEY = (
+    os.environ.get("POSTHOG_PROJECT_API_KEY", "").strip()
+    or os.environ.get("VITE_POSTHOG_KEY", "").strip()
+)
 
 JINJA_GLOBALS = {
     "SITE_CONFIG": SITE_CONFIG,
@@ -135,6 +143,8 @@ JINJA_GLOBALS = {
     "HUB_IMAGES": ILLUSTRATIONS.get("hub_images", {}),
     "CURRENT_YEAR": datetime.date.today().year,
     "ENABLE_VERCEL_ANALYTICS": ENABLE_VERCEL_ANALYTICS,
+    "ENABLE_POSTHOG": ENABLE_POSTHOG,
+    "POSTHOG_PROJECT_API_KEY": POSTHOG_PROJECT_API_KEY,
     "AUTHOR_HAS_PHOTO": AUTHOR_HAS_PHOTO,
 }
 
