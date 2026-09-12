@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-08-13
-modified: 2026-09-09
+modified: 2026-09-12
 faq:
   - question: Who can test Modules 10-12?
     answer: Existing Core buyers with Modules 1-6 on promptanatomy.app. The Data Analysis path (M7-9) helps but is not required. Starter buyers need Core first. Email info@promptanatomy.app with subject M10-12 tester, your purchase email, and LT or EN.
@@ -32,7 +32,7 @@ title: 3A Before You Build an Agent
 
 Everyone wants to skip the 80%. I did too. And I paid for those mistakes myself.
 
-The pitch is always the same. One agent, one goal, full autonomy: emails, outreach, research, strategy, marketing, video, follow-ups, reporting. It sounds great until you try to build it. Then the uncomfortable part shows up. **You cannot automate a process you do not understand.** If the workflow lives in someone's head, if the rules are implicit, if exceptions are handled "by experience," the agent has nothing reliable to operate on.
+The pitch is always the same. One agent, one goal, full autonomy: emails, outreach, research, strategy, marketing, video, follow-ups, reporting. A research agent that also sends is that pitch in one job—split find from send in [A Shortlist, Not Another Inbox](/articles/a-shortlist-not-another-inbox/). It sounds great until you try to build it. Then the uncomfortable part shows up. **You cannot automate a process you do not understand.** If the workflow lives in someone's head, if the rules are implicit, if exceptions are handled "by experience," the agent has nothing reliable to operate on.
 
 On **2026-08-13**, [promptanatomy.app](https://www.promptanatomy.app/) soft-launched **Modules 10–12**, the Agent path, for a **limited tester cohort** among existing buyers. For how blog vs training fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
 

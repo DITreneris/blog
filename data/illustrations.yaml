@@ -360,6 +360,16 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: hunter-shortlist-not-another-inbox
+    manual: true
+    source: hunter_2.png
+    og_source: hunter_2.png
+    slug: a-shortlist-not-another-inbox
+    title: "A Shortlist, Not Another Inbox"
+    category: Opinion
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-cpb-launch
     manual: true
     source: cpb_online_og.png
