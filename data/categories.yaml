@@ -16,6 +16,7 @@ categories:
     reading_path:
       - slug: how-to-design-an-ai-agent-workflow
       - slug: model-context-protocol-enterprise
+      - slug: mcp-vs-custom-tool-apis-regulated
       - slug: multi-agent-handoff-pattern
       - slug: langgraph-vs-crewai-production-guide
       - slug: multi-agent-observability

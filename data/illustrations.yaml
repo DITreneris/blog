@@ -969,6 +969,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-mcp-vs-custom-tool-apis-regulated
+    generator: satori
+    template: split-compare
+    variant: mcp_vs_api
+    source: Satori/mcp-vs-custom-tool-apis-regulated.png
+    slug: mcp-vs-custom-tool-apis-regulated
+    title: "MCP vs Custom Tool APIs for Regulated Teams"
+    category: AI Agents
+    subtitle: "MCP for shared contracts; custom APIs for isolation—same gates."
+    og_template: split-compare-og
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

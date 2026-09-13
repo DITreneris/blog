@@ -77,7 +77,7 @@ Triggers should appear in eval sets as **denial cases**—happy-path-only eval g
 
 ## Implementation in the integration layer
 
-Copy boundaries into prompt footers if helpful, but **enforce in connectors**: scope tokens, resource IDs, rate limits, and per-workflow credentials. Log every tool call with actor, workflow version, resource ID, and allow/deny result—fields in [audit trails](/articles/audit-trails-for-ai-workflows/).
+Copy boundaries into prompt footers if helpful, but **enforce in connectors**: scope tokens, resource IDs, rate limits, and per-workflow credentials. Choosing MCP versus a custom API does not replace this matrix—see [MCP vs Custom Tool APIs for Regulated Teams](/articles/mcp-vs-custom-tool-apis-regulated/) for the surface decision. Log every tool call with actor, workflow version, resource ID, and allow/deny result—fields in [audit trails](/articles/audit-trails-for-ai-workflows/).
 
 Review boundaries when you add a model, connector, or retrieval index—not only at launch. Model swaps change tool-use behavior; denial paths need re-validation.
 

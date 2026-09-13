@@ -81,7 +81,8 @@ clusters:
     target_pillar_backlog: "The AI Procurement Freeze"
 
   mcp_integration:
-    spokes: []
+    spokes:
+      - mcp-vs-custom-tool-apis-regulated
     hub_slugs:
       - model-context-protocol-enterprise
       - data-boundaries-for-ai-agents

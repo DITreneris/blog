@@ -98,4 +98,4 @@ Nothing ships to production—bought, built, or hybrid—until all of the follow
 
 If a vendor cannot meet items 3–4, you are not buying a stack. You are buying a chat window. Keep the freeze until the canvas is real.
 
-After this gate, the next comparison is usually protocol-level: MCP vs custom tool APIs. That playbook is queued; do not start it until this decision frame is in use.
+After this gate, the next comparison is usually protocol-level: [MCP vs custom tool APIs](/articles/mcp-vs-custom-tool-apis-regulated/). Use that playbook once this decision frame is in use.

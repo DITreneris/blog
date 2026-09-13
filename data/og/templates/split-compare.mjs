@@ -63,6 +63,17 @@ const PRESETS = {
     footer: 'Use for: procurement gates · hybrid stacks · regulated agent pilots',
     defaultSubtitle: 'Do not buy a chat window. Buy the runtime; own policy, eval, and audit.',
   },
+  mcp_vs_api: {
+    badgeLabel: 'CONNECTOR SURFACE',
+    leftTitle: 'Protocol as permission',
+    rightTitle: 'Permissioned mix',
+    leftItems: ['MCP everywhere', 'Skip eval and send gates', 'Desktop catalog in production'],
+    rightItems: ['MCP for shared contracts', 'Custom APIs for isolation', 'Same allowlist, eval, gates'],
+    leftAccent: AMBER,
+    rightAccent: brand.colors.brandAccent,
+    footer: 'Use for: connector-surface choice · regulated agent pilots · allowlisted hybrid',
+    defaultSubtitle: 'MCP for shared contracts; custom APIs for isolation—same gates.',
+  },
 };
 
 function resolvePreset(props) {

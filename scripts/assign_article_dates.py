@@ -103,6 +103,7 @@ PUBLICATION_ORDER: list[str] = [
     "manifest-before-you-broadcast",
     "buy-vs-build-agent-stack",
     "a-shortlist-not-another-inbox",
+    "mcp-vs-custom-tool-apis-regulated",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -150,10 +151,11 @@ FIXED_DATES: dict[str, date] = {
     "manifest-before-you-broadcast": date(2026, 7, 18),
     "buy-vs-build-agent-stack": date(2026, 9, 10),
     "a-shortlist-not-another-inbox": date(2026, 9, 12),
+    "mcp-vs-custom-tool-apis-regulated": date(2026, 9, 13),
 }
 
-# Latest allowed publish date (shortlist Opinion 2026-09-12)
-PUBLISH_CUTOFF = date(2026, 9, 12)
+# Latest allowed publish date (MCP vs custom APIs playbook 2026-09-13)
+PUBLISH_CUTOFF = date(2026, 9, 13)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

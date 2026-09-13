@@ -49,7 +49,7 @@ Compare your current logs to this set before buying another observability tool. 
 | Timestamp (UTC) | Ordering across CRM, ticket, and log systems |
 | Policy / context pack version | Tie language to Legal-approved library state |
 
-Northline added `policy_pack_version` after a near-miss discussed in [risk forum](/articles/ai-risk-review-cadence/)—plan for schema evolution in your registry, not as a one-off firefight.
+Northline added `policy_pack_version` after a near-miss discussed in [risk forum](/articles/ai-risk-review-cadence/)—plan for schema evolution in your registry, not as a one-off firefight. Required fields do not differ for MCP versus custom connectors; the [MCP vs custom tool APIs](/articles/mcp-vs-custom-tool-apis-regulated/) playbook keeps the same minimum on both surfaces.
 
 Optional but valuable: `checker_result`, `eval_gate` (smoke/pilot/prod), `boundary_denied` events, `template_hash` from [structured prompt system](/articles/structured-prompt-system-blueprint/).
 ## Sample log row (ticket #4821)
