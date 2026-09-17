@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# Skip full Satori PNG regen when committed masters pass --check.
-# Saves Vercel build minutes on content-only deploys.
+# Generate only missing Satori PNG masters. Full regen: FORCE_SATORI=1.
 #
 # FORCE_SATORI=1  — always regenerate (template / brand work).
-# Default (Vercel): check first, generate only when masters are missing.
+# Default: generate only assets that --check would report missing.
 set -euo pipefail
 
 if [[ "${FORCE_SATORI:-}" == "1" ]]; then
@@ -12,9 +11,4 @@ if [[ "${FORCE_SATORI:-}" == "1" ]]; then
   exit 0
 fi
 
-if node scripts/generate_satori_images.mjs --check; then
-  echo "Satori assets present — skipping PNG generation."
-else
-  echo "Missing Satori masters — running full generation."
-  npm run build:satori
-fi
+node scripts/generate_satori_images.mjs --missing-only

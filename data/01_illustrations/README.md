@@ -1,6 +1,6 @@
 # Illustration masters
 
-Source PNGs for article heroes and hub art. **Do not edit synced copies** under `content/images/` — run `make sync-images` instead.
+Source PNGs for article heroes and hub art. **Do not edit synced copies** under `content/images/` — run `make sync-images` (or `python scripts/sync_illustrations.py --id <row-id>`) and **commit the dest files** (PNG, WebP, OG, `.stamp`). Sync skips unchanged rows via content hash stamps.
 
 ## Layout
 
@@ -19,7 +19,7 @@ Mapping: [`data/illustrations.yaml`](../illustrations.yaml). Script: [`scripts/s
 
 ## Satori vs hand-authored masters
 
-For new article heroes, prefer **hand-authored PNGs** in `Basic/`, `Agents/`, or `Governance/` when a bespoke diagram exists. Use **`generator: satori`** in `illustrations.yaml` when you need a brand-consistent title card without a custom illustration — set `template` to a module in `data/og/templates/` and `source: Satori/{slug}.png`. Templates: **`category-default`**, **`governance-raci`**, **`governance-audit-log`**, **`governance-eval-gates`**, plus article-specific modules in `data/og/templates/`. Run `npm run build:satori` before `make sync-images`. **v0.7.0:** verify PNG headline matches article H1 before mapping; re-home mismatched art to new Opinion slugs (see `docs/CONTENT_STANDARDS.md`).
+For new article heroes, prefer **hand-authored PNGs** in `Basic/`, `Agents/`, or `Governance/` when a bespoke diagram exists. Use **`generator: satori`** in `illustrations.yaml` when you need a brand-consistent title card without a custom illustration — set `template` to a module in `data/og/templates/` and `source: Satori/{slug}.png`. Templates: **`category-default`**, **`governance-raci`**, **`governance-audit-log`**, **`governance-eval-gates`**, plus article-specific modules in `data/og/templates/`. Run `node scripts/generate_satori_images.mjs --slug SLUG` (or `FORCE_SATORI=1` / `npm run build:satori` for a full regen) before `make sync-images`. **v0.7.0:** verify PNG headline matches article H1 before mapping; re-home mismatched art to new Opinion slugs (see `docs/CONTENT_STANDARDS.md`).
 
 **Typography:** sizes and subtitle caps live in [`data/og/typography.mjs`](../og/typography.mjs) (hero subtitle ≤100 chars, OG ≤72).
 
@@ -27,8 +27,7 @@ For new article heroes, prefer **hand-authored PNGs** in `Basic/`, `Agents/`, or
 
 ```bash
 node scripts/generate_satori_images.mjs --slug your-slug --dry-run
-node scripts/generate_satori_images.mjs --only hero
-node scripts/generate_satori_images.mjs --only og
+node scripts/generate_satori_images.mjs --missing-only
 node scripts/generate_satori_images.mjs --check
 ```
 

@@ -1,7 +1,7 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
 import { typography, px } from '../typography.mjs';
-import { articleHeroFrame, articleOgFrameWithDiagram, panelBox } from './base.mjs';
+import { articleHeroFrame, articleOgFrameWithDiagram, panelBox, ogWorksheetShell } from './base.mjs';
 
 const d = typography.hero.diagram;
 const od = typography.og.diagram;
@@ -76,7 +76,7 @@ function envelopeChip(label, compact) {
       style: {
         display: 'flex',
         padding: compact ? '6px 10px' : '8px 12px',
-        marginBottom: compact ? '6px' : '8px',
+        marginBottom: compact ? 0 : '8px',
         backgroundColor: 'rgba(207, 167, 58, 0.1)',
         border: '1px solid rgba(207, 167, 58, 0.3)',
         borderRadius: '8px',
@@ -89,9 +89,8 @@ function envelopeChip(label, compact) {
   );
 }
 
-function worksheet(compact) {
-  const titleSize = compact ? od.moduleTitle : d.title;
-  const colGap = compact ? '10px' : '16px';
+function worksheet() {
+  const titleSize = d.title;
   return panelBox(
     h(
       'div',
@@ -100,7 +99,7 @@ function worksheet(compact) {
           display: 'flex',
           flexDirection: 'column',
           width: '100%',
-          maxWidth: compact ? '520px' : '780px',
+          maxWidth: '780px',
         },
       },
       h(
@@ -110,7 +109,7 @@ function worksheet(compact) {
             display: 'flex',
             flexDirection: 'row',
             width: '100%',
-            gap: colGap,
+            columnGap: '16px',
           },
         },
         h(
@@ -130,12 +129,12 @@ function worksheet(compact) {
                 color: brand.colors.brandAccent,
                 fontSize: px(titleSize),
                 fontWeight: 700,
-                marginBottom: compact ? '8px' : '12px',
+                marginBottom: '12px',
               },
             },
             '5 answers in 5 min'
           ),
-          ...ANSWERS.map((t, i) => answerRow(t, i, compact))
+          ...ANSWERS.map((t, i) => answerRow(t, i, false))
         ),
         h(
           'div',
@@ -154,39 +153,93 @@ function worksheet(compact) {
                 color: brand.colors.brandAccent,
                 fontSize: px(titleSize),
                 fontWeight: 700,
-                marginBottom: compact ? '8px' : '12px',
+                marginBottom: '12px',
               },
             },
             'Run envelope'
           ),
-          ...ENVELOPE.map((chip) => envelopeChip(chip, compact))
+          ...ENVELOPE.map((chip) => envelopeChip(chip, false))
         )
       ),
-      compact
-        ? null
-        : h(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                marginTop: '14px',
-                paddingTop: '12px',
-                borderTop: `1px solid ${brand.colors.borderDark}`,
-                color: brand.colors.textOnDarkMuted,
-                fontSize: px(d.caption - 1),
-              },
-            },
-            USE_FOR
-          )
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            marginTop: '14px',
+            paddingTop: '12px',
+            borderTop: `1px solid ${brand.colors.borderDark}`,
+            color: brand.colors.textOnDarkMuted,
+            fontSize: px(d.caption - 1),
+          },
+        },
+        USE_FOR
+      )
     ),
-    compact
-      ? { padding: '14px 16px' }
-      : {
-          padding: '22px 26px',
-          boxShadow: '0 20px 48px rgba(0, 0, 0, 0.45)',
-          border: '1px solid rgba(251, 191, 36, 0.35)',
-          borderTop: `3px solid ${brand.colors.brandAccent}`,
-        }
+    {
+      padding: '22px 26px',
+      boxShadow: '0 20px 48px rgba(0, 0, 0, 0.45)',
+      border: '1px solid rgba(251, 191, 36, 0.35)',
+      borderTop: `3px solid ${brand.colors.brandAccent}`,
+    }
+  );
+}
+
+function ogDiagram() {
+  const titleSize = od.moduleTitle;
+  return ogWorksheetShell(
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+      },
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            color: brand.colors.brandAccent,
+            fontSize: px(titleSize),
+            fontWeight: 700,
+            marginBottom: '8px',
+          },
+        },
+        '5 answers in 5 min'
+      ),
+      ...ANSWERS.map((t, i) => answerRow(t, i, true)),
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            color: brand.colors.brandAccent,
+            fontSize: px(titleSize),
+            fontWeight: 700,
+            marginTop: '8px',
+            marginBottom: '8px',
+          },
+        },
+        'Run envelope'
+      ),
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            width: '100%',
+            columnGap: '8px',
+            rowGap: '6px',
+          },
+        },
+        ...ENVELOPE.map((chip) => envelopeChip(chip, true))
+      )
+    )
   );
 }
 
@@ -196,15 +249,16 @@ export function buildMultiAgentObservabilityWorksheet(props) {
     badgeLabel: 'OBSERVABILITY',
     title: props.title,
     subtitle: props.subtitle || DEFAULT_SUBTITLE,
-    diagram: worksheet(false),
+    diagram: worksheet(),
   });
 }
 
 export function buildMultiAgentObservabilityOg(props) {
   return articleOgFrameWithDiagram({
     category: props.category || 'AI Agents',
+    badgeLabel: 'OBSERVABILITY',
     title: props.title,
     subtitle: props.subtitle || DEFAULT_SUBTITLE,
-    diagram: worksheet(true),
+    diagram: ogDiagram(),
   });
 }

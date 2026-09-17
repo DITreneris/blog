@@ -74,6 +74,8 @@ KNOWN_TEMPLATES = frozenset(
         "scale-capability-gates-og",
         "workshop-instruments",
         "workshop-instruments-og",
+        "mcp-connector-surface",
+        "mcp-connector-surface-og",
         "og-default",
         "category-default",
         "article-og",

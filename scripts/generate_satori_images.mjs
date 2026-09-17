@@ -9,6 +9,7 @@
  *   node scripts/generate_satori_images.mjs --only hero
  *   node scripts/generate_satori_images.mjs --only og
  *   node scripts/generate_satori_images.mjs --check
+ *   node scripts/generate_satori_images.mjs --missing-only
  *
  * On Windows, prefer `node scripts/...` over `npm run build:satori -- --slug`
  * (npm may mis-pass extra args).
@@ -31,10 +32,18 @@ const ARTICLES = join(ROOT, 'content', 'articles');
 const OG_DEFAULT = join(ROOT, 'theme', 'promptanatomy', 'static', 'img', 'og-default.png');
 
 function parseArgs(argv) {
-  const out = { slug: null, id: null, dryRun: false, only: null, check: false };
+  const out = {
+    slug: null,
+    id: null,
+    dryRun: false,
+    only: null,
+    check: false,
+    missingOnly: false,
+  };
   for (let i = 2; i < argv.length; i += 1) {
     if (argv[i] === '--dry-run') out.dryRun = true;
     else if (argv[i] === '--check') out.check = true;
+    else if (argv[i] === '--missing-only') out.missingOnly = true;
     else if (argv[i] === '--slug') out.slug = argv[++i];
     else if (argv[i] === '--id') out.id = argv[++i];
     else if (argv[i] === '--only') {
@@ -272,15 +281,21 @@ function collectMissingAssets(manifest) {
 
   for (const row of allRows) {
     const rowId = row.id || row.slug || '?';
-    if (row.generator === 'satori' && row.source) {
+    if (row.generator === 'satori' && row.source && row.hub_asset !== 'og') {
       if (!existsSync(masterPath(row.source))) {
-        missing.push({ rowId, path: row.source, kind: 'hero' });
+        missing.push({ rowId, path: row.source, kind: 'hero', row, generate: true });
       }
     }
-    if ('og' in (row.usage || []) && row.slug) {
+    if ((row.usage || []).includes('og') && row.slug) {
       const ogSrc = ogSourceForRow(row);
       if (ogSrc && !existsSync(masterPath(ogSrc))) {
-        missing.push({ rowId, path: ogSrc, kind: 'og' });
+        missing.push({
+          rowId,
+          path: ogSrc,
+          kind: 'og',
+          row,
+          generate: !isManualOgRow(row),
+        });
       }
     }
   }
@@ -288,7 +303,13 @@ function collectMissingAssets(manifest) {
   for (const row of manifest.category_og || []) {
     const rowId = row.id || row.category_slug || '?';
     if (row.source && !existsSync(masterPath(row.source))) {
-      missing.push({ rowId, path: row.source, kind: 'category-og' });
+      missing.push({
+        rowId,
+        path: row.source,
+        kind: 'category-og',
+        row,
+        generate: true,
+      });
     }
   }
 
@@ -296,15 +317,71 @@ function collectMissingAssets(manifest) {
   if (hubOg) {
     const hubRow = allRows.find((r) => r.hub_asset === 'og');
     if (hubRow?.source && !existsSync(masterPath(hubRow.source))) {
-      missing.push({ rowId: 'hub-og', path: hubRow.source, kind: 'hub-og' });
+      missing.push({
+        rowId: 'hub-og',
+        path: hubRow.source,
+        kind: 'hub-og',
+        row: hubRow,
+        generate: true,
+      });
     }
   }
 
   if (!existsSync(OG_DEFAULT)) {
-    missing.push({ rowId: 'og-default', path: relPath(OG_DEFAULT), kind: 'og-default' });
+    missing.push({
+      rowId: 'og-default',
+      path: relPath(OG_DEFAULT),
+      kind: 'og-default',
+      generate: true,
+    });
   }
 
   return missing;
+}
+
+async function renderMissingItem(item, dryRun) {
+  if (item.kind === 'hero') {
+    const label = item.row.slug || item.row.id || item.row.hub_asset;
+    console.log(`  ${label} [${item.row.template}]`);
+    await renderHeroRow(item.row, dryRun);
+    return;
+  }
+  if (item.kind === 'og') {
+    await renderOgRow(item.row, dryRun);
+    return;
+  }
+  if (item.kind === 'category-og' || item.kind === 'hub-og') {
+    const label = item.row.slug || item.row.category_slug || item.row.id || item.row.hub_asset;
+    console.log(`  ${label} [${item.row.template || item.row.og_template}]`);
+    await renderStandaloneOgRow(item.row, dryRun);
+    return;
+  }
+  if (item.kind === 'og-default') {
+    await renderOgDefault(dryRun);
+  }
+}
+
+async function runMissingOnly(manifest, dryRun) {
+  const missing = collectMissingAssets(manifest);
+  if (missing.length === 0) {
+    console.log('Satori assets present — nothing to generate.');
+    return 0;
+  }
+
+  const generatable = missing.filter((item) => item.generate !== false);
+  if (generatable.length) {
+    console.log(`Generating ${generatable.length} missing Satori asset(s)…`);
+    for (const item of generatable) {
+      await renderMissingItem(item, dryRun);
+    }
+  }
+
+  const still = collectMissingAssets(manifest);
+  if (still.length === 0) {
+    console.log('Satori missing-only generation done.');
+    return 0;
+  }
+  return runCheck(manifest);
 }
 
 function runCheck(manifest) {
@@ -319,7 +396,7 @@ function runCheck(manifest) {
       m.kind === 'og-default' ? m.path : `data/01_illustrations/${m.path}`;
     console.error(`  - ${m.rowId} (${m.kind}): ${loc}`);
   }
-  console.error(`Run: node scripts/generate_satori_images.mjs --only hero && --only og`);
+  console.error(`Run: node scripts/generate_satori_images.mjs --missing-only`);
   return 1;
 }
 
@@ -329,6 +406,10 @@ async function main() {
 
   if (args.check) {
     process.exit(runCheck(manifest));
+  }
+
+  if (args.missingOnly) {
+    process.exit(await runMissingOnly(manifest, args.dryRun));
   }
 
   const only = args.only;

@@ -26,3 +26,36 @@ jobs:
 
       - name: Production build
         run: make build
+
+      - name: Upload site output
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-output
+          path: output
+          retention-days: 1
+
+  lighthouse:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download site output
+        uses: actions/download-artifact@v4
+        with:
+          name: site-output
+          path: output
+
+      - name: Serve static output
+        run: |
+          cd output
+          python -m http.server 8765 &
+          sleep 2
+
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true

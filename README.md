@@ -13,11 +13,10 @@ python -m venv .venv
 .venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 make validate
-make build-dev
-make serve
+make preview
 ```
 
-Open http://localhost:8000
+Open http://localhost:8000. Use `make serve` only when you need a release-like bake (Satori check + image sync + validators).
 
 Roadmap → [`todo.md`](todo.md) · Content strategy → [`docs/EDITORIAL_PLAN.md`](docs/EDITORIAL_PLAN.md)
 
@@ -26,9 +25,10 @@ Roadmap → [`todo.md`](todo.md) · Content strategy → [`docs/EDITORIAL_PLAN.m
 | Command | Description |
 |---------|-------------|
 | `make validate` | Theme token lint + article/page frontmatter |
+| `make preview` | Pelican + `http.server` on port 8000 (no Satori, no image re-encode) |
 | `make build` | Production build (`publishconf.py`) |
-| `make build-dev` | Local build (`pelicanconf.py`) |
-| `make serve` | Build and serve `output/` on port 8000 |
+| `make build-dev` | Local full bake (`pelicanconf.py`) |
+| `make serve` | Full `build-dev` then serve `output/` on port 8000 |
 
 Without `make` (Windows): `python scripts/validate_theme_tokens.py`, `python scripts/validate_content.py`, `python -m pelican content -s publishconf.py`
 
@@ -38,9 +38,9 @@ Push to `main` → Vercel builds automatically (`vercel.json`, `scripts/vercel_b
 
 Production URL: `https://promptanatomy.blog` (set in `publishconf.py`).
 
-GitHub Actions runs `make build` on push and pull requests; Lighthouse runs on pull requests.
+GitHub Actions runs `make build` on push and pull requests; Lighthouse runs on pull requests against that build output (no second image bake).
 
-After `make serve`, open `/design-system/` for a live component reference.
+After `make preview`, open `/design-system/` for a live component reference.
 
 ## Stack
 

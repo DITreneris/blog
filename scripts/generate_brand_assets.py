@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate brand OG image and favicon PNGs for Prompt Anatomy."""
+"""Generate favicon PNGs and sync the author headshot for Prompt Anatomy."""
 
 from __future__ import annotations
 
@@ -8,7 +8,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATIC = ROOT / "theme" / "promptanatomy" / "static"
-IMG_DIR = STATIC / "img"
 AUTHOR_SOURCE_DIR = ROOT / "data" / "author"
 AUTHOR_MASTER_DIR = ROOT / "data" / "01_illustrations"
 AUTHOR_DEST = ROOT / "content" / "images" / "author" / "tomas-staniulis.jpg"
@@ -25,40 +24,6 @@ AUTHOR_AVATAR_SIZE = 400
 BG_TOP = (5, 13, 20)
 BG_BOTTOM = (16, 59, 90)
 GOLD = (251, 211, 4)
-WHITE = (255, 255, 255)
-MUTED = (180, 195, 210)
-
-OG_WIDTH = 1200
-OG_HEIGHT = 630
-
-
-def _load_font(size: int, bold: bool = False):
-    from PIL import ImageFont
-
-    candidates = []
-    if sys.platform == "win32":
-        windir = Path("C:/Windows/Fonts")
-        candidates.extend(
-            [
-                windir / ("arialbd.ttf" if bold else "arial.ttf"),
-                windir / ("segoeuib.ttf" if bold else "segoeui.ttf"),
-            ]
-        )
-    else:
-        candidates.extend(
-            [
-                Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
-                if bold
-                else Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-                Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
-                if bold
-                else Path("/System/Library/Fonts/Supplemental/Arial.ttf"),
-            ]
-        )
-    for path in candidates:
-        if path.is_file():
-            return ImageFont.truetype(str(path), size)
-    return ImageFont.load_default()
 
 
 def _vertical_gradient(width: int, height: int):
@@ -104,30 +69,6 @@ def _icon_image(size: int):
     )
     _draw_bolt(draw, int(size * 0.125), int(size * 0.09), size / 32)
     return img
-
-
-def generate_og_default(dest: Path) -> None:
-    from PIL import Image, ImageDraw
-
-    img = _vertical_gradient(OG_WIDTH, OG_HEIGHT)
-    draw = ImageDraw.Draw(img)
-
-    _draw_bolt(draw, 120, 200, 6.5)
-
-    title_font = _load_font(72, bold=True)
-    tagline_font = _load_font(36, bold=False)
-
-    draw.text((280, 220), "Prompt Anatomy", fill=WHITE, font=title_font)
-    draw.text(
-        (280, 310),
-        "Structured AI implementation for teams",
-        fill=MUTED,
-        font=tagline_font,
-    )
-
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    img.save(dest, format="PNG", optimize=True)
-    print(f"Wrote {dest}")
 
 
 def find_author_photo_source() -> Path | None:

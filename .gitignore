@@ -1,6 +1,5 @@
 output/
 output-check/
-content/images/
 __pycache__/
 *.py[cod]
 .venv/

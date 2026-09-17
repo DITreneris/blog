@@ -29,7 +29,7 @@ export const typography = {
     diagram: {
       label: 13,
       moduleTitle: 17,
-      moduleDesc: 12,
+      moduleDesc: 14,
       engineTitle: 19,
       arrow: 20,
     },

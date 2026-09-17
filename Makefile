@@ -1,4 +1,4 @@
-.PHONY: validate validate-theme validate-brand validate-satori validate-satori-quality validate-llms-citations validate-hub-chrome audit-content audit-prose build serve clean sync-images brand-assets analytics satori-images build-css
+.PHONY: validate validate-theme validate-brand validate-satori validate-satori-quality validate-llms-citations validate-hub-chrome audit-content audit-prose build build-dev preview serve clean sync-images brand-assets analytics satori-images build-css
 
 ifeq ($(OS),Windows_NT)
   VENV_PY := .venv/Scripts/python.exe
@@ -32,11 +32,10 @@ validate-theme:
 
 validate-satori:
 	$(PYTHON) scripts/validate_satori_manifest.py
+	$(PYTHON) scripts/validate_satori_og_layout.py
 
 validate-brand:
 	$(PYTHON) scripts/validate_brand_sync.py
-
-.validate: validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality validate-satori validate-llms-citations
 
 validate: validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality validate-satori validate-llms-citations
 
@@ -58,7 +57,7 @@ audit-content:
 audit-prose:
 	$(PYTHON) scripts/audit_prose_style.py --markdown
 
-# Sync heroes before validate-content — content/images/ is gitignored (generated at build).
+# Hash-stamped dests live in content/images/ (tracked). Sync skips unchanged rows.
 build: satori-images validate-satori sync-images brand-assets analytics build-css validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality
 	$(PYTHON) -m pelican content -s publishconf.py
 	$(PYTHON) scripts/generate_sitemap.py
@@ -74,6 +73,10 @@ build-dev: satori-images validate-satori sync-images brand-assets build-css vali
 	$(PYTHON) scripts/validate_seo_output.py
 	$(PYTHON) scripts/validate_a11y_landmarks.py
 	$(PYTHON) scripts/audit_image_weights.py --warn-only
+
+preview: build-css
+	$(PYTHON) -m pelican content
+	cd output && $(PYTHON) -m http.server 8000
 
 serve: build-dev
 	cd output && $(PYTHON) -m http.server 8000

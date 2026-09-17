@@ -286,6 +286,19 @@ export function panelBox(children, extraStyle = {}) {
   );
 }
 
+/** Grounded 1200×630 diagram card — gold top, shadow, fills the OG slot. */
+export function ogWorksheetShell(children, extraStyle = {}) {
+  return panelBox(children, {
+    width: '100%',
+    maxWidth: '520px',
+    padding: '16px 18px',
+    boxShadow: '0 12px 28px rgba(0, 0, 0, 0.35)',
+    border: '1px solid rgba(251, 191, 36, 0.35)',
+    borderTop: `3px solid ${brand.colors.brandAccent}`,
+    ...extraStyle,
+  });
+}
+
 export function labelText(text, muted = false) {
   return h(
     'div',
@@ -353,6 +366,7 @@ export function categoryDefaultDiagram(category) {
 /** 1200×630 OG layout — copy left, diagram right (homepage + fallback). */
 export function articleOgFrameWithDiagram({
   category,
+  badgeLabel,
   title,
   subtitle,
   diagram,
@@ -389,8 +403,7 @@ export function articleOgFrameWithDiagram({
             display: 'flex',
             flexDirection: 'column',
             width: `${oType.textColumnWidth}px`,
-            justifyContent: 'flex-start',
-            paddingTop: '4px',
+            justifyContent: 'center',
             paddingRight: '24px',
           },
         },
@@ -419,7 +432,7 @@ export function articleOgFrameWithDiagram({
               )
             )
           : null,
-        categoryBadge(category, category, 'og'),
+        categoryBadge(badgeLabel || category, category, 'og'),
         h(
           'div',
           {
@@ -455,9 +468,8 @@ export function articleOgFrameWithDiagram({
           style: {
             display: 'flex',
             flex: 1,
-            alignItems: 'flex-start',
+            alignItems: 'center',
             justifyContent: 'center',
-            paddingTop: '4px',
           },
         },
         diagram

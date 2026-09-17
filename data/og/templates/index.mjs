@@ -70,6 +70,10 @@ import {
   buildWorkshopInstruments,
   buildWorkshopInstrumentsOg,
 } from './workshop-instruments.mjs';
+import {
+  buildMcpConnectorSurface,
+  buildMcpConnectorSurfaceOg,
+} from './mcp-connector-surface.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -132,6 +136,8 @@ export const TEMPLATES = {
   'scale-capability-gates-og': buildScaleCapabilityGatesOg,
   'workshop-instruments': buildWorkshopInstruments,
   'workshop-instruments-og': buildWorkshopInstrumentsOg,
+  'mcp-connector-surface': buildMcpConnectorSurface,
+  'mcp-connector-surface-og': buildMcpConnectorSurfaceOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

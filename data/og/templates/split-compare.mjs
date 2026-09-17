@@ -1,7 +1,7 @@
 import { h } from '../jsx.mjs';
 import { brand } from '../brand.mjs';
 import { typography, px } from '../typography.mjs';
-import { articleHeroFrame, articleOgFrameWithDiagram, panelBox } from './base.mjs';
+import { articleHeroFrame, articleOgFrameWithDiagram, panelBox, ogWorksheetShell } from './base.mjs';
 
 const d = typography.hero.diagram;
 const od = typography.og.diagram;
@@ -62,17 +62,6 @@ const PRESETS = {
     rightAccent: brand.colors.brandAccent,
     footer: 'Use for: procurement gates · hybrid stacks · regulated agent pilots',
     defaultSubtitle: 'Do not buy a chat window. Buy the runtime; own policy, eval, and audit.',
-  },
-  mcp_vs_api: {
-    badgeLabel: 'CONNECTOR SURFACE',
-    leftTitle: 'Protocol as permission',
-    rightTitle: 'Permissioned mix',
-    leftItems: ['MCP everywhere', 'Skip eval and send gates', 'Desktop catalog in production'],
-    rightItems: ['MCP for shared contracts', 'Custom APIs for isolation', 'Same allowlist, eval, gates'],
-    leftAccent: AMBER,
-    rightAccent: brand.colors.brandAccent,
-    footer: 'Use for: connector-surface choice · regulated agent pilots · allowlisted hybrid',
-    defaultSubtitle: 'MCP for shared contracts; custom APIs for isolation—same gates.',
   },
 };
 
@@ -227,7 +216,7 @@ function compareRows(cfg, compact) {
         flexDirection: 'row',
         width: '100%',
         alignItems: 'stretch',
-        gap: compact ? '8px' : '12px',
+        columnGap: compact ? '8px' : '12px',
       },
     },
     compareColumn(
@@ -317,17 +306,18 @@ function heroDiagram(cfg) {
 }
 
 function ogDiagram(cfg) {
-  return h(
-    'div',
-    {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        maxWidth: '520px',
+  return ogWorksheetShell(
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
       },
-    },
-    compareRows(cfg, true)
+      compareRows(cfg, true)
+    )
   );
 }
 
@@ -346,6 +336,7 @@ export function buildSplitCompareOg(props) {
   const cfg = resolvePreset(props);
   return articleOgFrameWithDiagram({
     category: props.category || 'Opinion',
+    badgeLabel: cfg.badgeLabel,
     title: props.title,
     subtitle: props.subtitle || cfg.defaultSubtitle,
     diagram: ogDiagram(cfg),

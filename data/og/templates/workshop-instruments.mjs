@@ -5,6 +5,7 @@ import {
   articleHeroFrame,
   articleOgFrameWithDiagram,
   panelBox,
+  ogWorksheetShell,
 } from './base.mjs';
 
 const d = typography.hero.diagram;
@@ -77,7 +78,7 @@ function surfaceCell(row, opts = {}) {
         flexDirection: 'column',
         flex,
         padding: compact ? '6px 8px' : '10px 12px',
-        gap: '2px',
+        rowGap: '2px',
         borderBottom: `1px solid ${brand.colors.borderDark}`,
         minWidth: '0',
       },
@@ -170,72 +171,71 @@ function dataRow(row, compact) {
 }
 
 function worksheet(compact) {
-  return panelBox(
+  const inner = h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        maxWidth: compact ? '520px' : '780px',
+      },
+    },
     h(
       'div',
       {
         style: {
           display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          maxWidth: compact ? '520px' : '780px',
+          color: brand.colors.textOnDark,
+          fontSize: px(compact ? od.moduleTitle : d.title + 2),
+          fontWeight: 700,
+          marginBottom: '4px',
         },
       },
-      h(
-        'div',
-        {
-          style: {
-            display: 'flex',
-            color: brand.colors.textOnDark,
-            fontSize: px(compact ? od.moduleTitle : d.title + 2),
-            fontWeight: 700,
-            marginBottom: '4px',
-          },
-        },
-        PANEL_TITLE
-      ),
-      h(
-        'div',
-        {
-          style: {
-            display: 'flex',
-            color: brand.colors.textOnDarkMuted,
-            fontSize: px(compact ? od.moduleDesc : d.caption),
-            marginBottom: compact ? '10px' : '14px',
-            lineHeight: 1.35,
-          },
-        },
-        PANEL_SUBTITLE
-      ),
-      headerRow(compact),
-      ...ROWS.map((row) => dataRow(row, compact)),
-      compact
-        ? null
-        : h(
-            'div',
-            {
-              style: {
-                display: 'flex',
-                marginTop: '14px',
-                paddingTop: '12px',
-                borderTop: `1px solid ${brand.colors.borderDark}`,
-                color: brand.colors.textOnDarkMuted,
-                fontSize: px(d.caption - 1),
-                letterSpacing: '0.01em',
-              },
-            },
-            FOOTER
-          )
+      PANEL_TITLE
     ),
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          color: brand.colors.textOnDarkMuted,
+          fontSize: px(compact ? od.moduleDesc : d.caption),
+          marginBottom: compact ? '10px' : '14px',
+          lineHeight: 1.35,
+        },
+      },
+      PANEL_SUBTITLE
+    ),
+    headerRow(compact),
+    ...ROWS.map((row) => dataRow(row, compact)),
     compact
-      ? { padding: '12px 14px' }
-      : {
-          padding: '22px 26px',
-          boxShadow: '0 20px 48px rgba(0, 0, 0, 0.45)',
-          border: '1px solid rgba(251, 191, 36, 0.35)',
-          borderTop: `3px solid ${brand.colors.brandAccent}`,
-        }
+      ? null
+      : h(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              marginTop: '14px',
+              paddingTop: '12px',
+              borderTop: `1px solid ${brand.colors.borderDark}`,
+              color: brand.colors.textOnDarkMuted,
+              fontSize: px(d.caption - 1),
+              letterSpacing: '0.01em',
+            },
+          },
+          FOOTER
+        )
   );
+  if (compact) {
+    return ogWorksheetShell(inner);
+  }
+  return panelBox(inner, {
+    padding: '22px 26px',
+    boxShadow: '0 20px 48px rgba(0, 0, 0, 0.45)',
+    border: '1px solid rgba(251, 191, 36, 0.35)',
+    borderTop: `3px solid ${brand.colors.brandAccent}`,
+  });
 }
 
 function workshopDiagram() {
@@ -282,6 +282,7 @@ export function buildWorkshopInstruments(props) {
 export function buildWorkshopInstrumentsOg(props) {
   return articleOgFrameWithDiagram({
     category: props.category || 'Implementation Notes',
+    badgeLabel: 'WORKSHOP DESIGN',
     title: props.title,
     subtitle: props.subtitle || DEFAULT_SUBTITLE,
     diagram: worksheet(true),
