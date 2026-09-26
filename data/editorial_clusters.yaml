@@ -67,6 +67,7 @@ clusters:
   memory:
     spokes:
       - three-types-of-ai-memory-short
+      - memory-is-not-state
     hub_slugs:
       - memory-types-for-ai-systems
     target_pillar_backlog: null
@@ -87,6 +88,7 @@ clusters:
       - model-context-protocol-enterprise
       - data-boundaries-for-ai-agents
       - audit-trails-for-ai-workflows
+      - when-prompt-injection-becomes-an-action
     target_pillar_backlog: "Model Context Protocol for Enterprise Teams"
 
   orchestration_frameworks:

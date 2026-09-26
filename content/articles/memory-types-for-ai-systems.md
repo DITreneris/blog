@@ -45,7 +45,7 @@ Before you add persistence anywhere, classify what you are storing. The table be
 | **Organizational** | Approved docs, policies, playbooks | Versioned, long-lived | Low when retrieval is governed |
 | **Working (in-prompt)** | Assembled context for one run | Single invocation | Token cost, leakage if over-filled |
 
-**Working memory** is what you assemble for a single model call: task framing, retrieved KB chunks, ticket excerpts. It should be designed explicitly in the context spec, not grown by users pasting more each time. **Organizational memory** is your approved corpus—versioned, tagged, owned by Legal or domain leads. **Session** and **episodic** are where most incidents start: convenience today, bleed tomorrow.
+A saved note can become a later instruction if organizational memory is chat residue. That path is mapped in [When Prompt Injection Becomes an Action](/articles/when-prompt-injection-becomes-an-action/). **Working memory** is what you assemble for a single model call: task framing, retrieved KB chunks, ticket excerpts. It should be designed explicitly in the context spec, not grown by users pasting more each time. **Organizational memory** is your approved corpus—versioned, tagged, owned by Legal or domain leads. **Session** and **episodic** are where most incidents start: convenience today, bleed tomorrow.
 
 ## When to use each type
 

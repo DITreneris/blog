@@ -74,6 +74,11 @@ import {
   buildMcpConnectorSurface,
   buildMcpConnectorSurfaceOg,
 } from './mcp-connector-surface.mjs';
+import {
+  buildInjectionActionPaths,
+  buildInjectionActionPathsOg,
+} from './injection-action-paths.mjs';
+import { buildMemoryVsState, buildMemoryVsStateOg } from './memory-vs-state.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -138,6 +143,10 @@ export const TEMPLATES = {
   'workshop-instruments-og': buildWorkshopInstrumentsOg,
   'mcp-connector-surface': buildMcpConnectorSurface,
   'mcp-connector-surface-og': buildMcpConnectorSurfaceOg,
+  'injection-action-paths': buildInjectionActionPaths,
+  'injection-action-paths-og': buildInjectionActionPathsOg,
+  'memory-vs-state': buildMemoryVsState,
+  'memory-vs-state-og': buildMemoryVsStateOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

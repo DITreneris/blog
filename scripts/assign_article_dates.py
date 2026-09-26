@@ -104,6 +104,7 @@ PUBLICATION_ORDER: list[str] = [
     "buy-vs-build-agent-stack",
     "a-shortlist-not-another-inbox",
     "mcp-vs-custom-tool-apis-regulated",
+    "when-prompt-injection-becomes-an-action",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -152,10 +153,11 @@ FIXED_DATES: dict[str, date] = {
     "buy-vs-build-agent-stack": date(2026, 9, 10),
     "a-shortlist-not-another-inbox": date(2026, 9, 12),
     "mcp-vs-custom-tool-apis-regulated": date(2026, 9, 13),
+    "when-prompt-injection-becomes-an-action": date(2026, 9, 25),
 }
 
-# Latest allowed publish date (MCP vs custom APIs playbook 2026-09-13)
-PUBLISH_CUTOFF = date(2026, 9, 13)
+# Latest allowed publish date (prompt-injection action-path playbook 2026-09-25)
+PUBLISH_CUTOFF = date(2026, 9, 25)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

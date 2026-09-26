@@ -36,9 +36,9 @@ This pillar upgrades the visual primer [Three Types of RAG](/articles/three-type
 |------|------|----------|--------------|
 | **Basic** | query → search approved docs → answer | Stable KBs, internal FAQs, support macros | Wrong chunk → fluent error; needs held-out eval |
 | **Smart** | query → retrieve → refine/rerank → answer | Noisy corpora, long PDFs, mixed wikis | Extra latency/cost; prove accuracy lift |
-| **Agentic** | query → plan → tools → verify → answer | Bounded research with human send gates | Tool misuse, loops, unaudited side effects |
+| **Agentic** | query → plan → tools → verify → answer | Bounded research with human send gates | Tool misuse, loops, unaudited side effects; a chunk can carry an instruction |
 
-The ladder is a **risk map**, not a maturity insult. Many workflows should stay on basic for years. Others need refinement when the corpus is noisy. Agentic patterns belong where accountability matches step count—not where leadership saw a green box on a slide.
+The ladder is a **risk map**, not a maturity insult. Many workflows should stay on basic for years. Others need refinement when the corpus is noisy. Agentic patterns belong where accountability matches step count—not where leadership saw a green box on a slide. On that tier, a retrieved chunk can carry an instruction; map that path in [When Prompt Injection Becomes an Action](/articles/when-prompt-injection-becomes-an-action/).
 
 Document the active tier in the workflow canvas (`retrieval_tier: basic|smart|agentic`) so incident reviews do not debate what production was supposed to do.
 

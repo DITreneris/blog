@@ -76,7 +76,7 @@ An agent that can call a safe tool with broad scope is still risky. Least privil
 
 ## Control 3: Injection-resistant execution pattern
 
-Prompt injection usually enters through retrieved content, user input, or tool output. Defensive pattern:
+Prompt injection usually enters through retrieved content, user input, or tool output. Which of those inputs can become an action is mapped in [When Prompt Injection Becomes an Action](/articles/when-prompt-injection-becomes-an-action/). This playbook keeps the allowlists and scope. Defensive pattern:
 
 1. Treat all external text as untrusted.
 2. Separate instruction channel from data channel.

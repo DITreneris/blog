@@ -580,6 +580,18 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-memory-is-not-state
+    generator: satori
+    template: memory-vs-state
+    og_template: memory-vs-state-og
+    source: Satori/memory-is-not-state.png
+    slug: memory-is-not-state
+    title: "Memory Is Not State"
+    category: Opinion
+    subtitle: "Memory prepares. Approval allows. A checked result writes done."
+    usage: [hero, og]
+    status: mapped
+
   - id: satori-prompt-registry-playbook
     generator: satori
     template: prompt-registry
@@ -978,6 +990,18 @@ illustrations:
     category: AI Agents
     subtitle: "Hybrid is the regulated default — two surfaces, one policy."
     og_template: mcp-connector-surface-og
+    usage: [hero, og]
+    status: mapped
+
+  - id: satori-when-prompt-injection-becomes-an-action
+    generator: satori
+    template: injection-action-paths
+    source: Satori/when-prompt-injection-becomes-an-action.png
+    slug: when-prompt-injection-becomes-an-action
+    title: "When Prompt Injection Becomes an Action"
+    subtitle: "Untrusted content must not expand the agent's authority."
+    category: AI Governance
+    og_template: injection-action-paths-og
     usage: [hero, og]
     status: mapped
 

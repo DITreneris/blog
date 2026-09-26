@@ -29,7 +29,7 @@ tags:
 title: Data Boundaries for AI Agents
 ---
 
-Agents that can "read everything" eventually read the wrong thing. **Data boundaries** define what an agent may retrieve, write, or infer—and what always requires a human. Prompt text alone is not enforcement; the integration layer must fail closed when a workflow requests a denied resource. Teams that learn this after a near-miss usually fix prompts first; auditors ask about connector configuration.
+Retrieved text is hostile input, not a softer kind of instruction. The matrix below is the isolate step; the path map is [When Prompt Injection Becomes an Action](/articles/when-prompt-injection-becomes-an-action/). Agents that can "read everything" eventually read the wrong thing. **Data boundaries** define what an agent may retrieve, write, or infer—and what always requires a human. Prompt text alone is not enforcement; the integration layer must fail closed when a workflow requests a denied resource. Teams that learn this after a near-miss usually fix prompts first; auditors ask about connector configuration.
 
 **Northline B2B** documents boundaries for `support-reply-v3` and a pilot routing agent. This article explains default-deny design, a filled allow/deny matrix, policy triggers that force human review, and how to expand access with eval evidence—not optimism.
 

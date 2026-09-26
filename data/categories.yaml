@@ -29,6 +29,7 @@ categories:
       - slug: data-boundaries-for-ai-agents
       - slug: audit-trails-for-ai-workflows
       - slug: ai-risk-review-cadence
+      - slug: when-prompt-injection-becomes-an-action
       - slug: securing-mcp-agent-tools
   - title: "Implementation Notes"
     slug: "implementation-notes"
@@ -101,6 +102,7 @@ categories:
       - slug: when-ai-hallucinates-confidence
       - slug: three-types-of-rag
       - slug: three-types-of-ai-memory-short
+      - slug: memory-is-not-state
       - slug: what-scales-ai-beyond-basics
       - slug: from-prompt-to-agent
       - slug: prompt-engineering-memes-vs-reality
