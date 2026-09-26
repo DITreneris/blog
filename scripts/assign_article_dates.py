@@ -105,6 +105,7 @@ PUBLICATION_ORDER: list[str] = [
     "a-shortlist-not-another-inbox",
     "mcp-vs-custom-tool-apis-regulated",
     "when-prompt-injection-becomes-an-action",
+    "memory-is-not-state",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -154,10 +155,11 @@ FIXED_DATES: dict[str, date] = {
     "a-shortlist-not-another-inbox": date(2026, 9, 12),
     "mcp-vs-custom-tool-apis-regulated": date(2026, 9, 13),
     "when-prompt-injection-becomes-an-action": date(2026, 9, 25),
+    "memory-is-not-state": date(2026, 9, 26),
 }
 
-# Latest allowed publish date (prompt-injection action-path playbook 2026-09-25)
-PUBLISH_CUTOFF = date(2026, 9, 25)
+# Latest allowed publish date (memory-is-not-state Opinion 2026-09-26)
+PUBLISH_CUTOFF = date(2026, 9, 26)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
