@@ -23,7 +23,7 @@ tags:
 - eval
 - governance
 title: Evaluation Hooks for AI Workflows
-modified: 2026-09-10
+modified: 2026-09-28
 ---
 
 **Evaluation hooks** are pass/fail gates—like unit tests for workflows—run before every prompt, context, model, or connector change promotes to production. A fluent demo draft is not evidence; neither is "the team loves it." Without hooks, teams scale AI on anecdotes until a bad output reaches a customer.
@@ -32,7 +32,7 @@ If your organization buys faster models while eval is optional, read [The Model 
 
 ## Where eval sits in the stack
 
-Workflow defines steps; context architecture defines what the model may see; the model generates text; **evaluation** decides whether that text is good enough to proceed; governance decides who may change any of the above. Skipping eval means you are testing in production on customers—a choice that should be explicit in the risk register, not accidental.
+Workflow defines steps; [context architecture](/articles/what-is-context-architecture/) defines what the model may see; the model generates text; **evaluation** decides whether that text is good enough to proceed; governance decides who may change any of the above. Skipping eval means you are testing in production on customers—a choice that should be explicit in the risk register, not accidental.
 
 Eval is not a one-time pilot exercise. Every prompt version bump, policy pack change, retrieval index rebuild, and model vendor trial should trigger the **same** case set (plus new cases from incidents). [Structured prompt system](/articles/structured-prompt-system-blueprint/) registry rows should reference `eval_set_id` and `min_pass_rate` so promotion is a data decision, not a meeting vibe.
 
