@@ -22,3 +22,6 @@ Blog Knowledge Hub Design Brief.rtf
 
 # Development documentation
 docs/
+
+# Local Search Console exports (not site content)
+data/GSC/

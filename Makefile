@@ -37,7 +37,10 @@ validate-satori:
 validate-brand:
 	$(PYTHON) scripts/validate_brand_sync.py
 
-validate: validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality validate-satori validate-llms-citations
+validate: validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality validate-satori validate-llms-citations validate-article-dates
+
+validate-article-dates:
+	$(PYTHON) -m unittest scripts.test_assign_article_dates
 
 validate-llms-citations:
 	$(PYTHON) scripts/sync_llms_citations.py --check

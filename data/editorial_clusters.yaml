@@ -32,6 +32,7 @@ clusters:
       - tokens-as-fuel-for-ai-output
       - tokens-and-context-window-limits
       - five-levels-of-ai-control
+      - context-engineering-vs-context-architecture-regulated
     hub_slugs:
       - grounding-ai-outputs
       - what-is-context-architecture

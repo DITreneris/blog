@@ -113,6 +113,7 @@ categories:
       - slug: the-model-is-not-the-system
       - slug: prompt-anatomy-foundations
       - slug: what-is-context-architecture
+      - slug: context-engineering-vs-context-architecture-regulated
       - slug: grounding-ai-outputs
       - slug: context-rot-why-bigger-windows-make-agents-worse
       - slug: rag-in-production

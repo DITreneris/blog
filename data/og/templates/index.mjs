@@ -79,6 +79,10 @@ import {
   buildInjectionActionPathsOg,
 } from './injection-action-paths.mjs';
 import { buildMemoryVsState, buildMemoryVsStateOg } from './memory-vs-state.mjs';
+import {
+  buildContextEngineeringDecision,
+  buildContextEngineeringDecisionOg,
+} from './context-engineering-decision.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -147,6 +151,8 @@ export const TEMPLATES = {
   'injection-action-paths-og': buildInjectionActionPathsOg,
   'memory-vs-state': buildMemoryVsState,
   'memory-vs-state-og': buildMemoryVsStateOg,
+  'context-engineering-decision': buildContextEngineeringDecision,
+  'context-engineering-decision-og': buildContextEngineeringDecisionOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

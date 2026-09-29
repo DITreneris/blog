@@ -993,6 +993,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-context-engineering-vs-context-architecture-regulated
+    generator: satori
+    template: context-engineering-decision
+    source: Satori/context-engineering-vs-context-architecture-regulated.png
+    slug: context-engineering-vs-context-architecture-regulated
+    title: "Context Engineering vs Context Architecture for Regulated Teams"
+    satori_title: "Context Engineering vs Architecture"
+    category: Framework
+    subtitle: "Check what the model saw before you blame the pack."
+    og_template: context-engineering-decision-og
+    usage: [hero, og]
+    status: mapped
+
   - id: satori-when-prompt-injection-becomes-an-action
     generator: satori
     template: injection-action-paths

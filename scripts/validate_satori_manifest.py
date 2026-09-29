@@ -80,6 +80,8 @@ KNOWN_TEMPLATES = frozenset(
         "injection-action-paths-og",
         "memory-vs-state",
         "memory-vs-state-og",
+        "context-engineering-decision",
+        "context-engineering-decision-og",
         "og-default",
         "category-default",
         "article-og",

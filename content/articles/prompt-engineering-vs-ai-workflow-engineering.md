@@ -30,7 +30,7 @@ tags:
 - workflow-automation
 - context-engineering
 title: Prompt Engineering vs AI Workflow Engineering
-modified: 2026-09-10
+modified: 2026-09-29
 ---
 
 **Prompt engineering** optimizes one model call—tone, format, and guardrails in a template. **AI workflow engineering** designs the system around that call: triggers, context, handoffs, evaluation, logging, and ownership so the same task stays repeatable under real operations. Teams confuse the two because both happen in chat UIs; vendors blur them because prompt libraries are easier to sell than RACI.
@@ -60,7 +60,7 @@ Version prompts in a [registry](/articles/structured-prompt-system-blueprint/) w
 
 Context engineering sits between raw data and the prompt template. It answers: **Which documents load?** **Which fields are forbidden?** **Which policy pack version applies?** **How much history fits before quality degrades?** A perfect task-framing prompt still fails when retrieval returns the wrong KB article or when a stale policy pack contradicts Legal's current wording.
 
-Mature programs treat context as versioned artifacts—same rigor as prompt IDs. Allow lists live in connector config, not wishes in prose. Memory windows are bounded; "just add more context" is how teams trigger context rot without noticing until eval pass rate slips. Context engineering pairs with [what is context architecture](/articles/what-is-context-architecture/) before anyone proposes a longer system message.
+Mature programs treat context as versioned artifacts—same rigor as prompt IDs. Allow lists live in connector config, not wishes in prose. Memory windows are bounded; "just add more context" is how teams trigger context rot without noticing until eval pass rate slips. Context engineering pairs with [what is context architecture](/articles/what-is-context-architecture/) before anyone proposes a longer system message. When the question is which check comes first, the pack or the spec, use [context engineering versus context architecture](/articles/context-engineering-vs-context-architecture-regulated/).
 
 When quality varies by **customer segment or data source** but not by operator skill, you likely have a context problem. When it varies by operator on identical inputs, capture the expert's template after workflow exists—do not skip straight to registry semver.
 

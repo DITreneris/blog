@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Assign realistic publish dates from a fixed editorial order.
+"""Assign publish dates from a fixed editorial order.
 
-Start: 2024-01-06, ~24-day cadence (jittered) for legacy curriculum; compressed
-cadence for wave-2 keyword posts ending by ``PUBLISH_CUTOFF`` (no Jun–Aug future
-dates when the catalog is frozen). Manual exceptions in ``FIXED_DATES`` are
-preserved. Northline Part 2 lands ~7 weeks after Part 1.
+Legacy curriculum starts 2024-01-06 on a ~24-day cadence. Wave 2 is a one-day
+cadence anchored at ``WAVE2_START`` (the on-disk date of the first wave post).
+``PUBLISH_CUTOFF`` is a ceiling only: raising it for a new ``FIXED_DATES`` row
+must not slide wave 2 or the drafts that follow that wave. Manual exceptions in
+``FIXED_DATES`` are preserved. Northline Part 2 lands ~7 weeks after Part 1.
 """
 from __future__ import annotations
 
@@ -106,9 +107,21 @@ PUBLICATION_ORDER: list[str] = [
     "mcp-vs-custom-tool-apis-regulated",
     "when-prompt-injection-becomes-an-action",
     "memory-is-not-state",
+    "context-engineering-vs-context-architecture-regulated",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
+# On-disk date of WAVE2_START_SLUG. Do not derive this from PUBLISH_CUTOFF.
+WAVE2_START = date(2026, 5, 29)
+
+# Inserted into the curriculum order without taking a cadence slot. Their
+# publish dates stay in FIXED_DATES. shipping-prompt-anatomy does take a slot.
+CADENCE_EXEMPT = frozenset(
+    {
+        "six-block-prompt-system",
+        "six-block-canvas-template",
+    }
+)
 
 # Drafts continue the cadence after published catalog (not shown on site while draft)
 DRAFT_ORDER: list[str] = [
@@ -123,7 +136,7 @@ DRAFT_ORDER: list[str] = [
 ]
 
 INTERVAL_DAYS = [22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23, 22, 24, 21, 23]
-# One-day steps: 20 wave posts land May 12 → May 31 (catalog frozen 2026-06-06)
+# One-day steps from WAVE2_START. Twenty posts: 2026-05-29 → 2026-06-17.
 WAVE2_INTERVAL_DAYS = [1]
 
 FIXED_DATES: dict[str, date] = {
@@ -156,10 +169,11 @@ FIXED_DATES: dict[str, date] = {
     "mcp-vs-custom-tool-apis-regulated": date(2026, 9, 13),
     "when-prompt-injection-becomes-an-action": date(2026, 9, 25),
     "memory-is-not-state": date(2026, 9, 26),
+    "context-engineering-vs-context-architecture-regulated": date(2026, 9, 29),
 }
 
-# Latest allowed publish date (memory-is-not-state Opinion 2026-09-26)
-PUBLISH_CUTOFF = date(2026, 9, 26)
+# Latest allowed publish date (context-engineering playbook 2026-09-29)
+PUBLISH_CUTOFF = date(2026, 9, 29)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
@@ -200,12 +214,27 @@ def _schedule_to_end(slugs: list[str], end: date, intervals: list[int]) -> dict[
     return _schedule(slugs, end - timedelta(days=span), intervals)
 
 
+def _wave_slugs() -> list[str]:
+    wave_idx = PUBLICATION_ORDER.index(WAVE2_START_SLUG)
+    return [s for s in PUBLICATION_ORDER[wave_idx:] if s not in FIXED_DATES]
+
+
+def _last_wave_date() -> date:
+    """Last daily-wave post. Later FIXED_DATES must not move this."""
+    count = len(_wave_slugs())
+    if count == 0:
+        return WAVE2_START
+    return WAVE2_START + timedelta(days=count - 1)
+
+
 def _build_publication_dates() -> dict[str, date]:
     wave_idx = PUBLICATION_ORDER.index(WAVE2_START_SLUG)
     tail_start_idx = PUBLICATION_ORDER.index("prompt-engineering-memes-vs-reality")
-    legacy_main = PUBLICATION_ORDER[:tail_start_idx]
+    legacy_main = [
+        s for s in PUBLICATION_ORDER[:tail_start_idx] if s not in CADENCE_EXEMPT
+    ]
     legacy_tail = PUBLICATION_ORDER[tail_start_idx:wave_idx]
-    wave_slugs = [s for s in PUBLICATION_ORDER[wave_idx:] if s not in FIXED_DATES]
+    wave_slugs = _wave_slugs()
 
     out = _schedule(legacy_main, START, INTERVAL_DAYS)
 
@@ -220,15 +249,14 @@ def _build_publication_dates() -> dict[str, date]:
         d += timedelta(days=INTERVAL_DAYS[i % len(INTERVAL_DAYS)])
         out[slug] = d
 
-    wave_start = PUBLISH_CUTOFF - timedelta(days=len(wave_slugs) - 1)
-    tail_dates = _schedule_to_end(legacy_tail, wave_start - timedelta(days=1), INTERVAL_DAYS)
-    if min(tail_dates.values()) <= out["five-levels-of-ai-control"]:
+    tail_dates = _schedule_to_end(legacy_tail, WAVE2_START - timedelta(days=1), INTERVAL_DAYS)
+    if tail_dates and min(tail_dates.values()) <= out["five-levels-of-ai-control"]:
         raise ValueError(
-            "Legacy opinion tail overlaps five-levels; widen PUBLISH_CUTOFF or shorten legacy tail."
+            "Legacy opinion tail overlaps five-levels; move WAVE2_START later or shorten the legacy tail."
         )
     out.update(tail_dates)
 
-    wave_dates = _schedule(wave_slugs, wave_start, WAVE2_INTERVAL_DAYS)
+    wave_dates = _schedule(wave_slugs, WAVE2_START, WAVE2_INTERVAL_DAYS)
     out.update(wave_dates)
     out.update(FIXED_DATES)
 
@@ -239,6 +267,19 @@ def _build_publication_dates() -> dict[str, date]:
             + ", ".join(f"{s}={d.isoformat()}" for s, d in sorted(over.items(), key=lambda x: x[1]))
         )
     return out
+
+
+def _build_draft_dates() -> dict[str, date]:
+    """Drafts continue after the daily wave, not after the latest fixed date."""
+    draft_start = _last_wave_date() + timedelta(days=INTERVAL_DAYS[0])
+    return _schedule(DRAFT_ORDER, draft_start, INTERVAL_DAYS)
+
+
+def _frontmatter_date(text: str) -> date | None:
+    match = re.search(r"^date:\s*(\d{4}-\d{2}-\d{2})\s*$", text, flags=re.M)
+    if not match:
+        return None
+    return date.fromisoformat(match.group(1))
 
 
 def _modified_for(slug: str, pub: date) -> date | None:
@@ -274,10 +315,9 @@ def _patch_frontmatter(text: str, pub: date, mod: date | None) -> str:
 
 def main() -> int:
     pub_dates = _build_publication_dates()
-    last_pub = max(pub_dates.values())
-    draft_start = last_pub + timedelta(days=INTERVAL_DAYS[0])
-    draft_dates = _schedule(DRAFT_ORDER, draft_start, INTERVAL_DAYS)
+    draft_dates = _build_draft_dates()
     all_dates = {**pub_dates, **draft_dates}
+    last_pub = max(pub_dates.values())
 
     md_files = {p.stem: p for p in ARTICLES.glob("*.md")}
     missing = [s for s in all_dates if s not in md_files]
@@ -289,18 +329,27 @@ def main() -> int:
     if extra:
         print("Articles not in schedule (unchanged):", ", ".join(sorted(extra)), file=sys.stderr)
 
+    changed = 0
     for slug in PUBLICATION_ORDER + DRAFT_ORDER:
         if slug not in all_dates:
             continue
         pub = all_dates[slug]
         path = md_files[slug]
+        text = path.read_text(encoding="utf-8")
+        if _frontmatter_date(text) == pub:
+            continue
         mod = _modified_for(slug, pub)
-        new_text = _patch_frontmatter(path.read_text(encoding="utf-8"), pub, mod)
+        new_text = _patch_frontmatter(text, pub, mod)
         path.write_text(new_text, encoding="utf-8")
+        changed += 1
         print(f"{pub.isoformat()}  {slug}")
 
-    print(f"\nPublished span: {START.isoformat()} -> {last_pub.isoformat()}")
+    print(f"Published span: {START.isoformat()} -> {last_pub.isoformat()}")
     print(f"Draft span continues -> {max(draft_dates.values()).isoformat()}")
+    if changed == 0:
+        print("Publish dates already match the schedule.")
+    else:
+        print(f"Updated {changed} article(s).")
     return 0
 
 
