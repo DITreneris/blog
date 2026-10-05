@@ -76,7 +76,7 @@
   --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
   --text-hero: clamp(2rem, 3.5vw + 0.75rem, 3.75rem);
   --text-section: clamp(1.75rem, 2vw + 1rem, 2.75rem);
-  --text-article-title: clamp(2.125rem, 3vw + 1rem, 4rem);
+  --text-article-title: clamp(2.125rem, 2.4vw + 1rem, 3rem);
   --text-featured-title: clamp(2rem, 3vw + 1rem, 2.75rem);
   --text-body: 1.125rem;
   --text-small: 0.9375rem;
