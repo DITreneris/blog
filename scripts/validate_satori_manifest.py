@@ -82,6 +82,8 @@ KNOWN_TEMPLATES = frozenset(
         "memory-vs-state-og",
         "context-engineering-decision",
         "context-engineering-decision-og",
+        "runtime-kept",
+        "runtime-kept-og",
         "og-default",
         "category-default",
         "article-og",

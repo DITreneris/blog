@@ -1018,6 +1018,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-northline-part-3-runtime-kept
+    generator: satori
+    template: runtime-kept
+    og_template: runtime-kept-og
+    source: Satori/northline-part-3-runtime-kept.png
+    slug: northline-part-3-runtime-kept
+    title: "Northline Part 3"
+    satori_title: "Northline Part 3"
+    category: Case Studies
+    subtitle: "Rent the host. Withhold the production pin."
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

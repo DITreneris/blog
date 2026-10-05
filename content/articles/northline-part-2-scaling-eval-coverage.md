@@ -105,4 +105,4 @@ If you are at pilot pass rate but leadership wants full queue coverage:
 
 ## Where to go next
 
-[Part 1 case study](/articles/case-study-vibe-prompting-to-structured-workflow/) for foundation. [Prompt registry playbook](/articles/prompt-registry-playbook/) for release discipline. [RAG in Production](/articles/rag-in-production/) when retrieval tier changes are proposed during scale. [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) if side pilots reappear while you scale.
+[Part 3](/articles/northline-part-3-runtime-kept/) is the renewal: the host stayed, and a failed smoke job still holds the production pin. [Part 1 case study](/articles/case-study-vibe-prompting-to-structured-workflow/) for foundation. [Prompt registry playbook](/articles/prompt-registry-playbook/) for release discipline. [RAG in Production](/articles/rag-in-production/) when retrieval tier changes are proposed during scale. [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/) if side pilots reappear while you scale.

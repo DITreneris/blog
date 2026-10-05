@@ -83,6 +83,7 @@ import {
   buildContextEngineeringDecision,
   buildContextEngineeringDecisionOg,
 } from './context-engineering-decision.mjs';
+import { buildRuntimeKept, buildRuntimeKeptOg } from './runtime-kept.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -153,6 +154,8 @@ export const TEMPLATES = {
   'memory-vs-state-og': buildMemoryVsStateOg,
   'context-engineering-decision': buildContextEngineeringDecision,
   'context-engineering-decision-og': buildContextEngineeringDecisionOg,
+  'runtime-kept': buildRuntimeKept,
+  'runtime-kept-og': buildRuntimeKeptOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

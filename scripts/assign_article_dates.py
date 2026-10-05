@@ -108,6 +108,7 @@ PUBLICATION_ORDER: list[str] = [
     "when-prompt-injection-becomes-an-action",
     "memory-is-not-state",
     "context-engineering-vs-context-architecture-regulated",
+    "northline-part-3-runtime-kept",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -170,10 +171,11 @@ FIXED_DATES: dict[str, date] = {
     "when-prompt-injection-becomes-an-action": date(2026, 9, 25),
     "memory-is-not-state": date(2026, 9, 26),
     "context-engineering-vs-context-architecture-regulated": date(2026, 9, 29),
+    "northline-part-3-runtime-kept": date(2026, 10, 4),
 }
 
-# Latest allowed publish date (context-engineering playbook 2026-09-29)
-PUBLISH_CUTOFF = date(2026, 9, 29)
+# Latest allowed publish date (Northline Part 3 2026-10-04)
+PUBLISH_CUTOFF = date(2026, 10, 4)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 
