@@ -20,25 +20,9 @@ AUTHOR_SOURCE_NAMES = (
 AUTHOR_MASTER_NAMES = ("author.jpg", "author.jpeg", "author.png", "author.webp")
 AUTHOR_AVATAR_SIZE = 400
 
-# Brand colors (asset-only; not used in CSS templates)
-BG_TOP = (5, 13, 20)
-BG_BOTTOM = (16, 59, 90)
-GOLD = (251, 211, 4)
-
-
-def _vertical_gradient(width: int, height: int):
-    from PIL import Image
-
-    img = Image.new("RGB", (width, height))
-    pixels = img.load()
-    for y in range(height):
-        t = y / max(height - 1, 1)
-        r = int(BG_TOP[0] + (BG_BOTTOM[0] - BG_TOP[0]) * t)
-        g = int(BG_TOP[1] + (BG_BOTTOM[1] - BG_TOP[1]) * t)
-        b = int(BG_TOP[2] + (BG_BOTTOM[2] - BG_TOP[2]) * t)
-        for x in range(width):
-            pixels[x, y] = (r, g, b)
-    return img
+# Lockup paint from the spoke brand manual. Flat navy tile, gold bolt.
+NAVY = (11, 19, 32)
+GOLD = (207, 167, 58)
 
 
 def _draw_bolt(draw, cx: int, cy: int, scale: float) -> None:
@@ -58,16 +42,12 @@ def _draw_bolt(draw, cx: int, cy: int, scale: float) -> None:
 def _icon_image(size: int):
     from PIL import Image, ImageDraw
 
-    img = _vertical_gradient(size, size)
+    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
-    inset = size * 0.08
-    radius = size * 0.25
-    draw.rounded_rectangle(
-        (inset, inset, size - inset, size - inset),
-        radius=radius,
-        outline=None,
-    )
-    _draw_bolt(draw, int(size * 0.125), int(size * 0.09), size / 32)
+    # favicon.svg is rx 8 on a 32 viewBox. The in-page mark uses 12.
+    radius = size * (8 / 32)
+    draw.rounded_rectangle((0, 0, size - 1, size - 1), radius=radius, fill=NAVY + (255,))
+    _draw_bolt(draw, int(size * 4 / 32), int(size * 3 / 32), size / 32)
     return img
 
 

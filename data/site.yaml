@@ -48,7 +48,7 @@ cta:
   external: true
 
 footer:
-  tagline: "Practical AI operating system for teams: frameworks, templates, playbooks, and implementation notes."
+  tagline: "Practical frameworks, templates, playbooks, and implementation notes for teams."
   founder_label: "Founded by Tomas Staniulis"
   founder_href: "/about/"
   entity_line: "Part of Prompt Anatomy · Training & checkout → promptanatomy.app"

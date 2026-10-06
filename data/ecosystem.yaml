@@ -1,5 +1,5 @@
 title: "Hub: choose your direction"
-paragraph: "One AI operating system for learning, daily work, automation, marketing, HR, operations, and decisions—plus Corporate Ladder for play."
+paragraph: "One training system for learning, daily work, automation, marketing, HR, operations, and decisions—plus Corporate Ladder for play."
 image: images/hub/ecosystem.png
 image_alt: "Hub-and-spoke diagram of the Prompt Anatomy ecosystem—promptanatomy.app at the center with spokes for learning, workflows, marketing, HR, operations, decisions, and Corporate Ladder on promptanatomy.lol."
 cta_label: "Plans and access"
@@ -10,7 +10,7 @@ cards:
     url: "https://www.promptanatomy.cloud/"
     theme: 3
   - title: "Knowledge Hub"
-    outcome: "Learn — training, methodology, and the AI operating system."
+    outcome: "Learn — training, methodology, and practice."
     url: "https://www.promptanatomy.app/"
     theme: 2
   - title: "Daily Workflow Library"

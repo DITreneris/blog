@@ -22,9 +22,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  font-weight: 700;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
   font-size: 1.125rem;
-  color: var(--color-text-primary);
+  color: var(--color-brand-dark);
   text-decoration: none;
   letter-spacing: -0.02em;
 }
