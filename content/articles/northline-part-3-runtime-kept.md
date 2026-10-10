@@ -88,3 +88,5 @@ Re-running the case is the other check. The next prompt change had to pass smoke
 4. Renew the host after those two checks exist.
 
 Copy-paste gates for the job: [AI Workflow Eval Checklist](/articles/ai-workflow-eval-checklist/).
+
+Later, [Part 4](/articles/northline-part-4-second-workflow/) puts a credit draft on that host. A copied support check can pass while the amount, the customer, and the basis are still wrong.

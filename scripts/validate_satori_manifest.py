@@ -84,6 +84,8 @@ KNOWN_TEMPLATES = frozenset(
         "context-engineering-decision-og",
         "runtime-kept",
         "runtime-kept-og",
+        "second-workflow",
+        "second-workflow-og",
         "og-default",
         "category-default",
         "article-og",

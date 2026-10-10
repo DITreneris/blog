@@ -109,6 +109,7 @@ PUBLICATION_ORDER: list[str] = [
     "memory-is-not-state",
     "context-engineering-vs-context-architecture-regulated",
     "northline-part-3-runtime-kept",
+    "northline-part-4-second-workflow",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -172,10 +173,11 @@ FIXED_DATES: dict[str, date] = {
     "memory-is-not-state": date(2026, 9, 26),
     "context-engineering-vs-context-architecture-regulated": date(2026, 9, 29),
     "northline-part-3-runtime-kept": date(2026, 10, 4),
+    "northline-part-4-second-workflow": date(2026, 10, 10),
 }
 
-# Latest allowed publish date (Northline Part 3 2026-10-04)
-PUBLISH_CUTOFF = date(2026, 10, 4)
+# Latest allowed publish date (Northline Part 4 2026-10-10)
+PUBLISH_CUTOFF = date(2026, 10, 10)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

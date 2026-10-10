@@ -1031,6 +1031,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-northline-part-4-second-workflow
+    generator: satori
+    template: second-workflow
+    og_template: second-workflow-og
+    source: Satori/northline-part-4-second-workflow.png
+    slug: northline-part-4-second-workflow
+    title: "The Copied Rule Missed the Credit"
+    satori_title: "The Copied Rule Missed the Credit"
+    category: Case Studies
+    subtitle: "A language check passed. The credit was still wrong."
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

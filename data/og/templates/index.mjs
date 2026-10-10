@@ -84,6 +84,7 @@ import {
   buildContextEngineeringDecisionOg,
 } from './context-engineering-decision.mjs';
 import { buildRuntimeKept, buildRuntimeKeptOg } from './runtime-kept.mjs';
+import { buildSecondWorkflow, buildSecondWorkflowOg } from './second-workflow.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -156,6 +157,8 @@ export const TEMPLATES = {
   'context-engineering-decision-og': buildContextEngineeringDecisionOg,
   'runtime-kept': buildRuntimeKept,
   'runtime-kept-og': buildRuntimeKeptOg,
+  'second-workflow': buildSecondWorkflow,
+  'second-workflow-og': buildSecondWorkflowOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,
