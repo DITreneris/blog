@@ -22,7 +22,7 @@ hero_caption: Diagnostic visual — ten signs that outcomes depend on who asked 
 hero_image: images/articles/10-signs-your-company-is-vibe-prompting/hero.png
 key_takeaway: If four or more signs fire on a customer-facing workflow, treat it as
   systemic and rescore the same ten after you fix the ones already costing rework.
-modified: 2026-09-13
+modified: 2026-10-10
 slug: 10-signs-your-company-is-vibe-prompting
 status: published
 summary: Ten recognizable signs that AI outcomes depend on who asked and which tool
@@ -34,7 +34,7 @@ tags:
 title: 10 Signs Your Company Is Vibe Prompting
 ---
 
-**Vibe prompting** means outcomes depend on who asks, which tool they open, and informal know-how—not on documented workflows. The model may be capable; the organization is not operating a system.
+**Vibe prompting** means outcomes depend on who asks, which tool they open, and informal know-how—not on documented workflows. This page is the Prompt Anatomy definition of that term. The model may be capable; the organization is not operating a system.
 
 A senior AE gets excellent proposal drafts; a new hire gets confident nonsense. Support fixes AI replies every night while leadership celebrates copilot adoption. Compliance hears about AI from a customer complaint, not a design review. Those are not talent gaps. They are the signs below.
 

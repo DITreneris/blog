@@ -70,7 +70,7 @@ They kept claims writes on the already-certified custom API, with tenant injecti
 
 Connectivity is not governance. MCP and custom APIs inherit the same five controls from the [production security baseline for agent tools](/articles/securing-mcp-agent-tools/). Do not copy the Northline injection near-miss from that playbook; that incident is owned there. What this page must say is narrower: the bar does not drop because one surface is "only a protocol."
 
-Treat tool returns and API payloads as untrusted text. Sanitize both before they re-enter a prompt or a write. The allowlist is workflow-scoped, not laptop-scoped. Call-time wrappers inject tenant and case; the model does not get to widen the filter.
+Treat tool returns and API payloads as untrusted text. A document the workflow is allowed to read must not expand what the agent may do; that gate is [when prompt injection becomes an action](/articles/when-prompt-injection-becomes-an-action/). Sanitize both before they re-enter a prompt or a write. The allowlist is workflow-scoped, not laptop-scoped. Call-time wrappers inject tenant and case; the model does not get to widen the filter.
 
 | Control (from securing-mcp) | Applies to MCP | Applies to custom API |
 |-------------------------------|----------------|------------------------|

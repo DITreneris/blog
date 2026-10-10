@@ -65,6 +65,6 @@ If a vendor feature does not map to a row, treat it as **unscoped persistence** 
 
 Teams that dump everything into “memory” get unauditable behavior: session experiments become defaults, profile bleed crosses tenants, system prompts drift without changelog entries.
 
-Separate storage, TTL, and access controls per card — then wire retrieval and boundaries in [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/). Who may change system-level configuration belongs in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/).
+Separate storage, TTL, and access controls per card — then wire retrieval and boundaries in [Data Boundaries for AI Agents](/articles/data-boundaries-for-ai-agents/). A remembered preference may color the draft; only a checked result of this send may be written as done, which is [memory is not state](/articles/memory-is-not-state/). Who may change system-level configuration belongs in [AI Governance Roles and Ownership](/articles/ai-governance-roles-and-ownership/).
 
 When agents promote from assist to tool use, memory scope should shrink before it expands — Northline refused profile blending until ticket-only session memory held pass rate for thirty days on held-out cases.

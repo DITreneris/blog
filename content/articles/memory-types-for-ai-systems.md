@@ -32,7 +32,7 @@ title: Memory Types for AI Systems
 
 Memory in AI systems is not one feature. It is **several mechanisms** with different lifetimes, owners, and risk profiles. Teams that treat "turn on memory" as a product toggle often discover the cost months later: wrong customer context in a reply, policy text from a deprecated pack, or retention that violates a contract they already signed.
 
-[Context architecture](/articles/what-is-context-architecture/) decides which memory type applies where—not how large the prompt window is. The hero on [Three Types of AI Memory](/articles/three-types-of-ai-memory-short/) shows the short/long/system split as a poster; this article names the types in operational detail, gives decision criteria for when each is appropriate, walks through a composite support workflow, and lists failure modes that show up in audits and incident reviews.
+[Context architecture](/articles/what-is-context-architecture/) decides which memory type applies where—not how large the prompt window is. The hero on [Three Types of AI Memory](/articles/three-types-of-ai-memory-short/) shows the short/long/system split as a poster. [Memory is not state](/articles/memory-is-not-state/) keeps a remembered draft from counting as a finished send. This article names the types in operational detail, gives decision criteria for when each is appropriate, walks through a composite support workflow, and lists failure modes that show up in audits and incident reviews.
 
 ## Memory types at a glance
 
