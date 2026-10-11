@@ -52,7 +52,7 @@ Anything the model perceives counts as an input, including text inside an image.
 | Memory | A saved instruction becomes standing guidance in a later session | [Memory types](/articles/memory-types-for-ai-systems/): control what can be saved. Require approval before a note becomes organizational policy |
 | Plans and handoffs | Allowed steps exceed the task, or the next agent inherits a claim of approval | [Handoff rules](/articles/handoff-rules-between-humans-and-ai/): each recipient enforces its own permissions. Do not inherit "already approved" |
 
-An approved source is still a source. Permission to read it is not permission to obey it. An internal wiki can carry a hostile instruction too.
+An approved source is still a source. Permission to read it is not permission to obey it. [If the Agent Believes the Document](/articles/if-the-agent-believes-the-document/) marks each action from that source Allow, Block, or Review. An internal wiki can carry a hostile instruction too.
 
 Read-only tools need the same scrutiny. A search query or a URL can send private data to an outside service without changing a database row. [OpenAI's MCP guidance](https://developers.openai.com/api/docs/guides/tools-connectors-mcp) treats tool-supplied URLs and data shared with a server as leakage paths, including on reads. Removing write tools reduces one risk. It does not close disclosure.
 

@@ -1044,6 +1044,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-if-the-agent-believes-the-document
+    generator: satori
+    template: document-belief-sheet
+    og_template: document-belief-sheet-og
+    source: Satori/if-the-agent-believes-the-document.png
+    slug: if-the-agent-believes-the-document
+    title: "If the Agent Believes the Document"
+    satori_title: "If the Agent Believes the Document"
+    category: AI Governance
+    subtitle: "The document can inform. It cannot authorize."
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

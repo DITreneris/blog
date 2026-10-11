@@ -29,6 +29,7 @@ categories:
       - slug: data-boundaries-for-ai-agents
       - slug: audit-trails-for-ai-workflows
       - slug: ai-risk-review-cadence
+      - slug: if-the-agent-believes-the-document
       - slug: when-prompt-injection-becomes-an-action
       - slug: securing-mcp-agent-tools
   - title: "Implementation Notes"

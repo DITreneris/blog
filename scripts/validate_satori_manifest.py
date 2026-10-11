@@ -86,6 +86,8 @@ KNOWN_TEMPLATES = frozenset(
         "runtime-kept-og",
         "second-workflow",
         "second-workflow-og",
+        "document-belief-sheet",
+        "document-belief-sheet-og",
         "og-default",
         "category-default",
         "article-og",

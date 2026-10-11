@@ -85,6 +85,10 @@ import {
 } from './context-engineering-decision.mjs';
 import { buildRuntimeKept, buildRuntimeKeptOg } from './runtime-kept.mjs';
 import { buildSecondWorkflow, buildSecondWorkflowOg } from './second-workflow.mjs';
+import {
+  buildDocumentBeliefSheet,
+  buildDocumentBeliefSheetOg,
+} from './document-belief-sheet.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -159,6 +163,8 @@ export const TEMPLATES = {
   'runtime-kept-og': buildRuntimeKeptOg,
   'second-workflow': buildSecondWorkflow,
   'second-workflow-og': buildSecondWorkflowOg,
+  'document-belief-sheet': buildDocumentBeliefSheet,
+  'document-belief-sheet-og': buildDocumentBeliefSheetOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,
