@@ -9,6 +9,7 @@ venv/
 *.swp
 .idea/
 node_modules/
+video/
 theme/promptanatomy/static/css/site.min.css
 theme/promptanatomy/static/css/article.min.css
 theme/promptanatomy/static/fonts/

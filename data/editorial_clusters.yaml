@@ -138,6 +138,8 @@ clusters:
       - critique-agent-v10-verified-local-audits
       - critique-agent-field-test-trust-workflow
       - btcbuzzbot-x-publish-loop-field-notes
+      - video-agent-four-bounded-tools-case-study
+      - video-agent-evals-practices-and-growth-case-study
     hub_slugs:
       - the-model-is-not-the-system
       - how-to-design-an-ai-agent-workflow

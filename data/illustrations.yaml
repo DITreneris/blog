@@ -1057,6 +1057,29 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: case-study-video-agent-pipeline
+    manual: true
+    source: vide_agent.png
+    og_source: vide_agent.png
+    slug: video-agent-four-bounded-tools-case-study
+    title: "One Agent and Four Bounded Video Tools"
+    category: Case Studies
+    usage: [hero, og]
+    status: mapped
+
+  - id: satori-video-agent-evals-gates
+    generator: satori
+    template: video-agent-evals-gates
+    og_template: video-agent-evals-gates-og
+    source: Satori/video-agent-evals-practices-and-growth-case-study.png
+    slug: video-agent-evals-practices-and-growth-case-study
+    title: "Video Agent Evals and Production Gates"
+    satori_title: "Video Agent Evals and Production Gates"
+    category: Case Studies
+    subtitle: "A render ships only when every gate passes."
+    usage: [hero, og]
+    status: mapped
+
 category_og:
   - id: cat-og-prompt-systems
     generator: satori

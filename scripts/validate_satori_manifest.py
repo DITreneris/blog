@@ -88,6 +88,8 @@ KNOWN_TEMPLATES = frozenset(
         "second-workflow-og",
         "document-belief-sheet",
         "document-belief-sheet-og",
+        "video-agent-evals-gates",
+        "video-agent-evals-gates-og",
         "og-default",
         "category-default",
         "article-og",

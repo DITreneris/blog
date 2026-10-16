@@ -127,7 +127,7 @@ If steps one through four feel heavy, stay on prompt-assisted workflow. Structur
 
 Eval set: twenty-five historical tickets with known correct pod. Fail conditions: wrong pod, missing escalation on VIP, routing without cited playbook section. Pilot target: 50 live tickets with 100% human confirm and override logging.
 
-This example deliberately avoids RFP/proposal work—those pipelines need legal assembly gates described in [AI Tender Response Pipeline](/articles/ai-tender-response-pipeline/) and the flagship framework article.
+This example deliberately avoids RFP/proposal work—those pipelines need legal assembly gates described in [AI Tender Response Pipeline](/articles/ai-tender-response-pipeline/) and the flagship framework article. For a media build where one local orchestrator coordinates Cursor, ElevenLabs, Remotion, and Playwright under strict tool boundaries, see [One Agent and Four Bounded Video Tools](/articles/video-agent-four-bounded-tools-case-study/).
 
 ## Agent vs automation vs human-only
 

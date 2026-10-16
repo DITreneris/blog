@@ -2,13 +2,13 @@
 title: Privacy Policy
 slug: privacy
 summary: "How Prompt Anatomy handles information on promptanatomy.blog."
-modified: 2026-06-04
+modified: 2026-10-16
 seo_robots: noindex
 ---
 
 This Privacy Policy describes how **Prompt Anatomy** (“we,” “us”) handles information when you use **promptanatomy.blog** (the “Site”). Paid training and product pages on [promptanatomy.app](https://www.promptanatomy.app/) are separate properties with their own policies.
 
-**Last updated:** June 4, 2026.
+**Last updated:** October 16, 2026.
 
 ## Who we are
 
@@ -35,6 +35,8 @@ Vercel may process technical data such as IP address, browser type, and page URL
 You can limit tracking by using browser privacy settings, disabling JavaScript, or using an ad or analytics blocker.
 
 We do not use third-party advertising cookies on the blog.
+
+Some articles embed YouTube videos in privacy-enhanced mode (`youtube-nocookie.com`). The player does not set cookies until you press play; once you do, Google processes the view under the [Google Privacy Policy](https://policies.google.com/privacy).
 
 ## Third-party links
 

@@ -111,6 +111,8 @@ PUBLICATION_ORDER: list[str] = [
     "northline-part-3-runtime-kept",
     "northline-part-4-second-workflow",
     "if-the-agent-believes-the-document",
+    "video-agent-four-bounded-tools-case-study",
+    "video-agent-evals-practices-and-growth-case-study",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -176,10 +178,12 @@ FIXED_DATES: dict[str, date] = {
     "northline-part-3-runtime-kept": date(2026, 10, 4),
     "northline-part-4-second-workflow": date(2026, 10, 10),
     "if-the-agent-believes-the-document": date(2026, 10, 11),
+    "video-agent-four-bounded-tools-case-study": date(2026, 10, 14),
+    "video-agent-evals-practices-and-growth-case-study": date(2026, 10, 15),
 }
 
-# Latest allowed publish date (document-trust playbook 2026-10-11)
-PUBLISH_CUTOFF = date(2026, 10, 11)
+# Latest allowed publish date (video-agent 2-part case study 2026-10-15)
+PUBLISH_CUTOFF = date(2026, 10, 15)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

@@ -70,7 +70,7 @@ Gates translate pass rate into promotion rights. Northline uses three; adjust th
 
 **Scale** requires sustained pass rate **and** reviewed overrides. Northline will not move from fifty to eighty percent shadow traffic without eighty percent eval pass **and** forum approval documented in risk minutes.
 
-Separate **quality eval** from **latency eval**. A faster model that fails policy cases is not a win; track both, do not trade silently.
+Separate **quality eval** from **latency eval**. A faster model that fails policy cases is not a win; track both, do not trade silently. For an example of binary audio and pixel gates blocking broken renders before export, see [Video Agent Evals and Production Gates](/articles/video-agent-evals-practices-and-growth-case-study/).
 
 ## Example cases (support reply)
 

@@ -165,6 +165,53 @@
   border-bottom: none;
 }
 
+.prose .video-embed {
+  /* No figure reset in the theme: clear the UA 40px inline margin so the player spans the column. */
+  margin-block: var(--space-lg);
+  margin-inline: 0;
+}
+
+.prose .video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.prose .video-embed figcaption {
+  margin-top: var(--space-xs);
+  font-size: var(--text-meta);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+}
+
+/* Two phone-width shorts. A full-column 9:16 player is taller than the viewport. */
+.prose .video-shorts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 15rem));
+  justify-content: center;
+  column-gap: var(--space-md);
+  row-gap: var(--space-md);
+  margin-block: var(--space-lg);
+}
+
+.prose .video-shorts .video-embed {
+  margin-block: 0;
+}
+
+.prose .video-embed--short iframe {
+  aspect-ratio: 9 / 16;
+}
+
+@media (max-width: 36rem) { /* --bp-table */
+  .prose .video-shorts {
+    grid-template-columns: minmax(0, 14rem);
+  }
+}
+
 @media (max-width: 36rem) { /* --bp-table */
   .prose table {
     display: block;

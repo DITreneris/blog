@@ -89,6 +89,10 @@ import {
   buildDocumentBeliefSheet,
   buildDocumentBeliefSheetOg,
 } from './document-belief-sheet.mjs';
+import {
+  buildVideoAgentEvalsGates,
+  buildVideoAgentEvalsGatesOg,
+} from './video-agent-evals-gates.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -165,6 +169,8 @@ export const TEMPLATES = {
   'second-workflow-og': buildSecondWorkflowOg,
   'document-belief-sheet': buildDocumentBeliefSheet,
   'document-belief-sheet-og': buildDocumentBeliefSheetOg,
+  'video-agent-evals-gates': buildVideoAgentEvalsGates,
+  'video-agent-evals-gates-og': buildVideoAgentEvalsGatesOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

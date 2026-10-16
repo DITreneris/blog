@@ -22,6 +22,13 @@ CATEGORIES_YAML = ROOT / "data" / "categories.yaml"
 REPORTS_DIR = ROOT / "docs" / "reports"
 LINK_PATTERN = re.compile(r"\]\(/articles/([a-z0-9-]+)/")
 COMPOSITE_MARKERS = re.compile(r"anonymized composite|composite \(", re.I)
+# First-party operator builds. Northline is a client composite, not these posts.
+FIRST_PARTY_CASE_SLUGS = frozenset(
+    {
+        "video-agent-four-bounded-tools-case-study",
+        "video-agent-evals-practices-and-growth-case-study",
+    }
+)
 NAV_HUB_SLUGS = frozenset(
     {
         "prompt-anatomy-foundations",
@@ -273,6 +280,8 @@ def build_report(rows: list[dict], clusters_cfg: dict) -> dict:
 
     for r in published:
         if r["category"] != "Case Studies":
+            continue
+        if r["slug"] in FIRST_PARTY_CASE_SLUGS:
             continue
         if not COMPOSITE_MARKERS.search(r["body"][:800]):
             credibility.append(
