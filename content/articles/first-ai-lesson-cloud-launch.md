@@ -4,11 +4,12 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-04-29
-hero_caption: Fuzzy prompt → five-part anatomy → quick send check → copy-ready library—the
-  enter journey .cloud encodes without calling an AI API.
+hero_caption: Three steps on one card — a fuzzy line becomes a task, a thirty-second
+  check names facts and risks, and the library stays last.
 hero_image: images/articles/first-ai-lesson-cloud-launch/hero.png
 key_takeaway: Onboarding should teach a 30-second send gate before template libraries—fuzzy
   prompts scale faster than fuzzy review habits.
+modified: 2026-10-16
 slug: first-ai-lesson-cloud-launch
 status: published
 summary: Teams that open with a template library scale fuzzy review habits faster than quality—paste-ready
@@ -24,6 +25,22 @@ title: Quick Send Check First — The First AI Lesson on promptanatomy.cloud
 Teams that open with a template library scale fuzzy review habits faster than they scale quality—paste-ready prompts without a send gate ship invented facts. In late April 2026, Prompt Anatomy shipped the **Enter** spoke at [promptanatomy.cloud](https://promptanatomy.cloud/) (EN at `/`, LT at `/lt/`)—a free, no-account interactive lesson with a five-part prompt framework, copy-ready library, and short quiz, never calling an AI API. Source lives in the open sister repo [DITreneris/lead](https://github.com/DITreneris/lead).
 
 This field note covers what shipped, why **slide order** teaches governance before template depth, and where `.cloud` sits beside governed implementation content on `.blog`. If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+
+The film below walks that enter chain. A fuzzy line becomes a task, the five parts appear, the send check runs, and the library stays last.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/KiMlIrrDICY"
+    title="Prompt Anatomy 4: A prompt becomes a task"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 4: A prompt becomes a task</em>. The free lesson turns a fuzzy line into a task, then a check, then a copy-ready prompt.</figcaption>
+</figure>
+
+The sections below explain why that check sits in front of the library.
 
 ## What promptanatomy.cloud is
 

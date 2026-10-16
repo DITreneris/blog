@@ -90,6 +90,8 @@ KNOWN_TEMPLATES = frozenset(
         "document-belief-sheet-og",
         "video-agent-evals-gates",
         "video-agent-evals-gates-og",
+        "cloud-send-check",
+        "cloud-send-check-og",
         "og-default",
         "category-default",
         "article-og",

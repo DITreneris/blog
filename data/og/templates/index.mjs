@@ -93,6 +93,7 @@ import {
   buildVideoAgentEvalsGates,
   buildVideoAgentEvalsGatesOg,
 } from './video-agent-evals-gates.mjs';
+import { buildCloudSendCheck, buildCloudSendCheckOg } from './cloud-send-check.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -171,6 +172,8 @@ export const TEMPLATES = {
   'document-belief-sheet-og': buildDocumentBeliefSheetOg,
   'video-agent-evals-gates': buildVideoAgentEvalsGates,
   'video-agent-evals-gates-og': buildVideoAgentEvalsGatesOg,
+  'cloud-send-check': buildCloudSendCheck,
+  'cloud-send-check-og': buildCloudSendCheckOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

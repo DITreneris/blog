@@ -392,13 +392,16 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
-  - id: promo-cloud-lesson
-    manual: true
-    source: cloud_lesson_og.png
-    og_source: cloud_lesson_og.png
+  - id: satori-cloud-send-check
+    generator: satori
+    template: cloud-send-check
+    og_template: cloud-send-check-og
+    source: Satori/first-ai-lesson-cloud-launch.png
     slug: first-ai-lesson-cloud-launch
-    title: "Quick Send Check First — The First AI Lesson on promptanatomy.cloud"
+    title: "Quick Send Check First"
+    satori_title: "Quick Send Check First"
     category: Implementation Notes
+    subtitle: "Teach the gate before you hand out templates."
     usage: [hero, og]
     status: mapped
 
