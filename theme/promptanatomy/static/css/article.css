@@ -188,10 +188,11 @@
   line-height: var(--leading-body);
 }
 
-/* Two phone-width shorts. A full-column 9:16 player is taller than the viewport. */
+/* Two phone-width shorts. A full-column 9:16 player is taller than the viewport.
+   20rem: two columns + gap fit the 720px prose column; 9:16 height (~569px) still fits a 900px viewport. */
 .prose .video-shorts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 15rem));
+  grid-template-columns: repeat(2, minmax(0, 20rem));
   justify-content: center;
   column-gap: var(--space-md);
   row-gap: var(--space-md);
@@ -208,7 +209,7 @@
 
 @media (max-width: 36rem) { /* --bp-table */
   .prose .video-shorts {
-    grid-template-columns: minmax(0, 14rem);
+    grid-template-columns: minmax(0, 16rem);
   }
 }
 
