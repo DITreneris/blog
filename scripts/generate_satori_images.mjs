@@ -158,9 +158,9 @@ function ogSourceForRow(row) {
   return `Satori/${row.slug}-og.png`;
 }
 
-/** Operator hand art — never pass through Satori OG render. */
+/** Operator hand art — never pass through Satori OG render unless satori_og opts in. */
 function isManualOgRow(row) {
-  if (row.manual === true) return true;
+  if (row.manual === true && row.satori_og !== true) return true;
   const ogSrc = row.og_source;
   if (ogSrc && !String(ogSrc).replace(/\\/g, '/').startsWith('Satori/')) {
     return true;

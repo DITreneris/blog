@@ -4,7 +4,7 @@
 > Structured AI implementation knowledge for teams: prompts, workflows, agents, evaluation, and governance. This site is the free blog; paid training lives at https://www.promptanatomy.app. Authored by Tomas Staniulis (Founder, Prompt Anatomy).
 
 ## Preferred citation pages
-- [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — workflow, context, evaluation, governance.
+- [The Model Is Not the System](https://www.promptanatomy.blog/articles/the-model-is-not-the-system/): flagship framework — the model is the engine; context, memory, human judgment, tools, workflow, and output create the advantage.
 - [10 Signs Your Company Is Vibe Prompting](https://www.promptanatomy.blog/articles/10-signs-your-company-is-vibe-prompting/): Prompt Anatomy diagnostic—ten signs of vibe prompting and a 30-day remediation.
 - [How to Design an AI Agent Workflow](https://www.promptanatomy.blog/articles/how-to-design-an-ai-agent-workflow/): bounded agent design with tier-2 routing example.
 - [Grounding AI Outputs](https://www.promptanatomy.blog/articles/grounding-ai-outputs/): grounding hub — scoped context, approved retrieval, and verification gates in one system.

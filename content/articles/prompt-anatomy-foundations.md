@@ -4,7 +4,7 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2024-01-28
-modified: 2026-09-10
+modified: 2026-10-16
 faq:
 - answer: Start with one business outcome and workflow, then context architecture,
     then model steps—with evaluation and governance before scaling tools.
@@ -51,7 +51,7 @@ Business outcome
         → Evaluation (pass/fail before scale)
           → Governance (who may change what)
 ```
-Deep dive: [The Model Is Not the System](/articles/the-model-is-not-the-system/). Context layer: [What Is Context Architecture?](/articles/what-is-context-architecture/). Diagnose unstructured use: [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/).
+The stack above is the reading order. [The Model Is Not the System](/articles/the-model-is-not-the-system/) records one workflow as context, memory, human judgment, tools, workflow, and output. Context layer: [What Is Context Architecture?](/articles/what-is-context-architecture/). Diagnose unstructured use: [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/).
 
 ## Where to go next
 

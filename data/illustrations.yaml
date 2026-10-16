@@ -2,7 +2,9 @@
 illustrations:
   # --- Existing articles (batch A) ---
   - id: gov-model-is-not-the-system
-    source: Governance/Model_is_not_the_system.png
+    manual: true
+    satori_og: true
+    source: model_is_not_system.png
     slug: the-model-is-not-the-system
     title: "The Model Is Not the System"
     category: Framework

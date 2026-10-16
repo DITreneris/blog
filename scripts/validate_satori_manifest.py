@@ -110,7 +110,7 @@ def _og_source(row: dict) -> str | None:
 
 
 def _is_manual_og_row(row: dict) -> bool:
-    if row.get("manual") is True:
+    if row.get("manual") is True and not row.get("satori_og"):
         return True
     og_src = row.get("og_source")
     if og_src and not str(og_src).replace("\\", "/").startswith("Satori/"):
@@ -148,13 +148,32 @@ def _validate_manual_row(row: dict, errors: list[str], warnings: list[str]) -> N
         warnings.append(
             f"{row_id}: source and og_source share one operator master (intentional)"
         )
-    if "og" in (row.get("usage") or []) and row.get("og_source"):
+    usage = row.get("usage") or []
+    if (
+        row.get("manual")
+        and "og" in usage
+        and not row.get("og_source")
+        and not row.get("satori_og")
+    ):
+        errors.append(
+            f"{row_id}: manual hero with usage og needs og_source or satori_og: true"
+        )
+    if "og" in usage and row.get("og_source"):
         og_master = MASTERS / Path(str(row["og_source"]).replace("\\", "/"))
         if not og_master.is_file():
             errors.append(
                 f"{row_id}: operator OG master not found at "
                 f"data/01_illustrations/{row['og_source']}"
             )
+    if row.get("satori_og") and "og" in usage and row.get("slug"):
+        og_src = _og_source(row)
+        if og_src:
+            og_master = MASTERS / Path(og_src.replace("\\", "/"))
+            if not og_master.is_file():
+                errors.append(
+                    f"{row_id}: OG master not found at data/01_illustrations/{og_src} "
+                    f"(run npm run build:satori)"
+                )
 
 
 def _validate_satori_row(row: dict, errors: list[str]) -> None:
@@ -219,7 +238,7 @@ def main() -> int:
 
     for row in manifest.get("illustrations") or []:
         if row.get("generator") != "satori":
-            if _is_manual_og_row(row):
+            if row.get("manual") or _is_manual_og_row(row):
                 _validate_manual_row(row, errors, warnings)
             elif "og" in (row.get("usage") or []) and row.get("slug"):
                 og_src = _og_source(row)

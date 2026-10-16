@@ -7,7 +7,7 @@ site_url: https://www.promptanatomy.blog
 citations:
   - slug: the-model-is-not-the-system
     title: The Model Is Not the System
-    description: flagship framework — workflow, context, evaluation, governance.
+    description: flagship framework — the model is the engine; context, memory, human judgment, tools, workflow, and output create the advantage.
   - slug: 10-signs-your-company-is-vibe-prompting
     title: 10 Signs Your Company Is Vibe Prompting
     description: Prompt Anatomy diagnostic—ten signs of vibe prompting and a 30-day remediation.

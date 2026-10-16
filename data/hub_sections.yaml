@@ -45,7 +45,7 @@ start_here:
   title: "Start here"
   cards:
     - title: "The Model Is Not the System"
-      description: "Teams fail when chat is the product. Map the system around the model—workflow, context, evaluation, and governance."
+      description: "Teams fail when chat is the product. The model is the engine; context, memory, human judgment, tools, workflow, and output create the advantage."
       href: "/articles/the-model-is-not-the-system/"
       icon: "framework"
     - title: "Context Architecture"
@@ -70,7 +70,7 @@ templates:
 
 featured:
   title: ""
-  lead: "Anchor framework for the system around the model—workflow, context, evaluation, and governance."
+  lead: "Anchor framework: the model is the engine. Context, memory, human judgment, tools, workflow, and output create the advantage."
   cta_label: "Read the framework"
 
 latest:
