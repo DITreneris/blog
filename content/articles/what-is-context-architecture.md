@@ -4,7 +4,7 @@ body_locked: true
 category: Framework
 content_tier: pillar
 date: 2024-04-27
-modified: 2026-09-10
+modified: 2026-10-17
 hero_image: images/articles/what-is-context-architecture/hero.png
 hero_caption: "Context architecture — design task, policy, operational data, and memory before you assemble the prompt."
 key_takeaway: Context architecture decides what the model may see, in what order, under which policy—not how large the window is.
@@ -35,6 +35,22 @@ Prompt design is how layers **meet in one invocation**. Architecture is how thos
 This is the context layer in the [Prompt Anatomy Foundations](/articles/prompt-anatomy-foundations/) stack—after [The Model Is Not the System](/articles/the-model-is-not-the-system/). If unstructured AI use is the symptom, diagnose with [10 Signs Your Company Is Vibe Prompting](/articles/10-signs-your-company-is-vibe-prompting/). Context terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 For entry points on window size and mechanics, see [Context Window Myths](/articles/context-window-myths/) and [Context Window Limits: Safe Zones, Overflow, and When to Split Workflow Steps](/articles/tokens-and-context-window-limits/).
+
+The film below walks that decision: what the model may see, in what order, and what must stay out.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/y3z5G-Uwhgg"
+    title="Prompt Anatomy 5: What Is Context Architecture?"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 5: What Is Context Architecture?</em> Design the layers before you assemble the prompt.</figcaption>
+</figure>
+
+The sections below name the four layers, then a filled context spec.
 
 ## Layers to design
 
