@@ -26,12 +26,28 @@ faq:
     answer: Start with context scoping and one held-out eval set. Then add retrieval controls and release gates so quality does not drift during updates.
   - question: How do I know which grounding maturity level we are at?
     answer: Use the maturity table in this article—scope-only, RAG-only, verify-only, or full stack—and promote only when the next layer has owners and eval evidence.
-modified: 2026-09-10
+modified: 2026-10-19
 ---
 
 **Grounding** is one operating system—scoped context, approved retrieval, and verification gates—not “add RAG” or “buy a smarter model.” Hallucination, context overload, and retrieval errors look separate in demos; in production they are one failure mode: the model answers without a controlled evidence path.
 
 This article is the hub for that system. It connects the core failure patterns in [Why AI Hallucinates](/articles/why-ai-hallucinates/), the fuel-and-refueling metaphor in [Tokens as Fuel: Why Full Context Windows Still Produce Empty Outputs](/articles/tokens-as-fuel-for-ai-output/), context design from [What Is Context Architecture](/articles/what-is-context-architecture/), retrieval operations from [RAG in Production](/articles/rag-in-production/), gate design from [Evaluation Hooks for AI Workflows](/articles/evaluation-hooks-for-ai-workflows/), and release discipline from [Prompt Registry Playbook](/articles/prompt-registry-playbook/). Grounding and eval terms: [Glossary](/articles/prompt-anatomy-glossary/).
+
+The film below walks that system: scoped context, approved retrieval, and a gate before the answer ships.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/VRwHdt5oLEw"
+    title="Prompt Anatomy 6: Grounding as a Control System"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 6: Grounding as a Control System</em>. Scope the context, retrieve approved evidence, and verify before the answer ships.</figcaption>
+</figure>
+
+The sections below name the stack, then the maturity levels.
 
 ## The grounding stack
 
