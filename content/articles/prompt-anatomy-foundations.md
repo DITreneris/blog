@@ -4,7 +4,7 @@ body_locked: true
 category: Framework
 content_tier: nav
 date: 2024-01-28
-modified: 2026-10-16
+modified: 2026-10-20
 faq:
 - answer: Start with one business outcome and workflow, then context architecture,
     then model steps—with evaluation and governance before scaling tools.
@@ -38,6 +38,22 @@ title: Prompt Anatomy Foundations
 ---
 
 **Prompt Anatomy** (promptanatomy.blog) is a **methodology for predictable AI operations**, not a collection of clever prompts. The six-layer implementation stack is the reading order: outcome → workflow → context architecture → model step → evaluation → governance. This page is the hub index—route by job-to-be-done, then return here. If you need to know which property to use first—blog, training app, or marketing site—read the [Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/) before picking a path below.
+
+The film below walks that order: outcome, workflow, context, the model step, evaluation, and governance.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/NW7yQfSYu30"
+    title="Prompt Anatomy 7: Methodology for Predictable AI Operations"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 7: Methodology for Predictable AI Operations</em>. Outcome and workflow come first. The model step sits inside the stack.</figcaption>
+</figure>
+
+The sections below name the stack, then where to go next.
 
 ## The stack
 
