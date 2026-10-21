@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-05-30
-modified: 2026-09-02
+modified: 2026-10-21
 hero_caption: Execution agents localize UI, UX, and prompt copy across EN · ET · LV · JA ·
   LT; the learning loop turns locale QA failures into rules for the next translation pass.
 hero_image: images/articles/daily-workflow-library-info-launch/hero.png
@@ -29,6 +29,22 @@ Teams that roll out prompt libraries without org context scale paste-ready mista
 Prompt Anatomy cut over **promptanatomy.info** to Vercel production on **2026-05-29** (**v1.4.0** in sister repo [DITreneris/automation](https://github.com/DITreneris/automation))—a free, no-account, **five-locale** static library (LT, EN, ET, LV, JA) at [promptanatomy.info/en/](https://www.promptanatomy.info/en/) with eight org-analysis prompts and a copy-first journey. What made the launch repeatable was a **closed-loop builder system** we used while translating UI, UX, and prompt copy: Orchestrator plus Content, UI, QA, and Research agents on the execution side; logs, evaluation, lessons, and rule updates on the learning side.
 
 This field note covers what shipped and where `.info` sits beside governed implementation content on `.blog`. If you are mapping properties for the first time, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/). For the **Enter** spoke—send check before depth—see [Quick Send Check First](/articles/first-ai-lesson-cloud-launch/).
+
+The film below walks the daily set: a bounded share of the work, eight prompts, and copy before the next task.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/09TCqZ9oalg"
+    title="Prompt Anatomy 8: Let AI do 30–50% of your daily tasks"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 8: Let AI do 30–50% of your daily tasks</em>. Eight prompts, then copy, then the next task.</figcaption>
+</figure>
+
+The sections below name what .info is, then the builder loop on the hero.
 
 ## What promptanatomy.info is
 
