@@ -4,6 +4,7 @@ body_locked: true
 category: Framework
 content_tier: playbook
 date: 2026-06-02
+modified: 2026-10-22
 faq:
 - answer: Quality drops when oversized or stale context crowds out the signal the
     model needs—larger windows alone do not fix architecture.
@@ -37,6 +38,22 @@ Large context windows sound like a free upgrade: add more documents, preserve mo
 The key point is simple: window size is capacity, not quality. Without architecture, "more context" becomes an uncurated archive pushed into a single decision step.
 
 If your team is still debating what belongs in the context stack, start with [What Is Context Architecture](/articles/what-is-context-architecture/). If your executive narrative is "we bought larger windows so quality should rise automatically," use [Context Window Myths](/articles/context-window-myths/) to reset expectations.
+
+The film below walks that point. A large window sounds like a free upgrade. Window size is capacity, not quality.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/-kVVnObnH_M"
+    title="Prompt Anatomy 9: Window Size is Capacity, not Quality"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 9: Window Size is Capacity, not Quality</em>. A larger window still drowns the signal when the context is uncurated.</figcaption>
+</figure>
+
+The sections below show what that failure looks like, and how to stop it.
 
 ## What context rot looks like
 
