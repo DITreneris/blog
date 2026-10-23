@@ -4,6 +4,7 @@ body_locked: true
 category: AI Governance
 content_tier: playbook
 date: 2026-09-25
+modified: 2026-10-23
 faq:
 - question: What must stop an unauthorized action if the model follows an injected instruction?
   answer: A control outside the model. It checks the user, target, operation, and destination before execution, and it rejects the call when that check fails. A model refusal is useful and is not that control.
@@ -28,6 +29,22 @@ title: When Prompt Injection Becomes an Action
 A support agent reads a vendor page while preparing a case note. Inside the page is an instruction: update every related customer account before continuing. The user asked for help with one case. The page is trying to expand the job.
 
 The security question is not only whether the model recognizes that instruction as hostile. It is whether the system would allow the wider update if the model followed it. Untrusted content must not be able to expand an agent's authority. [The model is one component](/articles/the-model-is-not-the-system/). The boundary around it is the system you govern.
+
+The film below walks that boundary. Permission to read a document is not permission to obey it. The model proposes. The server decides.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/kkhvKhovNw8"
+    title="Prompt Anatomy 10: Permission to Read is not Permission to Obey"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 10: Permission to Read is not Permission to Obey</em>. The server allows the active case note and blocks the wider update.</figcaption>
+</figure>
+
+The sections below name the six inspection points, then the check that runs before execution.
 
 ## Text can cause harm before a tool runs
 
