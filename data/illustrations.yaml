@@ -405,6 +405,19 @@ illustrations:
     usage: [hero, og]
     status: mapped
 
+  - id: satori-image-brief-check
+    generator: satori
+    template: image-brief-check
+    og_template: image-brief-check-og
+    source: Satori/how-to-write-ai-image-prompts-for-marketing.png
+    slug: how-to-write-ai-image-prompts-for-marketing
+    title: "How to Write AI Image Prompts for Marketing: From Brief to Human Review"
+    satori_title: "From Brief to Image Prompt"
+    category: Implementation Notes
+    subtitle: "A filled brief shows the gap. A person still checks the picture."
+    usage: [hero, og]
+    status: mapped
+
   - id: promo-info-library-launch
     manual: true
     source: loop.png
@@ -1059,6 +1072,19 @@ illustrations:
     satori_title: "If the Agent Believes the Document"
     category: AI Governance
     subtitle: "The document can inform. It cannot authorize."
+    usage: [hero, og]
+    status: mapped
+
+  - id: satori-actions-that-leave-the-building
+    generator: satori
+    template: actions-leave-building
+    og_template: actions-leave-building-og
+    source: Satori/actions-that-leave-the-building.png
+    slug: actions-that-leave-the-building
+    title: "Actions That Leave the Building"
+    satori_title: "Actions That Leave the Building"
+    category: AI Governance
+    subtitle: "For this workflow, a send and a credit need approval."
     usage: [hero, og]
     status: mapped
 

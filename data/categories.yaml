@@ -30,6 +30,7 @@ categories:
       - slug: audit-trails-for-ai-workflows
       - slug: ai-risk-review-cadence
       - slug: if-the-agent-believes-the-document
+      - slug: actions-that-leave-the-building
       - slug: when-prompt-injection-becomes-an-action
       - slug: securing-mcp-agent-tools
   - title: "Implementation Notes"
@@ -48,6 +49,7 @@ categories:
       - slug: interactive-demos-as-workshop-instruments
       - slug: classroom-prompt-builder-launch
       - slug: daily-workflow-library-info-launch
+      - slug: how-to-write-ai-image-prompts-for-marketing
       - slug: hiring-prompts-help-launch
       - slug: executive-os-pro-launch
       - slug: manifest-before-you-broadcast

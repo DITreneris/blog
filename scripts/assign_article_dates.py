@@ -113,6 +113,8 @@ PUBLICATION_ORDER: list[str] = [
     "if-the-agent-believes-the-document",
     "video-agent-four-bounded-tools-case-study",
     "video-agent-evals-practices-and-growth-case-study",
+    "actions-that-leave-the-building",
+    "how-to-write-ai-image-prompts-for-marketing",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -180,10 +182,12 @@ FIXED_DATES: dict[str, date] = {
     "if-the-agent-believes-the-document": date(2026, 10, 11),
     "video-agent-four-bounded-tools-case-study": date(2026, 10, 14),
     "video-agent-evals-practices-and-growth-case-study": date(2026, 10, 15),
+    "actions-that-leave-the-building": date(2026, 10, 23),
+    "how-to-write-ai-image-prompts-for-marketing": date(2026, 10, 24),
 }
 
-# Latest allowed publish date (video-agent 2-part case study 2026-10-15)
-PUBLISH_CUTOFF = date(2026, 10, 15)
+# Latest allowed publish date (marketing image brief field note 2026-10-24)
+PUBLISH_CUTOFF = date(2026, 10, 24)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

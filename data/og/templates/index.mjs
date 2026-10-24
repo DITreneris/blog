@@ -90,10 +90,15 @@ import {
   buildDocumentBeliefSheetOg,
 } from './document-belief-sheet.mjs';
 import {
+  buildActionsLeaveBuilding,
+  buildActionsLeaveBuildingOg,
+} from './actions-leave-building.mjs';
+import {
   buildVideoAgentEvalsGates,
   buildVideoAgentEvalsGatesOg,
 } from './video-agent-evals-gates.mjs';
 import { buildCloudSendCheck, buildCloudSendCheckOg } from './cloud-send-check.mjs';
+import { buildImageBriefCheck, buildImageBriefCheckOg } from './image-brief-check.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -170,10 +175,14 @@ export const TEMPLATES = {
   'second-workflow-og': buildSecondWorkflowOg,
   'document-belief-sheet': buildDocumentBeliefSheet,
   'document-belief-sheet-og': buildDocumentBeliefSheetOg,
+  'actions-leave-building': buildActionsLeaveBuilding,
+  'actions-leave-building-og': buildActionsLeaveBuildingOg,
   'video-agent-evals-gates': buildVideoAgentEvalsGates,
   'video-agent-evals-gates-og': buildVideoAgentEvalsGatesOg,
   'cloud-send-check': buildCloudSendCheck,
   'cloud-send-check-og': buildCloudSendCheckOg,
+  'image-brief-check': buildImageBriefCheck,
+  'image-brief-check-og': buildImageBriefCheckOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: nav
 date: 2025-03-31
-modified: 2026-09-10
+modified: 2026-10-24
 faq:
 - question: What is the difference between promptanatomy.blog and promptanatomy.app?
   answer: The blog is where you read free frameworks, playbooks, and templates. The
@@ -121,7 +121,7 @@ The table below lists specialized surfaces. They extend the core read → practi
 | **[promptanatomy.lol](https://www.promptanatomy.lol/)** | Play — Corporate Ladder (satirical; not for ops) |
 | **[promptanatomy.cloud](https://www.promptanatomy.cloud/)** | Enter — first AI lessons; see [field note](/articles/first-ai-lesson-cloud-launch/) |
 | **[promptanatomy.info](https://www.promptanatomy.info/en/)** | Use — daily workflow library; see [field note](/articles/daily-workflow-library-info-launch/) |
-| **[promptanatomy.space](https://www.promptanatomy.space/en/)** | Create — marketing content system |
+| **[promptanatomy.space](https://www.promptanatomy.space/en/)** | Create — marketing content system; see [field note](/articles/how-to-write-ai-image-prompts-for-marketing/) |
 | **[promptanatomy.help](https://www.promptanatomy.help/)** | Hire — HR hiring prompts; see [field note](/articles/hiring-prompts-help-launch/) |
 | **[promptanatomy.ceo](https://www.promptanatomy.ceo/)** | Manage — operations center |
 | **[promptanatomy.pro](https://www.promptanatomy.pro/)** | Decide — executive decision OS; see [field note](/articles/executive-os-pro-launch/) |
