@@ -4,7 +4,7 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2026-04-16
-modified: 2026-07-25
+modified: 2026-10-25
 faq:
   - question: Is the six-block system the same as the Prompt Anatomy implementation stack?
     answer: No. The six blocks teach how to write a structured prompt. The implementation stack on Foundations is how teams operate AI—outcome, workflow, context, model step, evaluation, and governance.
@@ -56,6 +56,22 @@ Northline B2B (composite) needed a support reply that named the product tier, re
 - **Advanced:** Prefer deterministic drafting; no web browse unless status URL is provided in Input.
 
 That structure turns "write a nicer reply" into an artifact reviewers can reject for a named reason. Paste the same six fields into the [Six-Block Prompt Canvas](/articles/six-block-canvas-template/) for wiki and registry drafts. Practice loops that force fill-run-check on the same pattern live on [promptanatomy.app](https://www.promptanatomy.app/) after purchase—not as a slide deck.
+
+The film shows a smaller move inside that write layer. Two short examples share one shape, and the new task copies the shape.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/v7ttws6eolk"
+    title="Prompt Anatomy 12: Few-shot Prompting Method"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 12: Few-shot Prompting Method</em>. Show the examples. Get the pattern. Two short examples, same structure, different content.</figcaption>
+</figure>
+
+The six blocks above stay the fuller contract, from Meta through Advanced. Ship date, plan change, and invoice date are one pattern inside that contract.
 
 ## Six-block vs RACE/TAG vs registry
 
