@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-07-16
+modified: 2026-10-26
 hero_caption: Scattered executive inputs—KPIs, reports, market data, opinions—refracted
   through one structured kit into a single, defensible decision.
 hero_image: images/articles/executive-os-pro-launch/hero.png
@@ -62,6 +63,22 @@ The page funnels `#context → #demo → #kit`, then out to training on [prompta
 Executive decisions fail quietly: a fluent rationale that sounds board-ready but hides an unowned risk. The clarity-practice-then-safety-check order targets exactly that. Practice shows the shape of a strong decision prompt; the safety gate forces the two questions leaders skip under time pressure—*can I defend this, and who owns the downside?*
 
 That is the decision-stage version of a lesson we repeat for any AI output: the model can draft the argument, but a named human owns the call. And because sponsors fund outcomes rather than fluent memos, pair the kit with outcome framing from [From Prompts to Business Outcomes](/articles/from-prompts-to-business-outcomes/) before you scale anything it recommends.
+
+The film shows a smaller move before that call. Ask what you are missing. One question at a time. You still make the call.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/CqSqluuprSI"
+    title="Prompt Anatomy 13: Reverse Prompting: Ask What You're Missing"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 13: Reverse Prompting: Ask What You're Missing</em>. Don't ask for an answer. Ask what you're missing. You still make the call.</figcaption>
+</figure>
+
+The decision chain above stays the fuller method: context, a module, clarity practice, and the safety check. Hiring, pricing, firing, partnerships, investment, and strategy are one pattern inside that method.
 
 ## Builder notes (for implementers)
 
