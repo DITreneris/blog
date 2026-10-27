@@ -40,7 +40,7 @@ validate-brand:
 validate: validate-theme validate-brand validate-content validate-hub-chrome validate-satori-quality validate-satori validate-llms-citations validate-article-dates
 
 validate-article-dates:
-	$(PYTHON) -m unittest scripts.test_assign_article_dates
+	$(PYTHON) -m unittest scripts.test_assign_article_dates scripts.test_asset_rev
 
 validate-llms-citations:
 	$(PYTHON) scripts/sync_llms_citations.py --check

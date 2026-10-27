@@ -15,8 +15,7 @@ faq:
 - answer: No. Strong prompts help a single run; evaluation and governance decide whether
     a change can promote across environments.
   question: Does better prompting replace evaluation and governance?
-hero_caption: Chat (one-shot answer) versus Deep Research (plan, search, analyze,
-  report) — same model, different system path.
+hero_caption: Tone and format stay in the call. Who may send stays on the path.
 hero_image: images/articles/prompt-engineering-vs-ai-workflow-engineering/hero.png
 key_takeaway: When quality varies by user but not by task, invest in workflow design
   before longer system prompts.
@@ -30,12 +29,28 @@ tags:
 - workflow-automation
 - context-engineering
 title: Prompt Engineering vs AI Workflow Engineering
-modified: 2026-09-29
+modified: 2026-10-27
 ---
 
-**Prompt engineering** optimizes one model call—tone, format, and guardrails in a template. **AI workflow engineering** designs the system around that call: triggers, context, handoffs, evaluation, logging, and ownership so the same task stays repeatable under real operations. Teams confuse the two because both happen in chat UIs; vendors blur them because prompt libraries are easier to sell than RACI.
+**Prompt engineering** optimizes one model call—tone, format, and guardrails in a template. **AI workflow engineering** designs the system around that call: triggers, context, handoffs, evaluation, logging, and ownership so the same task stays repeatable under real operations. The picture is the gate inside that system: tone and format stay in the call, and who may send stays on the path. Teams confuse the two because both happen in chat UIs; vendors blur them because prompt libraries are easier to sell than RACI.
 
 If one expert gets excellent results while peers struggle on the **same task**, longer system prompts are rarely the fix. Shared workflow, context architecture, and eval usually are—see [types of prompts](/articles/types-of-prompts-for-business-workflows/) for how prompt roles split inside a workflow, not one mega-message.
+
+The film shows a smaller move inside one call. Three directions differ on purpose. One idea gets one test.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/QcRTsOusM_E"
+    title="Prompt Anatomy 14: Tree of Thought"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 14: Tree of Thought</em>. Explore three distinct directions: bold, practical, unexpected. Best idea plus one test.</figcaption>
+</figure>
+
+The comparison below stays the fuller system: context, steps, gates, and eval around that call. Bold, practical, and unexpected are one pattern inside the call.
 
 ## Comparison at a glance
 

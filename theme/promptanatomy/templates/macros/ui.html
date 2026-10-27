@@ -73,7 +73,7 @@
 
 
 {% macro hero_image_url(article) -%}
-  {%- if article.hero_image -%}/{{ article.hero_image }}{%- endif -%}
+  {%- if article.hero_image -%}{{ ('/' ~ article.hero_image)|asset_rev }}{%- endif -%}
 {%- endmacro %}
 
 
@@ -96,9 +96,9 @@
 
 {% macro article_og_image_path(article) -%}
   {%- if article.slug in OG_ARTICLE_SLUGS -%}
-    images/articles/{{ article.slug }}/og.png
+    {{ ('images/articles/' ~ article.slug ~ '/og.png')|asset_rev }}
   {%- elif article.hero_image -%}
-    {{ article.hero_image }}
+    {{ article.hero_image|asset_rev }}
   {%- endif -%}
 {%- endmacro %}
 

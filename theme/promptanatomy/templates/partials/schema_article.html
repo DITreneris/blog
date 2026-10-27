@@ -1,4 +1,6 @@
+{% from 'macros/ui.html' import article_og_image_path %}
 {% if article %}
+{% set _schema_image = article_og_image_path(article)|trim or (THEME_STATIC_DIR ~ '/img/og-default.png') %}
 
 <script type="application/ld+json">
 
@@ -14,7 +16,7 @@
 
   "inLanguage": "en-US",
 
-  "image": ["{{ CANONICAL_SITEURL }}/{% if article.slug in OG_ARTICLE_SLUGS %}images/articles/{{ article.slug }}/og.png{% else %}{{ article.hero_image or (THEME_STATIC_DIR ~ '/img/og-default.png') }}{% endif %}"],
+  "image": ["{{ CANONICAL_SITEURL }}/{{ _schema_image }}"],
 
   "datePublished": "{{ article.date.isoformat() }}",
 

@@ -96,6 +96,8 @@ KNOWN_TEMPLATES = frozenset(
         "cloud-send-check-og",
         "image-brief-check",
         "image-brief-check-og",
+        "prompt-vs-workflow",
+        "prompt-vs-workflow-og",
         "og-default",
         "category-default",
         "article-og",

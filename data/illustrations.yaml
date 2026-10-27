@@ -31,11 +31,15 @@ illustrations:
     status: mapped
     replaces_stub: true
 
-  - id: basic-output-127
-    source: Basic/127_Prompt_Anatomy.png
+  - id: satori-prompt-vs-workflow
+    generator: satori
+    template: prompt-vs-workflow
+    og_template: prompt-vs-workflow-og
+    source: Satori/prompt-engineering-vs-ai-workflow-engineering.png
     slug: prompt-engineering-vs-ai-workflow-engineering
     title: "Prompt Engineering vs AI Workflow Engineering"
     category: Prompt Systems
+    subtitle: "When quality varies by person, fix the path before a longer prompt."
     usage: [hero, og]
     status: mapped
     replaces_stub: true

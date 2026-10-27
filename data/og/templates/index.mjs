@@ -99,6 +99,7 @@ import {
 } from './video-agent-evals-gates.mjs';
 import { buildCloudSendCheck, buildCloudSendCheckOg } from './cloud-send-check.mjs';
 import { buildImageBriefCheck, buildImageBriefCheckOg } from './image-brief-check.mjs';
+import { buildPromptVsWorkflow, buildPromptVsWorkflowOg } from './prompt-vs-workflow.mjs';
 
 /** @type {Record<string, (props: object) => object>} */
 export const TEMPLATES = {
@@ -183,6 +184,8 @@ export const TEMPLATES = {
   'cloud-send-check-og': buildCloudSendCheckOg,
   'image-brief-check': buildImageBriefCheck,
   'image-brief-check-og': buildImageBriefCheckOg,
+  'prompt-vs-workflow': buildPromptVsWorkflow,
+  'prompt-vs-workflow-og': buildPromptVsWorkflowOg,
   'og-default': buildOgDefault,
   'category-default': buildCategoryDefault,
   'article-og': buildArticleOg,

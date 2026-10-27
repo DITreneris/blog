@@ -13,6 +13,7 @@ sys.path.insert(0, str(BASE_DIR / "scripts"))
 from pelican_frontmatter_reader import FrontmatterMarkdownReader  # noqa: E402
 from generate_brand_assets import find_author_photo_source  # noqa: E402
 from seo_plain import seo_plain  # noqa: E402
+from asset_rev import asset_rev  # noqa: E402
 
 AUTHOR_HAS_PHOTO = find_author_photo_source() is not None
 
@@ -120,6 +121,7 @@ JINJA_ENVIRONMENT = {
 
 JINJA_FILTERS = {
     "seo_plain": seo_plain,
+    "asset_rev": asset_rev,
 }
 
 ENABLE_VERCEL_ANALYTICS = False
