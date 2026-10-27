@@ -112,6 +112,9 @@ EXTRA_PATH_METADATA = {
     "extra/.well-known/security.txt": {"path": ".well-known/security.txt"},
     "extra/404.html": {"path": "404.html"},
     "extra/google7305663b2567346e.html": {"path": "google7305663b2567346e.html"},
+    "extra/1f8d6ff25c1047218e3993c91fa6db94.txt": {
+        "path": "1f8d6ff25c1047218e3993c91fa6db94.txt"
+    },
 }
 
 JINJA_ENVIRONMENT = {
