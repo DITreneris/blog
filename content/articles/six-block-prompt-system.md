@@ -4,7 +4,7 @@ body_locked: true
 category: Prompt Systems
 content_tier: playbook
 date: 2026-04-16
-modified: 2026-10-25
+modified: 2026-10-29
 faq:
   - question: Is the six-block system the same as the Prompt Anatomy implementation stack?
     answer: No. The six blocks teach how to write a structured prompt. The implementation stack on Foundations is how teams operate AI—outcome, workflow, context, model step, evaluation, and governance.
@@ -43,6 +43,22 @@ Treat each block as a named contract, not a heading. Skip a block and you discov
 | **Advanced** | Tool or model settings that change behavior | Drift when temperature, tools, or modes differ |
 
 The blocks are the anatomy of a **designed prompt artifact**. They are not a substitute for a prompt registry ID, an eval case set, or a RACI—those live in [The Prompt Registry Playbook](/articles/prompt-registry-playbook/) and governance posts.
+
+The film shows the Reasoning block. Ask for the steps you can check. Judge them on cost, risk, and time. Do not invent a fact.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/eveLtdwDH2k"
+    title="Prompt Anatomy 15: Chain-of-thought prompting: observable steps"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 15: Chain-of-thought prompting: observable steps</em>. Ask for the steps you can check. List the options. Rank them. Do not guess. Do not invent a fact.</figcaption>
+</figure>
+
+Meta through Advanced stay the fuller contract. Cost, risk, and time are the Reasoning pattern inside that contract.
 
 ## Northline example — support reply
 
