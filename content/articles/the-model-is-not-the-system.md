@@ -21,7 +21,7 @@ hero_caption: 'Figure: the model is the engine inside the system—context, memo
 hero_image: images/articles/the-model-is-not-the-system/hero.png
 key_takeaway: A language model is the engine. The system around it—context, memory,
   human judgment, tools, workflow, and output—creates the advantage.
-modified: 2026-10-16
+modified: 2026-11-04
 reading_time: 8 min read
 slug: the-model-is-not-the-system
 status: published
@@ -37,21 +37,21 @@ Companies rarely fail at AI because the model is weak. They fail because the **s
 
 Chat-only AI feels like progress because the first draft is instant. That speed hides what production actually requires: known inputs, a record of what was already decided, a person who can reject a draft, tools with one owner, repeatable steps, and an output someone will sign. Without that wrapper, every “successful” pilot is a one-off performance—not an implementation discipline your org can run next quarter.
 
-If your team is still debating which model to buy while nobody owns those six parts, you are optimizing the wrong layer. The film below walks the same split as the figure. The sections after it define each box, what breaks when you skip one, and how to move from demo to a bounded pilot in thirty days. Key terms: [Glossary](/articles/prompt-anatomy-glossary/).
+If your team is still debating which model to buy while nobody owns those six parts, you are optimizing the wrong layer. The film below walks those six boxes. The sections after it define each box, what breaks when you skip one, and how to move from demo to a bounded pilot in thirty days. Key terms: [Glossary](/articles/prompt-anatomy-glossary/).
 
 <figure class="video-embed">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/2bjr6CMt46c"
-    title="Prompt Anatomy 2: The Model Is Not The System"
+    src="https://www.youtube-nocookie.com/embed/FlV8uevxuGQ"
+    title="Prompt Anatomy 16: An AI Model Is Not an AI System. Here's What's Missing."
     loading="lazy"
     referrerpolicy="strict-origin-when-cross-origin"
     allow="encrypted-media; picture-in-picture; fullscreen"
     allowfullscreen>
   </iframe>
-  <figcaption><em>Prompt Anatomy 2: The Model Is Not The System</em>. The model is the engine. The system creates the advantage.</figcaption>
+  <figcaption><em>Prompt Anatomy 16: An AI Model Is Not an AI System. Here's What's Missing.</em> A pilot that cannot name all six is still a chat demo.</figcaption>
 </figure>
 
-Use the six boxes as the design record. A pilot that cannot name all six is still a chat demo.
+Use the six boxes as the design record. Indexed playbooks, a clause library, a named reviewer, snippet retrieval, the path from intake to sign-off, and a first draft in forty-eight hours are one RFP example inside that record.
 
 ## The model is one component
 
