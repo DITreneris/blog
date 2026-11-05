@@ -4,6 +4,7 @@ body_locked: true
 category: Opinion
 content_tier: opinion
 date: 2024-08-19
+modified: 2026-11-05
 hero_caption: Chaos — vague chat prompts and failed outputs; Control — Role, Context,
   Output, and Criteria before the model runs.
 hero_image: images/articles/chaos-vs-control-prompting/hero.png
@@ -23,6 +24,22 @@ title: Chaos vs Control Prompting
 The headline on the poster is uncomfortable and true: **AI is not random — your input is.** The left side is chaos: “make it better,” “try again,” scattered asks, red Xs on outputs. The right side is control: **Role, Context, Output, Criteria** feeding a result that matches spec. Same model family; different **contract**.
 
 The visual is not arguing that models are perfect. It argues that **variance you blame on “AI mood” is usually missing fields** — who may act, what evidence counts, what shape the answer must take, and what fails the run before a human ships. Once those fields exist, retries drop because the first pass is scoped. When the shared system layer is the contract—not a private chat tweak—see [Your System Prompt Is a Team Contract](/articles/system-prompt-team-contract/).
+
+The film below is the smaller move from vague chat to those fields.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/o0ZF8w_1MDo"
+    title="Prompt Anatomy 17: Stop Talking, Start Building"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 17: Stop Talking, Start Building</em>. Turn random chats into repeatable workflows.</figcaption>
+</figure>
+
+Criteria stays the fourth field in that contract. The six blocks, chain of thought, few-shot, and the template catalog are the course around it. A senior AI strategist, a marketing strategy and plan, and bullets or a list are one Role, Context, and Output pattern inside that contract.
 
 ## What chaos looks like in operations
 
