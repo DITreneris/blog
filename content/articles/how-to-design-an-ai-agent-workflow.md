@@ -20,7 +20,7 @@ hero_caption: Orchestrator diagram — bounded tasks, allowed tools, human escal
 hero_image: images/articles/how-to-design-an-ai-agent-workflow/hero.png
 key_takeaway: Agents need bounded tasks, allowed tools, human escalation, and evaluation—not
   only a persona and API access.
-modified: 2025-01-23
+modified: 2026-11-05
 reading_time: 7 min read
 slug: how-to-design-an-ai-agent-workflow
 status: published
@@ -35,6 +35,22 @@ title: How to Design an AI Agent Workflow
 Agent hype collapses when workflows are vague. A language model with tools is not an agent workflow—it is a risk multiplier. Durable agent design starts with a **bounded business task**, explicit data boundaries, human escalation, and evaluation before scale.
 
 This guide maps a business task to an **agent-ready process**. It assumes you already treat the model as one component inside workflow and governance, not as the whole system—see [The Model Is Not the System](/articles/the-model-is-not-the-system/) if that foundation is still debated in your org. Agent and MCP terms: [Glossary](/articles/prompt-anatomy-glossary/). For orchestration framework comparison (LangGraph, CrewAI, Microsoft Agent Framework), see [production selection guide](/articles/langgraph-vs-crewai-production-guide/). If your team is debating whether to add tools, memory, and orchestration before basics are stable, read the visual primer [What Scales AI Beyond Basics](/articles/what-scales-ai-beyond-basics/) first—it names the ladder from context engineering through agents without skipping control layers.
+
+The film below walks that path.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/qkn53GYiP_E"
+    title="Prompt Anatomy 18: Agent Workflow"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 18: Agent Workflow</em>. Bound the task. Prove quality. Then scale.</figcaption>
+</figure>
+
+Tier-2 ticket routing is one example inside that path. Smoke is 10 historical cases, pilot is 50 live cases with the override logged, and scale waits on the mis-route rate.
 
 ## Step 1 — Define the task
 
