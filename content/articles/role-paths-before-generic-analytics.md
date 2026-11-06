@@ -4,7 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-07-25
-modified: 2026-10-13
+modified: 2026-11-06
 faq:
   - question: Does finishing a Module 7 role path replace production governance?
     answer: No. Role-adapted practice proves judgment inside the training drills. Workflow IDs, eval gates, RACI, and audit trails still belong on your systems.
@@ -31,6 +31,22 @@ title: Role Paths Before Generic Analytics
 One "data analysis" course fails six jobs. Sales needs forecasts and pipeline honesty. People teams need retention language without inventing HR metrics. Executives need risk-aware summaries, not another chart dump. When every learner pastes the same generic analyst prompt, the failure mode is polished wrongness that looks like progress.
 
 On **2026-07-25**, **v1.4.7** added six org-role paths on Module 7. The Data Analysis path itself shipped as **v1.4.2**. For hub checkout and Modules 1–6, see [Shipping Prompt Anatomy](/articles/shipping-prompt-anatomy/). Data Analysis (M7–9) is an operator grant, not a checkout SKU. For how this site and the training host fit, start with [The Prompt Anatomy Ecosystem Map](/articles/prompt-anatomy-ecosystem-map/).
+
+The film below is that polished chart.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/u_irQLUHGsA"
+    title="Prompt Anatomy 19: Prompt Analytics"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 19: Prompt Analytics</em>. Six jobs. One chart. Pick the path that matches the job.</figcaption>
+</figure>
+
+Sales, marketing, IT, people, management, and internal data stay one table inside that spine. A certificate still proves practice, not that the workflow is ready to leave the team.
 
 ## Six roles, one analysis spine
 
