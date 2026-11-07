@@ -115,6 +115,7 @@ PUBLICATION_ORDER: list[str] = [
     "video-agent-evals-practices-and-growth-case-study",
     "actions-that-leave-the-building",
     "how-to-write-ai-image-prompts-for-marketing",
+    "video-agent-the-short-is-a-finished-file",
 ]
 
 WAVE2_START_SLUG = "prompt-registry-playbook"
@@ -184,10 +185,11 @@ FIXED_DATES: dict[str, date] = {
     "video-agent-evals-practices-and-growth-case-study": date(2026, 10, 15),
     "actions-that-leave-the-building": date(2026, 10, 23),
     "how-to-write-ai-image-prompts-for-marketing": date(2026, 10, 24),
+    "video-agent-the-short-is-a-finished-file": date(2026, 11, 7),
 }
 
-# Latest allowed publish date (marketing image brief field note 2026-10-24)
-PUBLISH_CUTOFF = date(2026, 10, 24)
+# Latest allowed publish date (finished-short case study 2026-11-07)
+PUBLISH_CUTOFF = date(2026, 11, 7)
 
 NORTHLINE_PART2_AFTER_PART1_DAYS = 49  # ~7 weeks
 

@@ -136,4 +136,4 @@ The table is the growth. The move was the test. `ContextArchitectureVo` is compo
   </figure>
 </div>
 
-In 2019 the automated system was still a wish. This workstation now runs the Cursor session from [Part 1](/articles/video-agent-four-bounded-tools-case-study/). These checks are what that session reads before I sign a master. The channel at [@MrBulletLt](https://www.youtube.com/@MrBulletLt) has about 17.9 million views. The views did not build the gates. The failed stems did.
+In 2019 the automated system was still a wish. This workstation now runs the Cursor session from [Part 1](/articles/video-agent-four-bounded-tools-case-study/). These checks are what that session reads before I sign a master. The channel at [@MrBulletLt](https://www.youtube.com/@MrBulletLt) has about 17.9 million views. The views did not build the gates. The failed stems did. After that signature, [The Short Is a Finished File](/articles/video-agent-the-short-is-a-finished-file/) is the limit on the next agent: replace the ending, and do not redraw the joke.

@@ -25,7 +25,7 @@ key_takeaway: Once a person approves the master, the next agent's work is delive
   The old ending can come off. The joke stays, including the voice recorded for
   The List.
 slug: video-agent-the-short-is-a-finished-file
-status: draft
+status: published
 summary: A cartoon passed the frame checks and still failed as a joke. Animator
   owns that decision. After a person approves the master, the Video Agent may
   replace the old ending with the destination close and may not redraw the joke.

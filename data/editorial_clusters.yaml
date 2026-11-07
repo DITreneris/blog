@@ -140,6 +140,7 @@ clusters:
       - btcbuzzbot-x-publish-loop-field-notes
       - video-agent-four-bounded-tools-case-study
       - video-agent-evals-practices-and-growth-case-study
+      - video-agent-the-short-is-a-finished-file
     hub_slugs:
       - the-model-is-not-the-system
       - how-to-design-an-ai-agent-workflow
