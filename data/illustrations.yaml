@@ -1118,7 +1118,7 @@ illustrations:
   - id: video-agent-the-short-is-a-finished-file
     manual: true
     source: animator.png
-    og_source: animator.png
+    og_source: animator-og.png
     slug: video-agent-the-short-is-a-finished-file
     title: "The Short Is a Finished File"
     category: Case Studies

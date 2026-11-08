@@ -27,6 +27,7 @@ FIRST_PARTY_CASE_SLUGS = frozenset(
     {
         "video-agent-four-bounded-tools-case-study",
         "video-agent-evals-practices-and-growth-case-study",
+        "video-agent-the-short-is-a-finished-file",
     }
 )
 NAV_HUB_SLUGS = frozenset(
