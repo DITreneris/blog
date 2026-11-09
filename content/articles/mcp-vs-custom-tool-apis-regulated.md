@@ -4,6 +4,7 @@ body_locked: true
 category: AI Agents
 content_tier: playbook
 date: 2026-09-13
+modified: 2026-11-09
 status: published
 faq:
 - question: Does adopting MCP remove the need for custom APIs?
@@ -28,6 +29,22 @@ title: "MCP vs Custom Tool APIs for Regulated Teams"
 ---
 
 MCP does not retire your custom tool APIs. It is a standardized contract for how agents discover and call permissioned connectors—useful when several models or workflows must share the same systems of record under an allowlist. Custom APIs still win when latency, tenancy isolation, or already-certified SOA contracts dominate. Regulated teams should treat either path as a connector surface with the same eval cases, audit fields, and human send gates. The choice is per workflow, not a platform religion. If the workflow, owners, and risk class are still unnamed, stop and finish agent workflow design before picking MCP or a bespoke API.
+
+The film below is that claims write.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/YgaQgBHYt9I"
+    title="Prompt Anatomy 20: MCP vs a custom tool API"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 20: MCP vs a custom tool API</em>. A universal key does not mean universal permission.</figcaption>
+</figure>
+
+The criteria table stays the fuller record. Shared reads can move to MCP, and a write that already has dual control stays on the custom API.
 
 ## Decision criteria: control plane vs data plane
 
