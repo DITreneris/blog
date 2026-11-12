@@ -4,6 +4,7 @@ body_locked: true
 category: Implementation Notes
 content_tier: playbook
 date: 2026-06-24
+modified: 2026-11-12
 hero_caption: Six hiring steps—diagnose, define role, source, interview, offer, onboard—route
   through one AI Hiring Prompt System that returns a structured hiring plan.
 hero_image: images/articles/hiring-prompts-help-launch/hero.png
@@ -37,6 +38,22 @@ What stuck was simpler. HR audiences want **criteria, steps, and boundaries** be
 promptanatomy.help is that lesson shipped: ten hiring prompts and the six-step loop on the launch hero—structure first, copy into external AI, **human still decides**. The central system on the hero assembles criteria, not verdicts; the recruiter owns the call.
 
 Northline's talent lead piloted structured interview prompts across six open roles. The prompts were good; the failure was procedural—an interviewer pasted a candidate's full resume into a personal chat to "save time," outside any data agreement. Nothing about the prompt caused it; the **absence of a boundary** did. The fix was the same one `.help` encodes in its form: describe the role, never the person, and keep the decision with a named human. That is why guardrails come before template depth below.
+
+The film below is that resume paste.
+
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/VqKlOiRwP4g"
+    title="Prompt Anatomy 21: Hiring Prompts Without Data Leak"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <figcaption><em>Prompt Anatomy 21: Hiring Prompts Without Data Leak</em>. The prompt can be clean, and the workflow can still leak.</figcaption>
+</figure>
+
+The hiring workflow stays the fuller record. Role fields stay in the builder, the resume stays out, and a named human still owns the decision.
 
 ## What promptanatomy.help is
 
